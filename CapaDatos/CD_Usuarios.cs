@@ -6,25 +6,22 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaEntidad;
+using System.ComponentModel;
+using CapaEntidad.Models;
 
 namespace CapaDatos
 {
     public class CD_Usuarios
     {
-        public List<Usuario> MostrarUsuarios()
+        public List<UsuarioLogin> ObtenerUsuarioLogin()
         {
-            List<Usuario> usuarios = new List<Usuario>();
+            List<UsuarioLogin> usuarios = new List<UsuarioLogin>();
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "SELECT idUsuario, Nombres, Apellidos, Login, Cedula, r.Nombre as Rol, s.Descripcion as Sucursal, u.Activo" +
-                        "FROM Usuarios u" +
-                        "inner join Rol r " +
-                        "on u.idRol = r.id" +
-                        "inner join Sucursal s" +
-                        "on s.idSucursal = u.SucursalCaja";
+                    string query = "SELECT U.LOGIN, U.CONTRASEÑA, U.ACTIVO FROM DBO.USUARIOS U";
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
 
@@ -32,16 +29,18 @@ namespace CapaDatos
                     {
                         while(reader.Read())
                         {
-                            usuarios.Add(new Usuario
+                            usuarios.Add(new UsuarioLogin
                             {
-                                
+                                Login = reader["Login"].ToString(),
+                                PassWord = reader["Contraseña"].ToString(),
+                                Activo = Convert.ToBoolean(reader["Activo"])
                             });
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    
+                   usuarios = new List<UsuarioLogin>();   
                 }
             }
 

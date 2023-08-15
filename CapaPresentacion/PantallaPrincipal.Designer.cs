@@ -36,6 +36,8 @@
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.LabelTituloSistema = new System.Windows.Forms.Label();
             this.Contenedor = new System.Windows.Forms.Panel();
+            this.ULabel = new System.Windows.Forms.Label();
+            this.LBLUsuario = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,11 +137,37 @@
             this.Contenedor.Size = new System.Drawing.Size(1414, 423);
             this.Contenedor.TabIndex = 3;
             // 
+            // ULabel
+            // 
+            this.ULabel.AutoSize = true;
+            this.ULabel.BackColor = System.Drawing.Color.SteelBlue;
+            this.ULabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ULabel.ForeColor = System.Drawing.Color.White;
+            this.ULabel.Location = new System.Drawing.Point(963, 19);
+            this.ULabel.Name = "ULabel";
+            this.ULabel.Size = new System.Drawing.Size(102, 29);
+            this.ULabel.TabIndex = 4;
+            this.ULabel.Text = "Usuario:";
+            // 
+            // LBLUsuario
+            // 
+            this.LBLUsuario.AutoSize = true;
+            this.LBLUsuario.BackColor = System.Drawing.Color.SteelBlue;
+            this.LBLUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLUsuario.ForeColor = System.Drawing.Color.White;
+            this.LBLUsuario.Location = new System.Drawing.Point(1060, 19);
+            this.LBLUsuario.Name = "LBLUsuario";
+            this.LBLUsuario.Size = new System.Drawing.Size(138, 29);
+            this.LBLUsuario.TabIndex = 5;
+            this.LBLUsuario.Text = "LBLUsuario";
+            // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1414, 588);
+            this.Controls.Add(this.LBLUsuario);
+            this.Controls.Add(this.ULabel);
             this.Controls.Add(this.Contenedor);
             this.Controls.Add(this.LabelTituloSistema);
             this.Controls.Add(this.menu);
@@ -148,6 +176,7 @@
             this.Name = "PantallaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SGFP ";
+            this.Load += new System.EventHandler(this.PantallaPrincipal_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);
@@ -165,6 +194,8 @@
         private FontAwesome.Sharp.IconMenuItem ProductosMenu;
         private FontAwesome.Sharp.IconMenuItem CategoriasMenu;
         private System.Windows.Forms.Panel Contenedor;
+        private System.Windows.Forms.Label ULabel;
+        private System.Windows.Forms.Label LBLUsuario;
     }
 }
 

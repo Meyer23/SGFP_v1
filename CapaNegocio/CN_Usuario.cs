@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaEntidad;
+using CapaEntidad.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,9 @@ namespace CapaNegocio
     {
         private CD_Usuarios cd_usuario = new CD_Usuarios();
 
-        public List<Usuario> Listar()
+        public List<UsuarioLogin> ObtenerUsuario()
         {
-            return cd_usuario.MostrarUsuarios();
+            return cd_usuario.ObtenerUsuarioLogin();
         }
     }
 }
