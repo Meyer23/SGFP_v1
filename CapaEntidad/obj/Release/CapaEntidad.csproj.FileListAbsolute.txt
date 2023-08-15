@@ -1,0 +1,6 @@
+C:\Users\rober\source\repos\SGFP\CapaEntidad\bin\Release\CapaEntidad.dll
+C:\Users\rober\source\repos\SGFP\CapaEntidad\bin\Release\CapaEntidad.pdb
+C:\Users\rober\source\repos\SGFP\CapaEntidad\obj\Release\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\rober\source\repos\SGFP\CapaEntidad\obj\Release\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\rober\source\repos\SGFP\CapaEntidad\obj\Release\CapaEntidad.dll
+C:\Users\rober\source\repos\SGFP\CapaEntidad\obj\Release\CapaEntidad.pdb
