@@ -16,7 +16,6 @@ namespace CapaEntidad
 
         public string Login { get; set; }
 
-
         public string Cedula { get; set; }
 
         public string NombreRol { get; set; }

@@ -61,7 +61,7 @@
             this.ComprasMenu});
             this.menu.Location = new System.Drawing.Point(0, 82);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1424, 83);
+            this.menu.Size = new System.Drawing.Size(1777, 83);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -216,7 +216,7 @@
             this.menutitulo.Location = new System.Drawing.Point(0, 0);
             this.menutitulo.Name = "menutitulo";
             this.menutitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menutitulo.Size = new System.Drawing.Size(1424, 82);
+            this.menutitulo.Size = new System.Drawing.Size(1777, 82);
             this.menutitulo.TabIndex = 1;
             this.menutitulo.Text = "menu";
             // 
@@ -237,7 +237,7 @@
             this.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Contenedor.Location = new System.Drawing.Point(0, 165);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(1424, 702);
+            this.Contenedor.Size = new System.Drawing.Size(1777, 702);
             this.Contenedor.TabIndex = 3;
             // 
             // ULabel
@@ -268,7 +268,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1424, 867);
+            this.ClientSize = new System.Drawing.Size(1777, 867);
             this.Controls.Add(this.LBLUsuario);
             this.Controls.Add(this.ULabel);
             this.Controls.Add(this.Contenedor);
