@@ -46,5 +46,39 @@ namespace CapaDatos
 
             return usuarios;
         }
+
+        public List<Rol> ObtnerRol()
+        {
+            List<Rol> rol = new List<Rol>();
+
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT R.NOMBRE, R.ESTADO FROM DBO.ROL R WHERE R.ESTADO = 1";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            rol.Add(new Rol
+                            {
+                                Nombre = reader["NOMBRE"].ToString(),
+                                Activo = Convert.ToBoolean(reader["ESTADO"])
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    rol = new List<Rol>();
+                }
+            }
+
+            return rol;
+        }
     }
 }

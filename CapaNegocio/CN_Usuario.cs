@@ -17,5 +17,10 @@ namespace CapaNegocio
         {
             return cd_usuario.ObtenerUsuarioLogin();
         }
+
+        public List<Rol> ObtenerRol()
+        {
+            return cd_usuario.ObtnerRol().ToList();
+        }
     }
 }
