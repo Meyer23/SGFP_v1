@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,19 @@ namespace CapaPresentacion
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
+            CargarComboRol();
+        }
 
+        private void CargarComboRol()
+        {
+            List<Rol> rol = new List<Rol>();
+
+            rol = new CN_Usuario().ObtenerRol();
+
+            foreach(Rol unRol in rol)
+            {
+                ComboRol.Items.Add(unRol.Nombre);
+            }
         }
     }
 }
