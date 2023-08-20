@@ -10,7 +10,7 @@ namespace CapaEntidad
     {
         public int Id { get; set; }
 
-        public Empleado Empleados { get; set; }
+        public Empleado ObjectEmpleado { get; set; }
 
         public string PassWord { get; set; }
 
