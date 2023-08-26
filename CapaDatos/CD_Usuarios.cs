@@ -47,7 +47,7 @@ namespace CapaDatos
             return usuarios;
         }
 
-        public List<Rol> ObtnerRol()
+        public List<Rol> ObtenerRol()
         {
             List<Rol> rol = new List<Rol>();
 
