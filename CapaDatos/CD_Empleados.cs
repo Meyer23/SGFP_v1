@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaEntidad;
-using System.Windows.Forms;
 using System.Collections;
+using System.Windows.Forms;
 
 
 namespace CapaDatos
@@ -56,9 +56,10 @@ namespace CapaDatos
             return empleado;
         }
 
-        public int Registrar(Empleado obj)
+        public int Registrar(Empleado obj, out string Mensaje)
         {
             int IdEmpleado = 0;
+            Mensaje = string.Empty;          
 
             try
             {
@@ -78,22 +79,27 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
                     cmd.Parameters.Add("@IdEmpleado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
                     cmd.ExecuteNonQuery();
 
                     IdEmpleado = Convert.ToInt32(cmd.Parameters["@IdEmpleado"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
                 }
             }
             catch (Exception ex)
             {
                 IdEmpleado = 0;
-                MessageBox.Show(ex.Message);
+                Mensaje = ex.Message;
             }
             return IdEmpleado;
         }
 
-        public int Editar(Empleado obj)
+        public bool Editar(Empleado obj, out string Mensaje)
         {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
             try
             {
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
@@ -112,16 +118,22 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@Telefono2", obj.TelefonoDos);
                     cmd.Parameters.AddWithValue("@Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
                     cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Respuesta = false;
+                Mensaje = ex.Message;
             }
 
-            return 0;
+            return Respuesta;
         }
 
     }  
