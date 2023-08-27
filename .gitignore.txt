@@ -3,3 +3,5 @@
 .vs/
 *.cache
 *.vsidx
+*.pdb
+*.dll

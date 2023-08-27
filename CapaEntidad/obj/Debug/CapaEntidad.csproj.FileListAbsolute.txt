@@ -4,3 +4,9 @@ C:\Users\rober\source\repos\SGFP\CapaEntidad\obj\Debug\CapaEntidad.csproj.Assemb
 C:\Users\rober\source\repos\SGFP\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\Users\rober\source\repos\SGFP\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\rober\source\repos\SGFP\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.pdb

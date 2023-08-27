@@ -9,3 +9,14 @@ C:\Users\rober\source\repos\SGFP\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCo
 C:\Users\rober\source\repos\SGFP\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\rober\source\repos\SGFP\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\rober\source\repos\SGFP\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
