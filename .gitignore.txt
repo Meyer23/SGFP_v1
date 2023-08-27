@@ -1,0 +1,4 @@
+# Carpeta .vs
+
+.vs/
+*.cache
