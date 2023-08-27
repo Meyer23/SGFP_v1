@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaEntidad;
+using System.Windows.Forms;
+using System.Collections;
+
 
 namespace CapaDatos
 {
@@ -53,5 +56,74 @@ namespace CapaDatos
             return empleado;
         }
 
-    }
+        public int Registrar(Empleado obj)
+        {
+            int IdEmpleado = 0;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_empleado_insertar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open(); 
+                    cmd.Parameters.AddWithValue("@Nombres", obj.Nombres);
+                    cmd.Parameters.AddWithValue("@Apellidos", obj.Apellidos);
+                    cmd.Parameters.AddWithValue("@Documento", obj.Documento);
+                    cmd.Parameters.AddWithValue("@Direccion", obj.Direccion);
+                    cmd.Parameters.AddWithValue("@FechaNac", obj.FechaNacimiento);
+                    cmd.Parameters.AddWithValue("@Telefono1", obj.TelefonoUno);
+                    cmd.Parameters.AddWithValue("@Telefono2", obj.TelefonoDos);
+                    cmd.Parameters.AddWithValue("@Correo", obj.Correo);
+                    cmd.Parameters.AddWithValue("@Activo", obj.Activo);
+                    cmd.Parameters.Add("@IdEmpleado", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    IdEmpleado = Convert.ToInt32(cmd.Parameters["@IdEmpleado"].Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                IdEmpleado = 0;
+                MessageBox.Show(ex.Message);
+            }
+            return IdEmpleado;
+        }
+
+        public int Editar(Empleado obj)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_empleado_editar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@idEmpleado", obj.Id);
+                    cmd.Parameters.AddWithValue("@Nombres", obj.Nombres);
+                    cmd.Parameters.AddWithValue("@Apellidos", obj.Apellidos);
+                    cmd.Parameters.AddWithValue("@Documento", obj.Documento);
+                    cmd.Parameters.AddWithValue("@Direccion", obj.Direccion);
+                    cmd.Parameters.AddWithValue("@FechaNac", obj.FechaNacimiento);
+                    cmd.Parameters.AddWithValue("@Telefono1", obj.TelefonoUno);
+                    cmd.Parameters.AddWithValue("@Telefono2", obj.TelefonoDos);
+                    cmd.Parameters.AddWithValue("@Correo", obj.Correo);
+                    cmd.Parameters.AddWithValue("@Activo", obj.Activo);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return 0;
+        }
+
+    }  
+
 }

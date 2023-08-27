@@ -14,8 +14,17 @@ namespace CapaNegocio
 
         public List<Empleado> Listar() 
         { 
-            return cd_Empleado.Listar();
-        
+            return cd_Empleado.Listar();       
+        }
+
+        public int Registrar(Empleado obj)
+        {
+            return cd_Empleado.Registrar(obj);
+        }
+
+        public int Editar(Empleado obj)
+        {
+            return cd_Empleado.Editar(obj);
         }
     }
 }
