@@ -57,3 +57,35 @@ C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaPresentacion\obj\
 C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\CapaEntidad.dll
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.SuggestedBindingRedirects.cache
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmCategorias.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmClientes.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmCompras.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmEmpleados.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmProductos.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmRegistrarCompra.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmRegistrarVenta.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVerDetalleCompra.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVerDetalleVenta.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PantallaPrincipal.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmUsuarios.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmRoles.resources
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmPermisos.resources

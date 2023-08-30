@@ -10,3 +10,9 @@ C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\obj\Debug
 C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.pdb

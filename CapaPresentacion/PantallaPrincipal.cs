@@ -102,5 +102,15 @@ namespace CapaPresentacion
         {
             AbrirFormulario(ComprasMenu, new FrmVerDetalleCompra());
         }
+
+        private void SubMenuRoles_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(SubMenuRoles, new FrmRoles());
+        }
+
+        private void SubMenuPermisos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(SubMenuPermisos, new FrmPermisos());
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using CapaEntidad;
 using System.ComponentModel;
 using CapaEntidad.Models;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -21,7 +22,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT U.LOGIN, U.CONTRASEÑA, U.ACTIVO FROM DBO.USUARIOS U";
+                    string query = "SELECT U.LOGIN, U.PASSWORD, U.ACTIVO FROM DBO.USUARIOS U";
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
 
@@ -31,9 +32,9 @@ namespace CapaDatos
                         {
                             usuarios.Add(new UsuarioLogin
                             {
-                                Login = reader["Login"].ToString(),
-                                PassWord = reader["Contraseña"].ToString(),
-                                Activo = Convert.ToBoolean(reader["Activo"])
+                                Login = reader["LOGIN"].ToString(),
+                                PassWord = reader["PASSWORD"].ToString(),
+                                Activo = Convert.ToBoolean(reader["ACTIVO"])
                             });
                         }
                     }
@@ -56,7 +57,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT R.NOMBRE, R.ESTADO FROM DBO.ROL R WHERE R.ESTADO = 1";
+                    string query = "SELECT R.NOMBRE, R.ESTADO FROM DBO.ROLES R WHERE R.ESTADO = 1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
 
@@ -79,6 +80,49 @@ namespace CapaDatos
             }
 
             return rol;
+        }
+
+        public List<Usuario> Listar()
+        {
+            List<Usuario> usuario = new List<Usuario>();
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "select u.id, u.Login, r.Nombre as Rol, e.Nombres +' '+ e.apellidos as NombreCompleto, e.Documento, s.Descripcion as Sucursal, u.Activo" +
+                        "from dbo.Usuarios u " +
+                        "inner join dbo.Roles r" +
+                        "on u.idRol = r.id" +
+                        "inner join dbo.Empleados e" +
+                        "on e.id = u.idEmpleado" +
+                        "inner join dbo.Sucursales s" +
+                        "on u.idSucursalCaja = s.id;";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            usuario.Add(new Usuario
+                            {
+                                //IdRol = Convert.ToInt32(reader["ID"]),
+                                //Nombre = reader["NOMBRE"].ToString(),
+                                //Activo = Convert.ToBoolean(reader["Activo"])
+                            });
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return usuario;
         }
     }
 }

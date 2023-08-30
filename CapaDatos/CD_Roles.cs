@@ -1,0 +1,114 @@
+﻿using CapaEntidad;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CapaDatos
+{
+    public class CD_Roles
+    {
+        public List<Rol> Listar()
+        {
+            List<Rol> roles = new List<Rol>();
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT ID, NOMBRE, ACTIVO FROM DBO.ROLES;";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            roles.Add(new Rol
+                            {
+                                IdRol = Convert.ToInt32(reader["ID"]),
+                                Nombre = reader["NOMBRE"].ToString(),
+                                Activo = Convert.ToBoolean(reader["Activo"])
+                            });
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return roles;
+        }
+
+        public int Registrar(Rol obj, out string Mensaje)
+        {
+            int IdRol = 0;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_rol_insertar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("@Activo", obj.Activo);
+                    cmd.Parameters.Add("@IdRol", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    IdRol = Convert.ToInt32(cmd.Parameters["@IdRol"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return IdRol;
+        }
+        public bool Editar(Rol obj, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_rol_editar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@idRol", obj.IdRol);
+                    cmd.Parameters.AddWithValue("@Activo", obj.Activo);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Mensaje = (string)cmd.Parameters["@Mensaje"].Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                Mensaje = ex.Message;
+            }
+
+            return Respuesta;
+        }
+    }
+}

@@ -1,7 +1,8 @@
 # Carpeta .vs
 
-.vs/
+*.vs
 *.cache
 *.vsidx
 *.pdb
 *.dll
+*.suo

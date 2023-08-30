@@ -18,6 +18,7 @@ namespace CapaPresentacion
         public FrmEmpleados()
         {
             InitializeComponent();
+            TxtBusqueda.Focus();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
