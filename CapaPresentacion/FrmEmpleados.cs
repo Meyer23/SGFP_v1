@@ -18,7 +18,6 @@ namespace CapaPresentacion
         public FrmEmpleados()
         {
             InitializeComponent();
-            TxtBusqueda.Focus();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -106,7 +105,10 @@ namespace CapaPresentacion
             TxtTelefono1.Clear();
             TxtTelefono2.Clear();
             TxtCorreo.Clear();
-            TxtNombres.Select();
+            TxtBusqueda.Select();
+            TxtNombres.ReadOnly = false;
+            TxtApellidos.ReadOnly=false;   
+            TxtDocumento.ReadOnly = false;
         }
 
         private void FrmEmpleados_Load(object sender, EventArgs e)
@@ -130,7 +132,8 @@ namespace CapaPresentacion
                                  empleado.Correo, empleado.Activo);
             }
 
-            TxtNombres.Select();
+            //TxtNombres.Select();
+            TxtBusqueda.Select();
         }
 
         private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
