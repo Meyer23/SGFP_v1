@@ -34,17 +34,18 @@
             this.LblRoles = new System.Windows.Forms.Label();
             this.ListaLabelRoles = new System.Windows.Forms.Label();
             this.dgvRolesData = new System.Windows.Forms.DataGridView();
+            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LblDetalleRol = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.LblNombre = new System.Windows.Forms.Label();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.TxtIdRol = new System.Windows.Forms.TextBox();
-            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TxtIndex = new System.Windows.Forms.TextBox();
+            this.BtnEditar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRolesData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,19 +55,17 @@
             this.LblRoles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LblRoles.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblRoles.Location = new System.Drawing.Point(0, 0);
-            this.LblRoles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblRoles.Name = "LblRoles";
-            this.LblRoles.Size = new System.Drawing.Size(199, 306);
+            this.LblRoles.Size = new System.Drawing.Size(298, 471);
             this.LblRoles.TabIndex = 1;
             // 
             // ListaLabelRoles
             // 
             this.ListaLabelRoles.BackColor = System.Drawing.Color.White;
             this.ListaLabelRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListaLabelRoles.Location = new System.Drawing.Point(203, 9);
-            this.ListaLabelRoles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ListaLabelRoles.Location = new System.Drawing.Point(304, 14);
             this.ListaLabelRoles.Name = "ListaLabelRoles";
-            this.ListaLabelRoles.Size = new System.Drawing.Size(586, 40);
+            this.ListaLabelRoles.Size = new System.Drawing.Size(879, 62);
             this.ListaLabelRoles.TabIndex = 20;
             this.ListaLabelRoles.Text = "Roles";
             this.ListaLabelRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -90,8 +89,7 @@
             this.idRol,
             this.Descripcion,
             this.Activo});
-            this.dgvRolesData.Location = new System.Drawing.Point(208, 62);
-            this.dgvRolesData.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvRolesData.Location = new System.Drawing.Point(312, 95);
             this.dgvRolesData.MultiSelect = false;
             this.dgvRolesData.Name = "dgvRolesData";
             this.dgvRolesData.ReadOnly = true;
@@ -109,29 +107,62 @@
             this.dgvRolesData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvRolesData.RowTemplate.Height = 28;
             this.dgvRolesData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRolesData.Size = new System.Drawing.Size(368, 161);
+            this.dgvRolesData.Size = new System.Drawing.Size(552, 248);
             this.dgvRolesData.TabIndex = 21;
             this.dgvRolesData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRolesData_CellContentClick);
             this.dgvRolesData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvRolesData_CellPainting);
+            // 
+            // BtnSeleccionar
+            // 
+            this.BtnSeleccionar.HeaderText = "";
+            this.BtnSeleccionar.MinimumWidth = 8;
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.ReadOnly = true;
+            this.BtnSeleccionar.Width = 150;
+            // 
+            // idRol
+            // 
+            this.idRol.HeaderText = "idRol";
+            this.idRol.MinimumWidth = 8;
+            this.idRol.Name = "idRol";
+            this.idRol.ReadOnly = true;
+            this.idRol.Visible = false;
+            this.idRol.Width = 150;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 8;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 150;
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.MinimumWidth = 8;
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Activo.Width = 150;
             // 
             // LblDetalleRol
             // 
             this.LblDetalleRol.AutoSize = true;
             this.LblDetalleRol.BackColor = System.Drawing.Color.White;
             this.LblDetalleRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleRol.Location = new System.Drawing.Point(11, 21);
-            this.LblDetalleRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblDetalleRol.Location = new System.Drawing.Point(16, 32);
             this.LblDetalleRol.Name = "LblDetalleRol";
-            this.LblDetalleRol.Size = new System.Drawing.Size(87, 20);
+            this.LblDetalleRol.Size = new System.Drawing.Size(132, 29);
             this.LblDetalleRol.TabIndex = 22;
             this.LblDetalleRol.Text = "Detalle Rol";
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(15, 83);
-            this.TxtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtNombre.Location = new System.Drawing.Point(22, 128);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(167, 20);
+            this.TxtNombre.Size = new System.Drawing.Size(248, 26);
             this.TxtNombre.TabIndex = 24;
             this.TxtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNombre_Validating);
             // 
@@ -139,10 +170,9 @@
             // 
             this.LblNombre.AutoSize = true;
             this.LblNombre.BackColor = System.Drawing.Color.White;
-            this.LblNombre.Location = new System.Drawing.Point(12, 68);
-            this.LblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblNombre.Location = new System.Drawing.Point(18, 105);
             this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(47, 13);
+            this.LblNombre.Size = new System.Drawing.Size(69, 20);
             this.LblNombre.TabIndex = 23;
             this.LblNombre.Text = "Nombre:";
             // 
@@ -150,10 +180,9 @@
             // 
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.BackColor = System.Drawing.Color.White;
-            this.ChkActivo.Location = new System.Drawing.Point(15, 125);
-            this.ChkActivo.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkActivo.Location = new System.Drawing.Point(22, 192);
             this.ChkActivo.Name = "ChkActivo";
-            this.ChkActivo.Size = new System.Drawing.Size(56, 17);
+            this.ChkActivo.Size = new System.Drawing.Size(78, 24);
             this.ChkActivo.TabIndex = 25;
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = false;
@@ -169,10 +198,9 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(9, 249);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnGuardar.Location = new System.Drawing.Point(12, 339);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
+            this.BtnGuardar.Size = new System.Drawing.Size(260, 42);
             this.BtnGuardar.TabIndex = 26;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -182,54 +210,52 @@
             // 
             // TxtIdRol
             // 
-            this.TxtIdRol.Location = new System.Drawing.Point(156, 23);
+            this.TxtIdRol.Location = new System.Drawing.Point(234, 35);
+            this.TxtIdRol.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtIdRol.Name = "TxtIdRol";
-            this.TxtIdRol.Size = new System.Drawing.Size(26, 20);
+            this.TxtIdRol.Size = new System.Drawing.Size(37, 26);
             this.TxtIdRol.TabIndex = 27;
             this.TxtIdRol.Text = "0";
             this.TxtIdRol.Visible = false;
             // 
-            // BtnSeleccionar
-            // 
-            this.BtnSeleccionar.HeaderText = "";
-            this.BtnSeleccionar.Name = "BtnSeleccionar";
-            this.BtnSeleccionar.ReadOnly = true;
-            // 
-            // idRol
-            // 
-            this.idRol.HeaderText = "idRol";
-            this.idRol.Name = "idRol";
-            this.idRol.ReadOnly = true;
-            this.idRol.Visible = false;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // TxtIndex
             // 
-            this.TxtIndex.Location = new System.Drawing.Point(124, 23);
+            this.TxtIndex.Location = new System.Drawing.Point(186, 35);
+            this.TxtIndex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtIndex.Name = "TxtIndex";
-            this.TxtIndex.Size = new System.Drawing.Size(26, 20);
+            this.TxtIndex.Size = new System.Drawing.Size(37, 26);
             this.TxtIndex.TabIndex = 32;
             this.TxtIndex.Text = "-1";
             this.TxtIndex.Visible = false;
             // 
+            // BtnEditar
+            // 
+            this.BtnEditar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditar.ForeColor = System.Drawing.Color.White;
+            this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.BtnEditar.IconColor = System.Drawing.Color.White;
+            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnEditar.IconSize = 18;
+            this.BtnEditar.Location = new System.Drawing.Point(12, 403);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(260, 40);
+            this.BtnEditar.TabIndex = 33;
+            this.BtnEditar.Text = "Limpiar";
+            this.BtnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
             // FrmRoles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 306);
+            this.ClientSize = new System.Drawing.Size(915, 471);
+            this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.TxtIndex);
             this.Controls.Add(this.TxtIdRol);
             this.Controls.Add(this.BtnGuardar);
@@ -240,6 +266,7 @@
             this.Controls.Add(this.dgvRolesData);
             this.Controls.Add(this.ListaLabelRoles);
             this.Controls.Add(this.LblRoles);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmRoles";
             this.Text = "Roles";
             this.Load += new System.EventHandler(this.FrmRoles_Load);
@@ -265,5 +292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
         private System.Windows.Forms.TextBox TxtIndex;
+        private FontAwesome.Sharp.IconButton BtnEditar;
     }
 }

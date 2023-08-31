@@ -34,6 +34,12 @@ namespace CapaPresentacion
         {
             string Mensaje = string.Empty;
 
+            if (string.IsNullOrEmpty(TxtNombre.Text))
+            {
+                MessageBox.Show("Nombre no debe ser vacio");
+                return;
+            }
+
             Rol objRol = new Rol()
             {
                 IdRol = Convert.ToInt32(TxtIdRol.Text),
@@ -55,8 +61,6 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    if(ChkActivo.Checked == false)
-                    {
                         bool resultado = new CN_Roles().Editar(objRol, out Mensaje);
                         if (resultado)
                         {
@@ -70,7 +74,6 @@ namespace CapaPresentacion
                         {
                             MessageBox.Show(Mensaje);
                         }
-                    }
                 }
             }
             catch(Exception ex)
@@ -82,6 +85,7 @@ namespace CapaPresentacion
         private void limpiar()
         {
             TxtNombre.Clear();
+            TxtIndex.Select();
         }
 
         private void TxtNombre_Validating(object sender, CancelEventArgs e)
@@ -90,8 +94,8 @@ namespace CapaPresentacion
 
             if(string.IsNullOrEmpty(TxtNombre.Text))
             {
-                e.Cancel = true;
-                TxtNombre.Focus();
+                //e.Cancel = true;
+                //TxtNombre.Focus();
                 errorProvider.SetError(TxtNombre, "Este campo es obligatorio.");
             }
             else
@@ -142,6 +146,11 @@ namespace CapaPresentacion
                     ChkActivo.Checked = false;
                 }
             }
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
     }
 }

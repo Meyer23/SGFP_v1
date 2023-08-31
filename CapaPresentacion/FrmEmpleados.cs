@@ -234,8 +234,8 @@ namespace CapaPresentacion
             ErrorProvider errorProvider1 = new ErrorProvider();
             if (string.IsNullOrEmpty(TxtNombres.Text))
             {
-                e.Cancel = true;
-                TxtNombres.Focus();
+                //e.Cancel = true;
+                //TxtNombres.Focus();
                 errorProvider1.SetError(TxtNombres, "Este campo es obligatorio");
             }
             else
