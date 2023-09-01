@@ -250,7 +250,7 @@ namespace CapaPresentacion
             ErrorProvider errorProvider1 = new ErrorProvider();
             if (string.IsNullOrEmpty(TxtApellidos.Text))
             {
-                e.Cancel = true;
+                //e.Cancel = true;
                 TxtApellidos.Focus();
                 errorProvider1.SetError(TxtApellidos, "Este campo es obligatorio");
             }
@@ -266,7 +266,7 @@ namespace CapaPresentacion
             ErrorProvider errorProvider1 = new ErrorProvider();
             if (string.IsNullOrEmpty(TxtDocumento.Text))
             {
-                e.Cancel = true;
+                //e.Cancel = true;
                 TxtDocumento.Focus();
                 errorProvider1.SetError(TxtDocumento, "Este campo es obligatorio");
             }
@@ -282,7 +282,7 @@ namespace CapaPresentacion
             ErrorProvider errorProvider1 = new ErrorProvider();
             if (string.IsNullOrEmpty(TxtDireccion.Text))
             {
-                e.Cancel = true;
+                //e.Cancel = true;
                 TxtDireccion.Focus();
                 errorProvider1.SetError(TxtDireccion, "Este campo es obligatorio");
             }
@@ -298,7 +298,7 @@ namespace CapaPresentacion
             ErrorProvider errorProvider1 = new ErrorProvider();
             if (string.IsNullOrEmpty(TxtTelefono1.Text))
             {
-                e.Cancel = true;
+                //e.Cancel = true;
                 TxtTelefono1.Focus();
                 errorProvider1.SetError(TxtTelefono1, "Este campo es obligatorio");
             }
@@ -314,7 +314,7 @@ namespace CapaPresentacion
             ErrorProvider errorProvider1 = new ErrorProvider();
             if (string.IsNullOrEmpty(TxtCorreo.Text))
             {
-                e.Cancel = true;
+                //e.Cancel = true;
                 TxtCorreo.Focus();
                 errorProvider1.SetError(TxtCorreo, "Este campo es obligatorio");
             }

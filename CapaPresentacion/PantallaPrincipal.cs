@@ -58,11 +58,6 @@ namespace CapaPresentacion
             formulario.Show();
         }
 
-        private void UsuariosMenu_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new FrmUsuarios());
-        }
-
         private void submenucategorias_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MantenedorMenu, new FrmCategorias());
@@ -111,6 +106,10 @@ namespace CapaPresentacion
         private void SubMenuPermisos_Click(object sender, EventArgs e)
         {
             AbrirFormulario(SubMenuPermisos, new FrmPermisos());
+        }
+        private void SubMenuAgregarUsuario_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(SubMenuAgregarUsuario, new FrmAgregarUsuario());
         }
     }
 }

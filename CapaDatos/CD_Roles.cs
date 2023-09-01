@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CapaDatos
 {
@@ -109,6 +110,40 @@ namespace CapaDatos
             }
 
             return Respuesta;
+        }
+
+        public List<Rol> ObtenerRoles()
+        {
+            List<Rol> roles = new List<Rol>();
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "select r.Nombre from dbo.Roles r " +
+                        "where r.Activo = 1;";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            roles.Add(new Rol
+                            {
+                                Nombre = reader["NOMBRE"].ToString()
+                            });
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return roles;
+            }
         }
     }
 }

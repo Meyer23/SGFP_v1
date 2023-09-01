@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Empleado.cs" />
+    <Compile Include="Models\Cajas.cs" />
+    <Compile Include="Models\Sucursales.cs" />
     <Compile Include="Models\UsuarioLogin.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

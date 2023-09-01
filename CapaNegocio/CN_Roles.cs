@@ -26,5 +26,10 @@ namespace CapaNegocio
         {
             return cd_roles.Editar(obj, out Mensaje);
         }
+
+        public List<Rol> ObtenerRoles()
+        {
+            return cd_roles.ObtenerRoles();
+        }
     }
 }

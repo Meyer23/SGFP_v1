@@ -95,7 +95,7 @@ namespace CapaPresentacion
             if(string.IsNullOrEmpty(TxtNombre.Text))
             {
                 //e.Cancel = true;
-                //TxtNombre.Focus();
+                //y cieTxtNombre.Focus();
                 errorProvider.SetError(TxtNombre, "Este campo es obligatorio.");
             }
             else

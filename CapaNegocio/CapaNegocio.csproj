@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_Cajas.cs" />
     <Compile Include="CN_Empleado.cs" />
     <Compile Include="CN_Roles.cs" />
+    <Compile Include="CN_Sucursal.cs" />
     <Compile Include="CN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
