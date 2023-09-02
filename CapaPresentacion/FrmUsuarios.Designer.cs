@@ -31,12 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.LblNombre = new System.Windows.Forms.Label();
             this.LblLogin = new System.Windows.Forms.Label();
             this.LblPassword = new System.Windows.Forms.Label();
             this.LblRePassword = new System.Windows.Forms.Label();
             this.LblDocumento = new System.Windows.Forms.Label();
-            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtDocumento = new System.Windows.Forms.TextBox();
             this.TxtLogin = new System.Windows.Forms.TextBox();
             this.TxtPassword = new System.Windows.Forms.TextBox();
@@ -47,7 +45,7 @@
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.LblDetalleUsuario = new System.Windows.Forms.Label();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvData = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtIdUsuario = new System.Windows.Forms.TextBox();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
@@ -56,16 +54,25 @@
             this.ComboBusqueda = new System.Windows.Forms.ComboBox();
             this.LblBuscarPor = new System.Windows.Forms.Label();
             this.TxtIndex = new System.Windows.Forms.TextBox();
-            this.EstadoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LblSucursal = new System.Windows.Forms.Label();
+            this.ComboSucursal = new System.Windows.Forms.ComboBox();
+            this.LblCaja = new System.Windows.Forms.Label();
+            this.ComboCaja = new System.Windows.Forms.ComboBox();
+            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.LblNombres = new System.Windows.Forms.Label();
+            this.TxtNombres = new System.Windows.Forms.TextBox();
+            this.TxtApellidos = new System.Windows.Forms.TextBox();
+            this.LblApellidos = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,21 +85,11 @@
             this.label1.Size = new System.Drawing.Size(298, 826);
             this.label1.TabIndex = 0;
             // 
-            // LblNombre
-            // 
-            this.LblNombre.AutoSize = true;
-            this.LblNombre.BackColor = System.Drawing.Color.White;
-            this.LblNombre.Location = new System.Drawing.Point(8, 97);
-            this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(69, 20);
-            this.LblNombre.TabIndex = 1;
-            this.LblNombre.Text = "Nombre:";
-            // 
             // LblLogin
             // 
             this.LblLogin.AutoSize = true;
             this.LblLogin.BackColor = System.Drawing.Color.White;
-            this.LblLogin.Location = new System.Drawing.Point(8, 245);
+            this.LblLogin.Location = new System.Drawing.Point(8, 236);
             this.LblLogin.Name = "LblLogin";
             this.LblLogin.Size = new System.Drawing.Size(52, 20);
             this.LblLogin.TabIndex = 2;
@@ -123,22 +120,15 @@
             // 
             this.LblDocumento.AutoSize = true;
             this.LblDocumento.BackColor = System.Drawing.Color.White;
-            this.LblDocumento.Location = new System.Drawing.Point(8, 169);
+            this.LblDocumento.Location = new System.Drawing.Point(8, 54);
             this.LblDocumento.Name = "LblDocumento";
             this.LblDocumento.Size = new System.Drawing.Size(96, 20);
             this.LblDocumento.TabIndex = 5;
             this.LblDocumento.Text = "Documento:";
             // 
-            // TxtNombre
-            // 
-            this.TxtNombre.Location = new System.Drawing.Point(12, 120);
-            this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(248, 26);
-            this.TxtNombre.TabIndex = 6;
-            // 
             // TxtDocumento
             // 
-            this.TxtDocumento.Location = new System.Drawing.Point(12, 192);
+            this.TxtDocumento.Location = new System.Drawing.Point(12, 77);
             this.TxtDocumento.Name = "TxtDocumento";
             this.TxtDocumento.Size = new System.Drawing.Size(248, 26);
             this.TxtDocumento.TabIndex = 7;
@@ -169,7 +159,7 @@
             this.LblRol.AutoSize = true;
             this.LblRol.BackColor = System.Drawing.Color.White;
             this.LblRol.ForeColor = System.Drawing.Color.Black;
-            this.LblRol.Location = new System.Drawing.Point(8, 468);
+            this.LblRol.Location = new System.Drawing.Point(8, 595);
             this.LblRol.Name = "LblRol";
             this.LblRol.Size = new System.Drawing.Size(37, 20);
             this.LblRol.TabIndex = 11;
@@ -179,7 +169,7 @@
             // 
             this.ComboRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboRol.FormattingEnabled = true;
-            this.ComboRol.Location = new System.Drawing.Point(12, 491);
+            this.ComboRol.Location = new System.Drawing.Point(12, 629);
             this.ComboRol.Name = "ComboRol";
             this.ComboRol.Size = new System.Drawing.Size(248, 28);
             this.ComboRol.TabIndex = 12;
@@ -195,7 +185,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(12, 605);
+            this.BtnGuardar.Location = new System.Drawing.Point(12, 716);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(260, 42);
             this.BtnGuardar.TabIndex = 14;
@@ -216,7 +206,7 @@
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 16;
-            this.BtnEditar.Location = new System.Drawing.Point(12, 668);
+            this.BtnEditar.Location = new System.Drawing.Point(12, 774);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(260, 40);
             this.BtnEditar.TabIndex = 15;
@@ -230,7 +220,7 @@
             this.LblDetalleUsuario.AutoSize = true;
             this.LblDetalleUsuario.BackColor = System.Drawing.Color.White;
             this.LblDetalleUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleUsuario.Location = new System.Drawing.Point(12, 28);
+            this.LblDetalleUsuario.Location = new System.Drawing.Point(7, 9);
             this.LblDetalleUsuario.Name = "LblDetalleUsuario";
             this.LblDetalleUsuario.Size = new System.Drawing.Size(178, 29);
             this.LblDetalleUsuario.TabIndex = 16;
@@ -240,16 +230,17 @@
             // 
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.BackColor = System.Drawing.Color.White;
-            this.ChkActivo.Location = new System.Drawing.Point(12, 548);
+            this.ChkActivo.Location = new System.Drawing.Point(12, 663);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(78, 24);
             this.ChkActivo.TabIndex = 17;
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvData
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -258,29 +249,33 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btnSeleccionar,
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BtnSeleccionar,
             this.idUsuario,
             this.Documento,
-            this.Correo,
-            this.NombreCompleto,
+            this.Login,
+            this.Nombres,
             this.Apellidos,
-            this.idRol,
             this.Rol,
-            this.EstadoUsuario});
-            this.dataGridView1.Location = new System.Drawing.Point(320, 117);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
+            this.Sucursal,
+            this.Caja,
+            this.Activo});
+            this.dgvData.Location = new System.Drawing.Point(320, 117);
+            this.dgvData.MultiSelect = false;
+            this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
+            this.dgvData.RowHeadersWidth = 62;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1143, 591);
-            this.dataGridView1.TabIndex = 18;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvData.RowTemplate.Height = 28;
+            this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvData.Size = new System.Drawing.Size(1539, 641);
+            this.dgvData.TabIndex = 18;
+            this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
+            this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
             // label2
             // 
@@ -288,14 +283,14 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(324, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1139, 76);
+            this.label2.Size = new System.Drawing.Size(1535, 76);
             this.label2.TabIndex = 19;
             this.label2.Text = "Lista de Usuarios";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TxtIdUsuario
             // 
-            this.TxtIdUsuario.Location = new System.Drawing.Point(213, 63);
+            this.TxtIdUsuario.Location = new System.Drawing.Point(245, 9);
             this.TxtIdUsuario.Name = "TxtIdUsuario";
             this.TxtIdUsuario.Size = new System.Drawing.Size(48, 26);
             this.TxtIdUsuario.TabIndex = 20;
@@ -313,7 +308,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(1225, 37);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1311, 37);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(64, 40);
             this.BtnLimpiar.TabIndex = 35;
@@ -332,16 +327,17 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(1155, 37);
+            this.BtnBuscar.Location = new System.Drawing.Point(1229, 37);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(64, 40);
             this.BtnBuscar.TabIndex = 34;
             this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(908, 51);
+            this.TxtBusqueda.Location = new System.Drawing.Point(973, 51);
             this.TxtBusqueda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(230, 26);
@@ -351,7 +347,7 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(694, 49);
+            this.ComboBusqueda.Location = new System.Drawing.Point(723, 49);
             this.ComboBusqueda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ComboBusqueda.Name = "ComboBusqueda";
             this.ComboBusqueda.Size = new System.Drawing.Size(180, 28);
@@ -361,7 +357,7 @@
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(578, 57);
+            this.LblBuscarPor.Location = new System.Drawing.Point(592, 51);
             this.LblBuscarPor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(90, 20);
@@ -370,7 +366,7 @@
             // 
             // TxtIndex
             // 
-            this.TxtIndex.Location = new System.Drawing.Point(153, 63);
+            this.TxtIndex.Location = new System.Drawing.Point(201, 12);
             this.TxtIndex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtIndex.Name = "TxtIndex";
             this.TxtIndex.Size = new System.Drawing.Size(37, 26);
@@ -378,62 +374,55 @@
             this.TxtIndex.Text = "-1";
             this.TxtIndex.Visible = false;
             // 
-            // EstadoUsuario
+            // LblSucursal
             // 
-            this.EstadoUsuario.HeaderText = "Activo";
-            this.EstadoUsuario.MinimumWidth = 8;
-            this.EstadoUsuario.Name = "EstadoUsuario";
-            this.EstadoUsuario.ReadOnly = true;
-            this.EstadoUsuario.Width = 150;
+            this.LblSucursal.AutoSize = true;
+            this.LblSucursal.BackColor = System.Drawing.Color.White;
+            this.LblSucursal.ForeColor = System.Drawing.Color.Black;
+            this.LblSucursal.Location = new System.Drawing.Point(12, 462);
+            this.LblSucursal.Name = "LblSucursal";
+            this.LblSucursal.Size = new System.Drawing.Size(75, 20);
+            this.LblSucursal.TabIndex = 37;
+            this.LblSucursal.Text = "Sucursal:";
             // 
-            // Rol
+            // ComboSucursal
             // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.MinimumWidth = 8;
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            this.Rol.Width = 180;
+            this.ComboSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboSucursal.FormattingEnabled = true;
+            this.ComboSucursal.Location = new System.Drawing.Point(12, 485);
+            this.ComboSucursal.Name = "ComboSucursal";
+            this.ComboSucursal.Size = new System.Drawing.Size(248, 28);
+            this.ComboSucursal.TabIndex = 38;
             // 
-            // idRol
+            // LblCaja
             // 
-            this.idRol.HeaderText = "idRol";
-            this.idRol.MinimumWidth = 8;
-            this.idRol.Name = "idRol";
-            this.idRol.ReadOnly = true;
-            this.idRol.Visible = false;
-            this.idRol.Width = 150;
+            this.LblCaja.AutoSize = true;
+            this.LblCaja.BackColor = System.Drawing.Color.White;
+            this.LblCaja.ForeColor = System.Drawing.Color.Black;
+            this.LblCaja.Location = new System.Drawing.Point(8, 531);
+            this.LblCaja.Name = "LblCaja";
+            this.LblCaja.Size = new System.Drawing.Size(45, 20);
+            this.LblCaja.TabIndex = 39;
+            this.LblCaja.Text = "Caja:";
             // 
-            // Apellidos
+            // ComboCaja
             // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.MinimumWidth = 8;
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            this.Apellidos.Width = 150;
+            this.ComboCaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboCaja.FormattingEnabled = true;
+            this.ComboCaja.Location = new System.Drawing.Point(12, 554);
+            this.ComboCaja.Name = "ComboCaja";
+            this.ComboCaja.Size = new System.Drawing.Size(248, 28);
+            this.ComboCaja.TabIndex = 40;
             // 
-            // NombreCompleto
+            // BtnSeleccionar
             // 
-            this.NombreCompleto.HeaderText = "Nombre Completo";
-            this.NombreCompleto.MinimumWidth = 8;
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.ReadOnly = true;
-            this.NombreCompleto.Width = 180;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 8;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            this.Correo.Width = 180;
-            // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Nro. Documento";
-            this.Documento.MinimumWidth = 8;
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            this.Documento.Width = 180;
+            this.BtnSeleccionar.HeaderText = "";
+            this.BtnSeleccionar.MinimumWidth = 8;
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.ReadOnly = true;
+            this.BtnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.BtnSeleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.BtnSeleccionar.Width = 150;
             // 
             // idUsuario
             // 
@@ -444,20 +433,120 @@
             this.idUsuario.Visible = false;
             this.idUsuario.Width = 50;
             // 
-            // btnSeleccionar
+            // Documento
             // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.MinimumWidth = 8;
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 50;
+            this.Documento.HeaderText = "Nro. Documento";
+            this.Documento.MinimumWidth = 8;
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            this.Documento.Width = 180;
+            // 
+            // Login
+            // 
+            this.Login.HeaderText = "Login";
+            this.Login.MinimumWidth = 8;
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            this.Login.Width = 180;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.MinimumWidth = 8;
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 180;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.MinimumWidth = 8;
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            this.Apellidos.Width = 150;
+            // 
+            // Rol
+            // 
+            this.Rol.HeaderText = "Rol";
+            this.Rol.MinimumWidth = 8;
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            this.Rol.Width = 180;
+            // 
+            // Sucursal
+            // 
+            this.Sucursal.HeaderText = "Sucursal";
+            this.Sucursal.MinimumWidth = 8;
+            this.Sucursal.Name = "Sucursal";
+            this.Sucursal.ReadOnly = true;
+            this.Sucursal.Width = 150;
+            // 
+            // Caja
+            // 
+            this.Caja.HeaderText = "Caja";
+            this.Caja.MinimumWidth = 8;
+            this.Caja.Name = "Caja";
+            this.Caja.ReadOnly = true;
+            this.Caja.Width = 150;
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.MinimumWidth = 8;
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Activo.Width = 150;
+            // 
+            // LblNombres
+            // 
+            this.LblNombres.AutoSize = true;
+            this.LblNombres.BackColor = System.Drawing.Color.White;
+            this.LblNombres.Location = new System.Drawing.Point(12, 117);
+            this.LblNombres.Name = "LblNombres";
+            this.LblNombres.Size = new System.Drawing.Size(77, 20);
+            this.LblNombres.TabIndex = 41;
+            this.LblNombres.Text = "Nombres:";
+            // 
+            // TxtNombres
+            // 
+            this.TxtNombres.Location = new System.Drawing.Point(12, 140);
+            this.TxtNombres.Name = "TxtNombres";
+            this.TxtNombres.Size = new System.Drawing.Size(248, 26);
+            this.TxtNombres.TabIndex = 42;
+            // 
+            // TxtApellidos
+            // 
+            this.TxtApellidos.Location = new System.Drawing.Point(8, 202);
+            this.TxtApellidos.Name = "TxtApellidos";
+            this.TxtApellidos.Size = new System.Drawing.Size(248, 26);
+            this.TxtApellidos.TabIndex = 44;
+            // 
+            // LblApellidos
+            // 
+            this.LblApellidos.AutoSize = true;
+            this.LblApellidos.BackColor = System.Drawing.Color.White;
+            this.LblApellidos.Location = new System.Drawing.Point(8, 179);
+            this.LblApellidos.Name = "LblApellidos";
+            this.LblApellidos.Size = new System.Drawing.Size(77, 20);
+            this.LblApellidos.TabIndex = 43;
+            this.LblApellidos.Text = "Apellidos:";
             // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1731, 826);
+            this.ClientSize = new System.Drawing.Size(1924, 826);
+            this.Controls.Add(this.TxtApellidos);
+            this.Controls.Add(this.LblApellidos);
+            this.Controls.Add(this.TxtNombres);
+            this.Controls.Add(this.LblNombres);
+            this.Controls.Add(this.ComboCaja);
+            this.Controls.Add(this.LblCaja);
+            this.Controls.Add(this.ComboSucursal);
+            this.Controls.Add(this.LblSucursal);
             this.Controls.Add(this.TxtIndex);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
@@ -466,7 +555,7 @@
             this.Controls.Add(this.LblBuscarPor);
             this.Controls.Add(this.TxtIdUsuario);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvData);
             this.Controls.Add(this.ChkActivo);
             this.Controls.Add(this.LblDetalleUsuario);
             this.Controls.Add(this.BtnEditar);
@@ -477,17 +566,15 @@
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtLogin);
             this.Controls.Add(this.TxtDocumento);
-            this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.LblDocumento);
             this.Controls.Add(this.LblRePassword);
             this.Controls.Add(this.LblPassword);
             this.Controls.Add(this.LblLogin);
-            this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.label1);
             this.Name = "FrmUsuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,12 +583,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.Label LblLogin;
         private System.Windows.Forms.Label LblPassword;
         private System.Windows.Forms.Label LblRePassword;
         private System.Windows.Forms.Label LblDocumento;
-        private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtDocumento;
         private System.Windows.Forms.TextBox TxtLogin;
         private System.Windows.Forms.TextBox TxtPassword;
@@ -512,7 +597,7 @@
         private FontAwesome.Sharp.IconButton BtnEditar;
         private System.Windows.Forms.Label LblDetalleUsuario;
         private System.Windows.Forms.CheckBox ChkActivo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtIdUsuario;
         private FontAwesome.Sharp.IconButton BtnLimpiar;
@@ -521,14 +606,23 @@
         private System.Windows.Forms.ComboBox ComboBusqueda;
         private System.Windows.Forms.Label LblBuscarPor;
         private System.Windows.Forms.TextBox TxtIndex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn btnSeleccionar;
+        private System.Windows.Forms.Label LblSucursal;
+        private System.Windows.Forms.ComboBox ComboSucursal;
+        private System.Windows.Forms.Label LblCaja;
+        private System.Windows.Forms.ComboBox ComboCaja;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sucursal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Caja;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
+        private System.Windows.Forms.Label LblNombres;
+        private System.Windows.Forms.TextBox TxtNombres;
+        private System.Windows.Forms.TextBox TxtApellidos;
+        private System.Windows.Forms.Label LblApellidos;
     }
 }

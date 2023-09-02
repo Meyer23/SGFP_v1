@@ -111,5 +111,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(SubMenuAgregarUsuario, new FrmAgregarUsuario());
         }
+
+        private void SubMenuAbmUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(SubMenuAbmUsuarios, new FrmUsuarios());
+        }
     }
 }

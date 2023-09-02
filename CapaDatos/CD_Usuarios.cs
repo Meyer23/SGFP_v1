@@ -9,6 +9,7 @@ using CapaEntidad;
 using System.ComponentModel;
 using CapaEntidad.Models;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace CapaDatos
 {
@@ -82,22 +83,25 @@ namespace CapaDatos
             return rol;
         }
 
-        public List<Usuario> Listar()
+        public List<UsuarioResponse> Listar()
         {
-            List<Usuario> usuario = new List<Usuario>();
+            List<UsuarioResponse> usuario = new List<UsuarioResponse>();
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "select u.id, u.Login, r.Nombre as Rol, e.Nombres +' '+ e.apellidos as NombreCompleto, e.Documento, s.Descripcion as Sucursal, u.Activo" +
-                        "from dbo.Usuarios u " +
-                        "inner join dbo.Roles r" +
-                        "on u.idRol = r.id" +
-                        "inner join dbo.Empleados e" +
-                        "on e.id = u.idEmpleado" +
-                        "inner join dbo.Sucursales s" +
-                        "on u.idSucursalCaja = s.id;";
+                    string query = "select u.id ID, e.Documento, u.Login, e.Nombres, e.Apellidos, r.Nombre as Rol, " +
+                        "s.Descripcion as Sucursal, c.Descripcion as DescripcionCaja, u.Activo " +
+                        "from dbo.Empleados e " +
+                        "inner join dbo.Usuarios u " +
+                        "on e.id = u.idEmpleado " +
+                        "inner join dbo.Cajas c " +
+                        "on u.idSucursalCaja = c.id " +
+                        "inner join dbo.Sucursales s " +
+                        "on c.idSucursal = s.id " +
+                        "inner join dbo.Roles r " +
+                        "on u.idRol = r.id;";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -107,11 +111,17 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            usuario.Add(new Usuario
+                            usuario.Add(new UsuarioResponse
                             {
-                                //IdRol = Convert.ToInt32(reader["ID"]),
-                                //Nombre = reader["NOMBRE"].ToString(),
-                                //Activo = Convert.ToBoolean(reader["Activo"])
+                                idUsuario = Convert.ToInt32(reader["ID"]),
+                                Cedula = reader["DOCUMENTO"].ToString(),
+                                Login = reader["LOGIN"].ToString(),
+                                Nombres = reader["NOMBRES"].ToString(),
+                                Apellidos = reader["APELLIDOS"].ToString(),
+                                NombreRol = reader["ROL"].ToString(),
+                                NombreSucursal = reader["SUCURSAL"].ToString(),
+                                DescripcionCaja = reader["DESCRIPCIONCAJA"].ToString(),
+                                Activo = Convert.ToBoolean(reader["Activo"])
                             });
                         }
                     }

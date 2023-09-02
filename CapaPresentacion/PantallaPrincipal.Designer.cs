@@ -114,6 +114,7 @@
             this.SubMenuAbmUsuarios.Name = "SubMenuAbmUsuarios";
             this.SubMenuAbmUsuarios.Size = new System.Drawing.Size(279, 34);
             this.SubMenuAbmUsuarios.Text = "Administrar Usuarios";
+            this.SubMenuAbmUsuarios.Click += new System.EventHandler(this.SubMenuAbmUsuarios_Click);
             // 
             // SubMenuAgregarUsuario
             // 

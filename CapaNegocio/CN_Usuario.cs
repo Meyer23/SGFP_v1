@@ -23,7 +23,7 @@ namespace CapaNegocio
             return cd_usuario.ObtenerRol().ToList();
         }
 
-        public List<Usuario> Listar()
+        public List<UsuarioResponse> Listar()
         {
             return cd_usuario.Listar();
         }

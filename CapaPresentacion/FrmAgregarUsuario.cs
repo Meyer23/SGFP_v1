@@ -132,5 +132,71 @@ namespace CapaPresentacion
                 ComboCaja.DisplayMember = "DescripcionCaja";
             }
         }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ComboBusqueda.SelectedItem.ToString();
+
+            if (dgvData.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvData.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(TxtBusqueda.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void TxtPassword_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider1 = new ErrorProvider();
+            if (string.IsNullOrEmpty(TxtPassword.Text))
+            {
+                //e.Cancel = true;
+                TxtPassword.Focus();
+                errorProvider1.SetError(TxtPassword, "Este campo es obligatorio");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(TxtPassword, "");
+            }
+        }
+
+        private void ValidarPassword()
+        {
+            if(TxtPassword.Text != TxtRePassword.Text)
+            {
+                MessageBox.Show("Contraseñas no coincide.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            ValidarPassword();
+        }
+
+        private void TxtRePassword_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider1 = new ErrorProvider();
+            if (string.IsNullOrEmpty(TxtRePassword.Text))
+            {
+                //e.Cancel = true;
+                TxtRePassword.Focus();
+                errorProvider1.SetError(TxtRePassword, "Este campo es obligatorio");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(TxtRePassword, "");
+            }
+        }
     }
 }
