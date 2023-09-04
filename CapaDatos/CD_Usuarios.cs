@@ -134,5 +134,42 @@ namespace CapaDatos
             }
             return usuario;
         }
+
+        public int Registrar(UsuarioRequest obj, out string Mensaje)
+        {
+            int idUsuario = 0;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_usuario_insertar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@Login", obj.Login);
+                    cmd.Parameters.AddWithValue("@Password", obj.Password);
+                    cmd.Parameters.AddWithValue("@UsuarioSucursalCaja", obj.UsuarioSucursalCaja);
+                    cmd.Parameters.AddWithValue("@EmpleadoId", obj.EmpleadoId);
+                    cmd.Parameters.AddWithValue("@UsuarioRol", obj.UsuarioRol);
+                    cmd.Parameters.AddWithValue("@UsuarioSucursal", obj.UsuarioSucursal);
+                    cmd.Parameters.AddWithValue("@Activo", obj.Activo);
+                    cmd.Parameters.Add("@IdUsuario", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    idUsuario = Convert.ToInt32(cmd.Parameters["@IdUsuario"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                idUsuario = 0;
+                Mensaje = ex.Message;
+            }
+            return idUsuario;
+        }
     }
 }

@@ -27,5 +27,10 @@ namespace CapaNegocio
         {
             return cd_usuario.Listar();
         }
+
+        public int Registrar(UsuarioRequest obj, out string Mensaje)
+        {
+            return cd_usuario.Registrar(obj, out Mensaje);
+        }
     }
 }

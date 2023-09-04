@@ -180,6 +180,38 @@ namespace CapaPresentacion
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            string Mensaje = string.Empty;
+
+
+            try
+            {
+                UsuarioRequest nuevoUsuario = new UsuarioRequest()
+                {
+                    Login = TxtLogin.Text,
+                    Password = TxtPassword.Text,
+                    EmpleadoId = Convert.ToInt32(TxtIdEmpleado.Text),
+                    UsuarioRol = ComboRol.Text.ToString(),
+                    UsuarioSucursalCaja = ComboCaja.Text.ToString(),
+                    UsuarioSucursal = ComboSucursal.Text.ToString(),
+                    Activo = (bool)ChkActivo.Checked
+                };
+
+                int resultado = new CN_Usuario().Registrar(nuevoUsuario, out Mensaje);
+
+                if (resultado != 0)
+                {
+                    MessageBox.Show("Usuario agregado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Usuario ya existe. Verifique.");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error al intentar agregar nuevo usuario.", "Alerta", MessageBoxButtons.OK); 
+                return;
+            }
             ValidarPassword();
         }
 
