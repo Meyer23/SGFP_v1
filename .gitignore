@@ -1,19 +1,21 @@
+# Ignorar los archivos temporales y de configuracion de Visual Studio
 *.vs
-*.cache
-*.vsidx
-*.pdb
-*.dll
+*.user
 *.suo
+.vscode/
+.vs/
+
+# Ignorar los archivos binarios y otros archivos generados en la compilacion
 *.dll
-*.txt
-.vs/SGFP/v17/.suo
-*.dll
-*.pdb
-*.cache
-*.config
 *.exe
 *.pdb
-CODEOWNERS
-.vs/SGFP/v17/.suo
-*.config
 *.cache
+
+# Ignorar archivos de configuracion especificos
+*.config
+
+# Otros archivos especificos
+CODEOWNERS
+
+# Evita duplicados
+.vs/SGFP/v17/.suo
