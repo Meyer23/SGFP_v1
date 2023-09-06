@@ -14,3 +14,6 @@
 *.exe
 *.pdb
 CODEOWNERS
+.vs/SGFP/v17/.suo
+*.config
+*.cache
