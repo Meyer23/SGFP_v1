@@ -47,6 +47,13 @@
             this.ComboBusqueda = new System.Windows.Forms.ComboBox();
             this.LblBuscarPor = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LoginLbL = new System.Windows.Forms.Label();
             this.TxtLogin = new System.Windows.Forms.TextBox();
             this.LblRePassword = new System.Windows.Forms.Label();
@@ -57,13 +64,6 @@
             this.ComboSucursal = new System.Windows.Forms.ComboBox();
             this.LblCaja = new System.Windows.Forms.Label();
             this.ComboCaja = new System.Windows.Forms.ComboBox();
-            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -242,10 +242,10 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(736, 27);
+            this.ComboBusqueda.Location = new System.Drawing.Point(691, 26);
             this.ComboBusqueda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ComboBusqueda.Name = "ComboBusqueda";
-            this.ComboBusqueda.Size = new System.Drawing.Size(180, 28);
+            this.ComboBusqueda.Size = new System.Drawing.Size(213, 28);
             this.ComboBusqueda.TabIndex = 45;
             // 
             // LblBuscarPor
@@ -299,10 +299,69 @@
             this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(845, 660);
+            this.dgvData.Size = new System.Drawing.Size(882, 660);
             this.dgvData.TabIndex = 48;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
+            // 
+            // BtnSeleccionar
+            // 
+            this.BtnSeleccionar.HeaderText = "";
+            this.BtnSeleccionar.MinimumWidth = 8;
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.ReadOnly = true;
+            this.BtnSeleccionar.Width = 30;
+            // 
+            // idEmpleado
+            // 
+            this.idEmpleado.HeaderText = "idEmpleado";
+            this.idEmpleado.MinimumWidth = 8;
+            this.idEmpleado.Name = "idEmpleado";
+            this.idEmpleado.ReadOnly = true;
+            this.idEmpleado.Visible = false;
+            this.idEmpleado.Width = 150;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.MinimumWidth = 8;
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 150;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.MinimumWidth = 8;
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            this.Apellidos.Width = 150;
+            // 
+            // Documento
+            // 
+            this.Documento.HeaderText = "Documento";
+            this.Documento.MinimumWidth = 8;
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            this.Documento.Width = 150;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 8;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            this.Correo.Width = 150;
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.MinimumWidth = 8;
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Activo.Width = 150;
             // 
             // LoginLbL
             // 
@@ -398,65 +457,6 @@
             this.ComboCaja.Name = "ComboCaja";
             this.ComboCaja.Size = new System.Drawing.Size(180, 28);
             this.ComboCaja.TabIndex = 58;
-            // 
-            // BtnSeleccionar
-            // 
-            this.BtnSeleccionar.HeaderText = "";
-            this.BtnSeleccionar.MinimumWidth = 8;
-            this.BtnSeleccionar.Name = "BtnSeleccionar";
-            this.BtnSeleccionar.ReadOnly = true;
-            this.BtnSeleccionar.Width = 30;
-            // 
-            // idEmpleado
-            // 
-            this.idEmpleado.HeaderText = "idEmpleado";
-            this.idEmpleado.MinimumWidth = 8;
-            this.idEmpleado.Name = "idEmpleado";
-            this.idEmpleado.ReadOnly = true;
-            this.idEmpleado.Visible = false;
-            this.idEmpleado.Width = 150;
-            // 
-            // Nombres
-            // 
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.MinimumWidth = 8;
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            this.Nombres.Width = 150;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.MinimumWidth = 8;
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            this.Apellidos.Width = 150;
-            // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Documento";
-            this.Documento.MinimumWidth = 8;
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            this.Documento.Width = 150;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 8;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            this.Correo.Width = 150;
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.MinimumWidth = 8;
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Activo.Width = 150;
             // 
             // FrmAgregarUsuario
             // 
