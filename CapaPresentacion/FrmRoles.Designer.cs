@@ -34,6 +34,10 @@
             this.LblRoles = new System.Windows.Forms.Label();
             this.ListaLabelRoles = new System.Windows.Forms.Label();
             this.dgvRolesData = new System.Windows.Forms.DataGridView();
+            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LblDetalleRol = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.LblNombre = new System.Windows.Forms.Label();
@@ -42,7 +46,7 @@
             this.TxtIdRol = new System.Windows.Forms.TextBox();
             this.TxtIndex = new System.Windows.Forms.TextBox();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvModulosData = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdModulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,12 +55,8 @@
             this.Incluye = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Modifica = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRolesData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModulosData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,6 +125,39 @@
             this.dgvRolesData.TabIndex = 21;
             this.dgvRolesData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRolesData_CellContentClick);
             this.dgvRolesData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvRolesData_CellPainting);
+            // 
+            // BtnSeleccionar
+            // 
+            this.BtnSeleccionar.HeaderText = "";
+            this.BtnSeleccionar.MinimumWidth = 8;
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.ReadOnly = true;
+            this.BtnSeleccionar.Width = 30;
+            // 
+            // idRol
+            // 
+            this.idRol.HeaderText = "idRol";
+            this.idRol.Name = "idRol";
+            this.idRol.ReadOnly = true;
+            this.idRol.Visible = false;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 8;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 250;
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.MinimumWidth = 8;
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Activo.Width = 50;
             // 
             // LblDetalleRol
             // 
@@ -234,12 +267,12 @@
             this.BtnEditar.UseVisualStyleBackColor = false;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
-            // dataGridView1
+            // dgvModulosData
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvModulosData.AllowUserToAddRows = false;
+            this.dgvModulosData.AllowUserToDeleteRows = false;
+            this.dgvModulosData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvModulosData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.Rol,
             this.IdModulo,
@@ -247,10 +280,10 @@
             this.Visualiza,
             this.Incluye,
             this.Modifica});
-            this.dataGridView1.Location = new System.Drawing.Point(92, 112);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(423, 164);
-            this.dataGridView1.TabIndex = 34;
+            this.dgvModulosData.Location = new System.Drawing.Point(92, 112);
+            this.dgvModulosData.Name = "dgvModulosData";
+            this.dgvModulosData.Size = new System.Drawing.Size(423, 164);
+            this.dgvModulosData.TabIndex = 34;
             // 
             // id
             // 
@@ -298,46 +331,13 @@
             this.dataGridView2.Size = new System.Drawing.Size(423, 142);
             this.dataGridView2.TabIndex = 35;
             // 
-            // BtnSeleccionar
-            // 
-            this.BtnSeleccionar.HeaderText = "";
-            this.BtnSeleccionar.MinimumWidth = 8;
-            this.BtnSeleccionar.Name = "BtnSeleccionar";
-            this.BtnSeleccionar.ReadOnly = true;
-            this.BtnSeleccionar.Width = 30;
-            // 
-            // idRol
-            // 
-            this.idRol.HeaderText = "idRol";
-            this.idRol.Name = "idRol";
-            this.idRol.ReadOnly = true;
-            this.idRol.Visible = false;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.MinimumWidth = 8;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 250;
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.MinimumWidth = 8;
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Activo.Width = 50;
-            // 
             // FrmRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 502);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvModulosData);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.TxtIndex);
             this.Controls.Add(this.TxtIdRol);
@@ -353,7 +353,7 @@
             this.Text = "Roles";
             this.Load += new System.EventHandler(this.FrmRoles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRolesData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModulosData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -373,7 +373,7 @@
         private System.Windows.Forms.TextBox TxtIdRol;
         private System.Windows.Forms.TextBox TxtIndex;
         private FontAwesome.Sharp.IconButton BtnEditar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvModulosData;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdModulo;

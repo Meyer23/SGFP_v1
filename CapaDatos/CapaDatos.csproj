@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CD_Cajas.cs" />
     <Compile Include="CD_Empleados.cs" />
+    <Compile Include="CD_Modulos.cs" />
     <Compile Include="CD_Roles.cs" />
     <Compile Include="CD_Sucursal.cs" />
     <Compile Include="CD_Usuarios.cs" />

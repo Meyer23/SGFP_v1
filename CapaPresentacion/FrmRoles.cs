@@ -145,6 +145,14 @@ namespace CapaPresentacion
                 {
                     ChkActivo.Checked = false;
                 }
+
+                //Listar Modulos del Rol
+                int IdRol = Convert.ToInt32(TxtIdRol.Text);
+                List<Modulo> listaModulos = new CN_Modulos().Listar(IdRol);
+                foreach (Modulo modulos in listaModulos)
+                {
+                    dgvModulosData.Rows.Add(modulos.Id, modulos.IdRol, modulos.IdModulo, modulos.Nombre, modulos.Visualiza, modulos.Incluye, modulos.Modifica);
+                }
             }
         }
 
