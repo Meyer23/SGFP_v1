@@ -4,3 +4,13 @@
 *.pdb
 *.dll
 *.suo
+*.dll
+*.txt
+.vs/SGFP/v17/.suo
+*.dll
+*.pdb
+*.cache
+*.config
+*.exe
+*.pdb
+CODEOWNERS
