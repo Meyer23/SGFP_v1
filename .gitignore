@@ -19,4 +19,3 @@ CODEOWNERS
 
 # Evita duplicados
 .vs/SGFP/v17/.suo
-/CapaPresentacion/packages.config
