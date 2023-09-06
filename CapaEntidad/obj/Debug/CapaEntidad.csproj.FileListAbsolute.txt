@@ -16,3 +16,9 @@ C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.cspro
 C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaEntidad\obj\Debug\CapaEntidad.pdb
