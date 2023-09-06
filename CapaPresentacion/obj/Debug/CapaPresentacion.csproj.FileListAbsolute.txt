@@ -92,3 +92,6 @@ C:\Users\Robert\Documents\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresenta
 C:\Users\rober\source\repos\SGFP\CapaPresentacion\obj\Debug\CapaPresentacion.FrmPermisos.resources
 C:\Users\rober\source\repos\SGFP\CapaPresentacion\obj\Debug\CapaPresentacion.FrmRoles.resources
 C:\Users\rober\source\repos\SGFP\CapaPresentacion\obj\Debug\CapaPresentacion.FrmAgregarUsuario.resources
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmAgregarUsuario.resources
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmPermisos.resources
+C:\Users\HP\Documents\DESARROLLO\PROYECTO NEW\SGFP\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmRoles.resources
