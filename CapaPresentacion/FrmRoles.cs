@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -52,8 +53,9 @@ namespace CapaPresentacion
                 if(objRol.IdRol == 0)
                 {
                     int idRol = new CN_Roles().Registrar(objRol, out Mensaje);
+                    bool insert = new CN_Modulos().InsertarModulos(idRol);
 
-                    if(idRol != 0)
+                    if (idRol != 0)
                     {
                         dgvRolesData.Rows.Add(new object[] { idRol, TxtNombre.Text, ChkActivo.Checked });
                         limpiar();
@@ -159,6 +161,21 @@ namespace CapaPresentacion
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void dgvModulosData_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            bool Visualiza;
+            bool Incluye;
+            bool Modifica;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                Visualiza  = (bool)dgvModulosData.Rows[e.RowIndex].Cells["Visualiza"].Value;
+                Incluye = (bool)dgvModulosData.Rows[e.RowIndex].Cells["Incluye"].Value;
+                Modifica = (bool)dgvModulosData.Rows[e.RowIndex].Cells["Modifica"].Value;
+
+                bool insert = new CN_Modulos().Editar(Convert.ToInt32(TxtIdRol.Text), Convert.ToInt32(dgvModulosData.Rows[e.RowIndex].Cells["idModulo"].Value), Visualiza, Incluye, Modifica);
+            }
         }
     }
 }

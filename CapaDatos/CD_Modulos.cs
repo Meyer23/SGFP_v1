@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -51,6 +52,64 @@ namespace CapaDatos
                 }
             }
             return modulos;
+        }
+
+        public bool InsertarModulos(int idRol)
+        {
+            bool Respuesta = false;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_roles_modulos_insertar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@idRol", idRol);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.ExecuteNonQuery();
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Respuesta;
+        }
+
+        public bool Editar(int IdRol, int IdModulo, bool Visualiza, bool Incluye, bool Modifica)
+        {
+            bool Respuesta = false;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_roles_modulos_editar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@idRol", IdRol);
+                    cmd.Parameters.AddWithValue("@idModulo", IdModulo);
+                    cmd.Parameters.AddWithValue("@Visualiza", Visualiza);
+                    cmd.Parameters.AddWithValue("@Incluye", Incluye);
+                    cmd.Parameters.AddWithValue("@Modifica", Modifica);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return Respuesta;
         }
     }
 }

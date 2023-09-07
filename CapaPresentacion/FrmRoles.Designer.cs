@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblRoles = new System.Windows.Forms.Label();
             this.ListaLabelRoles = new System.Windows.Forms.Label();
             this.dgvRolesData = new System.Windows.Forms.DataGridView();
@@ -45,7 +45,7 @@
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.TxtIdRol = new System.Windows.Forms.TextBox();
             this.TxtIndex = new System.Windows.Forms.TextBox();
-            this.BtnEditar = new FontAwesome.Sharp.IconButton();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.dgvModulosData = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,15 +87,15 @@
             // 
             this.dgvRolesData.AllowUserToAddRows = false;
             this.dgvRolesData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRolesData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRolesData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRolesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRolesData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
@@ -107,18 +107,18 @@
             this.dgvRolesData.MultiSelect = false;
             this.dgvRolesData.Name = "dgvRolesData";
             this.dgvRolesData.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRolesData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRolesData.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvRolesData.RowHeadersWidth = 62;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvRolesData.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvRolesData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvRolesData.RowTemplate.Height = 28;
             this.dgvRolesData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRolesData.Size = new System.Drawing.Size(419, 161);
@@ -195,6 +195,8 @@
             // 
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.BackColor = System.Drawing.Color.White;
+            this.ChkActivo.Checked = true;
+            this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ChkActivo.Location = new System.Drawing.Point(15, 90);
             this.ChkActivo.Margin = new System.Windows.Forms.Padding(2);
             this.ChkActivo.Name = "ChkActivo";
@@ -244,28 +246,28 @@
             this.TxtIndex.Text = "-1";
             this.TxtIndex.Visible = false;
             // 
-            // BtnEditar
+            // BtnLimpiar
             // 
-            this.BtnEditar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.ForeColor = System.Drawing.Color.White;
-            this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.BtnEditar.IconColor = System.Drawing.Color.White;
-            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnEditar.IconSize = 18;
-            this.BtnEditar.Location = new System.Drawing.Point(297, 469);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(173, 26);
-            this.BtnEditar.TabIndex = 33;
-            this.BtnEditar.Text = "Limpiar";
-            this.BtnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnEditar.UseVisualStyleBackColor = false;
-            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            this.BtnLimpiar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.BtnLimpiar.IconColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnLimpiar.IconSize = 18;
+            this.BtnLimpiar.Location = new System.Drawing.Point(297, 469);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(173, 26);
+            this.BtnLimpiar.TabIndex = 33;
+            this.BtnLimpiar.Text = "Limpiar";
+            this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // dgvModulosData
             // 
@@ -280,10 +282,11 @@
             this.Visualiza,
             this.Incluye,
             this.Modifica});
-            this.dgvModulosData.Location = new System.Drawing.Point(92, 112);
+            this.dgvModulosData.Location = new System.Drawing.Point(15, 112);
             this.dgvModulosData.Name = "dgvModulosData";
-            this.dgvModulosData.Size = new System.Drawing.Size(423, 164);
+            this.dgvModulosData.Size = new System.Drawing.Size(500, 164);
             this.dgvModulosData.TabIndex = 34;
+            this.dgvModulosData.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModulosData_CellValueChanged);
             // 
             // id
             // 
@@ -307,28 +310,32 @@
             // 
             this.Modulo.HeaderText = "Módulo";
             this.Modulo.Name = "Modulo";
+            this.Modulo.Width = 200;
             // 
             // Visualiza
             // 
             this.Visualiza.HeaderText = "Visualiza";
             this.Visualiza.Name = "Visualiza";
+            this.Visualiza.Width = 80;
             // 
             // Incluye
             // 
             this.Incluye.HeaderText = "Incluye";
             this.Incluye.Name = "Incluye";
+            this.Incluye.Width = 80;
             // 
             // Modifica
             // 
             this.Modifica.HeaderText = "Modifica";
             this.Modifica.Name = "Modifica";
+            this.Modifica.Width = 80;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(92, 313);
+            this.dataGridView2.Location = new System.Drawing.Point(15, 313);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(423, 142);
+            this.dataGridView2.Size = new System.Drawing.Size(500, 142);
             this.dataGridView2.TabIndex = 35;
             // 
             // FrmRoles
@@ -338,7 +345,7 @@
             this.ClientSize = new System.Drawing.Size(995, 502);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dgvModulosData);
-            this.Controls.Add(this.BtnEditar);
+            this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.TxtIndex);
             this.Controls.Add(this.TxtIdRol);
             this.Controls.Add(this.BtnGuardar);
@@ -372,8 +379,13 @@
         private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.TextBox TxtIdRol;
         private System.Windows.Forms.TextBox TxtIndex;
-        private FontAwesome.Sharp.IconButton BtnEditar;
+        private FontAwesome.Sharp.IconButton BtnLimpiar;
         private System.Windows.Forms.DataGridView dgvModulosData;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdModulo;
@@ -381,10 +393,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Visualiza;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Incluye;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Modifica;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewButtonColumn BtnSeleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
     }
 }

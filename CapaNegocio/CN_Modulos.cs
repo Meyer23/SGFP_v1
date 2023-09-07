@@ -17,5 +17,15 @@ namespace CapaNegocio
         {
             return cd_Modulo.Listar(idRol);
         }
+
+        public bool InsertarModulos(int idRol)
+        {
+            return cd_Modulo.InsertarModulos(idRol);
+        }
+
+        public bool Editar(int IdRol, int IdModulo, bool Visualiza, bool Incluye, bool Modifica)
+        {
+            return cd_Modulo.Editar(IdModulo, IdRol, Visualiza, Incluye, Modifica);
+        }
     }
 }
