@@ -109,6 +109,7 @@ namespace CapaPresentacion
             TxtNombres.ReadOnly = false;
             TxtApellidos.ReadOnly=false;   
             TxtDocumento.ReadOnly = false;
+            DtFechaNac.Enabled = true;
         }
 
         private void FrmEmpleados_Load(object sender, EventArgs e)

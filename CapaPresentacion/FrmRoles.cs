@@ -23,6 +23,7 @@ namespace CapaPresentacion
         }
         private void FrmRoles_Load(object sender, EventArgs e)
         {
+            dgvModulosData.Visible = false;
             //Listar Roles
             List<Rol> listaRoles = new CN_Roles().Listar();
             foreach (Rol roles in listaRoles)
@@ -57,7 +58,7 @@ namespace CapaPresentacion
 
                     if (idRol != 0)
                     {
-                        dgvRolesData.Rows.Add(new object[] { idRol, TxtNombre.Text, ChkActivo.Checked });
+                        dgvRolesData.Rows.Add(new object[] {"", idRol, TxtNombre.Text, ChkActivo.Checked });
                         limpiar();
                     }
                 }
@@ -87,6 +88,9 @@ namespace CapaPresentacion
         private void limpiar()
         {
             TxtNombre.Clear();
+            TxtNombre.ReadOnly = false;
+            dgvModulosData.Rows.Clear();
+            dgvModulosData.Visible = false;
             TxtIndex.Select();
         }
 
@@ -129,12 +133,14 @@ namespace CapaPresentacion
 
         private void dgvRolesData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvModulosData.Visible = true;
             TxtNombre.ReadOnly = true;
             bool estadoRol;
             int index = e.RowIndex;
 
             if (index >= 0)
             {
+                dgvModulosData.Rows.Clear();
                 TxtIndex.Text = index.ToString();
                 TxtIdRol.Text = dgvRolesData.Rows[index].Cells["idRol"].Value.ToString();
                 TxtNombre.Text = dgvRolesData.Rows[index].Cells["Descripcion"].Value.ToString();
@@ -149,7 +155,7 @@ namespace CapaPresentacion
                 }
 
                 //Listar Modulos del Rol
-                int IdRol = Convert.ToInt32(TxtIdRol.Text);
+                int IdRol = Convert.ToInt32(dgvRolesData.Rows[index].Cells["idRol"].Value.ToString());
                 List<Modulo> listaModulos = new CN_Modulos().Listar(IdRol);
                 foreach (Modulo modulos in listaModulos)
                 {
@@ -174,7 +180,7 @@ namespace CapaPresentacion
                 Incluye = (bool)dgvModulosData.Rows[e.RowIndex].Cells["Incluye"].Value;
                 Modifica = (bool)dgvModulosData.Rows[e.RowIndex].Cells["Modifica"].Value;
 
-                bool insert = new CN_Modulos().Editar(Convert.ToInt32(TxtIdRol.Text), Convert.ToInt32(dgvModulosData.Rows[e.RowIndex].Cells["idModulo"].Value), Visualiza, Incluye, Modifica);
+                bool insert = new CN_Modulos().Editar(Convert.ToInt32(TxtIdRol.Text), Convert.ToInt32(dgvModulosData.Rows[e.RowIndex].Cells["IdModulo"].Value), Visualiza, Incluye, Modifica);
             }
         }
     }
