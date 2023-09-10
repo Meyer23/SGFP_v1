@@ -22,7 +22,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT Id, Nombres, Apellidos, Documento, Direccion, FechaNacimiento, Telefono1, Telefono2, Correo, Activo FROM Empleados";
+                    string query = "SELECT e.Id, Nombres, Apellidos, Documento, Direccion, FechaNacimiento, Telefono1, Telefono2, Correo, e.Activo FROM Empleados e, dbo.Usuarios u where u.id <> e.id;";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;

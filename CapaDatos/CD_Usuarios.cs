@@ -91,7 +91,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "";
+                    string query = "select u.id, e.documento, u.login, e.nombres, e.apellidos, r.nombre Rol, s.Descripcion Sucursal, u.activo from dbo.Empleados e inner join dbo.Usuarios u on e.id = u.idEmpleado inner join dbo.Roles r on u.idRol = r.id inner join dbo.Sucursales s on s.id = u.idSucursal;";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
