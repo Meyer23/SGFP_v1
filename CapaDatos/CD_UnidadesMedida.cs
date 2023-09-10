@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class CD_Impuestos
+    public class CD_UnidadesMedida
     {
-        public List<Impuesto> Listar()
+        public List<UnidadMedida> Listar()
         {
-            List<Impuesto> Impuestos = new List<Impuesto>();
+            List<UnidadMedida> UnidadesMedida = new List<UnidadMedida>();
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "SELECT id, TipoImpuesto, Descripcion, PorcIVA, FactorGravada, FactorIVA, Activo FROM Impuestos";
+                    string query = "SELECT id, Abreviacion, Descripcion, Activo FROM UnidadesMedidas";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -29,14 +29,11 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            Impuestos.Add(new Impuesto
+                            UnidadesMedida.Add(new UnidadMedida
                             {
                                 Id = Convert.ToInt32(reader["id"]),
-                                TipoImpuesto = Convert.ToInt32(reader["TipoImpuesto"]),
+                                Abreviacion = reader["Abreviacion"].ToString(),
                                 Descripcion = reader["Descripcion"].ToString(),
-                                PorcIVA = Convert.ToDecimal(reader["PorcIVA"]),
-                                FactorGravada = Convert.ToDecimal(reader["FactorGravada"]),
-                                FactorIVA = Convert.ToDecimal(reader["FactorIVA"]),
                                 Activo = Convert.ToBoolean(reader["Activo"])
                             });
                         }
@@ -45,15 +42,15 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    Impuestos = new List<Impuesto>();
+                    UnidadesMedida = new List<UnidadMedida>();
                 }
             }
-            return Impuestos;
+            return UnidadesMedida;
         }
 
-        public int Registrar(Impuesto obj, out string Mensaje)
+        public int Registrar(UnidadMedida obj, out string Mensaje)
         {
-            int IdImpuesto = 0;
+            int IdUnidadMedida = 0;
             Mensaje = string.Empty;
 
             try
@@ -61,33 +58,30 @@ namespace CapaDatos
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("sp_impuesto_insertar", con);
+                    SqlCommand cmd = new SqlCommand("sp_unidadMedida_insertar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@TipoImpuesto", obj.TipoImpuesto);
+                    cmd.Parameters.AddWithValue("@Abreviacion", obj.Abreviacion);
                     cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
-                    cmd.Parameters.AddWithValue("@PorcIVA", obj.PorcIVA);
-                    cmd.Parameters.AddWithValue("@FactorGravada", obj.FactorGravada);
-                    cmd.Parameters.AddWithValue("@FactorIVA", obj.FactorIVA);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
-                    cmd.Parameters.Add("@IdImpuesto", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@IdUnidadMedida", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.ExecuteNonQuery();
 
-                    IdImpuesto = Convert.ToInt32(cmd.Parameters["@IdImpuesto"].Value);
+                    IdUnidadMedida = Convert.ToInt32(cmd.Parameters["@IdUnidadMedida"].Value);
                     Mensaje = cmd.Parameters["@Mensaje"].ToString();
                 }
             }
             catch (Exception ex)
             {
-                IdImpuesto = 0;
+                IdUnidadMedida = 0;
                 Mensaje = ex.Message;
             }
-            return IdImpuesto;
+            return IdUnidadMedida;
         }
 
-        public bool Editar(Impuesto obj, out string Mensaje)
+        public bool Editar(UnidadMedida obj, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = string.Empty;
@@ -97,15 +91,12 @@ namespace CapaDatos
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("sp_impuesto_editar", con);
+                    SqlCommand cmd = new SqlCommand("sp_unidadMedida_editar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@idImpuesto", obj.Id);
-                    cmd.Parameters.AddWithValue("@TipoImpuesto", obj.TipoImpuesto);
+                    cmd.Parameters.AddWithValue("@IdUnidadMedida", obj.Id);
+                    cmd.Parameters.AddWithValue("@Abreviacion", obj.Abreviacion);
                     cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
-                    cmd.Parameters.AddWithValue("@PorcIVA", obj.PorcIVA);
-                    cmd.Parameters.AddWithValue("@FactorGravada", obj.FactorGravada);
-                    cmd.Parameters.AddWithValue("@FactorIVA", obj.FactorIVA);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

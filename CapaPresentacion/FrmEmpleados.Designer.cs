@@ -48,7 +48,7 @@
             this.TxtTelefono2 = new System.Windows.Forms.TextBox();
             this.TxtCorreo = new System.Windows.Forms.TextBox();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
-            this.LblDetalleUsuario = new System.Windows.Forms.Label();
+            this.LblDetalleEmpleado = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -234,17 +234,17 @@
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = false;
             // 
-            // LblDetalleUsuario
+            // LblDetalleEmpleado
             // 
-            this.LblDetalleUsuario.AutoSize = true;
-            this.LblDetalleUsuario.BackColor = System.Drawing.Color.White;
-            this.LblDetalleUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleUsuario.Location = new System.Drawing.Point(11, 20);
-            this.LblDetalleUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblDetalleUsuario.Name = "LblDetalleUsuario";
-            this.LblDetalleUsuario.Size = new System.Drawing.Size(135, 20);
-            this.LblDetalleUsuario.TabIndex = 19;
-            this.LblDetalleUsuario.Text = "Detalle Empleado";
+            this.LblDetalleEmpleado.AutoSize = true;
+            this.LblDetalleEmpleado.BackColor = System.Drawing.Color.White;
+            this.LblDetalleEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDetalleEmpleado.Location = new System.Drawing.Point(11, 20);
+            this.LblDetalleEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblDetalleEmpleado.Name = "LblDetalleEmpleado";
+            this.LblDetalleEmpleado.Size = new System.Drawing.Size(135, 20);
+            this.LblDetalleEmpleado.TabIndex = 19;
+            this.LblDetalleEmpleado.Text = "Detalle Empleado";
             // 
             // dgvData
             // 
@@ -543,7 +543,7 @@
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.LblDetalleUsuario);
+            this.Controls.Add(this.LblDetalleEmpleado);
             this.Controls.Add(this.ChkActivo);
             this.Controls.Add(this.TxtCorreo);
             this.Controls.Add(this.TxtTelefono2);
@@ -590,7 +590,7 @@
         private System.Windows.Forms.TextBox TxtTelefono2;
         private System.Windows.Forms.TextBox TxtCorreo;
         private System.Windows.Forms.CheckBox ChkActivo;
-        private System.Windows.Forms.Label LblDetalleUsuario;
+        private System.Windows.Forms.Label LblDetalleEmpleado;
         private FontAwesome.Sharp.IconButton BtnGuardar;
         private FontAwesome.Sharp.IconButton BtnEditar;
         private System.Windows.Forms.DataGridView dgvData;

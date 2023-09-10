@@ -165,6 +165,7 @@
             this.SubMenuUnidadesDeMedida.Name = "SubMenuUnidadesDeMedida";
             this.SubMenuUnidadesDeMedida.Size = new System.Drawing.Size(190, 30);
             this.SubMenuUnidadesDeMedida.Text = "Unidades de Medida";
+            this.SubMenuUnidadesDeMedida.Click += new System.EventHandler(this.SubMenuUnidadesDeMedida_Click);
             // 
             // SubMenuTiposDeImpuesto
             // 

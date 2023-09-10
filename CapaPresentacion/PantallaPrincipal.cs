@@ -117,5 +117,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(MantenedorMenu, new FrmImpuestos());
         }
+
+        private void SubMenuUnidadesDeMedida_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenedorMenu, new FrmUnidadesMedida());
+        }
     }
 }
