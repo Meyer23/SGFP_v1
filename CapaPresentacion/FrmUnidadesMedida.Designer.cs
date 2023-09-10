@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtIndex = new System.Windows.Forms.TextBox();
             this.TxtIdUnidadMedida = new System.Windows.Forms.TextBox();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
@@ -44,16 +44,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LblListaUnidadesMedida = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.BtnBuscar = new FontAwesome.Sharp.IconButton();
-            this.TxtBusqueda = new System.Windows.Forms.TextBox();
-            this.ComboBusqueda = new System.Windows.Forms.ComboBox();
-            this.LblBuscarPor = new System.Windows.Forms.Label();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idUnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Abreviacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.BtnBuscar = new FontAwesome.Sharp.IconButton();
+            this.TxtBusqueda = new System.Windows.Forms.TextBox();
+            this.ComboBusqueda = new System.Windows.Forms.ComboBox();
+            this.LblBuscarPor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,15 +210,15 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
@@ -230,23 +230,59 @@
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(834, 384);
             this.dgvData.TabIndex = 79;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
+            // 
+            // BtnSeleccionar
+            // 
+            this.BtnSeleccionar.HeaderText = "";
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.ReadOnly = true;
+            this.BtnSeleccionar.Width = 30;
+            // 
+            // idUnidadMedida
+            // 
+            this.idUnidadMedida.HeaderText = "idUnidadMedida";
+            this.idUnidadMedida.Name = "idUnidadMedida";
+            this.idUnidadMedida.ReadOnly = true;
+            this.idUnidadMedida.Visible = false;
+            // 
+            // Abreviacion
+            // 
+            this.Abreviacion.HeaderText = "Abreviación";
+            this.Abreviacion.Name = "Abreviacion";
+            this.Abreviacion.ReadOnly = true;
+            this.Abreviacion.Width = 150;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 150;
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // BtnLimpiar
             // 
@@ -315,42 +351,6 @@
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
             this.LblBuscarPor.TabIndex = 82;
             this.LblBuscarPor.Text = "Buscar por:";
-            // 
-            // BtnSeleccionar
-            // 
-            this.BtnSeleccionar.HeaderText = "";
-            this.BtnSeleccionar.Name = "BtnSeleccionar";
-            this.BtnSeleccionar.ReadOnly = true;
-            this.BtnSeleccionar.Width = 30;
-            // 
-            // idUnidadMedida
-            // 
-            this.idUnidadMedida.HeaderText = "idUnidadMedida";
-            this.idUnidadMedida.Name = "idUnidadMedida";
-            this.idUnidadMedida.ReadOnly = true;
-            this.idUnidadMedida.Visible = false;
-            // 
-            // Abreviacion
-            // 
-            this.Abreviacion.HeaderText = "Abreviación";
-            this.Abreviacion.Name = "Abreviacion";
-            this.Abreviacion.ReadOnly = true;
-            this.Abreviacion.Width = 150;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 150;
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FrmUnidadesMedida
             // 

@@ -84,7 +84,7 @@ namespace CapaPresentacion
         private void limpiar()
         {
             TxtIndex.Clear();
-            TxtIdImpuesto.Clear();
+            TxtIdImpuesto.Text = "0";
             TxtTipoImpuesto.Clear();
             TxtDescripcion.Clear();
             TxtPorcIVA.Clear();

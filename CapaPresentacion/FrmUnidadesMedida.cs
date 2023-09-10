@@ -55,7 +55,7 @@ namespace CapaPresentacion
                     if (resultado)
                     {
                         DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
-                        row.Cells["IdUnidadMedida"].Value = TxtIdUnidadMedida.Text;
+                        row.Cells["idUnidadMedida"].Value = TxtIdUnidadMedida.Text;
                         row.Cells["Abreviacion"].Value = TxtAbreviacion.Text;
                         row.Cells["Descripcion"].Value = TxtDescripcion.Text;
                         row.Cells["Activo"].Value = ChkActivo.Checked;
@@ -78,7 +78,7 @@ namespace CapaPresentacion
         private void limpiar()
         {
             TxtIndex.Clear();
-            TxtIdUnidadMedida.Clear();
+            TxtIdUnidadMedida.Text = "0";
             TxtAbreviacion.Clear();
             TxtDescripcion.Clear();
             TxtBusqueda.Select();
@@ -136,7 +136,7 @@ namespace CapaPresentacion
                 if (index >= 0)
                 {
                     TxtIndex.Text = index.ToString();
-                    TxtIdUnidadMedida.Text = dgvData.Rows[index].Cells["IdUnidadMedida"].Value.ToString();
+                    TxtIdUnidadMedida.Text = dgvData.Rows[index].Cells["idUnidadMedida"].Value.ToString();
                     TxtAbreviacion.Text = dgvData.Rows[index].Cells["Abreviacion"].Value.ToString();
                     TxtDescripcion.Text = dgvData.Rows[index].Cells["Descripcion"].Value.ToString();                   
                     estadoUnidadMedida = (bool)dgvData.Rows[index].Cells["Activo"].Value;

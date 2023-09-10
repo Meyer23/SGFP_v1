@@ -75,6 +75,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
+                IdRol = 0;
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return IdRol;

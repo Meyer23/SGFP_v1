@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -123,6 +124,38 @@ namespace CapaDatos
             }
 
             return Respuesta;
+        }
+
+        public List<Impuesto> ObtenerImpuestos()
+        {
+            List<Impuesto> impuestos = new List<Impuesto>();
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT Descripcion FROM Impuestos WHERE Activo = 1";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            impuestos.Add(new Impuesto
+                            {
+                                Descripcion = reader["Descripcion"].ToString()
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return impuestos;
+            }
         }
     }
 }

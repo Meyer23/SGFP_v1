@@ -96,7 +96,7 @@ namespace CapaPresentacion
         private void limpiar()
         {
             TxtIndex.Clear();
-            TxtIdEmpleado.Clear();
+            TxtIdEmpleado.Text = "0";
             TxtNombres.Clear();
             TxtApellidos.Clear();
             TxtDocumento.Clear();

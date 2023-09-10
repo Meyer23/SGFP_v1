@@ -27,5 +27,10 @@ namespace CapaNegocio
         {
             return cd_impuesto.Editar(obj, out Mensaje);
         }
+
+        public List<Impuesto> ObtenerImpuestos()
+        {
+            return cd_impuesto.ObtenerImpuestos();
+        }
     }
 }

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Cajas.cs" />
+    <Compile Include="CD_Categorias.cs" />
     <Compile Include="CD_Empleados.cs" />
     <Compile Include="CD_Impuestos.cs" />
     <Compile Include="CD_Modulos.cs" />

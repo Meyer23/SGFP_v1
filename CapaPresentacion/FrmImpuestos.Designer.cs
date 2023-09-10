@@ -53,7 +53,6 @@
             this.LblDetalleUnidadMedida = new System.Windows.Forms.Label();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
             this.TxtFactorIVA = new System.Windows.Forms.TextBox();
-            this.TxtFactorGravada = new System.Windows.Forms.TextBox();
             this.TxtPorcIVA = new System.Windows.Forms.TextBox();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.TxtTipoImpuesto = new System.Windows.Forms.TextBox();
@@ -63,6 +62,7 @@
             this.LblDescripcion = new System.Windows.Forms.Label();
             this.LblTipoImpuesto = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.TxtFactorGravada = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -345,14 +345,6 @@
             this.TxtFactorIVA.TabIndex = 46;
             this.TxtFactorIVA.Validating += new System.ComponentModel.CancelEventHandler(this.TxtFactorIVA_Validating);
             // 
-            // TxtFactorGravada
-            // 
-            this.TxtFactorGravada.Location = new System.Drawing.Point(12, 240);
-            this.TxtFactorGravada.Name = "TxtFactorGravada";
-            this.TxtFactorGravada.Size = new System.Drawing.Size(173, 20);
-            this.TxtFactorGravada.TabIndex = 45;
-            this.TxtFactorGravada.Validating += new System.ComponentModel.CancelEventHandler(this.TxtFactorGravada_Validating);
-            // 
             // TxtPorcIVA
             // 
             this.TxtPorcIVA.Location = new System.Drawing.Point(12, 185);
@@ -437,6 +429,14 @@
             this.label1.Size = new System.Drawing.Size(226, 528);
             this.label1.TabIndex = 32;
             // 
+            // TxtFactorGravada
+            // 
+            this.TxtFactorGravada.Location = new System.Drawing.Point(12, 240);
+            this.TxtFactorGravada.Name = "TxtFactorGravada";
+            this.TxtFactorGravada.Size = new System.Drawing.Size(173, 20);
+            this.TxtFactorGravada.TabIndex = 45;
+            this.TxtFactorGravada.Validating += new System.ComponentModel.CancelEventHandler(this.TxtFactorGravada_Validating);
+            // 
             // FrmImpuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,7 +492,6 @@
         private System.Windows.Forms.Label LblDetalleUnidadMedida;
         private System.Windows.Forms.CheckBox ChkActivo;
         private System.Windows.Forms.TextBox TxtFactorIVA;
-        private System.Windows.Forms.TextBox TxtFactorGravada;
         private System.Windows.Forms.TextBox TxtPorcIVA;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.TextBox TxtTipoImpuesto;
@@ -510,5 +509,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FactorGravada;
         private System.Windows.Forms.DataGridViewTextBoxColumn FactorIVA;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
+        private System.Windows.Forms.TextBox TxtFactorGravada;
     }
 }
