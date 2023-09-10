@@ -9,7 +9,7 @@ using CapaEntidad;
 
 namespace CapaNegocio
 {
-    public class CN_Empleado
+    public class CN_Empleados
     {
         private CD_Empleados cd_Empleado = new CD_Empleados();
 

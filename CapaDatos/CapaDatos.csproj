@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CD_Bancos.cs" />
     <Compile Include="CD_Cajas.cs" />
     <Compile Include="CD_Categorias.cs" />
+    <Compile Include="CD_Clientes.cs" />
     <Compile Include="CD_Empleados.cs" />
+    <Compile Include="CD_FormasPago.cs" />
     <Compile Include="CD_Impuestos.cs" />
     <Compile Include="CD_Modulos.cs" />
     <Compile Include="CD_Proveedores.cs" />
@@ -53,6 +56,7 @@
     <Compile Include="CD_Sucursal.cs" />
     <Compile Include="CD_UnidadesMedida.cs" />
     <Compile Include="CD_Usuarios.cs" />
+    <Compile Include="CD_Valores.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
