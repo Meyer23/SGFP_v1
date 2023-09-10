@@ -122,5 +122,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(MantenedorMenu, new FrmUnidadesMedida());
         }
+
+        private void ProveedoresMenu_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(ProveedoresMenu, new FrmProveedores());
+        }
     }
 }
