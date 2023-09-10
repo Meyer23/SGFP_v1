@@ -127,5 +127,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(ProveedoresMenu, new FrmProveedores());
         }
+
+        private void SubMenuTiposDeValor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenedorMenu, new FrmValores());
+        }
     }
 }

@@ -108,6 +108,8 @@ namespace CapaPresentacion
             TxtTelefono1.Clear();
             TxtTelefono2.Clear();
             TxtCorreo.Clear();
+            radioButtonFisica.Checked = true;
+            radioButtonJuridica.Checked = false;
             TxtBusqueda.Select();
             TxtNombre.ReadOnly = false;
             TxtDocumento.ReadOnly = false;

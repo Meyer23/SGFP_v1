@@ -125,6 +125,12 @@
     <Compile Include="FrmUnidadesMedida.Designer.cs">
       <DependentUpon>FrmUnidadesMedida.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmValores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmValores.Designer.cs">
+      <DependentUpon>FrmValores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUnidadesMedida.resx">
       <DependentUpon>FrmUnidadesMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmValores.resx">
+      <DependentUpon>FrmValores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVerDetalleCompra.resx">
       <DependentUpon>FrmVerDetalleCompra.cs</DependentUpon>
