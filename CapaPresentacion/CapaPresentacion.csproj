@@ -131,6 +131,12 @@
     <Compile Include="FrmRoles.Designer.cs">
       <DependentUpon>FrmRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTimbrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTimbrados.Designer.cs">
+      <DependentUpon>FrmTimbrados.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUnidadesMedida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRoles.resx">
       <DependentUpon>FrmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTimbrados.resx">
+      <DependentUpon>FrmTimbrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUnidadesMedida.resx">
       <DependentUpon>FrmUnidadesMedida.cs</DependentUpon>

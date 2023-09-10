@@ -211,6 +211,7 @@
             this.SubMenuTimbrados.Name = "SubMenuTimbrados";
             this.SubMenuTimbrados.Size = new System.Drawing.Size(190, 30);
             this.SubMenuTimbrados.Text = "Timbrados";
+            this.SubMenuTimbrados.Click += new System.EventHandler(this.SubMenuTimbrados_Click);
             // 
             // SubMenuTiposDeValor
             // 

@@ -56,6 +56,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timbrado.cs" />
     <Compile Include="UnidadMedida.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Models\UsuarioResponse.cs" />

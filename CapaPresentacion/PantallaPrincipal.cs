@@ -142,5 +142,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(MantenedorMenu, new FrmBancos());
         }
+
+        private void SubMenuTimbrados_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenedorMenu, new FrmTimbrados());
+        }
     }
 }
