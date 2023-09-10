@@ -83,11 +83,11 @@
     <Compile Include="FrmEmpleados.Designer.cs">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPermisos.cs">
+    <Compile Include="FrmImpuestos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPermisos.Designer.cs">
-      <DependentUpon>FrmPermisos.cs</DependentUpon>
+    <Compile Include="FrmImpuestos.Designer.cs">
+      <DependentUpon>FrmImpuestos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProductos.cs">
       <SubType>Form</SubType>
@@ -166,8 +166,8 @@
     <EmbeddedResource Include="FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPermisos.resx">
-      <DependentUpon>FrmPermisos.cs</DependentUpon>
+    <EmbeddedResource Include="FrmImpuestos.resx">
+      <DependentUpon>FrmImpuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
