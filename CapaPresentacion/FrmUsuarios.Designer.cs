@@ -56,8 +56,10 @@
             this.TxtIndex = new System.Windows.Forms.TextBox();
             this.LblSucursal = new System.Windows.Forms.Label();
             this.ComboSucursal = new System.Windows.Forms.ComboBox();
-            this.LblCaja = new System.Windows.Forms.Label();
-            this.ComboCaja = new System.Windows.Forms.ComboBox();
+            this.LblNombres = new System.Windows.Forms.Label();
+            this.TxtNombres = new System.Windows.Forms.TextBox();
+            this.TxtApellidos = new System.Windows.Forms.TextBox();
+            this.LblApellidos = new System.Windows.Forms.Label();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,12 +68,7 @@
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.LblNombres = new System.Windows.Forms.Label();
-            this.TxtNombres = new System.Windows.Forms.TextBox();
-            this.TxtApellidos = new System.Windows.Forms.TextBox();
-            this.LblApellidos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,7 +156,7 @@
             this.LblRol.AutoSize = true;
             this.LblRol.BackColor = System.Drawing.Color.White;
             this.LblRol.ForeColor = System.Drawing.Color.Black;
-            this.LblRol.Location = new System.Drawing.Point(8, 595);
+            this.LblRol.Location = new System.Drawing.Point(12, 541);
             this.LblRol.Name = "LblRol";
             this.LblRol.Size = new System.Drawing.Size(37, 20);
             this.LblRol.TabIndex = 11;
@@ -169,7 +166,7 @@
             // 
             this.ComboRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboRol.FormattingEnabled = true;
-            this.ComboRol.Location = new System.Drawing.Point(12, 629);
+            this.ComboRol.Location = new System.Drawing.Point(12, 580);
             this.ComboRol.Name = "ComboRol";
             this.ComboRol.Size = new System.Drawing.Size(248, 28);
             this.ComboRol.TabIndex = 12;
@@ -230,7 +227,7 @@
             // 
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.BackColor = System.Drawing.Color.White;
-            this.ChkActivo.Location = new System.Drawing.Point(12, 663);
+            this.ChkActivo.Location = new System.Drawing.Point(16, 629);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(78, 24);
             this.ChkActivo.TabIndex = 17;
@@ -260,7 +257,6 @@
             this.Apellidos,
             this.Rol,
             this.Sucursal,
-            this.Caja,
             this.Activo});
             this.dgvData.Location = new System.Drawing.Point(320, 117);
             this.dgvData.MultiSelect = false;
@@ -394,25 +390,39 @@
             this.ComboSucursal.Size = new System.Drawing.Size(248, 28);
             this.ComboSucursal.TabIndex = 38;
             // 
-            // LblCaja
+            // LblNombres
             // 
-            this.LblCaja.AutoSize = true;
-            this.LblCaja.BackColor = System.Drawing.Color.White;
-            this.LblCaja.ForeColor = System.Drawing.Color.Black;
-            this.LblCaja.Location = new System.Drawing.Point(8, 531);
-            this.LblCaja.Name = "LblCaja";
-            this.LblCaja.Size = new System.Drawing.Size(45, 20);
-            this.LblCaja.TabIndex = 39;
-            this.LblCaja.Text = "Caja:";
+            this.LblNombres.AutoSize = true;
+            this.LblNombres.BackColor = System.Drawing.Color.White;
+            this.LblNombres.Location = new System.Drawing.Point(12, 117);
+            this.LblNombres.Name = "LblNombres";
+            this.LblNombres.Size = new System.Drawing.Size(77, 20);
+            this.LblNombres.TabIndex = 41;
+            this.LblNombres.Text = "Nombres:";
             // 
-            // ComboCaja
+            // TxtNombres
             // 
-            this.ComboCaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboCaja.FormattingEnabled = true;
-            this.ComboCaja.Location = new System.Drawing.Point(12, 554);
-            this.ComboCaja.Name = "ComboCaja";
-            this.ComboCaja.Size = new System.Drawing.Size(248, 28);
-            this.ComboCaja.TabIndex = 40;
+            this.TxtNombres.Location = new System.Drawing.Point(12, 140);
+            this.TxtNombres.Name = "TxtNombres";
+            this.TxtNombres.Size = new System.Drawing.Size(248, 26);
+            this.TxtNombres.TabIndex = 42;
+            // 
+            // TxtApellidos
+            // 
+            this.TxtApellidos.Location = new System.Drawing.Point(8, 202);
+            this.TxtApellidos.Name = "TxtApellidos";
+            this.TxtApellidos.Size = new System.Drawing.Size(248, 26);
+            this.TxtApellidos.TabIndex = 44;
+            // 
+            // LblApellidos
+            // 
+            this.LblApellidos.AutoSize = true;
+            this.LblApellidos.BackColor = System.Drawing.Color.White;
+            this.LblApellidos.Location = new System.Drawing.Point(8, 179);
+            this.LblApellidos.Name = "LblApellidos";
+            this.LblApellidos.Size = new System.Drawing.Size(77, 20);
+            this.LblApellidos.TabIndex = 43;
+            this.LblApellidos.Text = "Apellidos:";
             // 
             // BtnSeleccionar
             // 
@@ -481,14 +491,6 @@
             this.Sucursal.ReadOnly = true;
             this.Sucursal.Width = 150;
             // 
-            // Caja
-            // 
-            this.Caja.HeaderText = "Caja";
-            this.Caja.MinimumWidth = 8;
-            this.Caja.Name = "Caja";
-            this.Caja.ReadOnly = true;
-            this.Caja.Width = 150;
-            // 
             // Activo
             // 
             this.Activo.HeaderText = "Activo";
@@ -498,40 +500,6 @@
             this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Activo.Width = 150;
-            // 
-            // LblNombres
-            // 
-            this.LblNombres.AutoSize = true;
-            this.LblNombres.BackColor = System.Drawing.Color.White;
-            this.LblNombres.Location = new System.Drawing.Point(12, 117);
-            this.LblNombres.Name = "LblNombres";
-            this.LblNombres.Size = new System.Drawing.Size(77, 20);
-            this.LblNombres.TabIndex = 41;
-            this.LblNombres.Text = "Nombres:";
-            // 
-            // TxtNombres
-            // 
-            this.TxtNombres.Location = new System.Drawing.Point(12, 140);
-            this.TxtNombres.Name = "TxtNombres";
-            this.TxtNombres.Size = new System.Drawing.Size(248, 26);
-            this.TxtNombres.TabIndex = 42;
-            // 
-            // TxtApellidos
-            // 
-            this.TxtApellidos.Location = new System.Drawing.Point(8, 202);
-            this.TxtApellidos.Name = "TxtApellidos";
-            this.TxtApellidos.Size = new System.Drawing.Size(248, 26);
-            this.TxtApellidos.TabIndex = 44;
-            // 
-            // LblApellidos
-            // 
-            this.LblApellidos.AutoSize = true;
-            this.LblApellidos.BackColor = System.Drawing.Color.White;
-            this.LblApellidos.Location = new System.Drawing.Point(8, 179);
-            this.LblApellidos.Name = "LblApellidos";
-            this.LblApellidos.Size = new System.Drawing.Size(77, 20);
-            this.LblApellidos.TabIndex = 43;
-            this.LblApellidos.Text = "Apellidos:";
             // 
             // FrmUsuarios
             // 
@@ -543,8 +511,6 @@
             this.Controls.Add(this.LblApellidos);
             this.Controls.Add(this.TxtNombres);
             this.Controls.Add(this.LblNombres);
-            this.Controls.Add(this.ComboCaja);
-            this.Controls.Add(this.LblCaja);
             this.Controls.Add(this.ComboSucursal);
             this.Controls.Add(this.LblSucursal);
             this.Controls.Add(this.TxtIndex);
@@ -608,8 +574,10 @@
         private System.Windows.Forms.TextBox TxtIndex;
         private System.Windows.Forms.Label LblSucursal;
         private System.Windows.Forms.ComboBox ComboSucursal;
-        private System.Windows.Forms.Label LblCaja;
-        private System.Windows.Forms.ComboBox ComboCaja;
+        private System.Windows.Forms.Label LblNombres;
+        private System.Windows.Forms.TextBox TxtNombres;
+        private System.Windows.Forms.TextBox TxtApellidos;
+        private System.Windows.Forms.Label LblApellidos;
         private System.Windows.Forms.DataGridViewButtonColumn BtnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
@@ -618,11 +586,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sucursal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Caja;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
-        private System.Windows.Forms.Label LblNombres;
-        private System.Windows.Forms.TextBox TxtNombres;
-        private System.Windows.Forms.TextBox TxtApellidos;
-        private System.Windows.Forms.Label LblApellidos;
     }
 }

@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad.Models
 {
-    public class UsuarioRequest
+    public class UsuarioEditarRequest
     {
-        public string Login { get; set; }
+        public int IdUsuario { get; set; }
 
-        public string Password { get; set; }    
-
-        public int EmpleadoId { get; set; }
+        public string PassWord { get; set; }
 
         public string UsuarioRol { get; set; }
-
-        public string UsuarioSucursal { get; set; }
 
         public bool Activo { get; set; }
     }

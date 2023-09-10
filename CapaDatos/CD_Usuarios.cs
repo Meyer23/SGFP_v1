@@ -91,17 +91,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select u.id ID, e.Documento, u.Login, e.Nombres, e.Apellidos, r.Nombre as Rol, " +
-                        "s.Descripcion as Sucursal, c.Descripcion as DescripcionCaja, u.Activo " +
-                        "from dbo.Empleados e " +
-                        "inner join dbo.Usuarios u " +
-                        "on e.id = u.idEmpleado " +
-                        "inner join dbo.Cajas c " +
-                        "on u.idSucursalCaja = c.id " +
-                        "inner join dbo.Sucursales s " +
-                        "on c.idSucursal = s.id " +
-                        "inner join dbo.Roles r " +
-                        "on u.idRol = r.id;";
+                    string query = "";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -120,7 +110,6 @@ namespace CapaDatos
                                 Apellidos = reader["APELLIDOS"].ToString(),
                                 NombreRol = reader["ROL"].ToString(),
                                 NombreSucursal = reader["SUCURSAL"].ToString(),
-                                DescripcionCaja = reader["DESCRIPCIONCAJA"].ToString(),
                                 Activo = Convert.ToBoolean(reader["Activo"])
                             });
                         }
@@ -150,7 +139,6 @@ namespace CapaDatos
                     con.Open();
                     cmd.Parameters.AddWithValue("@Login", obj.Login);
                     cmd.Parameters.AddWithValue("@Password", obj.Password);
-                    cmd.Parameters.AddWithValue("@UsuarioSucursalCaja", obj.UsuarioSucursalCaja);
                     cmd.Parameters.AddWithValue("@EmpleadoId", obj.EmpleadoId);
                     cmd.Parameters.AddWithValue("@UsuarioRol", obj.UsuarioRol);
                     cmd.Parameters.AddWithValue("@UsuarioSucursal", obj.UsuarioSucursal);
@@ -170,6 +158,41 @@ namespace CapaDatos
                 Mensaje = ex.Message;
             }
             return idUsuario;
+        }
+
+        public bool Editar(UsuarioEditarRequest obj, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_usuario_editar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@idUsuario", obj.IdUsuario);
+                    cmd.Parameters.AddWithValue("@PassWord", obj.PassWord);
+                    cmd.Parameters.AddWithValue("@usuarioRol", obj.UsuarioRol);
+                    cmd.Parameters.AddWithValue("@Activo", obj.Activo);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Mensaje = (string)cmd.Parameters["@Mensaje"].Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                Mensaje = ex.Message;
+            }
+
+            return Respuesta;
         }
     }
 }

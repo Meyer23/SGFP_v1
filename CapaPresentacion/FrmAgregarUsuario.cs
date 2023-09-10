@@ -20,7 +20,6 @@ namespace CapaPresentacion
             InitializeComponent();
             CargarRoles();
             CargarComboSucursal();
-            CargarComboCajas();
             ComboSucursal.Enabled = false;
         }
 
@@ -121,17 +120,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void CargarComboCajas()
-        {
-            List<Cajas> cajas = new CN_Cajas().ObtenerCajas();
-
-            ComboCaja.DataSource = cajas;
-
-            foreach(Cajas caj in cajas)
-            {
-                ComboCaja.DisplayMember = "DescripcionCaja";
-            }
-        }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -191,7 +179,6 @@ namespace CapaPresentacion
                     Password = TxtPassword.Text,
                     EmpleadoId = Convert.ToInt32(TxtIdEmpleado.Text),
                     UsuarioRol = ComboRol.Text.ToString(),
-                    UsuarioSucursalCaja = ComboCaja.Text.ToString(),
                     UsuarioSucursal = ComboSucursal.Text.ToString(),
                     Activo = (bool)ChkActivo.Checked
                 };

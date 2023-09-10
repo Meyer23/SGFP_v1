@@ -19,7 +19,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             CargarRoles();
-            CargarComboCajas();
             CargarComboSucursal();
         }
 
@@ -63,18 +62,30 @@ namespace CapaPresentacion
         {
             string Mensaje = string.Empty;
 
-            Usuario objUsuario = new Usuario();
+            UsuarioEditarRequest objUsuario = new UsuarioEditarRequest()
+            {
+                IdUsuario = Convert.ToInt32(TxtIdUsuario.Text),
+                PassWord = TxtPassword.Text,
+                UsuarioRol = ComboRol.Text,
+                Activo = (bool)ChkActivo.Checked,
+            };
 
             try
             {
-                
+                bool cN_Usuario = new CN_Usuario().Editar(objUsuario, out Mensaje);
+
+                if (cN_Usuario)
+                {
+                    DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
+                    
+                }
             }
             catch (Exception ex)
             {
 
             }
-
         }
+
 
         private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -118,7 +129,6 @@ namespace CapaPresentacion
                     TxtLogin.Text = dgvData.Rows[index].Cells["Login"].Value.ToString();
                     ComboRol.Text = dgvData.Rows[index].Cells["Rol"].Value.ToString();
                     ComboSucursal.Text = dgvData.Rows[index].Cells["Sucursal"].Value.ToString();
-                    ComboCaja.Text = dgvData.Rows[index].Cells["Caja"].Value.ToString();
                     estadoUsuario = (bool)dgvData.Rows[index].Cells["Activo"].Value;
                     if (estadoUsuario == true)
                     {
@@ -161,18 +171,6 @@ namespace CapaPresentacion
             foreach (Sucursales d in sucursales)
             {
                 ComboSucursal.DisplayMember = "DescripcionSucursal";
-            }
-        }
-
-        private void CargarComboCajas()
-        {
-            List<Cajas> cajas = new CN_Cajas().ObtenerCajas();
-
-            ComboCaja.DataSource = cajas;
-
-            foreach (Cajas caj in cajas)
-            {
-                ComboCaja.DisplayMember = "DescripcionCaja";
             }
         }
     }

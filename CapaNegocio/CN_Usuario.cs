@@ -32,5 +32,10 @@ namespace CapaNegocio
         {
             return cd_usuario.Registrar(obj, out Mensaje);
         }
+
+        public bool Editar(UsuarioEditarRequest obj, out string Mensaje)
+        {
+            return cd_usuario.Editar(obj, out Mensaje);
+        }
     }
 }
