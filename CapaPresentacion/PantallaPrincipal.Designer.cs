@@ -224,6 +224,7 @@
             this.SubMenuFormasDePago.Name = "SubMenuFormasDePago";
             this.SubMenuFormasDePago.Size = new System.Drawing.Size(190, 30);
             this.SubMenuFormasDePago.Text = "Formas de Pago";
+            this.SubMenuFormasDePago.Click += new System.EventHandler(this.SubMenuFormasDePago_Click);
             // 
             // SubMenuBancos
             // 
