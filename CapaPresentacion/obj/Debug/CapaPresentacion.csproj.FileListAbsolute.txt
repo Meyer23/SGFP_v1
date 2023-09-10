@@ -112,7 +112,6 @@ C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\Cap
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmClientes.resources
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmCompras.resources
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmEmpleados.resources
-C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmPermisos.resources
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmProductos.resources
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmRegistrarCompra.resources
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmRegistrarVenta.resources
@@ -165,3 +164,9 @@ C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmPro
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmValores.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmFormasPago.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmBancos.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmBancos.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmFormasPago.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmImpuestos.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmProveedores.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmUnidadesMedida.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmValores.resources
