@@ -231,6 +231,7 @@
             this.SubMenuBancos.Name = "SubMenuBancos";
             this.SubMenuBancos.Size = new System.Drawing.Size(190, 30);
             this.SubMenuBancos.Text = "Bancos";
+            this.SubMenuBancos.Click += new System.EventHandler(this.SubMenuBancos_Click);
             // 
             // ClientesMenu
             // 

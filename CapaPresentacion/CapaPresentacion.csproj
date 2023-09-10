@@ -59,6 +59,12 @@
     <Compile Include="FrmAgregarUsuario.Designer.cs">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBancos.Designer.cs">
+      <DependentUpon>FrmBancos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </Compile>
     <EmbeddedResource Include="FrmAgregarUsuario.resx">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBancos.resx">
+      <DependentUpon>FrmBancos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
