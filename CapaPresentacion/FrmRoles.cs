@@ -87,6 +87,8 @@ namespace CapaPresentacion
 
         private void limpiar()
         {
+            TxtIndex.Clear();
+            TxtIdRol.Text = "0";
             TxtNombre.Clear();
             TxtNombre.ReadOnly = false;
             dgvModulosData.Rows.Clear();

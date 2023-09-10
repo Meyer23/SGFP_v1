@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmEmpleados : Form
+    public partial class FrmProveedores : Form
     {
-        bool estadoEmpleado;
-        public FrmEmpleados()
+        bool estadoProveedor;
+        public FrmProveedores()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace CapaPresentacion
         {
             string Mensaje = string.Empty;
 
-            if (!new CN_Empleado().ValidarCorreo(TxtCorreo.Text))
+            if (!new CN_Proveedores().ValidarCorreo(TxtCorreo.Text))
             {
                 MessageBox.Show("Dirección de correo electrónico no válida, el correo debe tener el formato: nombre@dominio.com");
                 TxtCorreo.Focus();
@@ -32,27 +32,26 @@ namespace CapaPresentacion
             }
             else
             {
-                Empleado objEmpleado = new Empleado()
+                Proveedor objProveedor = new Proveedor()
                 {
-                    Id = Convert.ToInt32(TxtIdEmpleado.Text),
-                    Nombres = TxtNombres.Text,
-                    Apellidos = TxtApellidos.Text,
+                    Id = Convert.ToInt32(TxtIdProveedor.Text),
+                    RazonSocial = TxtRazonSocial.Text,
                     Documento = TxtDocumento.Text,
+                    Contacto = TxtContacto.Text,
                     Direccion = TxtDireccion.Text,
-                    FechaNacimiento = (DateTime)(DtFechaNac.Value),
                     TelefonoUno = TxtTelefono1.Text,
                     TelefonoDos = TxtTelefono2.Text,
                     Correo = TxtCorreo.Text,
                     Activo = (bool)(ChkActivo.Checked)
                 };
 
-                if (objEmpleado.Id == 0)
+                if (objProveedor.Id == 0)
                 {
-                    int idEmpleado = new CN_Empleado().Registrar(objEmpleado, out Mensaje);
+                    int idProveedor = new CN_Proveedores().Registrar(objProveedor, out Mensaje);
 
-                    if (idEmpleado != 0)
+                    if (idProveedor != 0)
                     {
-                        dgvData.Rows.Add(new object[] { "", idEmpleado, TxtNombres.Text, TxtApellidos.Text, TxtDocumento.Text, TxtDireccion.Text, DtFechaNac.Value, TxtTelefono1.Text, TxtTelefono2.Text, TxtCorreo.Text, ChkActivo.Checked });
+                        dgvData.Rows.Add(new object[] { "", idProveedor, TxtRazonSocial.Text, TxtDocumento.Text, TxtContacto.Text, TxtDireccion.Text, TxtTelefono1.Text, TxtTelefono2.Text, TxtCorreo.Text, ChkActivo.Checked });
                         limpiar();
                     }
                     else
@@ -62,27 +61,24 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    bool resultado = new CN_Empleado().Editar(objEmpleado, out Mensaje);
+                    bool resultado = new CN_Proveedores().Editar(objProveedor, out Mensaje);
 
                     if (resultado)
                     {
                         DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
-                        row.Cells["IdEmpleado"].Value = TxtIdEmpleado.Text;
-                        row.Cells["Nombres"].Value = TxtNombres.Text;
-                        row.Cells["Apellidos"].Value = TxtApellidos.Text;
+                        row.Cells["IdProveedor"].Value = TxtIdProveedor.Text;
+                        row.Cells["RazonSocial"].Value = TxtRazonSocial.Text;
                         row.Cells["Documento"].Value = TxtDocumento.Text;
+                        row.Cells["Contacto"].Value = TxtContacto.Text;
                         row.Cells["Direccion"].Value = TxtDireccion.Text;
-                        row.Cells["FechaNac"].Value = DtFechaNac.Value;
                         row.Cells["Telefono1"].Value = TxtTelefono1.Text;
                         row.Cells["Telefono2"].Value = TxtTelefono2.Text;
                         row.Cells["Correo"].Value = TxtCorreo.Text;
                         row.Cells["Activo"].Value = ChkActivo.Checked;
 
                         limpiar();
-                        TxtNombres.ReadOnly = false;
-                        TxtApellidos.ReadOnly = false;
+                        TxtRazonSocial.ReadOnly = false;
                         TxtDocumento.ReadOnly = false;
-                        DtFechaNac.Enabled = true;
                     }
                     else
                     {
@@ -90,33 +86,29 @@ namespace CapaPresentacion
                     }
                 }
             }
-               
         }
 
         private void limpiar()
         {
             TxtIndex.Clear();
-            TxtIdEmpleado.Text = "0";
-            TxtNombres.Clear();
-            TxtApellidos.Clear();
+            TxtIdProveedor.Text = "0";
+            TxtRazonSocial.Clear();
             TxtDocumento.Clear();
+            TxtContacto.Clear();
             TxtDireccion.Clear();
-            DtFechaNac.Value=DateTime.Today;
             TxtTelefono1.Clear();
             TxtTelefono2.Clear();
             TxtCorreo.Clear();
             TxtBusqueda.Select();
-            TxtNombres.ReadOnly = false;
-            TxtApellidos.ReadOnly=false;   
+            TxtRazonSocial.ReadOnly = false;
             TxtDocumento.ReadOnly = false;
-            DtFechaNac.Enabled = true;
         }
 
-        private void FrmEmpleados_Load(object sender, EventArgs e)
+        private void FrmProveedores_Load(object sender, EventArgs e)
         {
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
-                if(columna.Visible && columna.Name != "BtnSeleccionar")
+                if (columna.Visible && columna.Name != "BtnSeleccionar")
                 {
                     ComboBusqueda.Items.Add(columna.Name);
                 }
@@ -124,13 +116,13 @@ namespace CapaPresentacion
 
             ComboBusqueda.SelectedIndex = 0;
 
-            //Listar empleados
-            List<Empleado> listaEmpleado = new CN_Empleado().Listar();
-            foreach(Empleado empleado in listaEmpleado)
+            //Listar proveedores
+            List<Proveedor> listaProveedor = new CN_Proveedores().Listar();
+            foreach (Proveedor proveedor in listaProveedor)
             {
-                dgvData.Rows.Add("", empleado.Id, empleado.Nombres, empleado.Apellidos, empleado.Documento, 
-                                 empleado.Direccion, empleado.FechaNacimiento, empleado.TelefonoUno, empleado.TelefonoDos, 
-                                 empleado.Correo, empleado.Activo);
+                dgvData.Rows.Add("", proveedor.Id, proveedor.RazonSocial, proveedor.Documento, proveedor.Contacto,
+                                 proveedor.Direccion, proveedor.TelefonoUno, proveedor.TelefonoDos,
+                                 proveedor.Correo, proveedor.Activo);
             }
 
             //TxtNombres.Select();
@@ -139,12 +131,12 @@ namespace CapaPresentacion
 
         private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if(e.RowIndex < 0)
+            if (e.RowIndex < 0)
             {
                 return;
             }
-            
-            if(e.ColumnIndex == 0)
+
+            if (e.ColumnIndex == 0)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = Properties.Resources.check_azul.Width;
@@ -152,39 +144,33 @@ namespace CapaPresentacion
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                e.Graphics.DrawImage(Properties.Resources.check_azul,new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.check_azul, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
         }
 
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            TxtNombres.ReadOnly = true;
-            TxtApellidos.ReadOnly = true;
+            TxtRazonSocial.ReadOnly = true;
             TxtDocumento.ReadOnly = true;
-            DtFechaNac.Enabled = false;
 
             if (dgvData.Columns[e.ColumnIndex].Name == "BtnSeleccionar")
             {
                 int index = e.RowIndex;
 
-                if(index >= 0)
+                if (index >= 0)
                 {
                     TxtIndex.Text = index.ToString();
-                    TxtIdEmpleado.Text = dgvData.Rows[index].Cells["IdEmpleado"].Value.ToString();
-                    TxtNombres.Text = dgvData.Rows[index].Cells["Nombres"].Value.ToString();
-                    TxtApellidos.Text = dgvData.Rows[index].Cells["Apellidos"].Value.ToString();
+                    TxtIdProveedor.Text = dgvData.Rows[index].Cells["idProveedor"].Value.ToString();
+                    TxtRazonSocial.Text = dgvData.Rows[index].Cells["RazonSocial"].Value.ToString();
                     TxtDocumento.Text = dgvData.Rows[index].Cells["Documento"].Value.ToString();
+                    TxtContacto.Text = dgvData.Rows[index].Cells["Contacto"].Value.ToString();
                     TxtDireccion.Text = dgvData.Rows[index].Cells["Direccion"].Value.ToString();
-                    if (DateTime.TryParse(dgvData.Rows[index].Cells["FechaNac"].Value.ToString(), out DateTime selectedDate))
-                    {
-                        DtFechaNac.Value = selectedDate;
-                    }
                     TxtTelefono1.Text = dgvData.Rows[index].Cells["Telefono1"].Value.ToString();
                     TxtTelefono2.Text = dgvData.Rows[index].Cells["Telefono2"].Value.ToString();
                     TxtCorreo.Text = dgvData.Rows[index].Cells["Correo"].Value.ToString();
-                    estadoEmpleado = (bool)dgvData.Rows[index].Cells["Activo"].Value;
-                    if (estadoEmpleado == true)
+                    estadoProveedor = (bool)dgvData.Rows[index].Cells["Activo"].Value;
+                    if (estadoProveedor == true)
                     {
                         ChkActivo.Checked = true;
                     }
@@ -200,9 +186,9 @@ namespace CapaPresentacion
         {
             string columnaFiltro = ComboBusqueda.SelectedItem.ToString();
 
-            if(dgvData.Rows.Count > 0)
+            if (dgvData.Rows.Count > 0)
             {
-                foreach(DataGridViewRow row in dgvData.Rows)
+                foreach (DataGridViewRow row in dgvData.Rows)
                 {
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(TxtBusqueda.Text.Trim().ToUpper()))
                     {
@@ -230,35 +216,19 @@ namespace CapaPresentacion
             limpiar();
         }
 
-        private void TxtNombres_Validating(object sender, CancelEventArgs e)
+        private void TxtRazonSocial_Validating(object sender, CancelEventArgs e)
         {
             ErrorProvider errorProvider1 = new ErrorProvider();
-            if (string.IsNullOrEmpty(TxtNombres.Text))
+            if (string.IsNullOrEmpty(TxtRazonSocial.Text))
             {
                 //e.Cancel = true;
                 //TxtNombres.Focus();
-                errorProvider1.SetError(TxtNombres, "Este campo es obligatorio");
+                errorProvider1.SetError(TxtRazonSocial, "Este campo es obligatorio");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider1.SetError(TxtNombres, "");
-            }
-        }
-
-        private void TxtApellidos_Validating(object sender, CancelEventArgs e)
-        {
-            ErrorProvider errorProvider1 = new ErrorProvider();
-            if (string.IsNullOrEmpty(TxtApellidos.Text))
-            {
-                //e.Cancel = true;
-                TxtApellidos.Focus();
-                errorProvider1.SetError(TxtApellidos, "Este campo es obligatorio");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(TxtApellidos, "");
+                errorProvider1.SetError(TxtRazonSocial, "");
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FrmCategorias
+    partial class FrmUnidadesMedida
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtIndex = new System.Windows.Forms.TextBox();
-            this.TxtIdCategoria = new System.Windows.Forms.TextBox();
+            this.TxtIdUnidadMedida = new System.Windows.Forms.TextBox();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.LblDetalleUnidadMedida = new System.Windows.Forms.Label();
+            this.LblDetalleUsuario = new System.Windows.Forms.Label();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
-            this.TxtPorcUtilidad = new System.Windows.Forms.TextBox();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
-            this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.LblImpuesto = new System.Windows.Forms.Label();
-            this.LblPorcUtilidad = new System.Windows.Forms.Label();
+            this.TxtAbreviacion = new System.Windows.Forms.TextBox();
             this.LblDescripcion = new System.Windows.Forms.Label();
-            this.LblNombre = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.LblListaCategorias = new System.Windows.Forms.Label();
+            this.LblAbreviacion = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LblListaUnidadesMedida = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idUnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Abreviacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.ComboBusqueda = new System.Windows.Forms.ComboBox();
             this.LblBuscarPor = new System.Windows.Forms.Label();
-            this.ComboImpuesto = new System.Windows.Forms.ComboBox();
-            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PorcUtilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Impuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,14 +66,14 @@
             this.TxtIndex.Text = "-1";
             this.TxtIndex.Visible = false;
             // 
-            // TxtIdCategoria
+            // TxtIdUnidadMedida
             // 
-            this.TxtIdCategoria.Location = new System.Drawing.Point(159, 55);
-            this.TxtIdCategoria.Name = "TxtIdCategoria";
-            this.TxtIdCategoria.Size = new System.Drawing.Size(26, 20);
-            this.TxtIdCategoria.TabIndex = 77;
-            this.TxtIdCategoria.Text = "0";
-            this.TxtIdCategoria.Visible = false;
+            this.TxtIdUnidadMedida.Location = new System.Drawing.Point(159, 55);
+            this.TxtIdUnidadMedida.Name = "TxtIdUnidadMedida";
+            this.TxtIdUnidadMedida.Size = new System.Drawing.Size(26, 20);
+            this.TxtIdUnidadMedida.TabIndex = 77;
+            this.TxtIdUnidadMedida.Text = "0";
+            this.TxtIdUnidadMedida.Visible = false;
             // 
             // BtnEditar
             // 
@@ -127,17 +121,17 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // LblDetalleUnidadMedida
+            // LblDetalleUsuario
             // 
-            this.LblDetalleUnidadMedida.AutoSize = true;
-            this.LblDetalleUnidadMedida.BackColor = System.Drawing.Color.White;
-            this.LblDetalleUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleUnidadMedida.Location = new System.Drawing.Point(11, 20);
-            this.LblDetalleUnidadMedida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblDetalleUnidadMedida.Name = "LblDetalleUnidadMedida";
-            this.LblDetalleUnidadMedida.Size = new System.Drawing.Size(132, 20);
-            this.LblDetalleUnidadMedida.TabIndex = 74;
-            this.LblDetalleUnidadMedida.Text = "Detalle Categoría";
+            this.LblDetalleUsuario.AutoSize = true;
+            this.LblDetalleUsuario.BackColor = System.Drawing.Color.White;
+            this.LblDetalleUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDetalleUsuario.Location = new System.Drawing.Point(11, 20);
+            this.LblDetalleUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblDetalleUsuario.Name = "LblDetalleUsuario";
+            this.LblDetalleUsuario.Size = new System.Drawing.Size(192, 20);
+            this.LblDetalleUsuario.TabIndex = 74;
+            this.LblDetalleUsuario.Text = "Detalle Unidad de Medida";
             // 
             // ChkActivo
             // 
@@ -145,21 +139,13 @@
             this.ChkActivo.BackColor = System.Drawing.Color.White;
             this.ChkActivo.Checked = true;
             this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkActivo.Location = new System.Drawing.Point(12, 278);
+            this.ChkActivo.Location = new System.Drawing.Point(12, 179);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ChkActivo.Size = new System.Drawing.Size(56, 17);
             this.ChkActivo.TabIndex = 73;
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = false;
-            // 
-            // TxtPorcUtilidad
-            // 
-            this.TxtPorcUtilidad.Location = new System.Drawing.Point(12, 185);
-            this.TxtPorcUtilidad.Name = "TxtPorcUtilidad";
-            this.TxtPorcUtilidad.Size = new System.Drawing.Size(173, 20);
-            this.TxtPorcUtilidad.TabIndex = 70;
-            this.TxtPorcUtilidad.Validating += new System.ComponentModel.CancelEventHandler(this.TxtPorcUtilidad_Validating);
             // 
             // TxtDescripcion
             // 
@@ -169,34 +155,14 @@
             this.TxtDescripcion.TabIndex = 69;
             this.TxtDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDescripcion_Validating);
             // 
-            // TxtNombre
+            // TxtAbreviacion
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(12, 81);
-            this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(173, 20);
-            this.TxtNombre.TabIndex = 68;
-            this.TxtNombre.TabStop = false;
-            this.TxtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNombre_Validating);
-            // 
-            // LblImpuesto
-            // 
-            this.LblImpuesto.AutoSize = true;
-            this.LblImpuesto.BackColor = System.Drawing.Color.White;
-            this.LblImpuesto.Location = new System.Drawing.Point(9, 224);
-            this.LblImpuesto.Name = "LblImpuesto";
-            this.LblImpuesto.Size = new System.Drawing.Size(53, 13);
-            this.LblImpuesto.TabIndex = 66;
-            this.LblImpuesto.Text = "Impuesto:";
-            // 
-            // LblPorcUtilidad
-            // 
-            this.LblPorcUtilidad.AutoSize = true;
-            this.LblPorcUtilidad.BackColor = System.Drawing.Color.White;
-            this.LblPorcUtilidad.Location = new System.Drawing.Point(9, 168);
-            this.LblPorcUtilidad.Name = "LblPorcUtilidad";
-            this.LblPorcUtilidad.Size = new System.Drawing.Size(99, 13);
-            this.LblPorcUtilidad.TabIndex = 65;
-            this.LblPorcUtilidad.Text = "Porcentaje Utilidad:";
+            this.TxtAbreviacion.Location = new System.Drawing.Point(12, 81);
+            this.TxtAbreviacion.Name = "TxtAbreviacion";
+            this.TxtAbreviacion.Size = new System.Drawing.Size(173, 20);
+            this.TxtAbreviacion.TabIndex = 68;
+            this.TxtAbreviacion.TabStop = false;
+            this.TxtAbreviacion.Validating += new System.ComponentModel.CancelEventHandler(this.TxtAbreviacion_Validating);
             // 
             // LblDescripcion
             // 
@@ -208,81 +174,115 @@
             this.LblDescripcion.TabIndex = 64;
             this.LblDescripcion.Text = "Descripción:";
             // 
-            // LblNombre
+            // LblAbreviacion
             // 
-            this.LblNombre.AutoSize = true;
-            this.LblNombre.BackColor = System.Drawing.Color.White;
-            this.LblNombre.Location = new System.Drawing.Point(9, 64);
-            this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(47, 13);
-            this.LblNombre.TabIndex = 63;
-            this.LblNombre.Text = "Nombre:";
+            this.LblAbreviacion.AutoSize = true;
+            this.LblAbreviacion.BackColor = System.Drawing.Color.White;
+            this.LblAbreviacion.Location = new System.Drawing.Point(9, 64);
+            this.LblAbreviacion.Name = "LblAbreviacion";
+            this.LblAbreviacion.Size = new System.Drawing.Size(66, 13);
+            this.LblAbreviacion.TabIndex = 63;
+            this.LblAbreviacion.Text = "Abreviación:";
             // 
-            // label1
+            // label2
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 533);
-            this.label1.TabIndex = 62;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(226, 531);
+            this.label2.TabIndex = 62;
             // 
-            // LblListaCategorias
+            // LblListaUnidadesMedida
             // 
-            this.LblListaCategorias.BackColor = System.Drawing.Color.White;
-            this.LblListaCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblListaCategorias.Location = new System.Drawing.Point(231, 20);
-            this.LblListaCategorias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblListaCategorias.Name = "LblListaCategorias";
-            this.LblListaCategorias.Padding = new System.Windows.Forms.Padding(2);
-            this.LblListaCategorias.Size = new System.Drawing.Size(836, 40);
-            this.LblListaCategorias.TabIndex = 79;
-            this.LblListaCategorias.Text = "Lista de Categorías";
-            this.LblListaCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblListaUnidadesMedida.BackColor = System.Drawing.Color.White;
+            this.LblListaUnidadesMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblListaUnidadesMedida.Location = new System.Drawing.Point(238, 20);
+            this.LblListaUnidadesMedida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblListaUnidadesMedida.Name = "LblListaUnidadesMedida";
+            this.LblListaUnidadesMedida.Padding = new System.Windows.Forms.Padding(2);
+            this.LblListaUnidadesMedida.Size = new System.Drawing.Size(836, 40);
+            this.LblListaUnidadesMedida.TabIndex = 80;
+            this.LblListaUnidadesMedida.Text = "Lista de Unidades de Medida";
+            this.LblListaUnidadesMedida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dgvData
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
-            this.idCategoria,
-            this.Nombre,
+            this.idUnidadMedida,
+            this.Abreviacion,
             this.Descripcion,
-            this.PorcUtilidad,
-            this.Impuesto,
             this.Activo});
-            this.dgvData.Location = new System.Drawing.Point(232, 81);
+            this.dgvData.Location = new System.Drawing.Point(239, 81);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(834, 384);
-            this.dgvData.TabIndex = 80;
+            this.dgvData.TabIndex = 79;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
+            // 
+            // BtnSeleccionar
+            // 
+            this.BtnSeleccionar.HeaderText = "";
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.ReadOnly = true;
+            this.BtnSeleccionar.Width = 30;
+            // 
+            // idUnidadMedida
+            // 
+            this.idUnidadMedida.HeaderText = "idUnidadMedida";
+            this.idUnidadMedida.Name = "idUnidadMedida";
+            this.idUnidadMedida.ReadOnly = true;
+            this.idUnidadMedida.Visible = false;
+            // 
+            // Abreviacion
+            // 
+            this.Abreviacion.HeaderText = "Abreviación";
+            this.Abreviacion.Name = "Abreviacion";
+            this.Abreviacion.ReadOnly = true;
+            this.Abreviacion.Width = 150;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 150;
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // BtnLimpiar
             // 
@@ -296,7 +296,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(941, 30);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1010, 30);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
@@ -317,7 +317,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(894, 30);
+            this.BtnBuscar.Location = new System.Drawing.Point(963, 30);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
@@ -328,7 +328,7 @@
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(734, 34);
+            this.TxtBusqueda.Location = new System.Drawing.Point(803, 34);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 81;
@@ -337,7 +337,7 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(607, 34);
+            this.ComboBusqueda.Location = new System.Drawing.Point(676, 34);
             this.ComboBusqueda.Name = "ComboBusqueda";
             this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
             this.ComboBusqueda.TabIndex = 83;
@@ -346,103 +346,39 @@
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(540, 37);
+            this.LblBuscarPor.Location = new System.Drawing.Point(609, 37);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
             this.LblBuscarPor.TabIndex = 82;
             this.LblBuscarPor.Text = "Buscar por:";
             // 
-            // ComboImpuesto
-            // 
-            this.ComboImpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboImpuesto.FormattingEnabled = true;
-            this.ComboImpuesto.Location = new System.Drawing.Point(12, 240);
-            this.ComboImpuesto.Name = "ComboImpuesto";
-            this.ComboImpuesto.Size = new System.Drawing.Size(173, 21);
-            this.ComboImpuesto.TabIndex = 86;
-            // 
-            // BtnSeleccionar
-            // 
-            this.BtnSeleccionar.HeaderText = "";
-            this.BtnSeleccionar.Name = "BtnSeleccionar";
-            this.BtnSeleccionar.ReadOnly = true;
-            this.BtnSeleccionar.Width = 30;
-            // 
-            // idCategoria
-            // 
-            this.idCategoria.HeaderText = "idCategoria";
-            this.idCategoria.Name = "idCategoria";
-            this.idCategoria.ReadOnly = true;
-            this.idCategoria.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 150;
-            // 
-            // PorcUtilidad
-            // 
-            this.PorcUtilidad.HeaderText = "Porc Utilidad";
-            this.PorcUtilidad.Name = "PorcUtilidad";
-            this.PorcUtilidad.ReadOnly = true;
-            this.PorcUtilidad.Width = 150;
-            // 
-            // Impuesto
-            // 
-            this.Impuesto.HeaderText = "Impuesto";
-            this.Impuesto.Name = "Impuesto";
-            this.Impuesto.ReadOnly = true;
-            this.Impuesto.Width = 150;
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // FrmCategorias
+            // FrmUnidadesMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1074, 533);
-            this.Controls.Add(this.ComboImpuesto);
+            this.ClientSize = new System.Drawing.Size(1085, 531);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtBusqueda);
             this.Controls.Add(this.ComboBusqueda);
             this.Controls.Add(this.LblBuscarPor);
+            this.Controls.Add(this.LblListaUnidadesMedida);
             this.Controls.Add(this.dgvData);
-            this.Controls.Add(this.LblListaCategorias);
             this.Controls.Add(this.TxtIndex);
-            this.Controls.Add(this.TxtIdCategoria);
+            this.Controls.Add(this.TxtIdUnidadMedida);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.LblDetalleUnidadMedida);
+            this.Controls.Add(this.LblDetalleUsuario);
             this.Controls.Add(this.ChkActivo);
-            this.Controls.Add(this.TxtPorcUtilidad);
             this.Controls.Add(this.TxtDescripcion);
-            this.Controls.Add(this.TxtNombre);
-            this.Controls.Add(this.LblImpuesto);
-            this.Controls.Add(this.LblPorcUtilidad);
+            this.Controls.Add(this.TxtAbreviacion);
             this.Controls.Add(this.LblDescripcion);
-            this.Controls.Add(this.LblNombre);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "FrmCategorias";
-            this.Text = "FrmCategorias";
-            this.Load += new System.EventHandler(this.FrmCategorias_Load);
+            this.Controls.Add(this.LblAbreviacion);
+            this.Controls.Add(this.label2);
+            this.Name = "FrmUnidadesMedida";
+            this.Text = "Unidades de Medida";
+            this.Load += new System.EventHandler(this.FrmUnidadesMedida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -452,33 +388,27 @@
         #endregion
 
         private System.Windows.Forms.TextBox TxtIndex;
-        private System.Windows.Forms.TextBox TxtIdCategoria;
+        private System.Windows.Forms.TextBox TxtIdUnidadMedida;
         private FontAwesome.Sharp.IconButton BtnEditar;
         private FontAwesome.Sharp.IconButton BtnGuardar;
-        private System.Windows.Forms.Label LblDetalleUnidadMedida;
+        private System.Windows.Forms.Label LblDetalleUsuario;
         private System.Windows.Forms.CheckBox ChkActivo;
-        private System.Windows.Forms.TextBox TxtPorcUtilidad;
         private System.Windows.Forms.TextBox TxtDescripcion;
-        private System.Windows.Forms.TextBox TxtNombre;
-        private System.Windows.Forms.Label LblImpuesto;
-        private System.Windows.Forms.Label LblPorcUtilidad;
+        private System.Windows.Forms.TextBox TxtAbreviacion;
         private System.Windows.Forms.Label LblDescripcion;
-        private System.Windows.Forms.Label LblNombre;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LblListaCategorias;
+        private System.Windows.Forms.Label LblAbreviacion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblListaUnidadesMedida;
         private System.Windows.Forms.DataGridView dgvData;
         private FontAwesome.Sharp.IconButton BtnLimpiar;
         private FontAwesome.Sharp.IconButton BtnBuscar;
         private System.Windows.Forms.TextBox TxtBusqueda;
         private System.Windows.Forms.ComboBox ComboBusqueda;
         private System.Windows.Forms.Label LblBuscarPor;
-        private System.Windows.Forms.ComboBox ComboImpuesto;
         private System.Windows.Forms.DataGridViewButtonColumn BtnSeleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUnidadMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Abreviacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PorcUtilidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Impuesto;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
     }
 }

@@ -12,24 +12,12 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmCategorias : Form
+    public partial class FrmUnidadesMedida : Form
     {
-        bool estadoImpuesto;
-        public FrmCategorias()
+        bool estadoUnidadMedida;
+        public FrmUnidadesMedida()
         {
             InitializeComponent();
-            CargarImpuestos();
-        }
-
-        private void CargarImpuestos()
-        {
-            List<Impuesto> roles = new CN_Impuestos().ObtenerImpuestos();
-            ComboImpuesto.DataSource = roles;
-
-            foreach (Impuesto impuesto in roles)
-            {
-                ComboImpuesto.DisplayMember = "Descripcion";
-            }
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -38,23 +26,21 @@ namespace CapaPresentacion
 
             try
             {
-                Categoria objCategoria = new Categoria()
+                UnidadMedida objUnidadMedida = new UnidadMedida()
                 {
-                    Id = Convert.ToInt32(TxtIdCategoria.Text),
-                    Nombre = TxtNombre.Text,
+                    Id = Convert.ToInt32(TxtIdUnidadMedida.Text),
+                    Abreviacion = TxtAbreviacion.Text,
                     Descripcion = TxtDescripcion.Text,
-                    PorcUtilidad = Convert.ToDecimal(TxtPorcUtilidad.Text),
-                    Impuesto = ComboImpuesto.Text.ToString(),
                     Activo = (bool)(ChkActivo.Checked)
                 };
 
-                if (objCategoria.Id == 0)
+                if (objUnidadMedida.Id == 0)
                 {
-                    int idCategoria = new CN_Categorias().Registrar(objCategoria, out Mensaje);
+                    int IdUnidadMedida = new CN_UnidadesMedida().Registrar(objUnidadMedida, out Mensaje);
 
-                    if (idCategoria != 0)
+                    if (IdUnidadMedida != 0)
                     {
-                        dgvData.Rows.Add(new object[] { "", idCategoria, TxtNombre.Text, TxtDescripcion.Text, TxtPorcUtilidad.Text, ComboImpuesto.Text, ChkActivo.Checked });
+                        dgvData.Rows.Add(new object[] { "", IdUnidadMedida, TxtAbreviacion.Text, TxtDescripcion.Text, ChkActivo.Checked });
                         limpiar();
                     }
                     else
@@ -64,20 +50,18 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    bool resultado = new CN_Categorias().Editar(objCategoria, out Mensaje);
+                    bool resultado = new CN_UnidadesMedida().Editar(objUnidadMedida, out Mensaje);
 
                     if (resultado)
                     {
                         DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
-                        row.Cells["IdCategoria"].Value = TxtIdCategoria.Text;
-                        row.Cells["Nombre"].Value = TxtNombre.Text;
+                        row.Cells["idUnidadMedida"].Value = TxtIdUnidadMedida.Text;
+                        row.Cells["Abreviacion"].Value = TxtAbreviacion.Text;
                         row.Cells["Descripcion"].Value = TxtDescripcion.Text;
-                        row.Cells["PorcUtilidad"].Value = TxtPorcUtilidad.Text;
-                        row.Cells["Impuesto"].Value = ComboImpuesto.Text;
                         row.Cells["Activo"].Value = ChkActivo.Checked;
 
                         limpiar();
-                        TxtNombre.ReadOnly = false;
+                        TxtAbreviacion.ReadOnly = false;
                     }
                     else
                     {
@@ -94,16 +78,14 @@ namespace CapaPresentacion
         private void limpiar()
         {
             TxtIndex.Clear();
-            TxtIdCategoria.Text = "0";
-            TxtNombre.Clear();
+            TxtIdUnidadMedida.Text = "0";
+            TxtAbreviacion.Clear();
             TxtDescripcion.Clear();
-            TxtPorcUtilidad.Clear();
-            ComboImpuesto.SelectedIndex = 0;
             TxtBusqueda.Select();
-            TxtNombre.ReadOnly = false;
+            TxtAbreviacion.ReadOnly = false;
         }
 
-        private void FrmCategorias_Load(object sender, EventArgs e)
+        private void FrmUnidadesMedida_Load(object sender, EventArgs e)
         {
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
@@ -114,11 +96,10 @@ namespace CapaPresentacion
             }
             ComboBusqueda.SelectedIndex = 0;
 
-            List<Categoria> listaCategoria = new CN_Categorias().Listar();
-            foreach (Categoria categoria in listaCategoria)
+            List<UnidadMedida> listaUnidadMedida = new CN_UnidadesMedida().Listar();
+            foreach (UnidadMedida unidadMedida in listaUnidadMedida)
             {
-                dgvData.Rows.Add("", categoria.Id, categoria.Nombre, categoria.Descripcion, categoria.PorcUtilidad,
-                                 categoria.Impuesto, categoria.Activo);
+                dgvData.Rows.Add("", unidadMedida.Id, unidadMedida.Abreviacion, unidadMedida.Descripcion, unidadMedida.Activo);
             }
 
             TxtBusqueda.Select();
@@ -146,7 +127,7 @@ namespace CapaPresentacion
 
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            TxtNombre.ReadOnly = true;
+            TxtAbreviacion.ReadOnly = true;
 
             if (dgvData.Columns[e.ColumnIndex].Name == "BtnSeleccionar")
             {
@@ -155,13 +136,11 @@ namespace CapaPresentacion
                 if (index >= 0)
                 {
                     TxtIndex.Text = index.ToString();
-                    TxtIdCategoria.Text = dgvData.Rows[index].Cells["IdCategoria"].Value.ToString();
-                    TxtNombre.Text = dgvData.Rows[index].Cells["Nombre"].Value.ToString();
-                    TxtDescripcion.Text = dgvData.Rows[index].Cells["Descripcion"].Value.ToString();
-                    TxtPorcUtilidad.Text = dgvData.Rows[index].Cells["PorcUtilidad"].Value.ToString();
-                    ComboImpuesto.Text = dgvData.Rows[index].Cells["Impuesto"].Value.ToString();
-                    estadoImpuesto = (bool)dgvData.Rows[index].Cells["Activo"].Value;
-                    if (estadoImpuesto == true)
+                    TxtIdUnidadMedida.Text = dgvData.Rows[index].Cells["idUnidadMedida"].Value.ToString();
+                    TxtAbreviacion.Text = dgvData.Rows[index].Cells["Abreviacion"].Value.ToString();
+                    TxtDescripcion.Text = dgvData.Rows[index].Cells["Descripcion"].Value.ToString();                   
+                    estadoUnidadMedida = (bool)dgvData.Rows[index].Cells["Activo"].Value;
+                    if (estadoUnidadMedida == true)
                     {
                         ChkActivo.Checked = true;
                     }
@@ -207,18 +186,18 @@ namespace CapaPresentacion
             limpiar();
         }
 
-        private void TxtNombre_Validating(object sender, CancelEventArgs e)
+        private void TxtAbreviacion_Validating(object sender, CancelEventArgs e)
         {
             ErrorProvider errorProvider1 = new ErrorProvider();
-            if (string.IsNullOrEmpty(TxtNombre.Text))
+            if (string.IsNullOrEmpty(TxtAbreviacion.Text))
             {
                 //e.Cancel = true;
-                errorProvider1.SetError(TxtNombre, "Este campo es obligatorio");
+                errorProvider1.SetError(TxtAbreviacion, "Este campo es obligatorio");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider1.SetError(TxtNombre, "");
+                errorProvider1.SetError(TxtAbreviacion, "");
             }
         }
 
@@ -235,22 +214,6 @@ namespace CapaPresentacion
             {
                 e.Cancel = false;
                 errorProvider1.SetError(TxtDescripcion, "");
-            }
-        }
-
-        private void TxtPorcUtilidad_Validating(object sender, CancelEventArgs e)
-        {
-            ErrorProvider errorProvider1 = new ErrorProvider();
-            if (string.IsNullOrEmpty(TxtPorcUtilidad.Text))
-            {
-                //e.Cancel = true;
-                TxtPorcUtilidad.Focus();
-                errorProvider1.SetError(TxtPorcUtilidad, "Este campo es obligatorio");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(TxtPorcUtilidad, "");
             }
         }
     }

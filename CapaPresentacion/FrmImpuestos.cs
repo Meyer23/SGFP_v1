@@ -12,24 +12,12 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmCategorias : Form
+    public partial class FrmImpuestos : Form
     {
         bool estadoImpuesto;
-        public FrmCategorias()
+        public FrmImpuestos()
         {
             InitializeComponent();
-            CargarImpuestos();
-        }
-
-        private void CargarImpuestos()
-        {
-            List<Impuesto> roles = new CN_Impuestos().ObtenerImpuestos();
-            ComboImpuesto.DataSource = roles;
-
-            foreach (Impuesto impuesto in roles)
-            {
-                ComboImpuesto.DisplayMember = "Descripcion";
-            }
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -38,23 +26,24 @@ namespace CapaPresentacion
 
             try
             {
-                Categoria objCategoria = new Categoria()
+                Impuesto objImpuesto = new Impuesto()
                 {
-                    Id = Convert.ToInt32(TxtIdCategoria.Text),
-                    Nombre = TxtNombre.Text,
+                    Id = Convert.ToInt32(TxtIdImpuesto.Text),
+                    TipoImpuesto = Convert.ToInt32(TxtTipoImpuesto.Text),
                     Descripcion = TxtDescripcion.Text,
-                    PorcUtilidad = Convert.ToDecimal(TxtPorcUtilidad.Text),
-                    Impuesto = ComboImpuesto.Text.ToString(),
+                    PorcIVA = Convert.ToDecimal(TxtPorcIVA.Text),
+                    FactorGravada = Convert.ToDecimal(TxtFactorGravada.Text),
+                    FactorIVA = Convert.ToDecimal(TxtFactorIVA.Text),
                     Activo = (bool)(ChkActivo.Checked)
                 };
 
-                if (objCategoria.Id == 0)
+                if (objImpuesto.Id == 0)
                 {
-                    int idCategoria = new CN_Categorias().Registrar(objCategoria, out Mensaje);
+                    int idImpuesto = new CN_Impuestos().Registrar(objImpuesto, out Mensaje);
 
-                    if (idCategoria != 0)
+                    if (idImpuesto != 0)
                     {
-                        dgvData.Rows.Add(new object[] { "", idCategoria, TxtNombre.Text, TxtDescripcion.Text, TxtPorcUtilidad.Text, ComboImpuesto.Text, ChkActivo.Checked });
+                        dgvData.Rows.Add(new object[] { "", idImpuesto, TxtTipoImpuesto.Text, TxtDescripcion.Text, TxtPorcIVA.Text, TxtFactorGravada.Text, TxtFactorIVA.Text, ChkActivo.Checked });
                         limpiar();
                     }
                     else
@@ -64,20 +53,21 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    bool resultado = new CN_Categorias().Editar(objCategoria, out Mensaje);
+                    bool resultado = new CN_Impuestos().Editar(objImpuesto, out Mensaje);
 
                     if (resultado)
                     {
                         DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
-                        row.Cells["IdCategoria"].Value = TxtIdCategoria.Text;
-                        row.Cells["Nombre"].Value = TxtNombre.Text;
+                        row.Cells["idImpuesto"].Value = TxtIdImpuesto.Text;
+                        row.Cells["TipoImpuesto"].Value = TxtTipoImpuesto.Text;
                         row.Cells["Descripcion"].Value = TxtDescripcion.Text;
-                        row.Cells["PorcUtilidad"].Value = TxtPorcUtilidad.Text;
-                        row.Cells["Impuesto"].Value = ComboImpuesto.Text;
+                        row.Cells["PorcIVA"].Value = TxtPorcIVA.Text;
+                        row.Cells["FactorGravada"].Value = TxtFactorGravada.Text;
+                        row.Cells["FactorIVA"].Value = TxtFactorIVA.Text;
                         row.Cells["Activo"].Value = ChkActivo.Checked;
 
                         limpiar();
-                        TxtNombre.ReadOnly = false;
+                        TxtTipoImpuesto.ReadOnly = false;
                     }
                     else
                     {
@@ -94,16 +84,17 @@ namespace CapaPresentacion
         private void limpiar()
         {
             TxtIndex.Clear();
-            TxtIdCategoria.Text = "0";
-            TxtNombre.Clear();
+            TxtIdImpuesto.Text = "0";
+            TxtTipoImpuesto.Clear();
             TxtDescripcion.Clear();
-            TxtPorcUtilidad.Clear();
-            ComboImpuesto.SelectedIndex = 0;
+            TxtPorcIVA.Clear();
+            TxtFactorGravada.Clear();
+            TxtFactorIVA.Clear();
             TxtBusqueda.Select();
-            TxtNombre.ReadOnly = false;
+            TxtTipoImpuesto.ReadOnly = false;
         }
 
-        private void FrmCategorias_Load(object sender, EventArgs e)
+        private void FrmImpuestos_Load(object sender, EventArgs e)
         {
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
@@ -114,13 +105,13 @@ namespace CapaPresentacion
             }
             ComboBusqueda.SelectedIndex = 0;
 
-            List<Categoria> listaCategoria = new CN_Categorias().Listar();
-            foreach (Categoria categoria in listaCategoria)
+            List<Impuesto> listaImpuesto = new CN_Impuestos().Listar();
+            foreach (Impuesto impuesto in listaImpuesto)
             {
-                dgvData.Rows.Add("", categoria.Id, categoria.Nombre, categoria.Descripcion, categoria.PorcUtilidad,
-                                 categoria.Impuesto, categoria.Activo);
+                dgvData.Rows.Add("", impuesto.Id, impuesto.TipoImpuesto, impuesto.Descripcion, impuesto.PorcIVA,
+                                 impuesto.FactorGravada, impuesto.FactorIVA, impuesto.Activo);
             }
-
+            
             TxtBusqueda.Select();
         }
 
@@ -146,7 +137,7 @@ namespace CapaPresentacion
 
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            TxtNombre.ReadOnly = true;
+            TxtTipoImpuesto.ReadOnly = true;
 
             if (dgvData.Columns[e.ColumnIndex].Name == "BtnSeleccionar")
             {
@@ -155,11 +146,12 @@ namespace CapaPresentacion
                 if (index >= 0)
                 {
                     TxtIndex.Text = index.ToString();
-                    TxtIdCategoria.Text = dgvData.Rows[index].Cells["IdCategoria"].Value.ToString();
-                    TxtNombre.Text = dgvData.Rows[index].Cells["Nombre"].Value.ToString();
+                    TxtIdImpuesto.Text = dgvData.Rows[index].Cells["idImpuesto"].Value.ToString();
+                    TxtTipoImpuesto.Text = dgvData.Rows[index].Cells["TipoImpuesto"].Value.ToString();
                     TxtDescripcion.Text = dgvData.Rows[index].Cells["Descripcion"].Value.ToString();
-                    TxtPorcUtilidad.Text = dgvData.Rows[index].Cells["PorcUtilidad"].Value.ToString();
-                    ComboImpuesto.Text = dgvData.Rows[index].Cells["Impuesto"].Value.ToString();
+                    TxtPorcIVA.Text = dgvData.Rows[index].Cells["PorcIVA"].Value.ToString();
+                    TxtFactorGravada.Text = dgvData.Rows[index].Cells["FactorGravada"].Value.ToString();
+                    TxtFactorIVA.Text = dgvData.Rows[index].Cells["FactorIVA"].Value.ToString();
                     estadoImpuesto = (bool)dgvData.Rows[index].Cells["Activo"].Value;
                     if (estadoImpuesto == true)
                     {
@@ -207,18 +199,18 @@ namespace CapaPresentacion
             limpiar();
         }
 
-        private void TxtNombre_Validating(object sender, CancelEventArgs e)
+        private void TxtTipoImpuesto_Validating(object sender, CancelEventArgs e)
         {
             ErrorProvider errorProvider1 = new ErrorProvider();
-            if (string.IsNullOrEmpty(TxtNombre.Text))
+            if (string.IsNullOrEmpty(TxtTipoImpuesto.Text))
             {
                 //e.Cancel = true;
-                errorProvider1.SetError(TxtNombre, "Este campo es obligatorio");
+                errorProvider1.SetError(TxtTipoImpuesto, "Este campo es obligatorio");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider1.SetError(TxtNombre, "");
+                errorProvider1.SetError(TxtTipoImpuesto, "");
             }
         }
 
@@ -238,20 +230,52 @@ namespace CapaPresentacion
             }
         }
 
-        private void TxtPorcUtilidad_Validating(object sender, CancelEventArgs e)
+        private void TxtPorcIVA_Validating(object sender, CancelEventArgs e)
         {
             ErrorProvider errorProvider1 = new ErrorProvider();
-            if (string.IsNullOrEmpty(TxtPorcUtilidad.Text))
+            if (string.IsNullOrEmpty(TxtPorcIVA.Text))
             {
                 //e.Cancel = true;
-                TxtPorcUtilidad.Focus();
-                errorProvider1.SetError(TxtPorcUtilidad, "Este campo es obligatorio");
+                TxtPorcIVA.Focus();
+                errorProvider1.SetError(TxtPorcIVA, "Este campo es obligatorio");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider1.SetError(TxtPorcUtilidad, "");
+                errorProvider1.SetError(TxtPorcIVA, "");
             }
         }
-    }
+
+        private void TxtFactorGravada_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider1 = new ErrorProvider();
+            if (string.IsNullOrEmpty(TxtFactorGravada.Text))
+            {
+                //e.Cancel = true;
+                TxtFactorGravada.Focus();
+                errorProvider1.SetError(TxtFactorGravada, "Este campo es obligatorio");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(TxtFactorGravada, "");
+            }
+        }
+
+        private void TxtFactorIVA_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider1 = new ErrorProvider();
+            if (string.IsNullOrEmpty(TxtFactorIVA.Text))
+            {
+                //e.Cancel = true;
+                TxtFactorIVA.Focus();
+                errorProvider1.SetError(TxtFactorIVA, "Este campo es obligatorio");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(TxtFactorIVA, "");
+            }
+        }
+    }                       
 }

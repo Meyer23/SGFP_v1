@@ -83,17 +83,23 @@
     <Compile Include="FrmEmpleados.Designer.cs">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPermisos.cs">
+    <Compile Include="FrmImpuestos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPermisos.Designer.cs">
-      <DependentUpon>FrmPermisos.cs</DependentUpon>
+    <Compile Include="FrmImpuestos.Designer.cs">
+      <DependentUpon>FrmImpuestos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProductos.Designer.cs">
       <DependentUpon>FrmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProveedores.Designer.cs">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRegistrarCompra.cs">
       <SubType>Form</SubType>
@@ -112,6 +118,12 @@
     </Compile>
     <Compile Include="FrmRoles.Designer.cs">
       <DependentUpon>FrmRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnidadesMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnidadesMedida.Designer.cs">
+      <DependentUpon>FrmUnidadesMedida.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVentas.cs">
       <SubType>Form</SubType>
@@ -166,11 +178,14 @@
     <EmbeddedResource Include="FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPermisos.resx">
-      <DependentUpon>FrmPermisos.cs</DependentUpon>
+    <EmbeddedResource Include="FrmImpuestos.resx">
+      <DependentUpon>FrmImpuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProveedores.resx">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrarCompra.resx">
       <DependentUpon>FrmRegistrarCompra.cs</DependentUpon>
@@ -180,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRoles.resx">
       <DependentUpon>FrmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnidadesMedida.resx">
+      <DependentUpon>FrmUnidadesMedida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVerDetalleCompra.resx">
       <DependentUpon>FrmVerDetalleCompra.cs</DependentUpon>

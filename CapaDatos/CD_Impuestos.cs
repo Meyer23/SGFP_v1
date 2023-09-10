@@ -7,21 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography.X509Certificates;
 
 namespace CapaDatos
 {
-    public class CD_Roles
+    public class CD_Impuestos
     {
-        public List<Rol> Listar()
+        public List<Impuesto> Listar()
         {
-            List<Rol> roles = new List<Rol>();
+            List<Impuesto> Impuestos = new List<Impuesto>();
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "SELECT ID, NOMBRE, ACTIVO FROM DBO.ROLES;";
+                    string query = "SELECT id, TipoImpuesto, Descripcion, PorcIVA, FactorGravada, FactorIVA, Activo FROM Impuestos";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -31,10 +30,14 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            roles.Add(new Rol
+                            Impuestos.Add(new Impuesto
                             {
-                                IdRol = Convert.ToInt32(reader["ID"]),
-                                Nombre = reader["NOMBRE"].ToString(),
+                                Id = Convert.ToInt32(reader["id"]),
+                                TipoImpuesto = Convert.ToInt32(reader["TipoImpuesto"]),
+                                Descripcion = reader["Descripcion"].ToString(),
+                                PorcIVA = Convert.ToDecimal(reader["PorcIVA"]),
+                                FactorGravada = Convert.ToDecimal(reader["FactorGravada"]),
+                                FactorIVA = Convert.ToDecimal(reader["FactorIVA"]),
                                 Activo = Convert.ToBoolean(reader["Activo"])
                             });
                         }
@@ -43,15 +46,15 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Impuestos = new List<Impuesto>();
                 }
             }
-            return roles;
+            return Impuestos;
         }
 
-        public int Registrar(Rol obj, out string Mensaje)
+        public int Registrar(Impuesto obj, out string Mensaje)
         {
-            int IdRol = 0;
+            int IdImpuesto = 0;
             Mensaje = string.Empty;
 
             try
@@ -59,28 +62,33 @@ namespace CapaDatos
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("sp_rol_insertar", con);
+                    SqlCommand cmd = new SqlCommand("sp_impuesto_insertar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("@TipoImpuesto", obj.TipoImpuesto);
+                    cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("@PorcIVA", obj.PorcIVA);
+                    cmd.Parameters.AddWithValue("@FactorGravada", obj.FactorGravada);
+                    cmd.Parameters.AddWithValue("@FactorIVA", obj.FactorIVA);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
-                    cmd.Parameters.Add("@IdRol", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@IdImpuesto", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.ExecuteNonQuery();
 
-                    IdRol = Convert.ToInt32(cmd.Parameters["@IdRol"].Value);
+                    IdImpuesto = Convert.ToInt32(cmd.Parameters["@IdImpuesto"].Value);
                     Mensaje = cmd.Parameters["@Mensaje"].ToString();
                 }
             }
             catch (Exception ex)
             {
-                IdRol = 0;
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                IdImpuesto = 0;
+                Mensaje = ex.Message;
             }
-            return IdRol;
+            return IdImpuesto;
         }
-        public bool Editar(Rol obj, out string Mensaje)
+
+        public bool Editar(Impuesto obj, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = string.Empty;
@@ -90,10 +98,15 @@ namespace CapaDatos
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("sp_rol_editar", con);
+                    SqlCommand cmd = new SqlCommand("sp_impuesto_editar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@idRol", obj.IdRol);
+                    cmd.Parameters.AddWithValue("@idImpuesto", obj.Id);
+                    cmd.Parameters.AddWithValue("@TipoImpuesto", obj.TipoImpuesto);
+                    cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("@PorcIVA", obj.PorcIVA);
+                    cmd.Parameters.AddWithValue("@FactorGravada", obj.FactorGravada);
+                    cmd.Parameters.AddWithValue("@FactorIVA", obj.FactorIVA);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -101,7 +114,7 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
-                    Mensaje = (string)cmd.Parameters["@Mensaje"].Value;
+                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
                 }
             }
             catch (Exception ex)
@@ -113,15 +126,14 @@ namespace CapaDatos
             return Respuesta;
         }
 
-        public List<Rol> ObtenerRoles()
+        public List<Impuesto> ObtenerImpuestos()
         {
-            List<Rol> roles = new List<Rol>();
+            List<Impuesto> impuestos = new List<Impuesto>();
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "select r.Nombre from dbo.Roles r " +
-                        "where r.Activo = 1;";
+                    string query = "SELECT Descripcion FROM Impuestos WHERE Activo = 1";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -131,20 +143,19 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            roles.Add(new Rol
+                            impuestos.Add(new Impuesto
                             {
-                                Nombre = reader["NOMBRE"].ToString()
+                                Descripcion = reader["Descripcion"].ToString()
                             });
                         }
                     }
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                return roles;
+                return impuestos;
             }
-        }      
+        }
     }
 }

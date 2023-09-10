@@ -103,10 +103,6 @@ namespace CapaPresentacion
             AbrirFormulario(SubMenuRoles, new FrmRoles());
         }
 
-        private void SubMenuPermisos_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(SubMenuPermisos, new FrmPermisos());
-        }
         private void SubMenuAgregarUsuario_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario(SubMenuAgregarUsuario, new FrmAgregarUsuario());
@@ -115,6 +111,21 @@ namespace CapaPresentacion
         private void SubMenuAbmUsuarios_Click(object sender, EventArgs e)
         {
             AbrirFormulario(SubMenuAbmUsuarios, new FrmUsuarios());
+        }
+
+        private void SubMenuTiposDeImpuesto_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenedorMenu, new FrmImpuestos());
+        }
+
+        private void SubMenuUnidadesDeMedida_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenedorMenu, new FrmUnidadesMedida());
+        }
+
+        private void ProveedoresMenu_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(ProveedoresMenu, new FrmProveedores());
         }
     }
 }

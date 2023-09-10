@@ -7,21 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography.X509Certificates;
 
 namespace CapaDatos
 {
-    public class CD_Roles
+    public class CD_UnidadesMedida
     {
-        public List<Rol> Listar()
+        public List<UnidadMedida> Listar()
         {
-            List<Rol> roles = new List<Rol>();
+            List<UnidadMedida> UnidadesMedida = new List<UnidadMedida>();
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "SELECT ID, NOMBRE, ACTIVO FROM DBO.ROLES;";
+                    string query = "SELECT id, Abreviacion, Descripcion, Activo FROM UnidadesMedidas";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -31,10 +30,11 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            roles.Add(new Rol
+                            UnidadesMedida.Add(new UnidadMedida
                             {
-                                IdRol = Convert.ToInt32(reader["ID"]),
-                                Nombre = reader["NOMBRE"].ToString(),
+                                Id = Convert.ToInt32(reader["id"]),
+                                Abreviacion = reader["Abreviacion"].ToString(),
+                                Descripcion = reader["Descripcion"].ToString(),
                                 Activo = Convert.ToBoolean(reader["Activo"])
                             });
                         }
@@ -43,15 +43,15 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UnidadesMedida = new List<UnidadMedida>();
                 }
             }
-            return roles;
+            return UnidadesMedida;
         }
 
-        public int Registrar(Rol obj, out string Mensaje)
+        public int Registrar(UnidadMedida obj, out string Mensaje)
         {
-            int IdRol = 0;
+            int IdUnidadMedida = 0;
             Mensaje = string.Empty;
 
             try
@@ -59,28 +59,30 @@ namespace CapaDatos
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("sp_rol_insertar", con);
+                    SqlCommand cmd = new SqlCommand("sp_unidadMedida_insertar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("@Abreviacion", obj.Abreviacion);
+                    cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
-                    cmd.Parameters.Add("@IdRol", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@IdUnidadMedida", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.ExecuteNonQuery();
 
-                    IdRol = Convert.ToInt32(cmd.Parameters["@IdRol"].Value);
+                    IdUnidadMedida = Convert.ToInt32(cmd.Parameters["@IdUnidadMedida"].Value);
                     Mensaje = cmd.Parameters["@Mensaje"].ToString();
                 }
             }
             catch (Exception ex)
             {
-                IdRol = 0;
+                IdUnidadMedida = 0;
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return IdRol;
+            return IdUnidadMedida;
         }
-        public bool Editar(Rol obj, out string Mensaje)
+
+        public bool Editar(UnidadMedida obj, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = string.Empty;
@@ -90,10 +92,12 @@ namespace CapaDatos
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("sp_rol_editar", con);
+                    SqlCommand cmd = new SqlCommand("sp_unidadMedida_editar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@idRol", obj.IdRol);
+                    cmd.Parameters.AddWithValue("@IdUnidadMedida", obj.Id);
+                    cmd.Parameters.AddWithValue("@Abreviacion", obj.Abreviacion);
+                    cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -101,7 +105,7 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
-                    Mensaje = (string)cmd.Parameters["@Mensaje"].Value;
+                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
                 }
             }
             catch (Exception ex)
@@ -112,39 +116,5 @@ namespace CapaDatos
 
             return Respuesta;
         }
-
-        public List<Rol> ObtenerRoles()
-        {
-            List<Rol> roles = new List<Rol>();
-            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
-            {
-                try
-                {
-                    string query = "select r.Nombre from dbo.Roles r " +
-                        "where r.Activo = 1;";
-
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.CommandType = CommandType.Text;
-                    con.Open();
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            roles.Add(new Rol
-                            {
-                                Nombre = reader["NOMBRE"].ToString()
-                            });
-                        }
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                return roles;
-            }
-        }      
     }
 }
