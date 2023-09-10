@@ -40,7 +40,7 @@ namespace CapaPresentacion
             foreach (UsuarioResponse usuario in listaUsuario)
             {
                     dgvData.Rows.Add("", usuario.idUsuario ,usuario.Cedula, usuario.Login, usuario.Nombres, usuario.Apellidos,
-                        usuario.NombreRol, usuario.NombreSucursal, usuario.DescripcionCaja, usuario.Activo);
+                        usuario.NombreRol, usuario.NombreSucursal, usuario.Activo);
             }
 
             //TxtNombres.Select();

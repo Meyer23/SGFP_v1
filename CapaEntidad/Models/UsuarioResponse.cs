@@ -22,8 +22,6 @@ namespace CapaEntidad
 
         public string NombreSucursal { get; set; }
 
-        public string DescripcionCaja { get; set; }
-
         public bool Activo { get; set; }
     }
 }
