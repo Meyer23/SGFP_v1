@@ -62,8 +62,6 @@
             this.ComboRol = new System.Windows.Forms.ComboBox();
             this.LblSucursal = new System.Windows.Forms.Label();
             this.ComboSucursal = new System.Windows.Forms.ComboBox();
-            this.LblCaja = new System.Windows.Forms.Label();
-            this.ComboCaja = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +99,7 @@
             // 
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.BackColor = System.Drawing.Color.White;
-            this.ChkActivo.Location = new System.Drawing.Point(12, 481);
+            this.ChkActivo.Location = new System.Drawing.Point(9, 416);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(78, 24);
             this.ChkActivo.TabIndex = 37;
@@ -149,7 +147,7 @@
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 18;
-            this.BtnEditar.Location = new System.Drawing.Point(12, 621);
+            this.BtnEditar.Location = new System.Drawing.Point(9, 548);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(260, 40);
             this.BtnEditar.TabIndex = 41;
@@ -169,7 +167,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(12, 531);
+            this.BtnGuardar.Location = new System.Drawing.Point(9, 475);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(260, 42);
             this.BtnGuardar.TabIndex = 38;
@@ -438,33 +436,11 @@
             this.ComboSucursal.Size = new System.Drawing.Size(180, 28);
             this.ComboSucursal.TabIndex = 56;
             // 
-            // LblCaja
-            // 
-            this.LblCaja.AutoSize = true;
-            this.LblCaja.BackColor = System.Drawing.Color.White;
-            this.LblCaja.Location = new System.Drawing.Point(12, 410);
-            this.LblCaja.Name = "LblCaja";
-            this.LblCaja.Size = new System.Drawing.Size(45, 20);
-            this.LblCaja.TabIndex = 57;
-            this.LblCaja.Text = "Caja:";
-            // 
-            // ComboCaja
-            // 
-            this.ComboCaja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboCaja.FormattingEnabled = true;
-            this.ComboCaja.Location = new System.Drawing.Point(15, 435);
-            this.ComboCaja.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ComboCaja.Name = "ComboCaja";
-            this.ComboCaja.Size = new System.Drawing.Size(180, 28);
-            this.ComboCaja.TabIndex = 58;
-            // 
             // FrmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1373, 775);
-            this.Controls.Add(this.ComboCaja);
-            this.Controls.Add(this.LblCaja);
             this.Controls.Add(this.ComboSucursal);
             this.Controls.Add(this.LblSucursal);
             this.Controls.Add(this.ComboRol);
@@ -524,8 +500,6 @@
         private System.Windows.Forms.ComboBox ComboRol;
         private System.Windows.Forms.Label LblSucursal;
         private System.Windows.Forms.ComboBox ComboSucursal;
-        private System.Windows.Forms.Label LblCaja;
-        private System.Windows.Forms.ComboBox ComboCaja;
         private System.Windows.Forms.DataGridViewButtonColumn BtnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
