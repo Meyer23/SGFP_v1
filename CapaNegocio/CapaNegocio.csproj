@@ -43,7 +43,8 @@
   <ItemGroup>
     <Compile Include="CN_Cajas.cs" />
     <Compile Include="CN_Categorias.cs" />
-    <Compile Include="CN_Empleado.cs" />
+    <Compile Include="CN_Clientes.cs" />
+    <Compile Include="CN_Empleados.cs" />
     <Compile Include="CN_Impuestos.cs" />
     <Compile Include="CN_Modulos.cs" />
     <Compile Include="CN_Proveedores.cs" />

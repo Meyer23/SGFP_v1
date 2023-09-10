@@ -24,7 +24,7 @@ namespace CapaPresentacion
         {
             string Mensaje = string.Empty;
 
-            if (!new CN_Empleado().ValidarCorreo(TxtCorreo.Text))
+            if (!new CN_Empleados().ValidarCorreo(TxtCorreo.Text))
             {
                 MessageBox.Show("Dirección de correo electrónico no válida, el correo debe tener el formato: nombre@dominio.com");
                 TxtCorreo.Focus();
@@ -48,7 +48,7 @@ namespace CapaPresentacion
 
                 if (objEmpleado.Id == 0)
                 {
-                    int idEmpleado = new CN_Empleado().Registrar(objEmpleado, out Mensaje);
+                    int idEmpleado = new CN_Empleados().Registrar(objEmpleado, out Mensaje);
 
                     if (idEmpleado != 0)
                     {
@@ -62,7 +62,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    bool resultado = new CN_Empleado().Editar(objEmpleado, out Mensaje);
+                    bool resultado = new CN_Empleados().Editar(objEmpleado, out Mensaje);
 
                     if (resultado)
                     {
@@ -125,7 +125,7 @@ namespace CapaPresentacion
             ComboBusqueda.SelectedIndex = 0;
 
             //Listar empleados
-            List<Empleado> listaEmpleado = new CN_Empleado().Listar();
+            List<Empleado> listaEmpleado = new CN_Empleados().Listar();
             foreach(Empleado empleado in listaEmpleado)
             {
                 dgvData.Rows.Add("", empleado.Id, empleado.Nombres, empleado.Apellidos, empleado.Documento, 
