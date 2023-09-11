@@ -39,7 +39,6 @@
             this.SubMenuTiposDeImpuesto = new System.Windows.Forms.ToolStripMenuItem();
             this.SubMenuProductos = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuEmpleados = new FontAwesome.Sharp.IconMenuItem();
-            this.SubMenuSucursales = new System.Windows.Forms.ToolStripMenuItem();
             this.SubMenuCajas = new System.Windows.Forms.ToolStripMenuItem();
             this.SubMenuTimbrados = new System.Windows.Forms.ToolStripMenuItem();
             this.SubMenuTiposDeValor = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,7 +101,7 @@
             this.SubMenuRoles.IconColor = System.Drawing.Color.Black;
             this.SubMenuRoles.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuRoles.Name = "SubMenuRoles";
-            this.SubMenuRoles.Size = new System.Drawing.Size(184, 22);
+            this.SubMenuRoles.Size = new System.Drawing.Size(192, 30);
             this.SubMenuRoles.Text = "Roles";
             this.SubMenuRoles.Click += new System.EventHandler(this.SubMenuRoles_Click);
             // 
@@ -112,7 +111,7 @@
             this.SubMenuAbmUsuarios.IconColor = System.Drawing.Color.Black;
             this.SubMenuAbmUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuAbmUsuarios.Name = "SubMenuAbmUsuarios";
-            this.SubMenuAbmUsuarios.Size = new System.Drawing.Size(184, 22);
+            this.SubMenuAbmUsuarios.Size = new System.Drawing.Size(192, 30);
             this.SubMenuAbmUsuarios.Text = "Administrar Usuarios";
             this.SubMenuAbmUsuarios.Click += new System.EventHandler(this.SubMenuAbmUsuarios_Click);
             // 
@@ -122,7 +121,7 @@
             this.SubMenuAgregarUsuario.IconColor = System.Drawing.Color.Black;
             this.SubMenuAgregarUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuAgregarUsuario.Name = "SubMenuAgregarUsuario";
-            this.SubMenuAgregarUsuario.Size = new System.Drawing.Size(184, 22);
+            this.SubMenuAgregarUsuario.Size = new System.Drawing.Size(192, 30);
             this.SubMenuAgregarUsuario.Text = "Agregar Usuario";
             this.SubMenuAgregarUsuario.Click += new System.EventHandler(this.SubMenuAgregarUsuario_Click_1);
             // 
@@ -134,7 +133,6 @@
             this.SubMenuTiposDeImpuesto,
             this.SubMenuProductos,
             this.SubMenuEmpleados,
-            this.SubMenuSucursales,
             this.SubMenuCajas,
             this.SubMenuTimbrados,
             this.SubMenuTiposDeValor,
@@ -193,12 +191,6 @@
             this.SubMenuEmpleados.Size = new System.Drawing.Size(190, 30);
             this.SubMenuEmpleados.Text = "Empleados";
             this.SubMenuEmpleados.Click += new System.EventHandler(this.submenuempleados_Click);
-            // 
-            // SubMenuSucursales
-            // 
-            this.SubMenuSucursales.Name = "SubMenuSucursales";
-            this.SubMenuSucursales.Size = new System.Drawing.Size(190, 30);
-            this.SubMenuSucursales.Text = "Sucursales";
             // 
             // SubMenuCajas
             // 
@@ -456,7 +448,6 @@
         private FontAwesome.Sharp.IconMenuItem SubMenuAgregarUsuario;
         private System.Windows.Forms.ToolStripMenuItem SubMenuUnidadesDeMedida;
         private System.Windows.Forms.ToolStripMenuItem SubMenuTiposDeImpuesto;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuSucursales;
         private System.Windows.Forms.ToolStripMenuItem SubMenuCajas;
         private System.Windows.Forms.ToolStripMenuItem SubMenuTimbrados;
         private System.Windows.Forms.ToolStripMenuItem SubMenuTiposDeValor;

@@ -116,5 +116,37 @@ namespace CapaDatos
 
             return Respuesta;
         }
+
+        public List<UnidadMedida> ObtenerUnidadesMedida()
+        {
+            List<UnidadMedida> unidadesMedida = new List<UnidadMedida>();
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT Descripcion FROM UnidadesMedidas WHERE Activo = 1";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            unidadesMedida.Add(new UnidadMedida
+                            {
+                                Descripcion = reader["Descripcion"].ToString()
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return unidadesMedida;
+            }
+        }
     }
 }

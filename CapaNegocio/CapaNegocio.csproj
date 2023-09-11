@@ -49,6 +49,7 @@
     <Compile Include="CN_FormasPago.cs" />
     <Compile Include="CN_Impuestos.cs" />
     <Compile Include="CN_Modulos.cs" />
+    <Compile Include="CN_Productos.cs" />
     <Compile Include="CN_Proveedores.cs" />
     <Compile Include="CN_Roles.cs" />
     <Compile Include="CN_Sucursal.cs" />

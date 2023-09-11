@@ -51,6 +51,7 @@
     <Compile Include="CD_FormasPago.cs" />
     <Compile Include="CD_Impuestos.cs" />
     <Compile Include="CD_Modulos.cs" />
+    <Compile Include="CD_Productos.cs" />
     <Compile Include="CD_Proveedores.cs" />
     <Compile Include="CD_Roles.cs" />
     <Compile Include="CD_Sucursal.cs" />

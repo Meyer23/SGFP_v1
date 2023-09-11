@@ -26,5 +26,10 @@ namespace CapaNegocio
         {
             return cd_unidadMedida.Editar(obj, out Mensaje);
         }
+
+        public List<UnidadMedida> ObtenerUnidadesMedida()
+        {
+            return cd_unidadMedida.ObtenerUnidadesMedida();
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -36,7 +37,7 @@ namespace CapaDatos
                                 Nombre = reader["Nombre"].ToString(),
                                 Descripcion = reader["Descripcion"].ToString(),
                                 PorcUtilidad = Convert.ToDecimal(reader["PorcUtilidad"]),
-                                Impuesto = reader["Descripcion"].ToString(),
+                                Impuesto = reader["Impuesto"].ToString(),
                                 Activo = Convert.ToBoolean(reader["Activo"])
                             });
                         }
@@ -121,6 +122,38 @@ namespace CapaDatos
             }
 
             return Respuesta;
+        }
+
+        public List<Categoria> ObtenerCategorias()
+        {
+            List<Categoria> categorias = new List<Categoria>();
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT Nombre FROM Categorias WHERE Activo = 1";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            categorias.Add(new Categoria
+                            {
+                                Nombre = reader["Nombre"].ToString()
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return categorias;
+            }
         }
     }
 }

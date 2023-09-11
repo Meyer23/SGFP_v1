@@ -26,5 +26,10 @@ namespace CapaNegocio
         {
             return cd_categoria.Editar(obj, out Mensaje);
         }
+
+        public List<Categoria> ObtenerCategorias()
+        {
+            return cd_categoria.ObtenerCategorias();
+        }
     }
 }

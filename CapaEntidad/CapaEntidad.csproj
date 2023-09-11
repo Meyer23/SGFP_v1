@@ -53,6 +53,7 @@
     <Compile Include="Models\UsuarioLogin.cs" />
     <Compile Include="Models\UsuarioRequest.cs" />
     <Compile Include="Modulo.cs" />
+    <Compile Include="Producto.cs" />
     <Compile Include="Proveedor.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

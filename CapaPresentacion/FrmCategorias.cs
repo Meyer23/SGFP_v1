@@ -14,7 +14,7 @@ namespace CapaPresentacion
 {
     public partial class FrmCategorias : Form
     {
-        bool estadoImpuesto;
+        bool estadoCategoria;
         public FrmCategorias()
         {
             InitializeComponent();
@@ -160,8 +160,8 @@ namespace CapaPresentacion
                     TxtDescripcion.Text = dgvData.Rows[index].Cells["Descripcion"].Value.ToString();
                     TxtPorcUtilidad.Text = dgvData.Rows[index].Cells["PorcUtilidad"].Value.ToString();
                     ComboImpuesto.Text = dgvData.Rows[index].Cells["Impuesto"].Value.ToString();
-                    estadoImpuesto = (bool)dgvData.Rows[index].Cells["Activo"].Value;
-                    if (estadoImpuesto == true)
+                    estadoCategoria = (bool)dgvData.Rows[index].Cells["Activo"].Value;
+                    if (estadoCategoria == true)
                     {
                         ChkActivo.Checked = true;
                     }
