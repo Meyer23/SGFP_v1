@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,10 @@ namespace CapaPresentacion
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
+            TxtDocumento.ReadOnly = true;
+            TxtNombres.ReadOnly = true;
+            TxtApellidos.ReadOnly = true;
+            TxtLogin.ReadOnly = true;
             
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
@@ -62,6 +67,24 @@ namespace CapaPresentacion
         {
             string Mensaje = string.Empty;
 
+            if(TxtNombres.Text.Trim().Length == 0 || TxtApellidos.Text.Length == 0 || TxtLogin.Text.Length == 0 || TxtDocumento.Text.Length == 0)
+            {
+                MessageBox.Show("Debe seleccionar un empleado.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(TxtPassword.Text.Length == 0)
+            {
+                MessageBox.Show("Contraseña no puede ser nula.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(ValidarPassword() == 1)
+            {
+                MessageBox.Show("Contraseñas no coinciden, verifique", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             UsuarioEditarRequest objUsuario = new UsuarioEditarRequest()
             {
                 IdUsuario = Convert.ToInt32(TxtIdUsuario.Text),
@@ -77,7 +100,27 @@ namespace CapaPresentacion
                 if (cN_Usuario)
                 {
                     DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
+                    row.Cells["idUsuario"].Value = TxtIdUsuario.Text;
+                    row.Cells["Documento"].Value = TxtDocumento.Text;
+                    row.Cells["Login"].Value = TxtLogin.Text;
+                    row.Cells["Nombres"].Value = TxtNombres.Text;
+                    row.Cells["Apellidos"].Value = TxtApellidos.Text;
+                    row.Cells["Rol"].Value = ComboRol.Text;
+                    row.Cells["Activo"].Value = ChkActivo.Checked;
+
+                    MessageBox.Show(Mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Limpiar();
+                    TxtDocumento.ReadOnly = true;
+                    TxtNombres.ReadOnly = true;
+                    TxtApellidos.ReadOnly = true;
+                    TxtLogin.ReadOnly = true;
+
                     
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje);
                 }
             }
             catch (Exception ex)
@@ -171,6 +214,58 @@ namespace CapaPresentacion
             foreach (Sucursales d in sucursales)
             {
                 ComboSucursal.DisplayMember = "DescripcionSucursal";
+            }
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            TxtApellidos.Clear();
+            TxtDocumento.Clear();
+            TxtNombres.Clear();
+            TxtLogin.Clear();
+            TxtPassword.Clear();
+            TxtRePassword.Clear();
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            TxtBusqueda.Clear();
+        }
+
+        private void TxtPassword_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider1 = new ErrorProvider();
+            if (string.IsNullOrEmpty(TxtPassword.Text))
+            {
+                //e.Cancel = true;
+                TxtPassword.Focus();
+                errorProvider1.SetError(TxtPassword, "Este campo es obligatorio");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(TxtPassword, "");
+            }
+        }
+
+        private int ValidarPassword()
+        {
+            int resultado;
+            if (TxtPassword.Text != TxtRePassword.Text)
+            {
+                resultado = 1;
+                return resultado;
+            }
+            else
+            {
+                resultado = 0;
+                return resultado;
             }
         }
     }

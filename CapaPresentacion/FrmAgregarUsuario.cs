@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -157,20 +158,42 @@ namespace CapaPresentacion
             }
         }
 
-        private void ValidarPassword()
+        private int ValidarPassword()
         {
-            if(TxtPassword.Text != TxtRePassword.Text)
+            int resultado;
+            if (TxtPassword.Text != TxtRePassword.Text)
             {
-                MessageBox.Show("Contraseñas no coincide.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                resultado = 1;
+                return resultado;
+            }
+            else
+            {
+                resultado = 0;
+                return resultado;
             }
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             string Mensaje = string.Empty;
+            
+            if(TxtLogin.Text.Length == 0)
+            {
+                MessageBox.Show("Debe seleccionar un empleado.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if(TxtPassword.Text.Length == 0)
+            {
+                MessageBox.Show("La contaseña no puede ser vacia.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if(ValidarPassword() == 1)
+            {
+                MessageBox.Show("Contraseñas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 UsuarioRequest nuevoUsuario = new UsuarioRequest()
@@ -187,19 +210,21 @@ namespace CapaPresentacion
 
                 if (resultado != 0)
                 {
-                    MessageBox.Show("Usuario agregado correctamente");
+                    MessageBox.Show("Usuario agregado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Usuario ya existe. Verifique.");
+                    MessageBox.Show("Usuario ya existe. Verifique.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error al intentar agregar nuevo usuario.", "Alerta", MessageBoxButtons.OK); 
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            ValidarPassword();
         }
 
         private void TxtRePassword_Validating(object sender, CancelEventArgs e)
@@ -216,6 +241,24 @@ namespace CapaPresentacion
                 e.Cancel = false;
                 errorProvider1.SetError(TxtRePassword, "");
             }
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            TxtLogin.Clear();
+            TxtPassword.Clear();
+            TxtRePassword.Clear();
+
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            TxtBusqueda.Clear();
         }
     }
 }
