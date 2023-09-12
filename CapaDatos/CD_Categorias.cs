@@ -155,5 +155,38 @@ namespace CapaDatos
                 return categorias;
             }
         }
+
+        public bool GenerarPrecios(Categoria obj, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_Setea_Precios_Productos", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@IdCategoria", obj.Id);
+                    cmd.Parameters.AddWithValue("@PorcUtilidad", obj.PorcUtilidad);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                Mensaje = ex.Message;
+            }
+
+            return Respuesta;
+        }
     }
 }

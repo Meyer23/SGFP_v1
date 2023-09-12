@@ -31,5 +31,10 @@ namespace CapaNegocio
         {
             return cd_categoria.ObtenerCategorias();
         }
+
+        public bool GemerarPrecios(Categoria obj, out string Mensaje)
+        {
+            return cd_categoria.GenerarPrecios(obj, out Mensaje);
+        }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtIndex = new System.Windows.Forms.TextBox();
             this.TxtIdCategoria = new System.Windows.Forms.TextBox();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
@@ -60,6 +60,7 @@
             this.ComboBusqueda = new System.Windows.Forms.ComboBox();
             this.LblBuscarPor = new System.Windows.Forms.Label();
             this.ComboImpuesto = new System.Windows.Forms.ComboBox();
+            this.BtnGenerarPrecios = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -244,15 +245,15 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
@@ -266,17 +267,17 @@
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(834, 384);
@@ -411,12 +412,36 @@
             this.ComboImpuesto.Size = new System.Drawing.Size(173, 21);
             this.ComboImpuesto.TabIndex = 86;
             // 
+            // BtnGenerarPrecios
+            // 
+            this.BtnGenerarPrecios.BackColor = System.Drawing.Color.Red;
+            this.BtnGenerarPrecios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGenerarPrecios.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnGenerarPrecios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGenerarPrecios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGenerarPrecios.ForeColor = System.Drawing.Color.White;
+            this.BtnGenerarPrecios.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.BtnGenerarPrecios.IconColor = System.Drawing.Color.White;
+            this.BtnGenerarPrecios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnGenerarPrecios.IconSize = 18;
+            this.BtnGenerarPrecios.Location = new System.Drawing.Point(12, 321);
+            this.BtnGenerarPrecios.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnGenerarPrecios.Name = "BtnGenerarPrecios";
+            this.BtnGenerarPrecios.Size = new System.Drawing.Size(173, 27);
+            this.BtnGenerarPrecios.TabIndex = 87;
+            this.BtnGenerarPrecios.Text = "Generar Precios";
+            this.BtnGenerarPrecios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnGenerarPrecios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnGenerarPrecios.UseVisualStyleBackColor = false;
+            this.BtnGenerarPrecios.Click += new System.EventHandler(this.BtnGenerarPrecios_Click);
+            // 
             // FrmCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1074, 533);
+            this.Controls.Add(this.BtnGenerarPrecios);
             this.Controls.Add(this.ComboImpuesto);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
@@ -480,5 +505,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PorcUtilidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Impuesto;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
+        private FontAwesome.Sharp.IconButton BtnGenerarPrecios;
     }
 }

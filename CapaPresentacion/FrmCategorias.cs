@@ -253,5 +253,32 @@ namespace CapaPresentacion
                 errorProvider1.SetError(TxtPorcUtilidad, "");
             }
         }
+
+        private void BtnGenerarPrecios_Click(object sender, EventArgs e)
+        {
+            string Mensaje = string.Empty;
+
+            Categoria objCategoria = new Categoria()
+            {
+                Id = Convert.ToInt32(TxtIdCategoria.Text),
+                Nombre = TxtNombre.Text,
+                Descripcion = TxtDescripcion.Text,
+                PorcUtilidad = Convert.ToDecimal(TxtPorcUtilidad.Text),
+                Impuesto = ComboImpuesto.Text.ToString(),
+                Activo = (bool)(ChkActivo.Checked)
+            };
+
+            bool resultado = new CN_Categorias().GemerarPrecios(objCategoria, out Mensaje);
+            
+            if (resultado)
+            {
+                MessageBox.Show("Precios generados correctamente"); 
+            }
+            else
+            {
+                MessageBox.Show(Mensaje);
+            }
+
+        }
     }
 }
