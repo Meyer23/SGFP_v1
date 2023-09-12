@@ -84,7 +84,7 @@ namespace CapaPresentacion
             ComboBusqueda.SelectedIndex = 0;
 
             //Listar empleados
-            List<Empleado> listaEmpleado = new CN_Empleados().Listar();
+            List<Empleado> listaEmpleado = new CN_Empleados().Listar_2();
             foreach (Empleado empleado in listaEmpleado)
             {
                 if (empleado.Activo)

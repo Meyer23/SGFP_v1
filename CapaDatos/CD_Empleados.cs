@@ -22,7 +22,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT e.Id, Nombres, Apellidos, Documento, Direccion, FechaNacimiento, Telefono1, Telefono2, Correo, e.Activo FROM Empleados e LEFT JOIN Usuarios U on e.id = U.idEmpleado where u.idEmpleado is NULL;";
+                    string query = "SELECT e.Id, Nombres, Apellidos, Documento, Direccion, FechaNacimiento, Telefono1, Telefono2, Correo, e.Activo FROM Empleados e";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -134,6 +134,50 @@ namespace CapaDatos
             }
 
             return Respuesta;
+        }
+
+        //Lista de empleados que no son usuarios.
+        public List<Empleado> Listar_2()
+        {
+            List<Empleado> empleado = new List<Empleado>();
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT e.Id, Nombres, Apellidos, Documento, Direccion, FechaNacimiento, Telefono1, Telefono2, Correo, e.Activo FROM Empleados e LEFT JOIN Usuarios U on e.id = U.idEmpleado where u.idEmpleado is NULL;";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            empleado.Add(new Empleado
+                            {
+                                Id = Convert.ToInt32(reader["ID"]),
+                                Nombres = reader["Nombres"].ToString(),
+                                Apellidos = reader["Apellidos"].ToString(),
+                                Documento = reader["Documento"].ToString(),
+                                Direccion = reader["Direccion"].ToString(),
+                                FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"]),
+                                TelefonoUno = reader["Telefono1"].ToString(),
+                                TelefonoDos = reader["Telefono2"].ToString(),
+                                Correo = reader["Correo"].ToString(),
+                                Activo = Convert.ToBoolean(reader["Activo"])
+                            });
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    empleado = new List<Empleado>();
+                }
+            }
+            return empleado;
         }
 
     }  

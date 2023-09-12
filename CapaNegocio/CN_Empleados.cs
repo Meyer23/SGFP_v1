@@ -33,5 +33,11 @@ namespace CapaNegocio
             return Regex.IsMatch(sMail, @"^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$");
 
         }
+
+        //Lista de Empleados que no son usuarios
+        public List<Empleado> Listar_2()
+        {
+            return cd_Empleado.Listar_2();
+        }
     }
 }
