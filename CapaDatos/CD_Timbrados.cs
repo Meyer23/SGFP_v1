@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -46,6 +47,7 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     timbrados = new List<Timbrado>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return timbrados;
@@ -76,13 +78,13 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     IdTimbrado = Convert.ToInt32(cmd.Parameters["@IdTimbrado"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 IdTimbrado = 0;
-                Mensaje = ex.Message;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return IdTimbrado;
         }
@@ -113,13 +115,13 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 Respuesta = false;
-                Mensaje = ex.Message;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return Respuesta;

@@ -167,6 +167,7 @@
     <Compile Include="FrmVerDetalleVenta.Designer.cs">
       <DependentUpon>FrmVerDetalleVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IFormularioConIdUsuario.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

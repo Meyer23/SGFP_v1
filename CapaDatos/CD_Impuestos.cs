@@ -47,6 +47,7 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     Impuestos = new List<Impuesto>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return Impuestos;
@@ -77,13 +78,13 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     IdImpuesto = Convert.ToInt32(cmd.Parameters["@IdImpuesto"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 IdImpuesto = 0;
-                Mensaje = ex.Message;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return IdImpuesto;
         }
@@ -114,13 +115,13 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 Respuesta = false;
-                Mensaje = ex.Message;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return Respuesta;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,13 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmRegistrarVenta : Form
+    public partial class FrmRegistrarVenta : Form, IFormularioConIdUsuario
     {
         public FrmRegistrarVenta()
         {
             InitializeComponent();
         }
+
+        public int IdUsuario { get; set; }
     }
 }

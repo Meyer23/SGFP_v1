@@ -23,7 +23,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT U.LOGIN, U.PASSWORD, U.ACTIVO FROM DBO.USUARIOS U";
+                    string query = "SELECT U.ID, U.LOGIN, U.PASSWORD, U.ACTIVO FROM DBO.USUARIOS U";
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
 
@@ -33,6 +33,7 @@ namespace CapaDatos
                         {
                             usuarios.Add(new UsuarioLogin
                             {
+                                Id = Convert.ToInt32(reader["ID"]),
                                 Login = reader["LOGIN"].ToString(),
                                 PassWord = reader["PASSWORD"].ToString(),
                                 Activo = Convert.ToBoolean(reader["ACTIVO"])
@@ -42,7 +43,8 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                   usuarios = new List<UsuarioLogin>();   
+                   usuarios = new List<UsuarioLogin>();
+                   MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -77,6 +79,7 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     rol = new List<Rol>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -149,13 +152,13 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     idUsuario = Convert.ToInt32(cmd.Parameters["@IdUsuario"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 idUsuario = 0;
-                Mensaje = ex.Message;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return idUsuario;
         }
@@ -183,13 +186,13 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
-                    Mensaje = (string)cmd.Parameters["@Mensaje"].Value;
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 Respuesta = false;
-                Mensaje = ex.Message;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return Respuesta;

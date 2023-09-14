@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,13 +13,16 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmCategorias : Form
+    public partial class FrmCategorias : Form, IFormularioConIdUsuario
     {
-        bool estadoCategoria;
+        bool estadoCategoria;       
+
+        public int IdUsuario { get; set; }     
+
         public FrmCategorias()
         {
             InitializeComponent();
-            CargarImpuestos();
+            CargarImpuestos();            
         }
 
         private void CargarImpuestos()
@@ -35,7 +39,6 @@ namespace CapaPresentacion
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             string Mensaje = string.Empty;
-
             try
             {
                 Categoria objCategoria = new Categoria()
@@ -105,6 +108,8 @@ namespace CapaPresentacion
 
         private void FrmCategorias_Load(object sender, EventArgs e)
         {
+            int usuarioActual = this.IdUsuario;
+
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
                 if (columna.Visible && columna.Name != "BtnSeleccionar")

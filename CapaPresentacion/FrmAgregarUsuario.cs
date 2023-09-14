@@ -1,6 +1,7 @@
 ﻿using CapaEntidad;
 using CapaEntidad.Models;
 using CapaNegocio;
+using CapaPresentacion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,10 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmAgregarUsuario : Form
+    public partial class FrmAgregarUsuario : Form, IFormularioConIdUsuario
     {
+        public int IdUsuario { get; set; }
+
         public FrmAgregarUsuario()
         {
             InitializeComponent();
@@ -73,6 +76,8 @@ namespace CapaPresentacion
 
         private void FrmAgregarUsuario_Load(object sender, EventArgs e)
         {
+            int usuarioActual = this.IdUsuario;
+
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
                 if (columna.Visible && columna.Name != "BtnSeleccionar")

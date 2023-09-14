@@ -8,6 +8,8 @@ namespace CapaEntidad.Models
 {
     public class UsuarioLogin
     {
+        public int Id { get; set; }
+
         public string Login { get; set; }
 
         public string PassWord { get; set; }

@@ -16,6 +16,8 @@ namespace CapaEntidad
 
         public string Nombre { get; set; }
 
+        public string Menu { get; set; }
+
         public bool Visualiza { get; set; }
 
         public bool Incluye { get; set; }

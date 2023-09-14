@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,20 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmRoles : Form
+    public partial class FrmRoles : Form, IFormularioConIdUsuario
     {
         bool EstadoRol;
+
+        public int IdUsuario { get; set; }
+
         public FrmRoles()
         {
             InitializeComponent();
         }
         private void FrmRoles_Load(object sender, EventArgs e)
         {
+            int usuarioActual = this.IdUsuario;
+
             dgvModulosData.Visible = false;
             //Listar Roles
             List<Rol> listaRoles = new CN_Roles().Listar();
@@ -53,13 +59,18 @@ namespace CapaPresentacion
             {
                 if(objRol.IdRol == 0)
                 {
-                    int idRol = new CN_Roles().Registrar(objRol, out Mensaje);
-                    bool insert = new CN_Modulos().InsertarModulos(idRol);
+                    int idRol = new CN_Roles().Registrar(objRol, out Mensaje);                  
 
                     if (idRol != 0)
                     {
+                        bool insert = new CN_Modulos().InsertarModulos(idRol);
                         dgvRolesData.Rows.Add(new object[] {"", idRol, TxtNombre.Text, ChkActivo.Checked });
                         limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(Mensaje);
+                        return;
                     }
                 }
                 else

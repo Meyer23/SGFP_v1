@@ -47,6 +47,7 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     categorias = new List<Categoria>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return categorias;
@@ -76,13 +77,13 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     IdCategoria = Convert.ToInt32(cmd.Parameters["@IdCategoria"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 IdCategoria = 0;
-                Mensaje = ex.Message;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return IdCategoria;
         }
@@ -112,13 +113,13 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 Respuesta = false;
-                Mensaje = ex.Message;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return Respuesta;
@@ -177,13 +178,13 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].ToString();
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 Respuesta = false;
-                Mensaje = ex.Message;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return Respuesta;

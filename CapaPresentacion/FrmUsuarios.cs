@@ -1,6 +1,7 @@
 ﻿using CapaEntidad;
 using CapaEntidad.Models;
 using CapaNegocio;
+using CapaPresentacion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,10 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmUsuarios : Form
+    public partial class FrmUsuarios : Form, IFormularioConIdUsuario
     {
+        public int IdUsuario { get; set; }
+
         public FrmUsuarios()
         {
             InitializeComponent();
@@ -25,6 +28,8 @@ namespace CapaPresentacion
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
+            int usuarioActual = this.IdUsuario;
+
             TxtDocumento.ReadOnly = true;
             TxtNombres.ReadOnly = true;
             TxtApellidos.ReadOnly = true;

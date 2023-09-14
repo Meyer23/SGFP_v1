@@ -35,25 +35,25 @@
             this.SubMenuAgregarUsuario = new FontAwesome.Sharp.IconMenuItem();
             this.MantenedorMenu = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuCategorias = new FontAwesome.Sharp.IconMenuItem();
-            this.SubMenuUnidadesDeMedida = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubMenuTiposDeImpuesto = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuUnidadesDeMedida = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuTiposDeImpuesto = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuProductos = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuEmpleados = new FontAwesome.Sharp.IconMenuItem();
-            this.SubMenuCajas = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubMenuTimbrados = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubMenuTiposDeValor = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubMenuFormasDePago = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubMenuBancos = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuCajas = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuTimbrados = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuTiposDeValor = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuFormasDePago = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuBancos = new FontAwesome.Sharp.IconMenuItem();
             this.ClientesMenu = new FontAwesome.Sharp.IconMenuItem();
             this.VentasMenu = new FontAwesome.Sharp.IconMenuItem();
-            this.SubMenuAperturaCierreCaja = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuAperturaCierreCaja = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuFacturas = new FontAwesome.Sharp.IconMenuItem();
             this.MenuVerDetalle = new FontAwesome.Sharp.IconMenuItem();
             this.ProveedoresMenu = new FontAwesome.Sharp.IconMenuItem();
             this.ComprasMenu = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuCompras = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuVerDetalleCompra = new FontAwesome.Sharp.IconMenuItem();
-            this.SubMenuPedidos = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuPedidos = new FontAwesome.Sharp.IconMenuItem();
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.LabelTituloSistema = new System.Windows.Forms.Label();
             this.Contenedor = new System.Windows.Forms.Panel();
@@ -258,7 +258,7 @@
             // SubMenuAperturaCierreCaja
             // 
             this.SubMenuAperturaCierreCaja.Name = "SubMenuAperturaCierreCaja";
-            this.SubMenuAperturaCierreCaja.Size = new System.Drawing.Size(198, 22);
+            this.SubMenuAperturaCierreCaja.Size = new System.Drawing.Size(206, 30);
             this.SubMenuAperturaCierreCaja.Text = "Apertura/Cierre de Caja";
             // 
             // SubMenuFacturas
@@ -267,7 +267,7 @@
             this.SubMenuFacturas.IconColor = System.Drawing.Color.Black;
             this.SubMenuFacturas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuFacturas.Name = "SubMenuFacturas";
-            this.SubMenuFacturas.Size = new System.Drawing.Size(198, 22);
+            this.SubMenuFacturas.Size = new System.Drawing.Size(206, 30);
             this.SubMenuFacturas.Text = "Facturas";
             this.SubMenuFacturas.Click += new System.EventHandler(this.MenuRegistrarVenta_Click);
             // 
@@ -277,7 +277,7 @@
             this.MenuVerDetalle.IconColor = System.Drawing.Color.Black;
             this.MenuVerDetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.MenuVerDetalle.Name = "MenuVerDetalle";
-            this.MenuVerDetalle.Size = new System.Drawing.Size(198, 22);
+            this.MenuVerDetalle.Size = new System.Drawing.Size(206, 30);
             this.MenuVerDetalle.Text = "Ver Detalle Facturas";
             this.MenuVerDetalle.Click += new System.EventHandler(this.MenuVerDetalle_Click);
             // 
@@ -446,16 +446,16 @@
         private FontAwesome.Sharp.IconMenuItem SubMenuRoles;
         private FontAwesome.Sharp.IconMenuItem SubMenuAbmUsuarios;
         private FontAwesome.Sharp.IconMenuItem SubMenuAgregarUsuario;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuUnidadesDeMedida;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuTiposDeImpuesto;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuCajas;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuTimbrados;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuTiposDeValor;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuFormasDePago;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuBancos;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuAperturaCierreCaja;
+        private FontAwesome.Sharp.IconMenuItem SubMenuUnidadesDeMedida;
+        private FontAwesome.Sharp.IconMenuItem SubMenuTiposDeImpuesto;
+        private FontAwesome.Sharp.IconMenuItem SubMenuCajas;
+        private FontAwesome.Sharp.IconMenuItem SubMenuTimbrados;
+        private FontAwesome.Sharp.IconMenuItem SubMenuTiposDeValor;
+        private FontAwesome.Sharp.IconMenuItem SubMenuFormasDePago;
+        private FontAwesome.Sharp.IconMenuItem SubMenuBancos;
+        private FontAwesome.Sharp.IconMenuItem SubMenuAperturaCierreCaja;
         private FontAwesome.Sharp.IconMenuItem ProveedoresMenu;
-        private System.Windows.Forms.ToolStripMenuItem SubMenuPedidos;
+        private FontAwesome.Sharp.IconMenuItem SubMenuPedidos;
     }
 }
 

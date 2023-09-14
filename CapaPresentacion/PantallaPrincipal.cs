@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
+using CapaEntidad;
+using CapaPresentacion.Interfaces;
 
 namespace CapaPresentacion
 {
@@ -29,11 +32,38 @@ namespace CapaPresentacion
 
         private void PantallaPrincipal_Load(object sender, EventArgs e)
         {
+            List<Modulo> modulos = new CN_Modulos().ObtenerModulos(usuarioActual.Id);  
+
+            foreach(IconMenuItem iconmenu in menu.Items)
+            {
+                bool encontrado = modulos.Any(m => m.Menu == iconmenu.Name && m.Visualiza == true);
+                if(encontrado == false)
+                {
+                    iconmenu.Visible = false;
+                }
+                else
+                {
+                    foreach(IconMenuItem iconsubmenu in iconmenu.DropDownItems)
+                    {
+                        bool encontrado2 = modulos.Any(m => m.Menu == iconsubmenu.Name && m.Visualiza == true);
+                        if (encontrado2 == false)
+                        {
+                            iconsubmenu.Visible = false;
+                        }
+                    }
+                }
+            }
+
             LBLUsuario.Text = usuarioActual.Login;
         }
 
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
+            if(formulario is IFormularioConIdUsuario formularioconidusuario)
+            {
+                formularioconidusuario.IdUsuario = usuarioActual.Id;
+            }
+
             if(MenuActivo != null)
             {
                 MenuActivo.BackColor = Color.White;
@@ -54,7 +84,7 @@ namespace CapaPresentacion
             formulario.Dock = DockStyle.Fill;
             formulario.BackColor = Color.SteelBlue;
 
-            Contenedor.Controls.Add(formulario);
+            Contenedor.Controls.Add(formulario);                
             formulario.Show();
         }
 

@@ -27,5 +27,10 @@ namespace CapaNegocio
         {
             return cd_Modulo.Editar(IdRol, IdModulo, Visualiza, Incluye, Modifica);
         }
+
+        public List<Modulo> ObtenerModulos(int idUsuario)
+        {
+            return cd_Modulo.ObtenerModulos(idUsuario);
+        }
     }
 }

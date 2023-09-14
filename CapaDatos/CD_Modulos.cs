@@ -49,6 +49,7 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     modulos = new List<Modulo>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return modulos;
@@ -110,6 +111,52 @@ namespace CapaDatos
             }
 
             return Respuesta;
+        }
+
+        public List<Modulo> ObtenerModulos(int idUsuario)
+        {
+            List<Modulo> modulos = new List<Modulo>();
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT RM.id, RM.idRol, RM.idModulo, M.Nombre, M.Menu, RM.Visualiza, RM.Incluye, RM.Modifica " +
+                                    "FROM RolesModulos RM " +
+                                    "INNER JOIN Modulos M ON RM.idModulo = M.id " +
+                                    "INNER JOIN Roles R ON RM.idRol = R.id " +
+                                    "INNER JOIN Usuarios U ON R.id = U.idRol " +
+                                    "WHERE U.id = " + idUsuario;
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            modulos.Add(new Modulo
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                IdRol = Convert.ToInt32(reader["idRol"]),
+                                IdModulo = Convert.ToInt32(reader["idModulo"]),
+                                Menu = reader["Menu"].ToString(),
+                                Visualiza = Convert.ToBoolean(reader["Visualiza"]),
+                                Incluye = Convert.ToBoolean(reader["Incluye"]),
+                                Modifica = Convert.ToBoolean(reader["Modifica"])
+                            });
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    modulos = new List<Modulo>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return modulos;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,12 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmTimbrados : Form
+    public partial class FrmTimbrados : Form, IFormularioConIdUsuario
     {
         bool estadoTimbrado;
+
+        public int IdUsuario { get; set; }
+
         public FrmTimbrados()
         {
             InitializeComponent();
@@ -96,6 +100,8 @@ namespace CapaPresentacion
 
         private void FrmTimbrados_Load(object sender, EventArgs e)
         {
+            int usuarioActual = this.IdUsuario;
+
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
                 if (columna.Visible && columna.Name != "BtnSeleccionar")

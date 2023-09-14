@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,12 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmImpuestos : Form
+    public partial class FrmImpuestos : Form, IFormularioConIdUsuario
     {
         bool estadoImpuesto;
+
+        public int IdUsuario { get; set; }
+
         public FrmImpuestos()
         {
             InitializeComponent();
@@ -96,6 +100,8 @@ namespace CapaPresentacion
 
         private void FrmImpuestos_Load(object sender, EventArgs e)
         {
+            int usuarioActual = this.IdUsuario;
+
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
                 if (columna.Visible && columna.Name != "BtnSeleccionar")
