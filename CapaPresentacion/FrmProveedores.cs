@@ -60,7 +60,8 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje);
+                        MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
                 }
                 else
@@ -86,7 +87,8 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje);
+                        MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
                 }
             }

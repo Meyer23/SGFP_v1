@@ -31,7 +31,7 @@ namespace CapaPresentacion
 
             if (!new CN_Clientes().ValidarCorreo(TxtCorreo.Text))
             {
-                MessageBox.Show("Dirección de correo electrónico no válida, el correo debe tener el formato: nombre@dominio.com");
+                MessageBox.Show("Dirección de correo electrónico no válida, el correo debe tener el formato: nombre@dominio.com", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TxtCorreo.Focus();
                 TxtCorreo.SelectAll();
             }
@@ -70,7 +70,8 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje);
+                        MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
                 }
                 else
@@ -96,7 +97,8 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje);
+                        MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
                 }
             }

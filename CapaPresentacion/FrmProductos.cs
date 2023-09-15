@@ -84,7 +84,8 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje);
+                        MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
                 }
                 else
@@ -114,13 +115,14 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje);
+                        MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

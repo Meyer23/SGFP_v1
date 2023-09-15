@@ -62,7 +62,8 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje);
+                        MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
                 }
                 else
@@ -84,13 +85,14 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje);
+                        MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -277,11 +279,13 @@ namespace CapaPresentacion
             
             if (resultado)
             {
-                MessageBox.Show("Precios generados correctamente"); 
+                MessageBox.Show("Precios generados correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
             else
             {
-                MessageBox.Show(Mensaje);
+                MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
         }

@@ -27,6 +27,7 @@ namespace CapaPresentacion
         }
         private void FrmRoles_Load(object sender, EventArgs e)
         {
+            BtnGuardar.Visible = true;
             int usuarioActual = this.IdUsuario;
 
             dgvModulosData.Visible = false;
@@ -44,7 +45,7 @@ namespace CapaPresentacion
 
             if (string.IsNullOrEmpty(TxtNombre.Text))
             {
-                MessageBox.Show("Nombre no debe ser vacio");
+                MessageBox.Show("Nombre no debe ser vacio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -69,7 +70,7 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje);
+                        MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
@@ -86,13 +87,14 @@ namespace CapaPresentacion
                         }
                         else
                         {
-                            MessageBox.Show(Mensaje);
+                            MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
                         }
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -105,6 +107,7 @@ namespace CapaPresentacion
             dgvModulosData.Rows.Clear();
             dgvModulosData.Visible = false;
             TxtIndex.Select();
+            BtnGuardar.Visible = true;
         }
 
         private void TxtNombre_Validating(object sender, CancelEventArgs e)
@@ -146,6 +149,7 @@ namespace CapaPresentacion
 
         private void dgvRolesData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            BtnGuardar.Visible = false;
             dgvModulosData.Visible = true;
             TxtNombre.ReadOnly = true;
             bool estadoRol;
