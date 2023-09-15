@@ -172,3 +172,4 @@ C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\Cap
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmTimbrados.resources
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmUnidadesMedida.resources
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmValores.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmCajas.resources

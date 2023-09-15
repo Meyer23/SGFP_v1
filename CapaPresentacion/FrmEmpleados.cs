@@ -28,6 +28,25 @@ namespace CapaPresentacion
         {
             string Mensaje = string.Empty;
 
+            DateTime fechaNacimiento = DtFechaNac.Value;
+
+            int bornYear = fechaNacimiento.Year;
+            int actualYear = DateTime.Now.Year;
+
+            int edad = actualYear - bornYear;
+
+            // Si la persona no ha tenido su cumpleaños este año, resta 1 a la edad
+            if (DateTime.Now.Month < fechaNacimiento.Month ||
+               (DateTime.Now.Month == fechaNacimiento.Month && DateTime.Now.Day < fechaNacimiento.Day))
+            {
+                edad--;
+            }
+            if (edad <= 18)
+            {
+                MessageBox.Show("El empleado no puede ser menor de edad.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (!new CN_Empleados().ValidarCorreo(TxtCorreo.Text))
             {
                 MessageBox.Show("Dirección de correo electrónico no válida, el correo debe tener el formato: nombre@dominio.com");

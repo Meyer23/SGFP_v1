@@ -65,6 +65,12 @@
     <Compile Include="FrmBancos.Designer.cs">
       <DependentUpon>FrmBancos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCajas.Designer.cs">
+      <DependentUpon>FrmCajas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBancos.resx">
       <DependentUpon>FrmBancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCajas.resx">
+      <DependentUpon>FrmCajas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>

@@ -177,5 +177,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(MantenedorMenu, new FrmTimbrados());
         }
+
+        private void SubMenuCajas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenedorMenu, new FrmCajas());
+        }
     }
 }
