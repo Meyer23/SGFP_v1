@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad.Models
 {
-    public class Cajas
+    public class CajasRequest
     {
-        public int Id { get; set; }
+        public int IdCaja { get; set; }
 
-        public string LoginUsuario { get; set; }
+        public int NumeroCaja { get; set; }
 
-        public int NumeroCaja { get; set; } 
+        public string Descripcion { get; set; }
 
         public string Sucursal { get; set; }
+
+        public string Usuario { get; set; }
 
         public bool Activo { get; set; }
     }

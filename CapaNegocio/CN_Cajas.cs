@@ -15,5 +15,15 @@ namespace CapaNegocio
         {
             return cd_cajas.ObtenerCajas();
         }
+
+        public bool GuardarUsuarioCaja(CajasRequest obj, out string Mensaje)
+        {
+            return cd_cajas.GuardarUsuarioCaja(obj, out Mensaje);
+        }
+
+        public int InsertarNuevaCaja(InsertarCajaRequest obj, out string Mensaje)
+        {
+            return cd_cajas.GuardarNuevaCaja(obj, out Mensaje);
+        }
     }
 }

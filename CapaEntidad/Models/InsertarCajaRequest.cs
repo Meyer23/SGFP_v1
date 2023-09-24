@@ -4,18 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaEntidad.Models
+namespace CapaDatos
 {
-    public class Cajas
+    public class InsertarCajaRequest
     {
-        public int Id { get; set; }
-
-        public string LoginUsuario { get; set; }
-
-        public int NumeroCaja { get; set; } 
-
+        public int NumeroCaja { get; set; }
+        
         public string Sucursal { get; set; }
 
         public bool Activo { get; set; }
+
+        public int? IdUsuario { get; set; }
     }
 }

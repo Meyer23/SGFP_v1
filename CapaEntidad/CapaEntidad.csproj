@@ -47,7 +47,9 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="FormaPago.cs" />
     <Compile Include="Impuesto.cs" />
+    <Compile Include="Models\InsertarCajaRequest.cs" />
     <Compile Include="Models\Cajas.cs" />
+    <Compile Include="Models\CajasRequest.cs" />
     <Compile Include="Models\Sucursales.cs" />
     <Compile Include="Models\UsuarioEditarRequest.cs" />
     <Compile Include="Models\UsuarioLogin.cs" />
