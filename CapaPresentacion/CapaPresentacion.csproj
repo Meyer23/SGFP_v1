@@ -342,5 +342,14 @@
   <ItemGroup>
     <None Include="Resources\check azul.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar_rojo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar_rojo2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,7 +26,7 @@ namespace CapaPresentacion
 
         private void FrmPedidos_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void CargarFormasPago()
@@ -113,7 +113,164 @@ namespace CapaPresentacion
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            decimal precio = 0;
+            bool producto_existe = false;
 
+            if(int.Parse(TxtIdProducto.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(!decimal.TryParse(TxtPrecioCompra.Text, out precio))
+            {
+                MessageBox.Show("Precio - Formato Inconrrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtPrecioCompra.Select();
+                return;
+            }
+
+            foreach(DataGridViewRow row in dgvData.Rows)
+            {
+                if (dgvData.RowCount > 0)
+                {
+                    if (row.Cells["idProducto"].Value.ToString() == TxtIdProducto.Text)
+                    {
+                        producto_existe = true;
+                        break;
+                    }
+                }
+                
+            }
+
+            if(!producto_existe)
+            {
+                dgvData.Rows.Add(new object[] { 
+                    TxtIdProducto.Text,
+                    TxtDescProducto.Text, 
+                    precio.ToString("0.00"), 
+                    TxtCantidad.Text, 
+                    (Convert.ToInt32(TxtCantidad.Text) * precio).ToString("0.00") });
+
+                calcularTotal();
+                limpiarProducto();
+                TxtCodProducto.Select();
+            }
+            else
+            {
+                MessageBox.Show("No se puede registrar el mismo producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                limpiarProducto();
+                TxtCodProducto.Select();
+                return;
+            }
         }
-    }
+
+        private void limpiarProducto()
+        {
+            TxtIdProducto.Text = "0";
+            TxtCodProducto.Clear();
+            TxtCodProducto.BackColor = Color.White;
+            TxtDescProducto.Clear ();
+            TxtPrecioCompra.Clear();
+            TxtCantidad.Text = "1";
+        }
+
+        private void calcularTotal()
+        {
+            decimal total = 0;
+
+            if(dgvData.Rows.Count > 0)
+            {
+                foreach(DataGridViewRow row in dgvData.Rows)
+                {
+                    total += Convert.ToDecimal(row.Cells["Total"].Value.ToString());
+                }
+            }
+            TxtTotalPedido.Text = total.ToString("0.00");
+        }
+
+        private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            if (e.ColumnIndex == 5)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.borrar_rojo2.Width;
+                var h = Properties.Resources.borrar_rojo2.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.borrar_rojo2, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvData.Columns[e.ColumnIndex].Name == "BtnEliminar")
+            {
+                int index = e.RowIndex;
+
+                if (index >= 0)
+                {
+                    dgvData.Rows.RemoveAt(index);
+                    calcularTotal();
+                }
+            }
+        }
+
+        private void TxtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if(TxtPrecioCompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ",")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if(Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ",")
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (TxtCantidad.Text.Trim().Length == 0 && e.KeyChar.ToString() == ",")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ",")
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
 }
