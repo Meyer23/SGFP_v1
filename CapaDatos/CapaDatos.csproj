@@ -56,6 +56,7 @@
     <Compile Include="CD_Roles.cs" />
     <Compile Include="CD_Sucursal.cs" />
     <Compile Include="CD_Timbrados.cs" />
+    <Compile Include="CD_TiposDocumentos.cs" />
     <Compile Include="CD_UnidadesMedida.cs" />
     <Compile Include="CD_Usuarios.cs" />
     <Compile Include="CD_Valores.cs" />

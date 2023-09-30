@@ -174,3 +174,9 @@ C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\Cap
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmValores.resources
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmCajas.resources
 C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpNuevaCaja.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmCajas.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmPedidos.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpNuevaCaja.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmTiposDocumentos.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpProveedores.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpProductos.resources

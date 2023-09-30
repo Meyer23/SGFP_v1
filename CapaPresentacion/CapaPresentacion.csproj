@@ -107,6 +107,12 @@
     <Compile Include="FrmImpuestos.Designer.cs">
       <DependentUpon>FrmImpuestos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPedidos.Designer.cs">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     </Compile>
     <Compile Include="FrmTimbrados.Designer.cs">
       <DependentUpon>FrmTimbrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposDocumentos.Designer.cs">
+      <DependentUpon>FrmTiposDocumentos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUnidadesMedida.cs">
       <SubType>Form</SubType>
@@ -192,6 +204,18 @@
     <Compile Include="PopUpNuevaCaja.Designer.cs">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUpProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpProductos.Designer.cs">
+      <DependentUpon>PopUpProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpProveedores.Designer.cs">
+      <DependentUpon>PopUpProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmUsuarios.cs">
@@ -227,6 +251,9 @@
     <EmbeddedResource Include="FrmImpuestos.resx">
       <DependentUpon>FrmImpuestos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTimbrados.resx">
       <DependentUpon>FrmTimbrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposDocumentos.resx">
+      <DependentUpon>FrmTiposDocumentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUnidadesMedida.resx">
       <DependentUpon>FrmUnidadesMedida.cs</DependentUpon>
@@ -265,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpNuevaCaja.resx">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpProductos.resx">
+      <DependentUpon>PopUpProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpProveedores.resx">
+      <DependentUpon>PopUpProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

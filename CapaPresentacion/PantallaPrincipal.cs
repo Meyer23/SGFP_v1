@@ -182,5 +182,15 @@ namespace CapaPresentacion
         {
             AbrirFormulario(MantenedorMenu, new FrmCajas());
         }
+
+        private void SubMenuPedidos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(ComprasMenu, new FrmPedidos(usuarioActual));
+        }
+
+        private void SubMenuTiposDocumentos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenedorMenu, new FrmTiposDocumentos());
+        }
     }
 }

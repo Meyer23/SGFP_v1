@@ -26,5 +26,10 @@ namespace CapaNegocio
         {
             return cd_formaPago.Editar(obj, out Mensaje);
         }
+
+        public List<FormaPago> ObtenerFormasPago()
+        {
+            return cd_formaPago.ObtenerFormasPago();
+        }
     }
 }

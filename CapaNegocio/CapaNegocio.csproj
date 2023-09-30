@@ -54,6 +54,7 @@
     <Compile Include="CN_Roles.cs" />
     <Compile Include="CN_Sucursal.cs" />
     <Compile Include="CN_Timbrados.cs" />
+    <Compile Include="CN_TiposDocumentos.cs" />
     <Compile Include="CN_UnidadesMedida.cs" />
     <Compile Include="CN_Usuario.cs" />
     <Compile Include="CN_Valores.cs" />

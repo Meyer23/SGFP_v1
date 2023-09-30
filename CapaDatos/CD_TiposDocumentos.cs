@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace CapaDatos
 {
-    public class CD_FormasPago
+    public class CD_TiposDocumentos
     {
-        public List<FormaPago> Listar()
+        public List<TipoDocumento> Listar()
         {
-            List<FormaPago> formasPago = new List<FormaPago>();
+            List<TipoDocumento> tiposDocumentos = new List<TipoDocumento>();
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "SELECT id, Descripcion, Activo FROM FormasPagos";
+                    string query = "SELECT id, Descripcion, TipoCodigo, Activo FROM TiposDocumentosCompra WHERE Activo = 1";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -30,10 +30,11 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            formasPago.Add(new FormaPago
+                            tiposDocumentos.Add(new TipoDocumento
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                 Descripcion = reader["Descripcion"].ToString(),
+                                TipoCodigo = Convert.ToBoolean(reader["TipoCodigo"]),
                                 Activo = Convert.ToBoolean(reader["Activo"])
                             });
                         }
@@ -42,16 +43,16 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    formasPago = new List<FormaPago>();
+                    tiposDocumentos = new List<TipoDocumento>();
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            return formasPago;
+            return tiposDocumentos;
         }
 
-        public int Registrar(FormaPago obj, out string Mensaje)
+        public int Registrar(TipoDocumento obj, out string Mensaje)
         {
-            int IdFormaPago = 0;
+            int IdTipoDocumento = 0;
             Mensaje = string.Empty;
 
             try
@@ -59,29 +60,30 @@ namespace CapaDatos
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("sp_formaPago_insertar", con);
+                    SqlCommand cmd = new SqlCommand("sp_tipoDocumento_insertar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("@TipoCodigo", obj.TipoCodigo);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
-                    cmd.Parameters.Add("@IdFormaPago", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@IdTipoDocumento", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.ExecuteNonQuery();
 
-                    IdFormaPago = Convert.ToInt32(cmd.Parameters["@IdFormaPago"].Value);
+                    IdTipoDocumento = Convert.ToInt32(cmd.Parameters["@IdTipoDocumento"].Value);
                     Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
-                IdFormaPago = 0;
+                IdTipoDocumento = 0;
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return IdFormaPago;
+            return IdTipoDocumento;
         }
 
-        public bool Editar(FormaPago obj, out string Mensaje)
+        public bool Editar(TipoDocumento obj, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = string.Empty;
@@ -91,11 +93,12 @@ namespace CapaDatos
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("sp_formaPago_editar", con);
+                    SqlCommand cmd = new SqlCommand("sp_tipoDocumento_editar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@IdFormaPago", obj.Id);
+                    cmd.Parameters.AddWithValue("@IdTipoDocumento", obj.Id);
                     cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("@TipoCodigo", obj.TipoCodigo);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -115,14 +118,14 @@ namespace CapaDatos
             return Respuesta;
         }
 
-        public List<FormaPago> ObtenerFormasPago()
+        public List<TipoDocumento> ObtenerTiposDocumentos()
         {
-            List<FormaPago> formasPago = new List<FormaPago>();
+            List<TipoDocumento> tiposDocumentos = new List<TipoDocumento>();
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "SELECT Descripcion FROM FormasPagos WHERE Activo = 1";
+                    string query = "SELECT Descripcion FROM TiposDocumentosCompra WHERE Activo = 1";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -132,7 +135,7 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            formasPago.Add(new FormaPago
+                            tiposDocumentos.Add(new TipoDocumento
                             {
                                 Descripcion = reader["Descripcion"].ToString()
                             });
@@ -143,7 +146,7 @@ namespace CapaDatos
                 {
                     MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                return formasPago;
+                return tiposDocumentos;
             }
         }
     }
