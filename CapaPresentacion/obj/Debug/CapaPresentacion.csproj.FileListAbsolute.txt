@@ -180,3 +180,8 @@ C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpN
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmTiposDocumentos.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpProveedores.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpProductos.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmPedidos.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmTiposDocumentos.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpProductos.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpProveedores.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmAperturaCierreCaja.resources
