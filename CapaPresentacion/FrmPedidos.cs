@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -273,4 +274,80 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(TxtIdProveedor.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un proveedor", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dgvData.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe ingresar al menos un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataTable detalle_pedido = new DataTable();
+
+            detalle_pedido.Columns.Add("idProducto", typeof(int));
+            detalle_pedido.Columns.Add("Cantidad", typeof(decimal));
+            detalle_pedido.Columns.Add("Precio", typeof(decimal));
+            detalle_pedido.Columns.Add("Total", typeof(decimal));
+
+            foreach (DataGridViewRow row in dgvData.Rows)
+            {
+                detalle_pedido.Rows.Add(new object[] {
+                   Convert.ToInt32(row.Cells["idProducto"].Value.ToString()),
+                   Convert.ToDecimal(row.Cells["Cantidad"].Value.ToString()),
+                   Convert.ToDecimal(row.Cells["Precio"].Value.ToString()),
+                   Convert.ToDecimal(row.Cells["Total"].Value.ToString())
+                });
+            }
+
+            int NroCorrelativo = new CN_Pedidos().ObtenerNroPedido();
+
+            Pedido objPedido = new Pedido()
+            {
+                IdProveedor = Convert.ToInt32(TxtIdProveedor.Text),
+                NumeroPedido = NroCorrelativo,
+                TipoDocumento = ComboTipoDoc.Text.ToString(),
+                FormaPago = ComboFormaPago.Text.ToString(),
+                Fecha = (DateTime)(dtpFecha.Value),
+                FechaRequerida = (DateTime)(dtpFechaRequerida.Value),
+                Observacion = TxtObs.Text,
+                Total = Convert.ToDecimal(TxtTotalPedido.Text),
+                IdUsuario = _Usuario.Id
+            };
+
+            string Mensaje = string.Empty;
+
+            bool Respuesta = new CN_Pedidos().Registrar(objPedido, detalle_pedido, out Mensaje);
+
+            if (Respuesta)
+            {
+                var result = MessageBox.Show("Número de Pedido generado:\n" + NroCorrelativo, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    TxtObs.Clear();
+                    dtpFecha.Value = DateTime.Now;
+                    dtpFechaRequerida.Value = DateTime.Now;
+                    ComboTipoDoc.SelectedIndex = 0;
+                    ComboFormaPago.SelectedIndex = 0;
+                    TxtIdProveedor.Text = "0";
+                    TxtRUC.Clear();
+                    TxtRazonSocial.Clear();
+                    limpiarProducto();
+                    dgvData.Rows.Clear();
+                    calcularTotal();
+                }
+            }
+            else
+            {
+                MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+    }
 }
