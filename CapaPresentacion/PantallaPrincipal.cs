@@ -193,7 +193,7 @@ namespace CapaPresentacion
             AbrirFormulario(MantenedorMenu, new FrmTiposDocumentos());
         }
 
-        private void SubMenuAperturaCierre_Click(object sender, EventArgs e)
+        private void SubMenuAperturaCierreCaja_Click(object sender, EventArgs e)
         {
             AbrirFormulario(VentasMenu, new FrmAperturaCierreCaja());
         }

@@ -276,7 +276,7 @@
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
             // 
-            // AperturaCierreCaja
+            // FrmAperturaCierreCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -302,8 +302,9 @@
             this.Controls.Add(this.LblFecha);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LblUsuariosAgregar);
-            this.Name = "AperturaCierreCaja";
+            this.Name = "FrmAperturaCierreCaja";
             this.Text = "Apertura / Cierre ";
+            this.Load += new System.EventHandler(this.FrmAperturaCierreCaja_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImporteUpDown)).EndInit();

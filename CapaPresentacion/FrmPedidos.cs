@@ -60,7 +60,7 @@ namespace CapaPresentacion
 
                 if (result == DialogResult.OK)
                 {
-                    TxtIdProveedor.Text =  popup._Proveedor.Id.ToString();
+                    TxtIdProveedor.Text = popup._Proveedor.Id.ToString();
                     TxtRUC.Text = popup._Proveedor.Documento;
                     TxtRazonSocial.Text = popup._Proveedor.RazonSocial;
                     TxtObs.Select();
@@ -94,7 +94,7 @@ namespace CapaPresentacion
 
         private void TxtCodProducto_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter)
+            if (e.KeyData == Keys.Enter)
             {
                 Producto oProducto = new CN_Productos().Listar().Where(p => p.Codigo == TxtCodProducto.Text && p.Activo == true).FirstOrDefault();
                 if (oProducto != null)
@@ -117,20 +117,20 @@ namespace CapaPresentacion
             decimal precio = 0;
             bool producto_existe = false;
 
-            if(int.Parse(TxtIdProducto.Text) == 0)
+            if (int.Parse(TxtIdProducto.Text) == 0)
             {
                 MessageBox.Show("Debe seleccionar un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if(!decimal.TryParse(TxtPrecioCompra.Text, out precio))
+            if (!decimal.TryParse(TxtPrecioCompra.Text, out precio))
             {
                 MessageBox.Show("Precio - Formato Inconrrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TxtPrecioCompra.Select();
                 return;
             }
 
-            foreach(DataGridViewRow row in dgvData.Rows)
+            foreach (DataGridViewRow row in dgvData.Rows)
             {
                 if (dgvData.RowCount > 0)
                 {
@@ -140,16 +140,16 @@ namespace CapaPresentacion
                         break;
                     }
                 }
-                
+
             }
 
-            if(!producto_existe)
+            if (!producto_existe)
             {
-                dgvData.Rows.Add(new object[] { 
+                dgvData.Rows.Add(new object[] {
                     TxtIdProducto.Text,
-                    TxtDescProducto.Text, 
-                    precio.ToString("0.00"), 
-                    TxtCantidad.Text, 
+                    TxtDescProducto.Text,
+                    precio.ToString("0.00"),
+                    TxtCantidad.Text,
                     (Convert.ToInt32(TxtCantidad.Text) * precio).ToString("0.00") });
 
                 calcularTotal();
@@ -170,7 +170,7 @@ namespace CapaPresentacion
             TxtIdProducto.Text = "0";
             TxtCodProducto.Clear();
             TxtCodProducto.BackColor = Color.White;
-            TxtDescProducto.Clear ();
+            TxtDescProducto.Clear();
             TxtPrecioCompra.Clear();
             TxtCantidad.Text = "1";
         }
@@ -179,9 +179,9 @@ namespace CapaPresentacion
         {
             decimal total = 0;
 
-            if(dgvData.Rows.Count > 0)
+            if (dgvData.Rows.Count > 0)
             {
-                foreach(DataGridViewRow row in dgvData.Rows)
+                foreach (DataGridViewRow row in dgvData.Rows)
                 {
                     total += Convert.ToDecimal(row.Cells["Total"].Value.ToString());
                 }
@@ -231,13 +231,13 @@ namespace CapaPresentacion
             }
             else
             {
-                if(TxtPrecioCompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ",")
+                if (TxtPrecioCompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ",")
                 {
                     e.Handled = true;
                 }
                 else
                 {
-                    if(Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ",")
+                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ",")
                     {
                         e.Handled = false;
                     }

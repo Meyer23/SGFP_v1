@@ -48,6 +48,7 @@
             this.ClientesMenu = new FontAwesome.Sharp.IconMenuItem();
             this.VentasMenu = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuFacturas = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuAperturaCierreCaja = new FontAwesome.Sharp.IconMenuItem();
             this.MenuVerDetalle = new FontAwesome.Sharp.IconMenuItem();
             this.ProveedoresMenu = new FontAwesome.Sharp.IconMenuItem();
             this.ComprasMenu = new FontAwesome.Sharp.IconMenuItem();
@@ -59,7 +60,6 @@
             this.Contenedor = new System.Windows.Forms.Panel();
             this.ULabel = new System.Windows.Forms.Label();
             this.LBLUsuario = new System.Windows.Forms.Label();
-            this.SubMenuAperturaCierre = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -277,8 +277,8 @@
             // 
             this.VentasMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubMenuFacturas,
-            this.MenuVerDetalle,
-            this.SubMenuAperturaCierre});
+            this.SubMenuAperturaCierreCaja,
+            this.MenuVerDetalle});
             this.VentasMenu.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             this.VentasMenu.IconColor = System.Drawing.Color.Black;
             this.VentasMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -298,6 +298,16 @@
             this.SubMenuFacturas.Size = new System.Drawing.Size(273, 34);
             this.SubMenuFacturas.Text = "Facturas";
             this.SubMenuFacturas.Click += new System.EventHandler(this.MenuRegistrarVenta_Click);
+            // 
+            // SubMenuAperturaCierreCaja
+            // 
+            this.SubMenuAperturaCierreCaja.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuAperturaCierreCaja.IconColor = System.Drawing.Color.Black;
+            this.SubMenuAperturaCierreCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuAperturaCierreCaja.Name = "SubMenuAperturaCierreCaja";
+            this.SubMenuAperturaCierreCaja.Size = new System.Drawing.Size(273, 34);
+            this.SubMenuAperturaCierreCaja.Text = "Apertura/Cierre Caja";
+            this.SubMenuAperturaCierreCaja.Click += new System.EventHandler(this.SubMenuAperturaCierreCaja_Click);
             // 
             // MenuVerDetalle
             // 
@@ -425,16 +435,6 @@
             this.LBLUsuario.TabIndex = 5;
             this.LBLUsuario.Text = "LBLUsuario";
             // 
-            // SubMenuAperturaCierre
-            // 
-            this.SubMenuAperturaCierre.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.SubMenuAperturaCierre.IconColor = System.Drawing.Color.Black;
-            this.SubMenuAperturaCierre.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubMenuAperturaCierre.Name = "SubMenuAperturaCierre";
-            this.SubMenuAperturaCierre.Size = new System.Drawing.Size(273, 34);
-            this.SubMenuAperturaCierre.Text = "Apertura/Cierre Caja";
-            this.SubMenuAperturaCierre.Click += new System.EventHandler(this.SubMenuAperturaCierre_Click);
-            // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -493,7 +493,7 @@
         private FontAwesome.Sharp.IconMenuItem ProveedoresMenu;
         private FontAwesome.Sharp.IconMenuItem SubMenuPedidos;
         private FontAwesome.Sharp.IconMenuItem SubMenuTiposDocumentos;
-        private FontAwesome.Sharp.IconMenuItem SubMenuAperturaCierre;
+        private FontAwesome.Sharp.IconMenuItem SubMenuAperturaCierreCaja;
     }
 }
 
