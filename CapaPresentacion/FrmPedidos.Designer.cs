@@ -44,7 +44,7 @@
             this.LblObs = new System.Windows.Forms.Label();
             this.TxtNroPedido = new System.Windows.Forms.TextBox();
             this.LboNroPedido = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaRequerida = new System.Windows.Forms.DateTimePicker();
             this.LblFechaRequerida = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.LblFecha = new System.Windows.Forms.Label();
@@ -102,7 +102,7 @@
             this.groupBoxInfoPedido.Controls.Add(this.LblObs);
             this.groupBoxInfoPedido.Controls.Add(this.TxtNroPedido);
             this.groupBoxInfoPedido.Controls.Add(this.LboNroPedido);
-            this.groupBoxInfoPedido.Controls.Add(this.dateTimePicker2);
+            this.groupBoxInfoPedido.Controls.Add(this.dtpFechaRequerida);
             this.groupBoxInfoPedido.Controls.Add(this.LblFechaRequerida);
             this.groupBoxInfoPedido.Controls.Add(this.dtpFecha);
             this.groupBoxInfoPedido.Controls.Add(this.LblFecha);
@@ -248,15 +248,15 @@
             this.LboNroPedido.TabIndex = 4;
             this.LboNroPedido.Text = "Número Pedido:";
             // 
-            // dateTimePicker2
+            // dtpFechaRequerida
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(227, 43);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker2.TabIndex = 3;
-            this.dateTimePicker2.Value = new System.DateTime(2023, 9, 29, 0, 0, 0, 0);
+            this.dtpFechaRequerida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaRequerida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaRequerida.Location = new System.Drawing.Point(227, 43);
+            this.dtpFechaRequerida.Name = "dtpFechaRequerida";
+            this.dtpFechaRequerida.Size = new System.Drawing.Size(97, 20);
+            this.dtpFechaRequerida.TabIndex = 3;
+            this.dtpFechaRequerida.Value = new System.DateTime(2023, 9, 29, 0, 0, 0, 0);
             // 
             // LblFechaRequerida
             // 
@@ -514,6 +514,7 @@
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnAgregar
             // 
@@ -606,7 +607,7 @@
         private System.Windows.Forms.Label LblPedidos;
         private System.Windows.Forms.GroupBox groupBoxInfoPedido;
         private System.Windows.Forms.Label LblFecha;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpFechaRequerida;
         private System.Windows.Forms.Label LblFechaRequerida;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.TextBox TxtNroPedido;
