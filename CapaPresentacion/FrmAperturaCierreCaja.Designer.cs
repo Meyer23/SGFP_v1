@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.LblUsuariosAgregar = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.LbLApertura = new System.Windows.Forms.Label();
             this.LblFecha = new System.Windows.Forms.Label();
             this.DateTimePickerApertura = new System.Windows.Forms.DateTimePicker();
             this.LblSucursal = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ComboSucursal = new System.Windows.Forms.ComboBox();
+            this.ComboCajas = new System.Windows.Forms.ComboBox();
             this.LblCaja = new System.Windows.Forms.Label();
             this.ImporteUpDown = new System.Windows.Forms.NumericUpDown();
             this.LbLimporte = new System.Windows.Forms.Label();
@@ -43,18 +41,18 @@
             this.LbLEstado = new System.Windows.Forms.Label();
             this.LbLCajero = new System.Windows.Forms.Label();
             this.ComboCajero = new System.Windows.Forms.ComboBox();
-            this.PanelCierre = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.DateTimePickerCierre = new System.Windows.Forms.DateTimePicker();
             this.LbLFechaCierre = new System.Windows.Forms.Label();
             this.LbLimporteCierre = new System.Windows.Forms.Label();
             this.UpDownMontoCierre = new System.Windows.Forms.NumericUpDown();
             this.BtnSalir = new FontAwesome.Sharp.IconButton();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.panel1.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImporteUpDown)).BeginInit();
-            this.PanelCierre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownMontoCierre)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblUsuariosAgregar
@@ -64,30 +62,13 @@
             this.LblUsuariosAgregar.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblUsuariosAgregar.Location = new System.Drawing.Point(0, 0);
             this.LblUsuariosAgregar.Name = "LblUsuariosAgregar";
-            this.LblUsuariosAgregar.Size = new System.Drawing.Size(1125, 553);
+            this.LblUsuariosAgregar.Size = new System.Drawing.Size(1036, 617);
             this.LblUsuariosAgregar.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.LbLApertura);
-            this.panel1.Location = new System.Drawing.Point(12, 36);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 49);
-            this.panel1.TabIndex = 4;
-            // 
-            // LbLApertura
-            // 
-            this.LbLApertura.AutoSize = true;
-            this.LbLApertura.Location = new System.Drawing.Point(3, 18);
-            this.LbLApertura.Name = "LbLApertura";
-            this.LbLApertura.Size = new System.Drawing.Size(107, 20);
-            this.LbLApertura.TabIndex = 5;
-            this.LbLApertura.Text = "Apertura Caja";
             // 
             // LblFecha
             // 
             this.LblFecha.AutoSize = true;
-            this.LblFecha.Location = new System.Drawing.Point(15, 116);
+            this.LblFecha.Location = new System.Drawing.Point(26, 60);
             this.LblFecha.Name = "LblFecha";
             this.LblFecha.Size = new System.Drawing.Size(124, 20);
             this.LblFecha.TabIndex = 6;
@@ -96,7 +77,7 @@
             // DateTimePickerApertura
             // 
             this.DateTimePickerApertura.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerApertura.Location = new System.Drawing.Point(157, 110);
+            this.DateTimePickerApertura.Location = new System.Drawing.Point(230, 44);
             this.DateTimePickerApertura.Name = "DateTimePickerApertura";
             this.DateTimePickerApertura.Size = new System.Drawing.Size(200, 26);
             this.DateTimePickerApertura.TabIndex = 7;
@@ -104,32 +85,33 @@
             // LblSucursal
             // 
             this.LblSucursal.AutoSize = true;
-            this.LblSucursal.Location = new System.Drawing.Point(15, 167);
+            this.LblSucursal.Location = new System.Drawing.Point(26, 113);
             this.LblSucursal.Name = "LblSucursal";
             this.LblSucursal.Size = new System.Drawing.Size(75, 20);
             this.LblSucursal.TabIndex = 8;
             this.LblSucursal.Text = "Sucursal:";
             // 
-            // comboBox1
+            // ComboSucursal
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(157, 159);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 28);
-            this.comboBox1.TabIndex = 9;
+            this.ComboSucursal.Enabled = false;
+            this.ComboSucursal.FormattingEnabled = true;
+            this.ComboSucursal.Location = new System.Drawing.Point(230, 105);
+            this.ComboSucursal.Name = "ComboSucursal";
+            this.ComboSucursal.Size = new System.Drawing.Size(200, 28);
+            this.ComboSucursal.TabIndex = 9;
             // 
-            // comboBox2
+            // ComboCajas
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(157, 210);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 28);
-            this.comboBox2.TabIndex = 10;
+            this.ComboCajas.FormattingEnabled = true;
+            this.ComboCajas.Location = new System.Drawing.Point(230, 161);
+            this.ComboCajas.Name = "ComboCajas";
+            this.ComboCajas.Size = new System.Drawing.Size(200, 28);
+            this.ComboCajas.TabIndex = 10;
             // 
             // LblCaja
             // 
             this.LblCaja.AutoSize = true;
-            this.LblCaja.Location = new System.Drawing.Point(15, 218);
+            this.LblCaja.Location = new System.Drawing.Point(26, 161);
             this.LblCaja.Name = "LblCaja";
             this.LblCaja.Size = new System.Drawing.Size(45, 20);
             this.LblCaja.TabIndex = 11;
@@ -137,7 +119,7 @@
             // 
             // ImporteUpDown
             // 
-            this.ImporteUpDown.Location = new System.Drawing.Point(157, 255);
+            this.ImporteUpDown.Location = new System.Drawing.Point(230, 217);
             this.ImporteUpDown.Name = "ImporteUpDown";
             this.ImporteUpDown.Size = new System.Drawing.Size(200, 26);
             this.ImporteUpDown.TabIndex = 12;
@@ -145,7 +127,7 @@
             // LbLimporte
             // 
             this.LbLimporte.AutoSize = true;
-            this.LbLimporte.Location = new System.Drawing.Point(15, 261);
+            this.LbLimporte.Location = new System.Drawing.Point(26, 219);
             this.LbLimporte.Name = "LbLimporte";
             this.LbLimporte.Size = new System.Drawing.Size(68, 20);
             this.LbLimporte.TabIndex = 13;
@@ -154,7 +136,7 @@
             // ComboEstado
             // 
             this.ComboEstado.FormattingEnabled = true;
-            this.ComboEstado.Location = new System.Drawing.Point(641, 108);
+            this.ComboEstado.Location = new System.Drawing.Point(593, 36);
             this.ComboEstado.Name = "ComboEstado";
             this.ComboEstado.Size = new System.Drawing.Size(200, 28);
             this.ComboEstado.TabIndex = 14;
@@ -162,7 +144,7 @@
             // LbLEstado
             // 
             this.LbLEstado.AutoSize = true;
-            this.LbLEstado.Location = new System.Drawing.Point(557, 116);
+            this.LbLEstado.Location = new System.Drawing.Point(504, 44);
             this.LbLEstado.Name = "LbLEstado";
             this.LbLEstado.Size = new System.Drawing.Size(64, 20);
             this.LbLEstado.TabIndex = 15;
@@ -171,7 +153,7 @@
             // LbLCajero
             // 
             this.LbLCajero.AutoSize = true;
-            this.LbLCajero.Location = new System.Drawing.Point(557, 167);
+            this.LbLCajero.Location = new System.Drawing.Point(504, 93);
             this.LbLCajero.Name = "LbLCajero";
             this.LbLCajero.Size = new System.Drawing.Size(59, 20);
             this.LbLCajero.TabIndex = 17;
@@ -180,32 +162,15 @@
             // ComboCajero
             // 
             this.ComboCajero.FormattingEnabled = true;
-            this.ComboCajero.Location = new System.Drawing.Point(641, 159);
+            this.ComboCajero.Location = new System.Drawing.Point(593, 85);
             this.ComboCajero.Name = "ComboCajero";
             this.ComboCajero.Size = new System.Drawing.Size(200, 28);
             this.ComboCajero.TabIndex = 16;
             // 
-            // PanelCierre
-            // 
-            this.PanelCierre.Controls.Add(this.label1);
-            this.PanelCierre.Location = new System.Drawing.Point(12, 316);
-            this.PanelCierre.Name = "PanelCierre";
-            this.PanelCierre.Size = new System.Drawing.Size(1110, 49);
-            this.PanelCierre.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Cierre Caja";
-            // 
             // DateTimePickerCierre
             // 
             this.DateTimePickerCierre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerCierre.Location = new System.Drawing.Point(154, 389);
+            this.DateTimePickerCierre.Location = new System.Drawing.Point(230, 73);
             this.DateTimePickerCierre.Name = "DateTimePickerCierre";
             this.DateTimePickerCierre.Size = new System.Drawing.Size(200, 26);
             this.DateTimePickerCierre.TabIndex = 20;
@@ -213,7 +178,7 @@
             // LbLFechaCierre
             // 
             this.LbLFechaCierre.AutoSize = true;
-            this.LbLFechaCierre.Location = new System.Drawing.Point(12, 395);
+            this.LbLFechaCierre.Location = new System.Drawing.Point(26, 79);
             this.LbLFechaCierre.Name = "LbLFechaCierre";
             this.LbLFechaCierre.Size = new System.Drawing.Size(104, 20);
             this.LbLFechaCierre.TabIndex = 19;
@@ -222,7 +187,7 @@
             // LbLimporteCierre
             // 
             this.LbLimporteCierre.AutoSize = true;
-            this.LbLimporteCierre.Location = new System.Drawing.Point(15, 448);
+            this.LbLimporteCierre.Location = new System.Drawing.Point(26, 161);
             this.LbLimporteCierre.Name = "LbLimporteCierre";
             this.LbLimporteCierre.Size = new System.Drawing.Size(68, 20);
             this.LbLimporteCierre.TabIndex = 22;
@@ -230,7 +195,7 @@
             // 
             // UpDownMontoCierre
             // 
-            this.UpDownMontoCierre.Location = new System.Drawing.Point(157, 442);
+            this.UpDownMontoCierre.Location = new System.Drawing.Point(230, 155);
             this.UpDownMontoCierre.Name = "UpDownMontoCierre";
             this.UpDownMontoCierre.Size = new System.Drawing.Size(200, 26);
             this.UpDownMontoCierre.TabIndex = 21;
@@ -247,7 +212,7 @@
             this.BtnSalir.IconColor = System.Drawing.Color.White;
             this.BtnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnSalir.IconSize = 18;
-            this.BtnSalir.Location = new System.Drawing.Point(954, 501);
+            this.BtnSalir.Location = new System.Drawing.Point(866, 547);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(150, 40);
             this.BtnSalir.TabIndex = 55;
@@ -267,7 +232,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(786, 499);
+            this.BtnGuardar.Location = new System.Drawing.Point(687, 547);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(150, 42);
             this.BtnGuardar.TabIndex = 54;
@@ -276,56 +241,73 @@
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.LbLEstado);
+            this.groupBox1.Controls.Add(this.ComboEstado);
+            this.groupBox1.Controls.Add(this.ComboCajero);
+            this.groupBox1.Controls.Add(this.LbLCajero);
+            this.groupBox1.Controls.Add(this.LblFecha);
+            this.groupBox1.Controls.Add(this.DateTimePickerApertura);
+            this.groupBox1.Controls.Add(this.LblSucursal);
+            this.groupBox1.Controls.Add(this.ComboSucursal);
+            this.groupBox1.Controls.Add(this.LbLimporte);
+            this.groupBox1.Controls.Add(this.ComboCajas);
+            this.groupBox1.Controls.Add(this.ImporteUpDown);
+            this.groupBox1.Controls.Add(this.LblCaja);
+            this.groupBox1.Location = new System.Drawing.Point(12, 24);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1004, 267);
+            this.groupBox1.TabIndex = 56;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Apertura Caja";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.LbLFechaCierre);
+            this.groupBox2.Controls.Add(this.DateTimePickerCierre);
+            this.groupBox2.Controls.Add(this.UpDownMontoCierre);
+            this.groupBox2.Controls.Add(this.LbLimporteCierre);
+            this.groupBox2.Location = new System.Drawing.Point(12, 310);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1004, 206);
+            this.groupBox2.TabIndex = 57;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cierre Caja";
+            // 
             // FrmAperturaCierreCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 553);
+            this.ClientSize = new System.Drawing.Size(1035, 617);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.LbLimporteCierre);
-            this.Controls.Add(this.UpDownMontoCierre);
-            this.Controls.Add(this.DateTimePickerCierre);
-            this.Controls.Add(this.LbLFechaCierre);
-            this.Controls.Add(this.PanelCierre);
-            this.Controls.Add(this.LbLCajero);
-            this.Controls.Add(this.ComboCajero);
-            this.Controls.Add(this.LbLEstado);
-            this.Controls.Add(this.ComboEstado);
-            this.Controls.Add(this.LbLimporte);
-            this.Controls.Add(this.ImporteUpDown);
-            this.Controls.Add(this.LblCaja);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.LblSucursal);
-            this.Controls.Add(this.DateTimePickerApertura);
-            this.Controls.Add(this.LblFecha);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.LblUsuariosAgregar);
             this.Name = "FrmAperturaCierreCaja";
             this.Text = "Apertura / Cierre ";
             this.Load += new System.EventHandler(this.FrmAperturaCierreCaja_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImporteUpDown)).EndInit();
-            this.PanelCierre.ResumeLayout(false);
-            this.PanelCierre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownMontoCierre)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label LblUsuariosAgregar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label LbLApertura;
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.DateTimePicker DateTimePickerApertura;
         private System.Windows.Forms.Label LblSucursal;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox ComboSucursal;
+        private System.Windows.Forms.ComboBox ComboCajas;
         private System.Windows.Forms.Label LblCaja;
         private System.Windows.Forms.NumericUpDown ImporteUpDown;
         private System.Windows.Forms.Label LbLimporte;
@@ -333,13 +315,13 @@
         private System.Windows.Forms.Label LbLEstado;
         private System.Windows.Forms.Label LbLCajero;
         private System.Windows.Forms.ComboBox ComboCajero;
-        private System.Windows.Forms.Panel PanelCierre;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker DateTimePickerCierre;
         private System.Windows.Forms.Label LbLFechaCierre;
         private System.Windows.Forms.Label LbLimporteCierre;
         private System.Windows.Forms.NumericUpDown UpDownMontoCierre;
         private FontAwesome.Sharp.IconButton BtnSalir;
         private FontAwesome.Sharp.IconButton BtnGuardar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
