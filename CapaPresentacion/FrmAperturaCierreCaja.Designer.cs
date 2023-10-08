@@ -46,9 +46,10 @@
             this.LbLimporteCierre = new System.Windows.Forms.Label();
             this.UpDownMontoCierre = new System.Windows.Forms.NumericUpDown();
             this.BtnSalir = new FontAwesome.Sharp.IconButton();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnApertura = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnCerrarCaja = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.ImporteUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownMontoCierre)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -76,9 +77,11 @@
             // 
             // DateTimePickerApertura
             // 
-            this.DateTimePickerApertura.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateTimePickerApertura.Enabled = false;
+            this.DateTimePickerApertura.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTimePickerApertura.Location = new System.Drawing.Point(230, 44);
             this.DateTimePickerApertura.Name = "DateTimePickerApertura";
+            this.DateTimePickerApertura.ShowUpDown = true;
             this.DateTimePickerApertura.Size = new System.Drawing.Size(200, 26);
             this.DateTimePickerApertura.TabIndex = 7;
             // 
@@ -120,6 +123,11 @@
             // ImporteUpDown
             // 
             this.ImporteUpDown.Location = new System.Drawing.Point(230, 217);
+            this.ImporteUpDown.Maximum = new decimal(new int[] {
+            500000,
+            0,
+            0,
+            0});
             this.ImporteUpDown.Name = "ImporteUpDown";
             this.ImporteUpDown.Size = new System.Drawing.Size(200, 26);
             this.ImporteUpDown.TabIndex = 12;
@@ -196,6 +204,11 @@
             // UpDownMontoCierre
             // 
             this.UpDownMontoCierre.Location = new System.Drawing.Point(230, 155);
+            this.UpDownMontoCierre.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
             this.UpDownMontoCierre.Name = "UpDownMontoCierre";
             this.UpDownMontoCierre.Size = new System.Drawing.Size(200, 26);
             this.UpDownMontoCierre.TabIndex = 21;
@@ -212,7 +225,7 @@
             this.BtnSalir.IconColor = System.Drawing.Color.White;
             this.BtnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnSalir.IconSize = 18;
-            this.BtnSalir.Location = new System.Drawing.Point(866, 547);
+            this.BtnSalir.Location = new System.Drawing.Point(844, 550);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(150, 40);
             this.BtnSalir.TabIndex = 55;
@@ -220,30 +233,12 @@
             this.BtnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnSalir.UseVisualStyleBackColor = false;
-            // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.ForestGreen;
-            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(687, 547);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(150, 42);
-            this.BtnGuardar.TabIndex = 54;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.BtnApertura);
             this.groupBox1.Controls.Add(this.LbLEstado);
             this.groupBox1.Controls.Add(this.ComboEstado);
             this.groupBox1.Controls.Add(this.ComboCajero);
@@ -263,9 +258,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Apertura Caja";
             // 
+            // BtnApertura
+            // 
+            this.BtnApertura.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnApertura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnApertura.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnApertura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnApertura.ForeColor = System.Drawing.Color.White;
+            this.BtnApertura.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.BtnApertura.IconColor = System.Drawing.Color.White;
+            this.BtnApertura.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnApertura.IconSize = 16;
+            this.BtnApertura.Location = new System.Drawing.Point(832, 208);
+            this.BtnApertura.Name = "BtnApertura";
+            this.BtnApertura.Size = new System.Drawing.Size(150, 42);
+            this.BtnApertura.TabIndex = 55;
+            this.BtnApertura.Text = "Aperturar";
+            this.BtnApertura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnApertura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnApertura.UseVisualStyleBackColor = false;
+            this.BtnApertura.Click += new System.EventHandler(this.BtnApertura_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.BtnCerrarCaja);
             this.groupBox2.Controls.Add(this.LbLFechaCierre);
             this.groupBox2.Controls.Add(this.DateTimePickerCierre);
             this.groupBox2.Controls.Add(this.UpDownMontoCierre);
@@ -277,6 +294,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cierre Caja";
             // 
+            // BtnCerrarCaja
+            // 
+            this.BtnCerrarCaja.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BtnCerrarCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCerrarCaja.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCerrarCaja.ForeColor = System.Drawing.Color.White;
+            this.BtnCerrarCaja.IconChar = FontAwesome.Sharp.IconChar.Key;
+            this.BtnCerrarCaja.IconColor = System.Drawing.Color.White;
+            this.BtnCerrarCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnCerrarCaja.IconSize = 16;
+            this.BtnCerrarCaja.Location = new System.Drawing.Point(832, 150);
+            this.BtnCerrarCaja.Name = "BtnCerrarCaja";
+            this.BtnCerrarCaja.Size = new System.Drawing.Size(150, 42);
+            this.BtnCerrarCaja.TabIndex = 55;
+            this.BtnCerrarCaja.Text = "Cerrar Caja";
+            this.BtnCerrarCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCerrarCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCerrarCaja.UseVisualStyleBackColor = false;
+            // 
             // FrmAperturaCierreCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -285,7 +322,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
-            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.LblUsuariosAgregar);
             this.Name = "FrmAperturaCierreCaja";
             this.Text = "Apertura / Cierre ";
@@ -320,8 +356,9 @@
         private System.Windows.Forms.Label LbLimporteCierre;
         private System.Windows.Forms.NumericUpDown UpDownMontoCierre;
         private FontAwesome.Sharp.IconButton BtnSalir;
-        private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private FontAwesome.Sharp.IconButton BtnApertura;
+        private FontAwesome.Sharp.IconButton BtnCerrarCaja;
     }
 }

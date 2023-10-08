@@ -47,6 +47,7 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="FormaPago.cs" />
     <Compile Include="Impuesto.cs" />
+    <Compile Include="Models\AperturaRequest.cs" />
     <Compile Include="Models\InsertarCajaRequest.cs" />
     <Compile Include="Models\Cajas.cs" />
     <Compile Include="Models\CajasRequest.cs" />

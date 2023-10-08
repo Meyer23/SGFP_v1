@@ -63,5 +63,44 @@ namespace CapaPresentacion
                 ComboCajas.DisplayMember = "Id";
             }
         }
+
+        private void BtnApertura_Click(object sender, EventArgs e)
+        {
+            string Mensaje = string.Empty;
+
+            try
+            {
+                AperturaRequest obj = new AperturaRequest()
+                {
+                    FechaApertura = DateTimePickerApertura.Value,
+                    IdCaja = Convert.ToInt32(ComboCajas.Text),
+                    ImporteInicial = ImporteUpDown.Value,
+                    Usuario = ComboCajero.Text
+                };
+
+                int idAperturaCaja = new CN_AperturaCierre().AperturaCierreCaja(obj, out Mensaje);
+
+                if (idAperturaCaja > 0)
+                {
+                    MessageBox.Show(Mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblCajasNav = new System.Windows.Forms.Label();
             this.LblBusquedaCajas = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LblNroCaja = new System.Windows.Forms.Label();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
@@ -50,12 +56,6 @@
             this.TxtIndex = new System.Windows.Forms.TextBox();
             this.TxtIdCaja = new System.Windows.Forms.TextBox();
             this.LblAsignarCaja = new System.Windows.Forms.Label();
-            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BtnCrearCaja = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
@@ -85,15 +85,15 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
@@ -107,15 +107,68 @@
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersWidth = 62;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(994, 455);
             this.dgvData.TabIndex = 21;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
+            // 
+            // BtnSeleccionar
+            // 
+            this.BtnSeleccionar.HeaderText = "";
+            this.BtnSeleccionar.MinimumWidth = 8;
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.ReadOnly = true;
+            this.BtnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.BtnSeleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.BtnSeleccionar.Width = 150;
+            // 
+            // idCaja
+            // 
+            this.idCaja.HeaderText = "idCaja";
+            this.idCaja.MinimumWidth = 8;
+            this.idCaja.Name = "idCaja";
+            this.idCaja.ReadOnly = true;
+            this.idCaja.Visible = false;
+            this.idCaja.Width = 50;
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.MinimumWidth = 8;
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 150;
+            // 
+            // NumeroCaja
+            // 
+            this.NumeroCaja.HeaderText = "Nro. Caja";
+            this.NumeroCaja.MinimumWidth = 8;
+            this.NumeroCaja.Name = "NumeroCaja";
+            this.NumeroCaja.ReadOnly = true;
+            this.NumeroCaja.Width = 150;
+            // 
+            // Sucursal
+            // 
+            this.Sucursal.HeaderText = "Sucursal";
+            this.Sucursal.MinimumWidth = 8;
+            this.Sucursal.Name = "Sucursal";
+            this.Sucursal.ReadOnly = true;
+            this.Sucursal.Width = 150;
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.MinimumWidth = 8;
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Activo.Width = 150;
             // 
             // LblNroCaja
             // 
@@ -215,6 +268,7 @@
             // ComboUsuario
             // 
             this.ComboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboUsuario.Enabled = false;
             this.ComboUsuario.FormattingEnabled = true;
             this.ComboUsuario.Location = new System.Drawing.Point(16, 257);
             this.ComboUsuario.Name = "ComboUsuario";
@@ -325,59 +379,6 @@
             this.LblAsignarCaja.TabIndex = 66;
             this.LblAsignarCaja.Text = "Asignar Caja a Usuario";
             this.LblAsignarCaja.Click += new System.EventHandler(this.LblAsignarCaja_Click);
-            // 
-            // BtnSeleccionar
-            // 
-            this.BtnSeleccionar.HeaderText = "";
-            this.BtnSeleccionar.MinimumWidth = 8;
-            this.BtnSeleccionar.Name = "BtnSeleccionar";
-            this.BtnSeleccionar.ReadOnly = true;
-            this.BtnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.BtnSeleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.BtnSeleccionar.Width = 150;
-            // 
-            // idCaja
-            // 
-            this.idCaja.HeaderText = "idCaja";
-            this.idCaja.MinimumWidth = 8;
-            this.idCaja.Name = "idCaja";
-            this.idCaja.ReadOnly = true;
-            this.idCaja.Visible = false;
-            this.idCaja.Width = 50;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.MinimumWidth = 8;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 150;
-            // 
-            // NumeroCaja
-            // 
-            this.NumeroCaja.HeaderText = "Nro. Caja";
-            this.NumeroCaja.MinimumWidth = 8;
-            this.NumeroCaja.Name = "NumeroCaja";
-            this.NumeroCaja.ReadOnly = true;
-            this.NumeroCaja.Width = 150;
-            // 
-            // Sucursal
-            // 
-            this.Sucursal.HeaderText = "Sucursal";
-            this.Sucursal.MinimumWidth = 8;
-            this.Sucursal.Name = "Sucursal";
-            this.Sucursal.ReadOnly = true;
-            this.Sucursal.Width = 150;
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.MinimumWidth = 8;
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Activo.Width = 150;
             // 
             // BtnCrearCaja
             // 
