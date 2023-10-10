@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtIndex = new System.Windows.Forms.TextBox();
             this.TxtIdProducto = new System.Windows.Forms.TextBox();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
@@ -58,16 +58,6 @@
             this.LblBuscarPor = new System.Windows.Forms.Label();
             this.LblListaProductos = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.TxtExistencia = new System.Windows.Forms.TextBox();
-            this.groupBoxUbicacion = new System.Windows.Forms.GroupBox();
-            this.TxtEstante = new System.Windows.Forms.TextBox();
-            this.LblEstante = new System.Windows.Forms.Label();
-            this.TxtFila = new System.Windows.Forms.TextBox();
-            this.LblFila = new System.Windows.Forms.Label();
-            this.TxtColumna = new System.Windows.Forms.TextBox();
-            this.LblColumna = new System.Windows.Forms.Label();
-            this.ComboCategoria = new System.Windows.Forms.ComboBox();
-            this.ComboUnidadMedida = new System.Windows.Forms.ComboBox();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +72,16 @@
             this.Fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TxtExistencia = new System.Windows.Forms.TextBox();
+            this.groupBoxUbicacion = new System.Windows.Forms.GroupBox();
+            this.TxtColumna = new System.Windows.Forms.TextBox();
+            this.LblColumna = new System.Windows.Forms.Label();
+            this.TxtFila = new System.Windows.Forms.TextBox();
+            this.LblFila = new System.Windows.Forms.Label();
+            this.TxtEstante = new System.Windows.Forms.TextBox();
+            this.LblEstante = new System.Windows.Forms.Label();
+            this.ComboCategoria = new System.Windows.Forms.ComboBox();
+            this.ComboUnidadMedida = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxUbicacion.SuspendLayout();
             this.SuspendLayout();
@@ -178,14 +178,14 @@
             // 
             // TxtExistenciaMinima
             // 
-            this.TxtExistenciaMinima.Location = new System.Drawing.Point(12, 260);
+            this.TxtExistenciaMinima.Location = new System.Drawing.Point(10, 340);
             this.TxtExistenciaMinima.Name = "TxtExistenciaMinima";
             this.TxtExistenciaMinima.Size = new System.Drawing.Size(173, 20);
             this.TxtExistenciaMinima.TabIndex = 45;
             // 
             // TxtPrecio
             // 
-            this.TxtPrecio.Location = new System.Drawing.Point(12, 180);
+            this.TxtPrecio.Location = new System.Drawing.Point(10, 260);
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.ReadOnly = true;
             this.TxtPrecio.Size = new System.Drawing.Size(173, 20);
@@ -194,7 +194,7 @@
             // 
             // TxtCosto
             // 
-            this.TxtCosto.Location = new System.Drawing.Point(12, 141);
+            this.TxtCosto.Location = new System.Drawing.Point(10, 221);
             this.TxtCosto.Name = "TxtCosto";
             this.TxtCosto.ReadOnly = true;
             this.TxtCosto.Size = new System.Drawing.Size(173, 20);
@@ -203,7 +203,7 @@
             // 
             // TxtDescripcion
             // 
-            this.TxtDescripcion.Location = new System.Drawing.Point(12, 101);
+            this.TxtDescripcion.Location = new System.Drawing.Point(10, 99);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(173, 20);
             this.TxtDescripcion.TabIndex = 42;
@@ -211,7 +211,7 @@
             // 
             // TxtCodigo
             // 
-            this.TxtCodigo.Location = new System.Drawing.Point(12, 61);
+            this.TxtCodigo.Location = new System.Drawing.Point(10, 59);
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(173, 20);
             this.TxtCodigo.TabIndex = 41;
@@ -222,7 +222,7 @@
             // 
             this.LblUnidadMedida.AutoSize = true;
             this.LblUnidadMedida.BackColor = System.Drawing.Color.White;
-            this.LblUnidadMedida.Location = new System.Drawing.Point(9, 323);
+            this.LblUnidadMedida.Location = new System.Drawing.Point(7, 164);
             this.LblUnidadMedida.Name = "LblUnidadMedida";
             this.LblUnidadMedida.Size = new System.Drawing.Size(97, 13);
             this.LblUnidadMedida.TabIndex = 40;
@@ -232,7 +232,7 @@
             // 
             this.LblCategoria.AutoSize = true;
             this.LblCategoria.BackColor = System.Drawing.Color.White;
-            this.LblCategoria.Location = new System.Drawing.Point(9, 283);
+            this.LblCategoria.Location = new System.Drawing.Point(7, 124);
             this.LblCategoria.Name = "LblCategoria";
             this.LblCategoria.Size = new System.Drawing.Size(57, 13);
             this.LblCategoria.TabIndex = 39;
@@ -242,7 +242,7 @@
             // 
             this.LblExistenciaMinima.AutoSize = true;
             this.LblExistenciaMinima.BackColor = System.Drawing.Color.White;
-            this.LblExistenciaMinima.Location = new System.Drawing.Point(9, 243);
+            this.LblExistenciaMinima.Location = new System.Drawing.Point(7, 323);
             this.LblExistenciaMinima.Name = "LblExistenciaMinima";
             this.LblExistenciaMinima.Size = new System.Drawing.Size(96, 13);
             this.LblExistenciaMinima.TabIndex = 38;
@@ -252,7 +252,7 @@
             // 
             this.LblExistencia.AutoSize = true;
             this.LblExistencia.BackColor = System.Drawing.Color.White;
-            this.LblExistencia.Location = new System.Drawing.Point(9, 203);
+            this.LblExistencia.Location = new System.Drawing.Point(7, 283);
             this.LblExistencia.Name = "LblExistencia";
             this.LblExistencia.Size = new System.Drawing.Size(58, 13);
             this.LblExistencia.TabIndex = 37;
@@ -262,7 +262,7 @@
             // 
             this.LblPrecio.AutoSize = true;
             this.LblPrecio.BackColor = System.Drawing.Color.White;
-            this.LblPrecio.Location = new System.Drawing.Point(9, 164);
+            this.LblPrecio.Location = new System.Drawing.Point(7, 244);
             this.LblPrecio.Name = "LblPrecio";
             this.LblPrecio.Size = new System.Drawing.Size(40, 13);
             this.LblPrecio.TabIndex = 36;
@@ -272,7 +272,7 @@
             // 
             this.LblCosto.AutoSize = true;
             this.LblCosto.BackColor = System.Drawing.Color.White;
-            this.LblCosto.Location = new System.Drawing.Point(9, 124);
+            this.LblCosto.Location = new System.Drawing.Point(7, 204);
             this.LblCosto.Name = "LblCosto";
             this.LblCosto.Size = new System.Drawing.Size(37, 13);
             this.LblCosto.TabIndex = 35;
@@ -282,7 +282,7 @@
             // 
             this.LblDescripcion.AutoSize = true;
             this.LblDescripcion.BackColor = System.Drawing.Color.White;
-            this.LblDescripcion.Location = new System.Drawing.Point(9, 84);
+            this.LblDescripcion.Location = new System.Drawing.Point(7, 82);
             this.LblDescripcion.Name = "LblDescripcion";
             this.LblDescripcion.Size = new System.Drawing.Size(66, 13);
             this.LblDescripcion.TabIndex = 34;
@@ -292,7 +292,7 @@
             // 
             this.LblCodigo.AutoSize = true;
             this.LblCodigo.BackColor = System.Drawing.Color.White;
-            this.LblCodigo.Location = new System.Drawing.Point(9, 44);
+            this.LblCodigo.Location = new System.Drawing.Point(7, 42);
             this.LblCodigo.Name = "LblCodigo";
             this.LblCodigo.Size = new System.Drawing.Size(43, 13);
             this.LblCodigo.TabIndex = 33;
@@ -392,15 +392,15 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
@@ -421,117 +421,23 @@
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(982, 439);
             this.dgvData.TabIndex = 61;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
-            // 
-            // TxtExistencia
-            // 
-            this.TxtExistencia.Location = new System.Drawing.Point(12, 220);
-            this.TxtExistencia.Name = "TxtExistencia";
-            this.TxtExistencia.ReadOnly = true;
-            this.TxtExistencia.Size = new System.Drawing.Size(173, 20);
-            this.TxtExistencia.TabIndex = 62;
-            this.TxtExistencia.Text = "0";
-            // 
-            // groupBoxUbicacion
-            // 
-            this.groupBoxUbicacion.BackColor = System.Drawing.Color.White;
-            this.groupBoxUbicacion.Controls.Add(this.TxtColumna);
-            this.groupBoxUbicacion.Controls.Add(this.LblColumna);
-            this.groupBoxUbicacion.Controls.Add(this.TxtFila);
-            this.groupBoxUbicacion.Controls.Add(this.LblFila);
-            this.groupBoxUbicacion.Controls.Add(this.TxtEstante);
-            this.groupBoxUbicacion.Controls.Add(this.LblEstante);
-            this.groupBoxUbicacion.Location = new System.Drawing.Point(12, 366);
-            this.groupBoxUbicacion.Name = "groupBoxUbicacion";
-            this.groupBoxUbicacion.Size = new System.Drawing.Size(173, 86);
-            this.groupBoxUbicacion.TabIndex = 63;
-            this.groupBoxUbicacion.TabStop = false;
-            this.groupBoxUbicacion.Text = "Ubicación";
-            // 
-            // TxtEstante
-            // 
-            this.TxtEstante.Location = new System.Drawing.Point(58, 13);
-            this.TxtEstante.Name = "TxtEstante";
-            this.TxtEstante.Size = new System.Drawing.Size(76, 20);
-            this.TxtEstante.TabIndex = 49;
-            // 
-            // LblEstante
-            // 
-            this.LblEstante.AutoSize = true;
-            this.LblEstante.BackColor = System.Drawing.Color.White;
-            this.LblEstante.Location = new System.Drawing.Point(6, 16);
-            this.LblEstante.Name = "LblEstante";
-            this.LblEstante.Size = new System.Drawing.Size(46, 13);
-            this.LblEstante.TabIndex = 48;
-            this.LblEstante.Text = "Estante:";
-            // 
-            // TxtFila
-            // 
-            this.TxtFila.Location = new System.Drawing.Point(58, 35);
-            this.TxtFila.Name = "TxtFila";
-            this.TxtFila.Size = new System.Drawing.Size(76, 20);
-            this.TxtFila.TabIndex = 51;
-            // 
-            // LblFila
-            // 
-            this.LblFila.AutoSize = true;
-            this.LblFila.BackColor = System.Drawing.Color.White;
-            this.LblFila.Location = new System.Drawing.Point(26, 38);
-            this.LblFila.Name = "LblFila";
-            this.LblFila.Size = new System.Drawing.Size(26, 13);
-            this.LblFila.TabIndex = 50;
-            this.LblFila.Text = "Fila:";
-            // 
-            // TxtColumna
-            // 
-            this.TxtColumna.Location = new System.Drawing.Point(58, 57);
-            this.TxtColumna.Name = "TxtColumna";
-            this.TxtColumna.Size = new System.Drawing.Size(76, 20);
-            this.TxtColumna.TabIndex = 53;
-            // 
-            // LblColumna
-            // 
-            this.LblColumna.AutoSize = true;
-            this.LblColumna.BackColor = System.Drawing.Color.White;
-            this.LblColumna.Location = new System.Drawing.Point(6, 60);
-            this.LblColumna.Name = "LblColumna";
-            this.LblColumna.Size = new System.Drawing.Size(51, 13);
-            this.LblColumna.TabIndex = 52;
-            this.LblColumna.Text = "Columna:";
-            // 
-            // ComboCategoria
-            // 
-            this.ComboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboCategoria.FormattingEnabled = true;
-            this.ComboCategoria.Location = new System.Drawing.Point(12, 299);
-            this.ComboCategoria.Name = "ComboCategoria";
-            this.ComboCategoria.Size = new System.Drawing.Size(173, 21);
-            this.ComboCategoria.TabIndex = 87;
-            // 
-            // ComboUnidadMedida
-            // 
-            this.ComboUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboUnidadMedida.FormattingEnabled = true;
-            this.ComboUnidadMedida.Location = new System.Drawing.Point(12, 339);
-            this.ComboUnidadMedida.Name = "ComboUnidadMedida";
-            this.ComboUnidadMedida.Size = new System.Drawing.Size(173, 21);
-            this.ComboUnidadMedida.TabIndex = 88;
             // 
             // BtnSeleccionar
             // 
@@ -630,6 +536,100 @@
             this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // TxtExistencia
+            // 
+            this.TxtExistencia.Location = new System.Drawing.Point(10, 300);
+            this.TxtExistencia.Name = "TxtExistencia";
+            this.TxtExistencia.ReadOnly = true;
+            this.TxtExistencia.Size = new System.Drawing.Size(173, 20);
+            this.TxtExistencia.TabIndex = 62;
+            this.TxtExistencia.Text = "0";
+            // 
+            // groupBoxUbicacion
+            // 
+            this.groupBoxUbicacion.BackColor = System.Drawing.Color.White;
+            this.groupBoxUbicacion.Controls.Add(this.TxtColumna);
+            this.groupBoxUbicacion.Controls.Add(this.LblColumna);
+            this.groupBoxUbicacion.Controls.Add(this.TxtFila);
+            this.groupBoxUbicacion.Controls.Add(this.LblFila);
+            this.groupBoxUbicacion.Controls.Add(this.TxtEstante);
+            this.groupBoxUbicacion.Controls.Add(this.LblEstante);
+            this.groupBoxUbicacion.Location = new System.Drawing.Point(12, 366);
+            this.groupBoxUbicacion.Name = "groupBoxUbicacion";
+            this.groupBoxUbicacion.Size = new System.Drawing.Size(173, 86);
+            this.groupBoxUbicacion.TabIndex = 63;
+            this.groupBoxUbicacion.TabStop = false;
+            this.groupBoxUbicacion.Text = "Ubicación";
+            // 
+            // TxtColumna
+            // 
+            this.TxtColumna.Location = new System.Drawing.Point(58, 57);
+            this.TxtColumna.Name = "TxtColumna";
+            this.TxtColumna.Size = new System.Drawing.Size(76, 20);
+            this.TxtColumna.TabIndex = 53;
+            // 
+            // LblColumna
+            // 
+            this.LblColumna.AutoSize = true;
+            this.LblColumna.BackColor = System.Drawing.Color.White;
+            this.LblColumna.Location = new System.Drawing.Point(6, 60);
+            this.LblColumna.Name = "LblColumna";
+            this.LblColumna.Size = new System.Drawing.Size(51, 13);
+            this.LblColumna.TabIndex = 52;
+            this.LblColumna.Text = "Columna:";
+            // 
+            // TxtFila
+            // 
+            this.TxtFila.Location = new System.Drawing.Point(58, 35);
+            this.TxtFila.Name = "TxtFila";
+            this.TxtFila.Size = new System.Drawing.Size(76, 20);
+            this.TxtFila.TabIndex = 51;
+            // 
+            // LblFila
+            // 
+            this.LblFila.AutoSize = true;
+            this.LblFila.BackColor = System.Drawing.Color.White;
+            this.LblFila.Location = new System.Drawing.Point(26, 38);
+            this.LblFila.Name = "LblFila";
+            this.LblFila.Size = new System.Drawing.Size(26, 13);
+            this.LblFila.TabIndex = 50;
+            this.LblFila.Text = "Fila:";
+            // 
+            // TxtEstante
+            // 
+            this.TxtEstante.Location = new System.Drawing.Point(58, 13);
+            this.TxtEstante.Name = "TxtEstante";
+            this.TxtEstante.Size = new System.Drawing.Size(76, 20);
+            this.TxtEstante.TabIndex = 49;
+            // 
+            // LblEstante
+            // 
+            this.LblEstante.AutoSize = true;
+            this.LblEstante.BackColor = System.Drawing.Color.White;
+            this.LblEstante.Location = new System.Drawing.Point(6, 16);
+            this.LblEstante.Name = "LblEstante";
+            this.LblEstante.Size = new System.Drawing.Size(46, 13);
+            this.LblEstante.TabIndex = 48;
+            this.LblEstante.Text = "Estante:";
+            // 
+            // ComboCategoria
+            // 
+            this.ComboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboCategoria.FormattingEnabled = true;
+            this.ComboCategoria.Location = new System.Drawing.Point(10, 140);
+            this.ComboCategoria.Name = "ComboCategoria";
+            this.ComboCategoria.Size = new System.Drawing.Size(173, 21);
+            this.ComboCategoria.TabIndex = 87;
+            // 
+            // ComboUnidadMedida
+            // 
+            this.ComboUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboUnidadMedida.FormattingEnabled = true;
+            this.ComboUnidadMedida.Location = new System.Drawing.Point(10, 180);
+            this.ComboUnidadMedida.Name = "ComboUnidadMedida";
+            this.ComboUnidadMedida.Size = new System.Drawing.Size(173, 21);
+            this.ComboUnidadMedida.TabIndex = 88;
+            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -667,7 +667,7 @@
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.LblCodigo);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmProductos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.FrmProductos_Load);

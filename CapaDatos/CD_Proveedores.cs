@@ -20,7 +20,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT id, RazonSocial, Documento, Contacto, Direccion, Telefono1, Telefono2, Correo, Activo FROM Proveedores";
+                    string query = "SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Telefono2, Correo, Activo FROM Proveedores";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -36,6 +36,7 @@ namespace CapaDatos
                                 RazonSocial = reader["RazonSocial"].ToString(),
                                 Documento = reader["Documento"].ToString(),
                                 Contacto = reader["Contacto"].ToString(),
+                                Contacto2 = reader["Contacto2"].ToString(),
                                 Direccion = reader["Direccion"].ToString(),
                                 TelefonoUno = reader["Telefono1"].ToString(),
                                 TelefonoDos = reader["Telefono2"].ToString(),
@@ -71,6 +72,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@RazonSocial", obj.RazonSocial);
                     cmd.Parameters.AddWithValue("@Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("@Contacto", obj.Contacto);
+                    cmd.Parameters.AddWithValue("@Contacto2", obj.Contacto2);
                     cmd.Parameters.AddWithValue("@Direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("@Telefono1", obj.TelefonoUno);
                     cmd.Parameters.AddWithValue("@Telefono2", obj.TelefonoDos);
@@ -110,6 +112,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@RazonSocial", obj.RazonSocial);
                     cmd.Parameters.AddWithValue("@Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("@Contacto", obj.Contacto);
+                    cmd.Parameters.AddWithValue("@Contacto2", obj.Contacto2);
                     cmd.Parameters.AddWithValue("@Direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("@Telefono1", obj.TelefonoUno);
                     cmd.Parameters.AddWithValue("@Telefono2", obj.TelefonoDos);

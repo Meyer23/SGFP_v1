@@ -40,8 +40,9 @@ namespace CapaPresentacion
                 {
                     Id = Convert.ToInt32(TxtIdProveedor.Text),
                     RazonSocial = TxtRazonSocial.Text,
-                    Documento = TxtDocumento.Text,
+                    Documento = TxtRUC.Text,
                     Contacto = TxtContacto.Text,
+                    Contacto2 = TxtContacto2.Text,
                     Direccion = TxtDireccion.Text,
                     TelefonoUno = TxtTelefono1.Text,
                     TelefonoDos = TxtTelefono2.Text,
@@ -55,7 +56,7 @@ namespace CapaPresentacion
 
                     if (idProveedor != 0)
                     {
-                        dgvData.Rows.Add(new object[] { "", idProveedor, TxtRazonSocial.Text, TxtDocumento.Text, TxtContacto.Text, TxtDireccion.Text, TxtTelefono1.Text, TxtTelefono2.Text, TxtCorreo.Text, ChkActivo.Checked });
+                        dgvData.Rows.Add(new object[] { "", idProveedor, TxtRazonSocial.Text, TxtRUC.Text, TxtContacto.Text, TxtContacto2.Text, TxtDireccion.Text, TxtTelefono1.Text, TxtTelefono2.Text, TxtCorreo.Text, ChkActivo.Checked });
                         limpiar();
                     }
                     else
@@ -73,8 +74,9 @@ namespace CapaPresentacion
                         DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
                         row.Cells["IdProveedor"].Value = TxtIdProveedor.Text;
                         row.Cells["RazonSocial"].Value = TxtRazonSocial.Text;
-                        row.Cells["Documento"].Value = TxtDocumento.Text;
+                        row.Cells["Documento"].Value = TxtRUC.Text;
                         row.Cells["Contacto"].Value = TxtContacto.Text;
+                        row.Cells["Contacto2"].Value = TxtContacto2.Text;
                         row.Cells["Direccion"].Value = TxtDireccion.Text;
                         row.Cells["Telefono1"].Value = TxtTelefono1.Text;
                         row.Cells["Telefono2"].Value = TxtTelefono2.Text;
@@ -83,7 +85,7 @@ namespace CapaPresentacion
 
                         limpiar();
                         TxtRazonSocial.ReadOnly = false;
-                        TxtDocumento.ReadOnly = false;
+                        TxtRUC.ReadOnly = false;
                     }
                     else
                     {
@@ -99,15 +101,16 @@ namespace CapaPresentacion
             TxtIndex.Clear();
             TxtIdProveedor.Text = "0";
             TxtRazonSocial.Clear();
-            TxtDocumento.Clear();
+            TxtRUC.Clear();
             TxtContacto.Clear();
+            TxtContacto2.Clear();
             TxtDireccion.Clear();
             TxtTelefono1.Clear();
             TxtTelefono2.Clear();
             TxtCorreo.Clear();
             TxtBusqueda.Select();
             TxtRazonSocial.ReadOnly = false;
-            TxtDocumento.ReadOnly = false;
+            TxtRUC.ReadOnly = false;
         }
 
         private void FrmProveedores_Load(object sender, EventArgs e)
@@ -128,7 +131,7 @@ namespace CapaPresentacion
             List<Proveedor> listaProveedor = new CN_Proveedores().Listar();
             foreach (Proveedor proveedor in listaProveedor)
             {
-                dgvData.Rows.Add("", proveedor.Id, proveedor.RazonSocial, proveedor.Documento, proveedor.Contacto,
+                dgvData.Rows.Add("", proveedor.Id, proveedor.RazonSocial, proveedor.Documento, proveedor.Contacto, proveedor.Contacto2,
                                  proveedor.Direccion, proveedor.TelefonoUno, proveedor.TelefonoDos,
                                  proveedor.Correo, proveedor.Activo);
             }
@@ -160,7 +163,7 @@ namespace CapaPresentacion
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             TxtRazonSocial.ReadOnly = true;
-            TxtDocumento.ReadOnly = true;
+            TxtRUC.ReadOnly = true;
 
             if (dgvData.Columns[e.ColumnIndex].Name == "BtnSeleccionar")
             {
@@ -171,8 +174,9 @@ namespace CapaPresentacion
                     TxtIndex.Text = index.ToString();
                     TxtIdProveedor.Text = dgvData.Rows[index].Cells["idProveedor"].Value.ToString();
                     TxtRazonSocial.Text = dgvData.Rows[index].Cells["RazonSocial"].Value.ToString();
-                    TxtDocumento.Text = dgvData.Rows[index].Cells["Documento"].Value.ToString();
+                    TxtRUC.Text = dgvData.Rows[index].Cells["Documento"].Value.ToString();
                     TxtContacto.Text = dgvData.Rows[index].Cells["Contacto"].Value.ToString();
+                    TxtContacto2.Text = dgvData.Rows[index].Cells["Contacto2"].Value.ToString();
                     TxtDireccion.Text = dgvData.Rows[index].Cells["Direccion"].Value.ToString();
                     TxtTelefono1.Text = dgvData.Rows[index].Cells["Telefono1"].Value.ToString();
                     TxtTelefono2.Text = dgvData.Rows[index].Cells["Telefono2"].Value.ToString();
@@ -243,16 +247,16 @@ namespace CapaPresentacion
         private void TxtDocumento_Validating(object sender, CancelEventArgs e)
         {
             ErrorProvider errorProvider1 = new ErrorProvider();
-            if (string.IsNullOrEmpty(TxtDocumento.Text))
+            if (string.IsNullOrEmpty(TxtRUC.Text))
             {
                 //e.Cancel = true;
-                TxtDocumento.Focus();
-                errorProvider1.SetError(TxtDocumento, "Este campo es obligatorio");
+                TxtRUC.Focus();
+                errorProvider1.SetError(TxtRUC, "Este campo es obligatorio");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider1.SetError(TxtDocumento, "");
+                errorProvider1.SetError(TxtRUC, "");
             }
         }
 

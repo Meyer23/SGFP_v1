@@ -20,7 +20,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT id, Nombre, Documento, Direccion, Telefono1, Telefono2, Correo, TipoPersona, Activo FROM Clientes";
+                    string query = "SELECT id, Nombre, Apellidos, Documento, Direccion, Telefono1, Telefono2, Correo, TipoPersona, Activo FROM Clientes";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -34,6 +34,7 @@ namespace CapaDatos
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                 Nombre = reader["Nombre"].ToString(),
+                                Apellido = reader["Apellidos"].ToString(),
                                 Documento = reader["Documento"].ToString(),
                                 Direccion = reader["Direccion"].ToString(),
                                 TelefonoUno = reader["Telefono1"].ToString(),
@@ -69,6 +70,7 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("@Apellidos", obj.Apellido);
                     cmd.Parameters.AddWithValue("@Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("@Direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("@Telefono1", obj.TelefonoUno);
@@ -108,6 +110,7 @@ namespace CapaDatos
                     con.Open();
                     cmd.Parameters.AddWithValue("@IdCliente", obj.Id);
                     cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("@Apellidos", obj.Apellido);
                     cmd.Parameters.AddWithValue("@Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("@Direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("@Telefono1", obj.TelefonoUno);

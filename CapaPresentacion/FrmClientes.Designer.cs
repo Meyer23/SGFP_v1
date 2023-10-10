@@ -60,9 +60,12 @@
             this.groupTipoPersona = new System.Windows.Forms.GroupBox();
             this.radioButtonJuridica = new System.Windows.Forms.RadioButton();
             this.radioButtonFisica = new System.Windows.Forms.RadioButton();
+            this.TxtApellidos = new System.Windows.Forms.TextBox();
+            this.LblApellidos = new System.Windows.Forms.Label();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +79,7 @@
             // 
             // TxtIndex
             // 
-            this.TxtIndex.Location = new System.Drawing.Point(127, 64);
+            this.TxtIndex.Location = new System.Drawing.Point(127, 37);
             this.TxtIndex.Name = "TxtIndex";
             this.TxtIndex.Size = new System.Drawing.Size(26, 20);
             this.TxtIndex.TabIndex = 75;
@@ -85,7 +88,7 @@
             // 
             // TxtIdCliente
             // 
-            this.TxtIdCliente.Location = new System.Drawing.Point(159, 64);
+            this.TxtIdCliente.Location = new System.Drawing.Point(159, 37);
             this.TxtIdCliente.Name = "TxtIdCliente";
             this.TxtIdCliente.Size = new System.Drawing.Size(26, 20);
             this.TxtIdCliente.TabIndex = 74;
@@ -143,7 +146,7 @@
             this.LblDetalleCliente.AutoSize = true;
             this.LblDetalleCliente.BackColor = System.Drawing.Color.White;
             this.LblDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleCliente.Location = new System.Drawing.Point(11, 29);
+            this.LblDetalleCliente.Location = new System.Drawing.Point(7, 14);
             this.LblDetalleCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblDetalleCliente.Name = "LblDetalleCliente";
             this.LblDetalleCliente.Size = new System.Drawing.Size(112, 20);
@@ -156,7 +159,7 @@
             this.ChkActivo.BackColor = System.Drawing.Color.White;
             this.ChkActivo.Checked = true;
             this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkActivo.Location = new System.Drawing.Point(12, 413);
+            this.ChkActivo.Location = new System.Drawing.Point(12, 424);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ChkActivo.Size = new System.Drawing.Size(56, 17);
@@ -166,7 +169,7 @@
             // 
             // TxtCorreo
             // 
-            this.TxtCorreo.Location = new System.Drawing.Point(12, 289);
+            this.TxtCorreo.Location = new System.Drawing.Point(12, 307);
             this.TxtCorreo.Name = "TxtCorreo";
             this.TxtCorreo.Size = new System.Drawing.Size(173, 20);
             this.TxtCorreo.TabIndex = 69;
@@ -174,14 +177,14 @@
             // 
             // TxtTelefono2
             // 
-            this.TxtTelefono2.Location = new System.Drawing.Point(12, 249);
+            this.TxtTelefono2.Location = new System.Drawing.Point(12, 267);
             this.TxtTelefono2.Name = "TxtTelefono2";
             this.TxtTelefono2.Size = new System.Drawing.Size(173, 20);
             this.TxtTelefono2.TabIndex = 68;
             // 
             // TxtTelefono1
             // 
-            this.TxtTelefono1.Location = new System.Drawing.Point(12, 209);
+            this.TxtTelefono1.Location = new System.Drawing.Point(12, 227);
             this.TxtTelefono1.Name = "TxtTelefono1";
             this.TxtTelefono1.Size = new System.Drawing.Size(173, 20);
             this.TxtTelefono1.TabIndex = 67;
@@ -189,7 +192,7 @@
             // 
             // TxtDireccion
             // 
-            this.TxtDireccion.Location = new System.Drawing.Point(12, 169);
+            this.TxtDireccion.Location = new System.Drawing.Point(12, 187);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(173, 20);
             this.TxtDireccion.TabIndex = 66;
@@ -197,7 +200,7 @@
             // 
             // TxtDocumento
             // 
-            this.TxtDocumento.Location = new System.Drawing.Point(12, 130);
+            this.TxtDocumento.Location = new System.Drawing.Point(11, 64);
             this.TxtDocumento.Name = "TxtDocumento";
             this.TxtDocumento.Size = new System.Drawing.Size(173, 20);
             this.TxtDocumento.TabIndex = 65;
@@ -205,7 +208,7 @@
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(12, 90);
+            this.TxtNombre.Location = new System.Drawing.Point(11, 104);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(173, 20);
             this.TxtNombre.TabIndex = 63;
@@ -216,7 +219,7 @@
             // 
             this.LblCorreo.AutoSize = true;
             this.LblCorreo.BackColor = System.Drawing.Color.White;
-            this.LblCorreo.Location = new System.Drawing.Point(9, 272);
+            this.LblCorreo.Location = new System.Drawing.Point(9, 290);
             this.LblCorreo.Name = "LblCorreo";
             this.LblCorreo.Size = new System.Drawing.Size(41, 13);
             this.LblCorreo.TabIndex = 62;
@@ -226,7 +229,7 @@
             // 
             this.LblTelefono2.AutoSize = true;
             this.LblTelefono2.BackColor = System.Drawing.Color.White;
-            this.LblTelefono2.Location = new System.Drawing.Point(9, 232);
+            this.LblTelefono2.Location = new System.Drawing.Point(9, 250);
             this.LblTelefono2.Name = "LblTelefono2";
             this.LblTelefono2.Size = new System.Drawing.Size(61, 13);
             this.LblTelefono2.TabIndex = 61;
@@ -236,7 +239,7 @@
             // 
             this.LblTelefono1.AutoSize = true;
             this.LblTelefono1.BackColor = System.Drawing.Color.White;
-            this.LblTelefono1.Location = new System.Drawing.Point(9, 192);
+            this.LblTelefono1.Location = new System.Drawing.Point(9, 210);
             this.LblTelefono1.Name = "LblTelefono1";
             this.LblTelefono1.Size = new System.Drawing.Size(61, 13);
             this.LblTelefono1.TabIndex = 60;
@@ -246,7 +249,7 @@
             // 
             this.LblDireccion.AutoSize = true;
             this.LblDireccion.BackColor = System.Drawing.Color.White;
-            this.LblDireccion.Location = new System.Drawing.Point(9, 153);
+            this.LblDireccion.Location = new System.Drawing.Point(9, 171);
             this.LblDireccion.Name = "LblDireccion";
             this.LblDireccion.Size = new System.Drawing.Size(55, 13);
             this.LblDireccion.TabIndex = 59;
@@ -256,7 +259,7 @@
             // 
             this.LblDocumento.AutoSize = true;
             this.LblDocumento.BackColor = System.Drawing.Color.White;
-            this.LblDocumento.Location = new System.Drawing.Point(9, 113);
+            this.LblDocumento.Location = new System.Drawing.Point(8, 47);
             this.LblDocumento.Name = "LblDocumento";
             this.LblDocumento.Size = new System.Drawing.Size(65, 13);
             this.LblDocumento.TabIndex = 58;
@@ -266,11 +269,11 @@
             // 
             this.LblNombre.AutoSize = true;
             this.LblNombre.BackColor = System.Drawing.Color.White;
-            this.LblNombre.Location = new System.Drawing.Point(9, 73);
+            this.LblNombre.Location = new System.Drawing.Point(8, 87);
             this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(47, 13);
+            this.LblNombre.Size = new System.Drawing.Size(52, 13);
             this.LblNombre.TabIndex = 56;
-            this.LblNombre.Text = "Nombre:";
+            this.LblNombre.Text = "Nombres:";
             // 
             // label1
             // 
@@ -380,6 +383,7 @@
             this.BtnSeleccionar,
             this.idCliente,
             this.Nombre,
+            this.Apellido,
             this.Documento,
             this.Direccion,
             this.Telefono1,
@@ -414,7 +418,7 @@
             this.groupTipoPersona.BackColor = System.Drawing.Color.White;
             this.groupTipoPersona.Controls.Add(this.radioButtonJuridica);
             this.groupTipoPersona.Controls.Add(this.radioButtonFisica);
-            this.groupTipoPersona.Location = new System.Drawing.Point(12, 325);
+            this.groupTipoPersona.Location = new System.Drawing.Point(12, 336);
             this.groupTipoPersona.Name = "groupTipoPersona";
             this.groupTipoPersona.Size = new System.Drawing.Size(174, 73);
             this.groupTipoPersona.TabIndex = 84;
@@ -443,6 +447,25 @@
             this.radioButtonFisica.Text = "Física";
             this.radioButtonFisica.UseVisualStyleBackColor = true;
             // 
+            // TxtApellidos
+            // 
+            this.TxtApellidos.Location = new System.Drawing.Point(11, 147);
+            this.TxtApellidos.Name = "TxtApellidos";
+            this.TxtApellidos.Size = new System.Drawing.Size(173, 20);
+            this.TxtApellidos.TabIndex = 86;
+            this.TxtApellidos.TabStop = false;
+            this.TxtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.TxtApellidos_Validating);
+            // 
+            // LblApellidos
+            // 
+            this.LblApellidos.AutoSize = true;
+            this.LblApellidos.BackColor = System.Drawing.Color.White;
+            this.LblApellidos.Location = new System.Drawing.Point(8, 130);
+            this.LblApellidos.Name = "LblApellidos";
+            this.LblApellidos.Size = new System.Drawing.Size(52, 13);
+            this.LblApellidos.TabIndex = 85;
+            this.LblApellidos.Text = "Apellidos:";
+            // 
             // BtnSeleccionar
             // 
             this.BtnSeleccionar.HeaderText = "";
@@ -459,10 +482,17 @@
             // 
             // Nombre
             // 
-            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.HeaderText = "Nombres";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             this.Nombre.Width = 150;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellidos";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            this.Apellido.Width = 150;
             // 
             // Documento
             // 
@@ -519,6 +549,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1078, 532);
+            this.Controls.Add(this.TxtApellidos);
+            this.Controls.Add(this.LblApellidos);
             this.Controls.Add(this.groupTipoPersona);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.BtnLimpiar);
@@ -589,9 +621,12 @@
         private System.Windows.Forms.GroupBox groupTipoPersona;
         private System.Windows.Forms.RadioButton radioButtonJuridica;
         private System.Windows.Forms.RadioButton radioButtonFisica;
+        private System.Windows.Forms.TextBox TxtApellidos;
+        private System.Windows.Forms.Label LblApellidos;
         private System.Windows.Forms.DataGridViewButtonColumn BtnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono1;

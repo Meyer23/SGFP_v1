@@ -41,14 +41,14 @@
             this.TxtTelefono2 = new System.Windows.Forms.TextBox();
             this.TxtTelefono1 = new System.Windows.Forms.TextBox();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
-            this.TxtDocumento = new System.Windows.Forms.TextBox();
+            this.TxtRUC = new System.Windows.Forms.TextBox();
             this.TxtContacto = new System.Windows.Forms.TextBox();
             this.TxtRazonSocial = new System.Windows.Forms.TextBox();
             this.LblCorreo = new System.Windows.Forms.Label();
             this.LblTelefono2 = new System.Windows.Forms.Label();
             this.LblTelefono1 = new System.Windows.Forms.Label();
             this.LblDireccion = new System.Windows.Forms.Label();
-            this.LblDocumento = new System.Windows.Forms.Label();
+            this.LblRUC = new System.Windows.Forms.Label();
             this.LblContacto = new System.Windows.Forms.Label();
             this.LblRazonSocial = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,17 +58,20 @@
             this.LblBuscarPor = new System.Windows.Forms.Label();
             this.LblListaProveedores = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.TxtContacto2 = new System.Windows.Forms.TextBox();
+            this.LblContacto2 = new System.Windows.Forms.Label();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contacto2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +105,7 @@
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 18;
-            this.BtnEditar.Location = new System.Drawing.Point(12, 441);
+            this.BtnEditar.Location = new System.Drawing.Point(12, 475);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(173, 26);
@@ -125,7 +128,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(12, 409);
+            this.BtnGuardar.Location = new System.Drawing.Point(12, 443);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
@@ -154,66 +157,66 @@
             this.ChkActivo.BackColor = System.Drawing.Color.White;
             this.ChkActivo.Checked = true;
             this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkActivo.Location = new System.Drawing.Point(12, 347);
+            this.ChkActivo.Location = new System.Drawing.Point(12, 394);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ChkActivo.Size = new System.Drawing.Size(56, 17);
-            this.ChkActivo.TabIndex = 48;
+            this.ChkActivo.TabIndex = 49;
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = false;
             // 
             // TxtCorreo
             // 
-            this.TxtCorreo.Location = new System.Drawing.Point(12, 321);
+            this.TxtCorreo.Location = new System.Drawing.Point(12, 368);
             this.TxtCorreo.Name = "TxtCorreo";
             this.TxtCorreo.Size = new System.Drawing.Size(173, 20);
-            this.TxtCorreo.TabIndex = 47;
+            this.TxtCorreo.TabIndex = 48;
             this.TxtCorreo.Validating += new System.ComponentModel.CancelEventHandler(this.TxtCorreo_Validating);
             // 
             // TxtTelefono2
             // 
-            this.TxtTelefono2.Location = new System.Drawing.Point(12, 281);
+            this.TxtTelefono2.Location = new System.Drawing.Point(12, 328);
             this.TxtTelefono2.Name = "TxtTelefono2";
             this.TxtTelefono2.Size = new System.Drawing.Size(173, 20);
-            this.TxtTelefono2.TabIndex = 46;
+            this.TxtTelefono2.TabIndex = 47;
             // 
             // TxtTelefono1
             // 
-            this.TxtTelefono1.Location = new System.Drawing.Point(12, 241);
+            this.TxtTelefono1.Location = new System.Drawing.Point(12, 288);
             this.TxtTelefono1.Name = "TxtTelefono1";
             this.TxtTelefono1.Size = new System.Drawing.Size(173, 20);
-            this.TxtTelefono1.TabIndex = 45;
+            this.TxtTelefono1.TabIndex = 46;
             this.TxtTelefono1.Validating += new System.ComponentModel.CancelEventHandler(this.TxtTelefono1_Validating);
             // 
             // TxtDireccion
             // 
-            this.TxtDireccion.Location = new System.Drawing.Point(12, 201);
+            this.TxtDireccion.Location = new System.Drawing.Point(12, 248);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(173, 20);
-            this.TxtDireccion.TabIndex = 44;
+            this.TxtDireccion.TabIndex = 45;
             this.TxtDireccion.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDireccion_Validating);
             // 
-            // TxtDocumento
+            // TxtRUC
             // 
-            this.TxtDocumento.Location = new System.Drawing.Point(12, 122);
-            this.TxtDocumento.Name = "TxtDocumento";
-            this.TxtDocumento.Size = new System.Drawing.Size(173, 20);
-            this.TxtDocumento.TabIndex = 43;
-            this.TxtDocumento.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDocumento_Validating);
+            this.TxtRUC.Location = new System.Drawing.Point(12, 80);
+            this.TxtRUC.Name = "TxtRUC";
+            this.TxtRUC.Size = new System.Drawing.Size(173, 20);
+            this.TxtRUC.TabIndex = 41;
+            this.TxtRUC.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDocumento_Validating);
             // 
             // TxtContacto
             // 
             this.TxtContacto.Location = new System.Drawing.Point(12, 162);
             this.TxtContacto.Name = "TxtContacto";
             this.TxtContacto.Size = new System.Drawing.Size(173, 20);
-            this.TxtContacto.TabIndex = 42;
+            this.TxtContacto.TabIndex = 43;
             // 
             // TxtRazonSocial
             // 
-            this.TxtRazonSocial.Location = new System.Drawing.Point(12, 82);
+            this.TxtRazonSocial.Location = new System.Drawing.Point(12, 120);
             this.TxtRazonSocial.Name = "TxtRazonSocial";
             this.TxtRazonSocial.Size = new System.Drawing.Size(173, 20);
-            this.TxtRazonSocial.TabIndex = 41;
+            this.TxtRazonSocial.TabIndex = 42;
             this.TxtRazonSocial.TabStop = false;
             this.TxtRazonSocial.Validating += new System.ComponentModel.CancelEventHandler(this.TxtRazonSocial_Validating);
             // 
@@ -221,7 +224,7 @@
             // 
             this.LblCorreo.AutoSize = true;
             this.LblCorreo.BackColor = System.Drawing.Color.White;
-            this.LblCorreo.Location = new System.Drawing.Point(9, 304);
+            this.LblCorreo.Location = new System.Drawing.Point(9, 351);
             this.LblCorreo.Name = "LblCorreo";
             this.LblCorreo.Size = new System.Drawing.Size(41, 13);
             this.LblCorreo.TabIndex = 40;
@@ -231,7 +234,7 @@
             // 
             this.LblTelefono2.AutoSize = true;
             this.LblTelefono2.BackColor = System.Drawing.Color.White;
-            this.LblTelefono2.Location = new System.Drawing.Point(9, 264);
+            this.LblTelefono2.Location = new System.Drawing.Point(9, 311);
             this.LblTelefono2.Name = "LblTelefono2";
             this.LblTelefono2.Size = new System.Drawing.Size(61, 13);
             this.LblTelefono2.TabIndex = 39;
@@ -241,7 +244,7 @@
             // 
             this.LblTelefono1.AutoSize = true;
             this.LblTelefono1.BackColor = System.Drawing.Color.White;
-            this.LblTelefono1.Location = new System.Drawing.Point(9, 224);
+            this.LblTelefono1.Location = new System.Drawing.Point(9, 271);
             this.LblTelefono1.Name = "LblTelefono1";
             this.LblTelefono1.Size = new System.Drawing.Size(61, 13);
             this.LblTelefono1.TabIndex = 38;
@@ -251,21 +254,21 @@
             // 
             this.LblDireccion.AutoSize = true;
             this.LblDireccion.BackColor = System.Drawing.Color.White;
-            this.LblDireccion.Location = new System.Drawing.Point(9, 185);
+            this.LblDireccion.Location = new System.Drawing.Point(9, 232);
             this.LblDireccion.Name = "LblDireccion";
             this.LblDireccion.Size = new System.Drawing.Size(55, 13);
             this.LblDireccion.TabIndex = 36;
             this.LblDireccion.Text = "Dirección:";
             // 
-            // LblDocumento
+            // LblRUC
             // 
-            this.LblDocumento.AutoSize = true;
-            this.LblDocumento.BackColor = System.Drawing.Color.White;
-            this.LblDocumento.Location = new System.Drawing.Point(9, 105);
-            this.LblDocumento.Name = "LblDocumento";
-            this.LblDocumento.Size = new System.Drawing.Size(65, 13);
-            this.LblDocumento.TabIndex = 35;
-            this.LblDocumento.Text = "Documento:";
+            this.LblRUC.AutoSize = true;
+            this.LblRUC.BackColor = System.Drawing.Color.White;
+            this.LblRUC.Location = new System.Drawing.Point(9, 63);
+            this.LblRUC.Name = "LblRUC";
+            this.LblRUC.Size = new System.Drawing.Size(33, 13);
+            this.LblRUC.TabIndex = 35;
+            this.LblRUC.Text = "RUC:";
             // 
             // LblContacto
             // 
@@ -273,15 +276,15 @@
             this.LblContacto.BackColor = System.Drawing.Color.White;
             this.LblContacto.Location = new System.Drawing.Point(9, 145);
             this.LblContacto.Name = "LblContacto";
-            this.LblContacto.Size = new System.Drawing.Size(53, 13);
+            this.LblContacto.Size = new System.Drawing.Size(62, 13);
             this.LblContacto.TabIndex = 34;
-            this.LblContacto.Text = "Contacto:";
+            this.LblContacto.Text = "Contacto 1:";
             // 
             // LblRazonSocial
             // 
             this.LblRazonSocial.AutoSize = true;
             this.LblRazonSocial.BackColor = System.Drawing.Color.White;
-            this.LblRazonSocial.Location = new System.Drawing.Point(9, 65);
+            this.LblRazonSocial.Location = new System.Drawing.Point(9, 103);
             this.LblRazonSocial.Name = "LblRazonSocial";
             this.LblRazonSocial.Size = new System.Drawing.Size(73, 13);
             this.LblRazonSocial.TabIndex = 33;
@@ -376,6 +379,7 @@
             this.RazonSocial,
             this.Documento,
             this.Contacto,
+            this.Contacto2,
             this.Direccion,
             this.Telefono1,
             this.Telefono2,
@@ -403,6 +407,44 @@
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.White;
+            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
+            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnLimpiar.IconSize = 18;
+            this.BtnLimpiar.Location = new System.Drawing.Point(886, 31);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
+            this.BtnLimpiar.TabIndex = 60;
+            this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
+            // TxtContacto2
+            // 
+            this.TxtContacto2.Location = new System.Drawing.Point(12, 205);
+            this.TxtContacto2.Name = "TxtContacto2";
+            this.TxtContacto2.Size = new System.Drawing.Size(173, 20);
+            this.TxtContacto2.TabIndex = 44;
+            // 
+            // LblContacto2
+            // 
+            this.LblContacto2.AutoSize = true;
+            this.LblContacto2.BackColor = System.Drawing.Color.White;
+            this.LblContacto2.Location = new System.Drawing.Point(9, 188);
+            this.LblContacto2.Name = "LblContacto2";
+            this.LblContacto2.Size = new System.Drawing.Size(62, 13);
+            this.LblContacto2.TabIndex = 62;
+            this.LblContacto2.Text = "Contacto 2:";
+            // 
             // BtnSeleccionar
             // 
             this.BtnSeleccionar.HeaderText = "";
@@ -426,7 +468,7 @@
             // 
             // Documento
             // 
-            this.Documento.HeaderText = "Documento";
+            this.Documento.HeaderText = "RUC";
             this.Documento.Name = "Documento";
             this.Documento.ReadOnly = true;
             // 
@@ -436,6 +478,13 @@
             this.Contacto.Name = "Contacto";
             this.Contacto.ReadOnly = true;
             this.Contacto.Width = 150;
+            // 
+            // Contacto2
+            // 
+            this.Contacto2.HeaderText = "Contacto2";
+            this.Contacto2.Name = "Contacto2";
+            this.Contacto2.ReadOnly = true;
+            this.Contacto2.Visible = false;
             // 
             // Direccion
             // 
@@ -473,33 +522,14 @@
             this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // BtnLimpiar
-            // 
-            this.BtnLimpiar.BackColor = System.Drawing.Color.White;
-            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
-            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(886, 31);
-            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
-            this.BtnLimpiar.TabIndex = 60;
-            this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpiar.UseVisualStyleBackColor = false;
-            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
-            // 
             // FrmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1148, 575);
+            this.Controls.Add(this.TxtContacto2);
+            this.Controls.Add(this.LblContacto2);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
@@ -517,14 +547,14 @@
             this.Controls.Add(this.TxtTelefono2);
             this.Controls.Add(this.TxtTelefono1);
             this.Controls.Add(this.TxtDireccion);
-            this.Controls.Add(this.TxtDocumento);
+            this.Controls.Add(this.TxtRUC);
             this.Controls.Add(this.TxtContacto);
             this.Controls.Add(this.TxtRazonSocial);
             this.Controls.Add(this.LblCorreo);
             this.Controls.Add(this.LblTelefono2);
             this.Controls.Add(this.LblTelefono1);
             this.Controls.Add(this.LblDireccion);
-            this.Controls.Add(this.LblDocumento);
+            this.Controls.Add(this.LblRUC);
             this.Controls.Add(this.LblContacto);
             this.Controls.Add(this.LblRazonSocial);
             this.Controls.Add(this.label1);
@@ -549,14 +579,14 @@
         private System.Windows.Forms.TextBox TxtTelefono2;
         private System.Windows.Forms.TextBox TxtTelefono1;
         private System.Windows.Forms.TextBox TxtDireccion;
-        private System.Windows.Forms.TextBox TxtDocumento;
+        private System.Windows.Forms.TextBox TxtRUC;
         private System.Windows.Forms.TextBox TxtContacto;
         private System.Windows.Forms.TextBox TxtRazonSocial;
         private System.Windows.Forms.Label LblCorreo;
         private System.Windows.Forms.Label LblTelefono2;
         private System.Windows.Forms.Label LblTelefono1;
         private System.Windows.Forms.Label LblDireccion;
-        private System.Windows.Forms.Label LblDocumento;
+        private System.Windows.Forms.Label LblRUC;
         private System.Windows.Forms.Label LblContacto;
         private System.Windows.Forms.Label LblRazonSocial;
         private System.Windows.Forms.Label label1;
@@ -566,16 +596,19 @@
         private System.Windows.Forms.Label LblBuscarPor;
         private System.Windows.Forms.Label LblListaProveedores;
         private System.Windows.Forms.DataGridView dgvData;
+        private FontAwesome.Sharp.IconButton BtnLimpiar;
+        private System.Windows.Forms.TextBox TxtContacto2;
+        private System.Windows.Forms.Label LblContacto2;
         private System.Windows.Forms.DataGridViewButtonColumn BtnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contacto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contacto2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
-        private FontAwesome.Sharp.IconButton BtnLimpiar;
     }
 }

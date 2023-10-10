@@ -50,6 +50,7 @@ namespace CapaPresentacion
                 {
                     Id = Convert.ToInt32(TxtIdCliente.Text),
                     Nombre = TxtNombre.Text,
+                    Apellido = TxtApellidos.Text,
                     Documento = TxtDocumento.Text,
                     Direccion = TxtDireccion.Text,
                     TelefonoUno = TxtTelefono1.Text,
@@ -65,7 +66,7 @@ namespace CapaPresentacion
 
                     if (idCliente != 0)
                     {
-                        dgvData.Rows.Add(new object[] { "", idCliente, TxtNombre.Text, TxtDocumento.Text, TxtDireccion.Text, TxtTelefono1.Text, TxtTelefono2.Text, TxtCorreo.Text, tipo, ChkActivo.Checked });
+                        dgvData.Rows.Add(new object[] { "", idCliente, TxtNombre.Text, TxtApellidos.Text, TxtDocumento.Text, TxtDireccion.Text, TxtTelefono1.Text, TxtTelefono2.Text, TxtCorreo.Text, tipo, ChkActivo.Checked });
                         limpiar();
                     }
                     else
@@ -83,6 +84,7 @@ namespace CapaPresentacion
                         DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
                         row.Cells["IdCliente"].Value = TxtIdCliente.Text;
                         row.Cells["Nombre"].Value = TxtNombre.Text;
+                        row.Cells["Apellido"].Value = TxtApellidos.Text;
                         row.Cells["Documento"].Value = TxtDocumento.Text;
                         row.Cells["Direccion"].Value = TxtDireccion.Text;
                         row.Cells["Telefono1"].Value = TxtTelefono1.Text;
@@ -93,6 +95,7 @@ namespace CapaPresentacion
 
                         limpiar();
                         TxtNombre.ReadOnly = false;
+                        TxtApellidos.ReadOnly = false;
                         TxtDocumento.ReadOnly = false;
                     }
                     else
@@ -109,6 +112,7 @@ namespace CapaPresentacion
             TxtIndex.Clear();
             TxtIdCliente.Text = "0";
             TxtNombre.Clear();
+            TxtApellidos.Clear();
             TxtDocumento.Clear();
             TxtDireccion.Clear();
             TxtTelefono1.Clear();
@@ -118,6 +122,7 @@ namespace CapaPresentacion
             radioButtonJuridica.Checked = false;
             TxtBusqueda.Select();
             TxtNombre.ReadOnly = false;
+            TxtApellidos.ReadOnly = false;
             TxtDocumento.ReadOnly = false;
         }
 
@@ -139,7 +144,7 @@ namespace CapaPresentacion
             List<Cliente> listaCliente = new CN_Clientes().Listar();
             foreach (Cliente cliente in listaCliente)
             {
-                dgvData.Rows.Add("", cliente.Id, cliente.Nombre, cliente.Documento,
+                dgvData.Rows.Add("", cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Documento,
                                  cliente.Direccion, cliente.TelefonoUno, cliente.TelefonoDos,
                                  cliente.Correo, cliente.TipoPersona, cliente.Activo);
             }
@@ -282,9 +287,26 @@ namespace CapaPresentacion
             }
         }
 
+        private void TxtApellidos_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider1 = new ErrorProvider();
+            if (string.IsNullOrEmpty(TxtApellidos.Text))
+            {
+                //e.Cancel = true;
+                TxtApellidos.Focus();
+                errorProvider1.SetError(TxtApellidos, "Este campo es obligatorio");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(TxtApellidos, "");
+            }
+        }
+
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             TxtNombre.ReadOnly = true;
+            TxtApellidos.ReadOnly = true;
             TxtDocumento.ReadOnly = true;
 
             if (dgvData.Columns[e.ColumnIndex].Name == "BtnSeleccionar")
@@ -296,6 +318,7 @@ namespace CapaPresentacion
                     TxtIndex.Text = index.ToString();
                     TxtIdCliente.Text = dgvData.Rows[index].Cells["IdCliente"].Value.ToString();
                     TxtNombre.Text = dgvData.Rows[index].Cells["Nombre"].Value.ToString();
+                    TxtApellidos.Text = dgvData.Rows[index].Cells["Apellido"].Value.ToString();
                     TxtDocumento.Text = dgvData.Rows[index].Cells["Documento"].Value.ToString();
                     TxtDireccion.Text = dgvData.Rows[index].Cells["Direccion"].Value.ToString();
                     TxtTelefono1.Text = dgvData.Rows[index].Cells["Telefono1"].Value.ToString();
