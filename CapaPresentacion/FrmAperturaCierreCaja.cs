@@ -102,5 +102,38 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void BtnCerrarCaja_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CierreRequest objCierre = new CierreRequest()
+                {
+                    ImporteCierre = UpDownMontoCierre.Value,
+                    FechaApertura = DateTimePickerApertura.Value,
+                    LoginCajero = ComboCajero.Text,
+                    NumeroCaja = Convert.ToInt16(ComboCajas.Text),
+                    FechaCierre = DateTimePickerCierre.Value
+                };
+
+                int idCierreCaja = new CN_AperturaCierre().CierreCaja(objCierre, out string Mensaje);
+                
+                if(idCierreCaja > 0)
+                {
+                    MessageBox.Show(Mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }

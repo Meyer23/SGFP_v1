@@ -313,6 +313,7 @@
             this.BtnCerrarCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnCerrarCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnCerrarCaja.UseVisualStyleBackColor = false;
+            this.BtnCerrarCaja.Click += new System.EventHandler(this.BtnCerrarCaja_Click);
             // 
             // FrmAperturaCierreCaja
             // 

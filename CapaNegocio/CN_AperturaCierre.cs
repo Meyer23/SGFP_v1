@@ -13,5 +13,10 @@ namespace CapaNegocio
         {
             return cd_aperturacierre.AperturarCaja(obj, out Mensaje);
         }
+
+        public int CierreCaja(CierreRequest obj, out string Mensaje)
+        {
+            return cd_aperturacierre.CierreCaja(obj, out Mensaje);
+        }
     }
 }

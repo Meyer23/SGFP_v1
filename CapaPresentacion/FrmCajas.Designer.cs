@@ -268,7 +268,6 @@
             // ComboUsuario
             // 
             this.ComboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboUsuario.Enabled = false;
             this.ComboUsuario.FormattingEnabled = true;
             this.ComboUsuario.Location = new System.Drawing.Point(16, 257);
             this.ComboUsuario.Name = "ComboUsuario";

@@ -47,5 +47,40 @@ namespace CapaDatos
 
             return resultado;
         }
+
+        public int CierreCaja(CierreRequest datos, out string Mensaje)
+        {
+            int resultado = 0;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conexion.Cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_cerrar_caja", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@pi_aperturaFecha", datos.FechaApertura);
+                    cmd.Parameters.AddWithValue("@pi_cierreFecha", datos.FechaCierre);
+                    cmd.Parameters.AddWithValue("@pi_caja", datos.NumeroCaja);
+                    cmd.Parameters.AddWithValue("@pi_importeCierre", datos.ImporteCierre);
+                    cmd.Parameters.AddWithValue("@pi_cajero", datos.LoginCajero);
+                    cmd.Parameters.AddWithValue("@IdCierre", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    resultado = Convert.ToInt32(cmd.Parameters["@IdCierre"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                resultado = 0;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return resultado;
+        }
     }
 }
