@@ -58,6 +58,7 @@
     <Compile Include="Models\UsuarioRequest.cs" />
     <Compile Include="Modulo.cs" />
     <Compile Include="Pedido.cs" />
+    <Compile Include="PedidoDetalle.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Proveedor.cs" />
     <Compile Include="Rol.cs" />

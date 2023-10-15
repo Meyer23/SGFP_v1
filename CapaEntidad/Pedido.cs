@@ -12,6 +12,10 @@ namespace CapaEntidad
 
         public int IdProveedor { get; set; }
 
+        public string RazonSocial { get; set; }
+
+        public string Documento { get; set; }
+
         public int NumeroPedido { get; set; }
 
         public string TipoDocumento { get; set; }
@@ -28,6 +32,10 @@ namespace CapaEntidad
 
         public int IdUsuario { get; set; }
 
+        public string NombreUsuario { get; set; }
+
         public bool Confirmado { get; set; }
+
+        public List<PedidoDetalle> Detalle { get; set; }
     }
 }

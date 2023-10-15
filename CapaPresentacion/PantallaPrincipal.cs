@@ -197,5 +197,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(VentasMenu, new FrmAperturaCierreCaja());
         }
+
+        private void SubMenuDetallePedidos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(ComprasMenu, new FrmVerDetallePedido());
+        }
     }
 }

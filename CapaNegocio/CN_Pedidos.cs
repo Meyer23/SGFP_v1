@@ -22,5 +22,18 @@ namespace CapaNegocio
         {
             return cd_pedido.Registrar(obj, DetallePedido, out Mensaje);
         }
+
+        public Pedido ObtenerPedido(int NroPedido)
+        {
+            Pedido objPedido = cd_pedido.ObtenerPedido(NroPedido);  
+
+            if(objPedido.Id != 0)
+            {
+                List<PedidoDetalle> objDetalle = cd_pedido.ObtenerPedidoDetalle(objPedido.Id);
+
+                objPedido.Detalle = objDetalle;
+            }
+            return objPedido;
+        }
     }
 }

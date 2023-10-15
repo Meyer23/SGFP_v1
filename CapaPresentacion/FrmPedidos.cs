@@ -175,6 +175,21 @@ namespace CapaPresentacion
             TxtCantidad.Text = "1";
         }
 
+        private void limpiar()
+        {
+            TxtObs.Clear();
+            dtpFecha.Value = DateTime.Now;
+            dtpFechaRequerida.Value = DateTime.Now;
+            ComboTipoDoc.SelectedIndex = 0;
+            ComboFormaPago.SelectedIndex = 0;
+            TxtIdProveedor.Text = "0";
+            TxtRUC.Clear();
+            TxtRazonSocial.Clear();
+            limpiarProducto();
+            dgvData.Rows.Clear();
+            calcularTotal();
+        }
+
         private void calcularTotal()
         {
             decimal total = 0;
@@ -330,17 +345,7 @@ namespace CapaPresentacion
                 var result = MessageBox.Show("Número de Pedido generado:\n" + NroCorrelativo, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
-                    TxtObs.Clear();
-                    dtpFecha.Value = DateTime.Now;
-                    dtpFechaRequerida.Value = DateTime.Now;
-                    ComboTipoDoc.SelectedIndex = 0;
-                    ComboFormaPago.SelectedIndex = 0;
-                    TxtIdProveedor.Text = "0";
-                    TxtRUC.Clear();
-                    TxtRazonSocial.Clear();
-                    limpiarProducto();
-                    dgvData.Rows.Clear();
-                    calcularTotal();
+                    limpiar();
                 }
             }
             else
