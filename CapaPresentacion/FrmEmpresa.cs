@@ -67,5 +67,37 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+
+            try
+            {
+                Empresa objEmpresa = new Empresa()
+                {
+                    RazonSocial = TxtRazonSocial.Text,
+                    RUC = TxtRUC.Text,
+                    Direccion = TxtDirección.Text
+                };
+
+                bool respuesta = new CN_Empresa().GuardarDatos(objEmpresa, out mensaje);
+
+                if(respuesta )
+                {
+                    MessageBox.Show("Los cambios fueron guardados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudieron guardar los cambios", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
