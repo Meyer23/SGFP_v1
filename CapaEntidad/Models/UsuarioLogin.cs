@@ -14,6 +14,8 @@ namespace CapaEntidad.Models
 
         public string PassWord { get; set; }
 
+        public int IdRol { get; set; }
+
         public bool Activo { get; set; }
     }
 }

@@ -273,7 +273,7 @@
             this.BtnApertura.Name = "BtnApertura";
             this.BtnApertura.Size = new System.Drawing.Size(150, 42);
             this.BtnApertura.TabIndex = 55;
-            this.BtnApertura.Text = "Aperturar";
+            this.BtnApertura.Text = "Abrir Caja";
             this.BtnApertura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnApertura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnApertura.UseVisualStyleBackColor = false;

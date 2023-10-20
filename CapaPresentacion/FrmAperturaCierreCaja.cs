@@ -14,8 +14,10 @@ namespace CapaPresentacion
 {
     public partial class FrmAperturaCierreCaja : Form
     {
-        public FrmAperturaCierreCaja()
+        private UsuarioLogin _Usuario;
+        public FrmAperturaCierreCaja(UsuarioLogin oUsuario = null)
         {
+            _Usuario = oUsuario;
             InitializeComponent();
             CargarComboSucursal();
             CargarComboUsuarios();
@@ -24,7 +26,14 @@ namespace CapaPresentacion
 
         private void FrmAperturaCierreCaja_Load(object sender, EventArgs e)
         {
-
+            if(_Usuario.IdRol == 2)
+            {
+                ComboCajero.Text = _Usuario.Login;
+                ComboCajero.Enabled = false;
+                ComboEstado.Text = "ABIERTO";
+                ComboEstado.ForeColor = Color.YellowGreen;
+                ComboEstado.Enabled = false;
+            }
         }
 
         private void CargarComboSucursal()

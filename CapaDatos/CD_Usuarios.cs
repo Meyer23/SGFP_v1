@@ -23,7 +23,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT U.ID, U.LOGIN, U.PASSWORD, U.ACTIVO FROM DBO.USUARIOS U";
+                    string query = "SELECT U.ID, U.LOGIN, U.PASSWORD, U.IDROL, U.ACTIVO FROM DBO.USUARIOS U";
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
 
@@ -36,6 +36,7 @@ namespace CapaDatos
                                 Id = Convert.ToInt32(reader["ID"]),
                                 Login = reader["LOGIN"].ToString(),
                                 PassWord = reader["PASSWORD"].ToString(),
+                                IdRol = Convert.ToInt32(reader["IDROL"]),
                                 Activo = Convert.ToBoolean(reader["ACTIVO"])
                             });
                         }

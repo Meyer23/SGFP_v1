@@ -195,7 +195,7 @@ namespace CapaPresentacion
 
         private void SubMenuAperturaCierreCaja_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(VentasMenu, new FrmAperturaCierreCaja());
+            AbrirFormulario(VentasMenu, new FrmAperturaCierreCaja(usuarioActual));
         }
 
         private void SubMenuDetallePedidos_Click(object sender, EventArgs e)
