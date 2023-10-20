@@ -35,5 +35,15 @@ namespace CapaNegocio
             }
             return objPedido;
         }
+
+        public List<PedidoDetalle> ObtenerProductos()
+        {
+            return cd_pedido.ObtenerProductos();
+        }
+
+        public decimal ObtenerUltimoPrecio(int idProducto, int idProveedor)
+        {
+            return cd_pedido.ObtenerUltimoPrecio(idProducto, idProveedor);
+        }
     }
 }

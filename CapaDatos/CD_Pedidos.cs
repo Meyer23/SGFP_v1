@@ -175,5 +175,78 @@ namespace CapaDatos
             return objDetalle;
         }
 
+        public List<PedidoDetalle> ObtenerProductos()
+        {
+            List<PedidoDetalle> objDetalle = new List<PedidoDetalle>();
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT id, Descripcion, 1 AS Precio, Existencia+ExistenciaMinima AS Cantidad, ((Existencia+ExistenciaMinima) * 1) AS Total " +
+                        " FROM Productos WHERE Existencia <= ExistenciaMinima";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            objDetalle.Add(new PedidoDetalle
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Descripcion = reader["Descripcion"].ToString(),
+                                Precio = Convert.ToDecimal(reader["Precio"]),
+                                Cantidad = Convert.ToDecimal(reader["Cantidad"]),
+                                Total = Convert.ToDecimal(reader["Total"])
+                            });
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    objDetalle = new List<PedidoDetalle>();
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return objDetalle;
+        }
+
+        public decimal ObtenerUltimoPrecio(int idProducto, int idProveedor)
+        {
+            decimal UltimoPrecio = 0;
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    con.Open();
+
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("SELECT PrecioUltimaCompra FROM HistoricoUltimasCompras ");
+                    query.AppendLine("WHERE idProducto =  @idProducto ");
+                    query.AppendLine(" AND idProveedor = @idProveedor");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), con);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@idProducto", idProducto);
+                    cmd.Parameters.AddWithValue("@idProveedor", idProveedor);
+
+
+                    UltimoPrecio = Convert.ToInt32(cmd.ExecuteScalar());
+
+                }
+                catch (Exception ex)
+                {
+                    UltimoPrecio = 0;
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return UltimoPrecio;
+        }
+
     }
 }
