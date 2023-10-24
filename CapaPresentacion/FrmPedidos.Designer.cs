@@ -69,7 +69,6 @@
             this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.LblTotalCompra = new System.Windows.Forms.Label();
             this.TxtTotalPedido = new System.Windows.Forms.TextBox();
-            this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.BtnInsertarProductos = new FontAwesome.Sharp.IconButton();
@@ -514,28 +513,6 @@
             this.TxtTotalPedido.TabIndex = 32;
             this.TxtTotalPedido.Text = "0";
             // 
-            // BtnEditar
-            // 
-            this.BtnEditar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.ForeColor = System.Drawing.Color.White;
-            this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.BtnEditar.IconColor = System.Drawing.Color.White;
-            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnEditar.IconSize = 18;
-            this.BtnEditar.Location = new System.Drawing.Point(825, 422);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(125, 26);
-            this.BtnEditar.TabIndex = 52;
-            this.BtnEditar.Text = "Confirmar";
-            this.BtnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnEditar.UseVisualStyleBackColor = false;
-            // 
             // BtnGuardar
             // 
             this.BtnGuardar.BackColor = System.Drawing.Color.ForestGreen;
@@ -548,7 +525,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(825, 382);
+            this.BtnGuardar.Location = new System.Drawing.Point(825, 420);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(125, 27);
@@ -602,7 +579,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 537);
             this.Controls.Add(this.BtnInsertarProductos);
-            this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtTotalPedido);
             this.Controls.Add(this.LblTotalCompra);
@@ -612,7 +588,7 @@
             this.Controls.Add(this.groupBoxInfoPedido);
             this.Controls.Add(this.LblPedidos);
             this.Name = "FrmPedidos";
-            this.Text = "FrmPedidos";
+            this.Text = "Pedidos";
             this.Load += new System.EventHandler(this.FrmPedidos_Load);
             this.groupBoxInfoPedido.ResumeLayout(false);
             this.groupBoxInfoPedido.PerformLayout();
@@ -665,7 +641,6 @@
         private System.Windows.Forms.Label LblTotalCompra;
         private System.Windows.Forms.TextBox TxtTotalPedido;
         private FontAwesome.Sharp.IconButton BtnGuardar;
-        private FontAwesome.Sharp.IconButton BtnEditar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;

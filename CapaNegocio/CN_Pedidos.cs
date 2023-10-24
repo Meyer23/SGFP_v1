@@ -45,5 +45,15 @@ namespace CapaNegocio
         {
             return cd_pedido.ObtenerUltimoPrecio(idProducto, idProveedor);
         }
+
+        public bool ConfirmarPedido(int NroPedido, out string Mensaje)
+        {
+            return cd_pedido.ConfirmarPedido(NroPedido, out Mensaje);
+        }
+
+        public List<Pedido> Listar(int bandera)
+        {
+            return cd_pedido.Listar(bandera);
+        }
     }
 }

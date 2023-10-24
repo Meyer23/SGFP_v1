@@ -248,5 +248,96 @@ namespace CapaDatos
             return UltimoPrecio;
         }
 
+        public bool ConfirmarPedido(int NroPedido, out string Mensaje)
+        {
+            bool Respuesta = true;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+                    con.Open();
+
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("UPDATE Pedidos SET Confirmado = 1 ");
+                    query.AppendLine("WHERE id =  @NroPedido");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), con);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@NroPedido", NroPedido);
+
+                    if (cmd.ExecuteNonQuery() < 1)
+                    {
+                        Mensaje = "No se pudo confirmar el pedido";
+                        Respuesta = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Respuesta;
+        }
+
+        public List<Pedido> Listar(int bandera)
+        {
+            List<Pedido> pedidos = new List<Pedido>();
+            string query;
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    if(bandera == 0)
+                    {
+                        query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido FROM Pedidos P " +
+                        "INNER JOIN Proveedores PR ON P.idProveedor = PR.id";
+                    }else
+                    {
+                        if (bandera == 1)
+                        {
+                            query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido FROM Pedidos P " +
+                            "INNER JOIN Proveedores PR ON P.idProveedor = PR.id WHERE Confirmado = 1";
+                        }
+                        else
+                        {
+                            query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido FROM Pedidos P " +
+                            "INNER JOIN Proveedores PR ON P.idProveedor = PR.id WHERE Confirmado = 0";
+                        }
+                    }
+                    
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            pedidos.Add(new Pedido
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                NumeroPedido = Convert.ToInt32(reader["NumeroPedido"]),
+                                Fecha = Convert.ToDateTime(reader["Fecha"]),
+                                Documento = reader["Documento"].ToString(),
+                                RazonSocial = reader["RazonSocial"].ToString(),
+                                Total = Convert.ToDecimal(reader["TotalPedido"])
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    pedidos = new List<Pedido>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return pedidos;
+        }
     }
 }

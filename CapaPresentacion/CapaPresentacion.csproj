@@ -95,6 +95,12 @@
     <Compile Include="FrmCompras.Designer.cs">
       <DependentUpon>FrmCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConfirmarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfirmarPedido.Designer.cs">
+      <DependentUpon>FrmConfirmarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,12 @@
     <Compile Include="PopUpNuevaCaja.Designer.cs">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUpPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpPedidos.Designer.cs">
+      <DependentUpon>PopUpPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUpProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCompras.resx">
       <DependentUpon>FrmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfirmarPedido.resx">
+      <DependentUpon>FrmConfirmarPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
@@ -323,6 +338,9 @@
     <EmbeddedResource Include="PopUpNuevaCaja.resx">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUpPedidos.resx">
+      <DependentUpon>PopUpPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUpProductos.resx">
       <DependentUpon>PopUpProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +395,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\borrar_rojo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OK.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
