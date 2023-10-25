@@ -21,22 +21,57 @@ namespace CapaPresentacion
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            //using (var popup = new popuppedidos())
-            //{
-            //    var result = popup.showdialog();
+            using (var popup = new PopUpPedidos(0))
+            {
+                var result = popup.ShowDialog();
 
-            //    if (result == dialogresult.ok)
-            //    {
-            //        txtnumeropedido.text = popup._pedido.numeropedido.tostring();
-            //        dtpfecha.value = popup._pedido.fecha;
-            //        txtproveedor.text = popup._pedido.razonsocial.tostring();
-            //        txttotalpedido.text = popup._pedido.total.tostring();
-            //    }
-            //    else
-            //    {
-            //        txtbusqueda.select();
-            //    }
-            //}
+                if (result == DialogResult.OK)
+                {
+                    Pedido objPedido = new CN_Pedidos().ObtenerPedido(Convert.ToInt32(popup._Pedido.NumeroPedido.ToString()));
+                    if (objPedido.Id != 0)
+                    {
+                        TxtNumeroPedido.Text = objPedido.NumeroPedido.ToString();
+
+                        TxtNroPedido.Text = objPedido.NumeroPedido.ToString();
+                        dtpFecha.Value = objPedido.Fecha;
+                        dtpFechaRequerida.Value = objPedido.FechaRequerida;
+                        TxtUsuario.Text = objPedido.NombreUsuario;
+                        TxtTipoDoc.Text = objPedido.TipoDocumento;
+                        TxtFormaPago.Text = objPedido.FormaPago;
+                        TxtRUC.Text = objPedido.Documento;
+                        TxtRazonSocial.Text = objPedido.RazonSocial;
+                        TxtObs.Text = objPedido.Observacion;
+                        TxtTotalPedido.Text = objPedido.Total.ToString();
+                        checkBoxConfirmado.Checked = objPedido.Confirmado;
+
+                        if (checkBoxConfirmado.Checked)
+                        {
+                            LblConfirmado.Visible = true;
+                            PbConfirmado.Visible = true;
+                            LblNoConfirmado.Visible = false;
+                            PbNoConfirmado.Visible = false;
+                        }
+                        else
+                        {
+                            LblNoConfirmado.Visible = true;
+                            PbNoConfirmado.Visible = true;
+                            LblConfirmado.Visible = false;
+                            PbConfirmado.Visible = false;
+                        }
+
+                        dgvData.Rows.Clear();
+
+                        foreach (PedidoDetalle pd in objPedido.Detalle)
+                        {
+                            dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
+                        }
+                    }
+                }
+                else
+                {
+                    TxtBusqueda.Select();
+                }
+            }
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtIndex = new System.Windows.Forms.TextBox();
             this.TxtIdTipoDocumento = new System.Windows.Forms.TextBox();
             this.LblDetalleTipoDoc = new System.Windows.Forms.Label();
@@ -127,12 +127,12 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 512);
+            this.label1.Size = new System.Drawing.Size(335, 512);
             this.label1.TabIndex = 87;
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(734, 32);
+            this.TxtBusqueda.Location = new System.Drawing.Point(808, 32);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 103;
@@ -141,7 +141,7 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(607, 32);
+            this.ComboBusqueda.Location = new System.Drawing.Point(681, 32);
             this.ComboBusqueda.Name = "ComboBusqueda";
             this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
             this.ComboBusqueda.TabIndex = 105;
@@ -150,7 +150,7 @@
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(540, 35);
+            this.LblBuscarPor.Location = new System.Drawing.Point(614, 35);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
             this.LblBuscarPor.TabIndex = 104;
@@ -160,11 +160,11 @@
             // 
             this.LblListaCategorias.BackColor = System.Drawing.Color.White;
             this.LblListaCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblListaCategorias.Location = new System.Drawing.Point(231, 18);
+            this.LblListaCategorias.Location = new System.Drawing.Point(341, 18);
             this.LblListaCategorias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblListaCategorias.Name = "LblListaCategorias";
             this.LblListaCategorias.Padding = new System.Windows.Forms.Padding(2);
-            this.LblListaCategorias.Size = new System.Drawing.Size(836, 40);
+            this.LblListaCategorias.Size = new System.Drawing.Size(726, 40);
             this.LblListaCategorias.TabIndex = 102;
             this.LblListaCategorias.Text = "Lista de Tipos de Documentos";
             this.LblListaCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,7 +181,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(941, 28);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1015, 28);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
@@ -202,7 +202,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(894, 28);
+            this.BtnBuscar.Location = new System.Drawing.Point(968, 28);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
@@ -261,15 +261,15 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
@@ -277,24 +277,24 @@
             this.Descripcion,
             this.TipoCodigo,
             this.Activo});
-            this.dgvData.Location = new System.Drawing.Point(236, 84);
+            this.dgvData.Location = new System.Drawing.Point(341, 84);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(834, 384);
+            this.dgvData.Size = new System.Drawing.Size(729, 384);
             this.dgvData.TabIndex = 108;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
@@ -396,7 +396,7 @@
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.label1);
             this.Name = "FrmTiposDocumentos";
-            this.Text = "FrmTiposDocumentos";
+            this.Text = "Tipos Documentos";
             this.Load += new System.EventHandler(this.FrmTiposDocumentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.groupTipoCodigo.ResumeLayout(false);

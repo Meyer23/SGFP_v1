@@ -200,6 +200,7 @@
             this.TxtNumeroPedido.Name = "TxtNumeroPedido";
             this.TxtNumeroPedido.Size = new System.Drawing.Size(26, 20);
             this.TxtNumeroPedido.TabIndex = 101;
+            this.TxtNumeroPedido.Text = "0";
             this.TxtNumeroPedido.Visible = false;
             // 
             // FrmConfirmarPedido

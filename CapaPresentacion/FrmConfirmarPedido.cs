@@ -21,7 +21,7 @@ namespace CapaPresentacion
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(TxtNumeroPedido.Text) == 0)
+            if (TxtNumeroPedido.Text == "0")
             {
                 MessageBox.Show("Debe seleccionar un pedido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TxtBusqueda.Focus();
@@ -54,7 +54,7 @@ namespace CapaPresentacion
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpPedidos())
+            using (var popup = new PopUpPedidos(2))
             {
                 var result = popup.ShowDialog();
 

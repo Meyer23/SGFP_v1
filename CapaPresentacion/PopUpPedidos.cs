@@ -1,4 +1,5 @@
 ﻿using CapaEntidad;
+using CapaEntidad.Models;
 using CapaNegocio;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,11 @@ namespace CapaPresentacion
     public partial class PopUpPedidos : Form
     {
         public Pedido _Pedido { get; set; }
+        private int _Bandera;
 
-        public PopUpPedidos()
+        public PopUpPedidos(int bandera = 0)
         {
+            _Bandera = bandera;
             InitializeComponent();
         }
 
@@ -33,7 +36,7 @@ namespace CapaPresentacion
             }
             ComboBusqueda.SelectedIndex = 0;
 
-            List<Pedido> listaPedido = new CN_Pedidos().Listar(2);
+            List<Pedido> listaPedido = new CN_Pedidos().Listar(_Bandera);
             foreach (Pedido pedido in listaPedido)
             {
                 dgvData.Rows.Add(pedido.Id, pedido.NumeroPedido, pedido.Fecha, pedido.Documento, pedido.RazonSocial, pedido.Total);
