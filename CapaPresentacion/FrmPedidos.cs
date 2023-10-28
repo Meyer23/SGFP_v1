@@ -20,8 +20,7 @@ namespace CapaPresentacion
         public FrmPedidos(UsuarioLogin oUsuario = null)
         {
             _Usuario = oUsuario;
-            InitializeComponent();
-            CargarFormasPago();
+            InitializeComponent();           
             CargarTiposDocumentos();
         }
 
@@ -32,7 +31,7 @@ namespace CapaPresentacion
 
         private void CargarFormasPago()
         {
-            List<FormaPago> formasPago = new CN_FormasPago().ObtenerFormasPago();
+            List<FormaPago> formasPago = new CN_FormasPago().ObtenerFormasPago(ComboTipoDoc.Text.ToString());
             ComboFormaPago.DataSource = formasPago;
 
             foreach (FormaPago formaPago in formasPago)
@@ -364,6 +363,16 @@ namespace CapaPresentacion
             {
                 dgvData.Rows.Add(detalle.IdProducto,detalle.Descripcion, detalle.Precio, detalle.Cantidad, detalle.Total);
             }
+        }
+
+        private void ComboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarFormasPago();
+        }
+
+        private void ComboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarFormasPago();
         }
     }
 }

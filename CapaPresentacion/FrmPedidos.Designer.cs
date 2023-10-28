@@ -72,6 +72,7 @@
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.BtnInsertarProductos = new FontAwesome.Sharp.IconButton();
+            this.TxtIdTipoDoc = new System.Windows.Forms.TextBox();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProveedor.SuspendLayout();
             this.groupBoxInfoProducto.SuspendLayout();
@@ -93,6 +94,7 @@
             // groupBoxInfoPedido
             // 
             this.groupBoxInfoPedido.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfoPedido.Controls.Add(this.TxtIdTipoDoc);
             this.groupBoxInfoPedido.Controls.Add(this.ComboFormaPago);
             this.groupBoxInfoPedido.Controls.Add(this.groupBoxInfoProveedor);
             this.groupBoxInfoPedido.Controls.Add(this.LblFormaPago);
@@ -122,6 +124,7 @@
             this.ComboFormaPago.Name = "ComboFormaPago";
             this.ComboFormaPago.Size = new System.Drawing.Size(173, 24);
             this.ComboFormaPago.TabIndex = 90;
+            this.ComboFormaPago.SelectedIndexChanged += new System.EventHandler(this.ComboFormaPago_SelectedIndexChanged);
             // 
             // groupBoxInfoProveedor
             // 
@@ -224,6 +227,7 @@
             this.ComboTipoDoc.Name = "ComboTipoDoc";
             this.ComboTipoDoc.Size = new System.Drawing.Size(173, 24);
             this.ComboTipoDoc.TabIndex = 88;
+            this.ComboTipoDoc.SelectedIndexChanged += new System.EventHandler(this.ComboTipoDoc_SelectedIndexChanged);
             // 
             // LblTipoDoc
             // 
@@ -573,6 +577,14 @@
             this.BtnInsertarProductos.UseVisualStyleBackColor = false;
             this.BtnInsertarProductos.Click += new System.EventHandler(this.BtnInsertarProductos_Click);
             // 
+            // TxtIdTipoDoc
+            // 
+            this.TxtIdTipoDoc.Location = new System.Drawing.Point(353, 60);
+            this.TxtIdTipoDoc.Name = "TxtIdTipoDoc";
+            this.TxtIdTipoDoc.Size = new System.Drawing.Size(19, 22);
+            this.TxtIdTipoDoc.TabIndex = 91;
+            this.TxtIdTipoDoc.Visible = false;
+            // 
             // FrmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -648,5 +660,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewButtonColumn BtnEliminar;
         private FontAwesome.Sharp.IconButton BtnInsertarProductos;
+        private System.Windows.Forms.TextBox TxtIdTipoDoc;
     }
 }
