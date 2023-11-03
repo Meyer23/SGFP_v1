@@ -30,6 +30,7 @@
         {
             this.LblPedidos = new System.Windows.Forms.Label();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
+            this.TxtIdTipoDoc = new System.Windows.Forms.TextBox();
             this.ComboFormaPago = new System.Windows.Forms.ComboBox();
             this.groupBoxInfoProveedor = new System.Windows.Forms.GroupBox();
             this.TxtIdProveedor = new System.Windows.Forms.TextBox();
@@ -72,7 +73,6 @@
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.BtnInsertarProductos = new FontAwesome.Sharp.IconButton();
-            this.TxtIdTipoDoc = new System.Windows.Forms.TextBox();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProveedor.SuspendLayout();
             this.groupBoxInfoProducto.SuspendLayout();
@@ -116,6 +116,14 @@
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información del Pedido";
             // 
+            // TxtIdTipoDoc
+            // 
+            this.TxtIdTipoDoc.Location = new System.Drawing.Point(353, 60);
+            this.TxtIdTipoDoc.Name = "TxtIdTipoDoc";
+            this.TxtIdTipoDoc.Size = new System.Drawing.Size(19, 22);
+            this.TxtIdTipoDoc.TabIndex = 91;
+            this.TxtIdTipoDoc.Visible = false;
+            // 
             // ComboFormaPago
             // 
             this.ComboFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -124,7 +132,6 @@
             this.ComboFormaPago.Name = "ComboFormaPago";
             this.ComboFormaPago.Size = new System.Drawing.Size(173, 24);
             this.ComboFormaPago.TabIndex = 90;
-            this.ComboFormaPago.SelectedIndexChanged += new System.EventHandler(this.ComboFormaPago_SelectedIndexChanged);
             // 
             // groupBoxInfoProveedor
             // 
@@ -281,7 +288,7 @@
             this.dtpFechaRequerida.Name = "dtpFechaRequerida";
             this.dtpFechaRequerida.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaRequerida.TabIndex = 3;
-            this.dtpFechaRequerida.Value = new System.DateTime(2023, 9, 29, 0, 0, 0, 0);
+            this.dtpFechaRequerida.Value = new System.DateTime(2023, 11, 2, 0, 0, 0, 0);
             // 
             // LblFechaRequerida
             // 
@@ -301,7 +308,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(97, 20);
             this.dtpFecha.TabIndex = 1;
-            this.dtpFecha.Value = new System.DateTime(2023, 9, 29, 16, 46, 26, 0);
+            this.dtpFecha.Value = new System.DateTime(2023, 11, 2, 0, 0, 0, 0);
             // 
             // LblFecha
             // 
@@ -576,14 +583,6 @@
             this.BtnInsertarProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnInsertarProductos.UseVisualStyleBackColor = false;
             this.BtnInsertarProductos.Click += new System.EventHandler(this.BtnInsertarProductos_Click);
-            // 
-            // TxtIdTipoDoc
-            // 
-            this.TxtIdTipoDoc.Location = new System.Drawing.Point(353, 60);
-            this.TxtIdTipoDoc.Name = "TxtIdTipoDoc";
-            this.TxtIdTipoDoc.Size = new System.Drawing.Size(19, 22);
-            this.TxtIdTipoDoc.TabIndex = 91;
-            this.TxtIdTipoDoc.Visible = false;
             // 
             // FrmPedidos
             // 

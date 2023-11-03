@@ -365,11 +365,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void ComboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CargarFormasPago();
-        }
-
         private void ComboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarFormasPago();

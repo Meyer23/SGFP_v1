@@ -87,7 +87,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT P.id, P.NumeroPedido, P.Fecha, P.FechaRequerida, E.Nombres, " +
+                    string query = "SELECT P.id, P.NumeroPedido, P.Fecha, P.FechaRequerida, E.Nombres, PR.id AS idProveedor, " +
                         "PR.Documento, PR.RazonSocial, T.Descripcion AS TipoDocumento, F.Descripcion AS FormaPago, " +
                         "P.Observacion, P.TotalPedido, P.Confirmado" +
                         " FROM Pedidos P" +
@@ -113,6 +113,7 @@ namespace CapaDatos
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
                                 FechaRequerida = Convert.ToDateTime(reader["FechaRequerida"]),
                                 NombreUsuario = reader["Nombres"].ToString(),
+                                IdProveedor = Convert.ToInt32(reader["idProveedor"]),
                                 Documento = reader["Documento"].ToString(),
                                 RazonSocial = reader["RazonSocial"].ToString(),
                                 TipoDocumento = reader["TipoDocumento"].ToString(),
@@ -141,7 +142,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT P.id, P.Descripcion, PD.Precio, PD.Cantidad, PD.Total" +
+                    string query = "SELECT P.id, PD.idProducto, P.Descripcion, PD.Precio, PD.Cantidad, PD.Total" +
                         " FROM PedidosDetalles PD" +
                         " INNER JOIN Productos P ON PD.idProducto = P.id" +
                         " WHERE PD.idPedido = " + idPedido;
@@ -157,6 +158,7 @@ namespace CapaDatos
                             objDetalle.Add(new PedidoDetalle
                             {
                                 Id = Convert.ToInt32(reader["id"]),
+                                IdProducto = Convert.ToInt32(reader["idProducto"]),
                                 Descripcion = reader["Descripcion"].ToString(),
                                 Precio = Convert.ToDecimal(reader["Precio"]),
                                 Cantidad = Convert.ToDecimal(reader["Cantidad"]),

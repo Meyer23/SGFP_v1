@@ -44,6 +44,8 @@
     <Compile Include="Banco.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Compra.cs" />
+    <Compile Include="CompraDetalle.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="FormaPago.cs" />
