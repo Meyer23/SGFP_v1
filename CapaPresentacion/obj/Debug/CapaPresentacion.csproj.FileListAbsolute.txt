@@ -189,3 +189,5 @@ C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVer
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmEmpresa.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmConfirmarPedido.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpPedidos.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmConfirmarCompra.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpCompras.resources

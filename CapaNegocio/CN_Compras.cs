@@ -17,5 +17,15 @@ namespace CapaNegocio
         {
             return cd_compra.Registrar(obj, DetalleCompra, out Mensaje);
         }
+
+        public bool ConfirmarCompra(int IdCompra, out string Mensaje)
+        {
+            return cd_compra.ConfirmarCompra(IdCompra, out Mensaje);
+        }
+
+        public List<Compra> Listar()
+        {
+            return cd_compra.Listar();
+        }
     }
 }

@@ -56,5 +56,82 @@ namespace CapaDatos
             }
             return Respuesta;
         }
+
+        public bool ConfirmarCompra(int IdCompra, out string Mensaje)
+        {
+            bool Respuesta = true;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+                    con.Open();
+
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("UPDATE Compras SET Confirmado = 1 ");
+                    query.AppendLine("WHERE id =  @IdCompra");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), con);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@IdCompra", IdCompra);
+
+                    if (cmd.ExecuteNonQuery() < 1)
+                    {
+                        Mensaje = "No se pudo confirmar la compra";
+                        Respuesta = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Respuesta;
+        }
+
+        public List<Compra> Listar()
+        {
+            List<Compra> compras = new List<Compra>();
+            
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura FROM Compras C" +
+                        " INNER JOIN Proveedores P ON C.idProveedor = P.id";
+
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            compras.Add(new Compra
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                NumeroFactura = reader["NumeroFactura"].ToString(),
+                                Fecha = Convert.ToDateTime(reader["Fecha"]),
+                                Documento = reader["Documento"].ToString(),
+                                RazonSocial = reader["RazonSocial"].ToString(),
+                                Total = Convert.ToDecimal(reader["TotalFactura"])
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    compras = new List<Compra>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return compras;
+        }
     }
 }

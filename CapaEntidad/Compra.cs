@@ -18,6 +18,8 @@ namespace CapaEntidad
 
         public int NumeroPedido { get; set; }
 
+        public string NumeroFactura { get; set; }
+
         public string TipoDocumento { get; set; }
 
         public string FormaPago { get; set; }
