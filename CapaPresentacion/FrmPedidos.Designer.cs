@@ -564,7 +564,7 @@
             // 
             // BtnInsertarProductos
             // 
-            this.BtnInsertarProductos.BackColor = System.Drawing.Color.Goldenrod;
+            this.BtnInsertarProductos.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.BtnInsertarProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnInsertarProductos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnInsertarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

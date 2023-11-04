@@ -21,5 +21,11 @@ namespace CapaEntidad
         public decimal Precio { get; set; }
 
         public decimal Total { get; set; }
+
+        public string Documento { get; set; }
+
+        public string RazonSocial { get; set; }
+
+        public DateTime Fecha { get; set; }
     }
 }
