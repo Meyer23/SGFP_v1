@@ -76,7 +76,7 @@ namespace CapaPresentacion
 
                         dgvData.Rows.Clear();
 
-                        foreach (PedidoDetalle pd in objPedido.Detalle)
+                        foreach (DetalleProductos pd in objPedido.Detalle)
                         {
                             dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                         }
@@ -140,7 +140,7 @@ namespace CapaPresentacion
 
                     dgvData.Rows.Clear();
 
-                    foreach (PedidoDetalle pd in objPedido.Detalle)
+                    foreach (DetalleProductos pd in objPedido.Detalle)
                     {
                         dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                     }
@@ -407,6 +407,11 @@ namespace CapaPresentacion
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             string TipoDoc, FormaPago;
+            if (TxtDoc.Text == "" || TxtTimbrado.Text == "")
+            {
+                MessageBox.Show("Debe completar los datos de la factura", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (Convert.ToInt32(TxtIdProveedor.Text) == 0)
             {

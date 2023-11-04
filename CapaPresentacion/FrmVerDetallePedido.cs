@@ -61,7 +61,7 @@ namespace CapaPresentacion
 
                         dgvData.Rows.Clear();
 
-                        foreach (PedidoDetalle pd in objPedido.Detalle)
+                        foreach (DetalleProductos pd in objPedido.Detalle)
                         {
                             dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                         }
@@ -132,7 +132,7 @@ namespace CapaPresentacion
 
                    dgvData.Rows.Clear();
 
-                   foreach (PedidoDetalle pd in objPedido.Detalle)
+                   foreach (DetalleProductos pd in objPedido.Detalle)
                    {
                         dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                    }

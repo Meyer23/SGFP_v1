@@ -358,8 +358,8 @@ namespace CapaPresentacion
 
         private void BtnInsertarProductos_Click(object sender, EventArgs e)
         {
-            List<PedidoDetalle> listaProductos = new CN_Pedidos().ObtenerProductos();
-            foreach (PedidoDetalle detalle in listaProductos)
+            List<DetalleProductos> listaProductos = new CN_Pedidos().ObtenerProductos();
+            foreach (DetalleProductos detalle in listaProductos)
             {
                 dgvData.Rows.Add(detalle.IdProducto,detalle.Descripcion, detalle.Precio, detalle.Cantidad, detalle.Total);
             }

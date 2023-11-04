@@ -29,14 +29,14 @@ namespace CapaNegocio
 
             if(objPedido.Id != 0)
             {
-                List<PedidoDetalle> objDetalle = cd_pedido.ObtenerPedidoDetalle(objPedido.Id);
+                List<DetalleProductos> objDetalle = cd_pedido.ObtenerPedidoDetalle(objPedido.Id);
 
                 objPedido.Detalle = objDetalle;
             }
             return objPedido;
         }
 
-        public List<PedidoDetalle> ObtenerProductos()
+        public List<DetalleProductos> ObtenerProductos()
         {
             return cd_pedido.ObtenerProductos();
         }

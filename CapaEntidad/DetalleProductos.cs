@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class CompraDetalle
+    public class DetalleProductos
     {
         public int Id { get; set; }
 
-        public int IdCompra { get; set; }
+        public int IdPedido { get; set; }
 
         public int IdProducto { get; set; }
 

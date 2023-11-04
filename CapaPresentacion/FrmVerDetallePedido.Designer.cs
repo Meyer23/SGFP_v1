@@ -499,7 +499,7 @@
             this.LblNoConfirmado.BackColor = System.Drawing.Color.White;
             this.LblNoConfirmado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNoConfirmado.ForeColor = System.Drawing.Color.Red;
-            this.LblNoConfirmado.Location = new System.Drawing.Point(697, 44);
+            this.LblNoConfirmado.Location = new System.Drawing.Point(697, 42);
             this.LblNoConfirmado.Name = "LblNoConfirmado";
             this.LblNoConfirmado.Size = new System.Drawing.Size(137, 24);
             this.LblNoConfirmado.TabIndex = 97;

@@ -22,7 +22,7 @@ namespace CapaPresentacion
         {
             if (TxtIdCompra.Text == "0")
             {
-                MessageBox.Show("Debe seleccionar una factura", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar una compra", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TxtBusqueda.Focus();
                 TxtBusqueda.SelectAll();
                 return;
@@ -31,7 +31,7 @@ namespace CapaPresentacion
             {
                 string Mensaje = string.Empty;
 
-                bool Respuesta = new CN_Compras().ConfirmarCompra(Convert.ToInt32(TxtIdCompra.Text), out Mensaje);
+                bool Respuesta = new CN_Compras().ConfirmarCompra(Convert.ToInt32(TxtIdCompra.Text), dtpFechaRec.Value, out Mensaje);
 
                 if (Respuesta)
                 {
@@ -39,8 +39,11 @@ namespace CapaPresentacion
                     if (result == DialogResult.OK)
                     {
                         dtpFecha.Value = DateTime.Now;
+                        dtpFechaRec.Value = DateTime.Now;
                         TxtProveedor.Clear();
                         TxtTotalCompra.Clear();
+                        TxtIdCompra.Clear();
+                        TxtBusqueda.Clear();
                     }
                 }
                 else
@@ -53,7 +56,7 @@ namespace CapaPresentacion
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpCompras())
+            using (var popup = new PopUpCompras(1))
             {
                 var result = popup.ShowDialog();
 

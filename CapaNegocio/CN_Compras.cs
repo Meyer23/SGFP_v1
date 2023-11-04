@@ -18,14 +18,27 @@ namespace CapaNegocio
             return cd_compra.Registrar(obj, DetalleCompra, out Mensaje);
         }
 
-        public bool ConfirmarCompra(int IdCompra, out string Mensaje)
+        public bool ConfirmarCompra(int IdCompra, DateTime FechaRec, out string Mensaje)
         {
-            return cd_compra.ConfirmarCompra(IdCompra, out Mensaje);
+            return cd_compra.ConfirmarCompra(IdCompra, FechaRec, out Mensaje);
         }
 
-        public List<Compra> Listar()
+        public List<Compra> Listar(int bandera)
         {
-            return cd_compra.Listar();
+            return cd_compra.Listar(bandera);
+        }
+
+        public Compra ObtenerCompra(int IdCompra)
+        {
+            Compra objCompra = cd_compra.ObtenerCompra(IdCompra);
+
+            if (objCompra.Id != 0)
+            {
+                List<DetalleProductos> objDetalle = cd_compra.ObtenerCompraDetalle(objCompra.Id);
+
+                objCompra.Detalle = objDetalle;
+            }
+            return objCompra;
         }
     }
 }

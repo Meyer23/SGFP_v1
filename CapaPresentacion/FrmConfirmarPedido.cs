@@ -42,6 +42,8 @@ namespace CapaPresentacion
                         dtpFecha.Value = DateTime.Now;
                         TxtProveedor.Clear();
                         TxtTotalPedido.Clear();
+                        TxtBusqueda.Clear();
+                        TxtNumeroPedido.Clear();
                     }
                 }
                 else
@@ -60,6 +62,7 @@ namespace CapaPresentacion
 
                 if (result == DialogResult.OK)
                 { 
+                    TxtBusqueda.Text = popup._Pedido.NumeroPedido.ToString();
                     TxtNumeroPedido.Text = popup._Pedido.NumeroPedido.ToString();
                     dtpFecha.Value = popup._Pedido.Fecha;
                     TxtProveedor.Text = popup._Pedido.RazonSocial.ToString();

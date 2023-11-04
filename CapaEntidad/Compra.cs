@@ -48,7 +48,7 @@ namespace CapaEntidad
 
         public bool Confirmado { get; set; }
 
-        public List<PedidoDetalle> Detalle { get; set; }
+        public List<DetalleProductos> Detalle { get; set; }
     }
 }
 

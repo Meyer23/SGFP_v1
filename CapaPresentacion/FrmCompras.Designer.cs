@@ -635,7 +635,7 @@
             this.dtpFechaVenc.Name = "dtpFechaVenc";
             this.dtpFechaVenc.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaVenc.TabIndex = 3;
-            this.dtpFechaVenc.Value = new System.DateTime(2023, 11, 2, 0, 0, 0, 0);
+            this.dtpFechaVenc.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
             // 
             // LblFechaVencimiento
             // 
@@ -655,7 +655,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(97, 20);
             this.dtpFecha.TabIndex = 1;
-            this.dtpFecha.Value = new System.DateTime(2023, 11, 2, 0, 0, 0, 0);
+            this.dtpFecha.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
             // 
             // LblFecha
             // 

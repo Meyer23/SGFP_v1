@@ -16,8 +16,10 @@ namespace CapaPresentacion
     public partial class PopUpCompras : Form
     {
         public Compra _Compra { get; set; }
-        public PopUpCompras()
+        private int _Bandera;
+        public PopUpCompras(int bandera = 0)
         {
+            _Bandera = bandera;
             InitializeComponent();
         }
 
@@ -32,7 +34,7 @@ namespace CapaPresentacion
             }
             ComboBusqueda.SelectedIndex = 0;
 
-            List<Compra> listaCompra = new CN_Compras().Listar();
+            List<Compra> listaCompra = new CN_Compras().Listar(_Bandera);
             foreach (Compra compra in listaCompra)
             {
                 dgvData.Rows.Add(compra.Id, compra.NumeroFactura, compra.Fecha, compra.Documento, compra.RazonSocial, compra.Total);

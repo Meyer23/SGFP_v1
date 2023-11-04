@@ -58,12 +58,12 @@
             this.SubMenuPedidos = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuDetallePedidos = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuConfirmarPedido = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuConfirmarCompra = new FontAwesome.Sharp.IconMenuItem();
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.LabelTituloSistema = new System.Windows.Forms.Label();
             this.Contenedor = new System.Windows.Forms.Panel();
             this.ULabel = new System.Windows.Forms.Label();
             this.LBLUsuario = new System.Windows.Forms.Label();
-            this.SubMenuConfirmarCompra = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -350,11 +350,11 @@
             // ComprasMenu
             // 
             this.ComprasMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SubMenuCompras,
-            this.SubMenuVerDetalleCompra,
             this.SubMenuPedidos,
             this.SubMenuDetallePedidos,
             this.SubMenuConfirmarPedido,
+            this.SubMenuCompras,
+            this.SubMenuVerDetalleCompra,
             this.SubMenuConfirmarCompra});
             this.ComprasMenu.IconChar = FontAwesome.Sharp.IconChar.ShoppingBag;
             this.ComprasMenu.IconColor = System.Drawing.Color.Black;
@@ -416,6 +416,16 @@
             this.SubMenuConfirmarPedido.Text = "Confirmación de Pedido";
             this.SubMenuConfirmarPedido.Click += new System.EventHandler(this.SubMenuConfirmarPedido_Click);
             // 
+            // SubMenuConfirmarCompra
+            // 
+            this.SubMenuConfirmarCompra.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuConfirmarCompra.IconColor = System.Drawing.Color.Black;
+            this.SubMenuConfirmarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuConfirmarCompra.Name = "SubMenuConfirmarCompra";
+            this.SubMenuConfirmarCompra.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuConfirmarCompra.Text = "Confirmación de Compra";
+            this.SubMenuConfirmarCompra.Click += new System.EventHandler(this.SubMenuConfirmarCompra_Click);
+            // 
             // menutitulo
             // 
             this.menutitulo.AutoSize = false;
@@ -476,16 +486,6 @@
             this.LBLUsuario.Size = new System.Drawing.Size(93, 20);
             this.LBLUsuario.TabIndex = 5;
             this.LBLUsuario.Text = "LBLUsuario";
-            // 
-            // SubMenuConfirmarCompra
-            // 
-            this.SubMenuConfirmarCompra.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.SubMenuConfirmarCompra.IconColor = System.Drawing.Color.Black;
-            this.SubMenuConfirmarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubMenuConfirmarCompra.Name = "SubMenuConfirmarCompra";
-            this.SubMenuConfirmarCompra.Size = new System.Drawing.Size(217, 30);
-            this.SubMenuConfirmarCompra.Text = "Confirmación de Compra";
-            this.SubMenuConfirmarCompra.Click += new System.EventHandler(this.SubMenuConfirmarCompra_Click);
             // 
             // PantallaPrincipal
             // 

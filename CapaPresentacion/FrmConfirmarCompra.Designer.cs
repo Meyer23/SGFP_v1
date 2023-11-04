@@ -42,7 +42,7 @@
             this.LblNroPedido = new System.Windows.Forms.Label();
             this.LblConfirmarPedido = new System.Windows.Forms.Label();
             this.LblFechaRec = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaRec = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // TxtIdCompra
@@ -216,21 +216,21 @@
             this.LblFechaRec.TabIndex = 115;
             this.LblFechaRec.Text = "Asignar Fecha Recepción";
             // 
-            // dateTimePicker1
+            // dtpFechaRec
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(10, 199);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker1.TabIndex = 116;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 11, 2, 22, 3, 29, 0);
+            this.dtpFechaRec.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaRec.Location = new System.Drawing.Point(10, 199);
+            this.dtpFechaRec.Name = "dtpFechaRec";
+            this.dtpFechaRec.Size = new System.Drawing.Size(97, 20);
+            this.dtpFechaRec.TabIndex = 116;
+            this.dtpFechaRec.Value = new System.DateTime(2023, 11, 2, 22, 3, 29, 0);
             // 
             // FrmConfirmarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 272);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFechaRec);
             this.Controls.Add(this.LblFechaRec);
             this.Controls.Add(this.TxtIdCompra);
             this.Controls.Add(this.BtnConfirmar);
@@ -268,6 +268,6 @@
         private System.Windows.Forms.Label LblNroPedido;
         private System.Windows.Forms.Label LblConfirmarPedido;
         private System.Windows.Forms.Label LblFechaRec;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaRec;
     }
 }

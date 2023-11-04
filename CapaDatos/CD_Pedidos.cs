@@ -134,9 +134,9 @@ namespace CapaDatos
             return objPedido;
         }
 
-        public List <PedidoDetalle> ObtenerPedidoDetalle(int idPedido)
+        public List <DetalleProductos> ObtenerPedidoDetalle(int idPedido)
         {
-            List<PedidoDetalle> objDetalle = new List<PedidoDetalle>();
+            List<DetalleProductos> objDetalle = new List<DetalleProductos>();
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
@@ -155,7 +155,7 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            objDetalle.Add(new PedidoDetalle
+                            objDetalle.Add(new DetalleProductos
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                 IdProducto = Convert.ToInt32(reader["idProducto"]),
@@ -170,16 +170,16 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    objDetalle = new List<PedidoDetalle>();
+                    objDetalle = new List<DetalleProductos>();
                     MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return objDetalle;
         }
 
-        public List<PedidoDetalle> ObtenerProductos()
+        public List<DetalleProductos> ObtenerProductos()
         {
-            List<PedidoDetalle> objDetalle = new List<PedidoDetalle>();
+            List<DetalleProductos> objDetalle = new List<DetalleProductos>();
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
@@ -196,7 +196,7 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            objDetalle.Add(new PedidoDetalle
+                            objDetalle.Add(new DetalleProductos
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                 Descripcion = reader["Descripcion"].ToString(),
@@ -210,7 +210,7 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    objDetalle = new List<PedidoDetalle>();
+                    objDetalle = new List<DetalleProductos>();
                     MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -303,7 +303,8 @@ namespace CapaDatos
                         if (bandera == 1)
                         {
                             query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido FROM Pedidos P " +
-                            "INNER JOIN Proveedores PR ON P.idProveedor = PR.id WHERE Confirmado = 1";
+                                "INNER JOIN Proveedores PR ON P.idProveedor = PR.id WHERE Confirmado = 1 " +
+                                "AND NOT EXISTS (SELECT * FROM Compras WHERE idPedido = P.id)";
                         }
                         else
                         {
