@@ -33,7 +33,12 @@
             this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.LblNroPedido = new System.Windows.Forms.Label();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
+            this.TxtFormaPago = new System.Windows.Forms.TextBox();
+            this.TxtTipoDoc = new System.Windows.Forms.TextBox();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.LblUsuario = new System.Windows.Forms.Label();
             this.groupBoxInfoProveedor = new System.Windows.Forms.GroupBox();
+            this.TxtNumeroPedido = new System.Windows.Forms.TextBox();
             this.TxtRazonSocial = new System.Windows.Forms.TextBox();
             this.LblRazonSocial = new System.Windows.Forms.Label();
             this.TxtRUC = new System.Windows.Forms.TextBox();
@@ -48,7 +53,6 @@
             this.LblFechaRequerida = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.LblFecha = new System.Windows.Forms.Label();
-            this.TxtNumeroPedido = new System.Windows.Forms.TextBox();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.dgvData = new System.Windows.Forms.DataGridView();
@@ -60,13 +64,16 @@
             this.TxtTotalPedido = new System.Windows.Forms.TextBox();
             this.LblTotalCompra = new System.Windows.Forms.Label();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.LblUsuario = new System.Windows.Forms.Label();
-            this.TxtUsuario = new System.Windows.Forms.TextBox();
-            this.TxtTipoDoc = new System.Windows.Forms.TextBox();
-            this.TxtFormaPago = new System.Windows.Forms.TextBox();
+            this.PbConfirmado = new System.Windows.Forms.PictureBox();
+            this.LblConfirmado = new System.Windows.Forms.Label();
+            this.LblNoConfirmado = new System.Windows.Forms.Label();
+            this.PbNoConfirmado = new System.Windows.Forms.PictureBox();
+            this.checkBoxConfirmado = new System.Windows.Forms.CheckBox();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbConfirmado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbNoConfirmado)).BeginInit();
             this.SuspendLayout();
             // 
             // LblPedidos
@@ -99,6 +106,7 @@
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 86;
+            this.TxtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyDown);
             // 
             // LblNroPedido
             // 
@@ -136,6 +144,40 @@
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información del Pedido";
             // 
+            // TxtFormaPago
+            // 
+            this.TxtFormaPago.Location = new System.Drawing.Point(227, 86);
+            this.TxtFormaPago.Name = "TxtFormaPago";
+            this.TxtFormaPago.ReadOnly = true;
+            this.TxtFormaPago.Size = new System.Drawing.Size(237, 22);
+            this.TxtFormaPago.TabIndex = 94;
+            // 
+            // TxtTipoDoc
+            // 
+            this.TxtTipoDoc.Location = new System.Drawing.Point(9, 86);
+            this.TxtTipoDoc.Name = "TxtTipoDoc";
+            this.TxtTipoDoc.ReadOnly = true;
+            this.TxtTipoDoc.Size = new System.Drawing.Size(206, 22);
+            this.TxtTipoDoc.TabIndex = 93;
+            // 
+            // TxtUsuario
+            // 
+            this.TxtUsuario.Location = new System.Drawing.Point(335, 43);
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.ReadOnly = true;
+            this.TxtUsuario.Size = new System.Drawing.Size(129, 22);
+            this.TxtUsuario.TabIndex = 92;
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Location = new System.Drawing.Point(332, 27);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.LblUsuario.TabIndex = 91;
+            this.LblUsuario.Text = "Usuario:";
+            // 
             // groupBoxInfoProveedor
             // 
             this.groupBoxInfoProveedor.BackColor = System.Drawing.Color.White;
@@ -151,6 +193,14 @@
             this.groupBoxInfoProveedor.TabIndex = 27;
             this.groupBoxInfoProveedor.TabStop = false;
             this.groupBoxInfoProveedor.Text = "Información del Proveedor";
+            // 
+            // TxtNumeroPedido
+            // 
+            this.TxtNumeroPedido.Location = new System.Drawing.Point(233, 13);
+            this.TxtNumeroPedido.Name = "TxtNumeroPedido";
+            this.TxtNumeroPedido.Size = new System.Drawing.Size(26, 20);
+            this.TxtNumeroPedido.TabIndex = 64;
+            this.TxtNumeroPedido.Visible = false;
             // 
             // TxtRazonSocial
             // 
@@ -286,14 +336,6 @@
             this.LblFecha.TabIndex = 0;
             this.LblFecha.Text = "Fecha:";
             // 
-            // TxtNumeroPedido
-            // 
-            this.TxtNumeroPedido.Location = new System.Drawing.Point(233, 13);
-            this.TxtNumeroPedido.Name = "TxtNumeroPedido";
-            this.TxtNumeroPedido.Size = new System.Drawing.Size(26, 20);
-            this.TxtNumeroPedido.TabIndex = 64;
-            this.TxtNumeroPedido.Visible = false;
-            // 
             // BtnLimpiar
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.White;
@@ -428,45 +470,72 @@
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
             // 
-            // LblUsuario
+            // PbConfirmado
             // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.Location = new System.Drawing.Point(332, 27);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(46, 13);
-            this.LblUsuario.TabIndex = 91;
-            this.LblUsuario.Text = "Usuario:";
+            this.PbConfirmado.BackColor = System.Drawing.Color.White;
+            this.PbConfirmado.Image = global::CapaPresentacion.Properties.Resources.OK;
+            this.PbConfirmado.Location = new System.Drawing.Point(840, 36);
+            this.PbConfirmado.Name = "PbConfirmado";
+            this.PbConfirmado.Size = new System.Drawing.Size(43, 39);
+            this.PbConfirmado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbConfirmado.TabIndex = 95;
+            this.PbConfirmado.TabStop = false;
             // 
-            // TxtUsuario
+            // LblConfirmado
             // 
-            this.TxtUsuario.Location = new System.Drawing.Point(335, 43);
-            this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.ReadOnly = true;
-            this.TxtUsuario.Size = new System.Drawing.Size(129, 22);
-            this.TxtUsuario.TabIndex = 92;
+            this.LblConfirmado.AutoSize = true;
+            this.LblConfirmado.BackColor = System.Drawing.Color.White;
+            this.LblConfirmado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblConfirmado.ForeColor = System.Drawing.Color.Green;
+            this.LblConfirmado.Location = new System.Drawing.Point(732, 43);
+            this.LblConfirmado.Name = "LblConfirmado";
+            this.LblConfirmado.Size = new System.Drawing.Size(107, 24);
+            this.LblConfirmado.TabIndex = 96;
+            this.LblConfirmado.Text = "Confirmado";
             // 
-            // TxtTipoDoc
+            // LblNoConfirmado
             // 
-            this.TxtTipoDoc.Location = new System.Drawing.Point(9, 86);
-            this.TxtTipoDoc.Name = "TxtTipoDoc";
-            this.TxtTipoDoc.ReadOnly = true;
-            this.TxtTipoDoc.Size = new System.Drawing.Size(206, 22);
-            this.TxtTipoDoc.TabIndex = 93;
+            this.LblNoConfirmado.AutoSize = true;
+            this.LblNoConfirmado.BackColor = System.Drawing.Color.White;
+            this.LblNoConfirmado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNoConfirmado.ForeColor = System.Drawing.Color.Red;
+            this.LblNoConfirmado.Location = new System.Drawing.Point(697, 42);
+            this.LblNoConfirmado.Name = "LblNoConfirmado";
+            this.LblNoConfirmado.Size = new System.Drawing.Size(137, 24);
+            this.LblNoConfirmado.TabIndex = 97;
+            this.LblNoConfirmado.Text = "No Confirmado";
             // 
-            // TxtFormaPago
+            // PbNoConfirmado
             // 
-            this.TxtFormaPago.Location = new System.Drawing.Point(227, 86);
-            this.TxtFormaPago.Name = "TxtFormaPago";
-            this.TxtFormaPago.ReadOnly = true;
-            this.TxtFormaPago.Size = new System.Drawing.Size(237, 22);
-            this.TxtFormaPago.TabIndex = 94;
+            this.PbNoConfirmado.BackColor = System.Drawing.Color.White;
+            this.PbNoConfirmado.Image = global::CapaPresentacion.Properties.Resources.cancelar;
+            this.PbNoConfirmado.Location = new System.Drawing.Point(840, 36);
+            this.PbNoConfirmado.Name = "PbNoConfirmado";
+            this.PbNoConfirmado.Size = new System.Drawing.Size(43, 39);
+            this.PbNoConfirmado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbNoConfirmado.TabIndex = 98;
+            this.PbNoConfirmado.TabStop = false;
+            // 
+            // checkBoxConfirmado
+            // 
+            this.checkBoxConfirmado.AutoSize = true;
+            this.checkBoxConfirmado.Location = new System.Drawing.Point(664, 50);
+            this.checkBoxConfirmado.Name = "checkBoxConfirmado";
+            this.checkBoxConfirmado.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxConfirmado.TabIndex = 99;
+            this.checkBoxConfirmado.UseVisualStyleBackColor = true;
+            this.checkBoxConfirmado.Visible = false;
             // 
             // FrmVerDetallePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 545);
+            this.Controls.Add(this.checkBoxConfirmado);
+            this.Controls.Add(this.PbNoConfirmado);
+            this.Controls.Add(this.LblNoConfirmado);
+            this.Controls.Add(this.LblConfirmado);
+            this.Controls.Add(this.PbConfirmado);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtTotalPedido);
             this.Controls.Add(this.LblTotalCompra);
@@ -480,11 +549,14 @@
             this.Controls.Add(this.LblPedidos);
             this.Name = "FrmVerDetallePedido";
             this.Text = "Ver Detalle Pedido";
+            this.Load += new System.EventHandler(this.FrmVerDetallePedido_Load);
             this.groupBoxInfoPedido.ResumeLayout(false);
             this.groupBoxInfoPedido.PerformLayout();
             this.groupBoxInfoProveedor.ResumeLayout(false);
             this.groupBoxInfoProveedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbConfirmado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbNoConfirmado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,5 +600,10 @@
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.TextBox TxtFormaPago;
         private System.Windows.Forms.TextBox TxtTipoDoc;
+        private System.Windows.Forms.PictureBox PbConfirmado;
+        private System.Windows.Forms.Label LblConfirmado;
+        private System.Windows.Forms.Label LblNoConfirmado;
+        private System.Windows.Forms.PictureBox PbNoConfirmado;
+        private System.Windows.Forms.CheckBox checkBoxConfirmado;
     }
 }

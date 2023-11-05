@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class Pedido
+    public class Compra
     {
         public int Id { get; set; }
 
@@ -18,15 +18,27 @@ namespace CapaEntidad
 
         public int NumeroPedido { get; set; }
 
+        public string NumeroFactura { get; set; }
+
         public string TipoDocumento { get; set; }
 
         public string FormaPago { get; set; }
 
         public DateTime Fecha { get; set; }
 
-        public DateTime FechaRequerida { get; set; }
+        public DateTime FechaVencimiento { get; set; }
+
+        public DateTime FechaRecepcion { get; set; }
 
         public string Observacion { get; set; }
+
+        public int Timbrado { get; set; }
+
+        public int CodEstablecimiento { get; set; }
+
+        public int PuntoEmision { get; set; }
+
+        public string Doc { get; set; }
 
         public decimal Total { get; set; }
 
@@ -39,3 +51,4 @@ namespace CapaEntidad
         public List<DetalleProductos> Detalle { get; set; }
     }
 }
+

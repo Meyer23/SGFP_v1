@@ -115,14 +115,19 @@ namespace CapaDatos
             return Respuesta;
         }
 
-        public List<FormaPago> ObtenerFormasPago()
+        public List<FormaPago> ObtenerFormasPago(string TipoDocumento)
         {
             List<FormaPago> formasPago = new List<FormaPago>();
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "SELECT Descripcion FROM FormasPagos WHERE Activo = 1";
+                    string query = "SELECT F.Descripcion FROM TiposDocFormasPago TF " +
+                        " INNER JOIN FormasPagos F ON TF.idFormaPago = F.id" +
+                        " INNER JOIN TiposDocumentosCompra T ON TF.idTipoDoc = T.id " +
+                        " WHERE TF.Acepta = 1" +
+                        " AND F.Activo = 1" +
+                        " AND  T.Descripcion = '" + TipoDocumento + "'";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;

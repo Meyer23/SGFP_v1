@@ -82,8 +82,13 @@
             this.LblEstante = new System.Windows.Forms.Label();
             this.ComboCategoria = new System.Windows.Forms.ComboBox();
             this.ComboUnidadMedida = new System.Windows.Forms.ComboBox();
+            this.BtnSubir = new FontAwesome.Sharp.IconButton();
+            this.Imagen = new System.Windows.Forms.PictureBox();
+            this.LblImagen = new System.Windows.Forms.Label();
+            this.BtnUltimasCompras = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxUbicacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtIndex
@@ -304,7 +309,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 544);
+            this.label1.Size = new System.Drawing.Size(352, 544);
             this.label1.TabIndex = 32;
             // 
             // BtnLimpiar
@@ -319,7 +324,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(993, 17);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1126, 17);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
@@ -340,7 +345,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(946, 17);
+            this.BtnBuscar.Location = new System.Drawing.Point(1079, 17);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
@@ -351,7 +356,7 @@
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(786, 21);
+            this.TxtBusqueda.Location = new System.Drawing.Point(919, 21);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 55;
@@ -360,7 +365,7 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(659, 21);
+            this.ComboBusqueda.Location = new System.Drawing.Point(792, 21);
             this.ComboBusqueda.Name = "ComboBusqueda";
             this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
             this.ComboBusqueda.TabIndex = 58;
@@ -369,7 +374,7 @@
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(592, 24);
+            this.LblBuscarPor.Location = new System.Drawing.Point(725, 24);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
             this.LblBuscarPor.TabIndex = 57;
@@ -379,7 +384,7 @@
             // 
             this.LblListaProductos.BackColor = System.Drawing.Color.White;
             this.LblListaProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblListaProductos.Location = new System.Drawing.Point(243, 9);
+            this.LblListaProductos.Location = new System.Drawing.Point(376, 9);
             this.LblListaProductos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblListaProductos.Name = "LblListaProductos";
             this.LblListaProductos.Padding = new System.Windows.Forms.Padding(2);
@@ -417,7 +422,7 @@
             this.Fila,
             this.Columna,
             this.Activo});
-            this.dgvData.Location = new System.Drawing.Point(243, 68);
+            this.dgvData.Location = new System.Drawing.Point(376, 68);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
@@ -630,12 +635,83 @@
             this.ComboUnidadMedida.Size = new System.Drawing.Size(173, 21);
             this.ComboUnidadMedida.TabIndex = 88;
             // 
+            // BtnSubir
+            // 
+            this.BtnSubir.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnSubir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSubir.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnSubir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSubir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSubir.ForeColor = System.Drawing.Color.White;
+            this.BtnSubir.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            this.BtnSubir.IconColor = System.Drawing.Color.White;
+            this.BtnSubir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnSubir.IconSize = 16;
+            this.BtnSubir.Location = new System.Drawing.Point(220, 164);
+            this.BtnSubir.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnSubir.Name = "BtnSubir";
+            this.BtnSubir.Size = new System.Drawing.Size(109, 27);
+            this.BtnSubir.TabIndex = 90;
+            this.BtnSubir.Text = "Subir";
+            this.BtnSubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnSubir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnSubir.UseVisualStyleBackColor = false;
+            this.BtnSubir.Click += new System.EventHandler(this.BtnSubir_Click);
+            // 
+            // Imagen
+            // 
+            this.Imagen.BackColor = System.Drawing.Color.White;
+            this.Imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Imagen.Location = new System.Drawing.Point(220, 59);
+            this.Imagen.Name = "Imagen";
+            this.Imagen.Size = new System.Drawing.Size(109, 100);
+            this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Imagen.TabIndex = 89;
+            this.Imagen.TabStop = false;
+            // 
+            // LblImagen
+            // 
+            this.LblImagen.AutoSize = true;
+            this.LblImagen.BackColor = System.Drawing.Color.White;
+            this.LblImagen.Location = new System.Drawing.Point(217, 42);
+            this.LblImagen.Name = "LblImagen";
+            this.LblImagen.Size = new System.Drawing.Size(45, 13);
+            this.LblImagen.TabIndex = 91;
+            this.LblImagen.Text = "Imagen:";
+            // 
+            // BtnUltimasCompras
+            // 
+            this.BtnUltimasCompras.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.BtnUltimasCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnUltimasCompras.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnUltimasCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUltimasCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUltimasCompras.ForeColor = System.Drawing.Color.White;
+            this.BtnUltimasCompras.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.BtnUltimasCompras.IconColor = System.Drawing.Color.White;
+            this.BtnUltimasCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnUltimasCompras.IconSize = 18;
+            this.BtnUltimasCompras.Location = new System.Drawing.Point(201, 480);
+            this.BtnUltimasCompras.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnUltimasCompras.Name = "BtnUltimasCompras";
+            this.BtnUltimasCompras.Size = new System.Drawing.Size(141, 26);
+            this.BtnUltimasCompras.TabIndex = 92;
+            this.BtnUltimasCompras.Text = "Últimas Compras";
+            this.BtnUltimasCompras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnUltimasCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnUltimasCompras.UseVisualStyleBackColor = false;
+            this.BtnUltimasCompras.Click += new System.EventHandler(this.BtnUltimasCompras_Click);
+            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1237, 544);
+            this.ClientSize = new System.Drawing.Size(1370, 544);
+            this.Controls.Add(this.BtnUltimasCompras);
+            this.Controls.Add(this.LblImagen);
+            this.Controls.Add(this.BtnSubir);
+            this.Controls.Add(this.Imagen);
             this.Controls.Add(this.ComboUnidadMedida);
             this.Controls.Add(this.ComboCategoria);
             this.Controls.Add(this.groupBoxUbicacion);
@@ -674,6 +750,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.groupBoxUbicacion.ResumeLayout(false);
             this.groupBoxUbicacion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -732,5 +809,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fila;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columna;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
+        private FontAwesome.Sharp.IconButton BtnSubir;
+        private System.Windows.Forms.PictureBox Imagen;
+        private System.Windows.Forms.Label LblImagen;
+        private FontAwesome.Sharp.IconButton BtnUltimasCompras;
     }
 }

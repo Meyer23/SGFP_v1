@@ -48,6 +48,7 @@ namespace CapaPresentacion
 
                     if (idTipoDocumento != 0)
                     {
+                        bool insert = new CN_TiposDocumentos().InsertarFormasPago(idTipoDocumento);
                         dgvData.Rows.Add(new object[] { "", idTipoDocumento, TxtDescripcion.Text, tipo, ChkActivo.Checked });
                         limpiar();
                     }
@@ -94,10 +95,13 @@ namespace CapaPresentacion
             radioButtonCredito.Checked = false;
             TxtBusqueda.Select();
             TxtDescripcion.ReadOnly = false;
+            dgvFormasPagoData.Rows.Clear();
+            dgvFormasPagoData.Visible = false;
         }
 
         private void FrmTiposDocumentos_Load(object sender, EventArgs e)
         {
+            dgvFormasPagoData.Visible = false;
 
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
@@ -188,9 +192,21 @@ namespace CapaPresentacion
             }
         }
 
+        private void dgvFormasPagoData_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            bool Acepta;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                Acepta = (bool)dgvFormasPagoData.Rows[e.RowIndex].Cells["Acepta"].Value;
+
+                bool insert = new CN_TiposDocumentos().EditarFormasPago(Convert.ToInt32(TxtIdTipoDocumento.Text), Convert.ToInt32(dgvFormasPagoData.Rows[e.RowIndex].Cells["IdFormaPago"].Value), Acepta);
+            }
+        }
+
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             TxtDescripcion.ReadOnly = true;
+            dgvFormasPagoData.Visible = true;
 
             if (dgvData.Columns[e.ColumnIndex].Name == "BtnSeleccionar")
             {
@@ -198,6 +214,7 @@ namespace CapaPresentacion
 
                 if (index >= 0)
                 {
+                    dgvFormasPagoData.Rows.Clear();
                     TxtIndex.Text = index.ToString();
                     TxtIdTipoDocumento.Text = dgvData.Rows[index].Cells["IdTipoDocumento"].Value.ToString();
                     TxtDescripcion.Text = dgvData.Rows[index].Cells["Descripcion"].Value.ToString();
@@ -218,6 +235,13 @@ namespace CapaPresentacion
                     else
                     {
                         ChkActivo.Checked = false;
+                    }
+
+                    int IdTipoDoc = Convert.ToInt32(dgvData.Rows[index].Cells["idTipoDocumento"].Value.ToString());
+                    List<TipoDocFormaPago> listaFormasPago = new CN_TiposDocumentos().ListarFormasPago(IdTipoDoc);
+                    foreach (TipoDocFormaPago formasPago in listaFormasPago)
+                    {
+                        dgvFormasPagoData.Rows.Add(formasPago.Id, formasPago.IdTipoDoc, formasPago.IdFormaPago, formasPago.Descripcion, formasPago.Acepta);
                     }
                 }
             }

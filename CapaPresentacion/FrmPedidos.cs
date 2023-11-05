@@ -20,8 +20,7 @@ namespace CapaPresentacion
         public FrmPedidos(UsuarioLogin oUsuario = null)
         {
             _Usuario = oUsuario;
-            InitializeComponent();
-            CargarFormasPago();
+            InitializeComponent();           
             CargarTiposDocumentos();
         }
 
@@ -32,7 +31,7 @@ namespace CapaPresentacion
 
         private void CargarFormasPago()
         {
-            List<FormaPago> formasPago = new CN_FormasPago().ObtenerFormasPago();
+            List<FormaPago> formasPago = new CN_FormasPago().ObtenerFormasPago(ComboTipoDoc.Text.ToString());
             ComboFormaPago.DataSource = formasPago;
 
             foreach (FormaPago formaPago in formasPago)
@@ -83,7 +82,8 @@ namespace CapaPresentacion
                     TxtIdProducto.Text = popup._Producto.Id.ToString();
                     TxtCodProducto.Text = popup._Producto.Codigo;
                     TxtDescProducto.Text = popup._Producto.Descripcion;
-                    TxtPrecioCompra.Select();
+                    TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
+                    TxtCantidad.Select();
                 }
                 else
                 {
@@ -101,7 +101,8 @@ namespace CapaPresentacion
                 {
                     TxtIdProducto.Text = oProducto.Id.ToString();
                     TxtDescProducto.Text = oProducto.Descripcion;
-                    TxtPrecioCompra.Select();
+                    TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
+                    TxtCantidad.Select();
                 }
                 else
                 {
@@ -353,6 +354,20 @@ namespace CapaPresentacion
                 MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        }
+
+        private void BtnInsertarProductos_Click(object sender, EventArgs e)
+        {
+            List<DetalleProductos> listaProductos = new CN_Pedidos().ObtenerProductos();
+            foreach (DetalleProductos detalle in listaProductos)
+            {
+                dgvData.Rows.Add(detalle.IdProducto,detalle.Descripcion, detalle.Precio, detalle.Cantidad, detalle.Total);
+            }
+        }
+
+        private void ComboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarFormasPago();
         }
     }
 }
