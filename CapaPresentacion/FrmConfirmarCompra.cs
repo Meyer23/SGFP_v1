@@ -74,5 +74,15 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            dtpFecha.Value = DateTime.Now;
+            dtpFechaRec.Value = DateTime.Now;
+            TxtProveedor.Clear();
+            TxtTotalCompra.Clear();
+            TxtIdCompra.Clear();
+            TxtBusqueda.Clear();
+        }
     }
 }

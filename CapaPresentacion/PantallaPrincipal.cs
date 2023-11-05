@@ -217,5 +217,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(ComprasMenu, new FrmConfirmarCompra());
         }
+
+        private void SubMenuAnularCompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(ComprasMenu, new FrmAnularCompra());
+        }
     }
 }

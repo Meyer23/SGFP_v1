@@ -53,12 +53,13 @@
             this.MenuVerDetalle = new FontAwesome.Sharp.IconMenuItem();
             this.ProveedoresMenu = new FontAwesome.Sharp.IconMenuItem();
             this.ComprasMenu = new FontAwesome.Sharp.IconMenuItem();
-            this.SubMenuCompras = new FontAwesome.Sharp.IconMenuItem();
-            this.SubMenuVerDetalleCompra = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuPedidos = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuDetallePedidos = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuConfirmarPedido = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuCompras = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuVerDetalleCompra = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuConfirmarCompra = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuAnularCompra = new FontAwesome.Sharp.IconMenuItem();
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.LabelTituloSistema = new System.Windows.Forms.Label();
             this.Contenedor = new System.Windows.Forms.Panel();
@@ -355,7 +356,8 @@
             this.SubMenuConfirmarPedido,
             this.SubMenuCompras,
             this.SubMenuVerDetalleCompra,
-            this.SubMenuConfirmarCompra});
+            this.SubMenuConfirmarCompra,
+            this.SubMenuAnularCompra});
             this.ComprasMenu.IconChar = FontAwesome.Sharp.IconChar.ShoppingBag;
             this.ComprasMenu.IconColor = System.Drawing.Color.Black;
             this.ComprasMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -365,26 +367,6 @@
             this.ComprasMenu.Size = new System.Drawing.Size(67, 69);
             this.ComprasMenu.Text = "Compras";
             this.ComprasMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // SubMenuCompras
-            // 
-            this.SubMenuCompras.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.SubMenuCompras.IconColor = System.Drawing.Color.Black;
-            this.SubMenuCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubMenuCompras.Name = "SubMenuCompras";
-            this.SubMenuCompras.Size = new System.Drawing.Size(217, 30);
-            this.SubMenuCompras.Text = "Facturas de Compras";
-            this.SubMenuCompras.Click += new System.EventHandler(this.MenuRegistrarCompra_Click);
-            // 
-            // SubMenuVerDetalleCompra
-            // 
-            this.SubMenuVerDetalleCompra.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.SubMenuVerDetalleCompra.IconColor = System.Drawing.Color.Black;
-            this.SubMenuVerDetalleCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubMenuVerDetalleCompra.Name = "SubMenuVerDetalleCompra";
-            this.SubMenuVerDetalleCompra.Size = new System.Drawing.Size(217, 30);
-            this.SubMenuVerDetalleCompra.Text = "Ver Detalle Compras";
-            this.SubMenuVerDetalleCompra.Click += new System.EventHandler(this.MenuVerDetalleCompra_Click);
             // 
             // SubMenuPedidos
             // 
@@ -416,6 +398,26 @@
             this.SubMenuConfirmarPedido.Text = "Confirmación de Pedido";
             this.SubMenuConfirmarPedido.Click += new System.EventHandler(this.SubMenuConfirmarPedido_Click);
             // 
+            // SubMenuCompras
+            // 
+            this.SubMenuCompras.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuCompras.IconColor = System.Drawing.Color.Black;
+            this.SubMenuCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuCompras.Name = "SubMenuCompras";
+            this.SubMenuCompras.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuCompras.Text = "Facturas de Compras";
+            this.SubMenuCompras.Click += new System.EventHandler(this.MenuRegistrarCompra_Click);
+            // 
+            // SubMenuVerDetalleCompra
+            // 
+            this.SubMenuVerDetalleCompra.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuVerDetalleCompra.IconColor = System.Drawing.Color.Black;
+            this.SubMenuVerDetalleCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuVerDetalleCompra.Name = "SubMenuVerDetalleCompra";
+            this.SubMenuVerDetalleCompra.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuVerDetalleCompra.Text = "Ver Detalle Compras";
+            this.SubMenuVerDetalleCompra.Click += new System.EventHandler(this.MenuVerDetalleCompra_Click);
+            // 
             // SubMenuConfirmarCompra
             // 
             this.SubMenuConfirmarCompra.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -425,6 +427,16 @@
             this.SubMenuConfirmarCompra.Size = new System.Drawing.Size(217, 30);
             this.SubMenuConfirmarCompra.Text = "Confirmación de Compra";
             this.SubMenuConfirmarCompra.Click += new System.EventHandler(this.SubMenuConfirmarCompra_Click);
+            // 
+            // SubMenuAnularCompra
+            // 
+            this.SubMenuAnularCompra.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuAnularCompra.IconColor = System.Drawing.Color.Black;
+            this.SubMenuAnularCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuAnularCompra.Name = "SubMenuAnularCompra";
+            this.SubMenuAnularCompra.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuAnularCompra.Text = "Anulación de Compra";
+            this.SubMenuAnularCompra.Click += new System.EventHandler(this.SubMenuAnularCompra_Click);
             // 
             // menutitulo
             // 
@@ -551,6 +563,7 @@
         private FontAwesome.Sharp.IconMenuItem SubMenuEmpresa;
         private FontAwesome.Sharp.IconMenuItem SubMenuConfirmarPedido;
         private FontAwesome.Sharp.IconMenuItem SubMenuConfirmarCompra;
+        private FontAwesome.Sharp.IconMenuItem SubMenuAnularCompra;
     }
 }
 

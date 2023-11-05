@@ -45,6 +45,8 @@
             this.LblRUC = new System.Windows.Forms.Label();
             this.TxtTotalCompra = new System.Windows.Forms.TextBox();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.LblUsuario = new System.Windows.Forms.Label();
             this.TxtFormaPago = new System.Windows.Forms.TextBox();
             this.TxtTipoDoc = new System.Windows.Forms.TextBox();
             this.TxtTimbrado = new System.Windows.Forms.TextBox();
@@ -63,8 +65,6 @@
             this.LblFechaVencimiento = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.LblFecha = new System.Windows.Forms.Label();
-            this.TxtUsuario = new System.Windows.Forms.TextBox();
-            this.LblUsuario = new System.Windows.Forms.Label();
             this.checkBoxConfirmado = new System.Windows.Forms.CheckBox();
             this.PbNoConfirmado = new System.Windows.Forms.PictureBox();
             this.LblNoConfirmado = new System.Windows.Forms.Label();
@@ -76,6 +76,8 @@
             this.LblConfirmado = new System.Windows.Forms.Label();
             this.LblDetallePedido = new System.Windows.Forms.Label();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
+            this.checkBoxAnulado = new System.Windows.Forms.CheckBox();
+            this.LblAnulado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoProveedor.SuspendLayout();
             this.groupBoxInfoPedido.SuspendLayout();
@@ -265,6 +267,24 @@
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información de la Compra";
             // 
+            // TxtUsuario
+            // 
+            this.TxtUsuario.Location = new System.Drawing.Point(483, 45);
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.ReadOnly = true;
+            this.TxtUsuario.Size = new System.Drawing.Size(129, 22);
+            this.TxtUsuario.TabIndex = 102;
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Location = new System.Drawing.Point(480, 29);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.LblUsuario.TabIndex = 101;
+            this.LblUsuario.Text = "Usuario:";
+            // 
             // TxtFormaPago
             // 
             this.TxtFormaPago.Location = new System.Drawing.Point(304, 45);
@@ -424,24 +444,6 @@
             this.LblFecha.TabIndex = 0;
             this.LblFecha.Text = "Fecha:";
             // 
-            // TxtUsuario
-            // 
-            this.TxtUsuario.Location = new System.Drawing.Point(483, 45);
-            this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.ReadOnly = true;
-            this.TxtUsuario.Size = new System.Drawing.Size(129, 22);
-            this.TxtUsuario.TabIndex = 102;
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.Location = new System.Drawing.Point(480, 29);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(46, 13);
-            this.LblUsuario.TabIndex = 101;
-            this.LblUsuario.Text = "Usuario:";
-            // 
             // checkBoxConfirmado
             // 
             this.checkBoxConfirmado.AutoSize = true;
@@ -592,11 +594,35 @@
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
             // 
+            // checkBoxAnulado
+            // 
+            this.checkBoxAnulado.AutoSize = true;
+            this.checkBoxAnulado.Location = new System.Drawing.Point(818, 71);
+            this.checkBoxAnulado.Name = "checkBoxAnulado";
+            this.checkBoxAnulado.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxAnulado.TabIndex = 111;
+            this.checkBoxAnulado.UseVisualStyleBackColor = true;
+            this.checkBoxAnulado.Visible = false;
+            // 
+            // LblAnulado
+            // 
+            this.LblAnulado.AutoSize = true;
+            this.LblAnulado.BackColor = System.Drawing.Color.White;
+            this.LblAnulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAnulado.ForeColor = System.Drawing.Color.Red;
+            this.LblAnulado.Location = new System.Drawing.Point(907, 43);
+            this.LblAnulado.Name = "LblAnulado";
+            this.LblAnulado.Size = new System.Drawing.Size(81, 24);
+            this.LblAnulado.TabIndex = 112;
+            this.LblAnulado.Text = "Anulado";
+            // 
             // FrmVerDetalleCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 530);
+            this.Controls.Add(this.LblAnulado);
+            this.Controls.Add(this.checkBoxAnulado);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.LblDetallePedido);
             this.Controls.Add(this.LblConfirmado);
@@ -613,7 +639,7 @@
             this.Controls.Add(this.TxtTotalCompra);
             this.Controls.Add(this.groupBoxInfoPedido);
             this.Controls.Add(this.LblCompras);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmVerDetalleCompra";
             this.Text = "Ver Detalle Compra";
             this.Load += new System.EventHandler(this.FrmVerDetalleCompra_Load);
@@ -679,5 +705,7 @@
         private System.Windows.Forms.Label LblConfirmado;
         private System.Windows.Forms.Label LblDetallePedido;
         private FontAwesome.Sharp.IconButton BtnGuardar;
+        private System.Windows.Forms.CheckBox checkBoxAnulado;
+        private System.Windows.Forms.Label LblAnulado;
     }
 }

@@ -28,6 +28,7 @@ namespace CapaPresentacion
             PbConfirmado.Visible = false;
             LblNoConfirmado.Visible = false;
             PbNoConfirmado.Visible = false;
+            LblAnulado.Visible = false;
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -57,20 +58,31 @@ namespace CapaPresentacion
                         TxtObs.Text = objCompra.Observacion;
                         TxtTotalCompra.Text = objCompra.Total.ToString();
                         checkBoxConfirmado.Checked = objCompra.Confirmado;
+                        checkBoxAnulado.Checked = objCompra.Anulado;
 
-                        if (checkBoxConfirmado.Checked)
+                        if (checkBoxConfirmado.Checked == true && checkBoxAnulado.Checked == false)
                         {
                             LblConfirmado.Visible = true;
                             PbConfirmado.Visible = true;
                             LblNoConfirmado.Visible = false;
                             PbNoConfirmado.Visible = false;
+                            LblAnulado.Visible = false;
                         }
-                        else
+                        else if(checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                         {
                             LblNoConfirmado.Visible = true;
                             PbNoConfirmado.Visible = true;
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
+                            LblAnulado.Visible = false;
+                        }
+                        else
+                        {
+                            LblNoConfirmado.Visible = false;
+                            PbNoConfirmado.Visible = true;
+                            LblConfirmado.Visible = false;
+                            PbConfirmado.Visible = false;
+                            LblAnulado.Visible = true;
                         }
 
                         dgvData.Rows.Clear();
@@ -110,6 +122,7 @@ namespace CapaPresentacion
             PbConfirmado.Visible = false;
             LblNoConfirmado.Visible = false;
             PbNoConfirmado.Visible = false;
+            LblAnulado.Visible = false;
         }
 
         private void TxtBusqueda_KeyDown(object sender, KeyEventArgs e)
@@ -136,19 +149,29 @@ namespace CapaPresentacion
                     TxtTotalCompra.Text = objPedido.Total.ToString();
                     checkBoxConfirmado.Checked = objPedido.Confirmado;
 
-                    if (checkBoxConfirmado.Checked)
+                    if (checkBoxConfirmado.Checked == true && checkBoxAnulado.Checked == false)
                     {
                         LblConfirmado.Visible = true;
                         PbConfirmado.Visible = true;
                         LblNoConfirmado.Visible = false;
                         PbNoConfirmado.Visible = false;
+                        LblAnulado.Visible = false;
                     }
-                    else
+                    else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                     {
                         LblNoConfirmado.Visible = true;
                         PbNoConfirmado.Visible = true;
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
+                        LblAnulado.Visible = false;
+                    }
+                    else
+                    {
+                        LblNoConfirmado.Visible = false;
+                        PbNoConfirmado.Visible = true;
+                        LblConfirmado.Visible = false;
+                        PbConfirmado.Visible = false;
+                        LblAnulado.Visible = true;
                     }
 
                     dgvData.Rows.Clear();

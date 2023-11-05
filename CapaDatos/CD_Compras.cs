@@ -39,6 +39,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@TotalCompra", obj.Total);
                     cmd.Parameters.AddWithValue("@idUsuario", obj.IdUsuario);
                     cmd.Parameters.AddWithValue("@Confirmado", obj.Confirmado);
+                    cmd.Parameters.AddWithValue("@Anulado", obj.Anulado);
                     cmd.Parameters.AddWithValue("@DetalleCompra", DetalleCompra);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -107,12 +108,12 @@ namespace CapaDatos
                         if (bandera == 1)
                         {
                             query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura FROM Compras C" +
-                        " INNER JOIN Proveedores P ON C.idProveedor = P.id WHERE Confirmado = 0";
+                        " INNER JOIN Proveedores P ON C.idProveedor = P.id WHERE Confirmado = 0 AND Anulado = 0";
                         }
                         else
                         {
                             query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura FROM Compras C" +
-                        " INNER JOIN Proveedores P ON C.idProveedor = P.id WHERE Confirmado = 1";
+                        " INNER JOIN Proveedores P ON C.idProveedor = P.id WHERE Confirmado = 1 AND Anulado = 0";
                         }
                     }
 
@@ -156,7 +157,7 @@ namespace CapaDatos
                 {
                     string query = "SELECT C.id, C.NumeroFactura, ISNULL(P.NumeroPedido,0) AS NumeroPedido, T.Descripcion AS TipoDoc, F.Descripcion AS FormaPago, E.Nombres, " +
                         "C.CodigoEstablecimiento, C.PuntoEmision, C.Doc, C.Fecha, C.FechaVencimiento, C.Timbrado, " +
-                        "PR.Documento, PR.RazonSocial, C.Observacion, C.TotalFactura, C.Confirmado " +
+                        "PR.Documento, PR.RazonSocial, C.Observacion, C.TotalFactura, C.Confirmado, C.Anulado " +
                         "FROM Compras C " +
                         "LEFT JOIN Pedidos P ON C.idPedido = P.id " +
                         "INNER JOIN TiposDocumentosCompra T ON C.idTipoDocumento = T.id " +
@@ -192,7 +193,8 @@ namespace CapaDatos
                                 RazonSocial = reader["RazonSocial"].ToString(),                                                             
                                 Observacion = reader["Observacion"].ToString(),
                                 Total = Convert.ToDecimal(reader["TotalFactura"]),
-                                Confirmado = Convert.ToBoolean(reader["Confirmado"])
+                                Confirmado = Convert.ToBoolean(reader["Confirmado"]),
+                                Anulado = Convert.ToBoolean(reader["Anulado"])
                             };
                         }
                     }
@@ -247,6 +249,36 @@ namespace CapaDatos
                 }
             }
             return objDetalle;
+        }
+
+        public bool AnularCompra(int IdCompra, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_compra_anular", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@IdCompra", IdCompra);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Respuesta;
         }
     }
 }
