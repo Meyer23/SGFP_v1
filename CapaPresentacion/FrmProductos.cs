@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -112,6 +113,7 @@ namespace CapaPresentacion
                         limpiar();
                         TxtCodigo.ReadOnly = false;
                         TxtDescripcion.ReadOnly = false;
+                        BtnUltimasCompras.Visible = true;
                     }
                     else
                     {
@@ -141,11 +143,13 @@ namespace CapaPresentacion
             TxtBusqueda.Select();
             TxtCodigo.ReadOnly = false;
             TxtDescripcion.ReadOnly = false;
+            BtnUltimasCompras.Visible = false;
         }
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
             int usuarioActual = this.IdUsuario;
+            BtnUltimasCompras.Visible = false;
 
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
@@ -191,6 +195,8 @@ namespace CapaPresentacion
         {
             TxtCodigo.ReadOnly = true;
             TxtDescripcion.ReadOnly = true;
+            BtnUltimasCompras.Visible = true;
+            bool obtenido = false;
 
             if (dgvData.Columns[e.ColumnIndex].Name == "BtnSeleccionar")
             {
@@ -220,7 +226,18 @@ namespace CapaPresentacion
                     {
                         ChkActivo.Checked = false;
                     }
-                }
+                    
+                    byte[] byteImage = new CN_Productos().ObtenerLogo(Convert.ToInt32(TxtIdProducto.Text.ToString()),out obtenido);
+
+                    if (obtenido)
+                    {
+                        Imagen.Image = ByteToImage(byteImage);
+                    }
+                    else
+                    {
+                        Imagen.Image = null;
+                    }
+                }                
             }
         }
 
@@ -286,6 +303,45 @@ namespace CapaPresentacion
             {
                 e.Cancel = false;
                 errorProvider1.SetError(TxtDescripcion, "");
+            }
+        }
+
+        public Image ByteToImage(byte[] ImageBytes)
+        {
+            MemoryStream ms = new MemoryStream();
+            ms.Write(ImageBytes, 0, ImageBytes.Length);
+            Image image = new Bitmap(ms);
+
+            return image;
+        }
+
+        private void BtnSubir_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.FileName = "Files|*.jpg;*.jpeg;*.png";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                byte[] byteImage = File.ReadAllBytes(ofd.FileName);
+                bool respuesta = new CN_Productos().ActualizarLogo(byteImage, Convert.ToInt32(TxtIdProducto.Text), out mensaje);
+
+                if (respuesta)
+                {
+                    Imagen.Image = ByteToImage(byteImage);
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void BtnUltimasCompras_Click(object sender, EventArgs e)
+        {
+            using (var popup = new PopUpUltimasCompras(Convert.ToInt32(TxtIdProducto.Text)))
+            {
+                var result = popup.ShowDialog();
             }
         }
     }

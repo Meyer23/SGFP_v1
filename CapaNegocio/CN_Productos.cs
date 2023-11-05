@@ -26,5 +26,20 @@ namespace CapaNegocio
         {
             return cd_producto.Editar(obj, out Mensaje);
         }
+
+        public byte[] ObtenerLogo(int idProducto, out bool obtenido)
+        {
+            return cd_producto.ObtenerLogo(idProducto, out obtenido);
+        }
+
+        public bool ActualizarLogo(byte[] image, int idProducto, out string Mensaje)
+        {
+            return cd_producto.ActualizarLogo(image, idProducto, out Mensaje);
+        }
+
+        public List<DetalleProductos> ObtenerUltimasCompras(int idProducto)
+        {
+            return cd_producto.ObtenerUltimasCompras(idProducto);
+        }
     }
 }

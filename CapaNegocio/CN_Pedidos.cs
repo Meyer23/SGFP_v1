@@ -29,11 +29,31 @@ namespace CapaNegocio
 
             if(objPedido.Id != 0)
             {
-                List<PedidoDetalle> objDetalle = cd_pedido.ObtenerPedidoDetalle(objPedido.Id);
+                List<DetalleProductos> objDetalle = cd_pedido.ObtenerPedidoDetalle(objPedido.Id);
 
                 objPedido.Detalle = objDetalle;
             }
             return objPedido;
+        }
+
+        public List<DetalleProductos> ObtenerProductos()
+        {
+            return cd_pedido.ObtenerProductos();
+        }
+
+        public decimal ObtenerUltimoPrecio(int idProducto, int idProveedor)
+        {
+            return cd_pedido.ObtenerUltimoPrecio(idProducto, idProveedor);
+        }
+
+        public bool ConfirmarPedido(int NroPedido, out string Mensaje)
+        {
+            return cd_pedido.ConfirmarPedido(NroPedido, out Mensaje);
+        }
+
+        public List<Pedido> Listar(int bandera)
+        {
+            return cd_pedido.Listar(bandera);
         }
     }
 }

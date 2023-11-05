@@ -31,5 +31,25 @@ namespace CapaNegocio
         {
             return cd_tipoDocumento.ObtenerTiposDocumentos();
         }
+
+        public bool InsertarFormasPago(int idTipoDoc)
+        {
+            return cd_tipoDocumento.InsertarFormasPago(idTipoDoc);
+        }
+
+        public bool EditarFormasPago(int IdTipoDoc, int IdFormaPago, bool Acepta)
+        {
+            return cd_tipoDocumento.EditarFormasPago(IdTipoDoc, IdFormaPago, Acepta);
+        }
+
+        //public List<TipoDocFormaPago> ObtenerFormasPago(int idTipoDoc)
+        //{
+        //    return cd_tipoDocumento.ObtenerFormasPago(idTipoDoc);
+        //}
+
+        public List<TipoDocFormaPago> ListarFormasPago(int idTipoDoc)
+        {
+            return cd_tipoDocumento.ListarFormasPago(idTipoDoc);
+        }
     }
 }

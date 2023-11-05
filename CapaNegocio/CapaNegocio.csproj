@@ -46,6 +46,7 @@
     <Compile Include="CN_Cajas.cs" />
     <Compile Include="CN_Categorias.cs" />
     <Compile Include="CN_Clientes.cs" />
+    <Compile Include="CN_Compras.cs" />
     <Compile Include="CN_Empleados.cs" />
     <Compile Include="CN_Empresa.cs" />
     <Compile Include="CN_FormasPago.cs" />
