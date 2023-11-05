@@ -316,6 +316,7 @@ namespace CapaPresentacion
                 {
                     LblNroCheque.Visible = true;
                     TxtNroCheque.Visible = true;
+
                 }
             }
         }
