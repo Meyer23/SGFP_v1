@@ -188,3 +188,9 @@ C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\Cap
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmAperturaCierreCaja.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVerDetallePedido.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmEmpresa.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmEmpresa.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVerDetallePedido.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVentas.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpClientes.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpCobrarVenta.resources
+C:\Users\rober\OneDrive\Documentos\GitHub\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpTipoValor.resources

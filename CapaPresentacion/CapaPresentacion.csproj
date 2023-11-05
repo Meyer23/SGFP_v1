@@ -216,6 +216,18 @@
     <Compile Include="PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUpClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpClientes.Designer.cs">
+      <DependentUpon>PopUpClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpCobrarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpCobrarVenta.Designer.cs">
+      <DependentUpon>PopUpCobrarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUpNuevaCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +245,12 @@
     </Compile>
     <Compile Include="PopUpProveedores.Designer.cs">
       <DependentUpon>PopUpProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpTipoValor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpTipoValor.Designer.cs">
+      <DependentUpon>PopUpTipoValor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -305,6 +323,9 @@
     <EmbeddedResource Include="FrmValores.resx">
       <DependentUpon>FrmValores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmVentas.resx">
+      <DependentUpon>FrmVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmVerDetalleCompra.resx">
       <DependentUpon>FrmVerDetalleCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +341,12 @@
     <EmbeddedResource Include="PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUpClientes.resx">
+      <DependentUpon>PopUpClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpCobrarVenta.resx">
+      <DependentUpon>PopUpCobrarVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUpNuevaCaja.resx">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpProveedores.resx">
       <DependentUpon>PopUpProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpTipoValor.resx">
+      <DependentUpon>PopUpTipoValor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

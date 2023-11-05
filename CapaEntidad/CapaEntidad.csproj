@@ -50,6 +50,8 @@
     <Compile Include="Impuesto.cs" />
     <Compile Include="Models\AperturaRequest.cs" />
     <Compile Include="Models\CierreRequest.cs" />
+    <Compile Include="Models\ClientePopUp.cs" />
+    <Compile Include="Models\Clientes.cs" />
     <Compile Include="Models\InsertarCajaRequest.cs" />
     <Compile Include="Models\Cajas.cs" />
     <Compile Include="Models\CajasRequest.cs" />
