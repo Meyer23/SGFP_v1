@@ -95,18 +95,6 @@
     <Compile Include="FrmCompras.Designer.cs">
       <DependentUpon>FrmCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConfirmarCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConfirmarCompra.Designer.cs">
-      <DependentUpon>FrmConfirmarCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConfirmarPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConfirmarPedido.Designer.cs">
-      <DependentUpon>FrmConfirmarPedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +136,12 @@
     </Compile>
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarCompra.Designer.cs">
+      <DependentUpon>FrmRegistrarCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRegistrarVenta.cs">
       <SubType>Form</SubType>
@@ -233,23 +227,12 @@
     </Compile>
     <Compile Include="PopUpCobrarVenta.Designer.cs">
       <DependentUpon>PopUpCobrarVenta.cs</DependentUpon>
-    <Compile Include="PopUpCompras.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUpCompras.Designer.cs">
-      <DependentUpon>PopUpCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUpNuevaCaja.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopUpNuevaCaja.Designer.cs">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUpPedidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUpPedidos.Designer.cs">
-      <DependentUpon>PopUpPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUpProductos.cs">
       <SubType>Form</SubType>
@@ -268,11 +251,6 @@
     </Compile>
     <Compile Include="PopUpTipoValor.Designer.cs">
       <DependentUpon>PopUpTipoValor.cs</DependentUpon>
-    <Compile Include="PopUpUltimasCompras.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUpUltimasCompras.Designer.cs">
-      <DependentUpon>PopUpUltimasCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -303,12 +281,6 @@
     <EmbeddedResource Include="FrmCompras.resx">
       <DependentUpon>FrmCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConfirmarCompra.resx">
-      <DependentUpon>FrmConfirmarCompra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmConfirmarPedido.resx">
-      <DependentUpon>FrmConfirmarPedido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarCompra.resx">
+      <DependentUpon>FrmRegistrarCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrarVenta.resx">
       <DependentUpon>FrmRegistrarVenta.cs</DependentUpon>
@@ -371,14 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpCobrarVenta.resx">
       <DependentUpon>PopUpCobrarVenta.cs</DependentUpon>
-    <EmbeddedResource Include="PopUpCompras.resx">
-      <DependentUpon>PopUpCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpNuevaCaja.resx">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUpPedidos.resx">
-      <DependentUpon>PopUpPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpProductos.resx">
       <DependentUpon>PopUpProductos.cs</DependentUpon>
@@ -388,9 +358,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpTipoValor.resx">
       <DependentUpon>PopUpTipoValor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUpUltimasCompras.resx">
-      <DependentUpon>PopUpUltimasCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -440,12 +407,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\borrar_rojo2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancelar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\OK.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
