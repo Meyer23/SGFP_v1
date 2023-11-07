@@ -137,6 +137,12 @@
     <Compile Include="FrmImpuestos.Designer.cs">
       <DependentUpon>FrmImpuestos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMovimientosStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMovimientosStock.Designer.cs">
+      <DependentUpon>FrmMovimientosStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImpuestos.resx">
       <DependentUpon>FrmImpuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMovimientosStock.resx">
+      <DependentUpon>FrmMovimientosStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPedidos.resx">
       <DependentUpon>FrmPedidos.cs</DependentUpon>
