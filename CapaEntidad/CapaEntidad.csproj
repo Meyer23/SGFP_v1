@@ -61,6 +61,7 @@
     <Compile Include="Models\UsuarioLogin.cs" />
     <Compile Include="Models\UsuarioRequest.cs" />
     <Compile Include="Modulo.cs" />
+    <Compile Include="MovimientoStock.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="DetalleProductos.cs" />
     <Compile Include="Producto.cs" />

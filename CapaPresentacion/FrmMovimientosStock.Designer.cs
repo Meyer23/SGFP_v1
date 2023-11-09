@@ -42,8 +42,6 @@
             this.groupBoxInfoProducto = new System.Windows.Forms.GroupBox();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.LblCantidad = new System.Windows.Forms.Label();
-            this.TxtPrecioCompra = new System.Windows.Forms.TextBox();
-            this.LblPrecio = new System.Windows.Forms.Label();
             this.TxtDescProducto = new System.Windows.Forms.TextBox();
             this.LblDescProducto = new System.Windows.Forms.Label();
             this.BntBuscarProd = new FontAwesome.Sharp.IconButton();
@@ -57,7 +55,6 @@
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProducto.SuspendLayout();
@@ -68,7 +65,7 @@
             // 
             this.LblPedidos.BackColor = System.Drawing.Color.White;
             this.LblPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPedidos.Location = new System.Drawing.Point(11, 9);
+            this.LblPedidos.Location = new System.Drawing.Point(7, 12);
             this.LblPedidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPedidos.Name = "LblPedidos";
             this.LblPedidos.Padding = new System.Windows.Forms.Padding(2);
@@ -99,6 +96,9 @@
             // 
             this.ComboTipoMov.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboTipoMov.FormattingEnabled = true;
+            this.ComboTipoMov.Items.AddRange(new object[] {
+            "ENTRADA",
+            "SALIDA"});
             this.ComboTipoMov.Location = new System.Drawing.Point(9, 43);
             this.ComboTipoMov.Name = "ComboTipoMov";
             this.ComboTipoMov.Size = new System.Drawing.Size(173, 24);
@@ -174,21 +174,20 @@
             this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.BtnAgregar.IconColor = System.Drawing.Color.Black;
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAgregar.Location = new System.Drawing.Point(829, 180);
+            this.BtnAgregar.Location = new System.Drawing.Point(727, 180);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(82, 72);
             this.BtnAgregar.TabIndex = 32;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // groupBoxInfoProducto
             // 
             this.groupBoxInfoProducto.BackColor = System.Drawing.Color.White;
             this.groupBoxInfoProducto.Controls.Add(this.TxtCantidad);
             this.groupBoxInfoProducto.Controls.Add(this.LblCantidad);
-            this.groupBoxInfoProducto.Controls.Add(this.TxtPrecioCompra);
-            this.groupBoxInfoProducto.Controls.Add(this.LblPrecio);
             this.groupBoxInfoProducto.Controls.Add(this.TxtDescProducto);
             this.groupBoxInfoProducto.Controls.Add(this.LblDescProducto);
             this.groupBoxInfoProducto.Controls.Add(this.BntBuscarProd);
@@ -198,45 +197,29 @@
             this.groupBoxInfoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxInfoProducto.Location = new System.Drawing.Point(16, 180);
             this.groupBoxInfoProducto.Name = "groupBoxInfoProducto";
-            this.groupBoxInfoProducto.Size = new System.Drawing.Size(793, 72);
+            this.groupBoxInfoProducto.Size = new System.Drawing.Size(705, 72);
             this.groupBoxInfoProducto.TabIndex = 31;
             this.groupBoxInfoProducto.TabStop = false;
             this.groupBoxInfoProducto.Text = "Información del Producto";
             // 
             // TxtCantidad
             // 
-            this.TxtCantidad.Location = new System.Drawing.Point(663, 38);
+            this.TxtCantidad.Location = new System.Drawing.Point(551, 38);
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(95, 22);
             this.TxtCantidad.TabIndex = 71;
             this.TxtCantidad.Text = "1";
+            this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
             // 
             // LblCantidad
             // 
             this.LblCantidad.AutoSize = true;
             this.LblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCantidad.Location = new System.Drawing.Point(660, 22);
+            this.LblCantidad.Location = new System.Drawing.Point(548, 22);
             this.LblCantidad.Name = "LblCantidad";
             this.LblCantidad.Size = new System.Drawing.Size(52, 13);
             this.LblCantidad.TabIndex = 70;
             this.LblCantidad.Text = "Cantidad:";
-            // 
-            // TxtPrecioCompra
-            // 
-            this.TxtPrecioCompra.Location = new System.Drawing.Point(547, 38);
-            this.TxtPrecioCompra.Name = "TxtPrecioCompra";
-            this.TxtPrecioCompra.Size = new System.Drawing.Size(95, 22);
-            this.TxtPrecioCompra.TabIndex = 69;
-            // 
-            // LblPrecio
-            // 
-            this.LblPrecio.AutoSize = true;
-            this.LblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPrecio.Location = new System.Drawing.Point(544, 22);
-            this.LblPrecio.Name = "LblPrecio";
-            this.LblPrecio.Size = new System.Drawing.Size(40, 13);
-            this.LblPrecio.TabIndex = 68;
-            this.LblPrecio.Text = "Precio:";
             // 
             // TxtDescProducto
             // 
@@ -275,6 +258,7 @@
             this.BntBuscarProd.TabIndex = 65;
             this.BntBuscarProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BntBuscarProd.UseVisualStyleBackColor = false;
+            this.BntBuscarProd.Click += new System.EventHandler(this.BntBuscarProd_Click);
             // 
             // TxtIdProducto
             // 
@@ -291,6 +275,7 @@
             this.TxtCodProducto.Name = "TxtCodProducto";
             this.TxtCodProducto.Size = new System.Drawing.Size(124, 22);
             this.TxtCodProducto.TabIndex = 1;
+            this.TxtCodProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCodProducto_KeyDown);
             // 
             // LblCodProducto
             // 
@@ -311,7 +296,6 @@
             this.idProducto,
             this.Descripcion,
             this.Cantidad,
-            this.Total,
             this.BtnEliminar});
             this.dgvData.Location = new System.Drawing.Point(16, 268);
             this.dgvData.Name = "dgvData";
@@ -319,6 +303,8 @@
             this.dgvData.RowHeadersWidth = 62;
             this.dgvData.Size = new System.Drawing.Size(793, 236);
             this.dgvData.TabIndex = 33;
+            this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
+            this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
             // BtnGuardar
             // 
@@ -341,6 +327,7 @@
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // TxtTotalCantidad
             // 
@@ -388,13 +375,6 @@
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
             // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 8;
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
             // BtnEliminar
             // 
             this.BtnEliminar.HeaderText = "";
@@ -407,7 +387,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 540);
+            this.ClientSize = new System.Drawing.Size(959, 540);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtTotalCantidad);
             this.Controls.Add(this.LblTotalCompra);
@@ -444,8 +424,6 @@
         private System.Windows.Forms.GroupBox groupBoxInfoProducto;
         private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.Label LblCantidad;
-        private System.Windows.Forms.TextBox TxtPrecioCompra;
-        private System.Windows.Forms.Label LblPrecio;
         private System.Windows.Forms.TextBox TxtDescProducto;
         private System.Windows.Forms.Label LblDescProducto;
         private FontAwesome.Sharp.IconButton BntBuscarProd;
@@ -453,13 +431,12 @@
         private System.Windows.Forms.TextBox TxtCodProducto;
         private System.Windows.Forms.Label LblCodProducto;
         private System.Windows.Forms.DataGridView dgvData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewButtonColumn BtnEliminar;
         private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.TextBox TxtTotalCantidad;
         private System.Windows.Forms.Label LblTotalCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnEliminar;
     }
 }
