@@ -32,6 +32,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@Total", obj.Total);
                     cmd.Parameters.AddWithValue("@idUsuario", obj.IdUsuario);
                     cmd.Parameters.AddWithValue("@Confirmado", obj.Confirmado);
+                    cmd.Parameters.AddWithValue("@Anulado", obj.Anulado);
                     cmd.Parameters.AddWithValue("@DetalleMovimiento", DetalleMovimiento);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -67,11 +68,11 @@ namespace CapaDatos
                     {
                         if (bandera == 1)
                         {
-                            query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total FROM MovimientosStock WHERE Confirmado = 0";
+                            query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total FROM MovimientosStock WHERE Confirmado = 0 AND Anulado = 0";
                         }
                         else
                         {
-                            query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total FROM MovimientosStock WHERE Confirmado = 1";
+                            query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total FROM MovimientosStock WHERE Confirmado = 1 AND Anulado = 0";
                         }
                     }
 
@@ -90,7 +91,7 @@ namespace CapaDatos
                                 TipoMovimiento = reader["TipoMovimiento"].ToString(),
                                 Documento = reader["Documento"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
-                                Total = Convert.ToDecimal(reader["TotalPedido"])
+                                Total = Convert.ToDecimal(reader["Total"])
                             });
                         }
                     }
@@ -104,31 +105,58 @@ namespace CapaDatos
             return listaMovStock;
         }
 
-        public bool ConfirmarMovStock(int idMovStock, out string Mensaje)
+        public bool ConfirmarMovStock(int idMovStock, string TipoMovimiento, out string Mensaje)
         {
-            bool Respuesta = true;
+            bool Respuesta = false;
             Mensaje = string.Empty;
 
             try
             {
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
+                    SqlCommand cmd = new SqlCommand("sp_movimientoStock_confirmar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-
-                    StringBuilder query = new StringBuilder();
-                    query.AppendLine("UPDATE MovimientosStock SET Confirmado = 1 ");
-                    query.AppendLine("WHERE id =  @idMovStock");
-
-                    SqlCommand cmd = new SqlCommand(query.ToString(), con);
-                    cmd.CommandType = CommandType.Text;
-
                     cmd.Parameters.AddWithValue("@idMovStock", idMovStock);
+                    cmd.Parameters.AddWithValue("@TipoMovimiento", TipoMovimiento); 
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
-                    if (cmd.ExecuteNonQuery() < 1)
-                    {
-                        Mensaje = "No se pudo confirmar el movimiento stock";
-                        Respuesta = false;
-                    }
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Respuesta;
+        }
+
+        public bool AnularMovStock(int IdMovStock, string TipoMovimiento, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_movimientoStock_anular", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@IdMovStock", IdMovStock);
+                    cmd.Parameters.AddWithValue("@TipoMovimiento", TipoMovimiento);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)

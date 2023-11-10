@@ -227,5 +227,15 @@ namespace CapaPresentacion
         {
             AbrirFormulario(StockMenu, new FrmMovimientosStock(usuarioActual));
         }
+
+        private void SubMenuConfirmarMovStock_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(StockMenu, new FrmConfirmarMovStock());
+        }
+
+        private void SubMenuAnularMovStock_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(StockMenu, new FrmAnularMovStock());
+        }
     }
 }

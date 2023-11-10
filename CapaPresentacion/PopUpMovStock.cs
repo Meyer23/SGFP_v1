@@ -61,7 +61,8 @@ namespace CapaPresentacion
             {
                 _MovimientoStock = new MovimientoStock
                 {
-                    TipoMovimiento = dgvData.Rows[iRow].Cells["TipoMovimiento"].Value.ToString(),
+                    Id = Convert.ToInt32(dgvData.Rows[iRow].Cells["idMovStock"].Value.ToString()),
+                    TipoMovimiento = dgvData.Rows[iRow].Cells["TipoMovimiento"].Value.ToString(),                  
                     Documento = dgvData.Rows[iRow].Cells["Documento"].Value.ToString(),
                     Fecha = Convert.ToDateTime(dgvData.Rows[iRow].Cells["Fecha"].Value.ToString()),
                     Total = Convert.ToDecimal(dgvData.Rows[iRow].Cells["TotalCantidad"].Value.ToString()),

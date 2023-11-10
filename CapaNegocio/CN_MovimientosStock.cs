@@ -23,9 +23,14 @@ namespace CapaNegocio
             return cd_movStock.Listar(bandera);
         }
 
-        public bool ConfirmarMovStock(int idMovStock, out string Mensaje)
+        public bool ConfirmarMovStock(int idMovStock, string TipoMov, out string Mensaje)
         {
-            return cd_movStock.ConfirmarMovStock(idMovStock, out Mensaje);
+            return cd_movStock.ConfirmarMovStock(idMovStock, TipoMov, out Mensaje);
+        }
+
+        public bool AnularMovStock(int IdMovStock, string TipoMovimiento, out string Mensaje)
+        {
+            return cd_movStock.AnularMovStock(IdMovStock, TipoMovimiento, out Mensaje);
         }
     }
 }
