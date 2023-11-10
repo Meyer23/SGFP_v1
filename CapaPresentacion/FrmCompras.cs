@@ -95,6 +95,8 @@ namespace CapaPresentacion
             ComboFormaPago.Visible = true;
             TxtTipoDoc.Visible = false;
             TxtFormaPago.Visible = false;
+            dtpFecha.Value = DateTime.Now;
+            dtpFechaVenc.Value = DateTime.Now;
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)

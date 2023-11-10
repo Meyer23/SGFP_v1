@@ -26,7 +26,8 @@ namespace CapaPresentacion
 
         private void FrmPedidos_Load(object sender, EventArgs e)
         {
-
+            dtpFecha.Value = DateTime.Now;
+            dtpFechaRequerida.Value = DateTime.Now;
         }
 
         private void CargarFormasPago()

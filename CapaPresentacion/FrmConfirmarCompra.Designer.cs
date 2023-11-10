@@ -248,6 +248,7 @@
             this.Controls.Add(this.LblConfirmarPedido);
             this.Name = "FrmConfirmarCompra";
             this.Text = "Confirmar Compra";
+            this.Load += new System.EventHandler(this.FrmConfirmarCompra_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

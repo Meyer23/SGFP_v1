@@ -224,6 +224,7 @@
             this.Controls.Add(this.LblConfirmarPedido);
             this.Name = "FrmAnularCompra";
             this.Text = "Anular Compra";
+            this.Load += new System.EventHandler(this.FrmAnularCompra_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

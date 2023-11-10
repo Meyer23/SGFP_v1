@@ -151,6 +151,8 @@ namespace CapaPresentacion
             PbConfirmado.Visible = false;
             LblNoConfirmado.Visible = false;
             PbNoConfirmado.Visible = false;
+            dtpFecha.Value = DateTime.Now;
+            dtpFechaRequerida.Value = DateTime.Now;
         }
     }
 }

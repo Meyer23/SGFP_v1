@@ -251,5 +251,10 @@ namespace CapaPresentacion
                 return;
             }
         }
+
+        private void FrmMovimientosStock_Load(object sender, EventArgs e)
+        {
+            dtpFecha.Value = DateTime.Now;
+        }
     }
 }

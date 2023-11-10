@@ -82,5 +82,10 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void FrmAnularCompra_Load(object sender, EventArgs e)
+        {
+            dtpFecha.Value = DateTime.Now;
+        }
     }
 }

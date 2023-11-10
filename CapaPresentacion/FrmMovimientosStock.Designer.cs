@@ -398,6 +398,7 @@
             this.Controls.Add(this.LblPedidos);
             this.Name = "FrmMovimientosStock";
             this.Text = "Movimientos Stock";
+            this.Load += new System.EventHandler(this.FrmMovimientosStock_Load);
             this.groupBoxInfoPedido.ResumeLayout(false);
             this.groupBoxInfoPedido.PerformLayout();
             this.groupBoxInfoProducto.ResumeLayout(false);

@@ -263,7 +263,7 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("UPDATE Pedidos SET Confirmado = 1 ");
-                    query.AppendLine("WHERE id =  @NroPedido");
+                    query.AppendLine("WHERE NumeroPedido =  @NroPedido");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), con);
                     cmd.CommandType = CommandType.Text;

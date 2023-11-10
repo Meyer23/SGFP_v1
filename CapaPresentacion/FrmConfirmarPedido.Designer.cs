@@ -224,6 +224,7 @@
             this.Controls.Add(this.LblConfirmarPedido);
             this.Name = "FrmConfirmarPedido";
             this.Text = "Confirmar Pedido";
+            this.Load += new System.EventHandler(this.FrmConfirmarPedido_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

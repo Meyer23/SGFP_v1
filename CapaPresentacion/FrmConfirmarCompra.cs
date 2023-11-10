@@ -84,5 +84,11 @@ namespace CapaPresentacion
             TxtIdCompra.Clear();
             TxtBusqueda.Clear();
         }
+
+        private void FrmConfirmarCompra_Load(object sender, EventArgs e)
+        {
+            dtpFecha.Value = DateTime.Now;
+            dtpFechaRec.Value = DateTime.Now;
+        }
     }
 }

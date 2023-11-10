@@ -223,6 +223,7 @@
             this.Controls.Add(this.LblConfirmarPedido);
             this.Name = "FrmAnularMovStock";
             this.Text = "Anular Movimientos Stock";
+            this.Load += new System.EventHandler(this.FrmAnularMovStock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

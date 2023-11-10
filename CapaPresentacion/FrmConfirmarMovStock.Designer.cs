@@ -223,6 +223,7 @@
             this.Controls.Add(this.LblConfirmarPedido);
             this.Name = "FrmConfirmarMovStock";
             this.Text = "Confirmar Movimiento Stock";
+            this.Load += new System.EventHandler(this.FrmConfirmarMovStock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

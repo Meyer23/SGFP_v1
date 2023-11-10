@@ -29,6 +29,8 @@ namespace CapaPresentacion
             LblNoConfirmado.Visible = false;
             PbNoConfirmado.Visible = false;
             LblAnulado.Visible = false;
+            dtpFecha.Value = DateTime.Now;
+            dtpFechaVenc.Value = DateTime.Now;
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
