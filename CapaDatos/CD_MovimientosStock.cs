@@ -166,5 +166,92 @@ namespace CapaDatos
             }
             return Respuesta;
         }
+
+        public MovimientoStock ObtenerMovStock(int IdMovStock)
+        {
+            MovimientoStock objMovStock = new MovimientoStock();
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT M.id, M.Documento, IIF(M.TipoMovimiento = 0, 'ENTRADA', 'SALIDA') AS TipoMovimiento, M.Fecha, M.Observacion, M.Total, M.Confirmado, M.Anulado, E.Nombres" +
+                        " FROM MovimientosStock M" +
+                        " INNER JOIN Usuarios U ON M.idUsuario = U.id" +
+                        " INNER JOIN Empleados E ON U.idEmpleado = E.id" +
+                        " WHERE M.id = " + IdMovStock;
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            objMovStock = new MovimientoStock()
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Documento = reader["Documento"].ToString(),
+                                TipoMovimiento = reader["TipoMovimiento"].ToString(),
+                                Fecha = Convert.ToDateTime(reader["Fecha"]),
+                                Observacion = reader["Observacion"].ToString(),
+                                Total = Convert.ToDecimal(reader["Total"]),
+                                Confirmado = Convert.ToBoolean(reader["Confirmado"]),
+                                Anulado = Convert.ToBoolean(reader["Anulado"]),
+                                NombreUsuario = reader["Nombres"].ToString()                              
+                            };
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return objMovStock;
+        }
+
+        public List<DetalleProductos> ObtenerMovStockDetalle(int IdMovStock)
+        {
+            List<DetalleProductos> objDetalle = new List<DetalleProductos>();
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT MD.id, MD.idProducto, P.Descripcion, MD.Cantidad" +
+                        " FROM MovimientosStockDetalles MD " +
+                        " INNER JOIN Productos P ON MD.idProducto = P.id" +
+                        " WHERE MD.idMovimientoStock = 0" + IdMovStock;
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            objDetalle.Add(new DetalleProductos
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                IdProducto = Convert.ToInt32(reader["idProducto"]),
+                                Descripcion = reader["Descripcion"].ToString(),
+                                Cantidad = Convert.ToDecimal(reader["Cantidad"]),
+                            });
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    objDetalle = new List<DetalleProductos>();
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return objDetalle;
+        }
     }
 }

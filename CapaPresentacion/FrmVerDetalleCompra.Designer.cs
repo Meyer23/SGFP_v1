@@ -305,6 +305,7 @@
             // 
             this.TxtTimbrado.Location = new System.Drawing.Point(470, 86);
             this.TxtTimbrado.Name = "TxtTimbrado";
+            this.TxtTimbrado.ReadOnly = true;
             this.TxtTimbrado.Size = new System.Drawing.Size(112, 22);
             this.TxtTimbrado.TabIndex = 98;
             // 
@@ -322,6 +323,7 @@
             // 
             this.TxtDoc.Location = new System.Drawing.Point(91, 86);
             this.TxtDoc.Name = "TxtDoc";
+            this.TxtDoc.ReadOnly = true;
             this.TxtDoc.Size = new System.Drawing.Size(90, 22);
             this.TxtDoc.TabIndex = 96;
             // 
@@ -329,6 +331,7 @@
             // 
             this.TxtPuntoEmision.Location = new System.Drawing.Point(50, 86);
             this.TxtPuntoEmision.Name = "TxtPuntoEmision";
+            this.TxtPuntoEmision.ReadOnly = true;
             this.TxtPuntoEmision.Size = new System.Drawing.Size(35, 22);
             this.TxtPuntoEmision.TabIndex = 95;
             // 
@@ -346,6 +349,7 @@
             // 
             this.TxtCodEstablecimiento.Location = new System.Drawing.Point(9, 86);
             this.TxtCodEstablecimiento.Name = "TxtCodEstablecimiento";
+            this.TxtCodEstablecimiento.ReadOnly = true;
             this.TxtCodEstablecimiento.Size = new System.Drawing.Size(35, 22);
             this.TxtCodEstablecimiento.TabIndex = 93;
             // 
@@ -373,6 +377,7 @@
             // 
             this.TxtObs.Location = new System.Drawing.Point(8, 128);
             this.TxtObs.Name = "TxtObs";
+            this.TxtObs.ReadOnly = true;
             this.TxtObs.Size = new System.Drawing.Size(1055, 22);
             this.TxtObs.TabIndex = 7;
             // 
@@ -390,6 +395,7 @@
             // 
             this.TxtNroPedido.Location = new System.Drawing.Point(8, 43);
             this.TxtNroPedido.Name = "TxtNroPedido";
+            this.TxtNroPedido.ReadOnly = true;
             this.TxtNroPedido.Size = new System.Drawing.Size(100, 22);
             this.TxtNroPedido.TabIndex = 5;
             this.TxtNroPedido.Text = "0";
@@ -406,6 +412,7 @@
             // 
             // dtpFechaVenc
             // 
+            this.dtpFechaVenc.Enabled = false;
             this.dtpFechaVenc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaVenc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaVenc.Location = new System.Drawing.Point(335, 86);
@@ -426,6 +433,7 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(199, 86);

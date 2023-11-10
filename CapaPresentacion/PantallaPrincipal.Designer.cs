@@ -63,12 +63,13 @@
             this.StockMenu = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuMovStock = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuConfirmarMovStock = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuAnularMovStock = new FontAwesome.Sharp.IconMenuItem();
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.LabelTituloSistema = new System.Windows.Forms.Label();
             this.Contenedor = new System.Windows.Forms.Panel();
             this.ULabel = new System.Windows.Forms.Label();
             this.LBLUsuario = new System.Windows.Forms.Label();
-            this.SubMenuAnularMovStock = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuVerDetalleMovStock = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -379,7 +380,7 @@
             this.SubMenuPedidos.IconColor = System.Drawing.Color.Black;
             this.SubMenuPedidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuPedidos.Name = "SubMenuPedidos";
-            this.SubMenuPedidos.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuPedidos.Size = new System.Drawing.Size(209, 22);
             this.SubMenuPedidos.Text = "Pedidos";
             this.SubMenuPedidos.Click += new System.EventHandler(this.SubMenuPedidos_Click);
             // 
@@ -389,7 +390,7 @@
             this.SubMenuDetallePedidos.IconColor = System.Drawing.Color.Black;
             this.SubMenuDetallePedidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuDetallePedidos.Name = "SubMenuDetallePedidos";
-            this.SubMenuDetallePedidos.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuDetallePedidos.Size = new System.Drawing.Size(209, 22);
             this.SubMenuDetallePedidos.Text = "Ver Detalle Pedidos";
             this.SubMenuDetallePedidos.Click += new System.EventHandler(this.SubMenuDetallePedidos_Click);
             // 
@@ -399,7 +400,7 @@
             this.SubMenuConfirmarPedido.IconColor = System.Drawing.Color.Black;
             this.SubMenuConfirmarPedido.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuConfirmarPedido.Name = "SubMenuConfirmarPedido";
-            this.SubMenuConfirmarPedido.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuConfirmarPedido.Size = new System.Drawing.Size(209, 22);
             this.SubMenuConfirmarPedido.Text = "Confirmación de Pedido";
             this.SubMenuConfirmarPedido.Click += new System.EventHandler(this.SubMenuConfirmarPedido_Click);
             // 
@@ -409,7 +410,7 @@
             this.SubMenuCompras.IconColor = System.Drawing.Color.Black;
             this.SubMenuCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuCompras.Name = "SubMenuCompras";
-            this.SubMenuCompras.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuCompras.Size = new System.Drawing.Size(209, 22);
             this.SubMenuCompras.Text = "Facturas de Compras";
             this.SubMenuCompras.Click += new System.EventHandler(this.MenuRegistrarCompra_Click);
             // 
@@ -419,7 +420,7 @@
             this.SubMenuVerDetalleCompra.IconColor = System.Drawing.Color.Black;
             this.SubMenuVerDetalleCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuVerDetalleCompra.Name = "SubMenuVerDetalleCompra";
-            this.SubMenuVerDetalleCompra.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuVerDetalleCompra.Size = new System.Drawing.Size(209, 22);
             this.SubMenuVerDetalleCompra.Text = "Ver Detalle Compras";
             this.SubMenuVerDetalleCompra.Click += new System.EventHandler(this.MenuVerDetalleCompra_Click);
             // 
@@ -429,7 +430,7 @@
             this.SubMenuConfirmarCompra.IconColor = System.Drawing.Color.Black;
             this.SubMenuConfirmarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuConfirmarCompra.Name = "SubMenuConfirmarCompra";
-            this.SubMenuConfirmarCompra.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuConfirmarCompra.Size = new System.Drawing.Size(209, 22);
             this.SubMenuConfirmarCompra.Text = "Confirmación de Compra";
             this.SubMenuConfirmarCompra.Click += new System.EventHandler(this.SubMenuConfirmarCompra_Click);
             // 
@@ -439,7 +440,7 @@
             this.SubMenuAnularCompra.IconColor = System.Drawing.Color.Black;
             this.SubMenuAnularCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuAnularCompra.Name = "SubMenuAnularCompra";
-            this.SubMenuAnularCompra.Size = new System.Drawing.Size(217, 30);
+            this.SubMenuAnularCompra.Size = new System.Drawing.Size(209, 22);
             this.SubMenuAnularCompra.Text = "Anulación de Compra";
             this.SubMenuAnularCompra.Click += new System.EventHandler(this.SubMenuAnularCompra_Click);
             // 
@@ -447,6 +448,7 @@
             // 
             this.StockMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubMenuMovStock,
+            this.SubMenuVerDetalleMovStock,
             this.SubMenuConfirmarMovStock,
             this.SubMenuAnularMovStock});
             this.StockMenu.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
@@ -478,6 +480,16 @@
             this.SubMenuConfirmarMovStock.Size = new System.Drawing.Size(276, 30);
             this.SubMenuConfirmarMovStock.Text = "Confirmación de Movimientos Stock";
             this.SubMenuConfirmarMovStock.Click += new System.EventHandler(this.SubMenuConfirmarMovStock_Click);
+            // 
+            // SubMenuAnularMovStock
+            // 
+            this.SubMenuAnularMovStock.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuAnularMovStock.IconColor = System.Drawing.Color.Black;
+            this.SubMenuAnularMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuAnularMovStock.Name = "SubMenuAnularMovStock";
+            this.SubMenuAnularMovStock.Size = new System.Drawing.Size(276, 30);
+            this.SubMenuAnularMovStock.Text = "Anulación de Movimientos Stock";
+            this.SubMenuAnularMovStock.Click += new System.EventHandler(this.SubMenuAnularMovStock_Click);
             // 
             // menutitulo
             // 
@@ -540,15 +552,15 @@
             this.LBLUsuario.TabIndex = 5;
             this.LBLUsuario.Text = "LBLUsuario";
             // 
-            // SubMenuAnularMovStock
+            // SubMenuVerDetalleMovStock
             // 
-            this.SubMenuAnularMovStock.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.SubMenuAnularMovStock.IconColor = System.Drawing.Color.Black;
-            this.SubMenuAnularMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubMenuAnularMovStock.Name = "SubMenuAnularMovStock";
-            this.SubMenuAnularMovStock.Size = new System.Drawing.Size(276, 30);
-            this.SubMenuAnularMovStock.Text = "Anulación de Movimientos Stock";
-            this.SubMenuAnularMovStock.Click += new System.EventHandler(this.SubMenuAnularMovStock_Click);
+            this.SubMenuVerDetalleMovStock.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuVerDetalleMovStock.IconColor = System.Drawing.Color.Black;
+            this.SubMenuVerDetalleMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuVerDetalleMovStock.Name = "SubMenuVerDetalleMovStock";
+            this.SubMenuVerDetalleMovStock.Size = new System.Drawing.Size(276, 30);
+            this.SubMenuVerDetalleMovStock.Text = "Ver Detalle Movimientos Stock";
+            this.SubMenuVerDetalleMovStock.Click += new System.EventHandler(this.SubMenuVerDetalleMovStock_Click);
             // 
             // PantallaPrincipal
             // 
@@ -619,6 +631,7 @@
         private FontAwesome.Sharp.IconMenuItem SubMenuMovStock;
         private FontAwesome.Sharp.IconMenuItem SubMenuConfirmarMovStock;
         private FontAwesome.Sharp.IconMenuItem SubMenuAnularMovStock;
+        private FontAwesome.Sharp.IconMenuItem SubMenuVerDetalleMovStock;
     }
 }
 

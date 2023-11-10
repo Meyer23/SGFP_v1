@@ -32,5 +32,18 @@ namespace CapaNegocio
         {
             return cd_movStock.AnularMovStock(IdMovStock, TipoMovimiento, out Mensaje);
         }
+
+        public MovimientoStock ObtenerMovStock(int IdMovStock)
+        {
+            MovimientoStock objMovStock = cd_movStock.ObtenerMovStock(IdMovStock);
+
+            if (objMovStock.Id != 0)
+            {
+                List<DetalleProductos> objDetalle = cd_movStock.ObtenerMovStockDetalle(objMovStock.Id);
+
+                objMovStock.Detalle = objDetalle;
+            }
+            return objMovStock;
+        }
     }
 }
