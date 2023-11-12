@@ -24,6 +24,7 @@ namespace CapaPresentacion
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(BtnCargarCobro_KeyDown);
             CargarTiposDocumentos();
+            TxtTipoValor.ReadOnly = true;
         }
 
         public int IdUsuario { get; set; }
@@ -123,6 +124,7 @@ namespace CapaPresentacion
             {
                 dgvData.Rows.Add(new object[] {
                     TxtIdProducto.Text,
+                    textBoxCodProducto.Text,
                     TxtProducto.Text,
                     numericUpDownCantidad.Text,
                     precio.ToString("0.00"),
@@ -156,7 +158,7 @@ namespace CapaPresentacion
         }
 
         private void calcularCambio()
-        {
+        {  
             if(textBoxTotalPagar.Text.Trim() == "")
             {
                 MessageBox.Show("No existen productos en la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -203,6 +205,7 @@ namespace CapaPresentacion
                 if (oProducto != null)
                 {
                     TxtIdProducto.Text = oProducto.Id.ToString();
+                    textBoxCodProducto.Text = oProducto.Codigo.ToString();
                     TxtProducto.Text = oProducto.Descripcion;
                     textBoxPrecio.Text = oProducto.Precio.ToString("0.00");
                     numericUpDownCantidad.Select();
@@ -223,7 +226,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = Properties.Resources.borrar_rojo2.Width;
@@ -298,7 +301,6 @@ namespace CapaPresentacion
                     if (result == DialogResult.OK)
                     {
                         TxtTipoValor.Text = popup.Valor.Descripcion.ToString();
-                        ChkValidaDocumento.Checked = (bool)popup.Valor.ValidaDocumento;
                     }
                     else
                     {
@@ -306,26 +308,126 @@ namespace CapaPresentacion
                     }
                 }
             }
-            TxtTipoValor.Enabled = false;
+            TxtTipoValor.Enabled = true;
 
-            if (ChkValidaDocumento.Checked)
+            if(TxtTipoValor.Text != "Efectivo" && TxtTipoValor.Text != string.Empty)
             {
-                ValidarMedioCobro.Visible = true;
-
-                if(TxtTipoValor.Text == "Cheque Diferido" || TxtTipoValor.Text == "Cheque Día")
-                {
-                    LblNroCheque.Visible = true;
-                    TxtNroCheque.Visible = true;
-
-                }
+                LblDocumento.Visible = true;
+                TxtDocumento.Visible = true;
             }
         }
 
         private void TxtImporte_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter)
+            if(e.KeyData == Keys.Enter && TxtImporte.Text != string.Empty)
             {
                 calcularCambio();
+                if(TxtTipoValor.Text == "Efectivo")
+                {
+                    string[] row = new string[]
+                    {
+                    TxtTipoValor.Text,
+                    "",
+                    TxtImporte.Text,
+                    TxtVuelto.Text
+                    };
+                    dgvData_Cobro.Rows.Add(row);
+                }
+            }
+        }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            decimal txtImporte = Convert.ToDecimal(TxtImporte.Text);
+            decimal txtValorTotal = Convert.ToDecimal(textBoxTotalPagar.Text);
+
+            if(txtValorTotal < txtImporte)
+            {
+                MessageBox.Show("El importe es menor al valor de la venta.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void BtnConfirmar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.F1)
+            {
+                decimal txtImporte = Convert.ToDecimal(TxtImporte.Text);
+                decimal txtValorTotal = Convert.ToDecimal(textBoxTotalPagar.Text);
+
+                if (txtValorTotal < txtImporte)
+                {
+                    MessageBox.Show("El importe es menor al valor de la venta.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void TxtImporte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtTipoValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void dgvData_Cobro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvData.Columns[e.ColumnIndex].Name == "EliminarMedioCobro")
+            {
+                int index = e.RowIndex;
+
+                if (index >= 0)
+                {
+                    dgvData_Cobro.Rows.RemoveAt(index);
+                }
+            }
+        }
+
+        private void dgvData_Cobro_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            if (e.ColumnIndex == 4)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.borrar_rojo2.Width;
+                var h = Properties.Resources.borrar_rojo2.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.borrar_rojo2, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void TxtDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtDocumento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter && TxtDocumento.Text != string.Empty)
+            {
+                calcularCambio();
+                string[] row = new string[]
+                {
+                    TxtTipoValor.Text,
+                    TxtDocumento.Text,
+                    TxtImporte.Text,
+                    TxtVuelto.Text
+                    };
+                dgvData_Cobro.Rows.Add(row);
             }
         }
     }
