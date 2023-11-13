@@ -25,6 +25,7 @@ namespace CapaPresentacion
             this.KeyDown += new KeyEventHandler(BtnCargarCobro_KeyDown);
             CargarTiposDocumentos();
             TxtTipoValor.ReadOnly = true;
+            ValidarBotonVenta();
         }
 
         public int IdUsuario { get; set; }
@@ -155,6 +156,26 @@ namespace CapaPresentacion
                 }
             }
             textBoxTotalPagar.Text = total.ToString("0.00");
+        }
+
+        private void CalcularTotalMedioCobro()
+        {
+            decimal totalMedioCobro = 0;
+
+            if(dgvData_Cobro.Rows.Count > 0)
+            {
+                decimal total = Convert.ToDecimal(textBoxTotalPagar.Text);
+
+                foreach (DataGridViewRow row in dgvData_Cobro.Rows)
+                {
+                    totalMedioCobro += Convert.ToDecimal(row.Cells["Importe"].Value.ToString());
+                }
+
+                if(totalMedioCobro > total)
+                {
+                    TxtVuelto.Text = (total - totalMedioCobro).ToString();
+                }
+            }
         }
 
         private void calcularCambio()
@@ -333,6 +354,7 @@ namespace CapaPresentacion
                     };
                     dgvData_Cobro.Rows.Add(row);
                 }
+                CalcularTotalMedioCobro();
             }
         }
 
@@ -344,6 +366,10 @@ namespace CapaPresentacion
             if(txtValorTotal < txtImporte)
             {
                 MessageBox.Show("El importe es menor al valor de la venta.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Estoy funcionando!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -357,6 +383,10 @@ namespace CapaPresentacion
                 if (txtValorTotal < txtImporte)
                 {
                     MessageBox.Show("El importe es menor al valor de la venta.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Estoy funcionando", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
@@ -420,6 +450,7 @@ namespace CapaPresentacion
             if (e.KeyData == Keys.Enter && TxtDocumento.Text != string.Empty)
             {
                 calcularCambio();
+                CalcularTotalMedioCobro();
                 string[] row = new string[]
                 {
                     TxtTipoValor.Text,
@@ -429,6 +460,17 @@ namespace CapaPresentacion
                     };
                 dgvData_Cobro.Rows.Add(row);
             }
+        }
+
+        public bool ValidarBotonVenta()
+        {
+            if (textBoxTotalPagar.Text == TxtImporte.Text)
+            {
+                BtnConfirmar.Enabled = true;
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
