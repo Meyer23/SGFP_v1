@@ -20,7 +20,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT id, Descripcion, Activo FROM FormasPagos";
+                    string query = "SELECT id, Descripcion, Dias, Activo FROM FormasPagos";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -34,6 +34,7 @@ namespace CapaDatos
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                 Descripcion = reader["Descripcion"].ToString(),
+                                Dias = Convert.ToInt32(reader["Dias"]),
                                 Activo = Convert.ToBoolean(reader["Activo"])
                             });
                         }
@@ -63,6 +64,7 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("@Dias", obj.Dias);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
                     cmd.Parameters.Add("@IdFormaPago", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -96,6 +98,7 @@ namespace CapaDatos
                     con.Open();
                     cmd.Parameters.AddWithValue("@IdFormaPago", obj.Id);
                     cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("@Dias", obj.Dias);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -150,6 +153,31 @@ namespace CapaDatos
                 }
                 return formasPago;
             }
+        }
+
+        public int ObtenerDias(string FormaPago)
+        {
+            int dias = 0;
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT Dias FROM FormasPagos WHERE Descripcion = '" + FormaPago + "'";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    con.Open();
+
+                    dias = Convert.ToInt32(cmd.ExecuteScalar());
+
+                }
+                catch (Exception ex)
+                {
+                    dias = 0;
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return dias;
         }
     }
 }

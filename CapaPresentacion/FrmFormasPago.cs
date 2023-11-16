@@ -34,6 +34,7 @@ namespace CapaPresentacion
                 {
                     Id = Convert.ToInt32(TxtIdFormaPago.Text),
                     Descripcion = TxtDescripcion.Text,
+                    Dias = Convert.ToInt32(TxtDias.Text),
                     Activo = (bool)(ChkActivo.Checked)
                 };
 
@@ -43,7 +44,7 @@ namespace CapaPresentacion
 
                     if (IdFormaPago != 0)
                     {
-                        dgvData.Rows.Add(new object[] { "", IdFormaPago, TxtDescripcion.Text, ChkActivo.Checked });
+                        dgvData.Rows.Add(new object[] { "", IdFormaPago, TxtDescripcion.Text, TxtDias.Text, ChkActivo.Checked });
                         limpiar();
                     }
                     else
@@ -61,6 +62,7 @@ namespace CapaPresentacion
                         DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
                         row.Cells["IdFormaPago"].Value = TxtIdFormaPago.Text;
                         row.Cells["Descripcion"].Value = TxtDescripcion.Text;
+                        row.Cells["Dias"].Value = TxtDias.Text;
                         row.Cells["Activo"].Value = ChkActivo.Checked;
 
                         limpiar();
@@ -84,6 +86,7 @@ namespace CapaPresentacion
             TxtIndex.Clear();
             TxtIdFormaPago.Text = "0";
             TxtDescripcion.Clear();
+            TxtDias.Clear();
             TxtBusqueda.Select();
             TxtDescripcion.ReadOnly = false;
         }
@@ -104,7 +107,7 @@ namespace CapaPresentacion
             List<FormaPago> listaFormaPago = new CN_FormasPago().Listar();
             foreach (FormaPago formaPago in listaFormaPago)
             {
-                dgvData.Rows.Add("", formaPago.Id, formaPago.Descripcion, formaPago.Activo);
+                dgvData.Rows.Add("", formaPago.Id, formaPago.Descripcion, formaPago.Dias, formaPago.Activo);
             }
 
             TxtBusqueda.Select();
@@ -144,6 +147,7 @@ namespace CapaPresentacion
                     TxtIndex.Text = index.ToString();
                     TxtIdFormaPago.Text = dgvData.Rows[index].Cells["IdFormaPago"].Value.ToString();
                     TxtDescripcion.Text = dgvData.Rows[index].Cells["Descripcion"].Value.ToString();
+                    TxtDias.Text = dgvData.Rows[index].Cells["Dias"].Value.ToString();
                     estadoFormaPago = (bool)dgvData.Rows[index].Cells["Activo"].Value;
                     if (estadoFormaPago == true)
                     {

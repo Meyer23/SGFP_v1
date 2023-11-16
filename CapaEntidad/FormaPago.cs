@@ -12,6 +12,8 @@ namespace CapaEntidad
 
         public string Descripcion { get; set; }
 
+        public int Dias { get; set; }
+
         public bool Activo { get; set; }
     }
 }

@@ -31,5 +31,10 @@ namespace CapaNegocio
         {
             return cd_formaPago.ObtenerFormasPago(TipoDocumento);
         }
+
+        public int ObtenerDias(string FormaPago)
+        {
+            return cd_formaPago.ObtenerDias(FormaPago);
+        }
     }
 }

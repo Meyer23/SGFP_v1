@@ -409,6 +409,7 @@ namespace CapaPresentacion
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             string TipoDoc, FormaPago;
+
             if (TxtDoc.Text == "" || TxtTimbrado.Text == "")
             {
                 MessageBox.Show("Debe completar los datos de la factura", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -488,6 +489,20 @@ namespace CapaPresentacion
                 MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            int dias;
+            if (TxtNroPedido.Text == "0")
+            {
+                dias = new CN_FormasPago().ObtenerDias(ComboFormaPago.Text.ToString());
+            }
+            else
+            {
+                dias = new CN_FormasPago().ObtenerDias(TxtFormaPago.Text.ToString());
+            }
+            dtpFechaVenc.Value = dtpFecha.Value.AddDays(dias);
         }
     }
 }
