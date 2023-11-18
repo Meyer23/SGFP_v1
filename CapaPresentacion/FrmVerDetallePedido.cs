@@ -50,6 +50,7 @@ namespace CapaPresentacion
                             PbConfirmado.Visible = true;
                             LblNoConfirmado.Visible = false;
                             //PbNoConfirmado.Visible = false;
+                            BtnConfirmar.Visible = false;
                         }
                         else
                         {
@@ -57,13 +58,14 @@ namespace CapaPresentacion
                             //PbNoConfirmado.Visible = true;
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
+                            BtnConfirmar.Visible = true;
                         }
 
                         dgvData.Rows.Clear();
 
                         foreach (DetalleProductos pd in objPedido.Detalle)
                         {
-                            dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
+                            dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                         }
                     }
                 }
@@ -92,6 +94,7 @@ namespace CapaPresentacion
             PbConfirmado.Visible = false;
             LblNoConfirmado.Visible = false;
             //PbNoConfirmado.Visible = false;
+            BtnConfirmar.Visible = false;
         }
 
         private void TxtBusqueda_KeyDown(object sender, KeyEventArgs e)
@@ -115,20 +118,22 @@ namespace CapaPresentacion
                    TxtTotalPedido.Text = objPedido.Total.ToString();
                    checkBoxConfirmado.Checked = objPedido.Confirmado;
 
-                   if(checkBoxConfirmado.Checked )
+                   if(checkBoxConfirmado.Checked)
                    {
                         LblConfirmado.Visible = true;
                         PbConfirmado.Visible = true;
                         LblNoConfirmado.Visible = false;
                         //PbNoConfirmado.Visible = false;
+                        BtnConfirmar.Visible = false;
                     }
-                    else
-                    {
+                   else
+                   {
                         LblNoConfirmado.Visible = true;
-                        PbNoConfirmado.Visible = true;
+                        //PbNoConfirmado.Visible = true;
                         LblConfirmado.Visible = false;
-                        //PbConfirmado.Visible = false;
-                    }
+                        PbConfirmado.Visible = false;
+                        BtnConfirmar.Visible = true;
+                   }
 
                    dgvData.Rows.Clear();
 
@@ -153,6 +158,41 @@ namespace CapaPresentacion
             PbNoConfirmado.Visible = false;
             dtpFecha.Value = DateTime.Now;
             dtpFechaRequerida.Value = DateTime.Now;
+            BtnConfirmar.Visible = false;
+        }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (TxtNumeroPedido.Text == "0")
+            {
+                MessageBox.Show("Debe seleccionar un pedido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtBusqueda.Focus();
+                TxtBusqueda.SelectAll();
+                return;
+            }
+            else
+            {
+                string Mensaje = string.Empty;
+
+                bool Respuesta = new CN_Pedidos().ConfirmarPedido(Convert.ToInt32(TxtNumeroPedido.Text), out Mensaje);
+
+                if (Respuesta)
+                {
+                    var result = MessageBox.Show("Pedido confirmado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        LblConfirmado.Visible = true;
+                        PbConfirmado.Visible = true;
+                        LblNoConfirmado.Visible = false;
+                        BtnConfirmar.Visible = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
         }
     }
 }

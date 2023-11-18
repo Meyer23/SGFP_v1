@@ -44,6 +44,8 @@
             this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Confirmado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Anulado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +69,9 @@
             this.Fecha,
             this.RUC,
             this.RazonSocial,
-            this.TotalCompra});
+            this.TotalCompra,
+            this.Confirmado,
+            this.Anulado});
             this.dgvData.Location = new System.Drawing.Point(12, 84);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
@@ -87,7 +91,7 @@
             this.dgvData.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(697, 302);
+            this.dgvData.Size = new System.Drawing.Size(822, 302);
             this.dgvData.TabIndex = 82;
             this.dgvData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellDoubleClick);
             // 
@@ -167,7 +171,7 @@
             this.LblListaCompras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblListaCompras.Name = "LblListaCompras";
             this.LblListaCompras.Padding = new System.Windows.Forms.Padding(2);
-            this.LblListaCompras.Size = new System.Drawing.Size(697, 66);
+            this.LblListaCompras.Size = new System.Drawing.Size(822, 66);
             this.LblListaCompras.TabIndex = 77;
             this.LblListaCompras.Text = "Lista de Compras";
             // 
@@ -189,6 +193,7 @@
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 80;
             // 
             // RUC
             // 
@@ -201,7 +206,7 @@
             this.RazonSocial.HeaderText = "Razón Social";
             this.RazonSocial.Name = "RazonSocial";
             this.RazonSocial.ReadOnly = true;
-            this.RazonSocial.Width = 250;
+            this.RazonSocial.Width = 240;
             // 
             // TotalCompra
             // 
@@ -209,11 +214,25 @@
             this.TotalCompra.Name = "TotalCompra";
             this.TotalCompra.ReadOnly = true;
             // 
+            // Confirmado
+            // 
+            this.Confirmado.HeaderText = "Confirmado";
+            this.Confirmado.Name = "Confirmado";
+            this.Confirmado.ReadOnly = true;
+            this.Confirmado.Width = 80;
+            // 
+            // Anulado
+            // 
+            this.Anulado.HeaderText = "Anulado";
+            this.Anulado.Name = "Anulado";
+            this.Anulado.ReadOnly = true;
+            this.Anulado.Width = 75;
+            // 
             // PopUpCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 396);
+            this.ClientSize = new System.Drawing.Size(840, 396);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
@@ -245,5 +264,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RUC;
         private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalCompra;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Confirmado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Anulado;
     }
 }

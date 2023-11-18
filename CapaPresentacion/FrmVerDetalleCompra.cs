@@ -33,6 +33,8 @@ namespace CapaPresentacion
             dtpFechaVenc.Value = DateTime.Now;
             dtpInicioVigencia.Value = DateTime.Now;
             dtpFinVigencia.Value = DateTime.Now;
+            BtnConfirmar.Visible = false;
+            BtnAnular.Visible = false;
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -46,6 +48,7 @@ namespace CapaPresentacion
                     Compra objCompra = new CN_Compras().ObtenerCompra(Convert.ToInt32(popup._Compra.Id.ToString()));
                     if (objCompra.Id != 0)
                     {
+                        TxtIdCompra.Text = objCompra.Id.ToString();
                         TxtBusqueda.Text = objCompra.NumeroFactura.ToString();
                         TxtNroPedido.Text = objCompra.NumeroPedido.ToString();
                         TxtTipoDoc.Text = objCompra.TipoDocumento;
@@ -73,6 +76,8 @@ namespace CapaPresentacion
                             LblNoConfirmado.Visible = false;
                             PbNoConfirmado.Visible = false;
                             LblAnulado.Visible = false;
+                            BtnConfirmar.Visible = false;
+                            BtnAnular.Visible = false;
                         }
                         else if(checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                         {
@@ -81,6 +86,8 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = false;
+                            BtnConfirmar.Visible = true;
+                            BtnAnular.Visible = true;
                         }
                         else
                         {
@@ -89,13 +96,15 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = true;
+                            BtnConfirmar.Visible = false;
+                            BtnAnular.Visible = false;
                         }
 
                         dgvData.Rows.Clear();
 
                         foreach (DetalleProductos pd in objCompra.Detalle)
                         {
-                            dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
+                            dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                         }
                     }
                 }
@@ -164,6 +173,8 @@ namespace CapaPresentacion
                         LblNoConfirmado.Visible = false;
                         PbNoConfirmado.Visible = false;
                         LblAnulado.Visible = false;
+                        BtnConfirmar.Visible = false;
+                        BtnAnular.Visible = false;
                     }
                     else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                     {
@@ -172,6 +183,8 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = false;
+                        BtnConfirmar.Visible = true;
+                        BtnAnular.Visible = true;
                     }
                     else
                     {
@@ -180,6 +193,8 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = true;
+                        BtnConfirmar.Visible = false;
+                        BtnAnular.Visible = false;
                     }
 
                     dgvData.Rows.Clear();
@@ -193,6 +208,83 @@ namespace CapaPresentacion
                 {
                     TxtBusqueda.BackColor = Color.MistyRose;
                     TxtBusqueda.Clear();
+                }
+            }
+        }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (TxtIdCompra.Text == "0")
+            {
+                MessageBox.Show("Debe seleccionar una compra", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtBusqueda.Focus();
+                TxtBusqueda.SelectAll();
+                return;
+            }
+            else
+            {
+                string Mensaje = string.Empty;
+
+                bool Respuesta = new CN_Compras().ConfirmarCompra(Convert.ToInt32(TxtIdCompra.Text), dtpFechaRec.Value, out Mensaje);
+
+                if (Respuesta)
+                {
+                    var result = MessageBox.Show("Compra confirmada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        LblConfirmado.Visible = true;
+                        PbConfirmado.Visible = true;
+                        LblNoConfirmado.Visible = false;
+                        BtnConfirmar.Visible = false;
+                        BtnAnular.Visible = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+        }
+
+        private void dtpFechaRec_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = dtpFecha.Value;
+            DateTime fechaActual = DateTime.Now;
+
+            if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
+            {
+                MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Select();
+                return;
+            }
+
+            if (fechaSeleccionada < dtpFecha.Value)
+            {
+                MessageBox.Show("La fecha de la factura debe ser mayor a la fecha del Pedido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Select();
+                return;
+            }
+        }
+
+        private void BtnAnular_Click(object sender, EventArgs e)
+        {
+            using (var popup = new FrmAnularCompra(Convert.ToInt32(TxtIdCompra.Text)))
+            {
+                var result = popup.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    LblConfirmado.Visible = false;
+                    PbConfirmado.Visible = false;
+                    LblNoConfirmado.Visible = false;
+                    LblAnulado.Visible = true;
+                    PbNoConfirmado.Visible = true;
+                    BtnAnular.Visible = false;
+                }
+                else
+                {
+                    TxtBusqueda.Select();
                 }
             }
         }

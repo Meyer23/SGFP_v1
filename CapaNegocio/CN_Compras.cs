@@ -41,9 +41,9 @@ namespace CapaNegocio
             return objCompra;
         }
 
-        public bool AnularCompra(int IdCompra, out string Mensaje)
+        public bool AnularCompra(int IdCompra, string MotivoAnulacion, out string Mensaje)
         {
-            return cd_compra.AnularCompra(IdCompra, out Mensaje);
+            return cd_compra.AnularCompra(IdCompra, MotivoAnulacion, out Mensaje);
         }
     }
 }

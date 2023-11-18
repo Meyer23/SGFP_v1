@@ -65,6 +65,12 @@
     <Compile Include="FrmAnularMovStock.Designer.cs">
       <DependentUpon>FrmAnularMovStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAnularPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnularPedido.Designer.cs">
+      <DependentUpon>FrmAnularPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAperturaCierreCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnularMovStock.resx">
       <DependentUpon>FrmAnularMovStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnularPedido.resx">
+      <DependentUpon>FrmAnularPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAperturaCierreCaja.resx">
       <DependentUpon>FrmAperturaCierreCaja.cs</DependentUpon>

@@ -232,6 +232,7 @@ namespace CapaPresentacion
             {
                 dgvData.Rows.Add(new object[] {
                     TxtIdProducto.Text,
+                    TxtCodProducto.Text,
                     TxtDescProducto.Text,
                     precio.ToString("0.00"),
                     TxtCantidad.Text,
@@ -282,7 +283,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = Properties.Resources.borrar_rojo2.Width;

@@ -62,17 +62,17 @@ namespace CapaDatos
                 {
                     if (bandera == 0)
                     {
-                        query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total FROM MovimientosStock";
+                        query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total, Confirmado, Anulado FROM MovimientosStock";
                     }
                     else
                     {
                         if (bandera == 1)
                         {
-                            query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total FROM MovimientosStock WHERE Confirmado = 0 AND Anulado = 0";
+                            query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total, Confirmado, Anulado FROM MovimientosStock WHERE Confirmado = 0 AND Anulado = 0";
                         }
                         else
                         {
-                            query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total FROM MovimientosStock WHERE Confirmado = 1 AND Anulado = 0";
+                            query = "SELECT id, IIF(TipoMovimiento=0,'ENTRADA','SALIDA') AS TipoMovimiento, Documento, Fecha, Total, Confirmado, Anulado FROM MovimientosStock WHERE Confirmado = 1 AND Anulado = 0";
                         }
                     }
 
@@ -91,7 +91,9 @@ namespace CapaDatos
                                 TipoMovimiento = reader["TipoMovimiento"].ToString(),
                                 Documento = reader["Documento"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
-                                Total = Convert.ToDecimal(reader["Total"])
+                                Total = Convert.ToDecimal(reader["Total"]),
+                                Confirmado = Convert.ToBoolean(reader["Confirmado"]),
+                                Anulado = Convert.ToBoolean(reader["Anulado"]),
                             });
                         }
                     }
@@ -136,7 +138,7 @@ namespace CapaDatos
             return Respuesta;
         }
 
-        public bool AnularMovStock(int IdMovStock, string TipoMovimiento, out string Mensaje)
+        public bool AnularMovStock(int IdMovStock, string TipoMovimiento, string MotivoAnulacion, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = string.Empty;
@@ -150,6 +152,7 @@ namespace CapaDatos
                     con.Open();
                     cmd.Parameters.AddWithValue("@IdMovStock", IdMovStock);
                     cmd.Parameters.AddWithValue("@TipoMovimiento", TipoMovimiento);
+                    cmd.Parameters.AddWithValue("@MotivoAnulacion", MotivoAnulacion);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -221,7 +224,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT MD.id, MD.idProducto, P.Descripcion, MD.Cantidad" +
+                    string query = "SELECT MD.id, MD.idProducto, P.Codigo, P.Descripcion, MD.Cantidad" +
                         " FROM MovimientosStockDetalles MD " +
                         " INNER JOIN Productos P ON MD.idProducto = P.id" +
                         " WHERE MD.idMovimientoStock = 0" + IdMovStock;
@@ -238,6 +241,7 @@ namespace CapaDatos
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                 IdProducto = Convert.ToInt32(reader["idProducto"]),
+                                Codigo = reader["Codigo"].ToString(),
                                 Descripcion = reader["Descripcion"].ToString(),
                                 Cantidad = Convert.ToDecimal(reader["Cantidad"]),
                             });

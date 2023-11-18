@@ -102,19 +102,19 @@ namespace CapaDatos
                 {
                     if (bandera == 0)
                     {
-                        query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura FROM Compras C" +
+                        query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura, C.Confirmado, C.Anulado FROM Compras C" +
                         " INNER JOIN Proveedores P ON C.idProveedor = P.id";
                     }
                     else
                     {
                         if (bandera == 1)
                         {
-                            query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura FROM Compras C" +
+                            query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura, C.Confirmado, C.Anulado FROM Compras C" +
                         " INNER JOIN Proveedores P ON C.idProveedor = P.id WHERE Confirmado = 0 AND Anulado = 0";
                         }
                         else
                         {
-                            query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura FROM Compras C" +
+                            query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura, C.Confirmado, C.Anulado FROM Compras C" +
                         " INNER JOIN Proveedores P ON C.idProveedor = P.id WHERE Confirmado = 1 AND Anulado = 0";
                         }
                     }
@@ -135,7 +135,9 @@ namespace CapaDatos
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
                                 Documento = reader["Documento"].ToString(),
                                 RazonSocial = reader["RazonSocial"].ToString(),
-                                Total = Convert.ToDecimal(reader["TotalFactura"])
+                                Total = Convert.ToDecimal(reader["TotalFactura"]),
+                                Confirmado = Convert.ToBoolean(reader["Confirmado"]),
+                                Anulado = Convert.ToBoolean(reader["Anulado"]),
                             });
                         }
                     }
@@ -220,7 +222,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT P.id, CD.idProducto, P.Descripcion, CD.Precio, CD.Cantidad, CD.Total " +
+                    string query = "SELECT P.id, CD.idProducto, P.Codigo, P.Descripcion, CD.Precio, CD.Cantidad, CD.Total " +
                         "FROM ComprasDetalles CD " +
                         "INNER JOIN Productos P ON CD.idProducto = P.id " +
                         "WHERE CD.idCompra = " + idCompra;
@@ -237,6 +239,7 @@ namespace CapaDatos
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                 IdProducto = Convert.ToInt32(reader["idProducto"]),
+                                Codigo = reader["Codigo"].ToString(),
                                 Descripcion = reader["Descripcion"].ToString(),
                                 Precio = Convert.ToDecimal(reader["Precio"]),
                                 Cantidad = Convert.ToDecimal(reader["Cantidad"]),
@@ -255,7 +258,7 @@ namespace CapaDatos
             return objDetalle;
         }
 
-        public bool AnularCompra(int IdCompra, out string Mensaje)
+        public bool AnularCompra(int IdCompra, string MotivoAnulacion, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = string.Empty;
@@ -268,6 +271,7 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     cmd.Parameters.AddWithValue("@IdCompra", IdCompra);
+                    cmd.Parameters.AddWithValue("@MotivoAnulacion", MotivoAnulacion);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 

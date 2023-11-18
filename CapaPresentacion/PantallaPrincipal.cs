@@ -208,35 +208,35 @@ namespace CapaPresentacion
             AbrirFormulario(MantenedorMenu, new FrmEmpresa());
         }
 
-        private void SubMenuConfirmarPedido_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(ComprasMenu, new FrmConfirmarPedido());
-        }
+        //private void SubMenuConfirmarPedido_Click(object sender, EventArgs e)
+        //{
+        //    AbrirFormulario(ComprasMenu, new FrmConfirmarPedido());
+        //}
 
-        private void SubMenuConfirmarCompra_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(ComprasMenu, new FrmConfirmarCompra());
-        }
+        //private void SubMenuConfirmarCompra_Click(object sender, EventArgs e)
+        //{
+        //    AbrirFormulario(ComprasMenu, new FrmConfirmarCompra());
+        //}
 
-        private void SubMenuAnularCompra_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(ComprasMenu, new FrmAnularCompra());
-        }
+        //private void SubMenuAnularCompra_Click(object sender, EventArgs e)
+        //{
+        //    AbrirFormulario(ComprasMenu, new FrmAnularCompra());
+        //}
 
         private void SubMenuMovStock_Click(object sender, EventArgs e)
         {
             AbrirFormulario(StockMenu, new FrmMovimientosStock(usuarioActual));
         }
 
-        private void SubMenuConfirmarMovStock_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(StockMenu, new FrmConfirmarMovStock());
-        }
+        //private void SubMenuConfirmarMovStock_Click(object sender, EventArgs e)
+        //{
+        //    AbrirFormulario(StockMenu, new FrmConfirmarMovStock());
+        //}
 
-        private void SubMenuAnularMovStock_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(StockMenu, new FrmAnularMovStock());
-        }
+        //private void SubMenuAnularMovStock_Click(object sender, EventArgs e)
+        //{
+        //    AbrirFormulario(StockMenu, new FrmAnularMovStock());
+        //}
 
         private void SubMenuVerDetalleMovStock_Click(object sender, EventArgs e)
         {

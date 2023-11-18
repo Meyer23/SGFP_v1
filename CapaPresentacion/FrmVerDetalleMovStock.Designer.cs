@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             this.LblTotalCompra = new System.Windows.Forms.Label();
-            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtTotalCantidad = new System.Windows.Forms.TextBox();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
+            this.TxtIdMovStock = new System.Windows.Forms.TextBox();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.TxtTipoMov = new System.Windows.Forms.TextBox();
@@ -54,13 +51,19 @@
             this.PbConfirmado = new System.Windows.Forms.PictureBox();
             this.checkBoxConfirmado = new System.Windows.Forms.CheckBox();
             this.LblNoConfirmado = new System.Windows.Forms.Label();
-            this.LblDetallePedido = new System.Windows.Forms.Label();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.LblDocumento = new System.Windows.Forms.Label();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.PbNoConfirmado = new System.Windows.Forms.PictureBox();
+            this.BtnConfirmar = new FontAwesome.Sharp.IconButton();
+            this.BtnAnular = new FontAwesome.Sharp.IconButton();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbConfirmado)).BeginInit();
@@ -72,48 +75,16 @@
             this.LblTotalCompra.AutoSize = true;
             this.LblTotalCompra.BackColor = System.Drawing.Color.White;
             this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalCompra.Location = new System.Drawing.Point(810, 374);
+            this.LblTotalCompra.Location = new System.Drawing.Point(811, 460);
             this.LblTotalCompra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblTotalCompra.Name = "LblTotalCompra";
             this.LblTotalCompra.Size = new System.Drawing.Size(95, 16);
             this.LblTotalCompra.TabIndex = 60;
             this.LblTotalCompra.Text = "Total Cantidad";
             // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.HeaderText = "";
-            this.BtnEliminar.MinimumWidth = 8;
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.ReadOnly = true;
-            this.BtnEliminar.Width = 30;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 8;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción Producto";
-            this.Descripcion.MinimumWidth = 8;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 300;
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.MinimumWidth = 8;
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Visible = false;
-            this.idProducto.Width = 150;
-            // 
             // TxtTotalCantidad
             // 
-            this.TxtTotalCantidad.Location = new System.Drawing.Point(812, 392);
+            this.TxtTotalCantidad.Location = new System.Drawing.Point(813, 478);
             this.TxtTotalCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.TxtTotalCantidad.Name = "TxtTotalCantidad";
             this.TxtTotalCantidad.ReadOnly = true;
@@ -128,6 +99,7 @@
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
+            this.Codigo,
             this.Descripcion,
             this.Cantidad,
             this.BtnEliminar});
@@ -141,6 +113,7 @@
             // groupBoxInfoPedido
             // 
             this.groupBoxInfoPedido.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfoPedido.Controls.Add(this.TxtIdMovStock);
             this.groupBoxInfoPedido.Controls.Add(this.TxtUsuario);
             this.groupBoxInfoPedido.Controls.Add(this.LblUsuario);
             this.groupBoxInfoPedido.Controls.Add(this.TxtTipoMov);
@@ -158,6 +131,14 @@
             this.groupBoxInfoPedido.TabIndex = 56;
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información del Movimiento Stock";
+            // 
+            // TxtIdMovStock
+            // 
+            this.TxtIdMovStock.Location = new System.Drawing.Point(158, 17);
+            this.TxtIdMovStock.Name = "TxtIdMovStock";
+            this.TxtIdMovStock.Size = new System.Drawing.Size(23, 22);
+            this.TxtIdMovStock.TabIndex = 105;
+            this.TxtIdMovStock.Visible = false;
             // 
             // TxtUsuario
             // 
@@ -345,18 +326,6 @@
             this.LblNoConfirmado.TabIndex = 113;
             this.LblNoConfirmado.Text = "No Confirmado";
             // 
-            // LblDetallePedido
-            // 
-            this.LblDetallePedido.AutoSize = true;
-            this.LblDetallePedido.BackColor = System.Drawing.Color.White;
-            this.LblDetallePedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetallePedido.Location = new System.Drawing.Point(17, 27);
-            this.LblDetallePedido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblDetallePedido.Name = "LblDetallePedido";
-            this.LblDetallePedido.Size = new System.Drawing.Size(188, 20);
-            this.LblDetallePedido.TabIndex = 123;
-            this.LblDetallePedido.Text = "Detalle Movimiento Stock";
-            // 
             // BtnLimpiar
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.White;
@@ -369,7 +338,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(296, 55);
+            this.BtnLimpiar.Location = new System.Drawing.Point(301, 37);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
@@ -390,7 +359,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(249, 55);
+            this.BtnBuscar.Location = new System.Drawing.Point(254, 37);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
@@ -401,7 +370,7 @@
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(89, 59);
+            this.TxtBusqueda.Location = new System.Drawing.Point(94, 41);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 119;
@@ -411,7 +380,7 @@
             // 
             this.LblDocumento.AutoSize = true;
             this.LblDocumento.BackColor = System.Drawing.Color.White;
-            this.LblDocumento.Location = new System.Drawing.Point(18, 62);
+            this.LblDocumento.Location = new System.Drawing.Point(23, 44);
             this.LblDocumento.Name = "LblDocumento";
             this.LblDocumento.Size = new System.Drawing.Size(65, 13);
             this.LblDocumento.TabIndex = 120;
@@ -419,7 +388,7 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.Firebrick;
+            this.BtnGuardar.BackColor = System.Drawing.Color.RoyalBlue;
             this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -429,12 +398,12 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(813, 472);
+            this.BtnGuardar.Location = new System.Drawing.Point(813, 413);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(142, 27);
             this.BtnGuardar.TabIndex = 124;
-            this.BtnGuardar.Text = "Descargar en PDF";
+            this.BtnGuardar.Text = "Imprimir";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
@@ -450,14 +419,99 @@
             this.PbNoConfirmado.TabIndex = 125;
             this.PbNoConfirmado.TabStop = false;
             // 
+            // BtnConfirmar
+            // 
+            this.BtnConfirmar.BackColor = System.Drawing.Color.DarkOrange;
+            this.BtnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConfirmar.ForeColor = System.Drawing.Color.White;
+            this.BtnConfirmar.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.BtnConfirmar.IconColor = System.Drawing.Color.White;
+            this.BtnConfirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnConfirmar.IconSize = 16;
+            this.BtnConfirmar.Location = new System.Drawing.Point(814, 328);
+            this.BtnConfirmar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnConfirmar.Name = "BtnConfirmar";
+            this.BtnConfirmar.Size = new System.Drawing.Size(138, 27);
+            this.BtnConfirmar.TabIndex = 126;
+            this.BtnConfirmar.Text = "Confirmar";
+            this.BtnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnConfirmar.UseVisualStyleBackColor = false;
+            this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
+            // 
+            // BtnAnular
+            // 
+            this.BtnAnular.BackColor = System.Drawing.Color.Red;
+            this.BtnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAnular.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAnular.ForeColor = System.Drawing.Color.White;
+            this.BtnAnular.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.BtnAnular.IconColor = System.Drawing.Color.White;
+            this.BtnAnular.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnAnular.IconSize = 16;
+            this.BtnAnular.Location = new System.Drawing.Point(814, 369);
+            this.BtnAnular.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnAnular.Name = "BtnAnular";
+            this.BtnAnular.Size = new System.Drawing.Size(138, 27);
+            this.BtnAnular.TabIndex = 129;
+            this.BtnAnular.Text = "Anular";
+            this.BtnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnAnular.UseVisualStyleBackColor = false;
+            this.BtnAnular.Click += new System.EventHandler(this.BtnAnular_Click);
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.MinimumWidth = 8;
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Visible = false;
+            this.idProducto.Width = 150;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción Producto";
+            this.Descripcion.MinimumWidth = 8;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 300;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 8;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.HeaderText = "";
+            this.BtnEliminar.MinimumWidth = 8;
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.ReadOnly = true;
+            this.BtnEliminar.Width = 30;
+            // 
             // FrmVerDetalleMovStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 534);
+            this.Controls.Add(this.BtnAnular);
+            this.Controls.Add(this.BtnConfirmar);
             this.Controls.Add(this.PbNoConfirmado);
             this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.LblDetallePedido);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtBusqueda);
@@ -475,7 +529,7 @@
             this.Controls.Add(this.LblPedidos);
             this.Controls.Add(this.BtnAgregar);
             this.Name = "FrmVerDetalleMovStock";
-            this.Text = "Ver Detalle Movimientos Stock";
+            this.Text = "Consulta de Movimientos Stock";
             this.Load += new System.EventHandler(this.FrmVerDetalleMovStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.groupBoxInfoPedido.ResumeLayout(false);
@@ -489,10 +543,6 @@
 
         #endregion
         private System.Windows.Forms.Label LblTotalCompra;
-        private System.Windows.Forms.DataGridViewButtonColumn BtnEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.TextBox TxtTotalCantidad;
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.GroupBox groupBoxInfoPedido;
@@ -511,7 +561,6 @@
         private System.Windows.Forms.PictureBox PbConfirmado;
         private System.Windows.Forms.CheckBox checkBoxConfirmado;
         private System.Windows.Forms.Label LblNoConfirmado;
-        private System.Windows.Forms.Label LblDetallePedido;
         private FontAwesome.Sharp.IconButton BtnLimpiar;
         private FontAwesome.Sharp.IconButton BtnBuscar;
         private System.Windows.Forms.TextBox TxtBusqueda;
@@ -521,5 +570,13 @@
         private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.PictureBox PbNoConfirmado;
+        private FontAwesome.Sharp.IconButton BtnConfirmar;
+        private System.Windows.Forms.TextBox TxtIdMovStock;
+        private FontAwesome.Sharp.IconButton BtnAnular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnEliminar;
     }
 }

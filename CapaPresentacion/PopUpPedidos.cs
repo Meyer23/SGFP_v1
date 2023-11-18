@@ -27,6 +27,16 @@ namespace CapaPresentacion
 
         private void PopUpPedidos_Load(object sender, EventArgs e)
         {
+            if(_Bandera == 1)
+            {
+                LblListaPedidos.Visible = false;
+                LblListaPedidosConfirmados.Visible = true;
+            }
+            else
+            {
+                LblListaPedidos.Visible = true;
+                LblListaPedidosConfirmados.Visible = false;
+            }
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
                 if (columna.Visible)
@@ -39,7 +49,7 @@ namespace CapaPresentacion
             List<Pedido> listaPedido = new CN_Pedidos().Listar(_Bandera);
             foreach (Pedido pedido in listaPedido)
             {
-                dgvData.Rows.Add(pedido.Id, pedido.NumeroPedido, pedido.Fecha, pedido.Documento, pedido.RazonSocial, pedido.Total);
+                dgvData.Rows.Add(pedido.Id, pedido.NumeroPedido, pedido.Fecha, pedido.Documento, pedido.RazonSocial, pedido.Total, pedido.Confirmado, pedido.Anulado);
             }
         }
 

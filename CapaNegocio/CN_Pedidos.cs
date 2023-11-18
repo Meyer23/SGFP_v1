@@ -55,5 +55,10 @@ namespace CapaNegocio
         {
             return cd_pedido.Listar(bandera);
         }
+
+        public bool AnularPedido(int IdPedido, string MotivoAnulacion, out string Mensaje)
+        {
+            return cd_pedido.AnularPedido(IdPedido, MotivoAnulacion, out Mensaje);
+        }
     }
 }

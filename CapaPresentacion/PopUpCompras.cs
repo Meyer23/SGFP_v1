@@ -37,7 +37,7 @@ namespace CapaPresentacion
             List<Compra> listaCompra = new CN_Compras().Listar(_Bandera);
             foreach (Compra compra in listaCompra)
             {
-                dgvData.Rows.Add(compra.Id, compra.NumeroFactura, compra.Fecha, compra.Documento, compra.RazonSocial, compra.Total);
+                dgvData.Rows.Add(compra.Id, compra.NumeroFactura, compra.Fecha, compra.Documento, compra.RazonSocial, compra.Total, compra.Confirmado, compra.Anulado);
             }
         }
 

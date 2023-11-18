@@ -29,6 +29,8 @@ namespace CapaPresentacion
             PbNoConfirmado.Visible = false;
             LblAnulado.Visible = false;
             dtpFecha.Value = DateTime.Now;
+            BtnConfirmar.Visible = false;
+            BtnAnular.Visible = false;
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -42,6 +44,7 @@ namespace CapaPresentacion
                     MovimientoStock objMovStock = new CN_MovimientosStock().ObtenerMovStock(Convert.ToInt32(popup._MovimientoStock.Id.ToString()));
                     if (objMovStock.Id != 0)
                     {
+                        TxtIdMovStock.Text = objMovStock.Id.ToString();
                         TxtTipoMov.Text = objMovStock.TipoMovimiento.ToString();
                         TxtDocumento.Text = objMovStock.Documento;
                         dtpFecha.Value = objMovStock.Fecha;
@@ -58,6 +61,8 @@ namespace CapaPresentacion
                             LblNoConfirmado.Visible = false;
                             PbNoConfirmado.Visible = false;
                             LblAnulado.Visible = false;
+                            BtnConfirmar.Visible = false;
+                            BtnAnular.Visible = false;
                         }
                         else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                         {
@@ -66,6 +71,8 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = false;
+                            BtnConfirmar.Visible = true;
+                            BtnAnular.Visible = true;
                         }
                         else
                         {
@@ -74,13 +81,15 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = true;
+                            BtnConfirmar.Visible = false;
+                            BtnAnular.Visible = false;
                         }
 
                         dgvData.Rows.Clear();
 
                         foreach (DetalleProductos pd in objMovStock.Detalle)
                         {
-                            dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Cantidad });
+                            dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Cantidad });
                         }
                     }
                 }
@@ -130,6 +139,8 @@ namespace CapaPresentacion
                         LblNoConfirmado.Visible = false;
                         PbNoConfirmado.Visible = false;
                         LblAnulado.Visible = false;
+                        BtnConfirmar.Visible = false;
+                        BtnAnular.Visible = false;
                     }
                     else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                     {
@@ -138,6 +149,8 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = false;
+                        BtnConfirmar.Visible = true;
+                        BtnAnular.Visible = true;
                     }
                     else
                     {
@@ -146,6 +159,8 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = true;
+                        BtnConfirmar.Visible = false;
+                        BtnAnular.Visible = false;
                     }
 
                     dgvData.Rows.Clear();
@@ -154,6 +169,63 @@ namespace CapaPresentacion
                     {
                         dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Cantidad });
                     }
+                }
+            }
+        }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (TxtIdMovStock.Text == "0")
+            {
+                MessageBox.Show("Debe seleccionar un movimiento stock", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtBusqueda.Focus();
+                TxtBusqueda.SelectAll();
+                return;
+            }
+            else
+            {
+                string Mensaje = string.Empty;
+
+                bool Respuesta = new CN_MovimientosStock().ConfirmarMovStock(Convert.ToInt32(TxtIdMovStock.Text), TxtTipoMov.Text, out Mensaje);
+
+                if (Respuesta)
+                {
+                    var result = MessageBox.Show("Movimiento Stock confirmado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        LblConfirmado.Visible = true;
+                        PbConfirmado.Visible = true;
+                        LblNoConfirmado.Visible = false;
+                        BtnConfirmar.Visible = false;
+                        BtnAnular.Visible = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+        }
+
+        private void BtnAnular_Click(object sender, EventArgs e)
+        {
+            using (var popup = new FrmAnularMovStock(Convert.ToInt32(TxtIdMovStock.Text), TxtTipoMov.Text))
+            {
+                var result = popup.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    LblConfirmado.Visible = false;
+                    PbConfirmado.Visible = false;
+                    LblNoConfirmado.Visible = false;
+                    LblAnulado.Visible = true;
+                    PbNoConfirmado.Visible = true;
+                    BtnAnular.Visible = false;
+                }
+                else
+                {
+                    TxtBusqueda.Select();
                 }
             }
         }

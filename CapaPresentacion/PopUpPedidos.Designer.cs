@@ -32,18 +32,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.BtnBuscar = new FontAwesome.Sharp.IconButton();
-            this.TxtBusqueda = new System.Windows.Forms.TextBox();
-            this.ComboBusqueda = new System.Windows.Forms.ComboBox();
-            this.LblBuscarPor = new System.Windows.Forms.Label();
-            this.LblListaProductos = new System.Windows.Forms.Label();
             this.idPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Confirmado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Anulado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.BtnBuscar = new FontAwesome.Sharp.IconButton();
+            this.TxtBusqueda = new System.Windows.Forms.TextBox();
+            this.ComboBusqueda = new System.Windows.Forms.ComboBox();
+            this.LblBuscarPor = new System.Windows.Forms.Label();
+            this.LblListaProductos = new System.Windows.Forms.Label();
+            this.LblListaPedidos = new System.Windows.Forms.Label();
+            this.LblListaPedidosConfirmados = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +71,9 @@
             this.Fecha,
             this.RUC,
             this.RazonSocial,
-            this.TotalPedido});
+            this.TotalPedido,
+            this.Confirmado,
+            this.Anulado});
             this.dgvData.Location = new System.Drawing.Point(11, 84);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
@@ -87,9 +93,67 @@
             this.dgvData.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(697, 302);
+            this.dgvData.Size = new System.Drawing.Size(817, 302);
             this.dgvData.TabIndex = 75;
             this.dgvData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellDoubleClick);
+            // 
+            // idPedido
+            // 
+            this.idPedido.HeaderText = "idPedido";
+            this.idPedido.Name = "idPedido";
+            this.idPedido.ReadOnly = true;
+            this.idPedido.Visible = false;
+            // 
+            // NumeroPedido
+            // 
+            this.NumeroPedido.HeaderText = "Número Pedido";
+            this.NumeroPedido.Name = "NumeroPedido";
+            this.NumeroPedido.ReadOnly = true;
+            this.NumeroPedido.Width = 80;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 80;
+            // 
+            // RUC
+            // 
+            this.RUC.HeaderText = "RUC";
+            this.RUC.Name = "RUC";
+            this.RUC.ReadOnly = true;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.HeaderText = "Razón Social";
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            this.RazonSocial.Width = 250;
+            // 
+            // TotalPedido
+            // 
+            this.TotalPedido.HeaderText = "Total Pedido";
+            this.TotalPedido.Name = "TotalPedido";
+            this.TotalPedido.ReadOnly = true;
+            // 
+            // Confirmado
+            // 
+            this.Confirmado.HeaderText = "Confirmado";
+            this.Confirmado.Name = "Confirmado";
+            this.Confirmado.ReadOnly = true;
+            this.Confirmado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Confirmado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Confirmado.Width = 80;
+            // 
+            // Anulado
+            // 
+            this.Anulado.HeaderText = "Anulado";
+            this.Anulado.Name = "Anulado";
+            this.Anulado.ReadOnly = true;
+            this.Anulado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Anulado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Anulado.Width = 80;
             // 
             // BtnLimpiar
             // 
@@ -167,53 +231,38 @@
             this.LblListaProductos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblListaProductos.Name = "LblListaProductos";
             this.LblListaProductos.Padding = new System.Windows.Forms.Padding(2);
-            this.LblListaProductos.Size = new System.Drawing.Size(697, 66);
+            this.LblListaProductos.Size = new System.Drawing.Size(817, 66);
             this.LblListaProductos.TabIndex = 70;
-            this.LblListaProductos.Text = "Lista de Pedidos";
             // 
-            // idPedido
+            // LblListaPedidos
             // 
-            this.idPedido.HeaderText = "idPedido";
-            this.idPedido.Name = "idPedido";
-            this.idPedido.ReadOnly = true;
-            this.idPedido.Visible = false;
+            this.LblListaPedidos.AutoSize = true;
+            this.LblListaPedidos.BackColor = System.Drawing.Color.White;
+            this.LblListaPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblListaPedidos.Location = new System.Drawing.Point(13, 12);
+            this.LblListaPedidos.Name = "LblListaPedidos";
+            this.LblListaPedidos.Size = new System.Drawing.Size(170, 24);
+            this.LblListaPedidos.TabIndex = 76;
+            this.LblListaPedidos.Text = "Listado de Pedidos";
             // 
-            // NumeroPedido
+            // LblListaPedidosConfirmados
             // 
-            this.NumeroPedido.HeaderText = "Número Pedido";
-            this.NumeroPedido.Name = "NumeroPedido";
-            this.NumeroPedido.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // RUC
-            // 
-            this.RUC.HeaderText = "RUC";
-            this.RUC.Name = "RUC";
-            this.RUC.ReadOnly = true;
-            // 
-            // RazonSocial
-            // 
-            this.RazonSocial.HeaderText = "Razón Social";
-            this.RazonSocial.Name = "RazonSocial";
-            this.RazonSocial.ReadOnly = true;
-            this.RazonSocial.Width = 250;
-            // 
-            // TotalPedido
-            // 
-            this.TotalPedido.HeaderText = "Total Pedido";
-            this.TotalPedido.Name = "TotalPedido";
-            this.TotalPedido.ReadOnly = true;
+            this.LblListaPedidosConfirmados.AutoSize = true;
+            this.LblListaPedidosConfirmados.BackColor = System.Drawing.Color.White;
+            this.LblListaPedidosConfirmados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblListaPedidosConfirmados.Location = new System.Drawing.Point(14, 13);
+            this.LblListaPedidosConfirmados.Name = "LblListaPedidosConfirmados";
+            this.LblListaPedidosConfirmados.Size = new System.Drawing.Size(281, 24);
+            this.LblListaPedidosConfirmados.TabIndex = 77;
+            this.LblListaPedidosConfirmados.Text = "Listado de Pedidos Confirmados";
             // 
             // PopUpPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 395);
+            this.ClientSize = new System.Drawing.Size(840, 395);
+            this.Controls.Add(this.LblListaPedidosConfirmados);
+            this.Controls.Add(this.LblListaPedidos);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
@@ -245,5 +294,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RUC;
         private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPedido;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Confirmado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Anulado;
+        private System.Windows.Forms.Label LblListaPedidos;
+        private System.Windows.Forms.Label LblListaPedidosConfirmados;
     }
 }

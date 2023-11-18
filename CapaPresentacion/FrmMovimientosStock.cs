@@ -105,6 +105,7 @@ namespace CapaPresentacion
             {
                 dgvData.Rows.Add(new object[] {
                     TxtIdProducto.Text,
+                    TxtCodProducto.Text,
                     TxtDescProducto.Text,
                     TxtCantidad.Text });
 
@@ -151,7 +152,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (e.ColumnIndex == 3)
+            if (e.ColumnIndex == 4)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = Properties.Resources.borrar_rojo2.Width;

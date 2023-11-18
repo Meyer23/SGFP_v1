@@ -28,9 +28,9 @@ namespace CapaNegocio
             return cd_movStock.ConfirmarMovStock(idMovStock, TipoMov, out Mensaje);
         }
 
-        public bool AnularMovStock(int IdMovStock, string TipoMovimiento, out string Mensaje)
+        public bool AnularMovStock(int IdMovStock, string TipoMovimiento, string MotivoAnulacion, out string Mensaje)
         {
-            return cd_movStock.AnularMovStock(IdMovStock, TipoMovimiento, out Mensaje);
+            return cd_movStock.AnularMovStock(IdMovStock, TipoMovimiento, MotivoAnulacion, out Mensaje);
         }
 
         public MovimientoStock ObtenerMovStock(int IdMovStock)

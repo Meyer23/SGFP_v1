@@ -87,7 +87,7 @@ namespace CapaPresentacion
             List<MovimientoStock> listaMovStock = new CN_MovimientosStock().Listar(_Bandera);
             foreach (MovimientoStock movStock in listaMovStock)
             {
-                dgvData.Rows.Add(movStock.Id, movStock.TipoMovimiento, movStock.Documento, movStock.Fecha, movStock.Total);
+                dgvData.Rows.Add(movStock.Id, movStock.TipoMovimiento, movStock.Documento, movStock.Fecha, movStock.Total, movStock.Confirmado, movStock.Anulado);
             }
         }
     }

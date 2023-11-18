@@ -34,6 +34,7 @@
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +52,11 @@
             this.TxtCodProducto = new System.Windows.Forms.TextBox();
             this.LblCodProducto = new System.Windows.Forms.Label();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
+            this.dtpFechaPedido = new System.Windows.Forms.DateTimePicker();
+            this.dtpFinVigencia = new System.Windows.Forms.DateTimePicker();
+            this.LblFinVigencia = new System.Windows.Forms.Label();
+            this.dtpInicioVigencia = new System.Windows.Forms.DateTimePicker();
+            this.LblInicioVigencia = new System.Windows.Forms.Label();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.TxtFormaPago = new System.Windows.Forms.TextBox();
             this.TxtTipoDoc = new System.Windows.Forms.TextBox();
@@ -81,11 +87,6 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.LblFecha = new System.Windows.Forms.Label();
             this.LblCompras = new System.Windows.Forms.Label();
-            this.dtpFinVigencia = new System.Windows.Forms.DateTimePicker();
-            this.LblFinVigencia = new System.Windows.Forms.Label();
-            this.dtpInicioVigencia = new System.Windows.Forms.DateTimePicker();
-            this.LblInicioVigencia = new System.Windows.Forms.Label();
-            this.dtpFechaPedido = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoProducto.SuspendLayout();
             this.groupBoxInfoPedido.SuspendLayout();
@@ -104,7 +105,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(878, 470);
+            this.BtnGuardar.Location = new System.Drawing.Point(917, 472);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(125, 27);
@@ -117,7 +118,7 @@
             // 
             // TxtTotalCompra
             // 
-            this.TxtTotalCompra.Location = new System.Drawing.Point(878, 530);
+            this.TxtTotalCompra.Location = new System.Drawing.Point(917, 532);
             this.TxtTotalCompra.Name = "TxtTotalCompra";
             this.TxtTotalCompra.ReadOnly = true;
             this.TxtTotalCompra.Size = new System.Drawing.Size(125, 20);
@@ -129,7 +130,7 @@
             this.LblTotalCompra.AutoSize = true;
             this.LblTotalCompra.BackColor = System.Drawing.Color.White;
             this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalCompra.Location = new System.Drawing.Point(875, 510);
+            this.LblTotalCompra.Location = new System.Drawing.Point(914, 512);
             this.LblTotalCompra.Name = "LblTotalCompra";
             this.LblTotalCompra.Size = new System.Drawing.Size(89, 16);
             this.LblTotalCompra.TabIndex = 57;
@@ -138,12 +139,14 @@
             // BtnAgregar
             // 
             this.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.BtnAgregar.IconColor = System.Drawing.Color.Black;
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAgregar.Location = new System.Drawing.Point(838, 242);
+            this.BtnAgregar.IconSize = 30;
+            this.BtnAgregar.Location = new System.Drawing.Point(872, 12);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(82, 72);
+            this.BtnAgregar.Size = new System.Drawing.Size(59, 54);
             this.BtnAgregar.TabIndex = 56;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -157,6 +160,7 @@
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
+            this.Codigo,
             this.Descripcion,
             this.Precio,
             this.Cantidad,
@@ -165,7 +169,7 @@
             this.dgvData.Location = new System.Drawing.Point(25, 320);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            this.dgvData.Size = new System.Drawing.Size(793, 236);
+            this.dgvData.Size = new System.Drawing.Size(844, 236);
             this.dgvData.TabIndex = 55;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
@@ -176,6 +180,12 @@
             this.idProducto.Name = "idProducto";
             this.idProducto.ReadOnly = true;
             this.idProducto.Visible = false;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
             // 
             // Descripcion
             // 
@@ -216,6 +226,7 @@
             this.groupBoxInfoProducto.Controls.Add(this.TxtCantidad);
             this.groupBoxInfoProducto.Controls.Add(this.LblCantidad);
             this.groupBoxInfoProducto.Controls.Add(this.TxtPrecioCompra);
+            this.groupBoxInfoProducto.Controls.Add(this.BtnAgregar);
             this.groupBoxInfoProducto.Controls.Add(this.LblPrecio);
             this.groupBoxInfoProducto.Controls.Add(this.TxtDescProducto);
             this.groupBoxInfoProducto.Controls.Add(this.LblDescProducto);
@@ -226,7 +237,7 @@
             this.groupBoxInfoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxInfoProducto.Location = new System.Drawing.Point(25, 242);
             this.groupBoxInfoProducto.Name = "groupBoxInfoProducto";
-            this.groupBoxInfoProducto.Size = new System.Drawing.Size(793, 72);
+            this.groupBoxInfoProducto.Size = new System.Drawing.Size(1075, 72);
             this.groupBoxInfoProducto.TabIndex = 54;
             this.groupBoxInfoProducto.TabStop = false;
             this.groupBoxInfoProducto.Text = "Información del Producto";
@@ -373,6 +384,57 @@
             this.groupBoxInfoPedido.TabIndex = 53;
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información de la Compra";
+            // 
+            // dtpFechaPedido
+            // 
+            this.dtpFechaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaPedido.Location = new System.Drawing.Point(494, 97);
+            this.dtpFechaPedido.Name = "dtpFechaPedido";
+            this.dtpFechaPedido.Size = new System.Drawing.Size(97, 20);
+            this.dtpFechaPedido.TabIndex = 106;
+            this.dtpFechaPedido.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            this.dtpFechaPedido.Visible = false;
+            // 
+            // dtpFinVigencia
+            // 
+            this.dtpFinVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFinVigencia.Location = new System.Drawing.Point(237, 133);
+            this.dtpFinVigencia.Name = "dtpFinVigencia";
+            this.dtpFinVigencia.Size = new System.Drawing.Size(97, 20);
+            this.dtpFinVigencia.TabIndex = 105;
+            this.dtpFinVigencia.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            // 
+            // LblFinVigencia
+            // 
+            this.LblFinVigencia.AutoSize = true;
+            this.LblFinVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFinVigencia.Location = new System.Drawing.Point(234, 117);
+            this.LblFinVigencia.Name = "LblFinVigencia";
+            this.LblFinVigencia.Size = new System.Drawing.Size(83, 13);
+            this.LblFinVigencia.TabIndex = 104;
+            this.LblFinVigencia.Text = "Fin de Vigencia:";
+            // 
+            // dtpInicioVigencia
+            // 
+            this.dtpInicioVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicioVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicioVigencia.Location = new System.Drawing.Point(130, 133);
+            this.dtpInicioVigencia.Name = "dtpInicioVigencia";
+            this.dtpInicioVigencia.Size = new System.Drawing.Size(97, 20);
+            this.dtpInicioVigencia.TabIndex = 103;
+            this.dtpInicioVigencia.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            // 
+            // LblInicioVigencia
+            // 
+            this.LblInicioVigencia.AutoSize = true;
+            this.LblInicioVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblInicioVigencia.Location = new System.Drawing.Point(127, 117);
+            this.LblInicioVigencia.Name = "LblInicioVigencia";
+            this.LblInicioVigencia.Size = new System.Drawing.Size(94, 13);
+            this.LblInicioVigencia.TabIndex = 102;
+            this.LblInicioVigencia.Text = "Inicio de Vigencia:";
             // 
             // BtnLimpiar
             // 
@@ -696,57 +758,6 @@
             this.LblCompras.TabIndex = 52;
             this.LblCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dtpFinVigencia
-            // 
-            this.dtpFinVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFinVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFinVigencia.Location = new System.Drawing.Point(237, 133);
-            this.dtpFinVigencia.Name = "dtpFinVigencia";
-            this.dtpFinVigencia.Size = new System.Drawing.Size(97, 20);
-            this.dtpFinVigencia.TabIndex = 105;
-            this.dtpFinVigencia.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
-            // 
-            // LblFinVigencia
-            // 
-            this.LblFinVigencia.AutoSize = true;
-            this.LblFinVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFinVigencia.Location = new System.Drawing.Point(234, 117);
-            this.LblFinVigencia.Name = "LblFinVigencia";
-            this.LblFinVigencia.Size = new System.Drawing.Size(83, 13);
-            this.LblFinVigencia.TabIndex = 104;
-            this.LblFinVigencia.Text = "Fin de Vigencia:";
-            // 
-            // dtpInicioVigencia
-            // 
-            this.dtpInicioVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpInicioVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicioVigencia.Location = new System.Drawing.Point(130, 133);
-            this.dtpInicioVigencia.Name = "dtpInicioVigencia";
-            this.dtpInicioVigencia.Size = new System.Drawing.Size(97, 20);
-            this.dtpInicioVigencia.TabIndex = 103;
-            this.dtpInicioVigencia.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
-            // 
-            // LblInicioVigencia
-            // 
-            this.LblInicioVigencia.AutoSize = true;
-            this.LblInicioVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblInicioVigencia.Location = new System.Drawing.Point(127, 117);
-            this.LblInicioVigencia.Name = "LblInicioVigencia";
-            this.LblInicioVigencia.Size = new System.Drawing.Size(94, 13);
-            this.LblInicioVigencia.TabIndex = 102;
-            this.LblInicioVigencia.Text = "Inicio de Vigencia:";
-            // 
-            // dtpFechaPedido
-            // 
-            this.dtpFechaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaPedido.Location = new System.Drawing.Point(494, 97);
-            this.dtpFechaPedido.Name = "dtpFechaPedido";
-            this.dtpFechaPedido.Size = new System.Drawing.Size(97, 20);
-            this.dtpFechaPedido.TabIndex = 106;
-            this.dtpFechaPedido.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
-            this.dtpFechaPedido.Visible = false;
-            // 
             // FrmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,7 +766,6 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtTotalCompra);
             this.Controls.Add(this.LblTotalCompra);
-            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.groupBoxInfoProducto);
             this.Controls.Add(this.groupBoxInfoPedido);
@@ -783,12 +793,6 @@
         private System.Windows.Forms.Label LblTotalCompra;
         private FontAwesome.Sharp.IconButton BtnAgregar;
         private System.Windows.Forms.DataGridView dgvData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewButtonColumn BtnEliminar;
         private System.Windows.Forms.GroupBox groupBoxInfoProducto;
         private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.Label LblCantidad;
@@ -836,5 +840,12 @@
         private System.Windows.Forms.DateTimePicker dtpInicioVigencia;
         private System.Windows.Forms.Label LblInicioVigencia;
         private System.Windows.Forms.DateTimePicker dtpFechaPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnEliminar;
     }
 }

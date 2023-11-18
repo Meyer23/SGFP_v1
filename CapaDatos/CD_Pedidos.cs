@@ -61,6 +61,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@TotalPedido", obj.Total);
                     cmd.Parameters.AddWithValue("@idUsuario", obj.IdUsuario);
                     cmd.Parameters.AddWithValue("@Confirmado", obj.Confirmado);
+                    cmd.Parameters.AddWithValue("@Anulado", obj.Anulado);
                     cmd.Parameters.AddWithValue("@DetallePedido", DetallePedido);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -89,7 +90,7 @@ namespace CapaDatos
                 {
                     string query = "SELECT P.id, P.NumeroPedido, P.Fecha, P.FechaRequerida, E.Nombres, PR.id AS idProveedor, " +
                         "PR.Documento, PR.RazonSocial, T.Descripcion AS TipoDocumento, F.Descripcion AS FormaPago, " +
-                        "P.Observacion, P.TotalPedido, P.Confirmado" +
+                        "P.Observacion, P.TotalPedido, P.Confirmado, P.Anulado" +
                         " FROM Pedidos P" +
                         " INNER JOIN Usuarios U ON P.idUsuario = U.id" +
                         " INNER JOIN Empleados E ON U.idEmpleado = E.id" +
@@ -120,7 +121,8 @@ namespace CapaDatos
                                 FormaPago = reader["FormaPago"].ToString(),
                                 Observacion = reader["Observacion"].ToString(),
                                 Total = Convert.ToDecimal(reader["TotalPedido"]),
-                                Confirmado = Convert.ToBoolean(reader["Confirmado"])
+                                Confirmado = Convert.ToBoolean(reader["Confirmado"]),
+                                Anulado = Convert.ToBoolean(reader["Anulado"])
                             };                        
                         }
                     }
@@ -142,7 +144,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT P.id, PD.idProducto, P.Descripcion, PD.Precio, PD.Cantidad, PD.Total" +
+                    string query = "SELECT P.id, PD.idProducto, P.Codigo, P.Descripcion, PD.Precio, PD.Cantidad, PD.Total" +
                         " FROM PedidosDetalles PD" +
                         " INNER JOIN Productos P ON PD.idProducto = P.id" +
                         " WHERE PD.idPedido = " + idPedido;
@@ -159,6 +161,7 @@ namespace CapaDatos
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                 IdProducto = Convert.ToInt32(reader["idProducto"]),
+                                Codigo = reader["Codigo"].ToString(),
                                 Descripcion = reader["Descripcion"].ToString(),
                                 Precio = Convert.ToDecimal(reader["Precio"]),
                                 Cantidad = Convert.ToDecimal(reader["Cantidad"]),
@@ -299,19 +302,19 @@ namespace CapaDatos
                 {
                     if(bandera == 0)
                     {
-                        query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido FROM Pedidos P " +
+                        query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido, P.Confirmado, P.Anulado FROM Pedidos P " +
                         "INNER JOIN Proveedores PR ON P.idProveedor = PR.id";
                     }else
                     {
                         if (bandera == 1)
                         {
-                            query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido FROM Pedidos P " +
+                            query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido, P.Confirmado, P.Anulado FROM Pedidos P " +
                                 "INNER JOIN Proveedores PR ON P.idProveedor = PR.id WHERE Confirmado = 1 " +
                                 "AND NOT EXISTS (SELECT * FROM Compras WHERE idPedido = P.id)";
                         }
                         else
                         {
-                            query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido FROM Pedidos P " +
+                            query = "SELECT P.id, NumeroPedido, P.Fecha, PR.Documento, PR.RazonSocial, P.TotalPedido, P.Confirmado, P.Anulado FROM Pedidos P " +
                             "INNER JOIN Proveedores PR ON P.idProveedor = PR.id WHERE Confirmado = 0";
                         }
                     }
@@ -332,7 +335,9 @@ namespace CapaDatos
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
                                 Documento = reader["Documento"].ToString(),
                                 RazonSocial = reader["RazonSocial"].ToString(),
-                                Total = Convert.ToDecimal(reader["TotalPedido"])
+                                Total = Convert.ToDecimal(reader["TotalPedido"]),
+                                Confirmado = Convert.ToBoolean(reader["Confirmado"]),
+                                Anulado = Convert.ToBoolean(reader["Anulado"])
                             });
                         }
                     }
@@ -344,6 +349,37 @@ namespace CapaDatos
                 }
             }
             return pedidos;
+        }
+
+        public bool AnularPedido(int IdPedido, string MotivoAnulacion, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_pedido_anular", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@IdPedido", IdPedido);
+                    cmd.Parameters.AddWithValue("@MotivoAnulacion", MotivoAnulacion);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Respuesta;
         }
     }
 }
