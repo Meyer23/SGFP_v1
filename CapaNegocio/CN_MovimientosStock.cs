@@ -45,5 +45,10 @@ namespace CapaNegocio
             }
             return objMovStock;
         }
+
+        public decimal ObtenerExistencia(int idProducto)
+        {
+            return cd_movStock.ObtenerExistencia(idProducto);
+        }
     }
 }

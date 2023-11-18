@@ -36,6 +36,9 @@
             this.TxtTotalCantidad = new System.Windows.Forms.TextBox();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.LblUsuario = new System.Windows.Forms.Label();
+            this.TxtTipoMov = new System.Windows.Forms.TextBox();
             this.LblTipoMov = new System.Windows.Forms.Label();
             this.TxtObs = new System.Windows.Forms.TextBox();
             this.LblObs = new System.Windows.Forms.Label();
@@ -57,9 +60,6 @@
             this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.LblDocumento = new System.Windows.Forms.Label();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.TxtTipoMov = new System.Windows.Forms.TextBox();
-            this.TxtUsuario = new System.Windows.Forms.TextBox();
-            this.LblUsuario = new System.Windows.Forms.Label();
             this.PbNoConfirmado = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoPedido.SuspendLayout();
@@ -158,6 +158,32 @@
             this.groupBoxInfoPedido.TabIndex = 56;
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información del Movimiento Stock";
+            // 
+            // TxtUsuario
+            // 
+            this.TxtUsuario.Location = new System.Drawing.Point(430, 41);
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.ReadOnly = true;
+            this.TxtUsuario.Size = new System.Drawing.Size(129, 22);
+            this.TxtUsuario.TabIndex = 104;
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Location = new System.Drawing.Point(427, 25);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.LblUsuario.TabIndex = 103;
+            this.LblUsuario.Text = "Usuario:";
+            // 
+            // TxtTipoMov
+            // 
+            this.TxtTipoMov.Location = new System.Drawing.Point(9, 43);
+            this.TxtTipoMov.Name = "TxtTipoMov";
+            this.TxtTipoMov.ReadOnly = true;
+            this.TxtTipoMov.Size = new System.Drawing.Size(173, 22);
+            this.TxtTipoMov.TabIndex = 100;
             // 
             // LblTipoMov
             // 
@@ -312,7 +338,7 @@
             this.LblNoConfirmado.AutoSize = true;
             this.LblNoConfirmado.BackColor = System.Drawing.Color.White;
             this.LblNoConfirmado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNoConfirmado.ForeColor = System.Drawing.Color.Red;
+            this.LblNoConfirmado.ForeColor = System.Drawing.Color.DarkOrange;
             this.LblNoConfirmado.Location = new System.Drawing.Point(753, 55);
             this.LblNoConfirmado.Name = "LblNoConfirmado";
             this.LblNoConfirmado.Size = new System.Drawing.Size(137, 24);
@@ -412,32 +438,6 @@
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // TxtTipoMov
-            // 
-            this.TxtTipoMov.Location = new System.Drawing.Point(9, 43);
-            this.TxtTipoMov.Name = "TxtTipoMov";
-            this.TxtTipoMov.ReadOnly = true;
-            this.TxtTipoMov.Size = new System.Drawing.Size(173, 22);
-            this.TxtTipoMov.TabIndex = 100;
-            // 
-            // TxtUsuario
-            // 
-            this.TxtUsuario.Location = new System.Drawing.Point(430, 41);
-            this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.ReadOnly = true;
-            this.TxtUsuario.Size = new System.Drawing.Size(129, 22);
-            this.TxtUsuario.TabIndex = 104;
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.Location = new System.Drawing.Point(427, 25);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(46, 13);
-            this.LblUsuario.TabIndex = 103;
-            this.LblUsuario.Text = "Usuario:";
             // 
             // PbNoConfirmado
             // 

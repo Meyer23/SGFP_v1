@@ -45,6 +45,10 @@
             this.LblRUC = new System.Windows.Forms.Label();
             this.TxtTotalCompra = new System.Windows.Forms.TextBox();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
+            this.dtpFinVigencia = new System.Windows.Forms.DateTimePicker();
+            this.LblFinVigencia = new System.Windows.Forms.Label();
+            this.dtpInicioVigencia = new System.Windows.Forms.DateTimePicker();
+            this.LblInicioVigencia = new System.Windows.Forms.Label();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.TxtFormaPago = new System.Windows.Forms.TextBox();
@@ -93,7 +97,7 @@
             this.LblCompras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCompras.Name = "LblCompras";
             this.LblCompras.Padding = new System.Windows.Forms.Padding(2);
-            this.LblCompras.Size = new System.Drawing.Size(1111, 519);
+            this.LblCompras.Size = new System.Drawing.Size(1216, 519);
             this.LblCompras.TabIndex = 53;
             // 
             // LblTotalCompra
@@ -201,7 +205,7 @@
             this.groupBoxInfoProveedor.Controls.Add(this.TxtRUC);
             this.groupBoxInfoProveedor.Controls.Add(this.LblRUC);
             this.groupBoxInfoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxInfoProveedor.Location = new System.Drawing.Point(662, 33);
+            this.groupBoxInfoProveedor.Location = new System.Drawing.Point(776, 29);
             this.groupBoxInfoProveedor.Name = "groupBoxInfoProveedor";
             this.groupBoxInfoProveedor.Size = new System.Drawing.Size(411, 75);
             this.groupBoxInfoProveedor.TabIndex = 27;
@@ -238,6 +242,10 @@
             // groupBoxInfoPedido
             // 
             this.groupBoxInfoPedido.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfoPedido.Controls.Add(this.dtpFinVigencia);
+            this.groupBoxInfoPedido.Controls.Add(this.LblFinVigencia);
+            this.groupBoxInfoPedido.Controls.Add(this.dtpInicioVigencia);
+            this.groupBoxInfoPedido.Controls.Add(this.LblInicioVigencia);
             this.groupBoxInfoPedido.Controls.Add(this.TxtUsuario);
             this.groupBoxInfoPedido.Controls.Add(this.LblUsuario);
             this.groupBoxInfoPedido.Controls.Add(this.TxtFormaPago);
@@ -262,10 +270,52 @@
             this.groupBoxInfoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxInfoPedido.Location = new System.Drawing.Point(18, 87);
             this.groupBoxInfoPedido.Name = "groupBoxInfoPedido";
-            this.groupBoxInfoPedido.Size = new System.Drawing.Size(1084, 160);
+            this.groupBoxInfoPedido.Size = new System.Drawing.Size(1193, 160);
             this.groupBoxInfoPedido.TabIndex = 60;
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información de la Compra";
+            // 
+            // dtpFinVigencia
+            // 
+            this.dtpFinVigencia.Enabled = false;
+            this.dtpFinVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFinVigencia.Location = new System.Drawing.Point(654, 84);
+            this.dtpFinVigencia.Name = "dtpFinVigencia";
+            this.dtpFinVigencia.Size = new System.Drawing.Size(97, 20);
+            this.dtpFinVigencia.TabIndex = 106;
+            this.dtpFinVigencia.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            // 
+            // LblFinVigencia
+            // 
+            this.LblFinVigencia.AutoSize = true;
+            this.LblFinVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFinVigencia.Location = new System.Drawing.Point(651, 68);
+            this.LblFinVigencia.Name = "LblFinVigencia";
+            this.LblFinVigencia.Size = new System.Drawing.Size(65, 13);
+            this.LblFinVigencia.TabIndex = 105;
+            this.LblFinVigencia.Text = "FinVigencia:";
+            // 
+            // dtpInicioVigencia
+            // 
+            this.dtpInicioVigencia.Enabled = false;
+            this.dtpInicioVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicioVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicioVigencia.Location = new System.Drawing.Point(549, 84);
+            this.dtpInicioVigencia.Name = "dtpInicioVigencia";
+            this.dtpInicioVigencia.Size = new System.Drawing.Size(97, 20);
+            this.dtpInicioVigencia.TabIndex = 104;
+            this.dtpInicioVigencia.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            // 
+            // LblInicioVigencia
+            // 
+            this.LblInicioVigencia.AutoSize = true;
+            this.LblInicioVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblInicioVigencia.Location = new System.Drawing.Point(546, 68);
+            this.LblInicioVigencia.Name = "LblInicioVigencia";
+            this.LblInicioVigencia.Size = new System.Drawing.Size(79, 13);
+            this.LblInicioVigencia.TabIndex = 103;
+            this.LblInicioVigencia.Text = "Inicio Vigencia:";
             // 
             // TxtUsuario
             // 
@@ -303,7 +353,7 @@
             // 
             // TxtTimbrado
             // 
-            this.TxtTimbrado.Location = new System.Drawing.Point(470, 86);
+            this.TxtTimbrado.Location = new System.Drawing.Point(426, 86);
             this.TxtTimbrado.Name = "TxtTimbrado";
             this.TxtTimbrado.ReadOnly = true;
             this.TxtTimbrado.Size = new System.Drawing.Size(112, 22);
@@ -313,7 +363,7 @@
             // 
             this.LblTimbrado.AutoSize = true;
             this.LblTimbrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTimbrado.Location = new System.Drawing.Point(467, 70);
+            this.LblTimbrado.Location = new System.Drawing.Point(423, 70);
             this.LblTimbrado.Name = "LblTimbrado";
             this.LblTimbrado.Size = new System.Drawing.Size(54, 13);
             this.LblTimbrado.TabIndex = 97;
@@ -378,7 +428,7 @@
             this.TxtObs.Location = new System.Drawing.Point(8, 128);
             this.TxtObs.Name = "TxtObs";
             this.TxtObs.ReadOnly = true;
-            this.TxtObs.Size = new System.Drawing.Size(1055, 22);
+            this.TxtObs.Size = new System.Drawing.Size(1169, 22);
             this.TxtObs.TabIndex = 7;
             // 
             // LblObs
@@ -415,7 +465,7 @@
             this.dtpFechaVenc.Enabled = false;
             this.dtpFechaVenc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaVenc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaVenc.Location = new System.Drawing.Point(335, 86);
+            this.dtpFechaVenc.Location = new System.Drawing.Point(304, 86);
             this.dtpFechaVenc.Name = "dtpFechaVenc";
             this.dtpFechaVenc.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaVenc.TabIndex = 3;
@@ -425,7 +475,7 @@
             // 
             this.LblFechaVencimiento.AutoSize = true;
             this.LblFechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaVencimiento.Location = new System.Drawing.Point(332, 70);
+            this.LblFechaVencimiento.Location = new System.Drawing.Point(301, 70);
             this.LblFechaVencimiento.Name = "LblFechaVencimiento";
             this.LblFechaVencimiento.Size = new System.Drawing.Size(101, 13);
             this.LblFechaVencimiento.TabIndex = 2;
@@ -478,7 +528,7 @@
             this.LblNoConfirmado.AutoSize = true;
             this.LblNoConfirmado.BackColor = System.Drawing.Color.White;
             this.LblNoConfirmado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNoConfirmado.ForeColor = System.Drawing.Color.Red;
+            this.LblNoConfirmado.ForeColor = System.Drawing.Color.DarkOrange;
             this.LblNoConfirmado.Location = new System.Drawing.Point(851, 45);
             this.LblNoConfirmado.Name = "LblNoConfirmado";
             this.LblNoConfirmado.Size = new System.Drawing.Size(137, 24);
@@ -628,7 +678,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 530);
+            this.ClientSize = new System.Drawing.Size(1223, 530);
             this.Controls.Add(this.LblAnulado);
             this.Controls.Add(this.checkBoxAnulado);
             this.Controls.Add(this.BtnGuardar);
@@ -715,5 +765,9 @@
         private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.CheckBox checkBoxAnulado;
         private System.Windows.Forms.Label LblAnulado;
+        private System.Windows.Forms.DateTimePicker dtpFinVigencia;
+        private System.Windows.Forms.Label LblFinVigencia;
+        private System.Windows.Forms.DateTimePicker dtpInicioVigencia;
+        private System.Windows.Forms.Label LblInicioVigencia;
     }
 }

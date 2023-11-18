@@ -66,10 +66,25 @@ namespace CapaPresentacion
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             bool producto_existe = false;
+            decimal existencia = new CN_MovimientosStock().ObtenerExistencia(Convert.ToInt32(TxtIdProducto.Text));
 
             if (int.Parse(TxtIdProducto.Text) == 0)
             {
                 MessageBox.Show("Debe seleccionar un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(TxtCantidad.Text) || Convert.ToInt32(TxtCantidad.Text) < 1)
+            {
+                MessageBox.Show("Debe ingresar la cantidad", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtCantidad.Select();
+                return;
+            }
+
+            if (ComboTipoMov.Text.ToString() == "SALIDA" && Convert.ToInt32(TxtCantidad.Text) > existencia)
+            {
+                MessageBox.Show("Existencia insuficiente", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtCantidad.Select();
                 return;
             }
 
@@ -112,7 +127,7 @@ namespace CapaPresentacion
             TxtCodProducto.Clear();
             TxtCodProducto.BackColor = Color.White;
             TxtDescProducto.Clear();
-            TxtCantidad.Text = "1";
+            TxtCantidad.Clear();
         }
 
         private void calcularTotal()
@@ -136,7 +151,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 3)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = Properties.Resources.borrar_rojo2.Width;
@@ -255,6 +270,34 @@ namespace CapaPresentacion
         private void FrmMovimientosStock_Load(object sender, EventArgs e)
         {
             dtpFecha.Value = DateTime.Now;
+        }
+
+        private void TxtCantidad_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider1 = new ErrorProvider();
+            if (string.IsNullOrEmpty(TxtCantidad.Text))
+            {
+                //e.Cancel = true;
+                errorProvider1.SetError(TxtCantidad, "Este campo es obligatorio");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(TxtCantidad, "");
+            }
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = dtpFecha.Value;
+            DateTime fechaActual = DateTime.Now;
+
+            if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
+            {
+                MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Select();
+                return;
+            }
         }
     }
 }

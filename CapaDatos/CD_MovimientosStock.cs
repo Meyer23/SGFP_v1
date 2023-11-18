@@ -253,5 +253,36 @@ namespace CapaDatos
             }
             return objDetalle;
         }
+
+        public decimal ObtenerExistencia(int idProducto)
+        {
+            decimal existencia = 0;
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    con.Open();
+
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("SELECT Existencia FROM Productos ");
+                    query.AppendLine("WHERE id =  @idProducto ");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), con);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@idProducto", idProducto);
+
+                    existencia = Convert.ToInt32(cmd.ExecuteScalar());
+
+                }
+                catch (Exception ex)
+                {
+                    existencia = 0;
+                    MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return existencia;
+        }
     }
 }

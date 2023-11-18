@@ -49,12 +49,12 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = true;
                             PbConfirmado.Visible = true;
                             LblNoConfirmado.Visible = false;
-                            PbNoConfirmado.Visible = false;
+                            //PbNoConfirmado.Visible = false;
                         }
                         else
                         {
                             LblNoConfirmado.Visible = true;
-                            PbNoConfirmado.Visible = true;
+                            //PbNoConfirmado.Visible = true;
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                         }
@@ -91,7 +91,7 @@ namespace CapaPresentacion
             LblConfirmado.Visible = false;
             PbConfirmado.Visible = false;
             LblNoConfirmado.Visible = false;
-            PbNoConfirmado.Visible = false;
+            //PbNoConfirmado.Visible = false;
         }
 
         private void TxtBusqueda_KeyDown(object sender, KeyEventArgs e)
@@ -120,14 +120,14 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = true;
                         PbConfirmado.Visible = true;
                         LblNoConfirmado.Visible = false;
-                        PbNoConfirmado.Visible = false;
+                        //PbNoConfirmado.Visible = false;
                     }
                     else
                     {
                         LblNoConfirmado.Visible = true;
                         PbNoConfirmado.Visible = true;
                         LblConfirmado.Visible = false;
-                        PbConfirmado.Visible = false;
+                        //PbConfirmado.Visible = false;
                     }
 
                    dgvData.Rows.Clear();

@@ -83,8 +83,12 @@ namespace CapaPresentacion
                     TxtIdProducto.Text = popup._Producto.Id.ToString();
                     TxtCodProducto.Text = popup._Producto.Codigo;
                     TxtDescProducto.Text = popup._Producto.Descripcion;
-                    TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
                     TxtCantidad.Select();
+                    TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
+                    if(TxtPrecioCompra.Text == "0")
+                    {
+                        MessageBox.Show("Debe ingresar un precio, el producto no posee compras", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
@@ -102,8 +106,8 @@ namespace CapaPresentacion
                 {
                     TxtIdProducto.Text = oProducto.Id.ToString();
                     TxtDescProducto.Text = oProducto.Descripcion;
-                    TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
                     TxtCantidad.Select();
+                    TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
                 }
                 else
                 {
@@ -128,6 +132,20 @@ namespace CapaPresentacion
             if (!decimal.TryParse(TxtPrecioCompra.Text, out precio))
             {
                 MessageBox.Show("Precio - Formato Inconrrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtPrecioCompra.Select();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(TxtCantidad.Text) || Convert.ToInt32(TxtCantidad.Text) < 1)
+            {
+                MessageBox.Show("Debe ingresar la cantidad", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtCantidad.Select();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(TxtPrecioCompra.Text) || Convert.ToInt32(TxtPrecioCompra.Text) < 1)
+            {
+                MessageBox.Show("Debe ingresar un precio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TxtPrecioCompra.Select();
                 return;
             }
@@ -169,12 +187,11 @@ namespace CapaPresentacion
 
         private void limpiarProducto()
         {
-            TxtIdProducto.Text = "0";
             TxtCodProducto.Clear();
             TxtCodProducto.BackColor = Color.White;
             TxtDescProducto.Clear();
             TxtPrecioCompra.Clear();
-            TxtCantidad.Text = "1";
+            TxtCantidad.Clear();
         }
 
         private void limpiar()
@@ -369,6 +386,62 @@ namespace CapaPresentacion
         private void ComboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarFormasPago();
+        }
+
+        private void TxtCantidad_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider1 = new ErrorProvider();
+            if (string.IsNullOrEmpty(TxtCantidad.Text))
+            {
+                //e.Cancel = true;
+                errorProvider1.SetError(TxtCantidad, "Este campo es obligatorio");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(TxtCantidad, "");
+            }
+        }
+
+        private void TxtPrecioCompra_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider1 = new ErrorProvider();
+            if (string.IsNullOrEmpty(TxtPrecioCompra.Text))
+            {
+                //e.Cancel = true;
+                errorProvider1.SetError(TxtPrecioCompra, "Este campo es obligatorio");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(TxtPrecioCompra, "");
+            }
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = dtpFecha.Value;
+            DateTime fechaActual = DateTime.Now;
+
+            if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
+            {
+                MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Select();
+                return;
+            }
+        }
+
+        private void dtpFechaRequerida_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = dtpFechaRequerida.Value;
+            DateTime fechaActual = DateTime.Now;
+
+            if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
+            {
+                MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Select();
+                return;
+            }
         }
     }
 }

@@ -81,6 +81,11 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.LblFecha = new System.Windows.Forms.Label();
             this.LblCompras = new System.Windows.Forms.Label();
+            this.dtpFinVigencia = new System.Windows.Forms.DateTimePicker();
+            this.LblFinVigencia = new System.Windows.Forms.Label();
+            this.dtpInicioVigencia = new System.Windows.Forms.DateTimePicker();
+            this.LblInicioVigencia = new System.Windows.Forms.Label();
+            this.dtpFechaPedido = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoProducto.SuspendLayout();
             this.groupBoxInfoPedido.SuspendLayout();
@@ -99,7 +104,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(869, 424);
+            this.BtnGuardar.Location = new System.Drawing.Point(878, 470);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(125, 27);
@@ -112,7 +117,7 @@
             // 
             // TxtTotalCompra
             // 
-            this.TxtTotalCompra.Location = new System.Drawing.Point(869, 484);
+            this.TxtTotalCompra.Location = new System.Drawing.Point(878, 530);
             this.TxtTotalCompra.Name = "TxtTotalCompra";
             this.TxtTotalCompra.ReadOnly = true;
             this.TxtTotalCompra.Size = new System.Drawing.Size(125, 20);
@@ -124,7 +129,7 @@
             this.LblTotalCompra.AutoSize = true;
             this.LblTotalCompra.BackColor = System.Drawing.Color.White;
             this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalCompra.Location = new System.Drawing.Point(866, 464);
+            this.LblTotalCompra.Location = new System.Drawing.Point(875, 510);
             this.LblTotalCompra.Name = "LblTotalCompra";
             this.LblTotalCompra.Size = new System.Drawing.Size(89, 16);
             this.LblTotalCompra.TabIndex = 57;
@@ -136,7 +141,7 @@
             this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.BtnAgregar.IconColor = System.Drawing.Color.Black;
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAgregar.Location = new System.Drawing.Point(829, 196);
+            this.BtnAgregar.Location = new System.Drawing.Point(838, 242);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(82, 72);
             this.BtnAgregar.TabIndex = 56;
@@ -157,7 +162,7 @@
             this.Cantidad,
             this.Total,
             this.BtnEliminar});
-            this.dgvData.Location = new System.Drawing.Point(16, 274);
+            this.dgvData.Location = new System.Drawing.Point(25, 320);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.Size = new System.Drawing.Size(793, 236);
@@ -219,7 +224,7 @@
             this.groupBoxInfoProducto.Controls.Add(this.TxtCodProducto);
             this.groupBoxInfoProducto.Controls.Add(this.LblCodProducto);
             this.groupBoxInfoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxInfoProducto.Location = new System.Drawing.Point(16, 196);
+            this.groupBoxInfoProducto.Location = new System.Drawing.Point(25, 242);
             this.groupBoxInfoProducto.Name = "groupBoxInfoProducto";
             this.groupBoxInfoProducto.Size = new System.Drawing.Size(793, 72);
             this.groupBoxInfoProducto.TabIndex = 54;
@@ -228,18 +233,18 @@
             // 
             // TxtCantidad
             // 
-            this.TxtCantidad.Location = new System.Drawing.Point(662, 38);
+            this.TxtCantidad.Location = new System.Drawing.Point(549, 38);
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(95, 22);
             this.TxtCantidad.TabIndex = 71;
-            this.TxtCantidad.Text = "1";
             this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
+            this.TxtCantidad.Validating += new System.ComponentModel.CancelEventHandler(this.TxtCantidad_Validating);
             // 
             // LblCantidad
             // 
             this.LblCantidad.AutoSize = true;
             this.LblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCantidad.Location = new System.Drawing.Point(659, 22);
+            this.LblCantidad.Location = new System.Drawing.Point(546, 22);
             this.LblCantidad.Name = "LblCantidad";
             this.LblCantidad.Size = new System.Drawing.Size(52, 13);
             this.LblCantidad.TabIndex = 70;
@@ -247,17 +252,18 @@
             // 
             // TxtPrecioCompra
             // 
-            this.TxtPrecioCompra.Location = new System.Drawing.Point(546, 38);
+            this.TxtPrecioCompra.Location = new System.Drawing.Point(671, 38);
             this.TxtPrecioCompra.Name = "TxtPrecioCompra";
             this.TxtPrecioCompra.Size = new System.Drawing.Size(95, 22);
             this.TxtPrecioCompra.TabIndex = 69;
             this.TxtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioCompra_KeyPress);
+            this.TxtPrecioCompra.Validating += new System.ComponentModel.CancelEventHandler(this.TxtPrecioCompra_Validating);
             // 
             // LblPrecio
             // 
             this.LblPrecio.AutoSize = true;
             this.LblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPrecio.Location = new System.Drawing.Point(543, 22);
+            this.LblPrecio.Location = new System.Drawing.Point(668, 22);
             this.LblPrecio.Name = "LblPrecio";
             this.LblPrecio.Size = new System.Drawing.Size(40, 13);
             this.LblPrecio.TabIndex = 68;
@@ -332,6 +338,11 @@
             // groupBoxInfoPedido
             // 
             this.groupBoxInfoPedido.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfoPedido.Controls.Add(this.dtpFechaPedido);
+            this.groupBoxInfoPedido.Controls.Add(this.dtpFinVigencia);
+            this.groupBoxInfoPedido.Controls.Add(this.LblFinVigencia);
+            this.groupBoxInfoPedido.Controls.Add(this.dtpInicioVigencia);
+            this.groupBoxInfoPedido.Controls.Add(this.LblInicioVigencia);
             this.groupBoxInfoPedido.Controls.Add(this.BtnLimpiar);
             this.groupBoxInfoPedido.Controls.Add(this.TxtFormaPago);
             this.groupBoxInfoPedido.Controls.Add(this.TxtTipoDoc);
@@ -358,7 +369,7 @@
             this.groupBoxInfoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxInfoPedido.Location = new System.Drawing.Point(16, 21);
             this.groupBoxInfoPedido.Name = "groupBoxInfoPedido";
-            this.groupBoxInfoPedido.Size = new System.Drawing.Size(1084, 160);
+            this.groupBoxInfoPedido.Size = new System.Drawing.Size(1084, 215);
             this.groupBoxInfoPedido.TabIndex = 53;
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información de la Compra";
@@ -386,7 +397,7 @@
             // 
             // TxtFormaPago
             // 
-            this.TxtFormaPago.Location = new System.Drawing.Point(410, 43);
+            this.TxtFormaPago.Location = new System.Drawing.Point(403, 43);
             this.TxtFormaPago.Name = "TxtFormaPago";
             this.TxtFormaPago.ReadOnly = true;
             this.TxtFormaPago.Size = new System.Drawing.Size(173, 22);
@@ -394,7 +405,7 @@
             // 
             // TxtTipoDoc
             // 
-            this.TxtTipoDoc.Location = new System.Drawing.Point(218, 43);
+            this.TxtTipoDoc.Location = new System.Drawing.Point(211, 43);
             this.TxtTipoDoc.Name = "TxtTipoDoc";
             this.TxtTipoDoc.ReadOnly = true;
             this.TxtTipoDoc.Size = new System.Drawing.Size(173, 22);
@@ -402,16 +413,17 @@
             // 
             // TxtTimbrado
             // 
-            this.TxtTimbrado.Location = new System.Drawing.Point(470, 86);
+            this.TxtTimbrado.Location = new System.Drawing.Point(9, 133);
             this.TxtTimbrado.Name = "TxtTimbrado";
             this.TxtTimbrado.Size = new System.Drawing.Size(112, 22);
             this.TxtTimbrado.TabIndex = 98;
+            this.TxtTimbrado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTimbrado_KeyPress);
             // 
             // LblTimbrado
             // 
             this.LblTimbrado.AutoSize = true;
             this.LblTimbrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTimbrado.Location = new System.Drawing.Point(467, 70);
+            this.LblTimbrado.Location = new System.Drawing.Point(6, 117);
             this.LblTimbrado.Name = "LblTimbrado";
             this.LblTimbrado.Size = new System.Drawing.Size(54, 13);
             this.LblTimbrado.TabIndex = 97;
@@ -423,6 +435,7 @@
             this.TxtDoc.Name = "TxtDoc";
             this.TxtDoc.Size = new System.Drawing.Size(90, 22);
             this.TxtDoc.TabIndex = 96;
+            this.TxtDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDoc_KeyPress);
             // 
             // TxtPuntoEmision
             // 
@@ -430,6 +443,7 @@
             this.TxtPuntoEmision.Name = "TxtPuntoEmision";
             this.TxtPuntoEmision.Size = new System.Drawing.Size(35, 22);
             this.TxtPuntoEmision.TabIndex = 95;
+            this.TxtPuntoEmision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPuntoEmision_KeyPress);
             // 
             // LblCodEstablecimiento
             // 
@@ -447,6 +461,7 @@
             this.TxtCodEstablecimiento.Name = "TxtCodEstablecimiento";
             this.TxtCodEstablecimiento.Size = new System.Drawing.Size(35, 22);
             this.TxtCodEstablecimiento.TabIndex = 93;
+            this.TxtCodEstablecimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodEstablecimiento_KeyPress);
             // 
             // BtnBuscarPedido
             // 
@@ -473,7 +488,7 @@
             // 
             this.ComboFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboFormaPago.FormattingEnabled = true;
-            this.ComboFormaPago.Location = new System.Drawing.Point(409, 43);
+            this.ComboFormaPago.Location = new System.Drawing.Point(402, 43);
             this.ComboFormaPago.Name = "ComboFormaPago";
             this.ComboFormaPago.Size = new System.Drawing.Size(173, 24);
             this.ComboFormaPago.TabIndex = 90;
@@ -488,7 +503,7 @@
             this.groupBoxInfoProveedor.Controls.Add(this.TxtRUC);
             this.groupBoxInfoProveedor.Controls.Add(this.LblRUC);
             this.groupBoxInfoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxInfoProveedor.Location = new System.Drawing.Point(662, 33);
+            this.groupBoxInfoProveedor.Location = new System.Drawing.Point(652, 43);
             this.groupBoxInfoProveedor.Name = "groupBoxInfoProveedor";
             this.groupBoxInfoProveedor.Size = new System.Drawing.Size(411, 75);
             this.groupBoxInfoProveedor.TabIndex = 27;
@@ -565,7 +580,7 @@
             // 
             this.LblFormaPago.AutoSize = true;
             this.LblFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFormaPago.Location = new System.Drawing.Point(407, 27);
+            this.LblFormaPago.Location = new System.Drawing.Point(400, 27);
             this.LblFormaPago.Name = "LblFormaPago";
             this.LblFormaPago.Size = new System.Drawing.Size(67, 13);
             this.LblFormaPago.TabIndex = 89;
@@ -575,7 +590,7 @@
             // 
             this.ComboTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboTipoDoc.FormattingEnabled = true;
-            this.ComboTipoDoc.Location = new System.Drawing.Point(218, 43);
+            this.ComboTipoDoc.Location = new System.Drawing.Point(211, 43);
             this.ComboTipoDoc.Name = "ComboTipoDoc";
             this.ComboTipoDoc.Size = new System.Drawing.Size(173, 24);
             this.ComboTipoDoc.TabIndex = 88;
@@ -585,7 +600,7 @@
             // 
             this.LblTipoDoc.AutoSize = true;
             this.LblTipoDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTipoDoc.Location = new System.Drawing.Point(215, 27);
+            this.LblTipoDoc.Location = new System.Drawing.Point(208, 27);
             this.LblTipoDoc.Name = "LblTipoDoc";
             this.LblTipoDoc.Size = new System.Drawing.Size(89, 13);
             this.LblTipoDoc.TabIndex = 8;
@@ -593,7 +608,7 @@
             // 
             // TxtObs
             // 
-            this.TxtObs.Location = new System.Drawing.Point(8, 128);
+            this.TxtObs.Location = new System.Drawing.Point(8, 182);
             this.TxtObs.Name = "TxtObs";
             this.TxtObs.Size = new System.Drawing.Size(1055, 22);
             this.TxtObs.TabIndex = 7;
@@ -602,7 +617,7 @@
             // 
             this.LblObs.AutoSize = true;
             this.LblObs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblObs.Location = new System.Drawing.Point(5, 111);
+            this.LblObs.Location = new System.Drawing.Point(5, 165);
             this.LblObs.Name = "LblObs";
             this.LblObs.Size = new System.Drawing.Size(70, 13);
             this.LblObs.TabIndex = 6;
@@ -629,9 +644,10 @@
             // 
             // dtpFechaVenc
             // 
+            this.dtpFechaVenc.Enabled = false;
             this.dtpFechaVenc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaVenc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaVenc.Location = new System.Drawing.Point(335, 86);
+            this.dtpFechaVenc.Location = new System.Drawing.Point(324, 86);
             this.dtpFechaVenc.Name = "dtpFechaVenc";
             this.dtpFechaVenc.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaVenc.TabIndex = 3;
@@ -641,7 +657,7 @@
             // 
             this.LblFechaVencimiento.AutoSize = true;
             this.LblFechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaVencimiento.Location = new System.Drawing.Point(332, 70);
+            this.LblFechaVencimiento.Location = new System.Drawing.Point(321, 70);
             this.LblFechaVencimiento.Name = "LblFechaVencimiento";
             this.LblFechaVencimiento.Size = new System.Drawing.Size(101, 13);
             this.LblFechaVencimiento.TabIndex = 2;
@@ -651,7 +667,7 @@
             // 
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(199, 86);
+            this.dtpFecha.Location = new System.Drawing.Point(211, 86);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(97, 20);
             this.dtpFecha.TabIndex = 1;
@@ -662,7 +678,7 @@
             // 
             this.LblFecha.AutoSize = true;
             this.LblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFecha.Location = new System.Drawing.Point(196, 70);
+            this.LblFecha.Location = new System.Drawing.Point(208, 70);
             this.LblFecha.Name = "LblFecha";
             this.LblFecha.Size = new System.Drawing.Size(40, 13);
             this.LblFecha.TabIndex = 0;
@@ -676,15 +692,66 @@
             this.LblCompras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCompras.Name = "LblCompras";
             this.LblCompras.Padding = new System.Windows.Forms.Padding(2);
-            this.LblCompras.Size = new System.Drawing.Size(1111, 519);
+            this.LblCompras.Size = new System.Drawing.Size(1111, 563);
             this.LblCompras.TabIndex = 52;
             this.LblCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dtpFinVigencia
+            // 
+            this.dtpFinVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFinVigencia.Location = new System.Drawing.Point(237, 133);
+            this.dtpFinVigencia.Name = "dtpFinVigencia";
+            this.dtpFinVigencia.Size = new System.Drawing.Size(97, 20);
+            this.dtpFinVigencia.TabIndex = 105;
+            this.dtpFinVigencia.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            // 
+            // LblFinVigencia
+            // 
+            this.LblFinVigencia.AutoSize = true;
+            this.LblFinVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFinVigencia.Location = new System.Drawing.Point(234, 117);
+            this.LblFinVigencia.Name = "LblFinVigencia";
+            this.LblFinVigencia.Size = new System.Drawing.Size(83, 13);
+            this.LblFinVigencia.TabIndex = 104;
+            this.LblFinVigencia.Text = "Fin de Vigencia:";
+            // 
+            // dtpInicioVigencia
+            // 
+            this.dtpInicioVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicioVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicioVigencia.Location = new System.Drawing.Point(130, 133);
+            this.dtpInicioVigencia.Name = "dtpInicioVigencia";
+            this.dtpInicioVigencia.Size = new System.Drawing.Size(97, 20);
+            this.dtpInicioVigencia.TabIndex = 103;
+            this.dtpInicioVigencia.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            // 
+            // LblInicioVigencia
+            // 
+            this.LblInicioVigencia.AutoSize = true;
+            this.LblInicioVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblInicioVigencia.Location = new System.Drawing.Point(127, 117);
+            this.LblInicioVigencia.Name = "LblInicioVigencia";
+            this.LblInicioVigencia.Size = new System.Drawing.Size(94, 13);
+            this.LblInicioVigencia.TabIndex = 102;
+            this.LblInicioVigencia.Text = "Inicio de Vigencia:";
+            // 
+            // dtpFechaPedido
+            // 
+            this.dtpFechaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaPedido.Location = new System.Drawing.Point(494, 97);
+            this.dtpFechaPedido.Name = "dtpFechaPedido";
+            this.dtpFechaPedido.Size = new System.Drawing.Size(97, 20);
+            this.dtpFechaPedido.TabIndex = 106;
+            this.dtpFechaPedido.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            this.dtpFechaPedido.Visible = false;
             // 
             // FrmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 543);
+            this.ClientSize = new System.Drawing.Size(1133, 568);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtTotalCompra);
             this.Controls.Add(this.LblTotalCompra);
@@ -764,5 +831,10 @@
         private System.Windows.Forms.TextBox TxtFormaPago;
         private System.Windows.Forms.TextBox TxtTipoDoc;
         private FontAwesome.Sharp.IconButton BtnLimpiar;
+        private System.Windows.Forms.DateTimePicker dtpFinVigencia;
+        private System.Windows.Forms.Label LblFinVigencia;
+        private System.Windows.Forms.DateTimePicker dtpInicioVigencia;
+        private System.Windows.Forms.Label LblInicioVigencia;
+        private System.Windows.Forms.DateTimePicker dtpFechaPedido;
     }
 }

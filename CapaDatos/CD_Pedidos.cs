@@ -227,15 +227,18 @@ namespace CapaDatos
                     con.Open();
 
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT PrecioUltimaCompra FROM HistoricoUltimasCompras ");
-                    query.AppendLine("WHERE idProducto =  @idProducto ");
-                    query.AppendLine(" AND idProveedor = @idProveedor");
+                    //query.AppendLine("SELECT PrecioUltimaCompra FROM HistoricoUltimasCompras ");
+                    //query.AppendLine("WHERE idProducto =  @idProducto ");
+                    //query.AppendLine(" AND idProveedor = @idProveedor");
+
+                    query.AppendLine("SELECT Costo FROM Productos ");
+                    query.AppendLine("WHERE id =  @idProducto ");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), con);
                     cmd.CommandType = CommandType.Text;
 
                     cmd.Parameters.AddWithValue("@idProducto", idProducto);
-                    cmd.Parameters.AddWithValue("@idProveedor", idProveedor);
+                    //cmd.Parameters.AddWithValue("@idProveedor", idProveedor);
 
 
                     UltimoPrecio = Convert.ToInt32(cmd.ExecuteScalar());

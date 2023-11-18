@@ -62,7 +62,7 @@ namespace CapaPresentacion
                         else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                         {
                             LblNoConfirmado.Visible = true;
-                            PbNoConfirmado.Visible = true;
+                            //PbNoConfirmado.Visible = true;
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = false;
@@ -134,7 +134,7 @@ namespace CapaPresentacion
                     else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                     {
                         LblNoConfirmado.Visible = true;
-                        PbNoConfirmado.Visible = true;
+                        //PbNoConfirmado.Visible = true;
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = false;

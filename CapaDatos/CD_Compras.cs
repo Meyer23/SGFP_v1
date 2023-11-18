@@ -32,6 +32,8 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@Fecha", obj.Fecha);
                     cmd.Parameters.AddWithValue("@FechaVencimiento", obj.FechaVencimiento);
                     cmd.Parameters.AddWithValue("@Timbrado", obj.Timbrado);
+                    cmd.Parameters.AddWithValue("@InicioVigencia", obj.InicioVigencia);
+                    cmd.Parameters.AddWithValue("@FinVigencia", obj.FinVigencia);
                     cmd.Parameters.AddWithValue("@CodEstablecimiento", obj.CodEstablecimiento);
                     cmd.Parameters.AddWithValue("@PuntoEmision", obj.PuntoEmision);
                     cmd.Parameters.AddWithValue("@Doc", obj.Doc);
@@ -156,7 +158,7 @@ namespace CapaDatos
                 try
                 {
                     string query = "SELECT C.id, C.NumeroFactura, ISNULL(P.NumeroPedido,0) AS NumeroPedido, T.Descripcion AS TipoDoc, F.Descripcion AS FormaPago, E.Nombres, " +
-                        "C.CodigoEstablecimiento, C.PuntoEmision, C.Doc, C.Fecha, C.FechaVencimiento, C.Timbrado, " +
+                        "C.CodigoEstablecimiento, C.PuntoEmision, C.Doc, C.Fecha, C.FechaVencimiento, C.Timbrado, C.InicioVigencia, C.FinVigencia, " +
                         "PR.Documento, PR.RazonSocial, C.Observacion, C.TotalFactura, C.Confirmado, C.Anulado " +
                         "FROM Compras C " +
                         "LEFT JOIN Pedidos P ON C.idPedido = P.id " +
@@ -189,6 +191,8 @@ namespace CapaDatos
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
                                 FechaVencimiento = Convert.ToDateTime(reader["FechaVencimiento"]),
                                 Timbrado = Convert.ToInt32(reader["Timbrado"].ToString()),
+                                InicioVigencia = Convert.ToDateTime(reader["InicioVigencia"]),
+                                FinVigencia = Convert.ToDateTime(reader["FinVigencia"]),
                                 Documento = reader["Documento"].ToString(),
                                 RazonSocial = reader["RazonSocial"].ToString(),                                                             
                                 Observacion = reader["Observacion"].ToString(),

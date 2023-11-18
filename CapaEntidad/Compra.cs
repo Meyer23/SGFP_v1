@@ -34,6 +34,10 @@ namespace CapaEntidad
 
         public int Timbrado { get; set; }
 
+        public DateTime InicioVigencia { get; set; }
+
+        public DateTime FinVigencia { get; set; }
+
         public int CodEstablecimiento { get; set; }
 
         public int PuntoEmision { get; set; }

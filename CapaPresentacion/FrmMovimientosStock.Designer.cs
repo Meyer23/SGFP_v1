@@ -157,6 +157,7 @@
             this.dtpFecha.Size = new System.Drawing.Size(97, 20);
             this.dtpFecha.TabIndex = 1;
             this.dtpFecha.Value = new System.DateTime(2023, 11, 2, 0, 0, 0, 0);
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // LblFecha
             // 
@@ -208,8 +209,8 @@
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(95, 22);
             this.TxtCantidad.TabIndex = 71;
-            this.TxtCantidad.Text = "1";
             this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
+            this.TxtCantidad.Validating += new System.ComponentModel.CancelEventHandler(this.TxtCantidad_Validating);
             // 
             // LblCantidad
             // 

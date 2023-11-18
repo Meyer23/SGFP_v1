@@ -487,7 +487,7 @@
             this.LblConfirmado.BackColor = System.Drawing.Color.White;
             this.LblConfirmado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblConfirmado.ForeColor = System.Drawing.Color.Green;
-            this.LblConfirmado.Location = new System.Drawing.Point(732, 43);
+            this.LblConfirmado.Location = new System.Drawing.Point(727, 44);
             this.LblConfirmado.Name = "LblConfirmado";
             this.LblConfirmado.Size = new System.Drawing.Size(107, 24);
             this.LblConfirmado.TabIndex = 96;
@@ -498,8 +498,8 @@
             this.LblNoConfirmado.AutoSize = true;
             this.LblNoConfirmado.BackColor = System.Drawing.Color.White;
             this.LblNoConfirmado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNoConfirmado.ForeColor = System.Drawing.Color.Red;
-            this.LblNoConfirmado.Location = new System.Drawing.Point(697, 42);
+            this.LblNoConfirmado.ForeColor = System.Drawing.Color.DarkOrange;
+            this.LblNoConfirmado.Location = new System.Drawing.Point(697, 44);
             this.LblNoConfirmado.Name = "LblNoConfirmado";
             this.LblNoConfirmado.Size = new System.Drawing.Size(137, 24);
             this.LblNoConfirmado.TabIndex = 97;
