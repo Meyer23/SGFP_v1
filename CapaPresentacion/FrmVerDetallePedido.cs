@@ -31,7 +31,7 @@ namespace CapaPresentacion
                     if (objPedido.Id != 0)
                     {
                         TxtNumeroPedido.Text = objPedido.NumeroPedido.ToString();
-
+                        TxtIdPedido.Text = objPedido.Id.ToString();
                         TxtNroPedido.Text = objPedido.NumeroPedido.ToString();
                         dtpFecha.Value = objPedido.Fecha;
                         dtpFechaRequerida.Value = objPedido.FechaRequerida;
@@ -43,22 +43,37 @@ namespace CapaPresentacion
                         TxtObs.Text = objPedido.Observacion;
                         TxtTotalPedido.Text = objPedido.Total.ToString();
                         checkBoxConfirmado.Checked = objPedido.Confirmado;
+                        checkBoxAnulado.Checked = objPedido.Anulado;
 
-                        if (checkBoxConfirmado.Checked)
+                        if (checkBoxConfirmado.Checked == true && checkBoxAnulado.Checked == false)
                         {
                             LblConfirmado.Visible = true;
                             PbConfirmado.Visible = true;
                             LblNoConfirmado.Visible = false;
-                            //PbNoConfirmado.Visible = false;
+                            PbNoConfirmado.Visible = false;
+                            LblAnulado.Visible = false;
                             BtnConfirmar.Visible = false;
+                            BtnAnular.Visible = false;
                         }
-                        else
+                        else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                         {
                             LblNoConfirmado.Visible = true;
                             //PbNoConfirmado.Visible = true;
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
+                            LblAnulado.Visible = false;
                             BtnConfirmar.Visible = true;
+                            BtnAnular.Visible = true;
+                        }
+                        else
+                        {
+                            LblNoConfirmado.Visible = false;
+                            PbNoConfirmado.Visible = true;
+                            LblConfirmado.Visible = false;
+                            PbConfirmado.Visible = false;
+                            LblAnulado.Visible = true;
+                            BtnConfirmar.Visible = false;
+                            BtnAnular.Visible = false;
                         }
 
                         dgvData.Rows.Clear();
@@ -118,24 +133,38 @@ namespace CapaPresentacion
                    TxtTotalPedido.Text = objPedido.Total.ToString();
                    checkBoxConfirmado.Checked = objPedido.Confirmado;
 
-                   if(checkBoxConfirmado.Checked)
+                   if(checkBoxConfirmado.Checked == true && checkBoxAnulado.Checked == false)
                    {
                         LblConfirmado.Visible = true;
                         PbConfirmado.Visible = true;
                         LblNoConfirmado.Visible = false;
-                        //PbNoConfirmado.Visible = false;
+                        PbNoConfirmado.Visible = false;
+                        LblAnulado.Visible = false;
                         BtnConfirmar.Visible = false;
-                    }
-                   else
+                        BtnAnular.Visible = false;
+                   }                
+                   else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                    {
                         LblNoConfirmado.Visible = true;
                         //PbNoConfirmado.Visible = true;
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
+                        LblAnulado.Visible = false;
                         BtnConfirmar.Visible = true;
+                        BtnAnular.Visible = true;
+                   }
+                   else
+                   {
+                        LblNoConfirmado.Visible = false;
+                        PbNoConfirmado.Visible = true;
+                        LblConfirmado.Visible = false;
+                        PbConfirmado.Visible = false;
+                        LblAnulado.Visible = true;
+                        BtnConfirmar.Visible = false;
+                        BtnAnular.Visible = false;
                    }
 
-                   dgvData.Rows.Clear();
+                    dgvData.Rows.Clear();
 
                    foreach (DetalleProductos pd in objPedido.Detalle)
                    {
@@ -156,6 +185,7 @@ namespace CapaPresentacion
             PbConfirmado.Visible = false;
             LblNoConfirmado.Visible = false;
             PbNoConfirmado.Visible = false;
+            LblAnulado.Visible = false;
             dtpFecha.Value = DateTime.Now;
             dtpFechaRequerida.Value = DateTime.Now;
             BtnConfirmar.Visible = false;
@@ -191,6 +221,29 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
+                }
+            }
+        }
+
+        private void BtnAnular_Click(object sender, EventArgs e)
+        {
+            using (var popup = new FrmAnularPedido(Convert.ToInt32(TxtIdPedido.Text)))
+            {
+                var result = popup.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    LblConfirmado.Visible = false;
+                    PbConfirmado.Visible = false;
+                    LblNoConfirmado.Visible = false;
+                    LblAnulado.Visible = true;
+                    PbNoConfirmado.Visible = true;
+                    BtnAnular.Visible = false;
+                    BtnConfirmar.Visible = false;
+                }
+                else
+                {
+                    TxtBusqueda.Select();
                 }
             }
         }

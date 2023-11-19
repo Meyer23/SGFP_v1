@@ -33,8 +33,11 @@ namespace CapaPresentacion
             dtpFechaVenc.Value = DateTime.Now;
             dtpInicioVigencia.Value = DateTime.Now;
             dtpFinVigencia.Value = DateTime.Now;
+            dtpFechaRec.Value = DateTime.Now;
             BtnConfirmar.Visible = false;
             BtnAnular.Visible = false;
+            LblFechaRec.Visible = false;
+            dtpFechaRec.Visible = false;
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -58,7 +61,7 @@ namespace CapaPresentacion
                         TxtPuntoEmision.Text = objCompra.PuntoEmision.ToString();
                         TxtDoc.Text = objCompra.Doc;
                         dtpFecha.Value = objCompra.Fecha;
-                        dtpFechaVenc.Value = objCompra.FechaVencimiento;
+                        dtpFechaVenc.Value = objCompra.FechaVencimiento;                       
                         TxtTimbrado.Text = objCompra.Timbrado.ToString();  
                         dtpInicioVigencia.Value = objCompra.InicioVigencia;
                         dtpFinVigencia.Value = objCompra.FinVigencia;
@@ -78,6 +81,9 @@ namespace CapaPresentacion
                             LblAnulado.Visible = false;
                             BtnConfirmar.Visible = false;
                             BtnAnular.Visible = false;
+                            LblFechaRec.Visible = true;
+                            dtpFechaRec.Visible = true;
+                            dtpFechaRec.Value = objCompra.FechaRecepcion;
                         }
                         else if(checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                         {
@@ -88,6 +94,8 @@ namespace CapaPresentacion
                             LblAnulado.Visible = false;
                             BtnConfirmar.Visible = true;
                             BtnAnular.Visible = true;
+                            LblFechaRec.Visible = false;
+                            dtpFechaRec.Visible = false;
                         }
                         else
                         {
@@ -98,6 +106,8 @@ namespace CapaPresentacion
                             LblAnulado.Visible = true;
                             BtnConfirmar.Visible = false;
                             BtnAnular.Visible = false;
+                            LblFechaRec.Visible = false;
+                            dtpFechaRec.Visible = false;
                         }
 
                         dgvData.Rows.Clear();
@@ -125,6 +135,7 @@ namespace CapaPresentacion
             TxtTimbrado.Clear();
             dtpFecha.Value = DateTime.Now;
             dtpFechaVenc.Value = DateTime.Now;
+            dtpFechaRec.Value = DateTime.Now;
             TxtUsuario.Clear();
             TxtTipoDoc.Clear();
             TxtFormaPago.Clear();
@@ -156,7 +167,7 @@ namespace CapaPresentacion
                     TxtPuntoEmision.Text = objCompra.PuntoEmision.ToString();
                     TxtDoc.Text = objCompra.Doc;
                     dtpFecha.Value = objCompra.Fecha;
-                    dtpFechaVenc.Value = objCompra.FechaVencimiento;
+                    dtpFechaVenc.Value = objCompra.FechaVencimiento;                    
                     TxtTimbrado.Text = objCompra.Timbrado.ToString();
                     dtpInicioVigencia.Value = objCompra.InicioVigencia;
                     dtpFinVigencia.Value = objCompra.FinVigencia;
@@ -175,6 +186,9 @@ namespace CapaPresentacion
                         LblAnulado.Visible = false;
                         BtnConfirmar.Visible = false;
                         BtnAnular.Visible = false;
+                        LblFechaRec.Visible = true;
+                        dtpFechaRec.Visible = true;
+                        dtpFechaRec.Value = objCompra.FechaRecepcion;
                     }
                     else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                     {
@@ -185,6 +199,8 @@ namespace CapaPresentacion
                         LblAnulado.Visible = false;
                         BtnConfirmar.Visible = true;
                         BtnAnular.Visible = true;
+                        LblFechaRec.Visible = false;
+                        dtpFechaRec.Visible = false;
                     }
                     else
                     {
@@ -195,6 +211,8 @@ namespace CapaPresentacion
                         LblAnulado.Visible = true;
                         BtnConfirmar.Visible = false;
                         BtnAnular.Visible = false;
+                        LblFechaRec.Visible = false;
+                        dtpFechaRec.Visible = false;
                     }
 
                     dgvData.Rows.Clear();
@@ -214,35 +232,21 @@ namespace CapaPresentacion
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            if (TxtIdCompra.Text == "0")
+            using (var popup = new FrmConfirmarCompra(Convert.ToInt32(TxtIdCompra.Text)))
             {
-                MessageBox.Show("Debe seleccionar una compra", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TxtBusqueda.Focus();
-                TxtBusqueda.SelectAll();
-                return;
-            }
-            else
-            {
-                string Mensaje = string.Empty;
+                var result = popup.ShowDialog();
 
-                bool Respuesta = new CN_Compras().ConfirmarCompra(Convert.ToInt32(TxtIdCompra.Text), dtpFechaRec.Value, out Mensaje);
-
-                if (Respuesta)
+                if (result == DialogResult.OK)
                 {
-                    var result = MessageBox.Show("Compra confirmada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (result == DialogResult.OK)
-                    {
-                        LblConfirmado.Visible = true;
-                        PbConfirmado.Visible = true;
-                        LblNoConfirmado.Visible = false;
-                        BtnConfirmar.Visible = false;
-                        BtnAnular.Visible = false;
-                    }
+                    LblConfirmado.Visible = true;
+                    PbConfirmado.Visible = true;
+                    LblNoConfirmado.Visible = false;
+                    BtnConfirmar.Visible = false;
+                    BtnAnular.Visible = false;
                 }
                 else
                 {
-                    MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    TxtBusqueda.Select();
                 }
             }
         }
@@ -281,6 +285,7 @@ namespace CapaPresentacion
                     LblAnulado.Visible = true;
                     PbNoConfirmado.Visible = true;
                     BtnAnular.Visible = false;
+                    BtnConfirmar.Visible = false;
                 }
                 else
                 {

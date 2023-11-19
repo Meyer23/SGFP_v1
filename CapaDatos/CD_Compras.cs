@@ -160,7 +160,7 @@ namespace CapaDatos
                 try
                 {
                     string query = "SELECT C.id, C.NumeroFactura, ISNULL(P.NumeroPedido,0) AS NumeroPedido, T.Descripcion AS TipoDoc, F.Descripcion AS FormaPago, E.Nombres, " +
-                        "C.CodigoEstablecimiento, C.PuntoEmision, C.Doc, C.Fecha, C.FechaVencimiento, C.Timbrado, C.InicioVigencia, C.FinVigencia, " +
+                        "C.CodigoEstablecimiento, C.PuntoEmision, C.Doc, C.Fecha, C.FechaVencimiento, C.FechaRecepcion, C.Timbrado, C.InicioVigencia, C.FinVigencia, " +
                         "PR.Documento, PR.RazonSocial, C.Observacion, C.TotalFactura, C.Confirmado, C.Anulado " +
                         "FROM Compras C " +
                         "LEFT JOIN Pedidos P ON C.idPedido = P.id " +
@@ -192,6 +192,7 @@ namespace CapaDatos
                                 Doc = reader["Doc"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
                                 FechaVencimiento = Convert.ToDateTime(reader["FechaVencimiento"]),
+                                FechaRecepcion = Convert.ToDateTime(reader["FechaRecepcion"]),
                                 Timbrado = Convert.ToInt32(reader["Timbrado"].ToString()),
                                 InicioVigencia = Convert.ToDateTime(reader["InicioVigencia"]),
                                 FinVigencia = Convert.ToDateTime(reader["FinVigencia"]),

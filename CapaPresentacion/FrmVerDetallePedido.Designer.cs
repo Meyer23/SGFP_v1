@@ -55,6 +55,12 @@
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtTotalPedido = new System.Windows.Forms.TextBox();
             this.LblTotalCompra = new System.Windows.Forms.Label();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
@@ -64,12 +70,10 @@
             this.PbNoConfirmado = new System.Windows.Forms.PictureBox();
             this.checkBoxConfirmado = new System.Windows.Forms.CheckBox();
             this.BtnConfirmar = new FontAwesome.Sharp.IconButton();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnAnular = new FontAwesome.Sharp.IconButton();
+            this.TxtIdPedido = new System.Windows.Forms.TextBox();
+            this.LblAnulado = new System.Windows.Forms.Label();
+            this.checkBoxAnulado = new System.Windows.Forms.CheckBox();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
@@ -110,6 +114,7 @@
             // groupBoxInfoPedido
             // 
             this.groupBoxInfoPedido.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfoPedido.Controls.Add(this.TxtIdPedido);
             this.groupBoxInfoPedido.Controls.Add(this.TxtFormaPago);
             this.groupBoxInfoPedido.Controls.Add(this.TxtTipoDoc);
             this.groupBoxInfoPedido.Controls.Add(this.TxtUsuario);
@@ -385,6 +390,45 @@
             this.dgvData.Size = new System.Drawing.Size(816, 236);
             this.dgvData.TabIndex = 91;
             // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Visible = false;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción Producto";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 300;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 150;
+            // 
             // TxtTotalPedido
             // 
             this.TxtTotalPedido.Location = new System.Drawing.Point(841, 471);
@@ -417,7 +461,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(840, 366);
+            this.BtnGuardar.Location = new System.Drawing.Point(837, 407);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(142, 27);
@@ -495,7 +539,7 @@
             this.BtnConfirmar.IconColor = System.Drawing.Color.White;
             this.BtnConfirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnConfirmar.IconSize = 16;
-            this.BtnConfirmar.Location = new System.Drawing.Point(840, 407);
+            this.BtnConfirmar.Location = new System.Drawing.Point(837, 305);
             this.BtnConfirmar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(142, 27);
@@ -506,50 +550,67 @@
             this.BtnConfirmar.UseVisualStyleBackColor = false;
             this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
-            // idProducto
+            // BtnAnular
             // 
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Visible = false;
+            this.BtnAnular.BackColor = System.Drawing.Color.Red;
+            this.BtnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAnular.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAnular.ForeColor = System.Drawing.Color.White;
+            this.BtnAnular.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.BtnAnular.IconColor = System.Drawing.Color.White;
+            this.BtnAnular.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnAnular.IconSize = 16;
+            this.BtnAnular.Location = new System.Drawing.Point(837, 355);
+            this.BtnAnular.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnAnular.Name = "BtnAnular";
+            this.BtnAnular.Size = new System.Drawing.Size(142, 27);
+            this.BtnAnular.TabIndex = 128;
+            this.BtnAnular.Text = "Anular";
+            this.BtnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnAnular.UseVisualStyleBackColor = false;
+            this.BtnAnular.Click += new System.EventHandler(this.BtnAnular_Click);
             // 
-            // Codigo
+            // TxtIdPedido
             // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
+            this.TxtIdPedido.Location = new System.Drawing.Point(183, 12);
+            this.TxtIdPedido.Name = "TxtIdPedido";
+            this.TxtIdPedido.Size = new System.Drawing.Size(17, 22);
+            this.TxtIdPedido.TabIndex = 95;
+            this.TxtIdPedido.Visible = false;
             // 
-            // Descripcion
+            // LblAnulado
             // 
-            this.Descripcion.HeaderText = "Descripción Producto";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 300;
+            this.LblAnulado.AutoSize = true;
+            this.LblAnulado.BackColor = System.Drawing.Color.White;
+            this.LblAnulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAnulado.ForeColor = System.Drawing.Color.Red;
+            this.LblAnulado.Location = new System.Drawing.Point(751, 44);
+            this.LblAnulado.Name = "LblAnulado";
+            this.LblAnulado.Size = new System.Drawing.Size(81, 24);
+            this.LblAnulado.TabIndex = 129;
+            this.LblAnulado.Text = "Anulado";
             // 
-            // Precio
+            // checkBoxAnulado
             // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 150;
+            this.checkBoxAnulado.AutoSize = true;
+            this.checkBoxAnulado.Location = new System.Drawing.Point(633, 44);
+            this.checkBoxAnulado.Name = "checkBoxAnulado";
+            this.checkBoxAnulado.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxAnulado.TabIndex = 130;
+            this.checkBoxAnulado.UseVisualStyleBackColor = true;
+            this.checkBoxAnulado.Visible = false;
             // 
             // FrmVerDetallePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 545);
+            this.Controls.Add(this.checkBoxAnulado);
+            this.Controls.Add(this.LblAnulado);
+            this.Controls.Add(this.BtnAnular);
             this.Controls.Add(this.BtnConfirmar);
             this.Controls.Add(this.checkBoxConfirmado);
             this.Controls.Add(this.PbNoConfirmado);
@@ -625,5 +686,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private FontAwesome.Sharp.IconButton BtnAnular;
+        private System.Windows.Forms.TextBox TxtIdPedido;
+        private System.Windows.Forms.Label LblAnulado;
+        private System.Windows.Forms.CheckBox checkBoxAnulado;
     }
 }

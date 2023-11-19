@@ -26,11 +26,11 @@ namespace CapaPresentacion
         {
             string Mensaje = string.Empty;
 
-            bool Respuesta = new CN_Compras().AnularCompra(_IdCompra, ComboMotivos.Text.ToString(), out Mensaje);
+            bool Respuesta = new CN_Pedidos().AnularPedido(_IdPedido, ComboMotivos.Text.ToString(), out Mensaje);
 
             if (Respuesta)
             {
-                var result = MessageBox.Show("Compra anulada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var result = MessageBox.Show("Pedido anulado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
                     ComboMotivos.SelectedIndex = 0;
