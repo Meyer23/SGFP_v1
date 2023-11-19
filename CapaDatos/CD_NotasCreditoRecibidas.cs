@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaDatos
 {
-    public class CD_Compras
+    public class CD_NotasCreditoRecibidas
     {
-        public bool Registrar(Compra obj, DataTable DetalleCompra, out string Mensaje)
+        public bool Registrar(NotaCreditoRecibida obj, DataTable DetalleNota, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = string.Empty;
@@ -22,15 +22,13 @@ namespace CapaDatos
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("sp_compra_insertar", con);
+                    SqlCommand cmd = new SqlCommand("sp_notaCreditoRecibida_insertar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     cmd.Parameters.AddWithValue("@idProveedor", obj.IdProveedor);
-                    cmd.Parameters.AddWithValue("@NumeroPedido", obj.NumeroPedido);
+                    cmd.Parameters.AddWithValue("@idCompra", obj.idCompra);
                     cmd.Parameters.AddWithValue("@TipoDocumento", obj.TipoDocumento);
-                    cmd.Parameters.AddWithValue("@FormaPago", obj.FormaPago);
                     cmd.Parameters.AddWithValue("@Fecha", obj.Fecha);
-                    cmd.Parameters.AddWithValue("@FechaVencimiento", obj.FechaVencimiento);
                     cmd.Parameters.AddWithValue("@Timbrado", obj.Timbrado);
                     cmd.Parameters.AddWithValue("@InicioVigencia", obj.InicioVigencia);
                     cmd.Parameters.AddWithValue("@FinVigencia", obj.FinVigencia);
@@ -38,11 +36,11 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@PuntoEmision", obj.PuntoEmision);
                     cmd.Parameters.AddWithValue("@Doc", obj.Doc);
                     cmd.Parameters.AddWithValue("@Observacion", obj.Observacion);
-                    cmd.Parameters.AddWithValue("@TotalCompra", obj.Total);
+                    cmd.Parameters.AddWithValue("@TotalNota", obj.Total);
                     cmd.Parameters.AddWithValue("@idUsuario", obj.IdUsuario);
                     cmd.Parameters.AddWithValue("@Confirmado", obj.Confirmado);
                     cmd.Parameters.AddWithValue("@Anulado", obj.Anulado);
-                    cmd.Parameters.AddWithValue("@DetalleCompra", DetalleCompra);
+                    cmd.Parameters.AddWithValue("@DetalleNota", DetalleNota);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -60,7 +58,7 @@ namespace CapaDatos
             return Respuesta;
         }
 
-        public bool ConfirmarCompra(int IdCompra, DateTime FechaRec, out string Mensaje)
+        public bool ConfirmarNota(int IdNCRecibida, int IdCompra, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = string.Empty;
@@ -69,11 +67,11 @@ namespace CapaDatos
             {
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("sp_compra_confirmar", con);
+                    SqlCommand cmd = new SqlCommand("sp_notaCreditoRecibida_confirmar", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@IdCompra", IdCompra);
-                    cmd.Parameters.AddWithValue("@FechaRec", FechaRec);
+                    cmd.Parameters.AddWithValue("@idNCRecibida", IdNCRecibida);
+                    cmd.Parameters.AddWithValue("@idCompra", IdCompra);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -91,9 +89,9 @@ namespace CapaDatos
             return Respuesta;
         }
 
-        public List<Compra> Listar(int bandera)
+        public List<NotaCreditoRecibida> Listar(int bandera)
         {
-            List<Compra> compras = new List<Compra>();
+            List<NotaCreditoRecibida> notasCredito = new List<NotaCreditoRecibida>();
             string query;
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
@@ -102,20 +100,20 @@ namespace CapaDatos
                 {
                     if (bandera == 0)
                     {
-                        query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura, C.Confirmado, C.Anulado FROM Compras C" +
-                        " INNER JOIN Proveedores P ON C.idProveedor = P.id";
+                        query = "SELECT N.id, N.NumeroNota, N.Fecha, P.Documento, P.RazonSocial, N.TotalNota, N.Confirmado, N.Anulado FROM NotasCreditoRecibidas N" +
+                        " INNER JOIN Proveedores P ON N.idProveedor = P.id";
                     }
                     else
                     {
                         if (bandera == 1)
                         {
-                            query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura, C.Confirmado, C.Anulado FROM Compras C" +
-                        " INNER JOIN Proveedores P ON C.idProveedor = P.id WHERE Confirmado = 0 AND Anulado = 0";
+                            query = "SELECT N.id, N.NumeroNota, N.Fecha, P.Documento, P.RazonSocial, N.TotalNota, N.Confirmado, N.Anulado FROM NotasCreditoRecibidas N" +
+                        " INNER JOIN Proveedores P ON N.idProveedor = P.id WHERE Confirmado = 0 AND Anulado = 0";
                         }
                         else
                         {
-                            query = "SELECT C.id, C.NumeroFactura, C.Fecha, P.Documento, P.RazonSocial, C.TotalFactura, C.Confirmado, C.Anulado FROM Compras C" +
-                        " INNER JOIN Proveedores P ON C.idProveedor = P.id WHERE Confirmado = 1 AND Anulado = 0";
+                            query = "SELECT N.id, N.NumeroNota, N.Fecha, P.Documento, P.RazonSocial, N.TotalNota, N.Confirmado, N.Anulado FROM NotasCreditoRecibidas N" +
+                        " INNER JOIN Proveedores P ON N.idProveedor = P.id WHERE Confirmado = 1 AND Anulado = 0";
                         }
                     }
 
@@ -128,14 +126,14 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            compras.Add(new Compra
+                            notasCredito.Add(new NotaCreditoRecibida
                             {
                                 Id = Convert.ToInt32(reader["id"]),
-                                NumeroFactura = reader["NumeroFactura"].ToString(),
+                                NumeroNota = reader["NumeroNota"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
                                 Documento = reader["Documento"].ToString(),
                                 RazonSocial = reader["RazonSocial"].ToString(),
-                                Total = Convert.ToDecimal(reader["TotalFactura"]),
+                                Total = Convert.ToDecimal(reader["TotalNota"]),
                                 Confirmado = Convert.ToBoolean(reader["Confirmado"]),
                                 Anulado = Convert.ToBoolean(reader["Anulado"]),
                             });
@@ -144,32 +142,31 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    compras = new List<Compra>();
+                    notasCredito = new List<NotaCreditoRecibida>();
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            return compras;
+            return notasCredito;
         }
 
-        public Compra ObtenerCompra(int IdCompra)
+        public NotaCreditoRecibida ObtenerNota(int IdNCRecibida)
         {
-            Compra objCompra = new Compra();
+            NotaCreditoRecibida objNCRecibida = new NotaCreditoRecibida();
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "SELECT C.id, C.NumeroFactura, ISNULL(P.NumeroPedido,0) AS NumeroPedido, T.Descripcion AS TipoDoc, F.Descripcion AS FormaPago, E.Nombres, PR.id AS idProveedor, " +
-                        "C.CodigoEstablecimiento, C.PuntoEmision, C.Doc, C.Fecha, C.FechaVencimiento, C.FechaRecepcion, C.Timbrado, C.InicioVigencia, C.FinVigencia, " +
-                        "PR.Documento, PR.RazonSocial, C.Observacion, C.TotalFactura, C.Confirmado, C.Anulado " +
-                        "FROM Compras C " +
-                        "LEFT JOIN Pedidos P ON C.idPedido = P.id " +
-                        "INNER JOIN TiposDocumentosCompra T ON C.idTipoDocumento = T.id " +
-                        "INNER JOIN FormasPagos F ON C.idFormaPago = F.id " +
-                        "INNER JOIN Usuarios U ON C.idUsuario = U.id " +
+                    string query = "SELECT N.id, N.NumeroNota, ISNULL(P.NumeroFactura,'') AS NumeroFactura, N.idCompra, T.Descripcion AS TipoDoc, E.Nombres, " +
+                        "N.CodigoEstablecimiento, N.PuntoEmision, N.Doc, N.Fecha, N.Timbrado, N.InicioVigencia, N.FinVigencia, " +
+                        "PR.Documento, PR.RazonSocial, N.Observacion, N.TotalNota, N.Confirmado, N.Anulado " +
+                        "FROM NotasCreditoRecibidas N " +
+                        "LEFT JOIN Compras P ON N.idCompra = P.id " +
+                        "INNER JOIN TiposDocumentosCompra T ON N.idTipoDocumento = T.id " +
+                        "INNER JOIN Usuarios U ON N.idUsuario = U.id " +
                         "INNER JOIN Empleados E ON U.idEmpleado = E.id " +
-                        "INNER JOIN Proveedores PR ON C.idProveedor = PR.id " +
-                        "WHERE C.id = " + IdCompra;
+                        "INNER JOIN Proveedores PR ON N.idProveedor = PR.id " +
+                        "WHERE N.id = " + IdNCRecibida;
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -179,28 +176,25 @@ namespace CapaDatos
                     {
                         while (reader.Read())
                         {
-                            objCompra = new Compra()
+                            objNCRecibida = new NotaCreditoRecibida()
                             {
                                 Id = Convert.ToInt32(reader["id"]),
+                                NumeroNota = reader["NumeroNota"].ToString(),
                                 NumeroFactura = reader["NumeroFactura"].ToString(),
-                                NumeroPedido = Convert.ToInt32(reader["NumeroPedido"]),
+                                idCompra = Convert.ToInt32(reader["idCompra"]),
                                 TipoDocumento = reader["TipoDoc"].ToString(),
-                                FormaPago = reader["FormaPago"].ToString(),
                                 NombreUsuario = reader["Nombres"].ToString(),
                                 CodEstablecimiento = Convert.ToInt32(reader["CodigoEstablecimiento"]),
                                 PuntoEmision = Convert.ToInt32(reader["PuntoEmision"]),
                                 Doc = reader["Doc"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
-                                FechaVencimiento = Convert.ToDateTime(reader["FechaVencimiento"]),
-                                FechaRecepcion = Convert.ToDateTime(reader["FechaRecepcion"]),
                                 Timbrado = Convert.ToInt32(reader["Timbrado"].ToString()),
                                 InicioVigencia = Convert.ToDateTime(reader["InicioVigencia"]),
                                 FinVigencia = Convert.ToDateTime(reader["FinVigencia"]),
-                                IdProveedor = Convert.ToInt32(reader["idProveedor"]),
                                 Documento = reader["Documento"].ToString(),
-                                RazonSocial = reader["RazonSocial"].ToString(),                                                             
+                                RazonSocial = reader["RazonSocial"].ToString(),
                                 Observacion = reader["Observacion"].ToString(),
-                                Total = Convert.ToDecimal(reader["TotalFactura"]),
+                                Total = Convert.ToDecimal(reader["TotalNota"]),
                                 Confirmado = Convert.ToBoolean(reader["Confirmado"]),
                                 Anulado = Convert.ToBoolean(reader["Anulado"])
                             };
@@ -213,10 +207,10 @@ namespace CapaDatos
                     MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            return objCompra;
+            return objNCRecibida;
         }
 
-        public List<DetalleProductos> ObtenerCompraDetalle(int idCompra)
+        public List<DetalleProductos> ObtenerNotaDetalle(int idNCRecibida)
         {
             List<DetalleProductos> objDetalle = new List<DetalleProductos>();
 
@@ -224,10 +218,10 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT P.id, CD.idProducto, P.Codigo, P.Descripcion, CD.Precio, CD.Cantidad, CD.Total " +
-                        "FROM ComprasDetalles CD " +
-                        "INNER JOIN Productos P ON CD.idProducto = P.id " +
-                        "WHERE CD.idCompra = " + idCompra;
+                    string query = "SELECT P.id, ND.idProducto, P.Codigo, P.Descripcion, ND.Precio, ND.Cantidad, ND.Total " +
+                        "FROM NotasCreditoRecibidasDetalles ND " +
+                        "INNER JOIN Productos P ON ND.idProducto = P.id " +
+                        "WHERE ND.idNCRecibida = " + idNCRecibida;
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -260,7 +254,7 @@ namespace CapaDatos
             return objDetalle;
         }
 
-        public bool AnularCompra(int IdCompra, string MotivoAnulacion, out string Mensaje)
+        public bool AnularNota(int idNCRecibida, string MotivoAnulacion, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = string.Empty;
@@ -269,10 +263,10 @@ namespace CapaDatos
             {
                 using (SqlConnection con = new SqlConnection(Conexion.Cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("sp_compra_anular", con);
+                    SqlCommand cmd = new SqlCommand("sp_notaCreditoRecibida_anular", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@IdCompra", IdCompra);
+                    cmd.Parameters.AddWithValue("@idNCRecibida", idNCRecibida);
                     cmd.Parameters.AddWithValue("@MotivoAnulacion", MotivoAnulacion);
                     cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

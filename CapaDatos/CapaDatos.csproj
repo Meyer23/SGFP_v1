@@ -56,6 +56,7 @@
     <Compile Include="CD_Impuestos.cs" />
     <Compile Include="CD_Modulos.cs" />
     <Compile Include="CD_MovimientosStock.cs" />
+    <Compile Include="CD_NotasCreditoRecibidas.cs" />
     <Compile Include="CD_Pedidos.cs" />
     <Compile Include="CD_Productos.cs" />
     <Compile Include="CD_Proveedores.cs" />

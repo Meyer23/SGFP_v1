@@ -1,7 +1,6 @@
 ﻿using CapaEntidad;
 using CapaEntidad.Models;
 using CapaNegocio;
-using CapaPresentacion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,27 +14,14 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmCompras : Form, IFormularioConIdUsuario
+    public partial class FrmNotasCreditoRecibidas : Form
     {
         private UsuarioLogin _Usuario;
-        public FrmCompras(UsuarioLogin oUsuario = null)
+        public FrmNotasCreditoRecibidas(UsuarioLogin oUsuario = null)
         {
             _Usuario = oUsuario;
             InitializeComponent();
             CargarTiposDocumentos();
-        }
-
-        public int IdUsuario { get; set; }
-
-        private void CargarFormasPago()
-        {
-            List<FormaPago> formasPago = new CN_FormasPago().ObtenerFormasPago(ComboTipoDoc.Text.ToString());
-            ComboFormaPago.DataSource = formasPago;
-
-            foreach (FormaPago formaPago in formasPago)
-            {
-                ComboFormaPago.DisplayMember = "Descripcion";
-            }
         }
 
         private void CargarTiposDocumentos()
@@ -49,35 +35,28 @@ namespace CapaPresentacion
             }
         }
 
-        private void BtnBuscarPedido_Click(object sender, EventArgs e)
+        private void BtnBuscarCompra_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpPedidos(1))
+            using (var popup = new PopUpCompras(2))
             {
                 var result = popup.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
-                    Pedido objPedido = new CN_Pedidos().ObtenerPedido(Convert.ToInt32(popup._Pedido.NumeroPedido.ToString()));
-                    if (objPedido.Id != 0)
+                    Compra objCompra = new CN_Compras().ObtenerCompra(Convert.ToInt32(popup._Compra.Id.ToString()));
+                    if (objCompra.Id != 0)
                     {
-                        ComboTipoDoc.Visible = false;
-                        ComboFormaPago.Visible = false;
-                        TxtTipoDoc.Visible = true;
-                        TxtFormaPago.Visible = true;
-
-                        TxtNroPedido.Text = objPedido.NumeroPedido.ToString();
-                        TxtTipoDoc.Text = objPedido.TipoDocumento;
-                        TxtFormaPago.Text = objPedido.FormaPago;
-                        dtpFechaPedido.Value = (DateTime)objPedido.Fecha;
-                        TxtIdProveedor.Text = objPedido.IdProveedor.ToString();
-                        TxtRUC.Text = objPedido.Documento;
-                        TxtRazonSocial.Text = objPedido.RazonSocial;
-                        TxtObs.Text = objPedido.Observacion;
-                        TxtTotalCompra.Text = objPedido.Total.ToString();
+                        TxtNroFactura.Text = objCompra.NumeroFactura.ToString();
+                        dtpFechaCompra.Value = (DateTime)objCompra.Fecha;
+                        TxtIdCompra.Text = objCompra.Id.ToString();
+                        TxtIdProveedor.Text = objCompra.IdProveedor.ToString();
+                        TxtRUC.Text = objCompra.Documento;
+                        TxtRazonSocial.Text = objCompra.RazonSocial;
+                        TxtTotalNota.Text = objCompra.Total.ToString();
 
                         dgvData.Rows.Clear();
 
-                        foreach (DetalleProductos pd in objPedido.Detalle)
+                        foreach (DetalleProductos pd in objCompra.Detalle)
                         {
                             dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                         }
@@ -85,79 +64,59 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    TxtNroPedido.Select();
+                    TxtNroFactura.Select();
                 }
             }
         }
 
-        private void FrmCompras_Load(object sender, EventArgs e)
+        private void FrmNotasCreditoRecibidas_Load(object sender, EventArgs e)
         {
-            ComboTipoDoc.Visible = true;
-            ComboFormaPago.Visible = true;
-            TxtTipoDoc.Visible = false;
-            TxtFormaPago.Visible = false;
             dtpFecha.Value = DateTime.Now;
-            dtpFechaVenc.Value = DateTime.Now;
             dtpInicioVigencia.Value = DateTime.Now;
             dtpFinVigencia.Value = DateTime.Now;
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            TxtNroPedido.Clear();
-            TxtTipoDoc.Clear();
-            TxtFormaPago.Clear();
+            TxtNroFactura.Clear();
             dtpFecha.Value = DateTime.Now;
-            dtpFechaVenc.Value = DateTime.Now;
+            ComboTipoDoc.SelectedIndex = 0;
             TxtTimbrado.Clear();
             dtpInicioVigencia.Value = DateTime.Now;
             dtpFinVigencia.Value = DateTime.Now;
-            TxtTipoDoc.Clear();
-            TxtFormaPago.Clear();
             TxtObs.Clear();
             TxtRUC.Clear();
             TxtRazonSocial.Clear();
-            TxtTotalCompra.Clear();
+            TxtTotalNota.Clear();
             dgvData.Rows.Clear();
-            TxtTipoDoc.Visible = false;
-            TxtFormaPago.Visible = false;
-            ComboTipoDoc.Visible = true;
-            ComboFormaPago.Visible = true;
         }
 
-        private void TxtNroPedido_KeyDown(object sender, KeyEventArgs e)
+        private void TxtNroFactura_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
             {
-                Pedido objPedido = new CN_Pedidos().ObtenerPedido(Convert.ToInt32(TxtNroPedido.Text));
-                if (objPedido.Id != 0)
+                Compra objCompra = new CN_Compras().ObtenerCompra(Convert.ToInt32(TxtIdCompra.Text));
+                if (objCompra.Id != 0)
                 {
-                    ComboTipoDoc.Visible = false;
-                    ComboFormaPago.Visible = false;
-                    TxtTipoDoc.Visible = true;
-                    TxtFormaPago.Visible = true;
 
-                    TxtNroPedido.Text = objPedido.NumeroPedido.ToString();
-                    TxtTipoDoc.Text = objPedido.TipoDocumento;
-                    TxtFormaPago.Text = objPedido.FormaPago;
-                    dtpFechaPedido.Value = objPedido.Fecha;
-                    TxtIdProveedor.Text = objPedido.IdProveedor.ToString();
-                    TxtRUC.Text = objPedido.Documento;
-                    TxtRazonSocial.Text = objPedido.RazonSocial;
-                    TxtObs.Text = objPedido.Observacion;
-                    TxtTotalCompra.Text = objPedido.Total.ToString();
+                    TxtNroFactura.Text = objCompra.NumeroFactura.ToString();
+                    dtpFechaCompra.Value = (DateTime)objCompra.Fecha;
+                    TxtIdProveedor.Text = objCompra.IdProveedor.ToString();
+                    TxtRUC.Text = objCompra.Documento;
+                    TxtRazonSocial.Text = objCompra.RazonSocial;
+                    TxtTotalNota.Text = objCompra.Total.ToString();
 
                     dgvData.Rows.Clear();
 
-                    foreach (DetalleProductos pd in objPedido.Detalle)
+                    foreach (DetalleProductos pd in objCompra.Detalle)
                     {
-                        dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
+                       dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                     }
                 }
                 else
                 {
-                    TxtNroPedido.BackColor = Color.MistyRose;
-                    TxtNroPedido.Clear();
+                    TxtNroFactura.BackColor = Color.MistyRose;
+                    TxtNroFactura.Clear();
                 }
             }
         }
@@ -174,7 +133,8 @@ namespace CapaPresentacion
                     TxtCodProducto.Text = popup._Producto.Codigo;
                     TxtDescProducto.Text = popup._Producto.Descripcion;
                     TxtCantidad.Select();
-                    TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
+                    //TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
+                    TxtPrecioCompra.Text = "0";
                 }
                 else
                 {
@@ -236,7 +196,7 @@ namespace CapaPresentacion
                     TxtDescProducto.Text,
                     precio.ToString("0.00"),
                     TxtCantidad.Text,
-                    (Convert.ToInt32(TxtCantidad.Text) * precio).ToString("0.00") 
+                    (Convert.ToInt32(TxtCantidad.Text) * precio).ToString("0.00")
                 });
 
                 calcularTotal();
@@ -273,7 +233,7 @@ namespace CapaPresentacion
                     total += Convert.ToDecimal(row.Cells["Total"].Value.ToString());
                 }
             }
-            TxtTotalCompra.Text = total.ToString("0.00");
+            TxtTotalNota.Text = total.ToString("0.00");
         }
 
         private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -340,7 +300,8 @@ namespace CapaPresentacion
                     TxtIdProducto.Text = oProducto.Id.ToString();
                     TxtDescProducto.Text = oProducto.Descripcion;
                     TxtCantidad.Select();
-                    TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
+                    //TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
+                    TxtPrecioCompra.Text = "0";
                 }
                 else
                 {
@@ -403,21 +364,14 @@ namespace CapaPresentacion
             }
         }
 
-        private void ComboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CargarFormasPago();
-        }
-
         private void limpiar()
         {
+            TxtNroFactura.Clear();
             TxtObs.Clear();
             dtpFecha.Value = DateTime.Now;
-            dtpFechaVenc.Value = DateTime.Now;
             dtpInicioVigencia.Value = DateTime.Now;
             dtpFinVigencia.Value = DateTime.Now;
             ComboTipoDoc.SelectedIndex = 0;
-            TxtTipoDoc.Clear();
-            TxtFormaPago.Clear();
             TxtTimbrado.Clear();
             TxtDoc.Clear();
             TxtPuntoEmision.Clear();
@@ -432,11 +386,10 @@ namespace CapaPresentacion
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            string TipoDoc, FormaPago;
 
             if (TxtDoc.Text == "" || TxtTimbrado.Text == "")
             {
-                MessageBox.Show("Debe completar los datos de la factura", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe completar los datos de la nota de crédito", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -452,41 +405,30 @@ namespace CapaPresentacion
                 return;
             }
 
-            DataTable detalle_compra = new DataTable();
+            DataTable detalle_nota = new DataTable();
 
-            detalle_compra.Columns.Add("idProducto", typeof(int));
-            detalle_compra.Columns.Add("Cantidad", typeof(decimal));
-            detalle_compra.Columns.Add("Precio", typeof(decimal));
-            detalle_compra.Columns.Add("Total", typeof(decimal));
+            detalle_nota.Columns.Add("idProducto", typeof(int));
+            detalle_nota.Columns.Add("Cantidad", typeof(decimal));
+            detalle_nota.Columns.Add("Precio", typeof(decimal));
+            detalle_nota.Columns.Add("Total", typeof(decimal));
 
             foreach (DataGridViewRow row in dgvData.Rows)
             {
-                detalle_compra.Rows.Add(new object[] {
+                detalle_nota.Rows.Add(new object[] {
                    Convert.ToInt32(row.Cells["idProducto"].Value.ToString()),
                    Convert.ToDecimal(row.Cells["Cantidad"].Value.ToString()),
                    Convert.ToDecimal(row.Cells["Precio"].Value.ToString()),
                    Convert.ToDecimal(row.Cells["Total"].Value.ToString())
                 });
             }
-            if (TxtNroPedido.Text == "0")
-            {
-                TipoDoc = ComboTipoDoc.Text.ToString();
-                FormaPago = ComboFormaPago.Text.ToString();
-            }
-            else
-            {
-                TipoDoc = TxtTipoDoc.Text.ToString();
-                FormaPago = TxtFormaPago.Text.ToString();
-            }
 
-            Compra objCompra = new Compra()
+            NotaCreditoRecibida objNCRecibida = new NotaCreditoRecibida()
             {
                 IdProveedor = Convert.ToInt32(TxtIdProveedor.Text),
-                NumeroPedido = Convert.ToInt32(TxtNroPedido.Text),
-                TipoDocumento = TipoDoc,
-                FormaPago = FormaPago,
+                NumeroFactura = TxtNroFactura.Text.ToString(),
+                idCompra = Convert.ToInt32(TxtIdCompra.Text),
+                TipoDocumento = ComboTipoDoc.Text.ToString(),
                 Fecha = (DateTime)(dtpFecha.Value),
-                FechaVencimiento = (DateTime)(dtpFechaVenc.Value),
                 Timbrado = Convert.ToInt32(TxtTimbrado.Text),
                 InicioVigencia = (DateTime)(dtpInicioVigencia.Value),
                 FinVigencia = (DateTime)(dtpFinVigencia.Value),
@@ -494,17 +436,17 @@ namespace CapaPresentacion
                 PuntoEmision = Convert.ToInt32(TxtPuntoEmision.Text),
                 Doc = TxtDoc.Text.ToString(),
                 Observacion = TxtObs.Text,
-                Total = Convert.ToDecimal(TxtTotalCompra.Text),
+                Total = Convert.ToDecimal(TxtTotalNota.Text),
                 IdUsuario = _Usuario.Id
             };
 
             string Mensaje = string.Empty;
 
-            bool Respuesta = new CN_Compras().Registrar(objCompra, detalle_compra, out Mensaje);
+            bool Respuesta = new CN_NotasCreditoRecibidas().Registrar(objNCRecibida, detalle_nota, out Mensaje);
 
             if (Respuesta)
             {
-                var result = MessageBox.Show("Factura de Compra Registrada con Éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var result = MessageBox.Show("Nota de Crédito Registrada con Éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
                     limpiar();
@@ -519,7 +461,6 @@ namespace CapaPresentacion
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
-            int dias;
             DateTime fechaSeleccionada = dtpFecha.Value;
             DateTime fechaActual = DateTime.Now;
 
@@ -530,22 +471,12 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (fechaSeleccionada < dtpFechaPedido.Value)
+            if (fechaSeleccionada < dtpFechaCompra.Value)
             {
-                MessageBox.Show("La fecha de la factura debe ser mayor a la fecha del Pedido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La fecha de la nota de crédito debe ser mayor a la fecha de la compra", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpFecha.Select();
                 return;
             }
-
-            if (TxtNroPedido.Text == "0")
-            {
-                dias = new CN_FormasPago().ObtenerDias(ComboFormaPago.Text.ToString());
-            }
-            else
-            {
-                dias = new CN_FormasPago().ObtenerDias(TxtFormaPago.Text.ToString());
-            }
-            dtpFechaVenc.Value = dtpFecha.Value.AddDays(dias);
         }
 
         private void TxtCantidad_Validating(object sender, CancelEventArgs e)

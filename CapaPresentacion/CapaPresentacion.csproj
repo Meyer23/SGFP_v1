@@ -83,6 +83,12 @@
     <Compile Include="FrmAnularMovStock.Designer.cs">
       <DependentUpon>FrmAnularMovStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAnularNotasCreditoRecibidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnularNotasCreditoRecibidas.Designer.cs">
+      <DependentUpon>FrmAnularNotasCreditoRecibidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAnularPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,12 @@
     <Compile Include="FrmMovimientosStock.Designer.cs">
       <DependentUpon>FrmMovimientosStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNotasCreditoRecibidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotasCreditoRecibidas.Designer.cs">
+      <DependentUpon>FrmNotasCreditoRecibidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +263,12 @@
     <Compile Include="FrmVerDetalleMovStock.Designer.cs">
       <DependentUpon>FrmVerDetalleMovStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVerDetalleNotasCreditoRecibidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerDetalleNotasCreditoRecibidas.Designer.cs">
+      <DependentUpon>FrmVerDetalleNotasCreditoRecibidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVerDetallePedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +317,12 @@
     </Compile>
     <Compile Include="PopUpMovStock.Designer.cs">
       <DependentUpon>PopUpMovStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpNotasCreditoRecibidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpNotasCreditoRecibidas.Designer.cs">
+      <DependentUpon>PopUpNotasCreditoRecibidas.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUpNuevaCaja.cs">
       <SubType>Form</SubType>
@@ -364,6 +388,12 @@
     <Compile Include="Reportes\FrmRptMovimientosStock.Designer.cs">
       <DependentUpon>FrmRptMovimientosStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptNotasCreditoRecibidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptNotasCreditoRecibidas.Designer.cs">
+      <DependentUpon>FrmRptNotasCreditoRecibidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -382,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnularMovStock.resx">
       <DependentUpon>FrmAnularMovStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnularNotasCreditoRecibidas.resx">
+      <DependentUpon>FrmAnularNotasCreditoRecibidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnularPedido.resx">
       <DependentUpon>FrmAnularPedido.cs</DependentUpon>
@@ -431,6 +464,9 @@
     <EmbeddedResource Include="FrmMovimientosStock.resx">
       <DependentUpon>FrmMovimientosStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotasCreditoRecibidas.resx">
+      <DependentUpon>FrmNotasCreditoRecibidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPedidos.resx">
       <DependentUpon>FrmPedidos.cs</DependentUpon>
     </EmbeddedResource>
@@ -467,6 +503,9 @@
     <EmbeddedResource Include="FrmVerDetalleMovStock.resx">
       <DependentUpon>FrmVerDetalleMovStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerDetalleNotasCreditoRecibidas.resx">
+      <DependentUpon>FrmVerDetalleNotasCreditoRecibidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmVerDetallePedido.resx">
       <DependentUpon>FrmVerDetallePedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -490,6 +529,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpMovStock.resx">
       <DependentUpon>PopUpMovStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpNotasCreditoRecibidas.resx">
+      <DependentUpon>PopUpNotasCreditoRecibidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpNuevaCaja.resx">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
@@ -528,6 +570,9 @@
     <EmbeddedResource Include="Reportes\FrmRptMovimientosStock.resx">
       <DependentUpon>FrmRptMovimientosStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptNotasCreditoRecibidas.resx">
+      <DependentUpon>FrmRptNotasCreditoRecibidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptPedidos.resx">
       <DependentUpon>FrmRptPedidos.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,6 +581,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RPT_Compras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_MovimientosStock.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_NotasCreditoRecibidas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Pedidos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Productos.rdlc" />
     <None Include="packages.config" />

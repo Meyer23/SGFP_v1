@@ -248,5 +248,15 @@ namespace CapaPresentacion
             Reportes.FrmRptProductos oRptProductos = new Reportes.FrmRptProductos();
             oRptProductos.ShowDialog();
         }
+
+        private void SubMenuNCRecibidas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(ComprasMenu, new FrmNotasCreditoRecibidas(usuarioActual));
+        }
+
+        private void SubMenuVerDetalleNCRecibidas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(ComprasMenu, new FrmVerDetalleNotasCreditoRecibidas());
+        }
     }
 }

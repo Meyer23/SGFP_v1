@@ -1,6 +1,5 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
-using CapaPresentacion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,20 +8,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmVerDetalleCompra : Form, IFormularioConIdUsuario
+    public partial class FrmVerDetalleNotasCreditoRecibidas : Form
     {
-        public FrmVerDetalleCompra()
+        public FrmVerDetalleNotasCreditoRecibidas()
         {
             InitializeComponent();
         }
 
-        public int IdUsuario { get; set; }
-
-        private void FrmVerDetalleCompra_Load(object sender, EventArgs e)
+        private void FrmVerDetalleNotasCreditoRecibidas_Load(object sender, EventArgs e)
         {
             LblConfirmado.Visible = false;
             PbConfirmado.Visible = false;
@@ -30,47 +28,42 @@ namespace CapaPresentacion
             PbNoConfirmado.Visible = false;
             LblAnulado.Visible = false;
             dtpFecha.Value = DateTime.Now;
-            dtpFechaVenc.Value = DateTime.Now;
             dtpInicioVigencia.Value = DateTime.Now;
             dtpFinVigencia.Value = DateTime.Now;
-            dtpFechaRec.Value = DateTime.Now;
             BtnConfirmar.Visible = false;
             BtnAnular.Visible = false;
-            LblFechaRec.Visible = false;
-            dtpFechaRec.Visible = false;
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpCompras(0))
+            using (var popup = new PopUpNotasCreditoRecibidas(0))
             {
                 var result = popup.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
-                    Compra objCompra = new CN_Compras().ObtenerCompra(Convert.ToInt32(popup._Compra.Id.ToString()));
-                    if (objCompra.Id != 0)
+                    NotaCreditoRecibida objNota = new CN_NotasCreditoRecibidas().ObtenerNota(Convert.ToInt32(popup._NCRecibida.Id.ToString()));
+                    if (objNota.Id != 0)
                     {
-                        TxtIdCompra.Text = objCompra.Id.ToString();
-                        TxtBusqueda.Text = objCompra.NumeroFactura.ToString();
-                        TxtNroPedido.Text = objCompra.NumeroPedido.ToString();
-                        TxtTipoDoc.Text = objCompra.TipoDocumento;
-                        TxtFormaPago.Text = objCompra.FormaPago;
-                        TxtUsuario.Text = objCompra.NombreUsuario;
-                        TxtCodEstablecimiento.Text = objCompra.CodEstablecimiento.ToString();
-                        TxtPuntoEmision.Text = objCompra.PuntoEmision.ToString();
-                        TxtDoc.Text = objCompra.Doc;
-                        dtpFecha.Value = objCompra.Fecha;
-                        dtpFechaVenc.Value = objCompra.FechaVencimiento;                       
-                        TxtTimbrado.Text = objCompra.Timbrado.ToString();  
-                        dtpInicioVigencia.Value = objCompra.InicioVigencia;
-                        dtpFinVigencia.Value = objCompra.FinVigencia;
-                        TxtRUC.Text = objCompra.Documento;
-                        TxtRazonSocial.Text = objCompra.RazonSocial;
-                        TxtObs.Text = objCompra.Observacion;
-                        TxtTotalCompra.Text = objCompra.Total.ToString();
-                        checkBoxConfirmado.Checked = objCompra.Confirmado;
-                        checkBoxAnulado.Checked = objCompra.Anulado;
+                        TxtIdNCRecibida.Text = objNota.Id.ToString();
+                        TxtBusqueda.Text = objNota.NumeroNota.ToString();
+                        TxtFacturaCompra.Text = objNota.NumeroFactura.ToString();
+                        TxtIdCompra.Text = objNota.idCompra.ToString();
+                        TxtTipoDoc.Text = objNota.TipoDocumento;
+                        TxtUsuario.Text = objNota.NombreUsuario;
+                        TxtCodEstablecimiento.Text = objNota.CodEstablecimiento.ToString();
+                        TxtPuntoEmision.Text = objNota.PuntoEmision.ToString();
+                        TxtDoc.Text = objNota.Doc;
+                        dtpFecha.Value = objNota.Fecha;
+                        TxtTimbrado.Text = objNota.Timbrado.ToString();
+                        dtpInicioVigencia.Value = objNota.InicioVigencia;
+                        dtpFinVigencia.Value = objNota.FinVigencia;
+                        TxtRUC.Text = objNota.Documento;
+                        TxtRazonSocial.Text = objNota.RazonSocial;
+                        TxtObs.Text = objNota.Observacion;
+                        TxtTotalCompra.Text = objNota.Total.ToString();
+                        checkBoxConfirmado.Checked = objNota.Confirmado;
+                        checkBoxAnulado.Checked = objNota.Anulado;
 
                         if (checkBoxConfirmado.Checked == true && checkBoxAnulado.Checked == false)
                         {
@@ -81,11 +74,8 @@ namespace CapaPresentacion
                             LblAnulado.Visible = false;
                             BtnConfirmar.Visible = false;
                             BtnAnular.Visible = false;
-                            LblFechaRec.Visible = true;
-                            dtpFechaRec.Visible = true;
-                            dtpFechaRec.Value = objCompra.FechaRecepcion;
                         }
-                        else if(checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
+                        else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                         {
                             LblNoConfirmado.Visible = true;
                             //PbNoConfirmado.Visible = true;
@@ -94,8 +84,6 @@ namespace CapaPresentacion
                             LblAnulado.Visible = false;
                             BtnConfirmar.Visible = true;
                             BtnAnular.Visible = true;
-                            LblFechaRec.Visible = false;
-                            dtpFechaRec.Visible = false;
                         }
                         else
                         {
@@ -106,13 +94,11 @@ namespace CapaPresentacion
                             LblAnulado.Visible = true;
                             BtnConfirmar.Visible = false;
                             BtnAnular.Visible = false;
-                            LblFechaRec.Visible = false;
-                            dtpFechaRec.Visible = false;
                         }
 
                         dgvData.Rows.Clear();
 
-                        foreach (DetalleProductos pd in objCompra.Detalle)
+                        foreach (DetalleProductos pd in objNota.Detalle)
                         {
                             dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                         }
@@ -128,17 +114,14 @@ namespace CapaPresentacion
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             TxtBusqueda.Clear();
-            TxtNroPedido.Clear();
+            TxtFacturaCompra.Clear();
             TxtCodEstablecimiento.Clear();
             TxtPuntoEmision.Clear();
             TxtDoc.Clear();
             TxtTimbrado.Clear();
             dtpFecha.Value = DateTime.Now;
-            dtpFechaVenc.Value = DateTime.Now;
-            dtpFechaRec.Value = DateTime.Now;
             TxtUsuario.Clear();
             TxtTipoDoc.Clear();
-            TxtFormaPago.Clear();
             TxtObs.Clear();
             TxtRUC.Clear();
             TxtRazonSocial.Clear();
@@ -155,27 +138,27 @@ namespace CapaPresentacion
         {
             if (e.KeyData == Keys.Enter)
             {
-                Compra objCompra = new CN_Compras().ObtenerCompra(Convert.ToInt32(TxtIdCompra.Text));
-                if (objCompra.Id != 0)
+                NotaCreditoRecibida objNota = new CN_NotasCreditoRecibidas().ObtenerNota(Convert.ToInt32(TxtIdNCRecibida.Text));
+                if (objNota.Id != 0)
                 {
-                    TxtBusqueda.Text = objCompra.NumeroFactura.ToString();
-                    TxtNroPedido.Text = objCompra.NumeroPedido.ToString();
-                    TxtTipoDoc.Text = objCompra.TipoDocumento;
-                    TxtFormaPago.Text = objCompra.FormaPago;
-                    TxtUsuario.Text = objCompra.NombreUsuario;
-                    TxtCodEstablecimiento.Text = objCompra.CodEstablecimiento.ToString();
-                    TxtPuntoEmision.Text = objCompra.PuntoEmision.ToString();
-                    TxtDoc.Text = objCompra.Doc;
-                    dtpFecha.Value = objCompra.Fecha;
-                    dtpFechaVenc.Value = objCompra.FechaVencimiento;                    
-                    TxtTimbrado.Text = objCompra.Timbrado.ToString();
-                    dtpInicioVigencia.Value = objCompra.InicioVigencia;
-                    dtpFinVigencia.Value = objCompra.FinVigencia;
-                    TxtRUC.Text = objCompra.Documento;
-                    TxtRazonSocial.Text = objCompra.RazonSocial;
-                    TxtObs.Text = objCompra.Observacion;
-                    TxtTotalCompra.Text = objCompra.Total.ToString();
-                    checkBoxConfirmado.Checked = objCompra.Confirmado;
+                    TxtIdNCRecibida.Text = objNota.Id.ToString();
+                    TxtBusqueda.Text = objNota.NumeroNota.ToString();
+                    TxtFacturaCompra.Text = objNota.NumeroFactura.ToString();
+                    TxtTipoDoc.Text = objNota.TipoDocumento;
+                    TxtUsuario.Text = objNota.NombreUsuario;
+                    TxtCodEstablecimiento.Text = objNota.CodEstablecimiento.ToString();
+                    TxtPuntoEmision.Text = objNota.PuntoEmision.ToString();
+                    TxtDoc.Text = objNota.Doc;
+                    dtpFecha.Value = objNota.Fecha;
+                    TxtTimbrado.Text = objNota.Timbrado.ToString();
+                    dtpInicioVigencia.Value = objNota.InicioVigencia;
+                    dtpFinVigencia.Value = objNota.FinVigencia;
+                    TxtRUC.Text = objNota.Documento;
+                    TxtRazonSocial.Text = objNota.RazonSocial;
+                    TxtObs.Text = objNota.Observacion;
+                    TxtTotalCompra.Text = objNota.Total.ToString();
+                    checkBoxConfirmado.Checked = objNota.Confirmado;
+                    checkBoxAnulado.Checked = objNota.Anulado;
 
                     if (checkBoxConfirmado.Checked == true && checkBoxAnulado.Checked == false)
                     {
@@ -186,9 +169,6 @@ namespace CapaPresentacion
                         LblAnulado.Visible = false;
                         BtnConfirmar.Visible = false;
                         BtnAnular.Visible = false;
-                        LblFechaRec.Visible = true;
-                        dtpFechaRec.Visible = true;
-                        dtpFechaRec.Value = objCompra.FechaRecepcion;
                     }
                     else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                     {
@@ -199,8 +179,6 @@ namespace CapaPresentacion
                         LblAnulado.Visible = false;
                         BtnConfirmar.Visible = true;
                         BtnAnular.Visible = true;
-                        LblFechaRec.Visible = false;
-                        dtpFechaRec.Visible = false;
                     }
                     else
                     {
@@ -211,15 +189,13 @@ namespace CapaPresentacion
                         LblAnulado.Visible = true;
                         BtnConfirmar.Visible = false;
                         BtnAnular.Visible = false;
-                        LblFechaRec.Visible = false;
-                        dtpFechaRec.Visible = false;
                     }
 
                     dgvData.Rows.Clear();
 
-                    foreach (DetalleProductos pd in objCompra.Detalle)
+                    foreach (DetalleProductos pd in objNota.Detalle)
                     {
-                        dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
+                        dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                     }
                 }
                 else
@@ -232,26 +208,40 @@ namespace CapaPresentacion
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            using (var popup = new FrmConfirmarCompra(Convert.ToInt32(TxtIdCompra.Text)))
+            if (TxtIdNCRecibida.Text == "0")
             {
-                var result = popup.ShowDialog();
+                MessageBox.Show("Debe seleccionar una nota de crédito", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtBusqueda.Focus();
+                TxtBusqueda.SelectAll();
+                return;
+            }
+            else
+            {
+                string Mensaje = string.Empty;
 
-                if (result == DialogResult.OK)
+                bool Respuesta = new CN_NotasCreditoRecibidas().ConfirmarNota(Convert.ToInt32(TxtIdNCRecibida.Text), Convert.ToInt32(TxtIdCompra.Text), out Mensaje);
+
+                if (Respuesta)
                 {
-                    LblConfirmado.Visible = true;
-                    PbConfirmado.Visible = true;
-                    LblNoConfirmado.Visible = false;
-                    BtnConfirmar.Visible = false;
-                    BtnAnular.Visible = false;
+                    var result = MessageBox.Show("Nota de Crédito confirmada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        LblConfirmado.Visible = true;
+                        PbConfirmado.Visible = true;
+                        LblNoConfirmado.Visible = false;
+                        BtnConfirmar.Visible = false;
+                        BtnAnular.Visible = false;
+                    }
                 }
                 else
                 {
-                    TxtBusqueda.Select();
+                    MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
             }
         }
 
-        private void dtpFechaRec_ValueChanged(object sender, EventArgs e)
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
             DateTime fechaSeleccionada = dtpFecha.Value;
             DateTime fechaActual = DateTime.Now;
@@ -273,7 +263,7 @@ namespace CapaPresentacion
 
         private void BtnAnular_Click(object sender, EventArgs e)
         {
-            using (var popup = new FrmAnularCompra(Convert.ToInt32(TxtIdCompra.Text)))
+            using (var popup = new FrmAnularNotasCreditoRecibidas(Convert.ToInt32(TxtIdNCRecibida.Text)))
             {
                 var result = popup.ShowDialog();
 
@@ -296,9 +286,9 @@ namespace CapaPresentacion
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            Reportes.FrmRptCompras oRptCompras = new Reportes.FrmRptCompras();
-            oRptCompras.TxtParamId.Text = TxtIdCompra.Text;
-            oRptCompras.ShowDialog();
+            Reportes.FrmRptNotasCreditoRecibidas oRptNCRecibidas = new Reportes.FrmRptNotasCreditoRecibidas();
+            oRptNCRecibidas.TxtParamId.Text = TxtIdNCRecibida.Text;
+            oRptNCRecibidas.ShowDialog();
         }
     }
 }
