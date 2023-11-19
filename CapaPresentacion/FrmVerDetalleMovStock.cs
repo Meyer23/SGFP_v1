@@ -229,5 +229,12 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptMovimientosStock oRptMovStock = new Reportes.FrmRptMovimientosStock();
+            oRptMovStock.TxtParamId.Text = TxtIdMovStock.Text;
+            oRptMovStock.ShowDialog();
+        }
     }
 }

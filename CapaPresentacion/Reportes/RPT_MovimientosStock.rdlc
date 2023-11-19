@@ -6,19 +6,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.38062cm</Width>
+              <Width>3.2962cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.24146cm</Width>
+              <Width>12.47842cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.94979cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.94979cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.94979cm</Width>
+              <Width>3.20419cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -27,14 +21,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox27">
+                    <Textbox Name="Textbox23">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Codigo</Value>
+                              <Value>Código</Value>
                               <Style>
                                 <FontFamily>Trebuchet MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -44,7 +38,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox27</rd:DefaultName>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -60,7 +54,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox29">
+                    <Textbox Name="Textbox25">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -77,7 +71,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox29</rd:DefaultName>
+                      <rd:DefaultName>Textbox25</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -93,7 +87,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox31">
+                    <Textbox Name="Textbox27">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -107,82 +101,10 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox31</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox33">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Precio</Value>
-                              <Style>
-                                <FontFamily>Trebuchet MS</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox33</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox35">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Total</Value>
-                              <Style>
-                                <FontFamily>Trebuchet MS</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox35</rd:DefaultName>
+                      <rd:DefaultName>Textbox27</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -281,76 +203,12 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cantidad</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Precio">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Precio.Value</Value>
-                              <Style>
-                                <FontFamily>Trebuchet MS</FontFamily>
-                                <Format>#,0;(#,0)</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Precio</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Total">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Total.Value</Value>
-                              <Style>
-                                <FontFamily>Trebuchet MS</FontFamily>
-                                <Format>#,0;(#,0)</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Total</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -373,8 +231,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -387,10 +243,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DS_PedidosDetalle</DataSetName>
-        <Left>0.43432cm</Left>
+        <DataSetName>DS_MovimientosStockDetalle</DataSetName>
+        <Top>0.31433cm</Top>
+        <Left>0.50835cm</Left>
         <Height>1.2cm</Height>
-        <Width>19.47145cm</Width>
+        <Width>18.97882cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -398,13 +255,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.78125in</Height>
+    <Height>0.7558in</Height>
     <Style />
   </Body>
-  <Width>8.00384in</Width>
+  <Width>7.95888in</Width>
   <Page>
     <PageHeader>
-      <Height>7.6674cm</Height>
+      <Height>6.58812cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -429,6 +286,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>0.09667cm</Top>
           <Left>15.38784cm</Left>
           <Height>0.6cm</Height>
           <Width>4.82771cm</Width>
@@ -444,9 +302,10 @@
         </Textbox>
         <Image Name="Logo">
           <Source>Database</Source>
-          <Value>=First(Fields!Logo.Value, "DS_Empresa")</Value>
+          <Value>=First(Fields!Logo.Value, "Ds_Empresa")</Value>
           <MIMEType>image/png</MIMEType>
           <Sizing>FitProportional</Sizing>
+          <Top>0.09667cm</Top>
           <Height>2.34667cm</Height>
           <Width>3.73155cm</Width>
           <ZIndex>1</ZIndex>
@@ -463,7 +322,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!RazonSocial.Value, "DS_Empresa")</Value>
+                  <Value>=First(Fields!RazonSocial.Value, "Ds_Empresa")</Value>
                   <Style>
                     <FontFamily>Trebuchet MS</FontFamily>
                     <FontSize>9pt</FontSize>
@@ -475,6 +334,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>RazonSocial</rd:DefaultName>
+          <Top>0.09667cm</Top>
           <Left>4.07141cm</Left>
           <Height>0.6cm</Height>
           <Width>8.47958cm</Width>
@@ -494,7 +354,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!RUC.Value, "DS_Empresa")</Value>
+                  <Value>=First(Fields!RUC.Value, "Ds_Empresa")</Value>
                   <Style>
                     <FontFamily>Trebuchet MS</FontFamily>
                     <FontSize>9pt</FontSize>
@@ -506,7 +366,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>RUC</rd:DefaultName>
-          <Top>0.6cm</Top>
+          <Top>0.69667cm</Top>
           <Left>5.85294cm</Left>
           <Height>0.52944cm</Height>
           <Width>6.69805cm</Width>
@@ -526,7 +386,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!Direccion.Value, "DS_Empresa")</Value>
+                  <Value>=First(Fields!Direccion.Value, "Ds_Empresa")</Value>
                   <Style>
                     <FontFamily>Trebuchet MS</FontFamily>
                     <FontSize>9pt</FontSize>
@@ -538,7 +398,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Direccion</rd:DefaultName>
-          <Top>1.12944cm</Top>
+          <Top>1.2261cm</Top>
           <Left>5.85294cm</Left>
           <Height>0.52944cm</Height>
           <Width>6.69805cm</Width>
@@ -570,7 +430,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.6cm</Top>
+          <Top>0.69667cm</Top>
           <Left>4.07141cm</Left>
           <Height>0.52944cm</Height>
           <Width>1.74625cm</Width>
@@ -602,7 +462,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>1.12944cm</Top>
+          <Top>1.2261cm</Top>
           <Left>4.07141cm</Left>
           <Height>0.52944cm</Height>
           <Width>1.74625cm</Width>
@@ -615,29 +475,30 @@
             <PaddingRight>2pt</PaddingRight>
           </Style>
         </Textbox>
-        <Textbox Name="RazonSocial1">
+        <Textbox Name="Textbox1">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!RazonSocial.Value, "DS_Pedidos")</Value>
+                  <Value>Documento Nº</Value>
                   <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
+                    <FontFamily>trebuchet MS</FontFamily>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Left</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>RazonSocial1</rd:DefaultName>
-          <Top>3.63692cm</Top>
-          <Left>3.63581cm</Left>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>2.78921cm</Top>
+          <Left>5.81766cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.72455cm</Width>
+          <Width>3.58479cm</Width>
           <ZIndex>7</ZIndex>
           <Style>
             <Border>
@@ -656,7 +517,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Proveedor:</Value>
+                  <Value>Tipo Movimiento:</Value>
                   <Style>
                     <FontFamily>Trebuchet MS</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -667,380 +528,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>3.63692cm</Top>
-          <Left>0.44789cm</Left>
+          <Top>3.85925cm</Top>
+          <Left>0.50835cm</Left>
           <Height>0.6cm</Height>
           <Width>3.18792cm</Width>
           <ZIndex>8</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Documento">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!Documento.Value, "DS_Pedidos")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Documento</rd:DefaultName>
-          <Top>4.23692cm</Top>
-          <Left>3.63581cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.0258cm</Width>
-          <ZIndex>9</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox7">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>RUC:</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>4.23692cm</Top>
-          <Left>0.44789cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.18792cm</Width>
-          <ZIndex>10</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="TipoDocumento">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!TipoDocumento.Value, "DS_Pedidos")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>TipoDocumento</rd:DefaultName>
-          <Top>4.83692cm</Top>
-          <Left>3.63581cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.0258cm</Width>
-          <ZIndex>11</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox8">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Tipo Documento:</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>4.83692cm</Top>
-          <Left>0.44789cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.18792cm</Width>
-          <ZIndex>12</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="FormaPago">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!FormaPago.Value, "DS_Pedidos")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>FormaPago</rd:DefaultName>
-          <Top>5.43692cm</Top>
-          <Left>3.63581cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.0258cm</Width>
-          <ZIndex>13</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox11">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Forma Pago:</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>5.43692cm</Top>
-          <Left>0.44789cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.18792cm</Width>
-          <ZIndex>14</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Fecha">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!Fecha.Value, "DS_Pedidos")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <Format>dd/MM/yyyy</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Fecha</rd:DefaultName>
-          <Top>3.63692cm</Top>
-          <Left>15.28565cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.29375cm</Width>
-          <ZIndex>15</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="FechaRequerida">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!FechaRequerida.Value, "DS_Pedidos")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <Format>dd/MM/yyyy</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>FechaRequerida</rd:DefaultName>
-          <Top>4.23692cm</Top>
-          <Left>15.28565cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.29375cm</Width>
-          <ZIndex>16</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox12">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Fecha:</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>3.63692cm</Top>
-          <Left>12.04891cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.23674cm</Width>
-          <ZIndex>17</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox13">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Fecha Requerida:</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>4.23692cm</Top>
-          <Left>12.04891cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.23674cm</Width>
-          <ZIndex>18</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Observacion">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!Observacion.Value, "DS_Pedidos")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Observacion</rd:DefaultName>
-          <Top>6.0722cm</Top>
-          <Left>3.63581cm</Left>
-          <Height>0.6cm</Height>
-          <Width>14.94359cm</Width>
-          <ZIndex>19</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1069,11 +561,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>6.0722cm</Top>
-          <Left>0.44789cm</Left>
+          <Top>5.12981cm</Top>
+          <Left>0.54363cm</Left>
           <Height>0.6cm</Height>
           <Width>3.18792cm</Width>
-          <ZIndex>20</ZIndex>
+          <ZIndex>9</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1084,7 +576,175 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox15">
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Fecha:</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox6</rd:DefaultName>
+          <Top>4.45926cm</Top>
+          <Left>0.50835cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.18792cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Documento">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Documento.Value, "DS_MovimientosStock")</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Documento</rd:DefaultName>
+          <Top>2.78921cm</Top>
+          <Left>10.65071cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.09292cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Observacion">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Observacion.Value, "DS_MovimientosStock")</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Observacion</rd:DefaultName>
+          <Top>5.12981cm</Top>
+          <Left>3.73155cm</Left>
+          <Height>0.6cm</Height>
+          <Width>15.7909cm</Width>
+          <ZIndex>12</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Fecha">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Fecha.Value, "DS_MovimientosStock")</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Fecha</rd:DefaultName>
+          <Top>4.45926cm</Top>
+          <Left>3.69627cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.86356cm</Width>
+          <ZIndex>13</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="TipoMovimiento">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!TipoMovimiento.Value, "DS_MovimientosStock")</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>TipoMovimiento</rd:DefaultName>
+          <Top>3.85925cm</Top>
+          <Left>3.73155cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.78625cm</Width>
+          <ZIndex>14</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox13">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -1102,11 +762,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>4.83692cm</Top>
-          <Left>12.04891cm</Left>
+          <Top>3.85925cm</Top>
+          <Left>12.55571cm</Left>
           <Height>0.6cm</Height>
-          <Width>3.23674cm</Width>
-          <ZIndex>21</ZIndex>
+          <Width>3.18792cm</Width>
+          <ZIndex>15</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1124,7 +784,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!Nombres.Value, "DS_Pedidos")</Value>
+                  <Value>=First(Fields!Nombres.Value, "DS_MovimientosStock")</Value>
                   <Style>
                     <FontFamily>Trebuchet MS</FontFamily>
                   </Style>
@@ -1136,81 +796,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Nombres</rd:DefaultName>
-          <Top>4.83692cm</Top>
-          <Left>15.28565cm</Left>
+          <Top>3.85925cm</Top>
+          <Left>15.74363cm</Left>
           <Height>0.6cm</Height>
-          <Width>3.29375cm</Width>
-          <ZIndex>22</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox1">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Pedido Nº</Value>
-                  <Style>
-                    <FontFamily>trebuchet MS</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.56688cm</Top>
-          <Left>7.77557cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.58479cm</Width>
-          <ZIndex>23</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="NumeroPedido">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Sum(Fields!NumeroPedido.Value, "DS_Pedidos")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>NumeroPedido</rd:DefaultName>
-          <Top>2.56688cm</Top>
-          <Left>11.66495cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.26729cm</Width>
-          <ZIndex>24</ZIndex>
+          <Width>3.74354cm</Width>
+          <ZIndex>16</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1229,7 +819,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.61055cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1254,43 +844,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Top>1.94cm</Top>
+          <Top>2.01055cm</Top>
           <Left>17.71555cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="TotalPedido">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Sum(Fields!TotalPedido.Value, "DS_Pedidos")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <Format>#,0;(#,0)</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>TotalPedido</rd:DefaultName>
-          <Top>0.03528cm</Top>
-          <Left>16.95599cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.94979cm</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1308,7 +865,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Total Pedido:</Value>
+                  <Value>Total Cantidad:</Value>
                   <Style>
                     <FontFamily>Trebuchet MS</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1319,10 +876,45 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>0.03528cm</Top>
-          <Left>13.76807cm</Left>
+          <Top>0.10583cm</Top>
+          <Left>13.34946cm</Left>
           <Height>0.6cm</Height>
           <Width>3.18792cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Total">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Sum(Fields!Total.Value, "DS_MovimientosStock")</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                    <Format>#,0;(#,0)</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Total</rd:DefaultName>
+          <Top>0.10583cm</Top>
+          <Left>16.53738cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.94979cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -1357,11 +949,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>942adbab-cdb1-43bb-89b8-7dc00e17a191</rd:DataSourceID>
+      <rd:DataSourceID>2d6070da-445e-4cf5-a049-41198bd10805</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DS_Pedidos">
+    <DataSet Name="DS_MovimientosStock">
       <Query>
         <DataSourceName>DS_Reportes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1371,48 +963,24 @@
           <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="NumeroPedido">
-          <DataField>NumeroPedido</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="Documento">
+          <DataField>Documento</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TipoMovimiento">
+          <DataField>TipoMovimiento</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Fecha">
           <DataField>Fecha</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="FechaRequerida">
-          <DataField>FechaRequerida</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Nombres">
-          <DataField>Nombres</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="idProveedor">
-          <DataField>idProveedor</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Documento">
-          <DataField>Documento</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RazonSocial">
-          <DataField>RazonSocial</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TipoDocumento">
-          <DataField>TipoDocumento</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FormaPago">
-          <DataField>FormaPago</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="Observacion">
           <DataField>Observacion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TotalPedido">
-          <DataField>TotalPedido</DataField>
+        <Field Name="Total">
+          <DataField>Total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Confirmado">
@@ -1423,17 +991,21 @@
           <DataField>Anulado</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
+        <Field Name="Nombres">
+          <DataField>Nombres</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DS_Reportes</rd:DataSetName>
         <rd:SchemaPath>C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\Reportes\DS_Reportes.xsd</rd:SchemaPath>
-        <rd:TableName>Pedidos</rd:TableName>
+        <rd:TableName>MovimientosStock</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>PedidosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>MovimientosStockTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DS_PedidosDetalle">
+    <DataSet Name="DS_MovimientosStockDetalle">
       <Query>
         <DataSourceName>DS_Reportes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1455,29 +1027,21 @@
           <DataField>Descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Precio">
-          <DataField>Precio</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="Cantidad">
           <DataField>Cantidad</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Total">
-          <DataField>Total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DS_Reportes</rd:DataSetName>
         <rd:SchemaPath>C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\Reportes\DS_Reportes.xsd</rd:SchemaPath>
-        <rd:TableName>PedidosDetalle</rd:TableName>
+        <rd:TableName>MovimientosStockDetalle</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>PedidosDetalleTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>MovimientosStockDetalleTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DS_Empresa">
+    <DataSet Name="Ds_Empresa">
       <Query>
         <DataSourceName>DS_Reportes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1515,5 +1079,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>24b050e2-9e40-4251-b671-b153530f270e</rd:ReportID>
+  <rd:ReportID>2a1047de-43a7-438c-99ad-259a326ba76f</rd:ReportID>
 </Report>

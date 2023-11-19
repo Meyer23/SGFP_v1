@@ -227,7 +227,7 @@ namespace CapaDatos
                     string query = "SELECT MD.id, MD.idProducto, P.Codigo, P.Descripcion, MD.Cantidad" +
                         " FROM MovimientosStockDetalles MD " +
                         " INNER JOIN Productos P ON MD.idProducto = P.id" +
-                        " WHERE MD.idMovimientoStock = 0" + IdMovStock;
+                        " WHERE MD.idMovimientoStock = " + IdMovStock;
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;

@@ -263,3 +263,5 @@ C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\bin\Debug\zh-CHS\Microsoft.Report
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptProductos.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptPedidos.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptCompras.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptMovimientosStock.resources

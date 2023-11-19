@@ -293,5 +293,12 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptCompras oRptCompras = new Reportes.FrmRptCompras();
+            oRptCompras.TxtParamId.Text = TxtIdCompra.Text;
+            oRptCompras.ShowDialog();
+        }
     }
 }

@@ -352,6 +352,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Reportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptCompras.Designer.cs">
+      <DependentUpon>FrmRptCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmRptMovimientosStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptMovimientosStock.Designer.cs">
+      <DependentUpon>FrmRptMovimientosStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,12 +522,20 @@
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptCompras.resx">
+      <DependentUpon>FrmRptCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptMovimientosStock.resx">
+      <DependentUpon>FrmRptMovimientosStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptPedidos.resx">
       <DependentUpon>FrmRptPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptProductos.resx">
       <DependentUpon>FrmRptProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RPT_Compras.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_MovimientosStock.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Pedidos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Productos.rdlc" />
     <None Include="packages.config" />

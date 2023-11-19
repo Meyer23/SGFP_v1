@@ -46,6 +46,8 @@
             this.LblRUC = new System.Windows.Forms.Label();
             this.TxtTotalCompra = new System.Windows.Forms.TextBox();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
+            this.dtpFechaRec = new System.Windows.Forms.DateTimePicker();
+            this.LblFechaRec = new System.Windows.Forms.Label();
             this.TxtIdCompra = new System.Windows.Forms.TextBox();
             this.dtpFinVigencia = new System.Windows.Forms.DateTimePicker();
             this.LblFinVigencia = new System.Windows.Forms.Label();
@@ -85,8 +87,6 @@
             this.LblAnulado = new System.Windows.Forms.Label();
             this.BtnConfirmar = new FontAwesome.Sharp.IconButton();
             this.BtnAnular = new FontAwesome.Sharp.IconButton();
-            this.dtpFechaRec = new System.Windows.Forms.DateTimePicker();
-            this.LblFechaRec = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoProveedor.SuspendLayout();
             this.groupBoxInfoPedido.SuspendLayout();
@@ -290,6 +290,27 @@
             this.groupBoxInfoPedido.TabIndex = 60;
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información de la Compra";
+            // 
+            // dtpFechaRec
+            // 
+            this.dtpFechaRec.Enabled = false;
+            this.dtpFechaRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaRec.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaRec.Location = new System.Drawing.Point(428, 88);
+            this.dtpFechaRec.Name = "dtpFechaRec";
+            this.dtpFechaRec.Size = new System.Drawing.Size(97, 20);
+            this.dtpFechaRec.TabIndex = 109;
+            this.dtpFechaRec.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            // 
+            // LblFechaRec
+            // 
+            this.LblFechaRec.AutoSize = true;
+            this.LblFechaRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaRec.Location = new System.Drawing.Point(425, 70);
+            this.LblFechaRec.Name = "LblFechaRec";
+            this.LblFechaRec.Size = new System.Drawing.Size(95, 13);
+            this.LblFechaRec.TabIndex = 108;
+            this.LblFechaRec.Text = "Fecha Recepción:";
             // 
             // TxtIdCompra
             // 
@@ -663,6 +684,7 @@
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // checkBoxAnulado
             // 
@@ -731,27 +753,6 @@
             this.BtnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnAnular.UseVisualStyleBackColor = false;
             this.BtnAnular.Click += new System.EventHandler(this.BtnAnular_Click);
-            // 
-            // dtpFechaRec
-            // 
-            this.dtpFechaRec.Enabled = false;
-            this.dtpFechaRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaRec.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaRec.Location = new System.Drawing.Point(428, 88);
-            this.dtpFechaRec.Name = "dtpFechaRec";
-            this.dtpFechaRec.Size = new System.Drawing.Size(97, 20);
-            this.dtpFechaRec.TabIndex = 109;
-            this.dtpFechaRec.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
-            // 
-            // LblFechaRec
-            // 
-            this.LblFechaRec.AutoSize = true;
-            this.LblFechaRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaRec.Location = new System.Drawing.Point(425, 70);
-            this.LblFechaRec.Name = "LblFechaRec";
-            this.LblFechaRec.Size = new System.Drawing.Size(95, 13);
-            this.LblFechaRec.TabIndex = 108;
-            this.LblFechaRec.Text = "Fecha Recepción:";
             // 
             // FrmVerDetalleCompra
             // 

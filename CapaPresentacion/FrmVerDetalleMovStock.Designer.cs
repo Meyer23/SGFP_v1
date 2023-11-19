@@ -31,6 +31,11 @@
             this.LblTotalCompra = new System.Windows.Forms.Label();
             this.TxtTotalCantidad = new System.Windows.Forms.TextBox();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
             this.TxtIdMovStock = new System.Windows.Forms.TextBox();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
@@ -55,15 +60,10 @@
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.LblDocumento = new System.Windows.Forms.Label();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
+            this.BtnImprimir = new FontAwesome.Sharp.IconButton();
             this.PbNoConfirmado = new System.Windows.Forms.PictureBox();
             this.BtnConfirmar = new FontAwesome.Sharp.IconButton();
             this.BtnAnular = new FontAwesome.Sharp.IconButton();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbConfirmado)).BeginInit();
@@ -109,6 +109,44 @@
             this.dgvData.RowHeadersWidth = 62;
             this.dgvData.Size = new System.Drawing.Size(793, 236);
             this.dgvData.TabIndex = 59;
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.MinimumWidth = 8;
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Visible = false;
+            this.idProducto.Width = 150;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción Producto";
+            this.Descripcion.MinimumWidth = 8;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 300;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 8;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.HeaderText = "";
+            this.BtnEliminar.MinimumWidth = 8;
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.ReadOnly = true;
+            this.BtnEliminar.Width = 30;
             // 
             // groupBoxInfoPedido
             // 
@@ -386,27 +424,28 @@
             this.LblDocumento.TabIndex = 120;
             this.LblDocumento.Text = "Documento:";
             // 
-            // BtnGuardar
+            // BtnImprimir
             // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(813, 413);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(142, 27);
-            this.BtnGuardar.TabIndex = 124;
-            this.BtnGuardar.Text = "Imprimir";
-            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnImprimir.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnImprimir.ForeColor = System.Drawing.Color.White;
+            this.BtnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.BtnImprimir.IconColor = System.Drawing.Color.White;
+            this.BtnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnImprimir.IconSize = 16;
+            this.BtnImprimir.Location = new System.Drawing.Point(813, 413);
+            this.BtnImprimir.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnImprimir.Name = "BtnImprimir";
+            this.BtnImprimir.Size = new System.Drawing.Size(142, 27);
+            this.BtnImprimir.TabIndex = 124;
+            this.BtnImprimir.Text = "Imprimir";
+            this.BtnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnImprimir.UseVisualStyleBackColor = false;
+            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
             // PbNoConfirmado
             // 
@@ -465,44 +504,6 @@
             this.BtnAnular.UseVisualStyleBackColor = false;
             this.BtnAnular.Click += new System.EventHandler(this.BtnAnular_Click);
             // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.MinimumWidth = 8;
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Visible = false;
-            this.idProducto.Width = 150;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción Producto";
-            this.Descripcion.MinimumWidth = 8;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 300;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 8;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.HeaderText = "";
-            this.BtnEliminar.MinimumWidth = 8;
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.ReadOnly = true;
-            this.BtnEliminar.Width = 30;
-            // 
             // FrmVerDetalleMovStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,7 +512,7 @@
             this.Controls.Add(this.BtnAnular);
             this.Controls.Add(this.BtnConfirmar);
             this.Controls.Add(this.PbNoConfirmado);
-            this.Controls.Add(this.BtnGuardar);
+            this.Controls.Add(this.BtnImprimir);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtBusqueda);
@@ -565,7 +566,7 @@
         private FontAwesome.Sharp.IconButton BtnBuscar;
         private System.Windows.Forms.TextBox TxtBusqueda;
         private System.Windows.Forms.Label LblDocumento;
-        private FontAwesome.Sharp.IconButton BtnGuardar;
+        private FontAwesome.Sharp.IconButton BtnImprimir;
         private System.Windows.Forms.TextBox TxtTipoMov;
         private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.Label LblUsuario;

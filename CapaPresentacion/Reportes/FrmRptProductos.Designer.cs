@@ -88,7 +88,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmRptProductos";
-            this.Text = "Reporte";
+            this.Text = "Listado de Existencia";
             this.Load += new System.EventHandler(this.FrmRptProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
