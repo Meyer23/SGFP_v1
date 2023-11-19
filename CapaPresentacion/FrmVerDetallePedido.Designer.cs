@@ -32,6 +32,7 @@
             this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.LblNroPedido = new System.Windows.Forms.Label();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
+            this.TxtIdPedido = new System.Windows.Forms.TextBox();
             this.TxtFormaPago = new System.Windows.Forms.TextBox();
             this.TxtTipoDoc = new System.Windows.Forms.TextBox();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.checkBoxConfirmado = new System.Windows.Forms.CheckBox();
             this.BtnConfirmar = new FontAwesome.Sharp.IconButton();
             this.BtnAnular = new FontAwesome.Sharp.IconButton();
-            this.TxtIdPedido = new System.Windows.Forms.TextBox();
             this.LblAnulado = new System.Windows.Forms.Label();
             this.checkBoxAnulado = new System.Windows.Forms.CheckBox();
             this.groupBoxInfoPedido.SuspendLayout();
@@ -137,6 +137,14 @@
             this.groupBoxInfoPedido.TabIndex = 90;
             this.groupBoxInfoPedido.TabStop = false;
             this.groupBoxInfoPedido.Text = "Información del Pedido";
+            // 
+            // TxtIdPedido
+            // 
+            this.TxtIdPedido.Location = new System.Drawing.Point(183, 12);
+            this.TxtIdPedido.Name = "TxtIdPedido";
+            this.TxtIdPedido.Size = new System.Drawing.Size(17, 22);
+            this.TxtIdPedido.TabIndex = 95;
+            this.TxtIdPedido.Visible = false;
             // 
             // TxtFormaPago
             // 
@@ -470,6 +478,7 @@
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // PbConfirmado
             // 
@@ -572,14 +581,6 @@
             this.BtnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnAnular.UseVisualStyleBackColor = false;
             this.BtnAnular.Click += new System.EventHandler(this.BtnAnular_Click);
-            // 
-            // TxtIdPedido
-            // 
-            this.TxtIdPedido.Location = new System.Drawing.Point(183, 12);
-            this.TxtIdPedido.Name = "TxtIdPedido";
-            this.TxtIdPedido.Size = new System.Drawing.Size(17, 22);
-            this.TxtIdPedido.TabIndex = 95;
-            this.TxtIdPedido.Visible = false;
             // 
             // LblAnulado
             // 

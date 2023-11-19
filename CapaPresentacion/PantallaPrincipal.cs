@@ -242,5 +242,11 @@ namespace CapaPresentacion
         {
             AbrirFormulario(StockMenu, new FrmVerDetalleMovStock());
         }
+
+        private void SubMenuListadoExistencia_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptProductos oRptProductos = new Reportes.FrmRptProductos();
+            oRptProductos.ShowDialog();
+        }
     }
 }

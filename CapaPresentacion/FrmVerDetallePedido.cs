@@ -247,5 +247,12 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptPedidos oRptPedidos = new Reportes.FrmRptPedidos();
+            oRptPedidos.TxtParamId.Text = TxtIdPedido.Text;
+            oRptPedidos.ShowDialog();
+        }
     }
 }
