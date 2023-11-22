@@ -97,7 +97,7 @@ namespace CapaPresentacion
                     {
                         DataGridViewRow row = dgvData.Rows[Convert.ToInt32(TxtIndex.Text)];
                         row.Cells["IdProducto"].Value = TxtIdProducto.Text;
-                        row.Cells["tCodigo"].Value = TxtCodigo.Text;
+                        row.Cells["Codigo"].Value = TxtCodigo.Text;
                         row.Cells["Descripcion"].Value = TxtDescripcion.Text;
                         row.Cells["Costo"].Value = TxtCosto.Text;
                         row.Cells["Precio"].Value = TxtPrecio.Text;
