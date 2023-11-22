@@ -34,6 +34,13 @@
             this.textBoxTotalPagar = new System.Windows.Forms.TextBox();
             this.LblTotalPagar = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
             this.groupBoxInfoProductos = new System.Windows.Forms.GroupBox();
             this.TxtIdProducto = new System.Windows.Forms.TextBox();
@@ -69,21 +76,16 @@
             this.LblVuelto = new System.Windows.Forms.Label();
             this.TxtVuelto = new System.Windows.Forms.TextBox();
             this.groupBoxFormaPago = new System.Windows.Forms.GroupBox();
-            this.LblMoneda = new System.Windows.Forms.Label();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgvData_Cobro = new System.Windows.Forms.DataGridView();
             this.TxtDocumento = new System.Windows.Forms.TextBox();
             this.LblDocumento = new System.Windows.Forms.Label();
+            this.dgvData_Cobro = new System.Windows.Forms.DataGridView();
             this.TipoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImporteVuelto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LblMoneda = new System.Windows.Forms.Label();
+            this.TxtCobroParcial = new System.Windows.Forms.TextBox();
+            this.LblTotalFraccionado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProductos.SuspendLayout();
@@ -101,7 +103,7 @@
             this.LblPedidos.Location = new System.Drawing.Point(12, 9);
             this.LblPedidos.Name = "LblPedidos";
             this.LblPedidos.Padding = new System.Windows.Forms.Padding(3);
-            this.LblPedidos.Size = new System.Drawing.Size(2227, 1099);
+            this.LblPedidos.Size = new System.Drawing.Size(2265, 1099);
             this.LblPedidos.TabIndex = 26;
             this.LblPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -172,6 +174,63 @@
             this.dgvData.TabIndex = 80;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.MinimumWidth = 8;
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Visible = false;
+            this.idProducto.Width = 180;
+            // 
+            // CodProducto
+            // 
+            this.CodProducto.HeaderText = "Cod. Producto";
+            this.CodProducto.MinimumWidth = 8;
+            this.CodProducto.Name = "CodProducto";
+            this.CodProducto.ReadOnly = true;
+            this.CodProducto.Width = 150;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción Producto";
+            this.Descripcion.MinimumWidth = 8;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 300;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 8;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 150;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 8;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 150;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.MinimumWidth = 8;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            this.SubTotal.Width = 150;
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.HeaderText = "";
+            this.BtnEliminar.MinimumWidth = 8;
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.ReadOnly = true;
+            this.BtnEliminar.Width = 30;
             // 
             // groupBoxInfoPedido
             // 
@@ -597,6 +656,8 @@
             // groupBoxFormaPago
             // 
             this.groupBoxFormaPago.BackColor = System.Drawing.Color.White;
+            this.groupBoxFormaPago.Controls.Add(this.TxtCobroParcial);
+            this.groupBoxFormaPago.Controls.Add(this.LblTotalFraccionado);
             this.groupBoxFormaPago.Controls.Add(this.TxtDocumento);
             this.groupBoxFormaPago.Controls.Add(this.LblDocumento);
             this.groupBoxFormaPago.Controls.Add(this.dgvData_Cobro);
@@ -609,100 +670,11 @@
             this.groupBoxFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxFormaPago.Location = new System.Drawing.Point(1169, 468);
             this.groupBoxFormaPago.Name = "groupBoxFormaPago";
-            this.groupBoxFormaPago.Size = new System.Drawing.Size(1035, 619);
+            this.groupBoxFormaPago.Size = new System.Drawing.Size(1093, 619);
             this.groupBoxFormaPago.TabIndex = 92;
             this.groupBoxFormaPago.TabStop = false;
             this.groupBoxFormaPago.Text = "Detalle Cobro";
             this.groupBoxFormaPago.Visible = false;
-            // 
-            // LblMoneda
-            // 
-            this.LblMoneda.AutoSize = true;
-            this.LblMoneda.BackColor = System.Drawing.Color.White;
-            this.LblMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMoneda.Location = new System.Drawing.Point(349, 916);
-            this.LblMoneda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblMoneda.Name = "LblMoneda";
-            this.LblMoneda.Size = new System.Drawing.Size(61, 36);
-            this.LblMoneda.TabIndex = 93;
-            this.LblMoneda.Text = "Gs.";
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.MinimumWidth = 8;
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Visible = false;
-            this.idProducto.Width = 180;
-            // 
-            // CodProducto
-            // 
-            this.CodProducto.HeaderText = "Cod. Producto";
-            this.CodProducto.MinimumWidth = 8;
-            this.CodProducto.Name = "CodProducto";
-            this.CodProducto.ReadOnly = true;
-            this.CodProducto.Width = 150;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción Producto";
-            this.Descripcion.MinimumWidth = 8;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 300;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 8;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 150;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 8;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 150;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.MinimumWidth = 8;
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            this.SubTotal.Width = 150;
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.HeaderText = "";
-            this.BtnEliminar.MinimumWidth = 8;
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.ReadOnly = true;
-            this.BtnEliminar.Width = 30;
-            // 
-            // dgvData_Cobro
-            // 
-            this.dgvData_Cobro.AllowUserToAddRows = false;
-            this.dgvData_Cobro.AllowUserToDeleteRows = false;
-            this.dgvData_Cobro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData_Cobro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TipoValor,
-            this.NroDocumento,
-            this.Importe,
-            this.ImporteVuelto});
-            this.dgvData_Cobro.Location = new System.Drawing.Point(26, 278);
-            this.dgvData_Cobro.Margin = new System.Windows.Forms.Padding(4, 5, 7, 5);
-            this.dgvData_Cobro.Name = "dgvData_Cobro";
-            this.dgvData_Cobro.ReadOnly = true;
-            this.dgvData_Cobro.RowHeadersWidth = 62;
-            this.dgvData_Cobro.Size = new System.Drawing.Size(748, 321);
-            this.dgvData_Cobro.TabIndex = 81;
-            this.dgvData_Cobro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_Cobro_CellContentClick);
-            this.dgvData_Cobro.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_Cobro_CellPainting);
             // 
             // TxtDocumento
             // 
@@ -726,6 +698,26 @@
             this.LblDocumento.TabIndex = 82;
             this.LblDocumento.Text = "Documento:";
             this.LblDocumento.Visible = false;
+            // 
+            // dgvData_Cobro
+            // 
+            this.dgvData_Cobro.AllowUserToAddRows = false;
+            this.dgvData_Cobro.AllowUserToDeleteRows = false;
+            this.dgvData_Cobro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData_Cobro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TipoValor,
+            this.NroDocumento,
+            this.Importe,
+            this.ImporteVuelto});
+            this.dgvData_Cobro.Location = new System.Drawing.Point(26, 313);
+            this.dgvData_Cobro.Margin = new System.Windows.Forms.Padding(4, 5, 7, 5);
+            this.dgvData_Cobro.Name = "dgvData_Cobro";
+            this.dgvData_Cobro.ReadOnly = true;
+            this.dgvData_Cobro.RowHeadersWidth = 62;
+            this.dgvData_Cobro.Size = new System.Drawing.Size(672, 286);
+            this.dgvData_Cobro.TabIndex = 81;
+            this.dgvData_Cobro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_Cobro_CellContentClick);
+            this.dgvData_Cobro.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_Cobro_CellPainting);
             // 
             // TipoValor
             // 
@@ -758,6 +750,37 @@
             this.ImporteVuelto.Name = "ImporteVuelto";
             this.ImporteVuelto.ReadOnly = true;
             this.ImporteVuelto.Width = 150;
+            // 
+            // LblMoneda
+            // 
+            this.LblMoneda.AutoSize = true;
+            this.LblMoneda.BackColor = System.Drawing.Color.White;
+            this.LblMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMoneda.Location = new System.Drawing.Point(349, 916);
+            this.LblMoneda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblMoneda.Name = "LblMoneda";
+            this.LblMoneda.Size = new System.Drawing.Size(61, 36);
+            this.LblMoneda.TabIndex = 93;
+            this.LblMoneda.Text = "Gs.";
+            // 
+            // TxtCobroParcial
+            // 
+            this.TxtCobroParcial.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCobroParcial.Location = new System.Drawing.Point(296, 217);
+            this.TxtCobroParcial.Name = "TxtCobroParcial";
+            this.TxtCobroParcial.Size = new System.Drawing.Size(266, 53);
+            this.TxtCobroParcial.TabIndex = 85;
+            // 
+            // LblTotalFraccionado
+            // 
+            this.LblTotalFraccionado.AutoSize = true;
+            this.LblTotalFraccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalFraccionado.Location = new System.Drawing.Point(291, 174);
+            this.LblTotalFraccionado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblTotalFraccionado.Name = "LblTotalFraccionado";
+            this.LblTotalFraccionado.Size = new System.Drawing.Size(148, 29);
+            this.LblTotalFraccionado.TabIndex = 84;
+            this.LblTotalFraccionado.Text = "Parcial Total";
             // 
             // FrmRegistrarVenta
             // 
@@ -851,5 +874,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImporteVuelto;
+        private System.Windows.Forms.TextBox TxtCobroParcial;
+        private System.Windows.Forms.Label LblTotalFraccionado;
     }
 }

@@ -12,6 +12,8 @@ namespace CapaDatos
         
         public string Sucursal { get; set; }
 
+        public string DescripcionCaja { get; set; }
+
         public bool Activo { get; set; }
 
         public int? IdUsuario { get; set; }

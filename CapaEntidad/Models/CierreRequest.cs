@@ -12,6 +12,8 @@ namespace CapaEntidad.Models
 
         public int NumeroCaja { get; set; }
 
+        public string DescripcionCaja { get; set; }
+
         public string LoginCajero { get; set; }
 
         public DateTime FechaApertura { get; set; }

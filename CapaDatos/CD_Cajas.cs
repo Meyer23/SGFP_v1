@@ -23,7 +23,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select c.id, u.Login, c.NroCaja, s.Descripcion Sucursal, c.Activo" +
+                    string query = "select c.id, u.Login, c.NroCaja, c.Descripcion DescripcionCaja, s.Descripcion Sucursal, c.Activo" +
                         " from dbo.Cajas c" +
                         " left join dbo.Usuarios u" +
                         " on c.idUsuario = u.id" +
@@ -44,6 +44,7 @@ namespace CapaDatos
                                 Id = Convert.ToInt32(reader["Id"].ToString()),
                                 LoginUsuario = reader["Login"].ToString(),
                                 NumeroCaja= Int16.Parse(reader["NroCaja"].ToString()),
+                                DescripcionCaja= reader["DescripcionCaja"].ToString(),
                                 Sucursal = reader["Sucursal"].ToString(),
                                 Activo = Convert.ToBoolean(reader["Activo"])
                             });
@@ -111,6 +112,7 @@ namespace CapaDatos
                     con.Open();
                     cmd.Parameters.AddWithValue("@NumeroCaja", obj.NumeroCaja);
                     cmd.Parameters.AddWithValue("@DescripcionSucursal", obj.Sucursal);
+                    cmd.Parameters.AddWithValue("@DescripcionCaja", obj.DescripcionCaja);
                     cmd.Parameters.AddWithValue("@Activo", obj.Activo);
                     cmd.Parameters.Add("@idCaja", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

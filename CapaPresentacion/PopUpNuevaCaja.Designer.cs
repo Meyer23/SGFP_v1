@@ -35,6 +35,8 @@
             this.BtnSalir = new FontAwesome.Sharp.IconButton();
             this.ComboSucursal = new System.Windows.Forms.ComboBox();
             this.LblSucursal = new System.Windows.Forms.Label();
+            this.LblDescripcion = new System.Windows.Forms.Label();
+            this.TxtDescripcionCaja = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PickUpDownNroCaja)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +63,7 @@
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.Checked = true;
             this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkActivo.Location = new System.Drawing.Point(12, 183);
+            this.ChkActivo.Location = new System.Drawing.Point(12, 256);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(78, 24);
             this.ChkActivo.TabIndex = 2;
@@ -79,7 +81,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(12, 248);
+            this.BtnGuardar.Location = new System.Drawing.Point(12, 316);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(150, 42);
             this.BtnGuardar.TabIndex = 52;
@@ -101,7 +103,7 @@
             this.BtnSalir.IconColor = System.Drawing.Color.White;
             this.BtnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnSalir.IconSize = 18;
-            this.BtnSalir.Location = new System.Drawing.Point(180, 250);
+            this.BtnSalir.Location = new System.Drawing.Point(190, 318);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(150, 40);
             this.BtnSalir.TabIndex = 53;
@@ -124,18 +126,37 @@
             // LblSucursal
             // 
             this.LblSucursal.AutoSize = true;
-            this.LblSucursal.BackColor = System.Drawing.Color.White;
+            this.LblSucursal.BackColor = System.Drawing.Color.Transparent;
             this.LblSucursal.Location = new System.Drawing.Point(12, 110);
             this.LblSucursal.Name = "LblSucursal";
             this.LblSucursal.Size = new System.Drawing.Size(75, 20);
             this.LblSucursal.TabIndex = 57;
             this.LblSucursal.Text = "Sucursal:";
             // 
+            // LblDescripcion
+            // 
+            this.LblDescripcion.AutoSize = true;
+            this.LblDescripcion.BackColor = System.Drawing.Color.Transparent;
+            this.LblDescripcion.Location = new System.Drawing.Point(15, 180);
+            this.LblDescripcion.Name = "LblDescripcion";
+            this.LblDescripcion.Size = new System.Drawing.Size(96, 20);
+            this.LblDescripcion.TabIndex = 59;
+            this.LblDescripcion.Text = "Descripcion:";
+            // 
+            // TxtDescripcionCaja
+            // 
+            this.TxtDescripcionCaja.Location = new System.Drawing.Point(16, 213);
+            this.TxtDescripcionCaja.Name = "TxtDescripcionCaja";
+            this.TxtDescripcionCaja.Size = new System.Drawing.Size(180, 26);
+            this.TxtDescripcionCaja.TabIndex = 60;
+            // 
             // PopUpNuevaCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 327);
+            this.ClientSize = new System.Drawing.Size(352, 415);
+            this.Controls.Add(this.TxtDescripcionCaja);
+            this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.ComboSucursal);
             this.Controls.Add(this.LblSucursal);
             this.Controls.Add(this.BtnSalir);
@@ -161,5 +182,7 @@
         private FontAwesome.Sharp.IconButton BtnSalir;
         private System.Windows.Forms.ComboBox ComboSucursal;
         private System.Windows.Forms.Label LblSucursal;
+        private System.Windows.Forms.Label LblDescripcion;
+        private System.Windows.Forms.TextBox TxtDescripcionCaja;
     }
 }

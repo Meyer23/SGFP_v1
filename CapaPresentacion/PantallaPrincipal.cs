@@ -258,5 +258,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(ComprasMenu, new FrmVerDetalleNotasCreditoRecibidas());
         }
+
+        private void SubMenuNumeracionDoc_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenedorMenu, new FrmNumeracionDocumento());
+        }
     }
 }

@@ -175,6 +175,8 @@ namespace CapaPresentacion
                 {
                     TxtVuelto.Text = (total - totalMedioCobro).ToString();
                 }
+
+                TxtCobroParcial.Text = totalMedioCobro.ToString("0.00");
             }
         }
 
@@ -457,9 +459,18 @@ namespace CapaPresentacion
                     TxtDocumento.Text,
                     TxtImporte.Text,
                     TxtVuelto.Text
-                    };
+                };
                 dgvData_Cobro.Rows.Add(row);
+                limpiar();
             }
+        }
+
+        private void limpiar()
+        {
+            TxtTipoValor.Clear();
+            TxtImporte.Clear();
+            TxtVuelto.Clear();
+            TxtDocumento.Clear();
         }
 
         public bool ValidarBotonVenta()

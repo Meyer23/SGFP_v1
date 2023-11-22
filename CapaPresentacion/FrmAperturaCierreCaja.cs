@@ -69,7 +69,7 @@ namespace CapaPresentacion
 
             foreach (Cajas resultCajas in cajas)
             {
-                ComboCajas.DisplayMember = "Id";
+                ComboCajas.DisplayMember = "DescripcionCaja";
             }
         }
 
@@ -82,7 +82,7 @@ namespace CapaPresentacion
                 AperturaRequest obj = new AperturaRequest()
                 {
                     FechaApertura = DateTimePickerApertura.Value,
-                    IdCaja = Convert.ToInt32(ComboCajas.Text),
+                    DescripcionCaja = ComboCajas.Text,
                     ImporteInicial = ImporteUpDown.Value,
                     Usuario = ComboCajero.Text
                 };
@@ -121,7 +121,7 @@ namespace CapaPresentacion
                     ImporteCierre = UpDownMontoCierre.Value,
                     FechaApertura = DateTimePickerApertura.Value,
                     LoginCajero = ComboCajero.Text,
-                    NumeroCaja = Convert.ToInt16(ComboCajas.Text),
+                    DescripcionCaja = ComboCajas.Text,
                     FechaCierre = DateTimePickerCierre.Value
                 };
 

@@ -8,6 +8,8 @@ namespace CapaEntidad.Models
 
         public int IdCaja { get; set; }
 
+        public string DescripcionCaja { get; set; }
+
         public decimal ImporteInicial { get; set; }
 
         public string Usuario { get; set; }

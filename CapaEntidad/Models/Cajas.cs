@@ -12,7 +12,9 @@ namespace CapaEntidad.Models
 
         public string LoginUsuario { get; set; }
 
-        public int NumeroCaja { get; set; } 
+        public int NumeroCaja { get; set; }
+
+        public string DescripcionCaja { get; set; }
 
         public string Sucursal { get; set; }
 

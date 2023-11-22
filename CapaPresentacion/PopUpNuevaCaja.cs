@@ -32,6 +32,7 @@ namespace CapaPresentacion
             {
                 NumeroCaja = (int)PickUpDownNroCaja.Value,
                 Sucursal = ComboSucursal.Text,
+                DescripcionCaja = TxtDescripcionCaja.Text,
                 Activo = ChkActivo.Checked
             };
 
