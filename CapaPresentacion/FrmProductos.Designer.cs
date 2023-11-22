@@ -622,7 +622,7 @@
             // 
             // Codigo
             // 
-            this.Codigo.HeaderText = "Código";
+            this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
             this.Codigo.Width = 150;
