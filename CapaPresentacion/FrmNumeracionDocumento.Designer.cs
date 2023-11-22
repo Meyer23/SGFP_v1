@@ -71,6 +71,7 @@
             // 
             // ComboSucursal
             // 
+            this.ComboSucursal.Enabled = false;
             this.ComboSucursal.FormattingEnabled = true;
             this.ComboSucursal.Location = new System.Drawing.Point(279, 44);
             this.ComboSucursal.Name = "ComboSucursal";
@@ -244,6 +245,7 @@
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // FrmNumeracionDocumento
             // 

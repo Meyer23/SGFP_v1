@@ -64,6 +64,7 @@
     <Compile Include="MotivoAnulacion.cs" />
     <Compile Include="MovimientoStock.cs" />
     <Compile Include="NotaCreditoRecibida.cs" />
+    <Compile Include="NumeracionDocumento.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="DetalleProductos.cs" />
     <Compile Include="Producto.cs" />

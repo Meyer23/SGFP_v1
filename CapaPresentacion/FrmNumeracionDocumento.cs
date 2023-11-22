@@ -18,6 +18,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             CargarComboCajas();
+            CargarComboSucursal();
         }
 
         private void CargarComboCajas()
@@ -29,6 +30,23 @@ namespace CapaPresentacion
             {
                 ComboCajas.DisplayMember = "DescripcionCaja";
             }
+        }
+
+        private void CargarComboSucursal()
+        {
+            List<Sucursales> sucursales = new CN_Sucursal().ObtenerSucursal();
+
+            ComboSucursal.DataSource = sucursales;
+
+            foreach (Sucursales d in sucursales)
+            {
+                ComboSucursal.DisplayMember = "DescripcionSucursal";
+            }
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
