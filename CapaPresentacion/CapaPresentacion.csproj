@@ -382,6 +382,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Reportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptClientes.Designer.cs">
+      <DependentUpon>FrmRptClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,6 +417,12 @@
     </Compile>
     <Compile Include="Reportes\FrmRptProductos.Designer.cs">
       <DependentUpon>FrmRptProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmRptProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptProveedores.Designer.cs">
+      <DependentUpon>FrmRptProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FrmAnularCompra.resx">
@@ -573,6 +585,9 @@
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptClientes.resx">
+      <DependentUpon>FrmRptClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptCompras.resx">
       <DependentUpon>FrmRptCompras.cs</DependentUpon>
     </EmbeddedResource>
@@ -588,11 +603,16 @@
     <EmbeddedResource Include="Reportes\FrmRptProductos.resx">
       <DependentUpon>FrmRptProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptProveedores.resx">
+      <DependentUpon>FrmRptProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RPT_Clientes.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Compras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_MovimientosStock.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_NotasCreditoRecibidas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Pedidos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Productos.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_Proveedores.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

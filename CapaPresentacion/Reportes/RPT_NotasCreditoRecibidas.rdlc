@@ -286,7 +286,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -446,6 +445,7 @@
                     <FontStyle>Italic</FontStyle>
                     <FontFamily>Trebuchet MS</FontFamily>
                     <FontSize>8pt</FontSize>
+                    <Format>g</Format>
                   </Style>
                 </TextRun>
               </TextRuns>

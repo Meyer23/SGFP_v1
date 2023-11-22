@@ -426,7 +426,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -520,6 +519,7 @@
                     <FontStyle>Italic</FontStyle>
                     <FontFamily>Trebuchet MS</FontFamily>
                     <FontSize>8pt</FontSize>
+                    <Format>g</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1725,7 +1725,6 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalFactura</rd:DefaultName>
-          <Top>0cm</Top>
           <Left>17.48567cm</Left>
           <Height>0.63528cm</Height>
           <Width>3.02387cm</Width>

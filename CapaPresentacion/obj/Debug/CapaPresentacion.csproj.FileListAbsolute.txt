@@ -270,3 +270,6 @@ C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmAnu
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmVerDetalleNotasCreditoRecibidas.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpNotasCreditoRecibidas.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptNotasCreditoRecibidas.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.FrmNumeracionDocumento.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptClientes.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptProveedores.resources

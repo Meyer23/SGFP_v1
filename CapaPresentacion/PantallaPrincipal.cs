@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using CapaNegocio;
 using CapaEntidad;
 using CapaPresentacion.Interfaces;
+using CapaPresentacion.Reportes;
 
 namespace CapaPresentacion
 {
@@ -103,10 +104,10 @@ namespace CapaPresentacion
             AbrirFormulario(MantenedorMenu, new FrmEmpleados());
         }
 
-        private void ClientesMenu_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new FrmClientes());
-        }
+        //private void ClientesMenu_Click(object sender, EventArgs e)
+        //{
+        //    AbrirFormulario((IconMenuItem)sender, new FrmClientes());
+        //}
 
         private void MenuRegistrarVenta_Click(object sender, EventArgs e)
         {
@@ -153,10 +154,10 @@ namespace CapaPresentacion
             AbrirFormulario(MantenedorMenu, new FrmUnidadesMedida());
         }
 
-        private void ProveedoresMenu_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(ProveedoresMenu, new FrmProveedores());
-        }
+        //private void ProveedoresMenu_Click(object sender, EventArgs e)
+        //{
+        //    AbrirFormulario(ProveedoresMenu, new FrmProveedores());
+        //}
 
         private void SubMenuTiposDeValor_Click(object sender, EventArgs e)
         {
@@ -262,6 +263,28 @@ namespace CapaPresentacion
         private void SubMenuNumeracionDoc_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MantenedorMenu, new FrmNumeracionDocumento());
+        }
+
+        private void SubMenuClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(ClientesMenu, new FrmClientes());
+        }
+
+        private void SubMenuListadoClientes_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptClientes oRptClientes = new Reportes.FrmRptClientes();
+            oRptClientes.ShowDialog();
+        }
+
+        private void SubMenuProveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(ProveedoresMenu, new FrmProveedores());
+        }
+
+        private void SubMenuListadoProveedor_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptProveedores oRptProveedores = new Reportes.FrmRptProveedores();
+            oRptProveedores.ShowDialog();
         }
     }
 }

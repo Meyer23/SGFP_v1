@@ -22,6 +22,7 @@ namespace CapaPresentacion.Reportes
         private void FrmRptProductos_Load(object sender, EventArgs e)
         {
             CargarCategorias();
+            comboCategorias.SelectedIndex = 18;
             // TODO: esta línea de código carga datos en la tabla 'dS_Reportes.Empresa' Puede moverla o quitarla según sea necesario.            
         }
 
@@ -40,7 +41,15 @@ namespace CapaPresentacion.Reportes
         {
             this.empresaTableAdapter.Fill(this.dS_Reportes.Empresa);
             // TODO: esta línea de código carga datos en la tabla 'dS_Reportes.Productos' Puede moverla o quitarla según sea necesario.
-            this.productosTableAdapter.Fill(this.dS_Reportes.Productos,comboCategorias.Text.ToString());
+            
+            if(comboCategorias.Text.ToString() == "*** TODAS ***"){
+                this.productosTableAdapter.Fill(this.dS_Reportes.Productos, "", "ZZZZZZZZ");
+            }
+            else
+            {
+                this.productosTableAdapter.Fill(this.dS_Reportes.Productos, comboCategorias.Text.ToString(), comboCategorias.Text.ToString());
+            }
+            
 
             this.reportViewer1.RefreshReport();
         }
