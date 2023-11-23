@@ -8,9 +8,11 @@ namespace CapaEntidad
 {
     public class NumeracionDocumento
     {
-        public int IdTimbrado { get; set; }
+        public int Id { get; set; }
 
-        public int IdCaja { get; set; }
+        public float NroTimbrado { get; set; }
+
+        public string DescripcionCaja { get; set; }
 
         public string CodigoEstablecimiento { get; set; }
 

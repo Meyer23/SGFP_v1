@@ -1,4 +1,5 @@
-﻿using CapaEntidad.Models;
+﻿using CapaEntidad;
+using CapaEntidad.Models;
 using CapaNegocio;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,13 @@ namespace CapaPresentacion
 {
     public partial class FrmNumeracionDocumento : Form
     {
+        public int idNumeracionDoc { get; set; }
         public FrmNumeracionDocumento()
         {
             InitializeComponent();
             CargarComboCajas();
             CargarComboSucursal();
+            ComboTimbrados();
         }
 
         private void CargarComboCajas()
@@ -44,9 +47,161 @@ namespace CapaPresentacion
             }
         }
 
+        private void ComboTimbrados()
+        {
+            List<Timbrado> timbradosList = new CN_Timbrados().Listar();
+
+            List<Timbrado> timbradosActivos = timbradosList.Where(t => t.Activo).ToList();
+
+            ComboNroTimbrado.DataSource = timbradosActivos;
+            ComboNroTimbrado.DisplayMember = "NroTimbrado";
+
+            //ComboIdTimbrado.SelectedIndexChanged += ComboIdTimbrado_SelectedIndexChanged;
+
+            //// Inicializa TxtTimbrado con el valor del primer elemento en la lista (si existe)
+            //if (timbradosList.Count > 0)
+            //{
+            //    MostrarInfoTimbrado(timbradosList[0]);
+            //}
+        }
+
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            string Mensaje = string.Empty;
+
+            try
+            {
+                NumeracionDocumento obj = new NumeracionDocumento()
+                {
+                    CodigoEstablecimiento = TxtCodEstablecimiento.Text,
+                    PuntoEmision = Convert.ToInt32(TxtPuntoEmision.Text),
+                    UltimoNumero = Convert.ToInt32(TxTUltimoNro.Text),
+                    NroTimbrado = Convert.ToInt32(ComboNroTimbrado.Text),
+                    DescripcionCaja = ComboCajas.Text
+
+                };
+
+                int idNumeracionDocumento = new CN_NumeracionDocumento().InsertarNuevaNumeracionDocumento(obj, out Mensaje);
+
+                if (idNumeracionDocumento > 0)
+                {
+                    MessageBox.Show(Mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Limpiar();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+        }
+
+        private void Limpiar()
+        {
+            TxtCodEstablecimiento.Clear();
+            TxtPuntoEmision.Clear();
+            TxTUltimoNro.Clear();
+        }
+
+        private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.check_azul.Width;
+                var h = Properties.Resources.check_azul.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.check_azul, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void FrmNumeracionDocumento_Load(object sender, EventArgs e)
+        {
+            int idNumeracionActual = this.idNumeracionDoc;
+
+
+            foreach (DataGridViewColumn columna in dgvData.Columns)
+            {
+                if (columna.Visible && columna.Name != "BtnSeleccionar")
+                {
+                    ComboBusqueda.Items.Add(columna.Name);
+                }
+            }
+
+            ComboBusqueda.SelectedIndex = 0;
+
+            //Listar Numeracion de documentos
+            List<NumeracionDocumento> numeracionDocumentos = new CN_NumeracionDocumento().Listar();
+            foreach (NumeracionDocumento numeracion in numeracionDocumentos)
+            {
+                dgvData.Rows.Add("", numeracion.Id, numeracion.DescripcionCaja, numeracion.PuntoEmision, numeracion.CodigoEstablecimiento, numeracion.UltimoNumero, numeracion.NroTimbrado);
+            }
+            TxtBusqueda.Select();
+        }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgvData.Columns[e.ColumnIndex].Name == "BtnSeleccionar")
+            {
+                int index = e.RowIndex;
+
+                if (index >= 0)
+                {
+                    TxtIndex.Text = index.ToString();
+                    TxtPuntoEmision.Text = dgvData.Rows[index].Cells["PuntoEmision"].Value.ToString();
+                    TxtCodEstablecimiento.Text = dgvData.Rows[index].Cells["CodEstablecimiento"].Value.ToString();
+                    TxTUltimoNro.Text = dgvData.Rows[index].Cells["UltimoNro"].Value.ToString();
+                    ComboCajas.Text = dgvData.Rows[index].Cells["Caja"].Value.ToString();
+                    ComboNroTimbrado.Text = dgvData.Rows[index].Cells["Timbrado"].Value.ToString();
+                }
+            }
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ComboBusqueda.SelectedItem.ToString();
+
+            if (dgvData.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvData.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(TxtBusqueda.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            TxtBusqueda.Clear();
         }
     }
 }
