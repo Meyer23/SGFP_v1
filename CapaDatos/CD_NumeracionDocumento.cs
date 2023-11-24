@@ -56,7 +56,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select n.id, n.CodigoEstablecimiento, t.NroTimbrado NroTimbrado, n.PuntoEmision, n.UltimoNro, n.idTimbrado, n.idCaja from dbo.NumeracionDocumento n " +
+                    string query = "select n.id, n.CodigoEstablecimiento, t.NroTimbrado NroTimbrado, t.Id, n.PuntoEmision, n.UltimoNro, n.idTimbrado, n.idCaja from dbo.NumeracionDocumento n " +
                         " inner join dbo.Timbrados t" +
                         " on t.id = n.idTimbrado;";
 
@@ -75,6 +75,7 @@ namespace CapaDatos
                                 PuntoEmision = Convert.ToInt32(reader["PuntoEmision"].ToString()),
                                 CodigoEstablecimiento = reader["CodigoEstablecimiento"].ToString(),
                                 UltimoNumero = Convert.ToInt32(reader["UltimoNro"].ToString()),
+                                IdTimbrado = Convert.ToInt32(reader["Id"]),
                                 NroTimbrado = Convert.ToInt32(reader["NroTimbrado"].ToString())
                             });
                         }

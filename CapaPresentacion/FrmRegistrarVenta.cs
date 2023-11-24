@@ -24,8 +24,9 @@ namespace CapaPresentacion
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(BtnCargarCobro_KeyDown);
             CargarTiposDocumentos();
-            TxtTipoValor.ReadOnly = true;
-            ValidarBotonVenta();
+            MostrarCajero();
+            TxtCajero.Enabled = false;
+            TxtNroCaja.Enabled = false;
         }
 
         public int IdUsuario { get; set; }
@@ -69,6 +70,17 @@ namespace CapaPresentacion
             foreach (TipoDocumento tipoDocumento in tiposDocumentos)
             {
                 ComboTipoDoc.DisplayMember = "Descripcion";
+            }
+        }
+
+        private void CargarFormasPago()
+        {
+            List<FormaPago> formasPago = new CN_FormasPago().ObtenerFormasPago(ComboTipoDoc.Text.ToString());
+            ComboFormaPago.DataSource = formasPago;
+
+            foreach (FormaPago formaPago in formasPago)
+            {
+                ComboFormaPago.DisplayMember = "Descripcion";
             }
         }
 
@@ -161,23 +173,6 @@ namespace CapaPresentacion
         private void CalcularTotalMedioCobro()
         {
             decimal totalMedioCobro = 0;
-
-            if(dgvData_Cobro.Rows.Count > 0)
-            {
-                decimal total = Convert.ToDecimal(textBoxTotalPagar.Text);
-
-                foreach (DataGridViewRow row in dgvData_Cobro.Rows)
-                {
-                    totalMedioCobro += Convert.ToDecimal(row.Cells["Importe"].Value.ToString());
-                }
-
-                if(totalMedioCobro > total)
-                {
-                    TxtVuelto.Text = (total - totalMedioCobro).ToString();
-                }
-
-                TxtCobroParcial.Text = totalMedioCobro.ToString("0.00");
-            }
         }
 
         private void calcularCambio()
@@ -190,24 +185,6 @@ namespace CapaPresentacion
 
             decimal pagaCon;
             decimal total = Convert.ToDecimal(textBoxTotalPagar.Text);
-
-            if(TxtImporte.Text.Trim() == "")
-            {
-                TxtImporte.Text = "0";
-            }
-
-            if(decimal.TryParse(TxtImporte.Text.Trim(), out pagaCon))
-            {
-                if(pagaCon < total)
-                {
-                    TxtVuelto.Text = "0";
-                }
-                else
-                {
-                    decimal cambio = pagaCon - total;
-                    TxtVuelto.Text = cambio.ToString();
-                }
-            }
         }
 
         private void limpiarProducto()
@@ -306,10 +283,6 @@ namespace CapaPresentacion
         {
             if (e.KeyData == Keys.F12)
             {
-                //e.Handled = true;
-                //PopUpCobrarVenta popup = new PopUpCobrarVenta();
-                //popup.Show();
-                groupBoxFormaPago.Visible = true;
             }
         }
 
@@ -323,7 +296,6 @@ namespace CapaPresentacion
 
                     if (result == DialogResult.OK)
                     {
-                        TxtTipoValor.Text = popup.Valor.Descripcion.ToString();
                     }
                     else
                     {
@@ -331,65 +303,22 @@ namespace CapaPresentacion
                     }
                 }
             }
-            TxtTipoValor.Enabled = true;
-
-            if(TxtTipoValor.Text != "Efectivo" && TxtTipoValor.Text != string.Empty)
-            {
-                LblDocumento.Visible = true;
-                TxtDocumento.Visible = true;
-            }
         }
 
         private void TxtImporte_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter && TxtImporte.Text != string.Empty)
-            {
-                calcularCambio();
-                if(TxtTipoValor.Text == "Efectivo")
-                {
-                    string[] row = new string[]
-                    {
-                    TxtTipoValor.Text,
-                    "",
-                    TxtImporte.Text,
-                    TxtVuelto.Text
-                    };
-                    dgvData_Cobro.Rows.Add(row);
-                }
-                CalcularTotalMedioCobro();
-            }
         }
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            decimal txtImporte = Convert.ToDecimal(TxtImporte.Text);
             decimal txtValorTotal = Convert.ToDecimal(textBoxTotalPagar.Text);
-
-            if(txtValorTotal < txtImporte)
-            {
-                MessageBox.Show("El importe es menor al valor de la venta.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("Estoy funcionando!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
         }
 
         private void BtnConfirmar_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyData == Keys.F1)
             {
-                decimal txtImporte = Convert.ToDecimal(TxtImporte.Text);
                 decimal txtValorTotal = Convert.ToDecimal(textBoxTotalPagar.Text);
-
-                if (txtValorTotal < txtImporte)
-                {
-                    MessageBox.Show("El importe es menor al valor de la venta.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    MessageBox.Show("Estoy funcionando", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
             }
         }
 
@@ -414,7 +343,6 @@ namespace CapaPresentacion
 
                 if (index >= 0)
                 {
-                    dgvData_Cobro.Rows.RemoveAt(index);
                 }
             }
         }
@@ -449,39 +377,82 @@ namespace CapaPresentacion
 
         private void TxtDocumento_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter && TxtDocumento.Text != string.Empty)
-            {
-                calcularCambio();
-                CalcularTotalMedioCobro();
-                string[] row = new string[]
-                {
-                    TxtTipoValor.Text,
-                    TxtDocumento.Text,
-                    TxtImporte.Text,
-                    TxtVuelto.Text
-                };
-                dgvData_Cobro.Rows.Add(row);
-                limpiar();
-            }
         }
 
         private void limpiar()
         {
-            TxtTipoValor.Clear();
-            TxtImporte.Clear();
-            TxtVuelto.Clear();
-            TxtDocumento.Clear();
         }
 
-        public bool ValidarBotonVenta()
+        private void ComboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (textBoxTotalPagar.Text == TxtImporte.Text)
-            {
-                BtnConfirmar.Enabled = true;
-                return true;
-            }
-            else
-                return false;
+
+        }
+
+        private void ComboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarFormasPago();
+        }
+
+        private void MostrarCajero()
+        {
+            List<Cajas> listadeCajas = new CN_Cajas().ObtenerCajas();
+
+            var numeroCaja = listadeCajas
+                                         .Where(e => e.LoginUsuario == _Usuario.Login.ToString())
+                                         .Select(e => e.NumeroCaja)
+                                         .SingleOrDefault();
+
+            var idCaja = listadeCajas
+                        .Where(e => e.NumeroCaja == numeroCaja)
+                        .Select(e => e.Id)
+                        .SingleOrDefault();
+
+            TxtCajero.Text = _Usuario.Login.ToString();
+            TxtNroCaja.Text = numeroCaja.ToString();
+            MostrarTimbrado(idCaja);
+
+        }
+
+        private void MostrarTimbrado(int idCaja)
+        {
+
+            List<Timbrado> timbrados = new CN_Timbrados().Listar();
+
+            List<NumeracionDocumento> numeracion = new CN_NumeracionDocumento().Listar();
+
+            var timbradosList = timbrados.Where(e => e.Activo)
+                                     .Select(e => e.NroTimbrado)
+                                     .ToList();
+
+            var timbradoId = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString())
+                                      .Select(e => e.IdTimbrado)
+                                      .SingleOrDefault();
+
+            var valorTimbrado = timbrados.Where(e=> e.Id == timbradoId)
+                                         .Select(e=> e.NroTimbrado)
+                                         .SingleOrDefault();
+
+            var inicioVigencia = timbrados.Where(e => e.Id == timbradoId)
+                                                .Select(e => e.InicioVigencia)
+                                                .SingleOrDefault();
+
+            var finVigencia = timbrados.Where(e => e.Id == timbradoId)
+                                                .Select(e => e.FinVigencia)
+                                                .SingleOrDefault();
+
+            TxtTimbrado.Text = valorTimbrado.ToString();
+            dtpInicioVigencia.Text = inicioVigencia.ToString();
+            dtpFinVigencia.Text = finVigencia.ToString();
+            TxtTimbrado.Enabled = false;
+            dtpInicioVigencia.Enabled = false;
+            dtpFinVigencia.Enabled = false;
+
+        }
+
+        private void BtnAddCliente_Click(object sender, EventArgs e)
+        {
+            PopUpNuevoCliente nuevo = new PopUpNuevoCliente();
+            nuevo.ShowDialog();
         }
     }
 }

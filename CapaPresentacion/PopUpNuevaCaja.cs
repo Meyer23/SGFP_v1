@@ -62,9 +62,9 @@ namespace CapaPresentacion
         {
             PickUpDownNroCaja.ReadOnly = true;
 
-            var numeroCaja = new CN_Cajas().ObtenerCajas().Select(x => x.Id).Max();
+            var numeroCaja = new CN_Cajas().ObtenerCajas().Select(x => x.NumeroCaja).Max();
 
-            PickUpDownNroCaja.Value = numeroCaja + 1;
+            PickUpDownNroCaja.Value = numeroCaja++;
         }
 
         private void CargarComboSucursal()

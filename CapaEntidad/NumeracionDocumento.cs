@@ -10,6 +10,8 @@ namespace CapaEntidad
     {
         public int Id { get; set; }
 
+        public int IdTimbrado { get; set; }
+
         public float NroTimbrado { get; set; }
 
         public string DescripcionCaja { get; set; }

@@ -27,7 +27,7 @@ namespace CapaDatos
                         " from dbo.Cajas c" +
                         " left join dbo.Usuarios u" +
                         " on c.idUsuario = u.id" +
-                        " and u.idRol = 2" +
+                        " and u.idRol = 3" +
                         " inner join dbo.Sucursales s" +
                         " on c.idSucursal = s.id";
 

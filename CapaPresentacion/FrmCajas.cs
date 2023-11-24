@@ -78,7 +78,7 @@ namespace CapaPresentacion
 
             foreach(Cajas resultCajas in cajas)
             {
-                ComboCajas.DisplayMember = "Id";
+                ComboCajas.DisplayMember = "NumeroCaja";
             }
         }
 
