@@ -32,7 +32,10 @@ namespace CapaPresentacion
             ComboBusqueda.SelectedIndex = 0;
 
             List<Producto> listaProducto = new CN_Productos().Listar();
-            foreach (Producto producto in listaProducto)
+
+            var listaProductosExistentes = listaProducto.Where(a => a.Existencia > 0 && a.Activo == true).ToList();
+
+            foreach (Producto producto in listaProductosExistentes)
             {
                 dgvData.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Precio);
             }
