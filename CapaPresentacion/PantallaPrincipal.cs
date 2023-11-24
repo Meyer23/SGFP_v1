@@ -286,5 +286,23 @@ namespace CapaPresentacion
             Reportes.FrmRptProveedores oRptProveedores = new Reportes.FrmRptProveedores();
             oRptProveedores.ShowDialog();
         }
+
+        private void SubMenuListadoCompra_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptListadoCompras oRptListadoCompras = new Reportes.FrmRptListadoCompras();
+            oRptListadoCompras.ShowDialog();
+        }
+
+        private void SubMenuListadoPedidos_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptListadoPedidos oRptListadoPedidos = new Reportes.FrmRptListadoPedidos();
+            oRptListadoPedidos.ShowDialog();
+        }
+
+        private void SubMenuListadoMovstock_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptListadoMovimientoStock oRptListadoMovStock = new Reportes.FrmRptListadoMovimientoStock();
+            oRptListadoMovStock.ShowDialog();
+        }
     }
 }

@@ -406,6 +406,24 @@
     <Compile Include="Reportes\FrmRptCompras.Designer.cs">
       <DependentUpon>FrmRptCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptListadoCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptListadoCompras.Designer.cs">
+      <DependentUpon>FrmRptListadoCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmRptListadoMovimientoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptListadoMovimientoStock.Designer.cs">
+      <DependentUpon>FrmRptListadoMovimientoStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmRptListadoPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptListadoPedidos.Designer.cs">
+      <DependentUpon>FrmRptListadoPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptMovimientosStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -609,6 +627,15 @@
     <EmbeddedResource Include="Reportes\FrmRptCompras.resx">
       <DependentUpon>FrmRptCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptListadoCompras.resx">
+      <DependentUpon>FrmRptListadoCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptListadoMovimientoStock.resx">
+      <DependentUpon>FrmRptListadoMovimientoStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptListadoPedidos.resx">
+      <DependentUpon>FrmRptListadoPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptMovimientosStock.resx">
       <DependentUpon>FrmRptMovimientosStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -626,11 +653,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RPT_Clientes.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Compras.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_ListadoMovimientoStock.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_ListadoPedidos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_MovimientosStock.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_NotasCreditoRecibidas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Pedidos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Productos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Proveedores.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_ListadoCompras.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
