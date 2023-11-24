@@ -440,12 +440,24 @@ namespace CapaPresentacion
                                                 .Select(e => e.FinVigencia)
                                                 .SingleOrDefault();
 
+            var codEstablecimiento = numeracion.Where(e => e.DescripcionCaja.ToString() == idCaja.ToString())
+                                               .Select(e => e.CodigoEstablecimiento)
+                                               .SingleOrDefault();
+
+            var puntoEmision = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString())
+                                         .Select(e => e.PuntoEmision)
+                                         .SingleOrDefault();
+
             TxtTimbrado.Text = valorTimbrado.ToString();
             dtpInicioVigencia.Text = inicioVigencia.ToString();
             dtpFinVigencia.Text = finVigencia.ToString();
+            TxtCodEstablecimiento.Text = codEstablecimiento.ToString();
+            TxtPuntoEmision.Text = puntoEmision.ToString();
             TxtTimbrado.Enabled = false;
             dtpInicioVigencia.Enabled = false;
             dtpFinVigencia.Enabled = false;
+            TxtCodEstablecimiento.Enabled = false;
+            TxtPuntoEmision.Enabled = false;
 
         }
 
@@ -453,6 +465,12 @@ namespace CapaPresentacion
         {
             PopUpNuevoCliente nuevo = new PopUpNuevoCliente();
             nuevo.ShowDialog();
+        }
+
+        private void BtnCobro_Click(object sender, EventArgs e)
+        {
+            PopUpDetalleCobro cobro = new PopUpDetalleCobro();
+            cobro.ShowDialog();
         }
     }
 }
