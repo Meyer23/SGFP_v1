@@ -304,5 +304,11 @@ namespace CapaPresentacion
             Reportes.FrmRptListadoMovimientoStock oRptListadoMovStock = new Reportes.FrmRptListadoMovimientoStock();
             oRptListadoMovStock.ShowDialog();
         }
+
+        private void SubMenuListadoNCRecibida_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptListadoNCRecibidas oRptListadoNCRecibida = new Reportes.FrmRptListadoNCRecibidas();
+            oRptListadoNCRecibida.ShowDialog();
+        }
     }
 }
