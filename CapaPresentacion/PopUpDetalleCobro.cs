@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +17,24 @@ namespace CapaPresentacion
         public PopUpDetalleCobro()
         {
             InitializeComponent();
+            MostrarValores();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void MostrarValores()
+        {
+            List<Valor> valores = new CN_Valores().Listar();
+
+            var tiposValores = valores.Where(x => x.Activo == true)
+                                      .Select(x => x.Descripcion)
+                                      .ToList();
+            ComboTipoValor.Items.Clear();
+            ComboTipoValor.Items.AddRange(tiposValores.ToArray());
+
         }
     }
 }
