@@ -714,6 +714,7 @@
             this.dtpFechaVenc.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaVenc.TabIndex = 3;
             this.dtpFechaVenc.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            this.dtpFechaVenc.ValueChanged += new System.EventHandler(this.dtpFechaVenc_ValueChanged);
             // 
             // LblFechaVencimiento
             // 

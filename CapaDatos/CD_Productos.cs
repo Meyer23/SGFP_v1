@@ -12,19 +12,33 @@ namespace CapaDatos
 {
     public class CD_Productos
     {
-        public List<Producto> Listar()
+        public List<Producto> Listar(int bandera, int idCompra)
         {
             List<Producto> productos = new List<Producto>();
+            string query;
 
             using (SqlConnection con = new SqlConnection(Conexion.Cadena))
             {
                 try
                 {
-                    string query = "SELECT P.id, Codigo, P.Descripcion, Costo, Precio, Existencia, ExistenciaMinima," +
+                    if (bandera == 0)
+                    {
+                        query = "SELECT P.id, Codigo, P.Descripcion, Costo, Precio, Existencia, ExistenciaMinima," +
                         "C.Descripcion AS Categoria, U.Descripcion AS UnidadMedida, Estante, Fila, Columna, P.Activo FROM Productos P" +
                         " INNER JOIN Categorias C ON P.idCategoria = C.id" +
                         " INNER JOIN UnidadesMedidas U ON P.idUnidadMedida = U.id";
-
+                    }
+                    else
+                    {
+                        query = "SELECT P.id, Codigo, P.Descripcion, Costo, CONVERT(int,CD.Precio) AS Precio, CONVERT(int,CD.Cantidad) AS Existencia, ExistenciaMinima, " +
+                            "C.Descripcion AS Categoria, U.Descripcion AS UnidadMedida, Estante, Fila, Columna, P.Activo " +
+                            "FROM ComprasDetalles CD " +
+                            "INNER JOIN Productos P ON CD.idProducto = P.id " +
+                            "INNER JOIN Categorias C ON P.idCategoria = C.id " +
+                            "INNER JOIN UnidadesMedidas U ON P.idUnidadMedida = U.id " +
+                            "WHERE CD.idCompra = " + idCompra;
+                    }
+                     
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
                     con.Open();

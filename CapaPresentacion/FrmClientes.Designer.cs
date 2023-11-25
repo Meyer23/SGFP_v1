@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtIndex = new System.Windows.Forms.TextBox();
             this.TxtIdCliente = new System.Windows.Forms.TextBox();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
@@ -57,11 +57,6 @@
             this.LblBuscarPor = new System.Windows.Forms.Label();
             this.LblListaClientes = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.groupTipoPersona = new System.Windows.Forms.GroupBox();
-            this.radioButtonJuridica = new System.Windows.Forms.RadioButton();
-            this.radioButtonFisica = new System.Windows.Forms.RadioButton();
-            this.TxtApellidos = new System.Windows.Forms.TextBox();
-            this.LblApellidos = new System.Windows.Forms.Label();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +68,11 @@
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoPers = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupTipoPersona = new System.Windows.Forms.GroupBox();
+            this.radioButtonJuridica = new System.Windows.Forms.RadioButton();
+            this.radioButtonFisica = new System.Windows.Forms.RadioButton();
+            this.TxtApellidos = new System.Windows.Forms.TextBox();
+            this.LblApellidos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupTipoPersona.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,7 @@
             this.TxtIndex.Location = new System.Drawing.Point(127, 37);
             this.TxtIndex.Name = "TxtIndex";
             this.TxtIndex.Size = new System.Drawing.Size(26, 20);
-            this.TxtIndex.TabIndex = 75;
+            this.TxtIndex.TabIndex = 76;
             this.TxtIndex.Text = "-1";
             this.TxtIndex.Visible = false;
             // 
@@ -91,7 +91,7 @@
             this.TxtIdCliente.Location = new System.Drawing.Point(159, 37);
             this.TxtIdCliente.Name = "TxtIdCliente";
             this.TxtIdCliente.Size = new System.Drawing.Size(26, 20);
-            this.TxtIdCliente.TabIndex = 74;
+            this.TxtIdCliente.TabIndex = 77;
             this.TxtIdCliente.Text = "0";
             this.TxtIdCliente.Visible = false;
             // 
@@ -111,7 +111,7 @@
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(173, 26);
-            this.BtnEditar.TabIndex = 73;
+            this.BtnEditar.TabIndex = 75;
             this.BtnEditar.Text = "Limpiar";
             this.BtnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -134,7 +134,7 @@
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
-            this.BtnGuardar.TabIndex = 72;
+            this.BtnGuardar.TabIndex = 74;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -150,7 +150,7 @@
             this.LblDetalleCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblDetalleCliente.Name = "LblDetalleCliente";
             this.LblDetalleCliente.Size = new System.Drawing.Size(112, 20);
-            this.LblDetalleCliente.TabIndex = 71;
+            this.LblDetalleCliente.TabIndex = 78;
             this.LblDetalleCliente.Text = "Detalle Cliente";
             // 
             // ChkActivo
@@ -163,7 +163,7 @@
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ChkActivo.Size = new System.Drawing.Size(56, 17);
-            this.ChkActivo.TabIndex = 70;
+            this.ChkActivo.TabIndex = 73;
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = false;
             // 
@@ -172,7 +172,7 @@
             this.TxtCorreo.Location = new System.Drawing.Point(12, 307);
             this.TxtCorreo.Name = "TxtCorreo";
             this.TxtCorreo.Size = new System.Drawing.Size(173, 20);
-            this.TxtCorreo.TabIndex = 69;
+            this.TxtCorreo.TabIndex = 71;
             this.TxtCorreo.Validating += new System.ComponentModel.CancelEventHandler(this.TxtCorreo_Validating);
             // 
             // TxtTelefono2
@@ -180,14 +180,14 @@
             this.TxtTelefono2.Location = new System.Drawing.Point(12, 267);
             this.TxtTelefono2.Name = "TxtTelefono2";
             this.TxtTelefono2.Size = new System.Drawing.Size(173, 20);
-            this.TxtTelefono2.TabIndex = 68;
+            this.TxtTelefono2.TabIndex = 70;
             // 
             // TxtTelefono1
             // 
             this.TxtTelefono1.Location = new System.Drawing.Point(12, 227);
             this.TxtTelefono1.Name = "TxtTelefono1";
             this.TxtTelefono1.Size = new System.Drawing.Size(173, 20);
-            this.TxtTelefono1.TabIndex = 67;
+            this.TxtTelefono1.TabIndex = 69;
             this.TxtTelefono1.Validating += new System.ComponentModel.CancelEventHandler(this.TxtTelefono1_Validating);
             // 
             // TxtDireccion
@@ -195,7 +195,7 @@
             this.TxtDireccion.Location = new System.Drawing.Point(12, 187);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(173, 20);
-            this.TxtDireccion.TabIndex = 66;
+            this.TxtDireccion.TabIndex = 68;
             this.TxtDireccion.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDireccion_Validating);
             // 
             // TxtDocumento
@@ -211,8 +211,7 @@
             this.TxtNombre.Location = new System.Drawing.Point(11, 104);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(173, 20);
-            this.TxtNombre.TabIndex = 63;
-            this.TxtNombre.TabStop = false;
+            this.TxtNombre.TabIndex = 66;
             this.TxtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNombre_Validating);
             // 
             // LblCorreo
@@ -222,7 +221,7 @@
             this.LblCorreo.Location = new System.Drawing.Point(9, 290);
             this.LblCorreo.Name = "LblCorreo";
             this.LblCorreo.Size = new System.Drawing.Size(41, 13);
-            this.LblCorreo.TabIndex = 62;
+            this.LblCorreo.TabIndex = 64;
             this.LblCorreo.Text = "Correo:";
             // 
             // LblTelefono2
@@ -232,7 +231,7 @@
             this.LblTelefono2.Location = new System.Drawing.Point(9, 250);
             this.LblTelefono2.Name = "LblTelefono2";
             this.LblTelefono2.Size = new System.Drawing.Size(61, 13);
-            this.LblTelefono2.TabIndex = 61;
+            this.LblTelefono2.TabIndex = 63;
             this.LblTelefono2.Text = "Teléfono 2:";
             // 
             // LblTelefono1
@@ -242,7 +241,7 @@
             this.LblTelefono1.Location = new System.Drawing.Point(9, 210);
             this.LblTelefono1.Name = "LblTelefono1";
             this.LblTelefono1.Size = new System.Drawing.Size(61, 13);
-            this.LblTelefono1.TabIndex = 60;
+            this.LblTelefono1.TabIndex = 62;
             this.LblTelefono1.Text = "Teléfono 1:";
             // 
             // LblDireccion
@@ -252,7 +251,7 @@
             this.LblDireccion.Location = new System.Drawing.Point(9, 171);
             this.LblDireccion.Name = "LblDireccion";
             this.LblDireccion.Size = new System.Drawing.Size(55, 13);
-            this.LblDireccion.TabIndex = 59;
+            this.LblDireccion.TabIndex = 61;
             this.LblDireccion.Text = "Dirección:";
             // 
             // LblDocumento
@@ -272,7 +271,7 @@
             this.LblNombre.Location = new System.Drawing.Point(8, 87);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(52, 13);
-            this.LblNombre.TabIndex = 56;
+            this.LblNombre.TabIndex = 59;
             this.LblNombre.Text = "Nombres:";
             // 
             // label1
@@ -300,7 +299,7 @@
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
-            this.BtnLimpiar.TabIndex = 81;
+            this.BtnLimpiar.TabIndex = 82;
             this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
@@ -321,7 +320,7 @@
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
-            this.BtnBuscar.TabIndex = 80;
+            this.BtnBuscar.TabIndex = 81;
             this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
@@ -331,7 +330,7 @@
             this.TxtBusqueda.Location = new System.Drawing.Point(688, 31);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
-            this.TxtBusqueda.TabIndex = 76;
+            this.TxtBusqueda.TabIndex = 80;
             // 
             // ComboBusqueda
             // 
@@ -349,7 +348,7 @@
             this.LblBuscarPor.Location = new System.Drawing.Point(494, 34);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
-            this.LblBuscarPor.TabIndex = 78;
+            this.LblBuscarPor.TabIndex = 83;
             this.LblBuscarPor.Text = "Buscar por:";
             // 
             // LblListaClientes
@@ -361,7 +360,7 @@
             this.LblListaClientes.Name = "LblListaClientes";
             this.LblListaClientes.Padding = new System.Windows.Forms.Padding(2);
             this.LblListaClientes.Size = new System.Drawing.Size(760, 40);
-            this.LblListaClientes.TabIndex = 77;
+            this.LblListaClientes.TabIndex = 84;
             this.LblListaClientes.Text = "Lista de Clientes";
             this.LblListaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -369,15 +368,15 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
@@ -395,76 +394,23 @@
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(759, 384);
             this.dgvData.TabIndex = 82;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
-            // 
-            // groupTipoPersona
-            // 
-            this.groupTipoPersona.BackColor = System.Drawing.Color.White;
-            this.groupTipoPersona.Controls.Add(this.radioButtonJuridica);
-            this.groupTipoPersona.Controls.Add(this.radioButtonFisica);
-            this.groupTipoPersona.Location = new System.Drawing.Point(12, 336);
-            this.groupTipoPersona.Name = "groupTipoPersona";
-            this.groupTipoPersona.Size = new System.Drawing.Size(174, 73);
-            this.groupTipoPersona.TabIndex = 84;
-            this.groupTipoPersona.TabStop = false;
-            this.groupTipoPersona.Text = "Tipo Persona";
-            // 
-            // radioButtonJuridica
-            // 
-            this.radioButtonJuridica.AutoSize = true;
-            this.radioButtonJuridica.Location = new System.Drawing.Point(3, 39);
-            this.radioButtonJuridica.Name = "radioButtonJuridica";
-            this.radioButtonJuridica.Size = new System.Drawing.Size(63, 17);
-            this.radioButtonJuridica.TabIndex = 1;
-            this.radioButtonJuridica.Text = "Jurídica";
-            this.radioButtonJuridica.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonFisica
-            // 
-            this.radioButtonFisica.AutoSize = true;
-            this.radioButtonFisica.Checked = true;
-            this.radioButtonFisica.Location = new System.Drawing.Point(3, 16);
-            this.radioButtonFisica.Name = "radioButtonFisica";
-            this.radioButtonFisica.Size = new System.Drawing.Size(54, 17);
-            this.radioButtonFisica.TabIndex = 0;
-            this.radioButtonFisica.TabStop = true;
-            this.radioButtonFisica.Text = "Física";
-            this.radioButtonFisica.UseVisualStyleBackColor = true;
-            // 
-            // TxtApellidos
-            // 
-            this.TxtApellidos.Location = new System.Drawing.Point(11, 147);
-            this.TxtApellidos.Name = "TxtApellidos";
-            this.TxtApellidos.Size = new System.Drawing.Size(173, 20);
-            this.TxtApellidos.TabIndex = 86;
-            this.TxtApellidos.TabStop = false;
-            this.TxtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.TxtApellidos_Validating);
-            // 
-            // LblApellidos
-            // 
-            this.LblApellidos.AutoSize = true;
-            this.LblApellidos.BackColor = System.Drawing.Color.White;
-            this.LblApellidos.Location = new System.Drawing.Point(8, 130);
-            this.LblApellidos.Name = "LblApellidos";
-            this.LblApellidos.Size = new System.Drawing.Size(52, 13);
-            this.LblApellidos.TabIndex = 85;
-            this.LblApellidos.Text = "Apellidos:";
             // 
             // BtnSeleccionar
             // 
@@ -542,6 +488,58 @@
             this.Activo.ReadOnly = true;
             this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // groupTipoPersona
+            // 
+            this.groupTipoPersona.BackColor = System.Drawing.Color.White;
+            this.groupTipoPersona.Controls.Add(this.radioButtonJuridica);
+            this.groupTipoPersona.Controls.Add(this.radioButtonFisica);
+            this.groupTipoPersona.Location = new System.Drawing.Point(12, 336);
+            this.groupTipoPersona.Name = "groupTipoPersona";
+            this.groupTipoPersona.Size = new System.Drawing.Size(174, 73);
+            this.groupTipoPersona.TabIndex = 72;
+            this.groupTipoPersona.TabStop = false;
+            this.groupTipoPersona.Text = "Tipo Persona";
+            // 
+            // radioButtonJuridica
+            // 
+            this.radioButtonJuridica.AutoSize = true;
+            this.radioButtonJuridica.Location = new System.Drawing.Point(3, 39);
+            this.radioButtonJuridica.Name = "radioButtonJuridica";
+            this.radioButtonJuridica.Size = new System.Drawing.Size(63, 17);
+            this.radioButtonJuridica.TabIndex = 1;
+            this.radioButtonJuridica.Text = "Jurídica";
+            this.radioButtonJuridica.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFisica
+            // 
+            this.radioButtonFisica.AutoSize = true;
+            this.radioButtonFisica.Checked = true;
+            this.radioButtonFisica.Location = new System.Drawing.Point(3, 16);
+            this.radioButtonFisica.Name = "radioButtonFisica";
+            this.radioButtonFisica.Size = new System.Drawing.Size(54, 17);
+            this.radioButtonFisica.TabIndex = 0;
+            this.radioButtonFisica.TabStop = true;
+            this.radioButtonFisica.Text = "Física";
+            this.radioButtonFisica.UseVisualStyleBackColor = true;
+            // 
+            // TxtApellidos
+            // 
+            this.TxtApellidos.Location = new System.Drawing.Point(11, 147);
+            this.TxtApellidos.Name = "TxtApellidos";
+            this.TxtApellidos.Size = new System.Drawing.Size(173, 20);
+            this.TxtApellidos.TabIndex = 67;
+            this.TxtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.TxtApellidos_Validating);
+            // 
+            // LblApellidos
+            // 
+            this.LblApellidos.AutoSize = true;
+            this.LblApellidos.BackColor = System.Drawing.Color.White;
+            this.LblApellidos.Location = new System.Drawing.Point(8, 130);
+            this.LblApellidos.Name = "LblApellidos";
+            this.LblApellidos.Size = new System.Drawing.Size(52, 13);
+            this.LblApellidos.TabIndex = 60;
+            this.LblApellidos.Text = "Apellidos:";
             // 
             // FrmClientes
             // 

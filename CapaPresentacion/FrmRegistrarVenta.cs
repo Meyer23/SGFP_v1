@@ -201,7 +201,7 @@ namespace CapaPresentacion
             if (e.KeyData == Keys.Enter)
             {
                 e.Handled = true;
-                Producto oProducto = new CN_Productos().Listar().Where(p => p.Codigo == textBoxCodProducto.Text && p.Activo == true).FirstOrDefault();
+                Producto oProducto = new CN_Productos().Listar(0,0).Where(p => p.Codigo == textBoxCodProducto.Text && p.Activo == true).FirstOrDefault();
                 if (oProducto != null)
                 {
                     TxtIdProducto.Text = oProducto.Id.ToString();

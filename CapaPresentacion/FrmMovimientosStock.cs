@@ -25,7 +25,7 @@ namespace CapaPresentacion
 
         private void BntBuscarProd_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpProductos())
+            using (var popup = new PopUpProductos(0,0))
             {
                 var result = popup.ShowDialog();
 
@@ -47,7 +47,7 @@ namespace CapaPresentacion
         {
             if (e.KeyData == Keys.Enter)
             {
-                Producto oProducto = new CN_Productos().Listar().Where(p => p.Codigo == TxtCodProducto.Text && p.Activo == true).FirstOrDefault();
+                Producto oProducto = new CN_Productos().Listar(0,0).Where(p => p.Codigo == TxtCodProducto.Text && p.Activo == true).FirstOrDefault();
                 if (oProducto != null)
                 {
                     TxtIdProducto.Text = oProducto.Id.ToString();
@@ -296,6 +296,7 @@ namespace CapaPresentacion
             if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
             {
                 MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Value = DateTime.Now;
                 dtpFecha.Select();
                 return;
             }

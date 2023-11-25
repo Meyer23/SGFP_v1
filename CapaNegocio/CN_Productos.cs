@@ -12,9 +12,9 @@ namespace CapaNegocio
     {
         private CD_Productos cd_producto = new CD_Productos();
 
-        public List<Producto> Listar()
+        public List<Producto> Listar(int bandera, int idCompra)
         {
-            return cd_producto.Listar();
+            return cd_producto.Listar(bandera, idCompra);
         }
 
         public int Registrar(Producto obj, out string Mensaje)

@@ -15,8 +15,11 @@ namespace CapaPresentacion
     public partial class PopUpProductos : Form
     {
         public Producto _Producto { get; set; }
-        public PopUpProductos()
+        private int _Bandera, _idCompra;
+        public PopUpProductos(int bandera = 0, int idCompra = 0)
         {
+            _Bandera = bandera;
+            _idCompra = idCompra;
             InitializeComponent();
         }
 
@@ -31,13 +34,13 @@ namespace CapaPresentacion
             }
             ComboBusqueda.SelectedIndex = 0;
 
-            List<Producto> listaProducto = new CN_Productos().Listar();
+            List<Producto> listaProducto = new CN_Productos().Listar(_Bandera, _idCompra);
 
-            var listaProductosExistentes = listaProducto.Where(a => a.Existencia > 0 && a.Activo == true).ToList();
+            var listaProductosExistentes = listaProducto.Where(a => a.Activo == true).ToList();
 
             foreach (Producto producto in listaProductosExistentes)
             {
-                dgvData.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Precio);
+                dgvData.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Precio, producto.Existencia);
             }
         }
 
@@ -53,7 +56,8 @@ namespace CapaPresentacion
                     Id = Convert.ToInt32(dgvData.Rows[iRow].Cells["idProducto"].Value.ToString()),
                     Codigo = dgvData.Rows[iRow].Cells["Codigo"].Value.ToString(),
                     Descripcion = dgvData.Rows[iRow].Cells["Descripcion"].Value.ToString(),
-                    Precio = Convert.ToDecimal(dgvData.Rows[iRow].Cells["ProductoPrecio"].Value)
+                    Precio = Convert.ToDecimal(dgvData.Rows[iRow].Cells["ProductoPrecio"].Value),
+                    Existencia = Convert.ToDecimal(dgvData.Rows[iRow].Cells["Existencia"].Value)
                 };
 
                 this.DialogResult = DialogResult.OK;

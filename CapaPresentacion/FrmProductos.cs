@@ -160,7 +160,7 @@ namespace CapaPresentacion
             }
             ComboBusqueda.SelectedIndex = 0;
 
-            List<Producto> listaProducto = new CN_Productos().Listar();
+            List<Producto> listaProducto = new CN_Productos().Listar(0,0);
             foreach (Producto producto in listaProducto)
             {
                 dgvData.Rows.Add("", producto.Id, producto.Codigo, producto.Descripcion, producto.Costo,

@@ -58,9 +58,6 @@
             this.LblBuscarPor = new System.Windows.Forms.Label();
             this.LblListaProveedores = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.TxtContacto2 = new System.Windows.Forms.TextBox();
-            this.LblContacto2 = new System.Windows.Forms.Label();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +69,9 @@
             this.Telefono2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.TxtContacto2 = new System.Windows.Forms.TextBox();
+            this.LblContacto2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,7 +217,6 @@
             this.TxtRazonSocial.Name = "TxtRazonSocial";
             this.TxtRazonSocial.Size = new System.Drawing.Size(173, 20);
             this.TxtRazonSocial.TabIndex = 42;
-            this.TxtRazonSocial.TabStop = false;
             this.TxtRazonSocial.Validating += new System.ComponentModel.CancelEventHandler(this.TxtRazonSocial_Validating);
             // 
             // LblCorreo
@@ -407,44 +406,6 @@
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
-            // BtnLimpiar
-            // 
-            this.BtnLimpiar.BackColor = System.Drawing.Color.White;
-            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
-            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(886, 31);
-            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
-            this.BtnLimpiar.TabIndex = 60;
-            this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpiar.UseVisualStyleBackColor = false;
-            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
-            // 
-            // TxtContacto2
-            // 
-            this.TxtContacto2.Location = new System.Drawing.Point(12, 205);
-            this.TxtContacto2.Name = "TxtContacto2";
-            this.TxtContacto2.Size = new System.Drawing.Size(173, 20);
-            this.TxtContacto2.TabIndex = 44;
-            // 
-            // LblContacto2
-            // 
-            this.LblContacto2.AutoSize = true;
-            this.LblContacto2.BackColor = System.Drawing.Color.White;
-            this.LblContacto2.Location = new System.Drawing.Point(9, 188);
-            this.LblContacto2.Name = "LblContacto2";
-            this.LblContacto2.Size = new System.Drawing.Size(62, 13);
-            this.LblContacto2.TabIndex = 62;
-            this.LblContacto2.Text = "Contacto 2:";
-            // 
             // BtnSeleccionar
             // 
             this.BtnSeleccionar.HeaderText = "";
@@ -521,6 +482,44 @@
             this.Activo.ReadOnly = true;
             this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.White;
+            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
+            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnLimpiar.IconSize = 18;
+            this.BtnLimpiar.Location = new System.Drawing.Point(886, 31);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
+            this.BtnLimpiar.TabIndex = 60;
+            this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
+            // TxtContacto2
+            // 
+            this.TxtContacto2.Location = new System.Drawing.Point(12, 205);
+            this.TxtContacto2.Name = "TxtContacto2";
+            this.TxtContacto2.Size = new System.Drawing.Size(173, 20);
+            this.TxtContacto2.TabIndex = 44;
+            // 
+            // LblContacto2
+            // 
+            this.LblContacto2.AutoSize = true;
+            this.LblContacto2.BackColor = System.Drawing.Color.White;
+            this.LblContacto2.Location = new System.Drawing.Point(9, 188);
+            this.LblContacto2.Name = "LblContacto2";
+            this.LblContacto2.Size = new System.Drawing.Size(62, 13);
+            this.LblContacto2.TabIndex = 62;
+            this.LblContacto2.Text = "Contacto 2:";
             // 
             // FrmProveedores
             // 

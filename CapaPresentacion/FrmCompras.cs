@@ -64,6 +64,7 @@ namespace CapaPresentacion
                         ComboFormaPago.Visible = false;
                         TxtTipoDoc.Visible = true;
                         TxtFormaPago.Visible = true;
+                        groupBoxInfoProducto.Visible = false;
 
                         TxtNroPedido.Text = objPedido.NumeroPedido.ToString();
                         TxtTipoDoc.Text = objPedido.TipoDocumento;
@@ -100,6 +101,7 @@ namespace CapaPresentacion
             dtpFechaVenc.Value = DateTime.Now;
             dtpInicioVigencia.Value = DateTime.Now;
             dtpFinVigencia.Value = DateTime.Now;
+            groupBoxInfoProducto.Visible = true;
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
@@ -123,6 +125,7 @@ namespace CapaPresentacion
             TxtFormaPago.Visible = false;
             ComboTipoDoc.Visible = true;
             ComboFormaPago.Visible = true;
+            groupBoxInfoProducto.Visible = true;
         }
 
         private void TxtNroPedido_KeyDown(object sender, KeyEventArgs e)
@@ -136,6 +139,7 @@ namespace CapaPresentacion
                     ComboFormaPago.Visible = false;
                     TxtTipoDoc.Visible = true;
                     TxtFormaPago.Visible = true;
+                    groupBoxInfoProducto.Visible = false;
 
                     TxtNroPedido.Text = objPedido.NumeroPedido.ToString();
                     TxtTipoDoc.Text = objPedido.TipoDocumento;
@@ -164,7 +168,7 @@ namespace CapaPresentacion
 
         private void BntBuscarProd_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpProductos())
+            using (var popup = new PopUpProductos(0,0))
             {
                 var result = popup.ShowDialog();
 
@@ -334,7 +338,7 @@ namespace CapaPresentacion
         {
             if (e.KeyData == Keys.Enter)
             {
-                Producto oProducto = new CN_Productos().Listar().Where(p => p.Codigo == TxtCodProducto.Text && p.Activo == true).FirstOrDefault();
+                Producto oProducto = new CN_Productos().Listar(0,0).Where(p => p.Codigo == TxtCodProducto.Text && p.Activo == true).FirstOrDefault();
                 if (oProducto != null)
                 {
                     TxtIdProducto.Text = oProducto.Id.ToString();
@@ -526,6 +530,7 @@ namespace CapaPresentacion
             if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
             {
                 MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Value = DateTime.Now;
                 dtpFecha.Select();
                 return;
             }
@@ -533,6 +538,7 @@ namespace CapaPresentacion
             if (fechaSeleccionada < dtpFechaPedido.Value)
             {
                 MessageBox.Show("La fecha de la factura debe ser mayor a la fecha del Pedido", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Value = DateTime.Now;
                 dtpFecha.Select();
                 return;
             }
@@ -679,6 +685,20 @@ namespace CapaPresentacion
                         e.Handled = true;
                     }
                 }
+            }
+        }
+
+        private void dtpFechaVenc_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = dtpFechaVenc.Value;
+            DateTime fechaActual = DateTime.Now;
+
+            if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
+            {
+                MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFechaVenc.Value = DateTime.Now;
+                dtpFechaVenc.Select();
+                return;
             }
         }
     }

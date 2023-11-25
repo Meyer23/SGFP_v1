@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
@@ -123,7 +124,7 @@ namespace CapaPresentacion
 
         private void BntBuscarProd_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpProductos())
+            using (var popup = new PopUpProductos(1, Convert.ToInt32(TxtIdCompra.Text)))
             {
                 var result = popup.ShowDialog();
 
@@ -132,9 +133,10 @@ namespace CapaPresentacion
                     TxtIdProducto.Text = popup._Producto.Id.ToString();
                     TxtCodProducto.Text = popup._Producto.Codigo;
                     TxtDescProducto.Text = popup._Producto.Descripcion;
+                    TxtCantidad.Text = popup._Producto.Existencia.ToString();
                     TxtCantidad.Select();
                     //TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
-                    TxtPrecioCompra.Text = "0";
+                    TxtPrecioCompra.Text = popup._Producto.Precio.ToString();
                 }
                 else
                 {
@@ -294,7 +296,7 @@ namespace CapaPresentacion
         {
             if (e.KeyData == Keys.Enter)
             {
-                Producto oProducto = new CN_Productos().Listar().Where(p => p.Codigo == TxtCodProducto.Text && p.Activo == true).FirstOrDefault();
+                Producto oProducto = new CN_Productos().Listar(1, Convert.ToInt32(TxtIdCompra.Text)).Where(p => p.Codigo == TxtCodProducto.Text && p.Activo == true).FirstOrDefault();
                 if (oProducto != null)
                 {
                     TxtIdProducto.Text = oProducto.Id.ToString();
@@ -467,6 +469,7 @@ namespace CapaPresentacion
             if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
             {
                 MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Value = DateTime.Now;
                 dtpFecha.Select();
                 return;
             }
@@ -474,6 +477,7 @@ namespace CapaPresentacion
             if (fechaSeleccionada < dtpFechaCompra.Value)
             {
                 MessageBox.Show("La fecha de la nota de crédito debe ser mayor a la fecha de la compra", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFecha.Value = DateTime.Now;
                 dtpFecha.Select();
                 return;
             }

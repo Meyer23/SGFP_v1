@@ -599,6 +599,7 @@
             // 
             // TxtPrecioCompra
             // 
+            this.TxtPrecioCompra.Enabled = false;
             this.TxtPrecioCompra.Location = new System.Drawing.Point(671, 38);
             this.TxtPrecioCompra.Name = "TxtPrecioCompra";
             this.TxtPrecioCompra.Size = new System.Drawing.Size(95, 22);
