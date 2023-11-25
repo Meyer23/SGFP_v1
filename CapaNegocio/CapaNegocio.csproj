@@ -57,6 +57,7 @@
     <Compile Include="CN_NotasCreditoRecibidas.cs" />
     <Compile Include="CN_NumeracionDocumento.cs" />
     <Compile Include="CN_Pedidos.cs" />
+    <Compile Include="CN_Procesos.cs" />
     <Compile Include="CN_Productos.cs" />
     <Compile Include="CN_Proveedores.cs" />
     <Compile Include="CN_Roles.cs" />

@@ -1,4 +1,5 @@
 ﻿using CapaEntidad;
+using CapaEntidad.Models;
 using CapaNegocio;
 using System;
 using System.Collections.Generic;
@@ -16,8 +17,11 @@ namespace CapaPresentacion
 {
     public partial class FrmVerDetalleMovStock : Form
     {
-        public FrmVerDetalleMovStock()
+        bool confirma, anula;
+        private UsuarioLogin _Usuario;
+        public FrmVerDetalleMovStock(UsuarioLogin oUsuario = null)
         {
+            _Usuario = oUsuario;
             InitializeComponent();
         }
 
@@ -29,8 +33,15 @@ namespace CapaPresentacion
             PbNoConfirmado.Visible = false;
             LblAnulado.Visible = false;
             dtpFecha.Value = DateTime.Now;
-            BtnConfirmar.Visible = false;
-            BtnAnular.Visible = false;
+            BtnConfirmarMovStock.Visible = false;
+            BtnAnularMovStock.Visible = false;
+
+            List<Proceso> procesos = new CN_Procesos().ObtenerProcesos(_Usuario.Id);
+            foreach (Proceso proceso in procesos)
+            {
+                confirma = procesos.Any(m => m.Boton == BtnConfirmarMovStock.Name && m.Procesa == true);
+                anula = procesos.Any(m => m.Boton == BtnAnularMovStock.Name && m.Procesa == true);
+            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -61,8 +72,8 @@ namespace CapaPresentacion
                             LblNoConfirmado.Visible = false;
                             PbNoConfirmado.Visible = false;
                             LblAnulado.Visible = false;
-                            BtnConfirmar.Visible = false;
-                            BtnAnular.Visible = false;
+                            BtnConfirmarMovStock.Visible = false;
+                            BtnAnularMovStock.Visible = false;
                         }
                         else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                         {
@@ -71,8 +82,14 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = false;
-                            BtnConfirmar.Visible = true;
-                            BtnAnular.Visible = true;
+                            if (confirma)
+                            {
+                                BtnConfirmarMovStock.Visible = true;
+                            }
+                            if (anula)
+                            {
+                                BtnAnularMovStock.Visible = true;
+                            }
                         }
                         else
                         {
@@ -81,8 +98,8 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = true;
-                            BtnConfirmar.Visible = false;
-                            BtnAnular.Visible = false;
+                            BtnConfirmarMovStock.Visible = false;
+                            BtnAnularMovStock.Visible = false;
                         }
 
                         dgvData.Rows.Clear();
@@ -139,8 +156,8 @@ namespace CapaPresentacion
                         LblNoConfirmado.Visible = false;
                         PbNoConfirmado.Visible = false;
                         LblAnulado.Visible = false;
-                        BtnConfirmar.Visible = false;
-                        BtnAnular.Visible = false;
+                        BtnConfirmarMovStock.Visible = false;
+                        BtnAnularMovStock.Visible = false;
                     }
                     else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                     {
@@ -149,8 +166,14 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = false;
-                        BtnConfirmar.Visible = true;
-                        BtnAnular.Visible = true;
+                        if (confirma)
+                        {
+                            BtnConfirmarMovStock.Visible = true;
+                        }
+                        if (anula)
+                        {
+                            BtnAnularMovStock.Visible = true;
+                        }
                     }
                     else
                     {
@@ -159,8 +182,8 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = true;
-                        BtnConfirmar.Visible = false;
-                        BtnAnular.Visible = false;
+                        BtnConfirmarMovStock.Visible = false;
+                        BtnAnularMovStock.Visible = false;
                     }
 
                     dgvData.Rows.Clear();
@@ -196,8 +219,8 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = true;
                         PbConfirmado.Visible = true;
                         LblNoConfirmado.Visible = false;
-                        BtnConfirmar.Visible = false;
-                        BtnAnular.Visible = false;
+                        BtnConfirmarMovStock.Visible = false;
+                        BtnAnularMovStock.Visible = false;
                     }
                 }
                 else
@@ -221,7 +244,7 @@ namespace CapaPresentacion
                     LblNoConfirmado.Visible = false;
                     LblAnulado.Visible = true;
                     PbNoConfirmado.Visible = true;
-                    BtnAnular.Visible = false;
+                    BtnAnularMovStock.Visible = false;
                 }
                 else
                 {

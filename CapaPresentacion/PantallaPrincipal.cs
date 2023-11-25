@@ -91,7 +91,7 @@ namespace CapaPresentacion
 
         private void submenucategorias_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(MantenedorMenu, new FrmCategorias());
+            AbrirFormulario(MantenedorMenu, new FrmCategorias(usuarioActual));
         }
 
         private void submenuproductos_Click(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace CapaPresentacion
 
         private void MenuVerDetalleCompra_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(ComprasMenu, new FrmVerDetalleCompra());
+            AbrirFormulario(ComprasMenu, new FrmVerDetalleCompra(usuarioActual));
         }
 
         private void SubMenuRoles_Click(object sender, EventArgs e)
@@ -201,7 +201,7 @@ namespace CapaPresentacion
 
         private void SubMenuDetallePedidos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(ComprasMenu, new FrmVerDetallePedido());
+            AbrirFormulario(ComprasMenu, new FrmVerDetallePedido(usuarioActual));
         }
 
         private void SubMenuEmpresa_Click(object sender, EventArgs e)
@@ -241,7 +241,7 @@ namespace CapaPresentacion
 
         private void SubMenuVerDetalleMovStock_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(StockMenu, new FrmVerDetalleMovStock());
+            AbrirFormulario(StockMenu, new FrmVerDetalleMovStock(usuarioActual));
         }
 
         private void SubMenuListadoExistencia_Click(object sender, EventArgs e)
@@ -257,7 +257,7 @@ namespace CapaPresentacion
 
         private void SubMenuVerDetalleNCRecibidas_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(ComprasMenu, new FrmVerDetalleNotasCreditoRecibidas());
+            AbrirFormulario(ComprasMenu, new FrmVerDetalleNotasCreditoRecibidas(usuarioActual));
         }
 
         private void SubMenuNumeracionDoc_Click(object sender, EventArgs e)

@@ -80,8 +80,8 @@
             this.LblConfirmado = new System.Windows.Forms.Label();
             this.checkBoxAnulado = new System.Windows.Forms.CheckBox();
             this.LblAnulado = new System.Windows.Forms.Label();
-            this.BtnAnular = new FontAwesome.Sharp.IconButton();
-            this.BtnConfirmar = new FontAwesome.Sharp.IconButton();
+            this.BtnAnularCompra = new FontAwesome.Sharp.IconButton();
+            this.BtnConfirmarCompra = new FontAwesome.Sharp.IconButton();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.PbConfirmado = new System.Windows.Forms.PictureBox();
             this.PbNoConfirmado = new System.Windows.Forms.PictureBox();
@@ -621,51 +621,51 @@
             this.LblAnulado.TabIndex = 112;
             this.LblAnulado.Text = "Anulado";
             // 
-            // BtnAnular
+            // BtnAnularCompra
             // 
-            this.BtnAnular.BackColor = System.Drawing.Color.Red;
-            this.BtnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAnular.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAnular.ForeColor = System.Drawing.Color.White;
-            this.BtnAnular.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.BtnAnular.IconColor = System.Drawing.Color.White;
-            this.BtnAnular.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAnular.IconSize = 16;
-            this.BtnAnular.Location = new System.Drawing.Point(885, 414);
-            this.BtnAnular.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnAnular.Name = "BtnAnular";
-            this.BtnAnular.Size = new System.Drawing.Size(142, 27);
-            this.BtnAnular.TabIndex = 127;
-            this.BtnAnular.Text = "Anular";
-            this.BtnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnAnular.UseVisualStyleBackColor = false;
-            this.BtnAnular.Click += new System.EventHandler(this.BtnAnular_Click);
+            this.BtnAnularCompra.BackColor = System.Drawing.Color.Red;
+            this.BtnAnularCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAnularCompra.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnAnularCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAnularCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAnularCompra.ForeColor = System.Drawing.Color.White;
+            this.BtnAnularCompra.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.BtnAnularCompra.IconColor = System.Drawing.Color.White;
+            this.BtnAnularCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnAnularCompra.IconSize = 16;
+            this.BtnAnularCompra.Location = new System.Drawing.Point(885, 414);
+            this.BtnAnularCompra.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnAnularCompra.Name = "BtnAnularCompra";
+            this.BtnAnularCompra.Size = new System.Drawing.Size(142, 27);
+            this.BtnAnularCompra.TabIndex = 127;
+            this.BtnAnularCompra.Text = "Anular";
+            this.BtnAnularCompra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnAnularCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnAnularCompra.UseVisualStyleBackColor = false;
+            this.BtnAnularCompra.Click += new System.EventHandler(this.BtnAnular_Click);
             // 
-            // BtnConfirmar
+            // BtnConfirmarCompra
             // 
-            this.BtnConfirmar.BackColor = System.Drawing.Color.DarkOrange;
-            this.BtnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.BtnConfirmar.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.BtnConfirmar.IconColor = System.Drawing.Color.White;
-            this.BtnConfirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnConfirmar.IconSize = 16;
-            this.BtnConfirmar.Location = new System.Drawing.Point(885, 362);
-            this.BtnConfirmar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnConfirmar.Name = "BtnConfirmar";
-            this.BtnConfirmar.Size = new System.Drawing.Size(142, 27);
-            this.BtnConfirmar.TabIndex = 114;
-            this.BtnConfirmar.Text = "Confirmar";
-            this.BtnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnConfirmar.UseVisualStyleBackColor = false;
-            this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
+            this.BtnConfirmarCompra.BackColor = System.Drawing.Color.DarkOrange;
+            this.BtnConfirmarCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnConfirmarCompra.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnConfirmarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConfirmarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConfirmarCompra.ForeColor = System.Drawing.Color.White;
+            this.BtnConfirmarCompra.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.BtnConfirmarCompra.IconColor = System.Drawing.Color.White;
+            this.BtnConfirmarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnConfirmarCompra.IconSize = 16;
+            this.BtnConfirmarCompra.Location = new System.Drawing.Point(885, 362);
+            this.BtnConfirmarCompra.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnConfirmarCompra.Name = "BtnConfirmarCompra";
+            this.BtnConfirmarCompra.Size = new System.Drawing.Size(142, 27);
+            this.BtnConfirmarCompra.TabIndex = 114;
+            this.BtnConfirmarCompra.Text = "Confirmar";
+            this.BtnConfirmarCompra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnConfirmarCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnConfirmarCompra.UseVisualStyleBackColor = false;
+            this.BtnConfirmarCompra.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
             // BtnGuardar
             // 
@@ -759,8 +759,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1223, 565);
-            this.Controls.Add(this.BtnAnular);
-            this.Controls.Add(this.BtnConfirmar);
+            this.Controls.Add(this.BtnAnularCompra);
+            this.Controls.Add(this.BtnConfirmarCompra);
             this.Controls.Add(this.LblAnulado);
             this.Controls.Add(this.checkBoxAnulado);
             this.Controls.Add(this.BtnGuardar);
@@ -843,9 +843,9 @@
         private System.Windows.Forms.Label LblFinVigencia;
         private System.Windows.Forms.DateTimePicker dtpInicioVigencia;
         private System.Windows.Forms.Label LblInicioVigencia;
-        private FontAwesome.Sharp.IconButton BtnConfirmar;
+        private FontAwesome.Sharp.IconButton BtnConfirmarCompra;
         private System.Windows.Forms.TextBox TxtIdCompra;
-        private FontAwesome.Sharp.IconButton BtnAnular;
+        private FontAwesome.Sharp.IconButton BtnAnularCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;

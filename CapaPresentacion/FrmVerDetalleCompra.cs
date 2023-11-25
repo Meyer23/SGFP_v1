@@ -1,4 +1,5 @@
 ﻿using CapaEntidad;
+using CapaEntidad.Models;
 using CapaNegocio;
 using CapaPresentacion.Interfaces;
 using System;
@@ -15,8 +16,11 @@ namespace CapaPresentacion
 {
     public partial class FrmVerDetalleCompra : Form, IFormularioConIdUsuario
     {
-        public FrmVerDetalleCompra()
+        bool confirma, anula;
+        private UsuarioLogin _Usuario;
+        public FrmVerDetalleCompra(UsuarioLogin oUsuario = null)
         {
+            _Usuario = oUsuario;
             InitializeComponent();
         }
 
@@ -34,10 +38,17 @@ namespace CapaPresentacion
             dtpInicioVigencia.Value = DateTime.Now;
             dtpFinVigencia.Value = DateTime.Now;
             dtpFechaRec.Value = DateTime.Now;
-            BtnConfirmar.Visible = false;
-            BtnAnular.Visible = false;
+            BtnConfirmarCompra.Visible = false;
+            BtnAnularCompra.Visible = false;
             LblFechaRec.Visible = false;
             dtpFechaRec.Visible = false;
+
+            List<Proceso> procesos = new CN_Procesos().ObtenerProcesos(_Usuario.Id);
+            foreach (Proceso proceso in procesos)
+            {
+                confirma = procesos.Any(m => m.Boton == BtnConfirmarCompra.Name && m.Procesa == true);
+                anula = procesos.Any(m => m.Boton == BtnAnularCompra.Name && m.Procesa == true);
+            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -79,8 +90,8 @@ namespace CapaPresentacion
                             LblNoConfirmado.Visible = false;
                             PbNoConfirmado.Visible = false;
                             LblAnulado.Visible = false;
-                            BtnConfirmar.Visible = false;
-                            BtnAnular.Visible = false;
+                            BtnConfirmarCompra.Visible = false;
+                            BtnAnularCompra.Visible = false;
                             LblFechaRec.Visible = true;
                             dtpFechaRec.Visible = true;
                             dtpFechaRec.Value = objCompra.FechaRecepcion;
@@ -92,8 +103,14 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = false;
-                            BtnConfirmar.Visible = true;
-                            BtnAnular.Visible = true;
+                            if (confirma)
+                            {
+                                BtnConfirmarCompra.Visible = true;
+                            }
+                            if (anula)
+                            {
+                                BtnAnularCompra.Visible = true;
+                            }
                             LblFechaRec.Visible = false;
                             dtpFechaRec.Visible = false;
                         }
@@ -104,8 +121,8 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = true;
-                            BtnConfirmar.Visible = false;
-                            BtnAnular.Visible = false;
+                            BtnConfirmarCompra.Visible = false;
+                            BtnAnularCompra.Visible = false;
                             LblFechaRec.Visible = false;
                             dtpFechaRec.Visible = false;
                         }
@@ -184,8 +201,8 @@ namespace CapaPresentacion
                         LblNoConfirmado.Visible = false;
                         PbNoConfirmado.Visible = false;
                         LblAnulado.Visible = false;
-                        BtnConfirmar.Visible = false;
-                        BtnAnular.Visible = false;
+                        BtnConfirmarCompra.Visible = false;
+                        BtnAnularCompra.Visible = false;
                         LblFechaRec.Visible = true;
                         dtpFechaRec.Visible = true;
                         dtpFechaRec.Value = objCompra.FechaRecepcion;
@@ -197,8 +214,14 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = false;
-                        BtnConfirmar.Visible = true;
-                        BtnAnular.Visible = true;
+                        if (confirma)
+                        {
+                            BtnConfirmarCompra.Visible = true;
+                        }
+                        if (anula)
+                        {
+                            BtnAnularCompra.Visible = true;
+                        }
                         LblFechaRec.Visible = false;
                         dtpFechaRec.Visible = false;
                     }
@@ -209,8 +232,8 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = true;
-                        BtnConfirmar.Visible = false;
-                        BtnAnular.Visible = false;
+                        BtnConfirmarCompra.Visible = false;
+                        BtnAnularCompra.Visible = false;
                         LblFechaRec.Visible = false;
                         dtpFechaRec.Visible = false;
                     }
@@ -241,8 +264,8 @@ namespace CapaPresentacion
                     LblConfirmado.Visible = true;
                     PbConfirmado.Visible = true;
                     LblNoConfirmado.Visible = false;
-                    BtnConfirmar.Visible = false;
-                    BtnAnular.Visible = false;
+                    BtnConfirmarCompra.Visible = false;
+                    BtnAnularCompra.Visible = false;
                 }
                 else
                 {
@@ -284,8 +307,8 @@ namespace CapaPresentacion
                     LblNoConfirmado.Visible = false;
                     LblAnulado.Visible = true;
                     PbNoConfirmado.Visible = true;
-                    BtnAnular.Visible = false;
-                    BtnConfirmar.Visible = false;
+                    BtnAnularCompra.Visible = false;
+                    BtnConfirmarCompra.Visible = false;
                 }
                 else
                 {

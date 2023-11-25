@@ -62,8 +62,8 @@
             this.LblDocumento = new System.Windows.Forms.Label();
             this.BtnImprimir = new FontAwesome.Sharp.IconButton();
             this.PbNoConfirmado = new System.Windows.Forms.PictureBox();
-            this.BtnConfirmar = new FontAwesome.Sharp.IconButton();
-            this.BtnAnular = new FontAwesome.Sharp.IconButton();
+            this.BtnConfirmarMovStock = new FontAwesome.Sharp.IconButton();
+            this.BtnAnularMovStock = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbConfirmado)).BeginInit();
@@ -458,59 +458,59 @@
             this.PbNoConfirmado.TabIndex = 125;
             this.PbNoConfirmado.TabStop = false;
             // 
-            // BtnConfirmar
+            // BtnConfirmarMovStock
             // 
-            this.BtnConfirmar.BackColor = System.Drawing.Color.DarkOrange;
-            this.BtnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.BtnConfirmar.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.BtnConfirmar.IconColor = System.Drawing.Color.White;
-            this.BtnConfirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnConfirmar.IconSize = 16;
-            this.BtnConfirmar.Location = new System.Drawing.Point(814, 328);
-            this.BtnConfirmar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnConfirmar.Name = "BtnConfirmar";
-            this.BtnConfirmar.Size = new System.Drawing.Size(138, 27);
-            this.BtnConfirmar.TabIndex = 126;
-            this.BtnConfirmar.Text = "Confirmar";
-            this.BtnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnConfirmar.UseVisualStyleBackColor = false;
-            this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
+            this.BtnConfirmarMovStock.BackColor = System.Drawing.Color.DarkOrange;
+            this.BtnConfirmarMovStock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnConfirmarMovStock.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnConfirmarMovStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConfirmarMovStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConfirmarMovStock.ForeColor = System.Drawing.Color.White;
+            this.BtnConfirmarMovStock.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.BtnConfirmarMovStock.IconColor = System.Drawing.Color.White;
+            this.BtnConfirmarMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnConfirmarMovStock.IconSize = 16;
+            this.BtnConfirmarMovStock.Location = new System.Drawing.Point(814, 328);
+            this.BtnConfirmarMovStock.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnConfirmarMovStock.Name = "BtnConfirmarMovStock";
+            this.BtnConfirmarMovStock.Size = new System.Drawing.Size(138, 27);
+            this.BtnConfirmarMovStock.TabIndex = 126;
+            this.BtnConfirmarMovStock.Text = "Confirmar";
+            this.BtnConfirmarMovStock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnConfirmarMovStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnConfirmarMovStock.UseVisualStyleBackColor = false;
+            this.BtnConfirmarMovStock.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
-            // BtnAnular
+            // BtnAnularMovStock
             // 
-            this.BtnAnular.BackColor = System.Drawing.Color.Red;
-            this.BtnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAnular.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAnular.ForeColor = System.Drawing.Color.White;
-            this.BtnAnular.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.BtnAnular.IconColor = System.Drawing.Color.White;
-            this.BtnAnular.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAnular.IconSize = 16;
-            this.BtnAnular.Location = new System.Drawing.Point(814, 369);
-            this.BtnAnular.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnAnular.Name = "BtnAnular";
-            this.BtnAnular.Size = new System.Drawing.Size(138, 27);
-            this.BtnAnular.TabIndex = 129;
-            this.BtnAnular.Text = "Anular";
-            this.BtnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnAnular.UseVisualStyleBackColor = false;
-            this.BtnAnular.Click += new System.EventHandler(this.BtnAnular_Click);
+            this.BtnAnularMovStock.BackColor = System.Drawing.Color.Red;
+            this.BtnAnularMovStock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAnularMovStock.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnAnularMovStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAnularMovStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAnularMovStock.ForeColor = System.Drawing.Color.White;
+            this.BtnAnularMovStock.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.BtnAnularMovStock.IconColor = System.Drawing.Color.White;
+            this.BtnAnularMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnAnularMovStock.IconSize = 16;
+            this.BtnAnularMovStock.Location = new System.Drawing.Point(814, 369);
+            this.BtnAnularMovStock.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnAnularMovStock.Name = "BtnAnularMovStock";
+            this.BtnAnularMovStock.Size = new System.Drawing.Size(138, 27);
+            this.BtnAnularMovStock.TabIndex = 129;
+            this.BtnAnularMovStock.Text = "Anular";
+            this.BtnAnularMovStock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnAnularMovStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnAnularMovStock.UseVisualStyleBackColor = false;
+            this.BtnAnularMovStock.Click += new System.EventHandler(this.BtnAnular_Click);
             // 
             // FrmVerDetalleMovStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 534);
-            this.Controls.Add(this.BtnAnular);
-            this.Controls.Add(this.BtnConfirmar);
+            this.Controls.Add(this.BtnAnularMovStock);
+            this.Controls.Add(this.BtnConfirmarMovStock);
             this.Controls.Add(this.PbNoConfirmado);
             this.Controls.Add(this.BtnImprimir);
             this.Controls.Add(this.BtnLimpiar);
@@ -571,9 +571,9 @@
         private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.PictureBox PbNoConfirmado;
-        private FontAwesome.Sharp.IconButton BtnConfirmar;
+        private FontAwesome.Sharp.IconButton BtnConfirmarMovStock;
         private System.Windows.Forms.TextBox TxtIdMovStock;
-        private FontAwesome.Sharp.IconButton BtnAnular;
+        private FontAwesome.Sharp.IconButton BtnAnularMovStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;

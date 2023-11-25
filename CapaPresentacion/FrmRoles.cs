@@ -31,6 +31,9 @@ namespace CapaPresentacion
             int usuarioActual = this.IdUsuario;
 
             dgvModulosData.Visible = false;
+            dgvProcesosData.Visible = false;
+            LblModulos.Visible = false;
+            LblProcesos.Visible = false;
             //Listar Roles
             List<Rol> listaRoles = new CN_Roles().Listar();
             foreach (Rol roles in listaRoles)
@@ -65,6 +68,7 @@ namespace CapaPresentacion
                     if (idRol != 0)
                     {
                         bool insert = new CN_Modulos().InsertarModulos(idRol);
+                        bool insert2 = new CN_Procesos().InsertarProcesos(idRol);
                         dgvRolesData.Rows.Add(new object[] {"", idRol, TxtNombre.Text, ChkActivo.Checked });
                         limpiar();
                     }
@@ -106,6 +110,10 @@ namespace CapaPresentacion
             TxtNombre.ReadOnly = false;
             dgvModulosData.Rows.Clear();
             dgvModulosData.Visible = false;
+            dgvProcesosData.Rows.Clear();
+            dgvProcesosData.Visible = false;
+            LblModulos.Visible = false;
+            LblProcesos.Visible = false;
             TxtIndex.Select();
             BtnGuardar.Visible = true;
         }
@@ -152,11 +160,15 @@ namespace CapaPresentacion
             BtnGuardar.Visible = false;
             dgvModulosData.Visible = true;
             TxtNombre.ReadOnly = true;
+            dgvProcesosData.Visible = true;
+            LblModulos.Visible = true;
+            LblProcesos.Visible = true;
             bool estadoRol;
             int index = e.RowIndex;
 
             if (index >= 0)
             {
+                dgvProcesosData.Rows.Clear();
                 dgvModulosData.Rows.Clear();
                 TxtIndex.Text = index.ToString();
                 TxtIdRol.Text = dgvRolesData.Rows[index].Cells["idRol"].Value.ToString();
@@ -170,13 +182,21 @@ namespace CapaPresentacion
                 {
                     ChkActivo.Checked = false;
                 }
+              
+                int IdRol = Convert.ToInt32(dgvRolesData.Rows[index].Cells["idRol"].Value.ToString());
 
                 //Listar Modulos del Rol
-                int IdRol = Convert.ToInt32(dgvRolesData.Rows[index].Cells["idRol"].Value.ToString());
                 List<Modulo> listaModulos = new CN_Modulos().Listar(IdRol);
                 foreach (Modulo modulos in listaModulos)
                 {
                     dgvModulosData.Rows.Add(modulos.Id, modulos.IdRol, modulos.IdModulo, modulos.Nombre, modulos.Visualiza, modulos.Incluye, modulos.Modifica);
+                }
+
+                //Listar Procesos del Rol
+                List<Proceso> listaProcesos = new CN_Procesos().Listar(IdRol);
+                foreach (Proceso procesos in listaProcesos)
+                {
+                    dgvProcesosData.Rows.Add(procesos.IdRolProceso, procesos.RolId, procesos.IdProceso, procesos.Nombre, procesos.Procesa);
                 }
             }
         }
@@ -198,6 +218,17 @@ namespace CapaPresentacion
                 Modifica = (bool)dgvModulosData.Rows[e.RowIndex].Cells["Modifica"].Value;
 
                 bool insert = new CN_Modulos().Editar(Convert.ToInt32(TxtIdRol.Text), Convert.ToInt32(dgvModulosData.Rows[e.RowIndex].Cells["IdModulo"].Value), Visualiza, Incluye, Modifica);
+            }
+        }
+
+        private void dgvProcesosData_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            bool Procesa;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                Procesa = (bool)dgvProcesosData.Rows[e.RowIndex].Cells["Procesar"].Value;
+
+                bool insert = new CN_Procesos().Editar(Convert.ToInt32(TxtIdRol.Text), Convert.ToInt32(dgvProcesosData.Rows[e.RowIndex].Cells["IdProceso"].Value), Procesa);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using CapaEntidad;
+using CapaEntidad.Models;
 using CapaNegocio;
 using CapaPresentacion.Interfaces;
 using System;
@@ -13,14 +14,14 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmCategorias : Form, IFormularioConIdUsuario
+    public partial class FrmCategorias : Form
     {
-        bool estadoCategoria;       
+        bool estadoCategoria, genera;
+        private UsuarioLogin _Usuario; 
 
-        public int IdUsuario { get; set; }     
-
-        public FrmCategorias()
+        public FrmCategorias(UsuarioLogin oUsuario = null)
         {
+            _Usuario = oUsuario;
             InitializeComponent();
             CargarImpuestos();            
         }
@@ -106,11 +107,12 @@ namespace CapaPresentacion
             ComboImpuesto.SelectedIndex = 0;
             TxtBusqueda.Select();
             TxtNombre.ReadOnly = false;
+            BtnGenerarPrecios.Visible = false;
         }
 
         private void FrmCategorias_Load(object sender, EventArgs e)
         {
-            int usuarioActual = this.IdUsuario;
+            BtnGenerarPrecios.Visible = false;
 
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
@@ -126,6 +128,12 @@ namespace CapaPresentacion
             {
                 dgvData.Rows.Add("", categoria.Id, categoria.Nombre, categoria.Descripcion, categoria.PorcUtilidad,
                                  categoria.Impuesto, categoria.Activo);
+            }
+
+            List<Proceso> procesos = new CN_Procesos().ObtenerProcesos(_Usuario.Id);
+            foreach (Proceso proceso in procesos)
+            {
+                genera = procesos.Any(m => m.Boton == BtnGenerarPrecios.Name && m.Procesa == true);
             }
 
             TxtBusqueda.Select();
@@ -177,6 +185,11 @@ namespace CapaPresentacion
                         ChkActivo.Checked = false;
                     }
                 }
+            }
+
+            if (genera)
+            {
+                BtnGenerarPrecios.Visible = true;
             }
         }
 

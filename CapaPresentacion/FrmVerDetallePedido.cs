@@ -1,11 +1,14 @@
 ﻿using CapaEntidad;
+using CapaEntidad.Models;
 using CapaNegocio;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,8 +17,11 @@ namespace CapaPresentacion
 {
     public partial class FrmVerDetallePedido : Form
     {
-        public FrmVerDetallePedido()
+        bool confirma, anula;
+        private UsuarioLogin _Usuario;
+        public FrmVerDetallePedido(UsuarioLogin oUsuario = null)
         {
+            _Usuario = oUsuario;
             InitializeComponent();
         }
 
@@ -52,8 +58,8 @@ namespace CapaPresentacion
                             LblNoConfirmado.Visible = false;
                             PbNoConfirmado.Visible = false;
                             LblAnulado.Visible = false;
-                            BtnConfirmar.Visible = false;
-                            BtnAnular.Visible = false;
+                            BtnConfirmarPedido.Visible = false;
+                            BtnAnularPedido.Visible = false;
                         }
                         else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                         {
@@ -62,8 +68,14 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = false;
-                            BtnConfirmar.Visible = true;
-                            BtnAnular.Visible = true;
+                            if (confirma)
+                            {
+                                BtnConfirmarPedido.Visible = true;
+                            }
+                            if (anula)
+                            {
+                                BtnAnularPedido.Visible = true;
+                            }                          
                         }
                         else
                         {
@@ -72,8 +84,8 @@ namespace CapaPresentacion
                             LblConfirmado.Visible = false;
                             PbConfirmado.Visible = false;
                             LblAnulado.Visible = true;
-                            BtnConfirmar.Visible = false;
-                            BtnAnular.Visible = false;
+                            BtnConfirmarPedido.Visible = false;
+                            BtnAnularPedido.Visible = false;
                         }
 
                         dgvData.Rows.Clear();
@@ -109,7 +121,7 @@ namespace CapaPresentacion
             PbConfirmado.Visible = false;
             LblNoConfirmado.Visible = false;
             //PbNoConfirmado.Visible = false;
-            BtnConfirmar.Visible = false;
+            BtnConfirmarPedido.Visible = false;
         }
 
         private void TxtBusqueda_KeyDown(object sender, KeyEventArgs e)
@@ -140,8 +152,8 @@ namespace CapaPresentacion
                         LblNoConfirmado.Visible = false;
                         PbNoConfirmado.Visible = false;
                         LblAnulado.Visible = false;
-                        BtnConfirmar.Visible = false;
-                        BtnAnular.Visible = false;
+                        BtnConfirmarPedido.Visible = false;
+                        BtnAnularPedido.Visible = false;
                    }                
                    else if (checkBoxConfirmado.Checked == false && checkBoxAnulado.Checked == false)
                    {
@@ -150,9 +162,15 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = false;
-                        BtnConfirmar.Visible = true;
-                        BtnAnular.Visible = true;
-                   }
+                        if (confirma)
+                        {
+                            BtnConfirmarPedido.Visible = true;
+                        }
+                        if (anula)
+                        {
+                            BtnAnularPedido.Visible = true;
+                        }
+                    }
                    else
                    {
                         LblNoConfirmado.Visible = false;
@@ -160,8 +178,8 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = false;
                         PbConfirmado.Visible = false;
                         LblAnulado.Visible = true;
-                        BtnConfirmar.Visible = false;
-                        BtnAnular.Visible = false;
+                        BtnConfirmarPedido.Visible = false;
+                        BtnAnularPedido.Visible = false;
                    }
 
                     dgvData.Rows.Clear();
@@ -188,7 +206,15 @@ namespace CapaPresentacion
             LblAnulado.Visible = false;
             dtpFecha.Value = DateTime.Now;
             dtpFechaRequerida.Value = DateTime.Now;
-            BtnConfirmar.Visible = false;
+            BtnConfirmarPedido.Visible = false;
+            BtnAnularPedido.Visible = false;
+
+            List<Proceso> procesos = new CN_Procesos().ObtenerProcesos(_Usuario.Id);
+            foreach (Proceso proceso in procesos)
+            {
+                confirma = procesos.Any(m => m.Boton == BtnConfirmarPedido.Name && m.Procesa == true);
+                anula = procesos.Any(m => m.Boton == BtnAnularPedido.Name && m.Procesa == true);
+            }
         }
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
@@ -214,7 +240,7 @@ namespace CapaPresentacion
                         LblConfirmado.Visible = true;
                         PbConfirmado.Visible = true;
                         LblNoConfirmado.Visible = false;
-                        BtnConfirmar.Visible = false;
+                        BtnConfirmarPedido.Visible = false;
                     }
                 }
                 else
@@ -238,8 +264,8 @@ namespace CapaPresentacion
                     LblNoConfirmado.Visible = false;
                     LblAnulado.Visible = true;
                     PbNoConfirmado.Visible = true;
-                    BtnAnular.Visible = false;
-                    BtnConfirmar.Visible = false;
+                    BtnAnularPedido.Visible = false;
+                    BtnConfirmarPedido.Visible = false;
                 }
                 else
                 {
