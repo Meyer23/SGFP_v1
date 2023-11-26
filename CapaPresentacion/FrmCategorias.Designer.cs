@@ -94,7 +94,7 @@
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 18;
-            this.BtnEditar.Location = new System.Drawing.Point(15, 459);
+            this.BtnEditar.Location = new System.Drawing.Point(45, 503);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(173, 26);
@@ -117,7 +117,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(15, 427);
+            this.BtnGuardar.Location = new System.Drawing.Point(45, 466);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
@@ -133,7 +133,7 @@
             this.LblDetalleUnidadMedida.AutoSize = true;
             this.LblDetalleUnidadMedida.BackColor = System.Drawing.Color.White;
             this.LblDetalleUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleUnidadMedida.Location = new System.Drawing.Point(11, 20);
+            this.LblDetalleUnidadMedida.Location = new System.Drawing.Point(8, 9);
             this.LblDetalleUnidadMedida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblDetalleUnidadMedida.Name = "LblDetalleUnidadMedida";
             this.LblDetalleUnidadMedida.Size = new System.Drawing.Size(132, 20);
@@ -146,7 +146,7 @@
             this.ChkActivo.BackColor = System.Drawing.Color.White;
             this.ChkActivo.Checked = true;
             this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkActivo.Location = new System.Drawing.Point(12, 278);
+            this.ChkActivo.Location = new System.Drawing.Point(12, 279);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ChkActivo.Size = new System.Drawing.Size(56, 17);
@@ -158,7 +158,7 @@
             // 
             this.TxtPorcUtilidad.Location = new System.Drawing.Point(12, 185);
             this.TxtPorcUtilidad.Name = "TxtPorcUtilidad";
-            this.TxtPorcUtilidad.Size = new System.Drawing.Size(173, 20);
+            this.TxtPorcUtilidad.Size = new System.Drawing.Size(262, 20);
             this.TxtPorcUtilidad.TabIndex = 70;
             this.TxtPorcUtilidad.Validating += new System.ComponentModel.CancelEventHandler(this.TxtPorcUtilidad_Validating);
             // 
@@ -166,7 +166,7 @@
             // 
             this.TxtDescripcion.Location = new System.Drawing.Point(12, 133);
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(173, 20);
+            this.TxtDescripcion.Size = new System.Drawing.Size(262, 20);
             this.TxtDescripcion.TabIndex = 69;
             this.TxtDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDescripcion_Validating);
             // 
@@ -174,7 +174,7 @@
             // 
             this.TxtNombre.Location = new System.Drawing.Point(12, 81);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(173, 20);
+            this.TxtNombre.Size = new System.Drawing.Size(262, 20);
             this.TxtNombre.TabIndex = 68;
             this.TxtNombre.TabStop = false;
             this.TxtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNombre_Validating);
@@ -225,18 +225,18 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 533);
+            this.label1.Size = new System.Drawing.Size(293, 543);
             this.label1.TabIndex = 62;
             // 
             // LblListaCategorias
             // 
             this.LblListaCategorias.BackColor = System.Drawing.Color.White;
             this.LblListaCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblListaCategorias.Location = new System.Drawing.Point(231, 20);
+            this.LblListaCategorias.Location = new System.Drawing.Point(316, 15);
             this.LblListaCategorias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblListaCategorias.Name = "LblListaCategorias";
             this.LblListaCategorias.Padding = new System.Windows.Forms.Padding(2);
-            this.LblListaCategorias.Size = new System.Drawing.Size(836, 40);
+            this.LblListaCategorias.Size = new System.Drawing.Size(1043, 40);
             this.LblListaCategorias.TabIndex = 79;
             this.LblListaCategorias.Text = "Lista de Categorías";
             this.LblListaCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -263,7 +263,7 @@
             this.PorcUtilidad,
             this.Impuesto,
             this.Activo});
-            this.dgvData.Location = new System.Drawing.Point(232, 81);
+            this.dgvData.Location = new System.Drawing.Point(316, 76);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
@@ -280,7 +280,7 @@
             this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(834, 384);
+            this.dgvData.Size = new System.Drawing.Size(1042, 453);
             this.dgvData.TabIndex = 80;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
@@ -347,7 +347,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(941, 30);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1257, 25);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
@@ -368,7 +368,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(894, 30);
+            this.BtnBuscar.Location = new System.Drawing.Point(1210, 25);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
@@ -379,7 +379,7 @@
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(734, 34);
+            this.TxtBusqueda.Location = new System.Drawing.Point(1050, 29);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 81;
@@ -388,7 +388,7 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(607, 34);
+            this.ComboBusqueda.Location = new System.Drawing.Point(923, 29);
             this.ComboBusqueda.Name = "ComboBusqueda";
             this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
             this.ComboBusqueda.TabIndex = 83;
@@ -397,7 +397,7 @@
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(540, 37);
+            this.LblBuscarPor.Location = new System.Drawing.Point(856, 32);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
             this.LblBuscarPor.TabIndex = 82;
@@ -409,7 +409,7 @@
             this.ComboImpuesto.FormattingEnabled = true;
             this.ComboImpuesto.Location = new System.Drawing.Point(12, 240);
             this.ComboImpuesto.Name = "ComboImpuesto";
-            this.ComboImpuesto.Size = new System.Drawing.Size(173, 21);
+            this.ComboImpuesto.Size = new System.Drawing.Size(262, 21);
             this.ComboImpuesto.TabIndex = 86;
             // 
             // BtnGenerarPrecios
@@ -424,7 +424,7 @@
             this.BtnGenerarPrecios.IconColor = System.Drawing.Color.White;
             this.BtnGenerarPrecios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGenerarPrecios.IconSize = 18;
-            this.BtnGenerarPrecios.Location = new System.Drawing.Point(12, 321);
+            this.BtnGenerarPrecios.Location = new System.Drawing.Point(45, 424);
             this.BtnGenerarPrecios.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGenerarPrecios.Name = "BtnGenerarPrecios";
             this.BtnGenerarPrecios.Size = new System.Drawing.Size(173, 27);
@@ -440,7 +440,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1074, 533);
+            this.ClientSize = new System.Drawing.Size(1370, 543);
             this.Controls.Add(this.BtnGenerarPrecios);
             this.Controls.Add(this.ComboImpuesto);
             this.Controls.Add(this.BtnLimpiar);

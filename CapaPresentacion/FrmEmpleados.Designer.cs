@@ -81,7 +81,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 477);
+            this.label1.Size = new System.Drawing.Size(301, 540);
             this.label1.TabIndex = 0;
             // 
             // LblNombres
@@ -168,7 +168,7 @@
             // 
             this.TxtNombres.Location = new System.Drawing.Point(12, 81);
             this.TxtNombres.Name = "TxtNombres";
-            this.TxtNombres.Size = new System.Drawing.Size(173, 20);
+            this.TxtNombres.Size = new System.Drawing.Size(278, 20);
             this.TxtNombres.TabIndex = 10;
             this.TxtNombres.TabStop = false;
             this.TxtNombres.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNombres_Validating);
@@ -177,7 +177,7 @@
             // 
             this.TxtApellidos.Location = new System.Drawing.Point(12, 121);
             this.TxtApellidos.Name = "TxtApellidos";
-            this.TxtApellidos.Size = new System.Drawing.Size(173, 20);
+            this.TxtApellidos.Size = new System.Drawing.Size(278, 20);
             this.TxtApellidos.TabIndex = 11;
             this.TxtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.TxtApellidos_Validating);
             // 
@@ -185,7 +185,7 @@
             // 
             this.TxtDocumento.Location = new System.Drawing.Point(12, 161);
             this.TxtDocumento.Name = "TxtDocumento";
-            this.TxtDocumento.Size = new System.Drawing.Size(173, 20);
+            this.TxtDocumento.Size = new System.Drawing.Size(278, 20);
             this.TxtDocumento.TabIndex = 12;
             this.TxtDocumento.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDocumento_Validating);
             // 
@@ -193,7 +193,7 @@
             // 
             this.TxtDireccion.Location = new System.Drawing.Point(12, 200);
             this.TxtDireccion.Name = "TxtDireccion";
-            this.TxtDireccion.Size = new System.Drawing.Size(173, 20);
+            this.TxtDireccion.Size = new System.Drawing.Size(278, 20);
             this.TxtDireccion.TabIndex = 13;
             this.TxtDireccion.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDireccion_Validating);
             // 
@@ -201,7 +201,7 @@
             // 
             this.TxtTelefono1.Location = new System.Drawing.Point(12, 280);
             this.TxtTelefono1.Name = "TxtTelefono1";
-            this.TxtTelefono1.Size = new System.Drawing.Size(173, 20);
+            this.TxtTelefono1.Size = new System.Drawing.Size(278, 20);
             this.TxtTelefono1.TabIndex = 15;
             this.TxtTelefono1.Validating += new System.ComponentModel.CancelEventHandler(this.TxtTelefono1_Validating);
             // 
@@ -209,14 +209,14 @@
             // 
             this.TxtTelefono2.Location = new System.Drawing.Point(12, 320);
             this.TxtTelefono2.Name = "TxtTelefono2";
-            this.TxtTelefono2.Size = new System.Drawing.Size(173, 20);
+            this.TxtTelefono2.Size = new System.Drawing.Size(278, 20);
             this.TxtTelefono2.TabIndex = 16;
             // 
             // TxtCorreo
             // 
             this.TxtCorreo.Location = new System.Drawing.Point(12, 360);
             this.TxtCorreo.Name = "TxtCorreo";
-            this.TxtCorreo.Size = new System.Drawing.Size(173, 20);
+            this.TxtCorreo.Size = new System.Drawing.Size(278, 20);
             this.TxtCorreo.TabIndex = 17;
             this.TxtCorreo.Validating += new System.ComponentModel.CancelEventHandler(this.TxtCorreo_Validating);
             // 
@@ -272,7 +272,7 @@
             this.Telefono2,
             this.Correo,
             this.Activo});
-            this.dgvData.Location = new System.Drawing.Point(218, 81);
+            this.dgvData.Location = new System.Drawing.Point(326, 82);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
@@ -289,7 +289,7 @@
             this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(759, 384);
+            this.dgvData.Size = new System.Drawing.Size(1032, 447);
             this.dgvData.TabIndex = 22;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
@@ -375,11 +375,11 @@
             // 
             this.LblListaEmpleados.BackColor = System.Drawing.Color.White;
             this.LblListaEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblListaEmpleados.Location = new System.Drawing.Point(217, 20);
+            this.LblListaEmpleados.Location = new System.Drawing.Point(326, 21);
             this.LblListaEmpleados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblListaEmpleados.Name = "LblListaEmpleados";
             this.LblListaEmpleados.Padding = new System.Windows.Forms.Padding(2);
-            this.LblListaEmpleados.Size = new System.Drawing.Size(760, 40);
+            this.LblListaEmpleados.Size = new System.Drawing.Size(1032, 40);
             this.LblListaEmpleados.TabIndex = 23;
             this.LblListaEmpleados.Text = "Lista de Empleados";
             this.LblListaEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -398,7 +398,7 @@
             this.DtFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DtFechaNac.Location = new System.Drawing.Point(12, 240);
             this.DtFechaNac.Name = "DtFechaNac";
-            this.DtFechaNac.Size = new System.Drawing.Size(173, 20);
+            this.DtFechaNac.Size = new System.Drawing.Size(278, 20);
             this.DtFechaNac.TabIndex = 25;
             this.DtFechaNac.Value = new System.DateTime(2023, 8, 26, 17, 41, 32, 0);
             // 
@@ -406,7 +406,7 @@
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(496, 37);
+            this.LblBuscarPor.Location = new System.Drawing.Point(877, 38);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
             this.LblBuscarPor.TabIndex = 26;
@@ -416,14 +416,14 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(563, 34);
+            this.ComboBusqueda.Location = new System.Drawing.Point(944, 35);
             this.ComboBusqueda.Name = "ComboBusqueda";
             this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
             this.ComboBusqueda.TabIndex = 27;
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(690, 34);
+            this.TxtBusqueda.Location = new System.Drawing.Point(1071, 35);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 0;
@@ -440,7 +440,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(897, 30);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1278, 31);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
@@ -461,7 +461,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(850, 30);
+            this.BtnBuscar.Location = new System.Drawing.Point(1231, 31);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
@@ -482,7 +482,7 @@
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 18;
-            this.BtnEditar.Location = new System.Drawing.Point(12, 440);
+            this.BtnEditar.Location = new System.Drawing.Point(52, 503);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(173, 26);
@@ -505,7 +505,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(12, 408);
+            this.BtnGuardar.Location = new System.Drawing.Point(52, 471);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
@@ -530,7 +530,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(984, 477);
+            this.ClientSize = new System.Drawing.Size(1370, 540);
             this.Controls.Add(this.TxtIndex);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);

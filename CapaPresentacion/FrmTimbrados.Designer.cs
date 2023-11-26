@@ -53,8 +53,6 @@
             this.LblBuscarPor = new System.Windows.Forms.Label();
             this.LblListaTimbrados = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.DtInicioVigencia = new System.Windows.Forms.DateTimePicker();
-            this.DtFinVigencia = new System.Windows.Forms.DateTimePicker();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idTimbrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroTimbrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +61,8 @@
             this.NroDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DtInicioVigencia = new System.Windows.Forms.DateTimePicker();
+            this.DtFinVigencia = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +96,7 @@
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 18;
-            this.BtnEditar.Location = new System.Drawing.Point(12, 444);
+            this.BtnEditar.Location = new System.Drawing.Point(41, 514);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(173, 26);
@@ -119,7 +119,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(12, 412);
+            this.BtnGuardar.Location = new System.Drawing.Point(41, 482);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
@@ -135,7 +135,7 @@
             this.LblDetalleTimbrado.AutoSize = true;
             this.LblDetalleTimbrado.BackColor = System.Drawing.Color.White;
             this.LblDetalleTimbrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleTimbrado.Location = new System.Drawing.Point(11, 24);
+            this.LblDetalleTimbrado.Location = new System.Drawing.Point(5, 12);
             this.LblDetalleTimbrado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblDetalleTimbrado.Name = "LblDetalleTimbrado";
             this.LblDetalleTimbrado.Size = new System.Drawing.Size(129, 20);
@@ -160,7 +160,7 @@
             // 
             this.TxtNroHasta.Location = new System.Drawing.Point(9, 286);
             this.TxtNroHasta.Name = "TxtNroHasta";
-            this.TxtNroHasta.Size = new System.Drawing.Size(173, 20);
+            this.TxtNroHasta.Size = new System.Drawing.Size(272, 20);
             this.TxtNroHasta.TabIndex = 45;
             this.TxtNroHasta.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNroHasta_Validating);
             // 
@@ -168,7 +168,7 @@
             // 
             this.TxtNroDesde.Location = new System.Drawing.Point(9, 237);
             this.TxtNroDesde.Name = "TxtNroDesde";
-            this.TxtNroDesde.Size = new System.Drawing.Size(173, 20);
+            this.TxtNroDesde.Size = new System.Drawing.Size(272, 20);
             this.TxtNroDesde.TabIndex = 44;
             this.TxtNroDesde.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNroDesde_Validating);
             // 
@@ -176,7 +176,7 @@
             // 
             this.TxtNroTimbrado.Location = new System.Drawing.Point(9, 97);
             this.TxtNroTimbrado.Name = "TxtNroTimbrado";
-            this.TxtNroTimbrado.Size = new System.Drawing.Size(173, 20);
+            this.TxtNroTimbrado.Size = new System.Drawing.Size(272, 20);
             this.TxtNroTimbrado.TabIndex = 41;
             this.TxtNroTimbrado.TabStop = false;
             this.TxtNroTimbrado.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNroTimbrado_Validating);
@@ -237,7 +237,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 551);
+            this.label1.Size = new System.Drawing.Size(293, 551);
             this.label1.TabIndex = 32;
             // 
             // BtnLimpiar
@@ -252,7 +252,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(899, 22);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1260, 22);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
@@ -273,7 +273,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(852, 22);
+            this.BtnBuscar.Location = new System.Drawing.Point(1213, 22);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
@@ -284,7 +284,7 @@
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(692, 26);
+            this.TxtBusqueda.Location = new System.Drawing.Point(1053, 26);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 55;
@@ -293,7 +293,7 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(565, 26);
+            this.ComboBusqueda.Location = new System.Drawing.Point(926, 26);
             this.ComboBusqueda.Name = "ComboBusqueda";
             this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
             this.ComboBusqueda.TabIndex = 58;
@@ -302,7 +302,7 @@
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(498, 29);
+            this.LblBuscarPor.Location = new System.Drawing.Point(859, 29);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
             this.LblBuscarPor.TabIndex = 57;
@@ -312,11 +312,11 @@
             // 
             this.LblListaTimbrados.BackColor = System.Drawing.Color.White;
             this.LblListaTimbrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblListaTimbrados.Location = new System.Drawing.Point(219, 12);
+            this.LblListaTimbrados.Location = new System.Drawing.Point(316, 12);
             this.LblListaTimbrados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblListaTimbrados.Name = "LblListaTimbrados";
             this.LblListaTimbrados.Padding = new System.Windows.Forms.Padding(2);
-            this.LblListaTimbrados.Size = new System.Drawing.Size(935, 40);
+            this.LblListaTimbrados.Size = new System.Drawing.Size(1032, 40);
             this.LblListaTimbrados.TabIndex = 56;
             this.LblListaTimbrados.Text = "Lista de Timbrados";
             this.LblListaTimbrados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -344,7 +344,7 @@
             this.NroDesde,
             this.NroHasta,
             this.Activo});
-            this.dgvData.Location = new System.Drawing.Point(220, 68);
+            this.dgvData.Location = new System.Drawing.Point(316, 68);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
@@ -361,28 +361,10 @@
             this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(934, 384);
+            this.dgvData.Size = new System.Drawing.Size(1032, 471);
             this.dgvData.TabIndex = 61;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
-            // 
-            // DtInicioVigencia
-            // 
-            this.DtInicioVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtInicioVigencia.Location = new System.Drawing.Point(9, 144);
-            this.DtInicioVigencia.Name = "DtInicioVigencia";
-            this.DtInicioVigencia.Size = new System.Drawing.Size(173, 20);
-            this.DtInicioVigencia.TabIndex = 62;
-            this.DtInicioVigencia.Value = new System.DateTime(2023, 9, 10, 0, 0, 0, 0);
-            // 
-            // DtFinVigencia
-            // 
-            this.DtFinVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtFinVigencia.Location = new System.Drawing.Point(9, 191);
-            this.DtFinVigencia.Name = "DtFinVigencia";
-            this.DtFinVigencia.Size = new System.Drawing.Size(173, 20);
-            this.DtFinVigencia.TabIndex = 63;
-            this.DtFinVigencia.Value = new System.DateTime(2023, 9, 10, 0, 0, 0, 0);
             // 
             // BtnSeleccionar
             // 
@@ -441,12 +423,30 @@
             this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // DtInicioVigencia
+            // 
+            this.DtInicioVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtInicioVigencia.Location = new System.Drawing.Point(9, 144);
+            this.DtInicioVigencia.Name = "DtInicioVigencia";
+            this.DtInicioVigencia.Size = new System.Drawing.Size(272, 20);
+            this.DtInicioVigencia.TabIndex = 62;
+            this.DtInicioVigencia.Value = new System.DateTime(2023, 9, 10, 0, 0, 0, 0);
+            // 
+            // DtFinVigencia
+            // 
+            this.DtFinVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtFinVigencia.Location = new System.Drawing.Point(9, 191);
+            this.DtFinVigencia.Name = "DtFinVigencia";
+            this.DtFinVigencia.Size = new System.Drawing.Size(272, 20);
+            this.DtFinVigencia.TabIndex = 63;
+            this.DtFinVigencia.Value = new System.DateTime(2023, 9, 10, 0, 0, 0, 0);
+            // 
             // FrmTimbrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1166, 551);
+            this.ClientSize = new System.Drawing.Size(1359, 551);
             this.Controls.Add(this.DtFinVigencia);
             this.Controls.Add(this.DtInicioVigencia);
             this.Controls.Add(this.dgvData);

@@ -50,6 +50,7 @@
             this.BtnApertura = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnCerrarCaja = new FontAwesome.Sharp.IconButton();
+            this.LblDetalleAperturaCierre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ImporteUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownMontoCierre)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,16 +63,18 @@
             this.LblUsuariosAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LblUsuariosAgregar.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblUsuariosAgregar.Location = new System.Drawing.Point(0, 0);
+            this.LblUsuariosAgregar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblUsuariosAgregar.Name = "LblUsuariosAgregar";
-            this.LblUsuariosAgregar.Size = new System.Drawing.Size(1036, 617);
+            this.LblUsuariosAgregar.Size = new System.Drawing.Size(691, 464);
             this.LblUsuariosAgregar.TabIndex = 3;
             // 
             // LblFecha
             // 
             this.LblFecha.AutoSize = true;
-            this.LblFecha.Location = new System.Drawing.Point(26, 60);
+            this.LblFecha.Location = new System.Drawing.Point(17, 29);
+            this.LblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblFecha.Name = "LblFecha";
-            this.LblFecha.Size = new System.Drawing.Size(124, 20);
+            this.LblFecha.Size = new System.Drawing.Size(83, 13);
             this.LblFecha.TabIndex = 6;
             this.LblFecha.Text = "Fecha Apertura:";
             // 
@@ -79,18 +82,20 @@
             // 
             this.DateTimePickerApertura.Enabled = false;
             this.DateTimePickerApertura.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTimePickerApertura.Location = new System.Drawing.Point(230, 44);
+            this.DateTimePickerApertura.Location = new System.Drawing.Point(122, 23);
+            this.DateTimePickerApertura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DateTimePickerApertura.Name = "DateTimePickerApertura";
             this.DateTimePickerApertura.ShowUpDown = true;
-            this.DateTimePickerApertura.Size = new System.Drawing.Size(200, 26);
+            this.DateTimePickerApertura.Size = new System.Drawing.Size(135, 20);
             this.DateTimePickerApertura.TabIndex = 7;
             // 
             // LblSucursal
             // 
             this.LblSucursal.AutoSize = true;
-            this.LblSucursal.Location = new System.Drawing.Point(26, 113);
+            this.LblSucursal.Location = new System.Drawing.Point(17, 60);
+            this.LblSucursal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblSucursal.Name = "LblSucursal";
-            this.LblSucursal.Size = new System.Drawing.Size(75, 20);
+            this.LblSucursal.Size = new System.Drawing.Size(51, 13);
             this.LblSucursal.TabIndex = 8;
             this.LblSucursal.Text = "Sucursal:";
             // 
@@ -98,119 +103,133 @@
             // 
             this.ComboSucursal.Enabled = false;
             this.ComboSucursal.FormattingEnabled = true;
-            this.ComboSucursal.Location = new System.Drawing.Point(230, 105);
+            this.ComboSucursal.Location = new System.Drawing.Point(122, 55);
+            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboSucursal.Name = "ComboSucursal";
-            this.ComboSucursal.Size = new System.Drawing.Size(200, 28);
+            this.ComboSucursal.Size = new System.Drawing.Size(135, 21);
             this.ComboSucursal.TabIndex = 9;
             // 
             // ComboCajas
             // 
             this.ComboCajas.FormattingEnabled = true;
-            this.ComboCajas.Location = new System.Drawing.Point(230, 161);
+            this.ComboCajas.Location = new System.Drawing.Point(122, 89);
+            this.ComboCajas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboCajas.Name = "ComboCajas";
-            this.ComboCajas.Size = new System.Drawing.Size(200, 28);
+            this.ComboCajas.Size = new System.Drawing.Size(135, 21);
             this.ComboCajas.TabIndex = 10;
             // 
             // LblCaja
             // 
             this.LblCaja.AutoSize = true;
-            this.LblCaja.Location = new System.Drawing.Point(26, 161);
+            this.LblCaja.Location = new System.Drawing.Point(17, 92);
+            this.LblCaja.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCaja.Name = "LblCaja";
-            this.LblCaja.Size = new System.Drawing.Size(45, 20);
+            this.LblCaja.Size = new System.Drawing.Size(31, 13);
             this.LblCaja.TabIndex = 11;
             this.LblCaja.Text = "Caja:";
             // 
             // ImporteUpDown
             // 
-            this.ImporteUpDown.Location = new System.Drawing.Point(230, 217);
+            this.ImporteUpDown.Location = new System.Drawing.Point(122, 124);
+            this.ImporteUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ImporteUpDown.Maximum = new decimal(new int[] {
             500000,
             0,
             0,
             0});
             this.ImporteUpDown.Name = "ImporteUpDown";
-            this.ImporteUpDown.Size = new System.Drawing.Size(200, 26);
+            this.ImporteUpDown.Size = new System.Drawing.Size(135, 20);
             this.ImporteUpDown.TabIndex = 12;
             // 
             // LbLimporte
             // 
             this.LbLimporte.AutoSize = true;
-            this.LbLimporte.Location = new System.Drawing.Point(26, 219);
+            this.LbLimporte.Location = new System.Drawing.Point(17, 126);
+            this.LbLimporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLimporte.Name = "LbLimporte";
-            this.LbLimporte.Size = new System.Drawing.Size(68, 20);
+            this.LbLimporte.Size = new System.Drawing.Size(45, 13);
             this.LbLimporte.TabIndex = 13;
             this.LbLimporte.Text = "Importe:";
             // 
             // ComboEstado
             // 
             this.ComboEstado.FormattingEnabled = true;
-            this.ComboEstado.Location = new System.Drawing.Point(593, 36);
+            this.ComboEstado.Location = new System.Drawing.Point(486, 26);
+            this.ComboEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboEstado.Name = "ComboEstado";
-            this.ComboEstado.Size = new System.Drawing.Size(200, 28);
+            this.ComboEstado.Size = new System.Drawing.Size(168, 21);
             this.ComboEstado.TabIndex = 14;
             // 
             // LbLEstado
             // 
             this.LbLEstado.AutoSize = true;
-            this.LbLEstado.Location = new System.Drawing.Point(504, 44);
+            this.LbLEstado.Location = new System.Drawing.Point(436, 30);
+            this.LbLEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLEstado.Name = "LbLEstado";
-            this.LbLEstado.Size = new System.Drawing.Size(64, 20);
+            this.LbLEstado.Size = new System.Drawing.Size(43, 13);
             this.LbLEstado.TabIndex = 15;
             this.LbLEstado.Text = "Estado:";
             // 
             // LbLCajero
             // 
             this.LbLCajero.AutoSize = true;
-            this.LbLCajero.Location = new System.Drawing.Point(504, 93);
+            this.LbLCajero.ForeColor = System.Drawing.Color.Black;
+            this.LbLCajero.Location = new System.Drawing.Point(439, 55);
+            this.LbLCajero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLCajero.Name = "LbLCajero";
-            this.LbLCajero.Size = new System.Drawing.Size(59, 20);
+            this.LbLCajero.Size = new System.Drawing.Size(40, 13);
             this.LbLCajero.TabIndex = 17;
             this.LbLCajero.Text = "Cajero:";
             // 
             // ComboCajero
             // 
             this.ComboCajero.FormattingEnabled = true;
-            this.ComboCajero.Location = new System.Drawing.Point(593, 85);
+            this.ComboCajero.Location = new System.Drawing.Point(487, 57);
+            this.ComboCajero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboCajero.Name = "ComboCajero";
-            this.ComboCajero.Size = new System.Drawing.Size(200, 28);
+            this.ComboCajero.Size = new System.Drawing.Size(168, 21);
             this.ComboCajero.TabIndex = 16;
             // 
             // DateTimePickerCierre
             // 
             this.DateTimePickerCierre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerCierre.Location = new System.Drawing.Point(230, 73);
+            this.DateTimePickerCierre.Location = new System.Drawing.Point(122, 31);
+            this.DateTimePickerCierre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DateTimePickerCierre.Name = "DateTimePickerCierre";
-            this.DateTimePickerCierre.Size = new System.Drawing.Size(200, 26);
+            this.DateTimePickerCierre.Size = new System.Drawing.Size(135, 20);
             this.DateTimePickerCierre.TabIndex = 20;
             // 
             // LbLFechaCierre
             // 
             this.LbLFechaCierre.AutoSize = true;
-            this.LbLFechaCierre.Location = new System.Drawing.Point(26, 79);
+            this.LbLFechaCierre.Location = new System.Drawing.Point(17, 31);
+            this.LbLFechaCierre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLFechaCierre.Name = "LbLFechaCierre";
-            this.LbLFechaCierre.Size = new System.Drawing.Size(104, 20);
+            this.LbLFechaCierre.Size = new System.Drawing.Size(70, 13);
             this.LbLFechaCierre.TabIndex = 19;
             this.LbLFechaCierre.Text = "Fecha Cierre:";
             // 
             // LbLimporteCierre
             // 
             this.LbLimporteCierre.AutoSize = true;
-            this.LbLimporteCierre.Location = new System.Drawing.Point(26, 161);
+            this.LbLimporteCierre.Location = new System.Drawing.Point(17, 72);
+            this.LbLimporteCierre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLimporteCierre.Name = "LbLimporteCierre";
-            this.LbLimporteCierre.Size = new System.Drawing.Size(68, 20);
+            this.LbLimporteCierre.Size = new System.Drawing.Size(45, 13);
             this.LbLimporteCierre.TabIndex = 22;
             this.LbLimporteCierre.Text = "Importe:";
             // 
             // UpDownMontoCierre
             // 
-            this.UpDownMontoCierre.Location = new System.Drawing.Point(230, 155);
+            this.UpDownMontoCierre.Location = new System.Drawing.Point(122, 72);
+            this.UpDownMontoCierre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UpDownMontoCierre.Maximum = new decimal(new int[] {
             5000000,
             0,
             0,
             0});
             this.UpDownMontoCierre.Name = "UpDownMontoCierre";
-            this.UpDownMontoCierre.Size = new System.Drawing.Size(200, 26);
+            this.UpDownMontoCierre.Size = new System.Drawing.Size(135, 20);
             this.UpDownMontoCierre.TabIndex = 21;
             // 
             // BtnSalir
@@ -225,9 +244,10 @@
             this.BtnSalir.IconColor = System.Drawing.Color.White;
             this.BtnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnSalir.IconSize = 18;
-            this.BtnSalir.Location = new System.Drawing.Point(844, 550);
+            this.BtnSalir.Location = new System.Drawing.Point(527, 427);
+            this.BtnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(150, 40);
+            this.BtnSalir.Size = new System.Drawing.Size(136, 26);
             this.BtnSalir.TabIndex = 55;
             this.BtnSalir.Text = "Cancelar";
             this.BtnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -251,9 +271,11 @@
             this.groupBox1.Controls.Add(this.ComboCajas);
             this.groupBox1.Controls.Add(this.ImporteUpDown);
             this.groupBox1.Controls.Add(this.LblCaja);
-            this.groupBox1.Location = new System.Drawing.Point(12, 24);
+            this.groupBox1.Location = new System.Drawing.Point(8, 54);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1004, 267);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(669, 174);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Apertura Caja";
@@ -264,16 +286,18 @@
             this.BtnApertura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnApertura.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnApertura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnApertura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnApertura.ForeColor = System.Drawing.Color.White;
             this.BtnApertura.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
             this.BtnApertura.IconColor = System.Drawing.Color.White;
             this.BtnApertura.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnApertura.IconSize = 16;
-            this.BtnApertura.Location = new System.Drawing.Point(832, 208);
+            this.BtnApertura.Location = new System.Drawing.Point(519, 135);
+            this.BtnApertura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnApertura.Name = "BtnApertura";
-            this.BtnApertura.Size = new System.Drawing.Size(150, 42);
+            this.BtnApertura.Size = new System.Drawing.Size(136, 27);
             this.BtnApertura.TabIndex = 55;
-            this.BtnApertura.Text = "Abrir Caja";
+            this.BtnApertura.Text = "Aperturar Caja";
             this.BtnApertura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnApertura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnApertura.UseVisualStyleBackColor = false;
@@ -287,27 +311,31 @@
             this.groupBox2.Controls.Add(this.DateTimePickerCierre);
             this.groupBox2.Controls.Add(this.UpDownMontoCierre);
             this.groupBox2.Controls.Add(this.LbLimporteCierre);
-            this.groupBox2.Location = new System.Drawing.Point(12, 310);
+            this.groupBox2.Location = new System.Drawing.Point(8, 251);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1004, 206);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(669, 134);
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cierre Caja";
             // 
             // BtnCerrarCaja
             // 
-            this.BtnCerrarCaja.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BtnCerrarCaja.BackColor = System.Drawing.Color.SteelBlue;
             this.BtnCerrarCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrarCaja.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCerrarCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCerrarCaja.ForeColor = System.Drawing.Color.White;
             this.BtnCerrarCaja.IconChar = FontAwesome.Sharp.IconChar.Key;
             this.BtnCerrarCaja.IconColor = System.Drawing.Color.White;
             this.BtnCerrarCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCerrarCaja.IconSize = 16;
-            this.BtnCerrarCaja.Location = new System.Drawing.Point(832, 150);
+            this.BtnCerrarCaja.Location = new System.Drawing.Point(519, 98);
+            this.BtnCerrarCaja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnCerrarCaja.Name = "BtnCerrarCaja";
-            this.BtnCerrarCaja.Size = new System.Drawing.Size(150, 42);
+            this.BtnCerrarCaja.Size = new System.Drawing.Size(136, 27);
             this.BtnCerrarCaja.TabIndex = 55;
             this.BtnCerrarCaja.Text = "Cerrar Caja";
             this.BtnCerrarCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -315,15 +343,29 @@
             this.BtnCerrarCaja.UseVisualStyleBackColor = false;
             this.BtnCerrarCaja.Click += new System.EventHandler(this.BtnCerrarCaja_Click);
             // 
+            // LblDetalleAperturaCierre
+            // 
+            this.LblDetalleAperturaCierre.AutoSize = true;
+            this.LblDetalleAperturaCierre.BackColor = System.Drawing.Color.White;
+            this.LblDetalleAperturaCierre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDetalleAperturaCierre.Location = new System.Drawing.Point(4, 9);
+            this.LblDetalleAperturaCierre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblDetalleAperturaCierre.Name = "LblDetalleAperturaCierre";
+            this.LblDetalleAperturaCierre.Size = new System.Drawing.Size(183, 20);
+            this.LblDetalleAperturaCierre.TabIndex = 75;
+            this.LblDetalleAperturaCierre.Text = "Apertura / Cierre de Caja";
+            // 
             // FrmAperturaCierreCaja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 617);
+            this.ClientSize = new System.Drawing.Size(690, 464);
+            this.Controls.Add(this.LblDetalleAperturaCierre);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.LblUsuariosAgregar);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAperturaCierreCaja";
             this.Text = "Apertura / Cierre ";
             this.Load += new System.EventHandler(this.FrmAperturaCierreCaja_Load);
@@ -334,6 +376,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -361,5 +404,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private FontAwesome.Sharp.IconButton BtnApertura;
         private FontAwesome.Sharp.IconButton BtnCerrarCaja;
+        private System.Windows.Forms.Label LblDetalleAperturaCierre;
     }
 }

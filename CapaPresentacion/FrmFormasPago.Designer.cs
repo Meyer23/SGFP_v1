@@ -47,13 +47,13 @@
             this.LblBuscarPor = new System.Windows.Forms.Label();
             this.LblListaFormaPago = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.LblDias = new System.Windows.Forms.Label();
-            this.TxtDias = new System.Windows.Forms.TextBox();
             this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idFormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.LblDias = new System.Windows.Forms.Label();
+            this.TxtDias = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +87,7 @@
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 18;
-            this.BtnEditar.Location = new System.Drawing.Point(12, 467);
+            this.BtnEditar.Location = new System.Drawing.Point(51, 511);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(173, 26);
@@ -110,7 +110,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(12, 435);
+            this.BtnGuardar.Location = new System.Drawing.Point(51, 479);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
@@ -126,7 +126,7 @@
             this.LblFormaPago.AutoSize = true;
             this.LblFormaPago.BackColor = System.Drawing.Color.White;
             this.LblFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFormaPago.Location = new System.Drawing.Point(8, 28);
+            this.LblFormaPago.Location = new System.Drawing.Point(8, 9);
             this.LblFormaPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblFormaPago.Name = "LblFormaPago";
             this.LblFormaPago.Size = new System.Drawing.Size(150, 20);
@@ -151,7 +151,7 @@
             // 
             this.TxtDescripcion.Location = new System.Drawing.Point(12, 95);
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(173, 20);
+            this.TxtDescripcion.Size = new System.Drawing.Size(275, 20);
             this.TxtDescripcion.TabIndex = 100;
             this.TxtDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDescripcion_Validating);
             // 
@@ -171,7 +171,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 548);
+            this.label2.Size = new System.Drawing.Size(301, 548);
             this.label2.TabIndex = 98;
             // 
             // BtnLimpiar
@@ -186,7 +186,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(988, 26);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1257, 26);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
@@ -207,7 +207,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(941, 26);
+            this.BtnBuscar.Location = new System.Drawing.Point(1210, 26);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
@@ -218,7 +218,7 @@
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(781, 30);
+            this.TxtBusqueda.Location = new System.Drawing.Point(1050, 30);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 109;
@@ -227,7 +227,7 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(654, 30);
+            this.ComboBusqueda.Location = new System.Drawing.Point(923, 30);
             this.ComboBusqueda.Name = "ComboBusqueda";
             this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
             this.ComboBusqueda.TabIndex = 111;
@@ -236,7 +236,7 @@
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(587, 33);
+            this.LblBuscarPor.Location = new System.Drawing.Point(856, 33);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
             this.LblBuscarPor.TabIndex = 110;
@@ -246,11 +246,11 @@
             // 
             this.LblListaFormaPago.BackColor = System.Drawing.Color.White;
             this.LblListaFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblListaFormaPago.Location = new System.Drawing.Point(231, 16);
+            this.LblListaFormaPago.Location = new System.Drawing.Point(324, 16);
             this.LblListaFormaPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblListaFormaPago.Name = "LblListaFormaPago";
             this.LblListaFormaPago.Padding = new System.Windows.Forms.Padding(2);
-            this.LblListaFormaPago.Size = new System.Drawing.Size(836, 40);
+            this.LblListaFormaPago.Size = new System.Drawing.Size(1026, 40);
             this.LblListaFormaPago.TabIndex = 108;
             this.LblListaFormaPago.Text = "Lista de Formas de Pago";
             this.LblListaFormaPago.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,7 +275,7 @@
             this.Descripcion,
             this.Dias,
             this.Activo});
-            this.dgvData.Location = new System.Drawing.Point(232, 78);
+            this.dgvData.Location = new System.Drawing.Point(324, 78);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
@@ -292,27 +292,10 @@
             this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(834, 384);
+            this.dgvData.Size = new System.Drawing.Size(1025, 458);
             this.dgvData.TabIndex = 114;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
-            // 
-            // LblDias
-            // 
-            this.LblDias.AutoSize = true;
-            this.LblDias.BackColor = System.Drawing.Color.White;
-            this.LblDias.Location = new System.Drawing.Point(9, 127);
-            this.LblDias.Name = "LblDias";
-            this.LblDias.Size = new System.Drawing.Size(33, 13);
-            this.LblDias.TabIndex = 115;
-            this.LblDias.Text = "Días:";
-            // 
-            // TxtDias
-            // 
-            this.TxtDias.Location = new System.Drawing.Point(12, 143);
-            this.TxtDias.Name = "TxtDias";
-            this.TxtDias.Size = new System.Drawing.Size(173, 20);
-            this.TxtDias.TabIndex = 116;
             // 
             // BtnSeleccionar
             // 
@@ -349,12 +332,29 @@
             this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // LblDias
+            // 
+            this.LblDias.AutoSize = true;
+            this.LblDias.BackColor = System.Drawing.Color.White;
+            this.LblDias.Location = new System.Drawing.Point(9, 127);
+            this.LblDias.Name = "LblDias";
+            this.LblDias.Size = new System.Drawing.Size(33, 13);
+            this.LblDias.TabIndex = 115;
+            this.LblDias.Text = "Días:";
+            // 
+            // TxtDias
+            // 
+            this.TxtDias.Location = new System.Drawing.Point(12, 143);
+            this.TxtDias.Name = "TxtDias";
+            this.TxtDias.Size = new System.Drawing.Size(275, 20);
+            this.TxtDias.TabIndex = 116;
+            // 
             // FrmFormasPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1092, 548);
+            this.ClientSize = new System.Drawing.Size(1361, 548);
             this.Controls.Add(this.TxtDias);
             this.Controls.Add(this.LblDias);
             this.Controls.Add(this.dgvData);

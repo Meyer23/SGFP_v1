@@ -87,7 +87,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(948, 30);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1263, 30);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
@@ -108,7 +108,7 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(901, 30);
+            this.BtnBuscar.Location = new System.Drawing.Point(1216, 30);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
@@ -119,7 +119,7 @@
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(741, 34);
+            this.TxtBusqueda.Location = new System.Drawing.Point(1056, 34);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
             this.TxtBusqueda.TabIndex = 33;
@@ -128,7 +128,7 @@
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(614, 34);
+            this.ComboBusqueda.Location = new System.Drawing.Point(929, 34);
             this.ComboBusqueda.Name = "ComboBusqueda";
             this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
             this.ComboBusqueda.TabIndex = 58;
@@ -137,7 +137,7 @@
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(547, 37);
+            this.LblBuscarPor.Location = new System.Drawing.Point(862, 37);
             this.LblBuscarPor.Name = "LblBuscarPor";
             this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
             this.LblBuscarPor.TabIndex = 57;
@@ -156,11 +156,11 @@
             // 
             this.LblListaImpuestos.BackColor = System.Drawing.Color.White;
             this.LblListaImpuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblListaImpuestos.Location = new System.Drawing.Point(231, 20);
+            this.LblListaImpuestos.Location = new System.Drawing.Point(326, 20);
             this.LblListaImpuestos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblListaImpuestos.Name = "LblListaImpuestos";
             this.LblListaImpuestos.Padding = new System.Windows.Forms.Padding(2);
-            this.LblListaImpuestos.Size = new System.Drawing.Size(836, 40);
+            this.LblListaImpuestos.Size = new System.Drawing.Size(1033, 40);
             this.LblListaImpuestos.TabIndex = 54;
             this.LblListaImpuestos.Text = "Lista de Impuestos";
             this.LblListaImpuestos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -177,7 +177,7 @@
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 18;
-            this.BtnEditar.Location = new System.Drawing.Point(15, 459);
+            this.BtnEditar.Location = new System.Drawing.Point(55, 520);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(173, 26);
@@ -200,7 +200,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(15, 427);
+            this.BtnGuardar.Location = new System.Drawing.Point(55, 488);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
@@ -234,7 +234,7 @@
             this.FactorGravada,
             this.FactorIVA,
             this.Activo});
-            this.dgvData.Location = new System.Drawing.Point(232, 81);
+            this.dgvData.Location = new System.Drawing.Point(326, 81);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
@@ -251,7 +251,7 @@
             this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(834, 384);
+            this.dgvData.Size = new System.Drawing.Size(1032, 458);
             this.dgvData.TabIndex = 53;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
@@ -341,7 +341,7 @@
             // 
             this.TxtFactorIVA.Location = new System.Drawing.Point(12, 293);
             this.TxtFactorIVA.Name = "TxtFactorIVA";
-            this.TxtFactorIVA.Size = new System.Drawing.Size(173, 20);
+            this.TxtFactorIVA.Size = new System.Drawing.Size(273, 20);
             this.TxtFactorIVA.TabIndex = 46;
             this.TxtFactorIVA.Validating += new System.ComponentModel.CancelEventHandler(this.TxtFactorIVA_Validating);
             // 
@@ -349,7 +349,7 @@
             // 
             this.TxtPorcIVA.Location = new System.Drawing.Point(12, 185);
             this.TxtPorcIVA.Name = "TxtPorcIVA";
-            this.TxtPorcIVA.Size = new System.Drawing.Size(173, 20);
+            this.TxtPorcIVA.Size = new System.Drawing.Size(273, 20);
             this.TxtPorcIVA.TabIndex = 44;
             this.TxtPorcIVA.Validating += new System.ComponentModel.CancelEventHandler(this.TxtPorcIVA_Validating);
             // 
@@ -357,7 +357,7 @@
             // 
             this.TxtDescripcion.Location = new System.Drawing.Point(12, 133);
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(173, 20);
+            this.TxtDescripcion.Size = new System.Drawing.Size(273, 20);
             this.TxtDescripcion.TabIndex = 43;
             this.TxtDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDescripcion_Validating);
             // 
@@ -365,7 +365,7 @@
             // 
             this.TxtTipoImpuesto.Location = new System.Drawing.Point(12, 81);
             this.TxtTipoImpuesto.Name = "TxtTipoImpuesto";
-            this.TxtTipoImpuesto.Size = new System.Drawing.Size(173, 20);
+            this.TxtTipoImpuesto.Size = new System.Drawing.Size(273, 20);
             this.TxtTipoImpuesto.TabIndex = 42;
             this.TxtTipoImpuesto.TabStop = false;
             this.TxtTipoImpuesto.Validating += new System.ComponentModel.CancelEventHandler(this.TxtTipoImpuesto_Validating);
@@ -426,14 +426,14 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 528);
+            this.label1.Size = new System.Drawing.Size(302, 551);
             this.label1.TabIndex = 32;
             // 
             // TxtFactorGravada
             // 
             this.TxtFactorGravada.Location = new System.Drawing.Point(12, 240);
             this.TxtFactorGravada.Name = "TxtFactorGravada";
-            this.TxtFactorGravada.Size = new System.Drawing.Size(173, 20);
+            this.TxtFactorGravada.Size = new System.Drawing.Size(273, 20);
             this.TxtFactorGravada.TabIndex = 45;
             this.TxtFactorGravada.Validating += new System.ComponentModel.CancelEventHandler(this.TxtFactorGravada_Validating);
             // 
@@ -442,7 +442,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1078, 528);
+            this.ClientSize = new System.Drawing.Size(1370, 551);
             this.Controls.Add(this.TxtIndex);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);

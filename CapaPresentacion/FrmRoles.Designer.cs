@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblRoles = new System.Windows.Forms.Label();
             this.ListaLabelRoles = new System.Windows.Forms.Label();
             this.dgvRolesData = new System.Windows.Forms.DataGridView();
@@ -55,13 +55,18 @@
             this.Incluye = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Modifica = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dgvProcesosData = new System.Windows.Forms.DataGridView();
-            this.LblModulos = new System.Windows.Forms.Label();
-            this.LblProcesos = new System.Windows.Forms.Label();
             this.idRolProceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Procesar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.LblModulos = new System.Windows.Forms.Label();
+            this.LblProcesos = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.BtnBuscar = new FontAwesome.Sharp.IconButton();
+            this.TxtBusqueda = new System.Windows.Forms.TextBox();
+            this.ComboBusqueda = new System.Windows.Forms.ComboBox();
+            this.LblBuscarPor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRolesData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModulosData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesosData)).BeginInit();
@@ -75,17 +80,17 @@
             this.LblRoles.Location = new System.Drawing.Point(0, 0);
             this.LblRoles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblRoles.Name = "LblRoles";
-            this.LblRoles.Size = new System.Drawing.Size(534, 502);
+            this.LblRoles.Size = new System.Drawing.Size(534, 549);
             this.LblRoles.TabIndex = 1;
             // 
             // ListaLabelRoles
             // 
             this.ListaLabelRoles.BackColor = System.Drawing.Color.White;
             this.ListaLabelRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListaLabelRoles.Location = new System.Drawing.Point(565, 9);
+            this.ListaLabelRoles.Location = new System.Drawing.Point(554, 19);
             this.ListaLabelRoles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ListaLabelRoles.Name = "ListaLabelRoles";
-            this.ListaLabelRoles.Size = new System.Drawing.Size(419, 40);
+            this.ListaLabelRoles.Size = new System.Drawing.Size(805, 40);
             this.ListaLabelRoles.TabIndex = 20;
             this.ListaLabelRoles.Text = "Roles";
             this.ListaLabelRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -94,41 +99,41 @@
             // 
             this.dgvRolesData.AllowUserToAddRows = false;
             this.dgvRolesData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRolesData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRolesData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRolesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRolesData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
             this.idRol,
             this.Descripcion,
             this.Activo});
-            this.dgvRolesData.Location = new System.Drawing.Point(565, 62);
+            this.dgvRolesData.Location = new System.Drawing.Point(554, 72);
             this.dgvRolesData.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRolesData.MultiSelect = false;
             this.dgvRolesData.Name = "dgvRolesData";
             this.dgvRolesData.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRolesData.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRolesData.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvRolesData.RowHeadersWidth = 62;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvRolesData.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvRolesData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvRolesData.RowTemplate.Height = 28;
             this.dgvRolesData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRolesData.Size = new System.Drawing.Size(419, 161);
+            this.dgvRolesData.Size = new System.Drawing.Size(805, 466);
             this.dgvRolesData.TabIndex = 21;
             this.dgvRolesData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRolesData_CellContentClick);
             this.dgvRolesData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvRolesData_CellPainting);
@@ -224,7 +229,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(80, 468);
+            this.BtnGuardar.Location = new System.Drawing.Point(82, 511);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
@@ -265,7 +270,7 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.White;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(271, 469);
+            this.BtnLimpiar.Location = new System.Drawing.Point(273, 512);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(173, 26);
@@ -354,26 +359,6 @@
             this.dgvProcesosData.TabIndex = 35;
             this.dgvProcesosData.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcesosData_CellValueChanged);
             // 
-            // LblModulos
-            // 
-            this.LblModulos.AutoSize = true;
-            this.LblModulos.BackColor = System.Drawing.Color.White;
-            this.LblModulos.Location = new System.Drawing.Point(12, 82);
-            this.LblModulos.Name = "LblModulos";
-            this.LblModulos.Size = new System.Drawing.Size(47, 13);
-            this.LblModulos.TabIndex = 36;
-            this.LblModulos.Text = "Módulos";
-            // 
-            // LblProcesos
-            // 
-            this.LblProcesos.AutoSize = true;
-            this.LblProcesos.BackColor = System.Drawing.Color.White;
-            this.LblProcesos.Location = new System.Drawing.Point(12, 274);
-            this.LblProcesos.Name = "LblProcesos";
-            this.LblProcesos.Size = new System.Drawing.Size(51, 13);
-            this.LblProcesos.TabIndex = 37;
-            this.LblProcesos.Text = "Procesos";
-            // 
             // idRolProceso
             // 
             this.idRolProceso.HeaderText = "";
@@ -404,11 +389,102 @@
             this.Procesar.Name = "Procesar";
             this.Procesar.Width = 80;
             // 
+            // LblModulos
+            // 
+            this.LblModulos.AutoSize = true;
+            this.LblModulos.BackColor = System.Drawing.Color.White;
+            this.LblModulos.Location = new System.Drawing.Point(12, 82);
+            this.LblModulos.Name = "LblModulos";
+            this.LblModulos.Size = new System.Drawing.Size(47, 13);
+            this.LblModulos.TabIndex = 36;
+            this.LblModulos.Text = "Módulos";
+            // 
+            // LblProcesos
+            // 
+            this.LblProcesos.AutoSize = true;
+            this.LblProcesos.BackColor = System.Drawing.Color.White;
+            this.LblProcesos.Location = new System.Drawing.Point(12, 274);
+            this.LblProcesos.Name = "LblProcesos";
+            this.LblProcesos.Size = new System.Drawing.Size(51, 13);
+            this.LblProcesos.TabIndex = 37;
+            this.LblProcesos.Text = "Procesos";
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.White;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 18;
+            this.iconButton1.Location = new System.Drawing.Point(1277, 29);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(43, 26);
+            this.iconButton1.TabIndex = 90;
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.BackColor = System.Drawing.Color.White;
+            this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.ForeColor = System.Drawing.Color.White;
+            this.BtnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.BtnBuscar.IconColor = System.Drawing.Color.Black;
+            this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnBuscar.IconSize = 16;
+            this.BtnBuscar.Location = new System.Drawing.Point(1230, 29);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
+            this.BtnBuscar.TabIndex = 89;
+            this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // TxtBusqueda
+            // 
+            this.TxtBusqueda.Location = new System.Drawing.Point(1070, 33);
+            this.TxtBusqueda.Name = "TxtBusqueda";
+            this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
+            this.TxtBusqueda.TabIndex = 86;
+            // 
+            // ComboBusqueda
+            // 
+            this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBusqueda.FormattingEnabled = true;
+            this.ComboBusqueda.Location = new System.Drawing.Point(943, 33);
+            this.ComboBusqueda.Name = "ComboBusqueda";
+            this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
+            this.ComboBusqueda.TabIndex = 88;
+            // 
+            // LblBuscarPor
+            // 
+            this.LblBuscarPor.AutoSize = true;
+            this.LblBuscarPor.BackColor = System.Drawing.Color.White;
+            this.LblBuscarPor.Location = new System.Drawing.Point(876, 36);
+            this.LblBuscarPor.Name = "LblBuscarPor";
+            this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
+            this.LblBuscarPor.TabIndex = 87;
+            this.LblBuscarPor.Text = "Buscar por:";
+            // 
             // FrmRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 502);
+            this.ClientSize = new System.Drawing.Size(1370, 549);
+            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.BtnBuscar);
+            this.Controls.Add(this.TxtBusqueda);
+            this.Controls.Add(this.ComboBusqueda);
+            this.Controls.Add(this.LblBuscarPor);
             this.Controls.Add(this.LblProcesos);
             this.Controls.Add(this.LblModulos);
             this.Controls.Add(this.dgvProcesosData);
@@ -468,5 +544,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idProceso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proceso;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Procesar;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton BtnBuscar;
+        private System.Windows.Forms.TextBox TxtBusqueda;
+        private System.Windows.Forms.ComboBox ComboBusqueda;
+        private System.Windows.Forms.Label LblBuscarPor;
     }
 }
