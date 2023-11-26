@@ -94,5 +94,24 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void FrmConfirmarCompra_Load(object sender, EventArgs e)
+        {
+            dtpFechaRec.Value = DateTime.Now;
+        }
+
+        private void dtpFechaRec_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = dtpFechaRec.Value;
+            DateTime fechaActual = DateTime.Now;
+
+            if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
+            {
+                MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFechaRec.Value = DateTime.Now;
+                dtpFechaRec.Select();
+                return;
+            }
+        }
     }
 }

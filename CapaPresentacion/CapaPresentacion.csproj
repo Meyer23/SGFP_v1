@@ -412,6 +412,12 @@
     <Compile Include="Reportes\FrmRptListadoCompras.Designer.cs">
       <DependentUpon>FrmRptListadoCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptListadoComprasSaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptListadoComprasSaldos.Designer.cs">
+      <DependentUpon>FrmRptListadoComprasSaldos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptListadoMovimientoStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -459,6 +465,12 @@
     </Compile>
     <Compile Include="Reportes\FrmRptProveedores.Designer.cs">
       <DependentUpon>FrmRptProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmRptUltimasCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptUltimasCompras.Designer.cs">
+      <DependentUpon>FrmRptUltimasCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FrmAnularCompra.resx">
@@ -636,6 +648,9 @@
     <EmbeddedResource Include="Reportes\FrmRptListadoCompras.resx">
       <DependentUpon>FrmRptListadoCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptListadoComprasSaldos.resx">
+      <DependentUpon>FrmRptListadoComprasSaldos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptListadoMovimientoStock.resx">
       <DependentUpon>FrmRptListadoMovimientoStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -660,8 +675,12 @@
     <EmbeddedResource Include="Reportes\FrmRptProveedores.resx">
       <DependentUpon>FrmRptProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptUltimasCompras.resx">
+      <DependentUpon>FrmRptUltimasCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RPT_Clientes.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Compras.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_ListadoComprasSaldos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoMovimientoStock.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoNCRecibidas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoPedidos.rdlc" />
@@ -671,6 +690,7 @@
     <EmbeddedResource Include="Reportes\RPT_Productos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Proveedores.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoCompras.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_UltimasCompras.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

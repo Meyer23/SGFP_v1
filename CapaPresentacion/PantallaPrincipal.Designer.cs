@@ -69,6 +69,8 @@
             this.SubMenuListadosCompras = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuListadoPedidos = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuListadoCompra = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuListadoNCRecibida = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuListadoUltimasCompras = new FontAwesome.Sharp.IconMenuItem();
             this.StockMenu = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuMovStock = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuVerDetalleMovStock = new FontAwesome.Sharp.IconMenuItem();
@@ -80,7 +82,7 @@
             this.Contenedor = new System.Windows.Forms.Panel();
             this.ULabel = new System.Windows.Forms.Label();
             this.LBLUsuario = new System.Windows.Forms.Label();
-            this.SubMenuListadoNCRecibida = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuListadoComprasSaldos = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -372,7 +374,7 @@
             this.SubMenuFacturas.IconColor = System.Drawing.Color.Black;
             this.SubMenuFacturas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuFacturas.Name = "SubMenuFacturas";
-            this.SubMenuFacturas.Size = new System.Drawing.Size(182, 22);
+            this.SubMenuFacturas.Size = new System.Drawing.Size(190, 30);
             this.SubMenuFacturas.Text = "Facturas";
             this.SubMenuFacturas.Click += new System.EventHandler(this.MenuRegistrarVenta_Click);
             // 
@@ -382,7 +384,7 @@
             this.SubMenuAperturaCierreCaja.IconColor = System.Drawing.Color.Black;
             this.SubMenuAperturaCierreCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuAperturaCierreCaja.Name = "SubMenuAperturaCierreCaja";
-            this.SubMenuAperturaCierreCaja.Size = new System.Drawing.Size(182, 22);
+            this.SubMenuAperturaCierreCaja.Size = new System.Drawing.Size(190, 30);
             this.SubMenuAperturaCierreCaja.Text = "Apertura/Cierre Caja";
             this.SubMenuAperturaCierreCaja.Click += new System.EventHandler(this.SubMenuAperturaCierreCaja_Click);
             // 
@@ -392,7 +394,7 @@
             this.MenuVerDetalle.IconColor = System.Drawing.Color.Black;
             this.MenuVerDetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.MenuVerDetalle.Name = "MenuVerDetalle";
-            this.MenuVerDetalle.Size = new System.Drawing.Size(182, 22);
+            this.MenuVerDetalle.Size = new System.Drawing.Size(190, 30);
             this.MenuVerDetalle.Text = "Ver Detalle Facturas";
             this.MenuVerDetalle.Click += new System.EventHandler(this.MenuVerDetalle_Click);
             // 
@@ -527,7 +529,9 @@
             this.SubMenuListadosCompras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubMenuListadoPedidos,
             this.SubMenuListadoCompra,
-            this.SubMenuListadoNCRecibida});
+            this.SubMenuListadoNCRecibida,
+            this.SubMenuListadoUltimasCompras,
+            this.SubMenuListadoComprasSaldos});
             this.SubMenuListadosCompras.IconChar = FontAwesome.Sharp.IconChar.None;
             this.SubMenuListadosCompras.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadosCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -541,7 +545,7 @@
             this.SubMenuListadoPedidos.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadoPedidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListadoPedidos.Name = "SubMenuListadoPedidos";
-            this.SubMenuListadoPedidos.Size = new System.Drawing.Size(281, 30);
+            this.SubMenuListadoPedidos.Size = new System.Drawing.Size(308, 30);
             this.SubMenuListadoPedidos.Text = "Listado de Pedidos";
             this.SubMenuListadoPedidos.Click += new System.EventHandler(this.SubMenuListadoPedidos_Click);
             // 
@@ -551,9 +555,29 @@
             this.SubMenuListadoCompra.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadoCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListadoCompra.Name = "SubMenuListadoCompra";
-            this.SubMenuListadoCompra.Size = new System.Drawing.Size(281, 30);
+            this.SubMenuListadoCompra.Size = new System.Drawing.Size(308, 30);
             this.SubMenuListadoCompra.Text = "Listado de Compras";
             this.SubMenuListadoCompra.Click += new System.EventHandler(this.SubMenuListadoCompra_Click);
+            // 
+            // SubMenuListadoNCRecibida
+            // 
+            this.SubMenuListadoNCRecibida.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuListadoNCRecibida.IconColor = System.Drawing.Color.Black;
+            this.SubMenuListadoNCRecibida.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuListadoNCRecibida.Name = "SubMenuListadoNCRecibida";
+            this.SubMenuListadoNCRecibida.Size = new System.Drawing.Size(308, 30);
+            this.SubMenuListadoNCRecibida.Text = "Listado de Notas de Crédito Recibidas";
+            this.SubMenuListadoNCRecibida.Click += new System.EventHandler(this.SubMenuListadoNCRecibida_Click);
+            // 
+            // SubMenuListadoUltimasCompras
+            // 
+            this.SubMenuListadoUltimasCompras.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuListadoUltimasCompras.IconColor = System.Drawing.Color.Black;
+            this.SubMenuListadoUltimasCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuListadoUltimasCompras.Name = "SubMenuListadoUltimasCompras";
+            this.SubMenuListadoUltimasCompras.Size = new System.Drawing.Size(308, 30);
+            this.SubMenuListadoUltimasCompras.Text = "Listado de Últimas Compras por Proveedor";
+            this.SubMenuListadoUltimasCompras.Click += new System.EventHandler(this.SubMenuListadoUltimasCompras_Click);
             // 
             // StockMenu
             // 
@@ -684,15 +708,15 @@
             this.LBLUsuario.TabIndex = 5;
             this.LBLUsuario.Text = "LBLUsuario";
             // 
-            // SubMenuListadoNCRecibida
+            // SubMenuListadoComprasSaldos
             // 
-            this.SubMenuListadoNCRecibida.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.SubMenuListadoNCRecibida.IconColor = System.Drawing.Color.Black;
-            this.SubMenuListadoNCRecibida.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubMenuListadoNCRecibida.Name = "SubMenuListadoNCRecibida";
-            this.SubMenuListadoNCRecibida.Size = new System.Drawing.Size(281, 30);
-            this.SubMenuListadoNCRecibida.Text = "Listado de Notas de Crédito Recibidas";
-            this.SubMenuListadoNCRecibida.Click += new System.EventHandler(this.SubMenuListadoNCRecibida_Click);
+            this.SubMenuListadoComprasSaldos.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuListadoComprasSaldos.IconColor = System.Drawing.Color.Black;
+            this.SubMenuListadoComprasSaldos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuListadoComprasSaldos.Name = "SubMenuListadoComprasSaldos";
+            this.SubMenuListadoComprasSaldos.Size = new System.Drawing.Size(308, 30);
+            this.SubMenuListadoComprasSaldos.Text = "Listado de Saldos de Facturas";
+            this.SubMenuListadoComprasSaldos.Click += new System.EventHandler(this.SubMenuListadoComprasSaldos_Click);
             // 
             // PantallaPrincipal
             // 
@@ -775,6 +799,8 @@
         private FontAwesome.Sharp.IconMenuItem SubMenuListadoPedidos;
         private FontAwesome.Sharp.IconMenuItem SubMenuListadoMovstock;
         private FontAwesome.Sharp.IconMenuItem SubMenuListadoNCRecibida;
+        private FontAwesome.Sharp.IconMenuItem SubMenuListadoUltimasCompras;
+        private FontAwesome.Sharp.IconMenuItem SubMenuListadoComprasSaldos;
     }
 }
 

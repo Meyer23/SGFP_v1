@@ -279,3 +279,5 @@ C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpD
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.PopUpNuevoCliente.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptListadoMovimientoStock.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptListadoNCRecibidas.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptUltimasCompras.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptListadoComprasSaldos.resources

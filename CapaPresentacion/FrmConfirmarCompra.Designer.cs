@@ -76,6 +76,7 @@
             this.dtpFechaRec.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaRec.TabIndex = 116;
             this.dtpFechaRec.Value = new System.DateTime(2023, 11, 2, 22, 3, 29, 0);
+            this.dtpFechaRec.ValueChanged += new System.EventHandler(this.dtpFechaRec_ValueChanged);
             // 
             // LblConfirmarPedido
             // 
@@ -120,6 +121,7 @@
             this.Controls.Add(this.LblConfirmarPedido);
             this.Name = "FrmConfirmarCompra";
             this.Text = "Confirmar Compra";
+            this.Load += new System.EventHandler(this.FrmConfirmarCompra_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -51,6 +51,17 @@ namespace CapaPresentacion
                         {
                             iconsubmenu.Visible = false;
                         }
+                        else
+                        {
+                            foreach (IconMenuItem iconsubmenu2 in iconsubmenu.DropDownItems)
+                            {
+                                bool encontrado3 = modulos.Any(m => m.Menu == iconsubmenu2.Name && m.Visualiza == true);
+                                if (encontrado3 == false)
+                                {
+                                    iconsubmenu2.Visible = false;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -309,6 +320,18 @@ namespace CapaPresentacion
         {
             Reportes.FrmRptListadoNCRecibidas oRptListadoNCRecibida = new Reportes.FrmRptListadoNCRecibidas();
             oRptListadoNCRecibida.ShowDialog();
+        }
+
+        private void SubMenuListadoUltimasCompras_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptUltimasCompras oRptListadoUltimasCompras = new Reportes.FrmRptUltimasCompras();
+            oRptListadoUltimasCompras.ShowDialog();
+        }
+
+        private void SubMenuListadoComprasSaldos_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptListadoComprasSaldos oRptListadoComprasSaldos = new Reportes.FrmRptListadoComprasSaldos();
+            oRptListadoComprasSaldos.ShowDialog();
         }
     }
 }

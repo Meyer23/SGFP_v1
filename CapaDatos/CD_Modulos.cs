@@ -141,6 +141,7 @@ namespace CapaDatos
                                 Id = Convert.ToInt32(reader["id"]),
                                 IdRol = Convert.ToInt32(reader["idRol"]),
                                 IdModulo = Convert.ToInt32(reader["idModulo"]),
+                                Nombre = reader["Nombre"].ToString(),
                                 Menu = reader["Menu"].ToString(),
                                 Visualiza = Convert.ToBoolean(reader["Visualiza"]),
                                 Incluye = Convert.ToBoolean(reader["Incluye"]),
