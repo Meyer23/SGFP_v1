@@ -409,6 +409,12 @@ namespace CapaPresentacion
 
             TxtCajero.Text = _Usuario.Login.ToString();
             TxtNroCaja.Text = numeroCaja.ToString();
+
+           if(idCaja == 0)
+            {
+                MessageBox.Show("Usuario '{0}' sin caja asignada, verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             MostrarTimbrado(idCaja);
 
         }
