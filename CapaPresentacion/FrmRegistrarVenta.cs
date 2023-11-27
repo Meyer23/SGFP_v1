@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -140,7 +141,7 @@ namespace CapaPresentacion
                     textBoxCodProducto.Text,
                     TxtProducto.Text,
                     numericUpDownCantidad.Text,
-                    precio.ToString("0.00"),
+                    precio.ToString(),
                     (Convert.ToInt32(numericUpDownCantidad.Value) * precio).ToString("0.00") });
 
                 calcularTotal();
@@ -167,7 +168,7 @@ namespace CapaPresentacion
                     total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
                 }
             }
-            textBoxTotalPagar.Text = total.ToString("0.00");
+            textBoxTotalPagar.Text = total.ToString();
         }
 
         private void CalcularTotalMedioCobro()
@@ -207,7 +208,7 @@ namespace CapaPresentacion
                     TxtIdProducto.Text = oProducto.Id.ToString();
                     textBoxCodProducto.Text = oProducto.Codigo.ToString();
                     TxtProducto.Text = oProducto.Descripcion;
-                    textBoxPrecio.Text = oProducto.Precio.ToString("0.00");
+                    textBoxPrecio.Text = oProducto.Precio.ToString();
                     numericUpDownCantidad.Select();
                 }
                 else
@@ -412,7 +413,8 @@ namespace CapaPresentacion
 
            if(idCaja == 0)
             {
-                MessageBox.Show("Usuario '{0}' sin caja asignada, verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string nombreUsuario = _Usuario.Login.ToString();
+                MessageBox.Show(string.Format("Usuario '{0}' sin caja asignada, verifique", nombreUsuario), "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             MostrarTimbrado(idCaja);
@@ -475,7 +477,8 @@ namespace CapaPresentacion
 
         private void BtnCobro_Click(object sender, EventArgs e)
         {
-            PopUpDetalleCobro cobro = new PopUpDetalleCobro();
+            decimal cobrarMonto = Convert.ToDecimal(textBoxTotalPagar.Text);
+            PopUpDetalleCobro cobro = new PopUpDetalleCobro(cobrarMonto);
             cobro.ShowDialog();
         }
     }
