@@ -36,8 +36,8 @@
             this.LblNroDocumento = new System.Windows.Forms.Label();
             this.ComboTipoValor = new System.Windows.Forms.ComboBox();
             this.ComboBanco = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtNroCuenta = new System.Windows.Forms.TextBox();
+            this.TxtNroDocumento = new System.Windows.Forms.TextBox();
             this.TxtImporte = new System.Windows.Forms.TextBox();
             this.TxtVuelto = new System.Windows.Forms.TextBox();
             this.LblVuelto = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             this.LbLMontoTotal = new System.Windows.Forms.Label();
             this.TxtMontoTotal = new System.Windows.Forms.TextBox();
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
+            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             this.LblCompras.Location = new System.Drawing.Point(15, 11);
             this.LblCompras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblCompras.Name = "LblCompras";
-            this.LblCompras.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LblCompras.Padding = new System.Windows.Forms.Padding(4);
             this.LblCompras.Size = new System.Drawing.Size(1481, 871);
             this.LblCompras.TabIndex = 53;
             this.LblCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,7 +135,7 @@
             // 
             this.ComboTipoValor.FormattingEnabled = true;
             this.ComboTipoValor.Location = new System.Drawing.Point(45, 106);
-            this.ComboTipoValor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboTipoValor.Margin = new System.Windows.Forms.Padding(4);
             this.ComboTipoValor.Name = "ComboTipoValor";
             this.ComboTipoValor.Size = new System.Drawing.Size(197, 32);
             this.ComboTipoValor.TabIndex = 59;
@@ -143,31 +144,31 @@
             // 
             this.ComboBanco.FormattingEnabled = true;
             this.ComboBanco.Location = new System.Drawing.Point(347, 106);
-            this.ComboBanco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboBanco.Margin = new System.Windows.Forms.Padding(4);
             this.ComboBanco.Name = "ComboBanco";
             this.ComboBanco.Size = new System.Drawing.Size(197, 32);
             this.ComboBanco.TabIndex = 60;
             // 
-            // textBox1
+            // TxtNroCuenta
             // 
-            this.textBox1.Location = new System.Drawing.Point(673, 106);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 29);
-            this.textBox1.TabIndex = 61;
+            this.TxtNroCuenta.Location = new System.Drawing.Point(673, 106);
+            this.TxtNroCuenta.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtNroCuenta.Name = "TxtNroCuenta";
+            this.TxtNroCuenta.Size = new System.Drawing.Size(187, 29);
+            this.TxtNroCuenta.TabIndex = 61;
             // 
-            // textBox2
+            // TxtNroDocumento
             // 
-            this.textBox2.Location = new System.Drawing.Point(48, 212);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(195, 29);
-            this.textBox2.TabIndex = 62;
+            this.TxtNroDocumento.Location = new System.Drawing.Point(48, 212);
+            this.TxtNroDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtNroDocumento.Name = "TxtNroDocumento";
+            this.TxtNroDocumento.Size = new System.Drawing.Size(195, 29);
+            this.TxtNroDocumento.TabIndex = 62;
             // 
             // TxtImporte
             // 
             this.TxtImporte.Location = new System.Drawing.Point(350, 212);
-            this.TxtImporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtImporte.Margin = new System.Windows.Forms.Padding(4);
             this.TxtImporte.Name = "TxtImporte";
             this.TxtImporte.Size = new System.Drawing.Size(195, 29);
             this.TxtImporte.TabIndex = 63;
@@ -175,7 +176,7 @@
             // TxtVuelto
             // 
             this.TxtVuelto.Location = new System.Drawing.Point(666, 212);
-            this.TxtVuelto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtVuelto.Margin = new System.Windows.Forms.Padding(4);
             this.TxtVuelto.Name = "TxtVuelto";
             this.TxtVuelto.Size = new System.Drawing.Size(195, 29);
             this.TxtVuelto.TabIndex = 65;
@@ -213,6 +214,9 @@
             this.dgvData.RowHeadersWidth = 62;
             this.dgvData.Size = new System.Drawing.Size(1399, 310);
             this.dgvData.TabIndex = 66;
+            this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
+            this.dgvData.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellEndEdit);
+            this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
             // idCobro
             // 
@@ -300,7 +304,7 @@
             this.BtnCancelar.IconColor = System.Drawing.Color.Black;
             this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCancelar.Location = new System.Drawing.Point(1135, 722);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(309, 95);
             this.BtnCancelar.TabIndex = 68;
@@ -346,11 +350,25 @@
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.BtnGuardar.IconColor = System.Drawing.Color.Black;
+            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnGuardar.Location = new System.Drawing.Point(830, 728);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(254, 88);
+            this.BtnGuardar.TabIndex = 72;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
             // PopUpDetalleCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1511, 905);
+            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.TxtMontoTotal);
             this.Controls.Add(this.LbLMontoTotal);
@@ -360,8 +378,8 @@
             this.Controls.Add(this.TxtVuelto);
             this.Controls.Add(this.LblVuelto);
             this.Controls.Add(this.TxtImporte);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtNroDocumento);
+            this.Controls.Add(this.TxtNroCuenta);
             this.Controls.Add(this.ComboBanco);
             this.Controls.Add(this.ComboTipoValor);
             this.Controls.Add(this.LblNroDocumento);
@@ -370,7 +388,7 @@
             this.Controls.Add(this.LblNroCuenta);
             this.Controls.Add(this.LblTipoValor);
             this.Controls.Add(this.LblCompras);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PopUpDetalleCobro";
             this.Text = "Detalle Cobro";
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
@@ -389,8 +407,8 @@
         private System.Windows.Forms.Label LblNroDocumento;
         private System.Windows.Forms.ComboBox ComboTipoValor;
         private System.Windows.Forms.ComboBox ComboBanco;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtNroCuenta;
+        private System.Windows.Forms.TextBox TxtNroDocumento;
         private System.Windows.Forms.TextBox TxtImporte;
         private System.Windows.Forms.TextBox TxtVuelto;
         private System.Windows.Forms.Label LblVuelto;
@@ -408,5 +426,6 @@
         private System.Windows.Forms.Label LbLMontoTotal;
         private System.Windows.Forms.TextBox TxtMontoTotal;
         private FontAwesome.Sharp.IconButton BtnAgregar;
+        private FontAwesome.Sharp.IconButton BtnGuardar;
     }
 }

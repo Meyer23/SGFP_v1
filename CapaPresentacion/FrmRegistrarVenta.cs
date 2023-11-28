@@ -478,8 +478,21 @@ namespace CapaPresentacion
         private void BtnCobro_Click(object sender, EventArgs e)
         {
             decimal cobrarMonto = Convert.ToDecimal(textBoxTotalPagar.Text);
-            PopUpDetalleCobro cobro = new PopUpDetalleCobro(cobrarMonto);
-            cobro.ShowDialog();
+            using (var formDetalleCobro = new PopUpDetalleCobro(cobrarMonto))
+            {
+                formDetalleCobro.ShowDialog();
+
+                DataTable datosRecibidos = formDetalleCobro.dataTableCobro;
+
+                if(datosRecibidos != null)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Debe cargar el detalle del cobro", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
     }
 }
