@@ -69,6 +69,7 @@
     <Compile Include="CD_UnidadesMedida.cs" />
     <Compile Include="CD_Usuarios.cs" />
     <Compile Include="CD_Valores.cs" />
+    <Compile Include="CD_Ventas.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

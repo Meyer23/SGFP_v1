@@ -54,7 +54,7 @@
             this.VentasMenu = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuFacturas = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuAperturaCierreCaja = new FontAwesome.Sharp.IconMenuItem();
-            this.MenuVerDetalle = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuVerDetalleFacturas = new FontAwesome.Sharp.IconMenuItem();
             this.ProveedoresMenu = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuProveedores = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuListadosProveedores = new FontAwesome.Sharp.IconMenuItem();
@@ -71,6 +71,7 @@
             this.SubMenuListadoCompra = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuListadoNCRecibida = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuListadoUltimasCompras = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuListadoComprasSaldos = new FontAwesome.Sharp.IconMenuItem();
             this.StockMenu = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuMovStock = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuVerDetalleMovStock = new FontAwesome.Sharp.IconMenuItem();
@@ -82,7 +83,6 @@
             this.Contenedor = new System.Windows.Forms.Panel();
             this.ULabel = new System.Windows.Forms.Label();
             this.LBLUsuario = new System.Windows.Forms.Label();
-            this.SubMenuListadoComprasSaldos = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -357,7 +357,7 @@
             this.VentasMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubMenuFacturas,
             this.SubMenuAperturaCierreCaja,
-            this.MenuVerDetalle});
+            this.SubMenuVerDetalleFacturas});
             this.VentasMenu.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             this.VentasMenu.IconColor = System.Drawing.Color.Black;
             this.VentasMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -374,7 +374,7 @@
             this.SubMenuFacturas.IconColor = System.Drawing.Color.Black;
             this.SubMenuFacturas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuFacturas.Name = "SubMenuFacturas";
-            this.SubMenuFacturas.Size = new System.Drawing.Size(190, 30);
+            this.SubMenuFacturas.Size = new System.Drawing.Size(192, 30);
             this.SubMenuFacturas.Text = "Facturas";
             this.SubMenuFacturas.Click += new System.EventHandler(this.MenuRegistrarVenta_Click);
             // 
@@ -384,19 +384,19 @@
             this.SubMenuAperturaCierreCaja.IconColor = System.Drawing.Color.Black;
             this.SubMenuAperturaCierreCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuAperturaCierreCaja.Name = "SubMenuAperturaCierreCaja";
-            this.SubMenuAperturaCierreCaja.Size = new System.Drawing.Size(190, 30);
+            this.SubMenuAperturaCierreCaja.Size = new System.Drawing.Size(192, 30);
             this.SubMenuAperturaCierreCaja.Text = "Apertura/Cierre Caja";
             this.SubMenuAperturaCierreCaja.Click += new System.EventHandler(this.SubMenuAperturaCierreCaja_Click);
             // 
-            // MenuVerDetalle
+            // SubMenuVerDetalleFacturas
             // 
-            this.MenuVerDetalle.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.MenuVerDetalle.IconColor = System.Drawing.Color.Black;
-            this.MenuVerDetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MenuVerDetalle.Name = "MenuVerDetalle";
-            this.MenuVerDetalle.Size = new System.Drawing.Size(190, 30);
-            this.MenuVerDetalle.Text = "Ver Detalle Facturas";
-            this.MenuVerDetalle.Click += new System.EventHandler(this.MenuVerDetalle_Click);
+            this.SubMenuVerDetalleFacturas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuVerDetalleFacturas.IconColor = System.Drawing.Color.Black;
+            this.SubMenuVerDetalleFacturas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuVerDetalleFacturas.Name = "SubMenuVerDetalleFacturas";
+            this.SubMenuVerDetalleFacturas.Size = new System.Drawing.Size(192, 30);
+            this.SubMenuVerDetalleFacturas.Text = "Consulta de Facturas";
+            this.SubMenuVerDetalleFacturas.Click += new System.EventHandler(this.MenuVerDetalle_Click);
             // 
             // ProveedoresMenu
             // 
@@ -419,7 +419,7 @@
             this.SubMenuProveedores.IconColor = System.Drawing.Color.Black;
             this.SubMenuProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuProveedores.Name = "SubMenuProveedores";
-            this.SubMenuProveedores.Size = new System.Drawing.Size(204, 22);
+            this.SubMenuProveedores.Size = new System.Drawing.Size(212, 30);
             this.SubMenuProveedores.Text = "Administrar Proveedores";
             this.SubMenuProveedores.Click += new System.EventHandler(this.SubMenuProveedores_Click);
             // 
@@ -431,7 +431,7 @@
             this.SubMenuListadosProveedores.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadosProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListadosProveedores.Name = "SubMenuListadosProveedores";
-            this.SubMenuListadosProveedores.Size = new System.Drawing.Size(204, 22);
+            this.SubMenuListadosProveedores.Size = new System.Drawing.Size(212, 30);
             this.SubMenuListadosProveedores.Text = "Listados";
             // 
             // SubMenuListadoProveedor
@@ -545,7 +545,7 @@
             this.SubMenuListadoPedidos.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadoPedidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListadoPedidos.Name = "SubMenuListadoPedidos";
-            this.SubMenuListadoPedidos.Size = new System.Drawing.Size(308, 30);
+            this.SubMenuListadoPedidos.Size = new System.Drawing.Size(300, 22);
             this.SubMenuListadoPedidos.Text = "Listado de Pedidos";
             this.SubMenuListadoPedidos.Click += new System.EventHandler(this.SubMenuListadoPedidos_Click);
             // 
@@ -555,7 +555,7 @@
             this.SubMenuListadoCompra.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadoCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListadoCompra.Name = "SubMenuListadoCompra";
-            this.SubMenuListadoCompra.Size = new System.Drawing.Size(308, 30);
+            this.SubMenuListadoCompra.Size = new System.Drawing.Size(300, 22);
             this.SubMenuListadoCompra.Text = "Listado de Compras";
             this.SubMenuListadoCompra.Click += new System.EventHandler(this.SubMenuListadoCompra_Click);
             // 
@@ -565,7 +565,7 @@
             this.SubMenuListadoNCRecibida.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadoNCRecibida.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListadoNCRecibida.Name = "SubMenuListadoNCRecibida";
-            this.SubMenuListadoNCRecibida.Size = new System.Drawing.Size(308, 30);
+            this.SubMenuListadoNCRecibida.Size = new System.Drawing.Size(300, 22);
             this.SubMenuListadoNCRecibida.Text = "Listado de Notas de Crédito Recibidas";
             this.SubMenuListadoNCRecibida.Click += new System.EventHandler(this.SubMenuListadoNCRecibida_Click);
             // 
@@ -575,9 +575,19 @@
             this.SubMenuListadoUltimasCompras.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadoUltimasCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListadoUltimasCompras.Name = "SubMenuListadoUltimasCompras";
-            this.SubMenuListadoUltimasCompras.Size = new System.Drawing.Size(308, 30);
+            this.SubMenuListadoUltimasCompras.Size = new System.Drawing.Size(300, 22);
             this.SubMenuListadoUltimasCompras.Text = "Listado de Últimas Compras por Proveedor";
             this.SubMenuListadoUltimasCompras.Click += new System.EventHandler(this.SubMenuListadoUltimasCompras_Click);
+            // 
+            // SubMenuListadoComprasSaldos
+            // 
+            this.SubMenuListadoComprasSaldos.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuListadoComprasSaldos.IconColor = System.Drawing.Color.Black;
+            this.SubMenuListadoComprasSaldos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuListadoComprasSaldos.Name = "SubMenuListadoComprasSaldos";
+            this.SubMenuListadoComprasSaldos.Size = new System.Drawing.Size(300, 22);
+            this.SubMenuListadoComprasSaldos.Text = "Listado de Saldos de Facturas";
+            this.SubMenuListadoComprasSaldos.Click += new System.EventHandler(this.SubMenuListadoComprasSaldos_Click);
             // 
             // StockMenu
             // 
@@ -708,16 +718,6 @@
             this.LBLUsuario.TabIndex = 5;
             this.LBLUsuario.Text = "LBLUsuario";
             // 
-            // SubMenuListadoComprasSaldos
-            // 
-            this.SubMenuListadoComprasSaldos.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.SubMenuListadoComprasSaldos.IconColor = System.Drawing.Color.Black;
-            this.SubMenuListadoComprasSaldos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubMenuListadoComprasSaldos.Name = "SubMenuListadoComprasSaldos";
-            this.SubMenuListadoComprasSaldos.Size = new System.Drawing.Size(308, 30);
-            this.SubMenuListadoComprasSaldos.Text = "Listado de Saldos de Facturas";
-            this.SubMenuListadoComprasSaldos.Click += new System.EventHandler(this.SubMenuListadoComprasSaldos_Click);
-            // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -761,7 +761,7 @@
         private FontAwesome.Sharp.IconMenuItem VentasMenu;
         private FontAwesome.Sharp.IconMenuItem SubMenuEmpleados;
         private FontAwesome.Sharp.IconMenuItem SubMenuFacturas;
-        private FontAwesome.Sharp.IconMenuItem MenuVerDetalle;
+        private FontAwesome.Sharp.IconMenuItem SubMenuVerDetalleFacturas;
         private FontAwesome.Sharp.IconMenuItem SubMenuCompras;
         private FontAwesome.Sharp.IconMenuItem SubMenuVerDetalleCompra;
         private FontAwesome.Sharp.IconMenuItem SubMenuRoles;

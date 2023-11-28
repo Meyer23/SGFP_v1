@@ -95,6 +95,12 @@
     <Compile Include="FrmAnularPedido.Designer.cs">
       <DependentUpon>FrmAnularPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAnularVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnularVenta.Designer.cs">
+      <DependentUpon>FrmAnularVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAperturaCierreCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +384,12 @@
     <Compile Include="PopUpUltimasCompras.Designer.cs">
       <DependentUpon>PopUpUltimasCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUpVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpVentas.Designer.cs">
+      <DependentUpon>PopUpVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmUsuarios.cs">
@@ -484,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnularPedido.resx">
       <DependentUpon>FrmAnularPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnularVenta.resx">
+      <DependentUpon>FrmAnularVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAperturaCierreCaja.resx">
       <DependentUpon>FrmAperturaCierreCaja.cs</DependentUpon>
@@ -625,6 +640,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpUltimasCompras.resx">
       <DependentUpon>PopUpUltimasCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpVentas.resx">
+      <DependentUpon>PopUpVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

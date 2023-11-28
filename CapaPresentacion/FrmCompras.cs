@@ -690,16 +690,16 @@ namespace CapaPresentacion
 
         private void dtpFechaVenc_ValueChanged(object sender, EventArgs e)
         {
-            DateTime fechaSeleccionada = dtpFechaVenc.Value;
-            DateTime fechaActual = DateTime.Now;
+            //DateTime fechaSeleccionada = dtpFechaVenc.Value;
+            //DateTime fechaActual = DateTime.Now;
 
-            if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
-            {
-                MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                dtpFechaVenc.Value = DateTime.Now;
-                dtpFechaVenc.Select();
-                return;
-            }
+            //if ((fechaSeleccionada.Year == fechaActual.Year && fechaSeleccionada.Month != fechaActual.Month) || fechaSeleccionada.Year != fechaActual.Year)
+            //{
+            //    MessageBox.Show("Fecha fuera de rango del mes actual", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    dtpFechaVenc.Value = DateTime.Now;
+            //    dtpFechaVenc.Select();
+            //    return;
+            //}
         }
     }
 }
