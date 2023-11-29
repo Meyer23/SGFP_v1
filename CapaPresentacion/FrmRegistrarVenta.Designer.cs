@@ -88,6 +88,7 @@
             this.LblTotalPagar = new System.Windows.Forms.Label();
             this.textBoxTotalPagar = new System.Windows.Forms.TextBox();
             this.BtnCobro = new FontAwesome.Sharp.IconButton();
+            this.BtnImprimirFactura = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProductos.SuspendLayout();
@@ -100,11 +101,11 @@
             // 
             this.LblPedidos.BackColor = System.Drawing.Color.White;
             this.LblPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPedidos.Location = new System.Drawing.Point(15, 11);
+            this.LblPedidos.Location = new System.Drawing.Point(4, 7);
             this.LblPedidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblPedidos.Name = "LblPedidos";
             this.LblPedidos.Padding = new System.Windows.Forms.Padding(4);
-            this.LblPedidos.Size = new System.Drawing.Size(2768, 1373);
+            this.LblPedidos.Size = new System.Drawing.Size(1975, 1131);
             this.LblPedidos.TabIndex = 26;
             this.LblPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -126,7 +127,7 @@
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersWidth = 62;
-            this.dgvData.Size = new System.Drawing.Size(1223, 344);
+            this.dgvData.Size = new System.Drawing.Size(993, 422);
             this.dgvData.TabIndex = 80;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
@@ -222,6 +223,7 @@
             // 
             // TxtDoc
             // 
+            this.TxtDoc.Enabled = false;
             this.TxtDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDoc.Location = new System.Drawing.Point(1131, 287);
             this.TxtDoc.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -771,7 +773,7 @@
             this.LblMoneda.AutoSize = true;
             this.LblMoneda.BackColor = System.Drawing.Color.White;
             this.LblMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMoneda.Location = new System.Drawing.Point(1861, 947);
+            this.LblMoneda.Location = new System.Drawing.Point(1622, 862);
             this.LblMoneda.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblMoneda.Name = "LblMoneda";
             this.LblMoneda.Size = new System.Drawing.Size(72, 39);
@@ -783,7 +785,7 @@
             this.LblTotalPagar.AutoSize = true;
             this.LblTotalPagar.BackColor = System.Drawing.Color.White;
             this.LblTotalPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalPagar.Location = new System.Drawing.Point(1271, 812);
+            this.LblTotalPagar.Location = new System.Drawing.Point(1048, 815);
             this.LblTotalPagar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblTotalPagar.Name = "LblTotalPagar";
             this.LblTotalPagar.Size = new System.Drawing.Size(181, 32);
@@ -794,7 +796,7 @@
             // 
             this.textBoxTotalPagar.Enabled = false;
             this.textBoxTotalPagar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTotalPagar.Location = new System.Drawing.Point(1278, 882);
+            this.textBoxTotalPagar.Location = new System.Drawing.Point(1039, 851);
             this.textBoxTotalPagar.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTotalPagar.Name = "textBoxTotalPagar";
             this.textBoxTotalPagar.Size = new System.Drawing.Size(574, 50);
@@ -803,25 +805,39 @@
             // BtnCobro
             // 
             this.BtnCobro.BackColor = System.Drawing.Color.Olive;
-            this.BtnCobro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCobro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCobro.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
             this.BtnCobro.IconColor = System.Drawing.Color.Black;
             this.BtnCobro.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnCobro.Location = new System.Drawing.Point(1264, 720);
+            this.BtnCobro.Location = new System.Drawing.Point(1039, 720);
             this.BtnCobro.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCobro.Name = "BtnCobro";
-            this.BtnCobro.Size = new System.Drawing.Size(288, 54);
+            this.BtnCobro.Size = new System.Drawing.Size(288, 75);
             this.BtnCobro.TabIndex = 94;
             this.BtnCobro.Text = "Medio de Cobro";
             this.BtnCobro.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnCobro.UseVisualStyleBackColor = false;
             this.BtnCobro.Click += new System.EventHandler(this.BtnCobro_Click);
             // 
+            // BtnImprimirFactura
+            // 
+            this.BtnImprimirFactura.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnImprimirFactura.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.BtnImprimirFactura.IconColor = System.Drawing.Color.Black;
+            this.BtnImprimirFactura.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnImprimirFactura.Location = new System.Drawing.Point(1039, 1050);
+            this.BtnImprimirFactura.Name = "BtnImprimirFactura";
+            this.BtnImprimirFactura.Size = new System.Drawing.Size(288, 75);
+            this.BtnImprimirFactura.TabIndex = 95;
+            this.BtnImprimirFactura.Text = "Imprimir Factura";
+            this.BtnImprimirFactura.UseVisualStyleBackColor = false;
+            // 
             // FrmRegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1992, 1376);
+            this.ClientSize = new System.Drawing.Size(1992, 1364);
+            this.Controls.Add(this.BtnImprimirFactura);
             this.Controls.Add(this.BtnCobro);
             this.Controls.Add(this.LblMoneda);
             this.Controls.Add(this.LblHoraActual);
@@ -910,5 +926,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaVenc;
         private System.Windows.Forms.Label LblFechaVencimiento;
         private FontAwesome.Sharp.IconButton BtnCobro;
+        private FontAwesome.Sharp.IconButton BtnImprimirFactura;
     }
 }

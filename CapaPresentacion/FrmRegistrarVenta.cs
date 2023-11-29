@@ -491,34 +491,52 @@ namespace CapaPresentacion
 
         private void BtnCobro_Click(object sender, EventArgs e)
         {
-            decimal cobrarMonto = Convert.ToDecimal(textBoxTotalPagar.Text);
-            using (var formDetalleCobro = new PopUpDetalleCobro(cobrarMonto))
+            try
             {
-                formDetalleCobro.ShowDialog();
+                decimal cobrarMonto = Convert.ToDecimal(textBoxTotalPagar.Text);
 
-                DataTable datosRecibidos = formDetalleCobro.dataTableCobro;
-
-                if(datosRecibidos != null)
+                using (var formDetalleCobro = new PopUpDetalleCobro(cobrarMonto))
                 {
+                    formDetalleCobro.ShowDialog();
 
+                    DataTable datosRecibidos = formDetalleCobro.dataTableCobro;
+
+                    if (datosRecibidos != null)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe cargar el detalle del cobro", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Debe cargar el detalle del cobro", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("DEBE CARGAR LA VENTA!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
         private void ObtenerUltimoDocFactura()
         {
-            List<Venta> listaVenta = new CN_Ventas().Listar();
+            try
+            {
+                List<NumeracionDocumento> listNumeracion = new CN_NumeracionDocumento().Listar();
 
-            var ultimoDoc = listaVenta.Select(x => x.Doc).Max()
-                            .SingleOrDefault();
+                var ultimoNumero = listNumeracion.Where(e => e.DescripcionCaja == TxtNroCaja.Text)
+                                                 .Select(e => e.UltimoNumero).Max();
 
-            var siguienteDoc = ultimoDoc + 1;
-
-            TxtDoc.Text = siguienteDoc.ToString();
+                if (ultimoNumero >= 0)
+                {
+                    int nuevoNumero = ultimoNumero + 1;
+                    TxtDoc.Text = nuevoNumero.ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -217,7 +217,7 @@
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersWidth = 62;
-            this.dgvData.Size = new System.Drawing.Size(1399, 310);
+            this.dgvData.Size = new System.Drawing.Size(1174, 310);
             this.dgvData.TabIndex = 66;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellEndEdit);
@@ -348,7 +348,7 @@
             this.BtnAgregar.Location = new System.Drawing.Point(346, 271);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(130, 80);
+            this.BtnAgregar.Size = new System.Drawing.Size(169, 104);
             this.BtnAgregar.TabIndex = 71;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;

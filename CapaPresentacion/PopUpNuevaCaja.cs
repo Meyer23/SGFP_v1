@@ -30,7 +30,7 @@ namespace CapaPresentacion
         {
             InsertarCajaRequest objCaja = new InsertarCajaRequest()
             {
-                NumeroCaja = (int)PickUpDownNroCaja.Value,
+                NumeroCaja = (int)PickUpDownNroCaja.Value + 1,
                 Sucursal = ComboSucursal.Text,
                 DescripcionCaja = TxtDescripcionCaja.Text,
                 Activo = ChkActivo.Checked
