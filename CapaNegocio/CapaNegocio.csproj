@@ -54,6 +54,7 @@
     <Compile Include="CN_Impuestos.cs" />
     <Compile Include="CN_Modulos.cs" />
     <Compile Include="CN_MovimientosStock.cs" />
+    <Compile Include="CN_NotasCreditoEmitidas.cs" />
     <Compile Include="CN_NotasCreditoRecibidas.cs" />
     <Compile Include="CN_NumeracionDocumento.cs" />
     <Compile Include="CN_Pedidos.cs" />

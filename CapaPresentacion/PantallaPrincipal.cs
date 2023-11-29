@@ -333,5 +333,10 @@ namespace CapaPresentacion
             Reportes.FrmRptListadoComprasSaldos oRptListadoComprasSaldos = new Reportes.FrmRptListadoComprasSaldos();
             oRptListadoComprasSaldos.ShowDialog();
         }
+
+        private void SubMenuNCEmitida_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(VentasMenu, new FrmNotasCreditoEmitidas(usuarioActual));
+        }
     }
 }

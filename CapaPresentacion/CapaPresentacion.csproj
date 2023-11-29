@@ -191,6 +191,12 @@
     <Compile Include="FrmMovimientosStock.Designer.cs">
       <DependentUpon>FrmMovimientosStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNotasCreditoEmitidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotasCreditoEmitidas.Designer.cs">
+      <DependentUpon>FrmNotasCreditoEmitidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNotasCreditoRecibidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -544,6 +550,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMovimientosStock.resx">
       <DependentUpon>FrmMovimientosStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotasCreditoEmitidas.resx">
+      <DependentUpon>FrmNotasCreditoEmitidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNotasCreditoRecibidas.resx">
       <DependentUpon>FrmNotasCreditoRecibidas.cs</DependentUpon>

@@ -82,6 +82,7 @@
             this.TxtIdTipoDocumento.Size = new System.Drawing.Size(26, 20);
             this.TxtIdTipoDocumento.TabIndex = 99;
             this.TxtIdTipoDocumento.Text = "0";
+            this.TxtIdTipoDocumento.Visible = false;
             // 
             // LblDetalleTipoDoc
             // 

@@ -21,7 +21,7 @@ namespace CapaDatos
                 try
                 {
                     string query = "SELECT F.id, F.NumeroFactura, T.Descripcion AS TipoDoc, FP.Descripcion AS FormaPago, E.Nombres, C.id AS idCliente, " +
-                        "F.CodigoEsteblecimiento, F.PuntoEmision, F.Doc, F.Fecha, F.FechaVencimiento, TI.Timbrado, TI.InicioVigencia, TI.FinVigencia, " +
+                        "F.CodigoEsteblecimiento, F.PuntoEmision, F.Doc, F.Fecha, F.FechaVencimiento, TI.id as Timbrado, TI.InicioVigencia, TI.FinVigencia, " +
                         "C.Documento, C.Nombre, F.TotalFactura, F.Anulado " +
                         "FROM Facturas F " +
                         "INNER JOIN TiposDocumentosCompra T ON F.IdTipo = T.id " +
@@ -47,7 +47,7 @@ namespace CapaDatos
                                 TipoDocumento = reader["TipoDoc"].ToString(),
                                 FormaPago = reader["FormaPago"].ToString(),
                                 NombreCajero = reader["Nombres"].ToString(),
-                                CodEstablecimiento = Convert.ToInt32(reader["CodigoEstablecimiento"]),
+                                CodEstablecimiento = Convert.ToInt32(reader["CodigoEsteblecimiento"]),
                                 PuntoEmision = Convert.ToInt32(reader["PuntoEmision"]),
                                 Doc = reader["Doc"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),
@@ -100,7 +100,7 @@ namespace CapaDatos
                                 IdProducto = Convert.ToInt32(reader["idProducto"]),
                                 Codigo = reader["Codigo"].ToString(),
                                 Descripcion = reader["Descripcion"].ToString(),
-                                Precio = Convert.ToDecimal(reader["Precio"]),
+                                Precio = Convert.ToDecimal(reader["PrecioUnitario"]),
                                 Cantidad = Convert.ToDecimal(reader["Cantidad"]),
                                 Total = Convert.ToDecimal(reader["Total"])
                             });

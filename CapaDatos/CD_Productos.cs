@@ -12,7 +12,7 @@ namespace CapaDatos
 {
     public class CD_Productos
     {
-        public List<Producto> Listar(int bandera, int idCompra)
+        public List<Producto> Listar(int bandera, int id)
         {
             List<Producto> productos = new List<Producto>();
             string query;
@@ -28,7 +28,7 @@ namespace CapaDatos
                         " INNER JOIN Categorias C ON P.idCategoria = C.id" +
                         " INNER JOIN UnidadesMedidas U ON P.idUnidadMedida = U.id";
                     }
-                    else
+                    else if (bandera == 1)
                     {
                         query = "SELECT P.id, Codigo, P.Descripcion, Costo, CONVERT(int,CD.Precio) AS Precio, CONVERT(int,CD.Cantidad) AS Existencia, ExistenciaMinima, " +
                             "C.Descripcion AS Categoria, U.Descripcion AS UnidadMedida, Estante, Fila, Columna, P.Activo " +
@@ -36,7 +36,17 @@ namespace CapaDatos
                             "INNER JOIN Productos P ON CD.idProducto = P.id " +
                             "INNER JOIN Categorias C ON P.idCategoria = C.id " +
                             "INNER JOIN UnidadesMedidas U ON P.idUnidadMedida = U.id " +
-                            "WHERE CD.idCompra = " + idCompra;
+                            "WHERE CD.idCompra = " + id;
+                    }
+                    else
+                    {
+                        query = "SELECT P.id, Codigo, P.Descripcion, Costo, CONVERT(int,FD.PrecioUnitario) AS Precio, CONVERT(int,FD.Cantidad) AS Existencia, ExistenciaMinima, " +
+                            "C.Descripcion AS Categoria, U.Descripcion AS UnidadMedida, Estante, Fila, Columna, P.Activo " +
+                            "FROM FacturasDetalles FD " +
+                            "INNER JOIN Productos P ON FD.idProducto = P.id " +
+                            "INNER JOIN Categorias C ON P.idCategoria = C.id " +
+                            "INNER JOIN UnidadesMedidas U ON P.idUnidadMedida = U.id " +
+                            "WHERE FD.idFactura = " + id;
                     }
                      
                     SqlCommand cmd = new SqlCommand(query, con);

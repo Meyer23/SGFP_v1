@@ -7,7 +7,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
@@ -15,10 +14,10 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmNotasCreditoRecibidas : Form
+    public partial class FrmNotasCreditoEmitidas : Form
     {
         private UsuarioLogin _Usuario;
-        public FrmNotasCreditoRecibidas(UsuarioLogin oUsuario = null)
+        public FrmNotasCreditoEmitidas(UsuarioLogin oUsuario = null)
         {
             _Usuario = oUsuario;
             InitializeComponent();
@@ -36,28 +35,28 @@ namespace CapaPresentacion
             }
         }
 
-        private void BtnBuscarCompra_Click(object sender, EventArgs e)
+        private void BtnBuscarVenta_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpCompras(2))
+            using (var popup = new PopUpVentas())
             {
                 var result = popup.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
-                    Compra objCompra = new CN_Compras().ObtenerCompra(Convert.ToInt32(popup._Compra.Id.ToString()));
-                    if (objCompra.Id != 0)
+                    Venta objVenta = new CN_Ventas().ObtenerVenta(Convert.ToInt32(popup._Venta.Id.ToString()));
+                    if (objVenta.Id != 0)
                     {
-                        TxtNroFactura.Text = objCompra.NumeroFactura.ToString();
-                        dtpFechaCompra.Value = (DateTime)objCompra.Fecha;
-                        TxtIdCompra.Text = objCompra.Id.ToString();
-                        TxtIdProveedor.Text = objCompra.IdProveedor.ToString();
-                        TxtRUC.Text = objCompra.Documento;
-                        TxtRazonSocial.Text = objCompra.RazonSocial;
-                        TxtTotalNota.Text = objCompra.Total.ToString();
+                        TxtNroFactura.Text = objVenta.NumeroFactura.ToString();
+                        dtpFechaVenta.Value = (DateTime)objVenta.Fecha;
+                        TxtIdVenta.Text = objVenta.Id.ToString();
+                        TxtIdCliente.Text = objVenta.IdCliente.ToString();
+                        TxtRUC.Text = objVenta.Documento;
+                        TxtNombre.Text = objVenta.Nombre;
+                        TxtTotalNota.Text = objVenta.Total.ToString();
 
                         dgvData.Rows.Clear();
 
-                        foreach (DetalleProductos pd in objCompra.Detalle)
+                        foreach (DetalleProductos pd in objVenta.Detalle)
                         {
                             dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                         }
@@ -70,7 +69,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void FrmNotasCreditoRecibidas_Load(object sender, EventArgs e)
+        private void FrmNotasCreditoEmitidas_Load(object sender, EventArgs e)
         {
             dtpFecha.Value = DateTime.Now;
             dtpInicioVigencia.Value = DateTime.Now;
@@ -85,9 +84,11 @@ namespace CapaPresentacion
             TxtTimbrado.Clear();
             dtpInicioVigencia.Value = DateTime.Now;
             dtpFinVigencia.Value = DateTime.Now;
+            dtpFechaVenta.Value = DateTime.Now;
+            TxtIdVenta.Clear();
             TxtObs.Clear();
             TxtRUC.Clear();
-            TxtRazonSocial.Clear();
+            TxtNombre.Clear();
             TxtTotalNota.Clear();
             dgvData.Rows.Clear();
         }
@@ -96,22 +97,22 @@ namespace CapaPresentacion
         {
             if (e.KeyData == Keys.Enter)
             {
-                Compra objCompra = new CN_Compras().ObtenerCompra(Convert.ToInt32(TxtIdCompra.Text));
-                if (objCompra.Id != 0)
+                Venta objVenta = new CN_Ventas().ObtenerVenta(Convert.ToInt32(TxtIdVenta.Text));
+                if (objVenta.Id != 0)
                 {
-
-                    TxtNroFactura.Text = objCompra.NumeroFactura.ToString();
-                    dtpFechaCompra.Value = (DateTime)objCompra.Fecha;
-                    TxtIdProveedor.Text = objCompra.IdProveedor.ToString();
-                    TxtRUC.Text = objCompra.Documento;
-                    TxtRazonSocial.Text = objCompra.RazonSocial;
-                    TxtTotalNota.Text = objCompra.Total.ToString();
+                    TxtNroFactura.Text = objVenta.NumeroFactura.ToString();
+                    dtpFechaVenta.Value = (DateTime)objVenta.Fecha;
+                    TxtIdVenta.Text = objVenta.Id.ToString();
+                    TxtIdCliente.Text = objVenta.IdCliente.ToString();
+                    TxtRUC.Text = objVenta.Documento;
+                    TxtNombre.Text = objVenta.Nombre;
+                    TxtTotalNota.Text = objVenta.Total.ToString();
 
                     dgvData.Rows.Clear();
 
-                    foreach (DetalleProductos pd in objCompra.Detalle)
+                    foreach (DetalleProductos pd in objVenta.Detalle)
                     {
-                       dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
+                        dgvData.Rows.Add(new object[] { pd.IdProducto, pd.Codigo, pd.Descripcion, pd.Precio, pd.Cantidad, pd.Total });
                     }
                 }
                 else
@@ -124,7 +125,7 @@ namespace CapaPresentacion
 
         private void BntBuscarProd_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpProductos(1, Convert.ToInt32(TxtIdCompra.Text)))
+            using (var popup = new PopUpProductos(2, Convert.ToInt32(TxtIdVenta.Text)))
             {
                 var result = popup.ShowDialog();
 
@@ -136,7 +137,7 @@ namespace CapaPresentacion
                     TxtCantidad.Text = popup._Producto.Existencia.ToString();
                     TxtCantidad.Select();
                     //TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
-                    TxtPrecioCompra.Text = popup._Producto.Precio.ToString();
+                    TxtPrecioVenta.Text = popup._Producto.Precio.ToString();
                 }
                 else
                 {
@@ -156,10 +157,10 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (!decimal.TryParse(TxtPrecioCompra.Text, out precio))
+            if (!decimal.TryParse(TxtPrecioVenta.Text, out precio))
             {
                 MessageBox.Show("Precio - Formato Inconrrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TxtPrecioCompra.Select();
+                TxtPrecioVenta.Select();
                 return;
             }
 
@@ -170,10 +171,10 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (string.IsNullOrEmpty(TxtPrecioCompra.Text) || Convert.ToInt32(TxtPrecioCompra.Text) < 1)
+            if (string.IsNullOrEmpty(TxtPrecioVenta.Text) || Convert.ToInt32(TxtPrecioVenta.Text) < 1)
             {
                 MessageBox.Show("Debe ingresar un precio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TxtPrecioCompra.Select();
+                TxtPrecioVenta.Select();
                 return;
             }
 
@@ -220,7 +221,7 @@ namespace CapaPresentacion
             TxtCodProducto.Clear();
             TxtCodProducto.BackColor = Color.White;
             TxtDescProducto.Clear();
-            TxtPrecioCompra.Clear();
+            TxtPrecioVenta.Clear();
             TxtCantidad.Clear();
         }
 
@@ -272,17 +273,17 @@ namespace CapaPresentacion
             }
         }
 
-        private void BtnBuscarProv_Click(object sender, EventArgs e)
+        private void BtnBuscarCliente_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpProveedores())
+            using (var popup = new PopUpClientes())
             {
                 var result = popup.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
-                    TxtIdProveedor.Text = popup._Proveedor.Id.ToString();
-                    TxtRUC.Text = popup._Proveedor.Documento;
-                    TxtRazonSocial.Text = popup._Proveedor.RazonSocial;
+                    TxtIdCliente.Text = popup.cliente.IdCliente.ToString();
+                    TxtRUC.Text = popup.cliente.ClienteRuc;
+                    TxtNombre.Text = popup.cliente.ClienteNombre + " - " + popup.cliente.ClienteApellido;
                     TxtObs.Select();
                 }
                 else
@@ -296,15 +297,14 @@ namespace CapaPresentacion
         {
             if (e.KeyData == Keys.Enter)
             {
-                Producto oProducto = new CN_Productos().Listar(1, Convert.ToInt32(TxtIdCompra.Text)).Where(p => p.Codigo == TxtCodProducto.Text && p.Activo == true).FirstOrDefault();
+                Producto oProducto = new CN_Productos().Listar(2, Convert.ToInt32(TxtIdVenta.Text)).Where(p => p.Codigo == TxtCodProducto.Text && p.Activo == true).FirstOrDefault();
                 if (oProducto != null)
                 {
                     TxtIdProducto.Text = oProducto.Id.ToString();
                     TxtDescProducto.Text = oProducto.Descripcion;
-                    TxtCantidad.Text = oProducto.Existencia.ToString();
                     TxtCantidad.Select();
                     //TxtPrecioCompra.Text = new CN_Pedidos().ObtenerUltimoPrecio(Convert.ToInt32(TxtIdProducto.Text), Convert.ToInt32(TxtIdProveedor.Text)).ToString();
-                    TxtPrecioCompra.Text = oProducto.Precio.ToString();
+                    TxtPrecioVenta.Text = "0";
                 }
                 else
                 {
@@ -315,7 +315,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void TxtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
             {
@@ -323,7 +323,7 @@ namespace CapaPresentacion
             }
             else
             {
-                if (TxtPrecioCompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ",")
+                if (TxtPrecioVenta.Text.Trim().Length == 0 && e.KeyChar.ToString() == ",")
                 {
                     e.Handled = true;
                 }
@@ -379,9 +379,9 @@ namespace CapaPresentacion
             TxtDoc.Clear();
             TxtPuntoEmision.Clear();
             TxtCodEstablecimiento.Clear();
-            TxtIdProveedor.Text = "0";
+            TxtIdCliente.Text = "0";
             TxtRUC.Clear();
-            TxtRazonSocial.Clear();
+            TxtNombre.Clear();
             limpiarProducto();
             dgvData.Rows.Clear();
             calcularTotal();
@@ -389,16 +389,15 @@ namespace CapaPresentacion
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-
             if (TxtDoc.Text == "" || TxtTimbrado.Text == "")
             {
                 MessageBox.Show("Debe completar los datos de la nota de crédito", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (Convert.ToInt32(TxtIdProveedor.Text) == 0)
+            if (Convert.ToInt32(TxtIdCliente.Text) == 0)
             {
-                MessageBox.Show("Debe seleccionar un proveedor", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar un cliente", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -425,11 +424,11 @@ namespace CapaPresentacion
                 });
             }
 
-            NotaCreditoRecibida objNCRecibida = new NotaCreditoRecibida()
+            NotaCreditoEmitida objNCEmitida = new NotaCreditoEmitida()
             {
-                IdProveedor = Convert.ToInt32(TxtIdProveedor.Text),
+                IdCliente = Convert.ToInt32(TxtIdCliente.Text),
                 NumeroFactura = TxtNroFactura.Text.ToString(),
-                idCompra = Convert.ToInt32(TxtIdCompra.Text),
+                idVenta = Convert.ToInt32(TxtIdVenta.Text),
                 TipoDocumento = ComboTipoDoc.Text.ToString(),
                 Fecha = (DateTime)(dtpFecha.Value),
                 Timbrado = Convert.ToInt32(TxtTimbrado.Text),
@@ -440,12 +439,12 @@ namespace CapaPresentacion
                 Doc = TxtDoc.Text.ToString(),
                 Observacion = TxtObs.Text,
                 Total = Convert.ToDecimal(TxtTotalNota.Text),
-                IdUsuario = _Usuario.Id
+                IdCajero = _Usuario.Id
             };
 
             string Mensaje = string.Empty;
 
-            bool Respuesta = new CN_NotasCreditoRecibidas().Registrar(objNCRecibida, detalle_nota, out Mensaje);
+            bool Respuesta = new CN_NotasCreditoEmitidas().Registrar(objNCEmitida, detalle_nota, out Mensaje);
 
             if (Respuesta)
             {
@@ -475,9 +474,9 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (fechaSeleccionada < dtpFechaCompra.Value)
+            if (fechaSeleccionada < dtpFechaVenta.Value)
             {
-                MessageBox.Show("La fecha de la nota de crédito debe ser mayor a la fecha de la compra", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La fecha de la nota de crédito debe ser mayor a la fecha de la venta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpFecha.Value = DateTime.Now;
                 dtpFecha.Select();
                 return;
@@ -499,18 +498,18 @@ namespace CapaPresentacion
             }
         }
 
-        private void TxtPrecioCompra_Validating(object sender, CancelEventArgs e)
+        private void TxtPrecioVenta_Validating(object sender, CancelEventArgs e)
         {
             ErrorProvider errorProvider1 = new ErrorProvider();
-            if (string.IsNullOrEmpty(TxtPrecioCompra.Text))
+            if (string.IsNullOrEmpty(TxtPrecioVenta.Text))
             {
                 //e.Cancel = true;
-                errorProvider1.SetError(TxtPrecioCompra, "Este campo es obligatorio");
+                errorProvider1.SetError(TxtPrecioVenta, "Este campo es obligatorio");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider1.SetError(TxtPrecioCompra, "");
+                errorProvider1.SetError(TxtPrecioVenta, "");
             }
         }
 
