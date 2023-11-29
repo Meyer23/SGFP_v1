@@ -1,17 +1,12 @@
 ﻿using CapaEntidad;
-using CapaEntidad.Enums;
 using CapaEntidad.Models;
 using CapaNegocio;
 using CapaPresentacion.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -31,6 +26,7 @@ namespace CapaPresentacion
             TxtNroCaja.Enabled = false;
             FechaVenta.Value = DateTime.Now;
             ComboTipoDoc.SelectedIndexChanged += ComboTipoDoc_SelectedIndexChanged;
+            ObtenerUltimoDocFactura();
         }
 
         public int IdUsuario { get; set; }
@@ -389,7 +385,11 @@ namespace CapaPresentacion
 
         private void ComboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int dias;
 
+            dias = new CN_FormasPago().ObtenerDias(ComboFormaPago.Text.ToString());
+
+            dtpFechaVenc.Value = FechaVenta.Value.AddDays(dias);
         }
 
         private void ComboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -507,6 +507,18 @@ namespace CapaPresentacion
                     MessageBox.Show("Debe cargar el detalle del cobro", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        private void ObtenerUltimoDocFactura()
+        {
+            List<Venta> listaVenta = new CN_Ventas().Listar();
+
+            var ultimoDoc = listaVenta.Select(x => x.Doc).Max()
+                            .SingleOrDefault();
+
+            var siguienteDoc = ultimoDoc + 1;
+
+            TxtDoc.Text = siguienteDoc.ToString();
         }
     }
 }
