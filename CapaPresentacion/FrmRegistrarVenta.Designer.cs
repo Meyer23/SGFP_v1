@@ -45,8 +45,6 @@
             this.TxtCodEstablecimiento = new System.Windows.Forms.TextBox();
             this.dtpFechaVenc = new System.Windows.Forms.DateTimePicker();
             this.LblFechaVencimiento = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.dtpFinVigencia = new System.Windows.Forms.DateTimePicker();
             this.LblFinVigencia = new System.Windows.Forms.Label();
             this.dtpInicioVigencia = new System.Windows.Forms.DateTimePicker();
@@ -73,7 +71,7 @@
             this.ComboFormaPago = new System.Windows.Forms.ComboBox();
             this.LblFormaPago = new System.Windows.Forms.Label();
             this.ComboTipoDoc = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FechaVenta = new System.Windows.Forms.DateTimePicker();
             this.LblTipoDocumento = new System.Windows.Forms.Label();
             this.LblFecha = new System.Windows.Forms.Label();
             this.groupBoxInfoCliente = new System.Windows.Forms.GroupBox();
@@ -105,7 +103,7 @@
             this.LblPedidos.Location = new System.Drawing.Point(15, 11);
             this.LblPedidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblPedidos.Name = "LblPedidos";
-            this.LblPedidos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LblPedidos.Padding = new System.Windows.Forms.Padding(4);
             this.LblPedidos.Size = new System.Drawing.Size(2768, 1373);
             this.LblPedidos.TabIndex = 26;
             this.LblPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,8 +197,6 @@
             this.groupBoxInfoPedido.Controls.Add(this.TxtCodEstablecimiento);
             this.groupBoxInfoPedido.Controls.Add(this.dtpFechaVenc);
             this.groupBoxInfoPedido.Controls.Add(this.LblFechaVencimiento);
-            this.groupBoxInfoPedido.Controls.Add(this.dtpFecha);
-            this.groupBoxInfoPedido.Controls.Add(this.label1);
             this.groupBoxInfoPedido.Controls.Add(this.dtpFinVigencia);
             this.groupBoxInfoPedido.Controls.Add(this.LblFinVigencia);
             this.groupBoxInfoPedido.Controls.Add(this.dtpInicioVigencia);
@@ -267,7 +263,7 @@
             this.dtpFechaVenc.Enabled = false;
             this.dtpFechaVenc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaVenc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaVenc.Location = new System.Drawing.Point(1050, 413);
+            this.dtpFechaVenc.Location = new System.Drawing.Point(1032, 354);
             this.dtpFechaVenc.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dtpFechaVenc.Name = "dtpFechaVenc";
             this.dtpFechaVenc.Size = new System.Drawing.Size(180, 31);
@@ -278,34 +274,12 @@
             // 
             this.LblFechaVencimiento.AutoSize = true;
             this.LblFechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaVencimiento.Location = new System.Drawing.Point(804, 419);
+            this.LblFechaVencimiento.Location = new System.Drawing.Point(804, 359);
             this.LblFechaVencimiento.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblFechaVencimiento.Name = "LblFechaVencimiento";
             this.LblFechaVencimiento.Size = new System.Drawing.Size(186, 25);
             this.LblFechaVencimiento.TabIndex = 114;
             this.LblFechaVencimiento.Text = "Fecha Vencimiento:";
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(1050, 355);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(180, 31);
-            this.dtpFecha.TabIndex = 113;
-            this.dtpFecha.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(804, 355);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 25);
-            this.label1.TabIndex = 112;
-            this.label1.Text = "Fecha:";
             // 
             // dtpFinVigencia
             // 
@@ -375,7 +349,7 @@
             // 
             this.TxtNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNroCaja.Location = new System.Drawing.Point(1627, 355);
-            this.TxtNroCaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtNroCaja.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNroCaja.Name = "TxtNroCaja";
             this.TxtNroCaja.Size = new System.Drawing.Size(252, 31);
             this.TxtNroCaja.TabIndex = 105;
@@ -395,7 +369,7 @@
             // 
             this.TxtCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCajero.Location = new System.Drawing.Point(1627, 287);
-            this.TxtCajero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCajero.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCajero.Name = "TxtCajero";
             this.TxtCajero.Size = new System.Drawing.Size(252, 31);
             this.TxtCajero.TabIndex = 103;
@@ -451,7 +425,7 @@
             this.textBoxPrecio.Enabled = false;
             this.textBoxPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrecio.Location = new System.Drawing.Point(1099, 72);
-            this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.ReadOnly = true;
             this.textBoxPrecio.Size = new System.Drawing.Size(267, 31);
@@ -491,7 +465,7 @@
             // 
             this.numericUpDownCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownCantidad.Location = new System.Drawing.Point(803, 73);
-            this.numericUpDownCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownCantidad.Minimum = new decimal(new int[] {
             1,
             0,
@@ -521,7 +495,7 @@
             // 
             this.TxtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtProducto.Location = new System.Drawing.Point(429, 73);
-            this.TxtProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtProducto.Margin = new System.Windows.Forms.Padding(4);
             this.TxtProducto.Name = "TxtProducto";
             this.TxtProducto.ReadOnly = true;
             this.TxtProducto.Size = new System.Drawing.Size(306, 31);
@@ -540,7 +514,7 @@
             this.iconButtonCodProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonCodProducto.IconSize = 16;
             this.iconButtonCodProducto.Location = new System.Drawing.Point(186, 97);
-            this.iconButtonCodProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButtonCodProducto.Margin = new System.Windows.Forms.Padding(4);
             this.iconButtonCodProducto.Name = "iconButtonCodProducto";
             this.iconButtonCodProducto.Size = new System.Drawing.Size(111, 52);
             this.iconButtonCodProducto.TabIndex = 63;
@@ -552,7 +526,7 @@
             // 
             this.textBoxCodProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCodProducto.Location = new System.Drawing.Point(20, 104);
-            this.textBoxCodProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCodProducto.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCodProducto.Name = "textBoxCodProducto";
             this.textBoxCodProducto.ReadOnly = true;
             this.textBoxCodProducto.Size = new System.Drawing.Size(130, 31);
@@ -587,7 +561,7 @@
             this.groupBoxInfoVenta.Controls.Add(this.ComboFormaPago);
             this.groupBoxInfoVenta.Controls.Add(this.LblFormaPago);
             this.groupBoxInfoVenta.Controls.Add(this.ComboTipoDoc);
-            this.groupBoxInfoVenta.Controls.Add(this.dateTimePicker1);
+            this.groupBoxInfoVenta.Controls.Add(this.FechaVenta);
             this.groupBoxInfoVenta.Controls.Add(this.LblTipoDocumento);
             this.groupBoxInfoVenta.Controls.Add(this.LblFecha);
             this.groupBoxInfoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -605,7 +579,7 @@
             this.ComboFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboFormaPago.FormattingEnabled = true;
             this.ComboFormaPago.Location = new System.Drawing.Point(440, 121);
-            this.ComboFormaPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboFormaPago.Margin = new System.Windows.Forms.Padding(4);
             this.ComboFormaPago.Name = "ComboFormaPago";
             this.ComboFormaPago.Size = new System.Drawing.Size(295, 33);
             this.ComboFormaPago.TabIndex = 102;
@@ -627,23 +601,23 @@
             this.ComboTipoDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboTipoDoc.FormattingEnabled = true;
             this.ComboTipoDoc.Location = new System.Drawing.Point(196, 121);
-            this.ComboTipoDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboTipoDoc.Margin = new System.Windows.Forms.Padding(4);
             this.ComboTipoDoc.Name = "ComboTipoDoc";
             this.ComboTipoDoc.Size = new System.Drawing.Size(223, 33);
             this.ComboTipoDoc.TabIndex = 29;
             this.ComboTipoDoc.SelectedIndexChanged += new System.EventHandler(this.ComboTipoDoc_SelectedIndexChanged);
             // 
-            // dateTimePicker1
+            // FechaVenta
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(23, 121);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(148, 31);
-            this.dateTimePicker1.TabIndex = 29;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 11, 12, 15, 20, 55, 0);
+            this.FechaVenta.Enabled = false;
+            this.FechaVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaVenta.Location = new System.Drawing.Point(23, 121);
+            this.FechaVenta.Margin = new System.Windows.Forms.Padding(4);
+            this.FechaVenta.Name = "FechaVenta";
+            this.FechaVenta.Size = new System.Drawing.Size(148, 31);
+            this.FechaVenta.TabIndex = 29;
+            this.FechaVenta.Value = new System.DateTime(2023, 11, 28, 0, 0, 0, 0);
             // 
             // LblTipoDocumento
             // 
@@ -695,7 +669,7 @@
             this.BtnAddCliente.IconColor = System.Drawing.Color.Black;
             this.BtnAddCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnAddCliente.Location = new System.Drawing.Point(860, 19);
-            this.BtnAddCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnAddCliente.Margin = new System.Windows.Forms.Padding(4);
             this.BtnAddCliente.Name = "BtnAddCliente";
             this.BtnAddCliente.Size = new System.Drawing.Size(150, 161);
             this.BtnAddCliente.TabIndex = 64;
@@ -748,7 +722,7 @@
             this.BtnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscarCliente.IconSize = 16;
             this.BtnBuscarCliente.Location = new System.Drawing.Point(343, 101);
-            this.BtnBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscarCliente.Name = "BtnBuscarCliente";
             this.BtnBuscarCliente.Size = new System.Drawing.Size(78, 41);
             this.BtnBuscarCliente.TabIndex = 60;
@@ -821,7 +795,7 @@
             this.textBoxTotalPagar.Enabled = false;
             this.textBoxTotalPagar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTotalPagar.Location = new System.Drawing.Point(1278, 882);
-            this.textBoxTotalPagar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTotalPagar.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTotalPagar.Name = "textBoxTotalPagar";
             this.textBoxTotalPagar.Size = new System.Drawing.Size(574, 50);
             this.textBoxTotalPagar.TabIndex = 82;
@@ -834,7 +808,7 @@
             this.BtnCobro.IconColor = System.Drawing.Color.Black;
             this.BtnCobro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCobro.Location = new System.Drawing.Point(1264, 720);
-            this.BtnCobro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCobro.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCobro.Name = "BtnCobro";
             this.BtnCobro.Size = new System.Drawing.Size(288, 54);
             this.BtnCobro.TabIndex = 94;
@@ -856,7 +830,7 @@
             this.Controls.Add(this.LblTotalPagar);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.LblPedidos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRegistrarVenta";
             this.Text = "Registro de Venta";
             this.Load += new System.EventHandler(this.FrmRegistrarVenta_Load);
@@ -893,7 +867,7 @@
         private System.Windows.Forms.Label LblCodProducto;
         private System.Windows.Forms.GroupBox groupBoxInfoVenta;
         private System.Windows.Forms.ComboBox ComboTipoDoc;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FechaVenta;
         private System.Windows.Forms.Label LblTipoDocumento;
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.GroupBox groupBoxInfoCliente;
@@ -935,8 +909,6 @@
         private System.Windows.Forms.TextBox TxtCodEstablecimiento;
         private System.Windows.Forms.DateTimePicker dtpFechaVenc;
         private System.Windows.Forms.Label LblFechaVencimiento;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton BtnCobro;
     }
 }

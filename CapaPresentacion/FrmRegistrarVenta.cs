@@ -1,4 +1,5 @@
 ﻿using CapaEntidad;
+using CapaEntidad.Enums;
 using CapaEntidad.Models;
 using CapaNegocio;
 using CapaPresentacion.Interfaces;
@@ -28,6 +29,8 @@ namespace CapaPresentacion
             MostrarCajero();
             TxtCajero.Enabled = false;
             TxtNroCaja.Enabled = false;
+            FechaVenta.Value = DateTime.Now;
+            ComboTipoDoc.SelectedIndexChanged += ComboTipoDoc_SelectedIndexChanged;
         }
 
         public int IdUsuario { get; set; }
@@ -392,6 +395,17 @@ namespace CapaPresentacion
         private void ComboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarFormasPago();
+
+            string tipoPagoSeleccionado = ComboTipoDoc.Text;
+
+            if (tipoPagoSeleccionado == "Factura Crédito")
+            {
+                BtnCobro.Enabled = false;
+            }
+            else
+            {
+                BtnCobro.Enabled = true;
+            }
         }
 
         private void MostrarCajero()

@@ -78,8 +78,7 @@ namespace CapaPresentacion
                     TxtNroCuenta.Text,
                     TxtNroDocumento.Text,
                     TxtImporte.Text,
-                    TxtVuelto.Text,
-                    "",
+                    valorVuelto.ToString()
             });
         }
 
@@ -166,6 +165,46 @@ namespace CapaPresentacion
             // Asignar el DataTable a la propiedad
             dataTableCobro = datos;
             this.Close();
+        }
+
+        private void TxtNroCuenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter presionado es un número o la tecla de retroceso (backspace)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // Si no es un número ni la tecla de retroceso, suprimir el carácter
+                e.Handled = true;
+            }
+        }
+
+        private void TxtVuelto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter presionado es un número o la tecla de retroceso (backspace)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // Si no es un número ni la tecla de retroceso, suprimir el carácter
+                e.Handled = true;
+            }
+        }
+
+        private void TxtImporte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter presionado es un número o la tecla de retroceso (backspace)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // Si no es un número ni la tecla de retroceso, suprimir el carácter
+                e.Handled = true;
+            }
+        }
+
+        private void TxtNroDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter presionado es un número o la tecla de retroceso (backspace)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // Si no es un número ni la tecla de retroceso, suprimir el carácter
+                e.Handled = true;
+            }
         }
     }
 }

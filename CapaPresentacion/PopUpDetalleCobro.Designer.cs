@@ -156,6 +156,7 @@
             this.TxtNroCuenta.Name = "TxtNroCuenta";
             this.TxtNroCuenta.Size = new System.Drawing.Size(187, 29);
             this.TxtNroCuenta.TabIndex = 61;
+            this.TxtNroCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNroCuenta_KeyPress);
             // 
             // TxtNroDocumento
             // 
@@ -164,6 +165,7 @@
             this.TxtNroDocumento.Name = "TxtNroDocumento";
             this.TxtNroDocumento.Size = new System.Drawing.Size(195, 29);
             this.TxtNroDocumento.TabIndex = 62;
+            this.TxtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNroDocumento_KeyPress);
             // 
             // TxtImporte
             // 
@@ -172,14 +174,17 @@
             this.TxtImporte.Name = "TxtImporte";
             this.TxtImporte.Size = new System.Drawing.Size(195, 29);
             this.TxtImporte.TabIndex = 63;
+            this.TxtImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtImporte_KeyPress);
             // 
             // TxtVuelto
             // 
+            this.TxtVuelto.Enabled = false;
             this.TxtVuelto.Location = new System.Drawing.Point(666, 212);
             this.TxtVuelto.Margin = new System.Windows.Forms.Padding(4);
             this.TxtVuelto.Name = "TxtVuelto";
             this.TxtVuelto.Size = new System.Drawing.Size(195, 29);
             this.TxtVuelto.TabIndex = 65;
+            this.TxtVuelto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtVuelto_KeyPress);
             // 
             // LblVuelto
             // 
