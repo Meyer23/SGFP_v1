@@ -83,6 +83,12 @@
     <Compile Include="FrmAnularMovStock.Designer.cs">
       <DependentUpon>FrmAnularMovStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAnularNCEmitidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnularNCEmitidas.Designer.cs">
+      <DependentUpon>FrmAnularNCEmitidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAnularNotasCreditoRecibidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +287,12 @@
     <Compile Include="FrmVerDetalleMovStock.Designer.cs">
       <DependentUpon>FrmVerDetalleMovStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVerDetalleNCEmitida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerDetalleNCEmitida.Designer.cs">
+      <DependentUpon>FrmVerDetalleNCEmitida.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVerDetalleNotasCreditoRecibidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +353,12 @@
     </Compile>
     <Compile Include="PopUpMovStock.Designer.cs">
       <DependentUpon>PopUpMovStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpNCEmitidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpNCEmitidas.Designer.cs">
+      <DependentUpon>PopUpNCEmitidas.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUpNotasCreditoRecibidas.cs">
       <SubType>Form</SubType>
@@ -460,6 +478,12 @@
     <Compile Include="Reportes\FrmRptMovimientosStock.Designer.cs">
       <DependentUpon>FrmRptMovimientosStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptNCEmitidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptNCEmitidas.Designer.cs">
+      <DependentUpon>FrmRptNCEmitidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptNotasCreditoRecibidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -496,6 +520,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnularMovStock.resx">
       <DependentUpon>FrmAnularMovStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnularNCEmitidas.resx">
+      <DependentUpon>FrmAnularNCEmitidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnularNotasCreditoRecibidas.resx">
       <DependentUpon>FrmAnularNotasCreditoRecibidas.cs</DependentUpon>
@@ -596,6 +623,9 @@
     <EmbeddedResource Include="FrmVerDetalleMovStock.resx">
       <DependentUpon>FrmVerDetalleMovStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerDetalleNCEmitida.resx">
+      <DependentUpon>FrmVerDetalleNCEmitida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmVerDetalleNotasCreditoRecibidas.resx">
       <DependentUpon>FrmVerDetalleNotasCreditoRecibidas.cs</DependentUpon>
     </EmbeddedResource>
@@ -625,6 +655,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpMovStock.resx">
       <DependentUpon>PopUpMovStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpNCEmitidas.resx">
+      <DependentUpon>PopUpNCEmitidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpNotasCreditoRecibidas.resx">
       <DependentUpon>PopUpNotasCreditoRecibidas.cs</DependentUpon>
@@ -690,6 +723,9 @@
     <EmbeddedResource Include="Reportes\FrmRptMovimientosStock.resx">
       <DependentUpon>FrmRptMovimientosStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptNCEmitidas.resx">
+      <DependentUpon>FrmRptNCEmitidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptNotasCreditoRecibidas.resx">
       <DependentUpon>FrmRptNotasCreditoRecibidas.cs</DependentUpon>
     </EmbeddedResource>
@@ -712,6 +748,7 @@
     <EmbeddedResource Include="Reportes\RPT_ListadoNCRecibidas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoPedidos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_MovimientosStock.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_NCEmitidas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_NotasCreditoRecibidas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Pedidos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Productos.rdlc" />

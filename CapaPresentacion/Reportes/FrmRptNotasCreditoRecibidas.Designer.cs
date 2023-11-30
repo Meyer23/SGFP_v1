@@ -32,20 +32,40 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dS_Reportes = new CapaPresentacion.Reportes.DS_Reportes();
             this.notasCreditoRecibidasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.notasCreditoRecibidasTableAdapter = new CapaPresentacion.Reportes.DS_ReportesTableAdapters.NotasCreditoRecibidasTableAdapter();
+            this.dS_Reportes = new CapaPresentacion.Reportes.DS_Reportes();
             this.notasCreditoRecibidasDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.notasCreditoRecibidasDetalleTableAdapter = new CapaPresentacion.Reportes.DS_ReportesTableAdapters.NotasCreditoRecibidasDetalleTableAdapter();
             this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.notasCreditoRecibidasTableAdapter = new CapaPresentacion.Reportes.DS_ReportesTableAdapters.NotasCreditoRecibidasTableAdapter();
+            this.notasCreditoRecibidasDetalleTableAdapter = new CapaPresentacion.Reportes.DS_ReportesTableAdapters.NotasCreditoRecibidasDetalleTableAdapter();
             this.empresaTableAdapter = new CapaPresentacion.Reportes.DS_ReportesTableAdapters.EmpresaTableAdapter();
             this.TxtParamId = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notasCreditoRecibidasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notasCreditoRecibidasDetalleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // notasCreditoRecibidasBindingSource
+            // 
+            this.notasCreditoRecibidasBindingSource.DataMember = "NotasCreditoRecibidas";
+            this.notasCreditoRecibidasBindingSource.DataSource = this.dS_Reportes;
+            // 
+            // dS_Reportes
+            // 
+            this.dS_Reportes.DataSetName = "DS_Reportes";
+            this.dS_Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // notasCreditoRecibidasDetalleBindingSource
+            // 
+            this.notasCreditoRecibidasDetalleBindingSource.DataMember = "NotasCreditoRecibidasDetalle";
+            this.notasCreditoRecibidasDetalleBindingSource.DataSource = this.dS_Reportes;
+            // 
+            // empresaBindingSource
+            // 
+            this.empresaBindingSource.DataMember = "Empresa";
+            this.empresaBindingSource.DataSource = this.dS_Reportes;
             // 
             // reportViewer1
             // 
@@ -66,33 +86,13 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dS_Reportes
-            // 
-            this.dS_Reportes.DataSetName = "DS_Reportes";
-            this.dS_Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // notasCreditoRecibidasBindingSource
-            // 
-            this.notasCreditoRecibidasBindingSource.DataMember = "NotasCreditoRecibidas";
-            this.notasCreditoRecibidasBindingSource.DataSource = this.dS_Reportes;
-            // 
             // notasCreditoRecibidasTableAdapter
             // 
             this.notasCreditoRecibidasTableAdapter.ClearBeforeFill = true;
             // 
-            // notasCreditoRecibidasDetalleBindingSource
-            // 
-            this.notasCreditoRecibidasDetalleBindingSource.DataMember = "NotasCreditoRecibidasDetalle";
-            this.notasCreditoRecibidasDetalleBindingSource.DataSource = this.dS_Reportes;
-            // 
             // notasCreditoRecibidasDetalleTableAdapter
             // 
             this.notasCreditoRecibidasDetalleTableAdapter.ClearBeforeFill = true;
-            // 
-            // empresaBindingSource
-            // 
-            this.empresaBindingSource.DataMember = "Empresa";
-            this.empresaBindingSource.DataSource = this.dS_Reportes;
             // 
             // empresaTableAdapter
             // 
@@ -114,10 +114,10 @@
             this.Controls.Add(this.TxtParamId);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmRptNotasCreditoRecibidas";
-            this.Text = "FrmRptNotasCreditoRecibidas";
+            this.Text = "Impresión de Notas de Crédito Recibidas";
             this.Load += new System.EventHandler(this.FrmRptNotasCreditoRecibidas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notasCreditoRecibidasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notasCreditoRecibidasDetalleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
             this.ResumeLayout(false);

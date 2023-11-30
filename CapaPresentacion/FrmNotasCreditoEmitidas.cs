@@ -22,6 +22,7 @@ namespace CapaPresentacion
             _Usuario = oUsuario;
             InitializeComponent();
             CargarTiposDocumentos();
+            MostrarCajero();
         }
 
         private void CargarTiposDocumentos()
@@ -615,6 +616,80 @@ namespace CapaPresentacion
                     }
                 }
             }
+        }
+
+        private void MostrarCajero()
+        {
+            List<Cajas> listadeCajas = new CN_Cajas().ObtenerCajas();
+
+            var numeroCaja = listadeCajas
+                                         .Where(e => e.LoginUsuario == _Usuario.Login.ToString())
+                                         .Select(e => e.NumeroCaja)
+                                         .SingleOrDefault();
+
+            var idCaja = listadeCajas
+                        .Where(e => e.NumeroCaja == numeroCaja)
+                        .Select(e => e.Id)
+                        .SingleOrDefault();
+
+            TxtCajero.Text = _Usuario.Login.ToString();
+            TxtNroCaja.Text = numeroCaja.ToString();
+
+            if (idCaja == 0)
+            {
+                string nombreUsuario = _Usuario.Login.ToString();
+                MessageBox.Show(string.Format("Usuario '{0}' sin caja asignada, verifique", nombreUsuario), "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            MostrarTimbrado(idCaja);
+        }
+
+        private void MostrarTimbrado(int idCaja)
+        {
+
+            List<Timbrado> timbrados = new CN_Timbrados().Listar();
+
+            List<NumeracionDocumento> numeracion = new CN_NumeracionDocumento().Listar();
+
+            var timbradosList = timbrados.Where(e => e.Activo)
+                                     .Select(e => e.NroTimbrado)
+                                     .ToList();
+
+            var timbradoId = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString())
+                                      .Select(e => e.IdTimbrado)
+                                      .SingleOrDefault();
+
+            var valorTimbrado = timbrados.Where(e => e.Id == timbradoId)
+                                         .Select(e => e.NroTimbrado)
+                                         .SingleOrDefault();
+
+            var inicioVigencia = timbrados.Where(e => e.Id == timbradoId)
+                                                .Select(e => e.InicioVigencia)
+                                                .SingleOrDefault();
+
+            var finVigencia = timbrados.Where(e => e.Id == timbradoId)
+                                                .Select(e => e.FinVigencia)
+                                                .SingleOrDefault();
+
+            var codEstablecimiento = numeracion.Where(e => e.DescripcionCaja.ToString() == idCaja.ToString())
+                                               .Select(e => e.CodigoEstablecimiento)
+                                               .SingleOrDefault();
+
+            var puntoEmision = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString())
+                                         .Select(e => e.PuntoEmision)
+                                         .SingleOrDefault();
+
+            TxtTimbrado.Text = valorTimbrado.ToString();
+            dtpInicioVigencia.Text = inicioVigencia.ToString();
+            dtpFinVigencia.Text = finVigencia.ToString();
+            TxtCodEstablecimiento.Text = codEstablecimiento.ToString();
+            TxtPuntoEmision.Text = puntoEmision.ToString();
+            TxtTimbrado.Enabled = false;
+            dtpInicioVigencia.Enabled = false;
+            dtpFinVigencia.Enabled = false;
+            TxtCodEstablecimiento.Enabled = false;
+            TxtPuntoEmision.Enabled = false;
+
         }
     }
 }

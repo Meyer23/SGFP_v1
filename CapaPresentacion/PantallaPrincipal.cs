@@ -338,5 +338,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(VentasMenu, new FrmNotasCreditoEmitidas(usuarioActual));
         }
+
+        private void SubMenuVerDetalleNCEmitidas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(VentasMenu, new FrmVerDetalleNCEmitida(usuarioActual));
+        }
     }
 }

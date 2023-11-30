@@ -55,6 +55,7 @@
             this.SubMenuFacturas = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuAperturaCierreCaja = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuVerDetalleFacturas = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuNCEmitidas = new FontAwesome.Sharp.IconMenuItem();
             this.ProveedoresMenu = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuProveedores = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuListadosProveedores = new FontAwesome.Sharp.IconMenuItem();
@@ -83,7 +84,7 @@
             this.Contenedor = new System.Windows.Forms.Panel();
             this.ULabel = new System.Windows.Forms.Label();
             this.LBLUsuario = new System.Windows.Forms.Label();
-            this.SubMenuNCEmitidas = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuVerDetalleNCEmitidas = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -328,7 +329,7 @@
             this.SubMenuClientes.IconColor = System.Drawing.Color.Black;
             this.SubMenuClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuClientes.Name = "SubMenuClientes";
-            this.SubMenuClientes.Size = new System.Drawing.Size(181, 22);
+            this.SubMenuClientes.Size = new System.Drawing.Size(189, 30);
             this.SubMenuClientes.Text = "Administrar Clientes";
             this.SubMenuClientes.Click += new System.EventHandler(this.SubMenuClientes_Click);
             // 
@@ -340,7 +341,7 @@
             this.SubMenuListadosClientes.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadosClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListadosClientes.Name = "SubMenuListadosClientes";
-            this.SubMenuListadosClientes.Size = new System.Drawing.Size(181, 22);
+            this.SubMenuListadosClientes.Size = new System.Drawing.Size(189, 30);
             this.SubMenuListadosClientes.Text = "Listados";
             // 
             // SubMenuListadoClientes
@@ -359,7 +360,8 @@
             this.SubMenuFacturas,
             this.SubMenuAperturaCierreCaja,
             this.SubMenuVerDetalleFacturas,
-            this.SubMenuNCEmitidas});
+            this.SubMenuNCEmitidas,
+            this.SubMenuVerDetalleNCEmitidas});
             this.VentasMenu.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             this.VentasMenu.IconColor = System.Drawing.Color.Black;
             this.VentasMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -376,7 +378,7 @@
             this.SubMenuFacturas.IconColor = System.Drawing.Color.Black;
             this.SubMenuFacturas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuFacturas.Name = "SubMenuFacturas";
-            this.SubMenuFacturas.Size = new System.Drawing.Size(219, 30);
+            this.SubMenuFacturas.Size = new System.Drawing.Size(285, 30);
             this.SubMenuFacturas.Text = "Facturas";
             this.SubMenuFacturas.Click += new System.EventHandler(this.MenuRegistrarVenta_Click);
             // 
@@ -386,7 +388,7 @@
             this.SubMenuAperturaCierreCaja.IconColor = System.Drawing.Color.Black;
             this.SubMenuAperturaCierreCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuAperturaCierreCaja.Name = "SubMenuAperturaCierreCaja";
-            this.SubMenuAperturaCierreCaja.Size = new System.Drawing.Size(219, 30);
+            this.SubMenuAperturaCierreCaja.Size = new System.Drawing.Size(285, 30);
             this.SubMenuAperturaCierreCaja.Text = "Apertura/Cierre Caja";
             this.SubMenuAperturaCierreCaja.Click += new System.EventHandler(this.SubMenuAperturaCierreCaja_Click);
             // 
@@ -396,9 +398,19 @@
             this.SubMenuVerDetalleFacturas.IconColor = System.Drawing.Color.Black;
             this.SubMenuVerDetalleFacturas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuVerDetalleFacturas.Name = "SubMenuVerDetalleFacturas";
-            this.SubMenuVerDetalleFacturas.Size = new System.Drawing.Size(219, 30);
+            this.SubMenuVerDetalleFacturas.Size = new System.Drawing.Size(285, 30);
             this.SubMenuVerDetalleFacturas.Text = "Consulta de Facturas";
             this.SubMenuVerDetalleFacturas.Click += new System.EventHandler(this.MenuVerDetalle_Click);
+            // 
+            // SubMenuNCEmitidas
+            // 
+            this.SubMenuNCEmitidas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuNCEmitidas.IconColor = System.Drawing.Color.Black;
+            this.SubMenuNCEmitidas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuNCEmitidas.Name = "SubMenuNCEmitidas";
+            this.SubMenuNCEmitidas.Size = new System.Drawing.Size(285, 30);
+            this.SubMenuNCEmitidas.Text = "Notas de Crédito Emitidas";
+            this.SubMenuNCEmitidas.Click += new System.EventHandler(this.SubMenuNCEmitida_Click);
             // 
             // ProveedoresMenu
             // 
@@ -472,7 +484,7 @@
             this.SubMenuPedidos.IconColor = System.Drawing.Color.Black;
             this.SubMenuPedidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuPedidos.Name = "SubMenuPedidos";
-            this.SubMenuPedidos.Size = new System.Drawing.Size(290, 30);
+            this.SubMenuPedidos.Size = new System.Drawing.Size(282, 22);
             this.SubMenuPedidos.Text = "Pedidos";
             this.SubMenuPedidos.Click += new System.EventHandler(this.SubMenuPedidos_Click);
             // 
@@ -482,7 +494,7 @@
             this.SubMenuDetallePedidos.IconColor = System.Drawing.Color.Black;
             this.SubMenuDetallePedidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuDetallePedidos.Name = "SubMenuDetallePedidos";
-            this.SubMenuDetallePedidos.Size = new System.Drawing.Size(290, 30);
+            this.SubMenuDetallePedidos.Size = new System.Drawing.Size(282, 22);
             this.SubMenuDetallePedidos.Text = "Consulta de Pedidos";
             this.SubMenuDetallePedidos.Click += new System.EventHandler(this.SubMenuDetallePedidos_Click);
             // 
@@ -492,7 +504,7 @@
             this.SubMenuCompras.IconColor = System.Drawing.Color.Black;
             this.SubMenuCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuCompras.Name = "SubMenuCompras";
-            this.SubMenuCompras.Size = new System.Drawing.Size(290, 30);
+            this.SubMenuCompras.Size = new System.Drawing.Size(282, 22);
             this.SubMenuCompras.Text = "Compras";
             this.SubMenuCompras.Click += new System.EventHandler(this.MenuRegistrarCompra_Click);
             // 
@@ -502,7 +514,7 @@
             this.SubMenuVerDetalleCompra.IconColor = System.Drawing.Color.Black;
             this.SubMenuVerDetalleCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuVerDetalleCompra.Name = "SubMenuVerDetalleCompra";
-            this.SubMenuVerDetalleCompra.Size = new System.Drawing.Size(290, 30);
+            this.SubMenuVerDetalleCompra.Size = new System.Drawing.Size(282, 22);
             this.SubMenuVerDetalleCompra.Text = "Consulta de Compras";
             this.SubMenuVerDetalleCompra.Click += new System.EventHandler(this.MenuVerDetalleCompra_Click);
             // 
@@ -512,7 +524,7 @@
             this.SubMenuNCRecibidas.IconColor = System.Drawing.Color.Black;
             this.SubMenuNCRecibidas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuNCRecibidas.Name = "SubMenuNCRecibidas";
-            this.SubMenuNCRecibidas.Size = new System.Drawing.Size(290, 30);
+            this.SubMenuNCRecibidas.Size = new System.Drawing.Size(282, 22);
             this.SubMenuNCRecibidas.Text = "Notas de Crédito Recibidas";
             this.SubMenuNCRecibidas.Click += new System.EventHandler(this.SubMenuNCRecibidas_Click);
             // 
@@ -522,7 +534,7 @@
             this.SubMenuVerDetalleNCRecibidas.IconColor = System.Drawing.Color.Black;
             this.SubMenuVerDetalleNCRecibidas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuVerDetalleNCRecibidas.Name = "SubMenuVerDetalleNCRecibidas";
-            this.SubMenuVerDetalleNCRecibidas.Size = new System.Drawing.Size(290, 30);
+            this.SubMenuVerDetalleNCRecibidas.Size = new System.Drawing.Size(282, 22);
             this.SubMenuVerDetalleNCRecibidas.Text = "Consulta de Notas de Crédito Recibidas";
             this.SubMenuVerDetalleNCRecibidas.Click += new System.EventHandler(this.SubMenuVerDetalleNCRecibidas_Click);
             // 
@@ -538,7 +550,7 @@
             this.SubMenuListadosCompras.IconColor = System.Drawing.Color.Black;
             this.SubMenuListadosCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListadosCompras.Name = "SubMenuListadosCompras";
-            this.SubMenuListadosCompras.Size = new System.Drawing.Size(290, 30);
+            this.SubMenuListadosCompras.Size = new System.Drawing.Size(282, 22);
             this.SubMenuListadosCompras.Text = "Listados";
             // 
             // SubMenuListadoPedidos
@@ -613,7 +625,7 @@
             this.SubMenuMovStock.IconColor = System.Drawing.Color.Black;
             this.SubMenuMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuMovStock.Name = "SubMenuMovStock";
-            this.SubMenuMovStock.Size = new System.Drawing.Size(250, 30);
+            this.SubMenuMovStock.Size = new System.Drawing.Size(242, 22);
             this.SubMenuMovStock.Text = "Movimientos Stock";
             this.SubMenuMovStock.Click += new System.EventHandler(this.SubMenuMovStock_Click);
             // 
@@ -623,7 +635,7 @@
             this.SubMenuVerDetalleMovStock.IconColor = System.Drawing.Color.Black;
             this.SubMenuVerDetalleMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuVerDetalleMovStock.Name = "SubMenuVerDetalleMovStock";
-            this.SubMenuVerDetalleMovStock.Size = new System.Drawing.Size(250, 30);
+            this.SubMenuVerDetalleMovStock.Size = new System.Drawing.Size(242, 22);
             this.SubMenuVerDetalleMovStock.Text = "Consulta de Movimientos Stock";
             this.SubMenuVerDetalleMovStock.Click += new System.EventHandler(this.SubMenuVerDetalleMovStock_Click);
             // 
@@ -636,7 +648,7 @@
             this.SubMenuListados.IconColor = System.Drawing.Color.Black;
             this.SubMenuListados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListados.Name = "SubMenuListados";
-            this.SubMenuListados.Size = new System.Drawing.Size(250, 30);
+            this.SubMenuListados.Size = new System.Drawing.Size(242, 22);
             this.SubMenuListados.Text = "Listados";
             // 
             // SubMenuListadoExistencia
@@ -720,15 +732,15 @@
             this.LBLUsuario.TabIndex = 5;
             this.LBLUsuario.Text = "LBLUsuario";
             // 
-            // SubMenuNCEmitidas
+            // SubMenuVerDetalleNCEmitidas
             // 
-            this.SubMenuNCEmitidas.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.SubMenuNCEmitidas.IconColor = System.Drawing.Color.Black;
-            this.SubMenuNCEmitidas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubMenuNCEmitidas.Name = "SubMenuNCEmitidas";
-            this.SubMenuNCEmitidas.Size = new System.Drawing.Size(219, 30);
-            this.SubMenuNCEmitidas.Text = "Notas de Crédito Emitidas";
-            this.SubMenuNCEmitidas.Click += new System.EventHandler(this.SubMenuNCEmitida_Click);
+            this.SubMenuVerDetalleNCEmitidas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuVerDetalleNCEmitidas.IconColor = System.Drawing.Color.Black;
+            this.SubMenuVerDetalleNCEmitidas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuVerDetalleNCEmitidas.Name = "SubMenuVerDetalleNCEmitidas";
+            this.SubMenuVerDetalleNCEmitidas.Size = new System.Drawing.Size(285, 30);
+            this.SubMenuVerDetalleNCEmitidas.Text = "Consulta de Notas de Crédito Emitidas";
+            this.SubMenuVerDetalleNCEmitidas.Click += new System.EventHandler(this.SubMenuVerDetalleNCEmitidas_Click);
             // 
             // PantallaPrincipal
             // 
@@ -814,6 +826,7 @@
         private FontAwesome.Sharp.IconMenuItem SubMenuListadoUltimasCompras;
         private FontAwesome.Sharp.IconMenuItem SubMenuListadoComprasSaldos;
         private FontAwesome.Sharp.IconMenuItem SubMenuNCEmitidas;
+        private FontAwesome.Sharp.IconMenuItem SubMenuVerDetalleNCEmitidas;
     }
 }
 

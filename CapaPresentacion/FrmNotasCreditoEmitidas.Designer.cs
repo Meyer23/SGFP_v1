@@ -42,9 +42,11 @@
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.LblCantidad = new System.Windows.Forms.Label();
             this.TxtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.LblPrecio = new System.Windows.Forms.Label();
             this.TxtDescProducto = new System.Windows.Forms.TextBox();
             this.LblDescProducto = new System.Windows.Forms.Label();
+            this.BntBuscarProd = new FontAwesome.Sharp.IconButton();
             this.TxtIdProducto = new System.Windows.Forms.TextBox();
             this.TxtCodProducto = new System.Windows.Forms.TextBox();
             this.LblCodProducto = new System.Windows.Forms.Label();
@@ -55,16 +57,19 @@
             this.LblFinVigencia = new System.Windows.Forms.Label();
             this.dtpInicioVigencia = new System.Windows.Forms.DateTimePicker();
             this.LblInicioVigencia = new System.Windows.Forms.Label();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.TxtTimbrado = new System.Windows.Forms.TextBox();
             this.LblTimbrado = new System.Windows.Forms.Label();
             this.TxtDoc = new System.Windows.Forms.TextBox();
             this.TxtPuntoEmision = new System.Windows.Forms.TextBox();
             this.LblCodEstablecimiento = new System.Windows.Forms.Label();
             this.TxtCodEstablecimiento = new System.Windows.Forms.TextBox();
+            this.BtnBuscarVenta = new FontAwesome.Sharp.IconButton();
             this.groupBoxInfoCliente = new System.Windows.Forms.GroupBox();
             this.TxtIdCliente = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.LblNombre = new System.Windows.Forms.Label();
+            this.BtnBuscarCliente = new FontAwesome.Sharp.IconButton();
             this.TxtRUC = new System.Windows.Forms.TextBox();
             this.LblRUC = new System.Windows.Forms.Label();
             this.ComboTipoDoc = new System.Windows.Forms.ComboBox();
@@ -77,11 +82,10 @@
             this.LblFecha = new System.Windows.Forms.Label();
             this.LblNCRecibida = new System.Windows.Forms.Label();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.BtnAgregar = new FontAwesome.Sharp.IconButton();
-            this.BntBuscarProd = new FontAwesome.Sharp.IconButton();
-            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.BtnBuscarVenta = new FontAwesome.Sharp.IconButton();
-            this.BtnBuscarCliente = new FontAwesome.Sharp.IconButton();
+            this.TxtNroCaja = new System.Windows.Forms.TextBox();
+            this.LblNroCaja = new System.Windows.Forms.Label();
+            this.TxtCajero = new System.Windows.Forms.TextBox();
+            this.LblUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoProducto.SuspendLayout();
             this.groupBoxInfoNC.SuspendLayout();
@@ -226,6 +230,23 @@
             this.TxtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioVenta_KeyPress);
             this.TxtPrecioVenta.Validating += new System.ComponentModel.CancelEventHandler(this.TxtPrecioVenta_Validating);
             // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.BtnAgregar.IconColor = System.Drawing.Color.Black;
+            this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnAgregar.IconSize = 30;
+            this.BtnAgregar.Location = new System.Drawing.Point(872, 12);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(59, 54);
+            this.BtnAgregar.TabIndex = 56;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
             // LblPrecio
             // 
             this.LblPrecio.AutoSize = true;
@@ -253,6 +274,27 @@
             this.LblDescProducto.Size = new System.Drawing.Size(112, 13);
             this.LblDescProducto.TabIndex = 66;
             this.LblDescProducto.Text = "Descripción Producto:";
+            // 
+            // BntBuscarProd
+            // 
+            this.BntBuscarProd.BackColor = System.Drawing.Color.White;
+            this.BntBuscarProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BntBuscarProd.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BntBuscarProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BntBuscarProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BntBuscarProd.ForeColor = System.Drawing.Color.White;
+            this.BntBuscarProd.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.BntBuscarProd.IconColor = System.Drawing.Color.Black;
+            this.BntBuscarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BntBuscarProd.IconSize = 16;
+            this.BntBuscarProd.Location = new System.Drawing.Point(138, 39);
+            this.BntBuscarProd.Margin = new System.Windows.Forms.Padding(2);
+            this.BntBuscarProd.Name = "BntBuscarProd";
+            this.BntBuscarProd.Size = new System.Drawing.Size(43, 22);
+            this.BntBuscarProd.TabIndex = 65;
+            this.BntBuscarProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BntBuscarProd.UseVisualStyleBackColor = false;
+            this.BntBuscarProd.Click += new System.EventHandler(this.BntBuscarProd_Click);
             // 
             // TxtIdProducto
             // 
@@ -284,6 +326,10 @@
             // groupBoxInfoNC
             // 
             this.groupBoxInfoNC.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfoNC.Controls.Add(this.TxtNroCaja);
+            this.groupBoxInfoNC.Controls.Add(this.LblNroCaja);
+            this.groupBoxInfoNC.Controls.Add(this.TxtCajero);
+            this.groupBoxInfoNC.Controls.Add(this.LblUsuario);
             this.groupBoxInfoNC.Controls.Add(this.TxtIdVenta);
             this.groupBoxInfoNC.Controls.Add(this.dtpFechaVenta);
             this.groupBoxInfoNC.Controls.Add(this.dtpFinVigencia);
@@ -336,6 +382,7 @@
             // 
             // dtpFinVigencia
             // 
+            this.dtpFinVigencia.Enabled = false;
             this.dtpFinVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFinVigencia.Location = new System.Drawing.Point(237, 133);
@@ -356,6 +403,7 @@
             // 
             // dtpInicioVigencia
             // 
+            this.dtpInicioVigencia.Enabled = false;
             this.dtpInicioVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpInicioVigencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInicioVigencia.Location = new System.Drawing.Point(130, 133);
@@ -374,8 +422,30 @@
             this.LblInicioVigencia.TabIndex = 102;
             this.LblInicioVigencia.Text = "Inicio de Vigencia:";
             // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.White;
+            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
+            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnLimpiar.IconSize = 18;
+            this.BtnLimpiar.Location = new System.Drawing.Point(177, 39);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
+            this.BtnLimpiar.TabIndex = 101;
+            this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
             // TxtTimbrado
             // 
+            this.TxtTimbrado.Enabled = false;
             this.TxtTimbrado.Location = new System.Drawing.Point(9, 133);
             this.TxtTimbrado.Name = "TxtTimbrado";
             this.TxtTimbrado.Size = new System.Drawing.Size(112, 22);
@@ -402,6 +472,7 @@
             // 
             // TxtPuntoEmision
             // 
+            this.TxtPuntoEmision.Enabled = false;
             this.TxtPuntoEmision.Location = new System.Drawing.Point(278, 88);
             this.TxtPuntoEmision.Name = "TxtPuntoEmision";
             this.TxtPuntoEmision.Size = new System.Drawing.Size(35, 22);
@@ -420,11 +491,33 @@
             // 
             // TxtCodEstablecimiento
             // 
+            this.TxtCodEstablecimiento.Enabled = false;
             this.TxtCodEstablecimiento.Location = new System.Drawing.Point(237, 88);
             this.TxtCodEstablecimiento.Name = "TxtCodEstablecimiento";
             this.TxtCodEstablecimiento.Size = new System.Drawing.Size(35, 22);
             this.TxtCodEstablecimiento.TabIndex = 93;
             this.TxtCodEstablecimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodEstablecimiento_KeyPress);
+            // 
+            // BtnBuscarVenta
+            // 
+            this.BtnBuscarVenta.BackColor = System.Drawing.Color.White;
+            this.BtnBuscarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBuscarVenta.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnBuscarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscarVenta.ForeColor = System.Drawing.Color.White;
+            this.BtnBuscarVenta.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.BtnBuscarVenta.IconColor = System.Drawing.Color.Black;
+            this.BtnBuscarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnBuscarVenta.IconSize = 16;
+            this.BtnBuscarVenta.Location = new System.Drawing.Point(130, 39);
+            this.BtnBuscarVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnBuscarVenta.Name = "BtnBuscarVenta";
+            this.BtnBuscarVenta.Size = new System.Drawing.Size(43, 26);
+            this.BtnBuscarVenta.TabIndex = 92;
+            this.BtnBuscarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnBuscarVenta.UseVisualStyleBackColor = false;
+            this.BtnBuscarVenta.Click += new System.EventHandler(this.BtnBuscarVenta_Click);
             // 
             // groupBoxInfoCliente
             // 
@@ -469,6 +562,27 @@
             this.LblNombre.Size = new System.Drawing.Size(121, 13);
             this.LblNombre.TabIndex = 61;
             this.LblNombre.Text = "Nombre / Razón Social:";
+            // 
+            // BtnBuscarCliente
+            // 
+            this.BtnBuscarCliente.BackColor = System.Drawing.Color.White;
+            this.BtnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBuscarCliente.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscarCliente.ForeColor = System.Drawing.Color.White;
+            this.BtnBuscarCliente.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.BtnBuscarCliente.IconColor = System.Drawing.Color.Black;
+            this.BtnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnBuscarCliente.IconSize = 16;
+            this.BtnBuscarCliente.Location = new System.Drawing.Point(127, 40);
+            this.BtnBuscarCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnBuscarCliente.Name = "BtnBuscarCliente";
+            this.BtnBuscarCliente.Size = new System.Drawing.Size(43, 22);
+            this.BtnBuscarCliente.TabIndex = 60;
+            this.BtnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnBuscarCliente.UseVisualStyleBackColor = false;
+            this.BtnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
             // TxtRUC
             // 
@@ -599,106 +713,43 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // BtnAgregar
+            // TxtNroCaja
             // 
-            this.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnAgregar.IconColor = System.Drawing.Color.Black;
-            this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAgregar.IconSize = 30;
-            this.BtnAgregar.Location = new System.Drawing.Point(872, 12);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(59, 54);
-            this.BtnAgregar.TabIndex = 56;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnAgregar.UseVisualStyleBackColor = true;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            this.TxtNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNroCaja.Location = new System.Drawing.Point(914, 151);
+            this.TxtNroCaja.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtNroCaja.Name = "TxtNroCaja";
+            this.TxtNroCaja.Size = new System.Drawing.Size(139, 21);
+            this.TxtNroCaja.TabIndex = 111;
             // 
-            // BntBuscarProd
+            // LblNroCaja
             // 
-            this.BntBuscarProd.BackColor = System.Drawing.Color.White;
-            this.BntBuscarProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BntBuscarProd.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BntBuscarProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BntBuscarProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BntBuscarProd.ForeColor = System.Drawing.Color.White;
-            this.BntBuscarProd.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.BntBuscarProd.IconColor = System.Drawing.Color.Black;
-            this.BntBuscarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BntBuscarProd.IconSize = 16;
-            this.BntBuscarProd.Location = new System.Drawing.Point(138, 39);
-            this.BntBuscarProd.Margin = new System.Windows.Forms.Padding(2);
-            this.BntBuscarProd.Name = "BntBuscarProd";
-            this.BntBuscarProd.Size = new System.Drawing.Size(43, 22);
-            this.BntBuscarProd.TabIndex = 65;
-            this.BntBuscarProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BntBuscarProd.UseVisualStyleBackColor = false;
-            this.BntBuscarProd.Click += new System.EventHandler(this.BntBuscarProd_Click);
+            this.LblNroCaja.AutoSize = true;
+            this.LblNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNroCaja.Location = new System.Drawing.Point(855, 154);
+            this.LblNroCaja.Name = "LblNroCaja";
+            this.LblNroCaja.Size = new System.Drawing.Size(54, 13);
+            this.LblNroCaja.TabIndex = 110;
+            this.LblNroCaja.Text = "Nro. Caja:";
             // 
-            // BtnLimpiar
+            // TxtCajero
             // 
-            this.BtnLimpiar.BackColor = System.Drawing.Color.White;
-            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
-            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(177, 39);
-            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
-            this.BtnLimpiar.TabIndex = 101;
-            this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpiar.UseVisualStyleBackColor = false;
-            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            this.TxtCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCajero.Location = new System.Drawing.Point(914, 123);
+            this.TxtCajero.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtCajero.Name = "TxtCajero";
+            this.TxtCajero.Size = new System.Drawing.Size(139, 21);
+            this.TxtCajero.TabIndex = 109;
             // 
-            // BtnBuscarVenta
+            // LblUsuario
             // 
-            this.BtnBuscarVenta.BackColor = System.Drawing.Color.White;
-            this.BtnBuscarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscarVenta.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnBuscarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBuscarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscarVenta.ForeColor = System.Drawing.Color.White;
-            this.BtnBuscarVenta.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.BtnBuscarVenta.IconColor = System.Drawing.Color.Black;
-            this.BtnBuscarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnBuscarVenta.IconSize = 16;
-            this.BtnBuscarVenta.Location = new System.Drawing.Point(130, 39);
-            this.BtnBuscarVenta.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnBuscarVenta.Name = "BtnBuscarVenta";
-            this.BtnBuscarVenta.Size = new System.Drawing.Size(43, 26);
-            this.BtnBuscarVenta.TabIndex = 92;
-            this.BtnBuscarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBuscarVenta.UseVisualStyleBackColor = false;
-            this.BtnBuscarVenta.Click += new System.EventHandler(this.BtnBuscarVenta_Click);
-            // 
-            // BtnBuscarCliente
-            // 
-            this.BtnBuscarCliente.BackColor = System.Drawing.Color.White;
-            this.BtnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscarCliente.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscarCliente.ForeColor = System.Drawing.Color.White;
-            this.BtnBuscarCliente.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.BtnBuscarCliente.IconColor = System.Drawing.Color.Black;
-            this.BtnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnBuscarCliente.IconSize = 16;
-            this.BtnBuscarCliente.Location = new System.Drawing.Point(127, 40);
-            this.BtnBuscarCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnBuscarCliente.Name = "BtnBuscarCliente";
-            this.BtnBuscarCliente.Size = new System.Drawing.Size(43, 22);
-            this.BtnBuscarCliente.TabIndex = 60;
-            this.BtnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBuscarCliente.UseVisualStyleBackColor = false;
-            this.BtnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Location = new System.Drawing.Point(869, 128);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(40, 13);
+            this.LblUsuario.TabIndex = 108;
+            this.LblUsuario.Text = "Cajero:";
             // 
             // FrmNotasCreditoEmitidas
             // 
@@ -783,5 +834,9 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.Label LblNCRecibida;
+        private System.Windows.Forms.TextBox TxtNroCaja;
+        private System.Windows.Forms.Label LblNroCaja;
+        private System.Windows.Forms.TextBox TxtCajero;
+        private System.Windows.Forms.Label LblUsuario;
     }
 }
