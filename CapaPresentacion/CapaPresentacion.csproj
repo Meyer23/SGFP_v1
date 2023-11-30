@@ -460,6 +460,12 @@
     <Compile Include="Reportes\FrmRptListadoMovimientoStock.Designer.cs">
       <DependentUpon>FrmRptListadoMovimientoStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptListadoNCEmitidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptListadoNCEmitidas.Designer.cs">
+      <DependentUpon>FrmRptListadoNCEmitidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptListadoNCRecibidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -471,6 +477,12 @@
     </Compile>
     <Compile Include="Reportes\FrmRptListadoPedidos.Designer.cs">
       <DependentUpon>FrmRptListadoPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmRptListadoVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptListadoVentas.Designer.cs">
+      <DependentUpon>FrmRptListadoVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FrmRptMovimientosStock.cs">
       <SubType>Form</SubType>
@@ -714,11 +726,17 @@
     <EmbeddedResource Include="Reportes\FrmRptListadoMovimientoStock.resx">
       <DependentUpon>FrmRptListadoMovimientoStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptListadoNCEmitidas.resx">
+      <DependentUpon>FrmRptListadoNCEmitidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptListadoNCRecibidas.resx">
       <DependentUpon>FrmRptListadoNCRecibidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptListadoPedidos.resx">
       <DependentUpon>FrmRptListadoPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptListadoVentas.resx">
+      <DependentUpon>FrmRptListadoVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptMovimientosStock.resx">
       <DependentUpon>FrmRptMovimientosStock.cs</DependentUpon>
@@ -745,8 +763,10 @@
     <EmbeddedResource Include="Reportes\RPT_Compras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoComprasSaldos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoMovimientoStock.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_ListadoNCEmitida.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoNCRecibidas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoPedidos.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_ListadoVentas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_MovimientosStock.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_NCEmitidas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_NotasCreditoRecibidas.rdlc" />

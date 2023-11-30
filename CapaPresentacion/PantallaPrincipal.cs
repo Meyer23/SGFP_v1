@@ -343,5 +343,17 @@ namespace CapaPresentacion
         {
             AbrirFormulario(VentasMenu, new FrmVerDetalleNCEmitida(usuarioActual));
         }
+
+        private void SubMenuListadoFacturas_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptListadoVentas oRptListadoVentas = new Reportes.FrmRptListadoVentas();
+            oRptListadoVentas.ShowDialog();
+        }
+
+        private void SubMenuListadoNCEmitidas_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptListadoNCEmitidas oRptListadoNCEmitidas = new Reportes.FrmRptListadoNCEmitidas();
+            oRptListadoNCEmitidas.ShowDialog();
+        }
     }
 }
