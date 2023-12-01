@@ -189,5 +189,48 @@ namespace CapaDatos
             }
             return Respuesta;
         }
+
+        public bool Registrar(Venta objVenta, DataTable detalle_venta, DataTable datosDetallesCobro, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("sp_venta_insertar", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@idCliente", objVenta.IdCliente);
+                    cmd.Parameters.AddWithValue("@FechaVenta", objVenta.Fecha);
+                    cmd.Parameters.AddWithValue("@FormaPago", objVenta.FormaPago);
+                    cmd.Parameters.AddWithValue("@FechaVencimiento", objVenta.FechaVencimiento);
+                    cmd.Parameters.AddWithValue("@Timbrado", objVenta.Timbrado);
+                    cmd.Parameters.AddWithValue("@CodEstablecimiento", objVenta.CodEstablecimiento);
+                    cmd.Parameters.AddWithValue("@PuntoEmision", objVenta.PuntoEmision);
+                    cmd.Parameters.AddWithValue("@TipoDocumento", objVenta.TipoDocumento);
+                    cmd.Parameters.AddWithValue("@Doc", objVenta.Doc);
+                    cmd.Parameters.AddWithValue("@TotalCompra", objVenta.Total);
+                    cmd.Parameters.AddWithValue("@idUsuario", objVenta.IdCajero);
+                    cmd.Parameters.AddWithValue("@VentaDetalle", detalle_venta);
+                    cmd.Parameters.AddWithValue("@CobroDetalle", datosDetallesCobro);
+                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Respuesta;
+        }
     }
 }

@@ -14,6 +14,10 @@ namespace CapaPresentacion
     public partial class FrmRegistrarVenta : Form, IFormularioConIdUsuario
     {
         private UsuarioLogin _Usuario;
+
+        private DataTable datosDetallesCobro;
+
+        private DataTable datosDetalles;
         public FrmRegistrarVenta(UsuarioLogin oUsuario = null)
         {
             _Usuario = oUsuario;
@@ -27,6 +31,7 @@ namespace CapaPresentacion
             FechaVenta.Value = DateTime.Now;
             ComboTipoDoc.SelectedIndexChanged += ComboTipoDoc_SelectedIndexChanged;
             ObtenerUltimoDocFactura();
+            dtpFechaVenc.Value = DateTime.Now;
         }
 
         public int IdUsuario { get; set; }
@@ -189,7 +194,6 @@ namespace CapaPresentacion
 
         private void limpiarProducto()
         {
-            TxtIdProducto.Text = "0";
             textBoxCodProducto.Clear();
             textBoxCodProducto.BackColor = Color.White;
             TxtProducto.Clear();
@@ -489,7 +493,7 @@ namespace CapaPresentacion
             nuevo.ShowDialog();
         }
 
-        private void BtnCobro_Click(object sender, EventArgs e)
+        public void BtnCobro_Click(object sender, EventArgs e)
         {
             try
             {
@@ -499,15 +503,23 @@ namespace CapaPresentacion
                 {
                     formDetalleCobro.ShowDialog();
 
-                    DataTable datosRecibidos = formDetalleCobro.dataTableCobro;
+                    DataTable datosDetallesCobro = formDetalleCobro.dataTableCobro;
 
-                    if (datosRecibidos != null)
+                    if (datosDetallesCobro != null)
                     {
-
+                        //Crear el datatable
+                        datosDetalles = datosDetallesCobro.Copy();
+                        foreach (DataRow row in datosDetallesCobro.Rows)
+                        {
+                            DataRow newRow = datosDetalles.NewRow();
+                            newRow.ItemArray = row.ItemArray; // Copiar los datos de la fila
+                            datosDetalles.ImportRow(newRow); // Importar y agregar la fila al nuevo DataTable
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Debe cargar el detalle del cobro", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
                 }
             }
@@ -529,14 +541,99 @@ namespace CapaPresentacion
 
                 if (ultimoNumero >= 0)
                 {
-                    int nuevoNumero = ultimoNumero + 1;
-                    TxtDoc.Text = nuevoNumero.ToString();
+                    TxtDoc.Text = ultimoNumero.ToString();
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void BtnImprimirFactura_Click(object sender, EventArgs e)
+        {
+            string TipoDoc, FormaCobro;
+
+            int clienteId = Convert.ToInt32(TxtIdCliente.Text);
+
+            if(clienteId == 0)
+            {
+                MessageBox.Show("Debe seleccionar un cliente.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if(TxtIdProducto.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar al menos un producto", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (dgvData.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe ingresar al menos un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataTable detalle_venta = new DataTable();
+            DataTable detalle_cobro = datosDetalles;
+
+            FormaCobro = ComboFormaPago.Text;
+            TipoDoc = ComboTipoDoc.Text;
+
+            detalle_venta.Columns.Add("idProducto", typeof(int));
+            detalle_venta.Columns.Add("Cantidad", typeof(decimal));
+            detalle_venta.Columns.Add("Precio", typeof(decimal));
+            detalle_venta.Columns.Add("SubTotal", typeof(decimal));
+
+
+
+            foreach (DataGridViewRow row in dgvData.Rows)
+            {
+                detalle_venta.Rows.Add(new object[] {
+                   Convert.ToInt32(row.Cells["idProducto"].Value.ToString()),
+                   Convert.ToDecimal(row.Cells["Cantidad"].Value.ToString()),
+                   Convert.ToDecimal(row.Cells["Precio"].Value.ToString()),
+                   Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString())
+                });
+            }
+
+            Venta objVenta = new Venta()
+            {
+                IdCliente = clienteId,
+                TipoDocumento = TipoDoc,
+                FormaPago = FormaCobro,
+                Fecha = (DateTime)(FechaVenta.Value),
+                FechaVencimiento = (DateTime)(dtpFechaVenc.Value),
+                Timbrado = Convert.ToInt32(TxtTimbrado.Text),
+                CodEstablecimiento = Convert.ToInt32(TxtCodEstablecimiento.Text),
+                PuntoEmision = Convert.ToInt32(TxtPuntoEmision.Text),
+                Doc = TxtDoc.Text.ToString(),
+                Total = Convert.ToDecimal(textBoxTotalPagar.Text),
+                IdCajero = _Usuario.Id
+            };
+
+            string Mensaje = string.Empty;
+
+            bool Respuesta = new CN_Ventas().Registrar(objVenta, detalle_venta, detalle_cobro, out Mensaje);
+
+            if (Respuesta)
+            {
+                var result = MessageBox.Show("Factura de Venta Registrada con Éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    limpiar();
+                }
+            }
+            else
+            {
+                MessageBox.Show(Mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void TxtIdProducto_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

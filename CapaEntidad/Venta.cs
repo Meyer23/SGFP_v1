@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaEntidad.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,5 +48,7 @@ namespace CapaEntidad
         public bool Anulado { get; set; }
 
         public List<DetalleProductos> Detalle { get; set; }
+
+        public string Sucursal { get; set; }
     }
 }

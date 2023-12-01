@@ -2,6 +2,7 @@
 using CapaEntidad;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,11 @@ namespace CapaNegocio
         public bool AnularVenta(int IdVenta, string MotivoAnulacion, out string Mensaje)
         {
             return cd_venta.AnularVenta(IdVenta, MotivoAnulacion, out Mensaje);
+        }
+
+        public bool Registrar(Venta objVenta, DataTable detalle_venta, DataTable datosDetallesCobro, out string mensaje)
+        {
+            return cd_venta.Registrar(objVenta, detalle_venta, datosDetallesCobro, out mensaje);
         }
     }
 }

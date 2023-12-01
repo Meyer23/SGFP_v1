@@ -270,7 +270,7 @@
             this.dtpFechaVenc.Name = "dtpFechaVenc";
             this.dtpFechaVenc.Size = new System.Drawing.Size(180, 31);
             this.dtpFechaVenc.TabIndex = 115;
-            this.dtpFechaVenc.Value = new System.DateTime(2023, 11, 4, 0, 0, 0, 0);
+            this.dtpFechaVenc.Value = new System.DateTime(2023, 11, 29, 0, 0, 0, 0);
             // 
             // LblFechaVencimiento
             // 
@@ -421,6 +421,7 @@
             this.TxtIdProducto.TabIndex = 74;
             this.TxtIdProducto.Text = "0";
             this.TxtIdProducto.Visible = false;
+            this.TxtIdProducto.TextChanged += new System.EventHandler(this.TxtIdProducto_TextChanged);
             // 
             // textBoxPrecio
             // 
@@ -830,7 +831,9 @@
             this.BtnImprimirFactura.Size = new System.Drawing.Size(288, 75);
             this.BtnImprimirFactura.TabIndex = 95;
             this.BtnImprimirFactura.Text = "Imprimir Factura";
+            this.BtnImprimirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnImprimirFactura.UseVisualStyleBackColor = false;
+            this.BtnImprimirFactura.Click += new System.EventHandler(this.BtnImprimirFactura_Click);
             // 
             // FrmRegistrarVenta
             // 

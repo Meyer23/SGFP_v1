@@ -24,6 +24,8 @@ namespace CapaPresentacion
             MostrarValores();
             MontoDeLaVenta();
             MostrarBancos();
+            ObtenerIdBanco();
+            tmpFechaVencimiento.Value = DateTime.Now;
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -62,6 +64,33 @@ namespace CapaPresentacion
             }
         }
 
+        private void ComboBanco_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ObtenerIdBanco();
+        }
+
+        private void ObtenerIdBanco()
+        {
+            List<Banco> listBancos = new CN_Bancos().Listar();
+
+            var idBanco = listBancos.Where(x => x.Nombre == ComboBanco.Text)
+                                    .Select(x => x.Id)
+                                    .SingleOrDefault();
+
+            TxtIdBanco.Text = idBanco.ToString();
+        }
+
+        private void ComboTipoValor_SelectedValueChanged(object sender, EventArgs e)
+        {
+            List<Valor> listValor = new CN_Valores().Listar();
+
+            var idValor = listValor.Where(x => x.Descripcion == ComboTipoValor.Text)
+                                   .Select(x => x.Id)
+                                   .SingleOrDefault();
+
+            TxtTipoValor.Text = idValor.ToString();
+        }
+
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             decimal valorVuelto = 0;
@@ -72,13 +101,15 @@ namespace CapaPresentacion
                 TxtVuelto.Text = valorVuelto.ToString();
             }
             dgvData.Rows.Add(new object[] {
-                    "",
                     ComboTipoValor.Text,
                     ComboBanco.Text,
                     TxtNroCuenta.Text,
                     TxtNroDocumento.Text,
                     TxtImporte.Text,
-                    valorVuelto.ToString()
+                    valorVuelto.ToString(),
+                    TxtTipoValor.Text,
+                    TxtIdBanco.Text,
+                    tmpFechaVencimiento.Value.ToString(),
             });
         }
 
@@ -205,6 +236,11 @@ namespace CapaPresentacion
                 // Si no es un número ni la tecla de retroceso, suprimir el carácter
                 e.Handled = true;
             }
+        }
+
+        private void ComboTipoValor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
