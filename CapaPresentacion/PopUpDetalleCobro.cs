@@ -101,15 +101,15 @@ namespace CapaPresentacion
                 TxtVuelto.Text = valorVuelto.ToString();
             }
             dgvData.Rows.Add(new object[] {
-                    ComboTipoValor.Text,
-                    ComboBanco.Text,
+                    TxtTipoValor.Text,
+                    TxtIdBanco.Text,
                     TxtNroCuenta.Text,
                     TxtNroDocumento.Text,
                     TxtImporte.Text,
                     valorVuelto.ToString(),
-                    TxtTipoValor.Text,
-                    TxtIdBanco.Text,
                     tmpFechaVencimiento.Value.ToString(),
+                    ComboTipoValor.Text,
+                    ComboBanco.Text,
             });
         }
 
@@ -133,7 +133,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 9)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = Properties.Resources.borrar_rojo2.Width;

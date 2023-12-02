@@ -54,15 +54,16 @@
             this.TxtIdBanco = new System.Windows.Forms.TextBox();
             this.tmpFechaVencimiento = new System.Windows.Forms.DateTimePicker();
             this.LblVencimiento = new System.Windows.Forms.Label();
-            this.TipoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImporteVuelto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,15 +216,16 @@
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TipoValor,
-            this.Banco,
+            this.idValor,
+            this.idBanco,
             this.NroCuenta,
             this.NroDocumento,
             this.Importe,
             this.ImporteVuelto,
-            this.idValor,
-            this.idBanco,
-            this.FechaVencimiento});
+            this.FechaVencimiento,
+            this.TipoValor,
+            this.Banco,
+            this.BtnEliminar});
             this.dgvData.Location = new System.Drawing.Point(45, 387);
             this.dgvData.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dgvData.Name = "dgvData";
@@ -376,21 +378,23 @@
             this.LblVencimiento.TabIndex = 78;
             this.LblVencimiento.Text = "Nro. Cuenta:";
             // 
-            // TipoValor
+            // idValor
             // 
-            this.TipoValor.HeaderText = "Tipo Valor";
-            this.TipoValor.MinimumWidth = 8;
-            this.TipoValor.Name = "TipoValor";
-            this.TipoValor.ReadOnly = true;
-            this.TipoValor.Width = 150;
+            this.idValor.HeaderText = "idvalor";
+            this.idValor.MinimumWidth = 9;
+            this.idValor.Name = "idValor";
+            this.idValor.ReadOnly = true;
+            this.idValor.Visible = false;
+            this.idValor.Width = 175;
             // 
-            // Banco
+            // idBanco
             // 
-            this.Banco.HeaderText = "Banco";
-            this.Banco.MinimumWidth = 8;
-            this.Banco.Name = "Banco";
-            this.Banco.ReadOnly = true;
-            this.Banco.Width = 300;
+            this.idBanco.HeaderText = "idbanco";
+            this.idBanco.MinimumWidth = 9;
+            this.idBanco.Name = "idBanco";
+            this.idBanco.ReadOnly = true;
+            this.idBanco.Visible = false;
+            this.idBanco.Width = 175;
             // 
             // NroCuenta
             // 
@@ -424,24 +428,6 @@
             this.ImporteVuelto.ReadOnly = true;
             this.ImporteVuelto.Width = 150;
             // 
-            // idValor
-            // 
-            this.idValor.HeaderText = "idvalor";
-            this.idValor.MinimumWidth = 9;
-            this.idValor.Name = "idValor";
-            this.idValor.ReadOnly = true;
-            this.idValor.Visible = false;
-            this.idValor.Width = 175;
-            // 
-            // idBanco
-            // 
-            this.idBanco.HeaderText = "idbanco";
-            this.idBanco.MinimumWidth = 9;
-            this.idBanco.Name = "idBanco";
-            this.idBanco.ReadOnly = true;
-            this.idBanco.Visible = false;
-            this.idBanco.Width = 175;
-            // 
             // FechaVencimiento
             // 
             this.FechaVencimiento.HeaderText = "FechaVencimiento";
@@ -450,6 +436,31 @@
             this.FechaVencimiento.ReadOnly = true;
             this.FechaVencimiento.Visible = false;
             this.FechaVencimiento.Width = 175;
+            // 
+            // TipoValor
+            // 
+            this.TipoValor.HeaderText = "Tipo Valor";
+            this.TipoValor.MinimumWidth = 8;
+            this.TipoValor.Name = "TipoValor";
+            this.TipoValor.ReadOnly = true;
+            this.TipoValor.Width = 150;
+            // 
+            // Banco
+            // 
+            this.Banco.HeaderText = "Banco";
+            this.Banco.MinimumWidth = 8;
+            this.Banco.Name = "Banco";
+            this.Banco.ReadOnly = true;
+            this.Banco.Width = 300;
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.HeaderText = "";
+            this.BtnEliminar.MinimumWidth = 9;
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.ReadOnly = true;
+            this.BtnEliminar.Visible = false;
+            this.BtnEliminar.Width = 175;
             // 
             // PopUpDetalleCobro
             // 
@@ -519,14 +530,15 @@
         private System.Windows.Forms.TextBox TxtIdBanco;
         private System.Windows.Forms.DateTimePicker tmpFechaVencimiento;
         private System.Windows.Forms.Label LblVencimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoValor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Banco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBanco;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroCuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImporteVuelto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idValor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idBanco;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Banco;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnEliminar;
     }
 }

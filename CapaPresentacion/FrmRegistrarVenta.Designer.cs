@@ -105,7 +105,7 @@
             this.LblPedidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblPedidos.Name = "LblPedidos";
             this.LblPedidos.Padding = new System.Windows.Forms.Padding(4);
-            this.LblPedidos.Size = new System.Drawing.Size(1975, 1131);
+            this.LblPedidos.Size = new System.Drawing.Size(1975, 1156);
             this.LblPedidos.TabIndex = 26;
             this.LblPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -826,7 +826,7 @@
             this.BtnImprimirFactura.IconChar = FontAwesome.Sharp.IconChar.Print;
             this.BtnImprimirFactura.IconColor = System.Drawing.Color.Black;
             this.BtnImprimirFactura.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnImprimirFactura.Location = new System.Drawing.Point(1039, 1050);
+            this.BtnImprimirFactura.Location = new System.Drawing.Point(1039, 951);
             this.BtnImprimirFactura.Name = "BtnImprimirFactura";
             this.BtnImprimirFactura.Size = new System.Drawing.Size(288, 75);
             this.BtnImprimirFactura.TabIndex = 95;
@@ -839,7 +839,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1992, 1364);
+            this.ClientSize = new System.Drawing.Size(1992, 1172);
             this.Controls.Add(this.BtnImprimirFactura);
             this.Controls.Add(this.BtnCobro);
             this.Controls.Add(this.LblMoneda);

@@ -503,23 +503,46 @@ namespace CapaPresentacion
                 {
                     formDetalleCobro.ShowDialog();
 
-                    DataTable datosDetallesCobro = formDetalleCobro.dataTableCobro;
+                    // Supongamos que las columnas deseadas tienen los índices 2, 3, 4, 5, 6, 7
+                    int[] columnIndexesToCopy = { 0, 1, 2, 3, 4, 5, 6 };
 
-                    if (datosDetallesCobro != null)
+                    DataTable datosDetallesCobro = new DataTable();
+
+                    // Agregar las columnas deseadas al nuevo DataTable
+                    foreach (int columnIndex in columnIndexesToCopy)
                     {
-                        //Crear el datatable
-                        datosDetalles = datosDetallesCobro.Copy();
-                        foreach (DataRow row in datosDetallesCobro.Rows)
-                        {
-                            DataRow newRow = datosDetalles.NewRow();
-                            newRow.ItemArray = row.ItemArray; // Copiar los datos de la fila
-                            datosDetalles.ImportRow(newRow); // Importar y agregar la fila al nuevo DataTable
-                        }
+                        datosDetallesCobro.Columns.Add(formDetalleCobro.dataTableCobro.Columns[columnIndex].ColumnName);
                     }
-                    else
+
+                    // Copiar filas y datos de las columnas seleccionadas
+                    foreach (DataRow row in formDetalleCobro.dataTableCobro.Rows)
                     {
-                        MessageBox.Show("Debe cargar el detalle del cobro", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
+                        DataRow newRow = datosDetallesCobro.NewRow();
+
+                        // Copiar solo las columnas específicas
+                        foreach (int columnIndex in columnIndexesToCopy)
+                        {
+                            // Verificar si la columna actual es la que deseas convertir a DateTime (supongamos que es la columna con índice 3)
+                            if ((columnIndex == 4 && row[columnIndex] != DBNull.Value) || (columnIndex == 5 && row[columnIndex] != DBNull.Value))
+                            {
+                               
+                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToDecimal(row[columnIndex]);
+                            }
+                            else if(columnIndex == 6 && row[columnIndex] != DBNull.Value)
+                            {
+                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToDateTime(row[columnIndex]);
+                            }
+                            else if((columnIndex == 0 && row[columnIndex] != DBNull.Value) || (columnIndex == 1 && row[columnIndex] != DBNull.Value))
+                            {
+                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToInt16(row[columnIndex]);
+                            }
+                            else if((columnIndex == 2 && row[columnIndex] != DBNull.Value) || (columnIndex == 3 && row[columnIndex] != DBNull.Value))
+                            {
+                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToString(row[columnIndex]);
+                            }
+                        }
+                        datosDetallesCobro.Rows.Add(newRow);
+                        datosDetalles = datosDetallesCobro.Copy();
                     }
                 }
             }
