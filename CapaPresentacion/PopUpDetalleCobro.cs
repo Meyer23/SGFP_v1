@@ -98,18 +98,18 @@ namespace CapaPresentacion
             if(importe > _monto)
             {
                 valorVuelto = importe - _monto;
-                TxtVuelto.Text = valorVuelto.ToString();
+                TxtVuelto.Text = valorVuelto.ToString("0");
             }
             dgvData.Rows.Add(new object[] {
-                    TxtTipoValor.Text,
-                    TxtIdBanco.Text,
-                    TxtNroCuenta.Text,
-                    TxtNroDocumento.Text,
-                    TxtImporte.Text,
-                    valorVuelto.ToString(),
-                    tmpFechaVencimiento.Value.ToString(),
-                    ComboTipoValor.Text,
-                    ComboBanco.Text,
+                    Convert.ToInt32(TxtTipoValor.Text),
+                    Convert.ToInt32(TxtIdBanco.Text),
+                    Convert.ToString(TxtNroCuenta.Text),
+                    Convert.ToString(TxtNroDocumento.Text),
+                    Convert.ToDecimal(TxtImporte.Text),
+                    Convert.ToDecimal(TxtVuelto.Text),
+                    Convert.ToDateTime(tmpFechaVencimiento.Value),
+                    Convert.ToString(ComboTipoValor.Text),
+                    Convert.ToString(ComboBanco.Text)
             });
         }
 
