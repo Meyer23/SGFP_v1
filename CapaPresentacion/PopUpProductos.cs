@@ -40,7 +40,7 @@ namespace CapaPresentacion
 
             foreach (Producto producto in listaProductosExistentes)
             {
-                dgvData.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Precio, producto.Existencia);
+                dgvData.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Precio, producto.Existencia, producto.UnidadMedida);
             }
         }
 
@@ -56,8 +56,9 @@ namespace CapaPresentacion
                     Id = Convert.ToInt32(dgvData.Rows[iRow].Cells["idProducto"].Value.ToString()),
                     Codigo = dgvData.Rows[iRow].Cells["Codigo"].Value.ToString(),
                     Descripcion = dgvData.Rows[iRow].Cells["Descripcion"].Value.ToString(),
-                    Precio = Convert.ToDecimal(dgvData.Rows[iRow].Cells["ProductoPrecio"].Value),
-                    Existencia = Convert.ToDecimal(dgvData.Rows[iRow].Cells["Existencia"].Value)
+                    Precio = Math.Floor(Convert.ToDecimal(dgvData.Rows[iRow].Cells["ProductoPrecio"].Value)),
+                    Existencia = Convert.ToDecimal(dgvData.Rows[iRow].Cells["Existencia"].Value),
+                    UnidadMedida = dgvData.Rows[iRow].Cells["UnidadMedida"].Value.ToString()
                 };
 
                 this.DialogResult = DialogResult.OK;

@@ -43,6 +43,7 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductoPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,8 +66,10 @@
             this.Codigo,
             this.Descripcion,
             this.ProductoPrecio,
-            this.Existencia});
-            this.dgvData.Location = new System.Drawing.Point(8, 84);
+            this.Existencia,
+            this.UnidadMedida});
+            this.dgvData.Location = new System.Drawing.Point(15, 155);
+            this.dgvData.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
@@ -86,34 +89,37 @@
             this.dgvData.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(473, 302);
+            this.dgvData.Size = new System.Drawing.Size(867, 558);
             this.dgvData.TabIndex = 68;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellDoubleClick);
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(206, 40);
+            this.TxtBusqueda.Location = new System.Drawing.Point(378, 74);
+            this.TxtBusqueda.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TxtBusqueda.Name = "TxtBusqueda";
-            this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
+            this.TxtBusqueda.Size = new System.Drawing.Size(281, 29);
             this.TxtBusqueda.TabIndex = 62;
             // 
             // ComboBusqueda
             // 
             this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(79, 40);
+            this.ComboBusqueda.Location = new System.Drawing.Point(145, 74);
+            this.ComboBusqueda.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ComboBusqueda.Name = "ComboBusqueda";
-            this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
+            this.ComboBusqueda.Size = new System.Drawing.Size(218, 32);
             this.ComboBusqueda.TabIndex = 65;
             // 
             // LblBuscarPor
             // 
             this.LblBuscarPor.AutoSize = true;
             this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(12, 43);
+            this.LblBuscarPor.Location = new System.Drawing.Point(22, 79);
+            this.LblBuscarPor.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblBuscarPor.Name = "LblBuscarPor";
-            this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
+            this.LblBuscarPor.Size = new System.Drawing.Size(112, 25);
             this.LblBuscarPor.TabIndex = 64;
             this.LblBuscarPor.Text = "Buscar por:";
             // 
@@ -121,11 +127,11 @@
             // 
             this.LblListaProductos.BackColor = System.Drawing.Color.White;
             this.LblListaProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblListaProductos.Location = new System.Drawing.Point(8, 9);
-            this.LblListaProductos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblListaProductos.Location = new System.Drawing.Point(15, 17);
+            this.LblListaProductos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblListaProductos.Name = "LblListaProductos";
-            this.LblListaProductos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.LblListaProductos.Size = new System.Drawing.Size(473, 66);
+            this.LblListaProductos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LblListaProductos.Size = new System.Drawing.Size(867, 122);
             this.LblListaProductos.TabIndex = 63;
             this.LblListaProductos.Text = "Lista de Productos";
             // 
@@ -141,10 +147,10 @@
             this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(413, 36);
-            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLimpiar.Location = new System.Drawing.Point(757, 66);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
+            this.BtnLimpiar.Size = new System.Drawing.Size(79, 48);
             this.BtnLimpiar.TabIndex = 67;
             this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnLimpiar.UseVisualStyleBackColor = false;
@@ -162,10 +168,10 @@
             this.BtnBuscar.IconColor = System.Drawing.Color.Black;
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(366, 36);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnBuscar.Location = new System.Drawing.Point(671, 66);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
+            this.BtnBuscar.Size = new System.Drawing.Size(79, 48);
             this.BtnBuscar.TabIndex = 66;
             this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnBuscar.UseVisualStyleBackColor = false;
@@ -207,15 +213,26 @@
             // Existencia
             // 
             this.Existencia.HeaderText = "Existencia";
+            this.Existencia.MinimumWidth = 9;
             this.Existencia.Name = "Existencia";
             this.Existencia.ReadOnly = true;
             this.Existencia.Visible = false;
+            this.Existencia.Width = 175;
+            // 
+            // UnidadMedida
+            // 
+            this.UnidadMedida.HeaderText = "UnidadMedida";
+            this.UnidadMedida.MinimumWidth = 9;
+            this.UnidadMedida.Name = "UnidadMedida";
+            this.UnidadMedida.ReadOnly = true;
+            this.UnidadMedida.Visible = false;
+            this.UnidadMedida.Width = 175;
             // 
             // PopUpProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 392);
+            this.ClientSize = new System.Drawing.Size(902, 724);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
@@ -223,6 +240,7 @@
             this.Controls.Add(this.ComboBusqueda);
             this.Controls.Add(this.LblBuscarPor);
             this.Controls.Add(this.LblListaProductos);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "PopUpProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
@@ -247,5 +265,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductoPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Existencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnidadMedida;
     }
 }

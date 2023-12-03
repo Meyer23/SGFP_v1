@@ -38,7 +38,7 @@ namespace CapaPresentacion
 
         private void iconButtonCodProducto_Click(object sender, EventArgs e)
         {
-            using (var popup = new PopUpProductos())
+            using (var popup = new PopUpProductos(-1, 0))
             {
                 var result = popup.ShowDialog();
 
@@ -48,6 +48,7 @@ namespace CapaPresentacion
                     textBoxCodProducto.Text = popup._Producto.Codigo;
                     TxtProducto.Text = popup._Producto.Descripcion;
                     textBoxPrecio.Text = popup._Producto.Precio.ToString();
+                    TxtUnidadMedida.Text = popup._Producto.UnidadMedida.ToString();
                 }
                 else
                 {
@@ -113,6 +114,18 @@ namespace CapaPresentacion
             decimal precio = 0;
             bool producto_existe = false;
 
+            //Obtener la categoria del producto seleccionado. 
+            List<Producto> productos = new CN_Productos().Listar(-1, 0);
+
+            var unidadMedida = productos.Where(b => b.Id == Convert.ToInt32(TxtIdProducto.Text))
+                                       .Select(b => b.UnidadMedida)
+                                       .SingleOrDefault();
+
+            List<UnidadMedida> uMedida = new CN_UnidadesMedida().Listar();
+
+            var codUnidadMedida = uMedida.Where(u => u.Descripcion == unidadMedida)
+                                         .Select(u => u.Abreviacion);
+
             if (int.Parse(TxtIdProducto.Text) == 0)
             {
                 MessageBox.Show("Debe seleccionar un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -145,8 +158,9 @@ namespace CapaPresentacion
                     textBoxCodProducto.Text,
                     TxtProducto.Text,
                     numericUpDownCantidad.Text,
+                    TxtUnidadMedida.Text,
                     precio.ToString(),
-                    (Convert.ToInt32(numericUpDownCantidad.Value) * precio).ToString("0.00") });
+                    (Convert.ToInt32(numericUpDownCantidad.Value) * precio).ToString("0") });
 
                 calcularTotal();
                 limpiarProducto();
@@ -172,7 +186,7 @@ namespace CapaPresentacion
                     total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
                 }
             }
-            textBoxTotalPagar.Text = total.ToString();
+            textBoxTotalPagar.Text = total.ToString("0");
         }
 
         private void CalcularTotalMedioCobro()
@@ -230,7 +244,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 7)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = Properties.Resources.borrar_rojo2.Width;
@@ -605,7 +619,8 @@ namespace CapaPresentacion
 
             detalle_venta.Columns.Add("idProducto", typeof(int));
             detalle_venta.Columns.Add("Cantidad", typeof(decimal));
-            detalle_venta.Columns.Add("Precio", typeof(decimal));
+            detalle_venta.Columns.Add("UnidadMedida", typeof(string));
+            detalle_venta.Columns.Add("Precio", typeof(decimal));//Precio unitario
             detalle_venta.Columns.Add("SubTotal", typeof(decimal));
 
 
@@ -615,8 +630,9 @@ namespace CapaPresentacion
                 detalle_venta.Rows.Add(new object[] {
                    Convert.ToInt32(row.Cells["idProducto"].Value.ToString()),
                    Convert.ToDecimal(row.Cells["Cantidad"].Value.ToString()),
+                   Convert.ToString(row.Cells["Unidad"].Value.ToString()),
                    Convert.ToDecimal(row.Cells["Precio"].Value.ToString()),
-                   Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString())
+                   Math.Floor(Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString()))
                 });
             }
 

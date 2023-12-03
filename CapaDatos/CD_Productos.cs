@@ -38,6 +38,15 @@ namespace CapaDatos
                             "INNER JOIN UnidadesMedidas U ON P.idUnidadMedida = U.id " +
                             "WHERE CD.idCompra = " + id;
                     }
+                    //Para mostrar productos con existencia en la pantalla de ventas
+                    else if (bandera == -1)
+                    {
+                        query = "SELECT P.id, Codigo, P.Descripcion, Costo, Precio, Existencia, ExistenciaMinima," +
+                        "C.Descripcion AS Categoria, U.Abreviacion AS UnidadMedida, Estante, Fila, Columna, P.Activo FROM Productos P" +
+                        " INNER JOIN Categorias C ON P.idCategoria = C.id" +
+                        " INNER JOIN UnidadesMedidas U ON P.idUnidadMedida = U.id" +
+                        " AND p.EXISTENCIA > 0";
+                    }
                     else
                     {
                         query = "SELECT P.id, Codigo, P.Descripcion, Costo, CONVERT(int,FD.PrecioUnitario) AS Precio, CONVERT(int,FD.Cantidad) AS Existencia, ExistenciaMinima, " +
