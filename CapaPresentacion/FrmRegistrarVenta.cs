@@ -554,6 +554,11 @@ namespace CapaPresentacion
                             {
                                 newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToString(row[columnIndex]);
                             }
+                            else
+                            {
+                                // Rellenar con cadena vacía si el valor es DBNull.Value
+                                newRow[columnIndex - columnIndexesToCopy.Min()] = "null";
+                            }
                         }
                         datosDetallesCobro.Rows.Add(newRow);
                         datosDetalles = datosDetallesCobro.Copy();
@@ -660,7 +665,7 @@ namespace CapaPresentacion
                 var result = MessageBox.Show("Factura de Venta Registrada con Éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
-                    limpiar();
+                    LimpiarForm();
                 }
             }
             else
@@ -673,6 +678,17 @@ namespace CapaPresentacion
         private void TxtIdProducto_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void LimpiarForm()
+        {
+            TxtRUC.Clear();
+            TxtRazonSocial.Clear();
+            textBoxCodProducto.Clear();
+            TxtProducto.Clear();
+            textBoxPrecio.Clear();
+            textBoxTotalPagar.Clear();
+            dgvData.Rows.Clear();
         }
     }
 }

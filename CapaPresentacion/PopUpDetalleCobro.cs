@@ -100,17 +100,33 @@ namespace CapaPresentacion
                 valorVuelto = importe - _monto;
                 TxtVuelto.Text = valorVuelto.ToString("0");
             }
-            dgvData.Rows.Add(new object[] {
+            else if(TxtNroCuenta.Text == string.Empty || TxtNroDocumento.Text == string.Empty)
+            {
+                TxtNroCuenta.Text = "0";
+                TxtNroDocumento.Text = "0";
+            }
+            else
+            {
+                valorVuelto = 0;
+            }
+            try
+            {
+                dgvData.Rows.Add(new object[] {
                     Convert.ToInt32(TxtTipoValor.Text),
                     Convert.ToInt32(TxtIdBanco.Text),
                     Convert.ToString(TxtNroCuenta.Text),
                     Convert.ToString(TxtNroDocumento.Text),
                     Convert.ToDecimal(TxtImporte.Text),
-                    Convert.ToDecimal(TxtVuelto.Text),
+                    valorVuelto,
                     Convert.ToDateTime(tmpFechaVencimiento.Value),
                     Convert.ToString(ComboTipoValor.Text),
                     Convert.ToString(ComboBanco.Text)
             });
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error.");
+            }
         }
 
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -240,7 +256,23 @@ namespace CapaPresentacion
 
         private void ComboTipoValor_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
 
+        private void TxtImporte_TextChanged(object sender, EventArgs e)
+        {
+            //Calcular el saldo solo si el importe es menor al monto total de la venta.
+            decimal montoTotal = Convert.ToDecimal(TxtMontoTotal.Text);
+            decimal importeActual = Convert.ToDecimal(TxtImporte.Text);
+
+            if(importeActual < montoTotal)
+            {
+                decimal saldo = montoTotal - importeActual;
+                TxtSaldo.Text = saldo.ToString();
+            }
+            else
+            {
+                TxtSaldo.Text = "0";
+            }
         }
     }
 }
