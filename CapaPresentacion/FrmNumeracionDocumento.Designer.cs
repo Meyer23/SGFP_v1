@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ComboSucursal = new System.Windows.Forms.ComboBox();
@@ -93,7 +93,7 @@
             this.ComboSucursal.Enabled = false;
             this.ComboSucursal.FormattingEnabled = true;
             this.ComboSucursal.Location = new System.Drawing.Point(11, 80);
-            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(2);
             this.ComboSucursal.Name = "ComboSucursal";
             this.ComboSucursal.Size = new System.Drawing.Size(272, 21);
             this.ComboSucursal.TabIndex = 1;
@@ -114,7 +114,7 @@
             // 
             this.ComboCajas.FormattingEnabled = true;
             this.ComboCajas.Location = new System.Drawing.Point(11, 129);
-            this.ComboCajas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ComboCajas.Margin = new System.Windows.Forms.Padding(2);
             this.ComboCajas.Name = "ComboCajas";
             this.ComboCajas.Size = new System.Drawing.Size(272, 21);
             this.ComboCajas.TabIndex = 3;
@@ -124,7 +124,7 @@
             this.LbLCodEstablecimiento.AutoSize = true;
             this.LbLCodEstablecimiento.BackColor = System.Drawing.Color.White;
             this.LbLCodEstablecimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbLCodEstablecimiento.Location = new System.Drawing.Point(8, 217);
+            this.LbLCodEstablecimiento.Location = new System.Drawing.Point(8, 166);
             this.LbLCodEstablecimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLCodEstablecimiento.Name = "LbLCodEstablecimiento";
             this.LbLCodEstablecimiento.Size = new System.Drawing.Size(109, 13);
@@ -134,8 +134,8 @@
             // TxtCodEstablecimiento
             // 
             this.TxtCodEstablecimiento.BackColor = System.Drawing.Color.White;
-            this.TxtCodEstablecimiento.Location = new System.Drawing.Point(11, 232);
-            this.TxtCodEstablecimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtCodEstablecimiento.Location = new System.Drawing.Point(11, 181);
+            this.TxtCodEstablecimiento.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCodEstablecimiento.Name = "TxtCodEstablecimiento";
             this.TxtCodEstablecimiento.Size = new System.Drawing.Size(272, 20);
             this.TxtCodEstablecimiento.TabIndex = 5;
@@ -156,7 +156,7 @@
             // 
             this.TxTUltimoNro.BackColor = System.Drawing.Color.White;
             this.TxTUltimoNro.Location = new System.Drawing.Point(11, 279);
-            this.TxTUltimoNro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxTUltimoNro.Margin = new System.Windows.Forms.Padding(2);
             this.TxTUltimoNro.Name = "TxTUltimoNro";
             this.TxTUltimoNro.Size = new System.Drawing.Size(272, 20);
             this.TxTUltimoNro.TabIndex = 7;
@@ -166,7 +166,7 @@
             this.LbLPuntoEmision.AutoSize = true;
             this.LbLPuntoEmision.BackColor = System.Drawing.Color.White;
             this.LbLPuntoEmision.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbLPuntoEmision.Location = new System.Drawing.Point(8, 164);
+            this.LbLPuntoEmision.Location = new System.Drawing.Point(8, 215);
             this.LbLPuntoEmision.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLPuntoEmision.Name = "LbLPuntoEmision";
             this.LbLPuntoEmision.Size = new System.Drawing.Size(77, 13);
@@ -176,8 +176,8 @@
             // TxtPuntoEmision
             // 
             this.TxtPuntoEmision.BackColor = System.Drawing.Color.White;
-            this.TxtPuntoEmision.Location = new System.Drawing.Point(11, 179);
-            this.TxtPuntoEmision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtPuntoEmision.Location = new System.Drawing.Point(11, 230);
+            this.TxtPuntoEmision.Margin = new System.Windows.Forms.Padding(2);
             this.TxtPuntoEmision.Name = "TxtPuntoEmision";
             this.TxtPuntoEmision.Size = new System.Drawing.Size(272, 20);
             this.TxtPuntoEmision.TabIndex = 9;
@@ -199,7 +199,7 @@
             // 
             this.ComboNroTimbrado.FormattingEnabled = true;
             this.ComboNroTimbrado.Location = new System.Drawing.Point(11, 330);
-            this.ComboNroTimbrado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ComboNroTimbrado.Margin = new System.Windows.Forms.Padding(2);
             this.ComboNroTimbrado.Name = "ComboNroTimbrado";
             this.ComboNroTimbrado.Size = new System.Drawing.Size(272, 21);
             this.ComboNroTimbrado.TabIndex = 4;
@@ -217,7 +217,7 @@
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
             this.BtnGuardar.Location = new System.Drawing.Point(56, 477);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
             this.BtnGuardar.TabIndex = 52;
@@ -240,7 +240,7 @@
             this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCancelar.IconSize = 16;
             this.BtnCancelar.Location = new System.Drawing.Point(56, 517);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(173, 27);
             this.BtnCancelar.TabIndex = 138;
@@ -254,15 +254,15 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
@@ -276,18 +276,18 @@
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvData.RowHeadersWidth = 62;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(1038, 466);
@@ -377,7 +377,7 @@
             this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnLimpiar.IconSize = 18;
             this.BtnLimpiar.Location = new System.Drawing.Point(1264, 25);
-            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
             this.BtnLimpiar.TabIndex = 146;
@@ -398,7 +398,7 @@
             this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnBuscar.IconSize = 16;
             this.BtnBuscar.Location = new System.Drawing.Point(1217, 25);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
             this.BtnBuscar.TabIndex = 145;
@@ -444,7 +444,7 @@
             // TxtIdNumeracion
             // 
             this.TxtIdNumeracion.Location = new System.Drawing.Point(250, 45);
-            this.TxtIdNumeracion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtIdNumeracion.Margin = new System.Windows.Forms.Padding(2);
             this.TxtIdNumeracion.Name = "TxtIdNumeracion";
             this.TxtIdNumeracion.Size = new System.Drawing.Size(33, 20);
             this.TxtIdNumeracion.TabIndex = 147;
@@ -493,7 +493,7 @@
             this.Controls.Add(this.ComboSucursal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmNumeracionDocumento";
             this.Text = "Numeracion de Documentos";
             this.Load += new System.EventHandler(this.FrmNumeracionDocumento_Load);

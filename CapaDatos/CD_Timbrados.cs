@@ -20,7 +20,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT id, NroTimbrado, InicioVigencia, FinVigencia, NroDesde, NroHasta, Activo FROM Timbrados";
+                    string query = "SELECT id, NroTimbrado, CONVERT(DATE,InicioVigencia) AS InicioVigencia, CONVERT(DATE,FinVigencia) AS FinVigencia, NroDesde, NroHasta, Activo FROM Timbrados";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
