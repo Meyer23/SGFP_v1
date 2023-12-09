@@ -89,16 +89,33 @@ namespace CapaPresentacion
                                    .SingleOrDefault();
 
             TxtTipoValor.Text = idValor.ToString();
+
+            if(idValor == 1)
+            {
+                ComboBanco.Enabled = false;
+                TxtNroDocumento.ReadOnly = true;
+                TxtNroCuenta.ReadOnly = true;
+            }
+            else
+            {
+                ComboBanco.Enabled = true;
+                TxtNroDocumento.ReadOnly = false;
+                TxtNroCuenta.ReadOnly = false;
+            }
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             decimal valorVuelto = 0;
             decimal importe = Convert.ToDecimal(TxtImporte.Text);
-            if(importe > _monto)
+            decimal saldo = 0;
+
+            //Para calcular VUELTO
+            if (importe >= _monto)
             {
                 valorVuelto = importe - _monto;
                 TxtVuelto.Text = valorVuelto.ToString("0");
+                BtnGuardar.Enabled = true;
             }
             else if(TxtNroCuenta.Text == string.Empty || TxtNroDocumento.Text == string.Empty)
             {
@@ -121,7 +138,29 @@ namespace CapaPresentacion
                     Convert.ToDateTime(tmpFechaVencimiento.Value),
                     Convert.ToString(ComboTipoValor.Text),
                     Convert.ToString(ComboBanco.Text)
-            });
+                });
+                //Calcular SALDO
+                if (importe < _monto)
+                {
+                    decimal sumaImporte = 0;
+
+                    foreach (DataGridViewRow row in dgvData.Rows)
+                    {
+                        if (row.Cells["Importe"].Value != null && row.Cells["Importe"].Value != DBNull.Value)
+                        {
+                            sumaImporte += Convert.ToDecimal(row.Cells["Importe"].Value);
+
+                            saldo = _monto - sumaImporte;
+                            
+                            TxtSaldo.Text = saldo.ToString("0");
+
+                            if(sumaImporte >= _monto)
+                            {
+                                BtnGuardar.Enabled = true;
+                            }
+                        }
+                    }
+                }
             }
             catch(Exception ex)
             {
@@ -261,17 +300,42 @@ namespace CapaPresentacion
         private void TxtImporte_TextChanged(object sender, EventArgs e)
         {
             //Calcular el saldo solo si el importe es menor al monto total de la venta.
-            decimal montoTotal = Convert.ToDecimal(TxtMontoTotal.Text);
-            decimal importeActual = Convert.ToDecimal(TxtImporte.Text);
+            //try
+            //{
+            //    decimal montoTotal = Convert.ToDecimal(TxtMontoTotal.Text);
+            //    decimal importeActual = Convert.ToDecimal(TxtImporte.Text);
 
-            if(importeActual < montoTotal)
+            //    if (importeActual < montoTotal)
+            //    {
+            //        decimal saldo = montoTotal - importeActual;
+            //        TxtSaldo.Text = saldo.ToString();
+            //    }
+            //    else if (string.IsNullOrEmpty(TxtImporte.Text))
+            //    {
+            //        importeActual = 0;
+            //    }
+            //    else
+            //    {
+            //        TxtSaldo.Text = "0";
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show("Debe cargar el importe de la venta!", "Alerta");
+            //}
+        }
+
+        private void TxtSaldo_TextChanged(object sender, EventArgs e)
+        {
+            decimal saldoActual = Convert.ToDecimal(TxtSaldo.Text);
+
+            if(saldoActual == 0)
             {
-                decimal saldo = montoTotal - importeActual;
-                TxtSaldo.Text = saldo.ToString();
+                BtnGuardar.Enabled = true;
             }
             else
             {
-                TxtSaldo.Text = "0";
+                BtnGuardar.Enabled = false;
             }
         }
     }

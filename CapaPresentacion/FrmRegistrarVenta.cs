@@ -567,7 +567,7 @@ namespace CapaPresentacion
             }
             catch(Exception ex)
             {
-                MessageBox.Show("DEBE CARGAR LA VENTA!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }

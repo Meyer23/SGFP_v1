@@ -426,6 +426,7 @@
             this.TxtSaldo.ReadOnly = true;
             this.TxtSaldo.Size = new System.Drawing.Size(255, 47);
             this.TxtSaldo.TabIndex = 74;
+            this.TxtSaldo.TextChanged += new System.EventHandler(this.TxtSaldo_TextChanged);
             // 
             // TxtTipoValor
             // 
