@@ -19,6 +19,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             CargarComboSucursal();
+            SetearNumeroCaja();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -26,11 +27,24 @@ namespace CapaPresentacion
             this.Close();
         }
 
+        private void SetearNumeroCaja()
+        {
+            List<Cajas> cajas = new CN_Cajas().ObtenerCajas();
+
+            var cajaid = cajas.Select(x => x.NumeroCaja).Max();
+
+            int nroNuevaCaja = Convert.ToInt32(cajaid) + 1;
+
+            txtidcaja.Text = nroNuevaCaja.ToString();
+            txtidcaja.ReadOnly = true;
+            
+        }
+
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             InsertarCajaRequest objCaja = new InsertarCajaRequest()
             {
-                NumeroCaja = (int)PickUpDownNroCaja.Value + 1,
+                NumeroCaja = Convert.ToInt32(txtidcaja.Text),
                 Sucursal = ComboSucursal.Text,
                 DescripcionCaja = TxtDescripcionCaja.Text,
                 Activo = ChkActivo.Checked

@@ -50,16 +50,30 @@ namespace CapaPresentacion
 
         private void CargarComboUsuarios()
         {
-            var usuarios = new CN_Usuario().Listar()
-                                          .Where(e => e.NombreRol == "Cajero")
-                                          .Select(u => new
-                                          {
-                                              DisplayText = $"{u.Login}",
-                                          })
-                                          .ToList();
+            if(_Usuario.Login == "admin")
+            {
+                var usuarios = new CN_Usuario().Listar()
+                              .Where(e => e.NombreRol == "Cajero")
+                              .Select(u => new
+                              {
+                                  DisplayText = $"{u.Login}",
+                              })
+                              .ToList();
 
-            ComboCajero.DataSource = usuarios;
-            ComboCajero.DisplayMember = "DisplayText";
+                ComboCajero.DataSource = usuarios;
+                ComboCajero.DisplayMember = "DisplayText";
+                ComboEstado.Text = "ABIERTO";
+                ComboEstado.ForeColor = Color.YellowGreen;
+                ComboEstado.Enabled = false;
+            }
+            else
+            {
+                ComboCajero.Text = _Usuario.Login.ToString();
+                ComboCajero.Enabled = false;
+                ComboEstado.Text = "ABIERTO";
+                ComboEstado.ForeColor = Color.YellowGreen;
+                ComboEstado.Enabled = false;
+            }
         }
 
         private void CargarComboCajas()

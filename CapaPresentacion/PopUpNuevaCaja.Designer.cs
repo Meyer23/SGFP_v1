@@ -37,26 +37,28 @@
             this.LblSucursal = new System.Windows.Forms.Label();
             this.LblDescripcion = new System.Windows.Forms.Label();
             this.TxtDescripcionCaja = new System.Windows.Forms.TextBox();
+            this.txtidcaja = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PickUpDownNroCaja)).BeginInit();
             this.SuspendLayout();
             // 
             // PickUpDownNroCaja
             // 
             this.PickUpDownNroCaja.Enabled = false;
-            this.PickUpDownNroCaja.Location = new System.Drawing.Point(11, 42);
-            this.PickUpDownNroCaja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PickUpDownNroCaja.Location = new System.Drawing.Point(271, 24);
+            this.PickUpDownNroCaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PickUpDownNroCaja.Name = "PickUpDownNroCaja";
             this.PickUpDownNroCaja.ReadOnly = true;
-            this.PickUpDownNroCaja.Size = new System.Drawing.Size(80, 20);
+            this.PickUpDownNroCaja.Size = new System.Drawing.Size(147, 29);
             this.PickUpDownNroCaja.TabIndex = 0;
+            this.PickUpDownNroCaja.Visible = false;
             // 
             // LblNroCaja
             // 
             this.LblNroCaja.AutoSize = true;
-            this.LblNroCaja.Location = new System.Drawing.Point(8, 27);
-            this.LblNroCaja.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblNroCaja.Location = new System.Drawing.Point(14, 24);
+            this.LblNroCaja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblNroCaja.Name = "LblNroCaja";
-            this.LblNroCaja.Size = new System.Drawing.Size(120, 13);
+            this.LblNroCaja.Size = new System.Drawing.Size(224, 25);
             this.LblNroCaja.TabIndex = 1;
             this.LblNroCaja.Text = "Número de Caja a Crear";
             // 
@@ -65,10 +67,10 @@
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.Checked = true;
             this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkActivo.Location = new System.Drawing.Point(11, 171);
-            this.ChkActivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChkActivo.Location = new System.Drawing.Point(20, 351);
+            this.ChkActivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ChkActivo.Name = "ChkActivo";
-            this.ChkActivo.Size = new System.Drawing.Size(56, 17);
+            this.ChkActivo.Size = new System.Drawing.Size(92, 29);
             this.ChkActivo.TabIndex = 2;
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = true;
@@ -85,10 +87,10 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(8, 205);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnGuardar.Location = new System.Drawing.Point(19, 411);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(100, 27);
+            this.BtnGuardar.Size = new System.Drawing.Size(183, 50);
             this.BtnGuardar.TabIndex = 52;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -108,10 +110,10 @@
             this.BtnSalir.IconColor = System.Drawing.Color.White;
             this.BtnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnSalir.IconSize = 18;
-            this.BtnSalir.Location = new System.Drawing.Point(127, 207);
-            this.BtnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnSalir.Location = new System.Drawing.Point(235, 413);
+            this.BtnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(100, 26);
+            this.BtnSalir.Size = new System.Drawing.Size(183, 48);
             this.BtnSalir.TabIndex = 53;
             this.BtnSalir.Text = "Cancelar";
             this.BtnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -123,19 +125,20 @@
             // 
             this.ComboSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboSucursal.FormattingEnabled = true;
-            this.ComboSucursal.Location = new System.Drawing.Point(11, 88);
+            this.ComboSucursal.Location = new System.Drawing.Point(15, 180);
+            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ComboSucursal.Name = "ComboSucursal";
-            this.ComboSucursal.Size = new System.Drawing.Size(121, 21);
+            this.ComboSucursal.Size = new System.Drawing.Size(218, 32);
             this.ComboSucursal.TabIndex = 58;
             // 
             // LblSucursal
             // 
             this.LblSucursal.AutoSize = true;
             this.LblSucursal.BackColor = System.Drawing.Color.Transparent;
-            this.LblSucursal.Location = new System.Drawing.Point(8, 72);
-            this.LblSucursal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblSucursal.Location = new System.Drawing.Point(15, 131);
+            this.LblSucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblSucursal.Name = "LblSucursal";
-            this.LblSucursal.Size = new System.Drawing.Size(51, 13);
+            this.LblSucursal.Size = new System.Drawing.Size(95, 25);
             this.LblSucursal.TabIndex = 57;
             this.LblSucursal.Text = "Sucursal:";
             // 
@@ -143,26 +146,34 @@
             // 
             this.LblDescripcion.AutoSize = true;
             this.LblDescripcion.BackColor = System.Drawing.Color.Transparent;
-            this.LblDescripcion.Location = new System.Drawing.Point(8, 123);
-            this.LblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblDescripcion.Location = new System.Drawing.Point(15, 227);
+            this.LblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblDescripcion.Name = "LblDescripcion";
-            this.LblDescripcion.Size = new System.Drawing.Size(66, 13);
+            this.LblDescripcion.Size = new System.Drawing.Size(120, 25);
             this.LblDescripcion.TabIndex = 59;
             this.LblDescripcion.Text = "Descripcion:";
             // 
             // TxtDescripcionCaja
             // 
-            this.TxtDescripcionCaja.Location = new System.Drawing.Point(11, 138);
-            this.TxtDescripcionCaja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtDescripcionCaja.Location = new System.Drawing.Point(20, 275);
+            this.TxtDescripcionCaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TxtDescripcionCaja.Name = "TxtDescripcionCaja";
-            this.TxtDescripcionCaja.Size = new System.Drawing.Size(121, 20);
+            this.TxtDescripcionCaja.Size = new System.Drawing.Size(218, 29);
             this.TxtDescripcionCaja.TabIndex = 60;
+            // 
+            // txtidcaja
+            // 
+            this.txtidcaja.Location = new System.Drawing.Point(20, 73);
+            this.txtidcaja.Name = "txtidcaja";
+            this.txtidcaja.Size = new System.Drawing.Size(218, 29);
+            this.txtidcaja.TabIndex = 61;
             // 
             // PopUpNuevaCaja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(235, 270);
+            this.ClientSize = new System.Drawing.Size(431, 498);
+            this.Controls.Add(this.txtidcaja);
             this.Controls.Add(this.TxtDescripcionCaja);
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.ComboSucursal);
@@ -172,7 +183,7 @@
             this.Controls.Add(this.ChkActivo);
             this.Controls.Add(this.LblNroCaja);
             this.Controls.Add(this.PickUpDownNroCaja);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PopUpNuevaCaja";
             this.Text = "Crear Caja";
             this.Load += new System.EventHandler(this.PopUpNuevaCaja_Load);
@@ -193,5 +204,6 @@
         private System.Windows.Forms.Label LblSucursal;
         private System.Windows.Forms.Label LblDescripcion;
         private System.Windows.Forms.TextBox TxtDescripcionCaja;
+        private System.Windows.Forms.TextBox txtidcaja;
     }
 }
