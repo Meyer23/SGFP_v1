@@ -56,9 +56,11 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select n.id, n.CodigoEstablecimiento, t.NroTimbrado NroTimbrado, t.Id, n.PuntoEmision, n.UltimoNro, n.idTimbrado, n.idCaja from dbo.NumeracionDocumento n " +
+                    string query = "select n.id, n.CodigoEstablecimiento, t.NroTimbrado NroTimbrado, t.Id, n.PuntoEmision, n.UltimoNro, n.idTimbrado, c.NroCaja from dbo.NumeracionDocumento n " +
                         " inner join dbo.Timbrados t" +
-                        " on t.id = n.idTimbrado;";
+                        " on t.id = n.idTimbrado" +
+                        " inner join dbo.Cajas c" +
+                        " on c.Id = n.idCaja;";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.CommandType = CommandType.Text;
@@ -71,7 +73,7 @@ namespace CapaDatos
                             numeracionDocumentos.Add(new NumeracionDocumento
                             {
                                 Id = Convert.ToInt32(reader["Id"]),
-                                DescripcionCaja = reader["idCaja"].ToString(),
+                                DescripcionCaja = reader["NroCaja"].ToString(),
                                 PuntoEmision = Convert.ToInt32(reader["PuntoEmision"].ToString()),
                                 CodigoEstablecimiento = reader["CodigoEstablecimiento"].ToString(),
                                 UltimoNumero = Convert.ToInt32(reader["UltimoNro"].ToString()),
