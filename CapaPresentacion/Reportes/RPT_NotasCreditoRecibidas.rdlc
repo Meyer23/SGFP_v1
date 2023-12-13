@@ -420,7 +420,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>2.62164cm</Top>
-          <Left>3.30411cm</Left>
+          <Left>0.54363cm</Left>
           <Height>0.6cm</Height>
           <Width>3.58479cm</Width>
           <Style>
@@ -861,7 +861,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>2.62164cm</Top>
-          <Left>10.93402cm</Left>
+          <Left>7.60025cm</Left>
           <Height>0.6cm</Height>
           <Width>3.85884cm</Width>
           <ZIndex>14</ZIndex>
@@ -992,9 +992,9 @@
           </Paragraphs>
           <rd:DefaultName>NumeroNota</rd:DefaultName>
           <Top>2.62164cm</Top>
-          <Left>6.8889cm</Left>
+          <Left>4.12842cm</Left>
           <Height>0.6cm</Height>
-          <Width>3.55833cm</Width>
+          <Width>2.76458cm</Width>
           <ZIndex>18</ZIndex>
           <Style>
             <Border>
@@ -1024,9 +1024,9 @@
           </Paragraphs>
           <rd:DefaultName>NumeroFactura</rd:DefaultName>
           <Top>2.62164cm</Top>
-          <Left>14.79286cm</Left>
+          <Left>11.45909cm</Left>
           <Height>0.6cm</Height>
-          <Width>3.92875cm</Width>
+          <Width>3.10854cm</Width>
           <ZIndex>19</ZIndex>
           <Style>
             <Border>
@@ -1335,6 +1335,72 @@
           <Height>0.6cm</Height>
           <Width>15.72615cm</Width>
           <ZIndex>28</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Confirmado">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=IIf(First(Fields!Confirmado.Value, "DS_NCRecibida") = True,"Confirmado", "No Confirmado")</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Confirmado</rd:DefaultName>
+          <Top>2.62164cm</Top>
+          <Left>15.07808cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>29</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Anulado">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=IIf(First(Fields!Anulado.Value, "DS_NCRecibida") = True,"Anulado", "")</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Anulado</rd:DefaultName>
+          <Top>2.62164cm</Top>
+          <Left>17.79908cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>30</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

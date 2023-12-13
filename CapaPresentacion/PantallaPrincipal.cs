@@ -355,5 +355,11 @@ namespace CapaPresentacion
             Reportes.FrmRptListadoNCEmitidas oRptListadoNCEmitidas = new Reportes.FrmRptListadoNCEmitidas();
             oRptListadoNCEmitidas.ShowDialog();
         }
+
+        private void SubMenuListadoVentasSaldos_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptListadoVentasSaldos oRptListadoVentasSaldos = new Reportes.FrmRptListadoVentasSaldos();
+            oRptListadoVentasSaldos.ShowDialog();
+        }
     }
 }

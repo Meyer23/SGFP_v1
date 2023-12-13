@@ -497,7 +497,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>2.78921cm</Top>
-          <Left>5.81766cm</Left>
+          <Left>2.62502cm</Left>
           <Height>0.6cm</Height>
           <Width>3.58479cm</Width>
           <ZIndex>7</ZIndex>
@@ -630,7 +630,7 @@
           </Paragraphs>
           <rd:DefaultName>Documento</rd:DefaultName>
           <Top>2.78921cm</Top>
-          <Left>10.65071cm</Left>
+          <Left>6.58494cm</Left>
           <Height>0.6cm</Height>
           <Width>5.09292cm</Width>
           <ZIndex>11</ZIndex>
@@ -802,6 +802,72 @@
           <Height>0.6cm</Height>
           <Width>3.74354cm</Width>
           <ZIndex>16</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Confirmado">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=IIf(First(Fields!Confirmado.Value, "DS_MovimientosStock") = True,"Confirmado", "No Confirmado")</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Confirmado</rd:DefaultName>
+          <Top>2.78921cm</Top>
+          <Left>12.55571cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>17</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Anulado">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=IIf(First(Fields!Anulado.Value, "DS_MovimientosStock") = True,"Anulado", "")</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Anulado</rd:DefaultName>
+          <Top>2.78921cm</Top>
+          <Left>16.28297cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>18</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

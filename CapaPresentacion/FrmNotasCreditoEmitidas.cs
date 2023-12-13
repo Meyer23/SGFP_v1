@@ -23,6 +23,30 @@ namespace CapaPresentacion
             InitializeComponent();
             CargarTiposDocumentos();
             MostrarCajero();
+            ObtenerUltimoDocFactura();
+            TxtCajero.Enabled = false;
+            TxtNroCaja.Enabled = false;
+            dtpFecha.Value = DateTime.Now;
+        }
+
+        private void ObtenerUltimoDocFactura()
+        {
+            try
+            {
+                List<NumeracionDocumento> listNumeracion = new CN_NumeracionDocumento().Listar();
+
+                var ultimoNumero = listNumeracion.Where(e => e.DescripcionCaja == TxtNroCaja.Text)
+                                                 .Select(e => e.UltimoNumero).Max();
+
+                if (ultimoNumero >= 0)
+                {
+                    TxtDoc.Text = ultimoNumero.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CargarTiposDocumentos()

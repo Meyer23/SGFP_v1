@@ -241,6 +241,7 @@ namespace CapaPresentacion
                         PbConfirmado.Visible = true;
                         LblNoConfirmado.Visible = false;
                         BtnConfirmarPedido.Visible = false;
+                        BtnAnularPedido.Visible = false;
                     }
                 }
                 else

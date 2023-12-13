@@ -51,6 +51,10 @@
             this.TxtCodProducto = new System.Windows.Forms.TextBox();
             this.LblCodProducto = new System.Windows.Forms.Label();
             this.groupBoxInfoNC = new System.Windows.Forms.GroupBox();
+            this.TxtNroCaja = new System.Windows.Forms.TextBox();
+            this.LblNroCaja = new System.Windows.Forms.Label();
+            this.TxtCajero = new System.Windows.Forms.TextBox();
+            this.LblUsuario = new System.Windows.Forms.Label();
             this.TxtIdVenta = new System.Windows.Forms.TextBox();
             this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
             this.dtpFinVigencia = new System.Windows.Forms.DateTimePicker();
@@ -82,10 +86,6 @@
             this.LblFecha = new System.Windows.Forms.Label();
             this.LblNCRecibida = new System.Windows.Forms.Label();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.TxtNroCaja = new System.Windows.Forms.TextBox();
-            this.LblNroCaja = new System.Windows.Forms.Label();
-            this.TxtCajero = new System.Windows.Forms.TextBox();
-            this.LblUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoProducto.SuspendLayout();
             this.groupBoxInfoNC.SuspendLayout();
@@ -361,6 +361,44 @@
             this.groupBoxInfoNC.TabStop = false;
             this.groupBoxInfoNC.Text = "Información de la Nota Crédito";
             // 
+            // TxtNroCaja
+            // 
+            this.TxtNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNroCaja.Location = new System.Drawing.Point(914, 151);
+            this.TxtNroCaja.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtNroCaja.Name = "TxtNroCaja";
+            this.TxtNroCaja.Size = new System.Drawing.Size(139, 21);
+            this.TxtNroCaja.TabIndex = 111;
+            // 
+            // LblNroCaja
+            // 
+            this.LblNroCaja.AutoSize = true;
+            this.LblNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNroCaja.Location = new System.Drawing.Point(855, 154);
+            this.LblNroCaja.Name = "LblNroCaja";
+            this.LblNroCaja.Size = new System.Drawing.Size(54, 13);
+            this.LblNroCaja.TabIndex = 110;
+            this.LblNroCaja.Text = "Nro. Caja:";
+            // 
+            // TxtCajero
+            // 
+            this.TxtCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCajero.Location = new System.Drawing.Point(914, 123);
+            this.TxtCajero.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtCajero.Name = "TxtCajero";
+            this.TxtCajero.Size = new System.Drawing.Size(139, 21);
+            this.TxtCajero.TabIndex = 109;
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Location = new System.Drawing.Point(869, 128);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(40, 13);
+            this.LblUsuario.TabIndex = 108;
+            this.LblUsuario.Text = "Cajero:";
+            // 
             // TxtIdVenta
             // 
             this.TxtIdVenta.Location = new System.Drawing.Point(620, 154);
@@ -464,6 +502,7 @@
             // 
             // TxtDoc
             // 
+            this.TxtDoc.Enabled = false;
             this.TxtDoc.Location = new System.Drawing.Point(319, 88);
             this.TxtDoc.Name = "TxtDoc";
             this.TxtDoc.Size = new System.Drawing.Size(90, 22);
@@ -534,7 +573,7 @@
             this.groupBoxInfoCliente.Size = new System.Drawing.Size(411, 75);
             this.groupBoxInfoCliente.TabIndex = 27;
             this.groupBoxInfoCliente.TabStop = false;
-            this.groupBoxInfoCliente.Text = "Información del Proveedor";
+            this.groupBoxInfoCliente.Text = "Información del Cliente";
             // 
             // TxtIdCliente
             // 
@@ -659,6 +698,7 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(439, 88);
@@ -712,44 +752,6 @@
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // TxtNroCaja
-            // 
-            this.TxtNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNroCaja.Location = new System.Drawing.Point(914, 151);
-            this.TxtNroCaja.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtNroCaja.Name = "TxtNroCaja";
-            this.TxtNroCaja.Size = new System.Drawing.Size(139, 21);
-            this.TxtNroCaja.TabIndex = 111;
-            // 
-            // LblNroCaja
-            // 
-            this.LblNroCaja.AutoSize = true;
-            this.LblNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNroCaja.Location = new System.Drawing.Point(855, 154);
-            this.LblNroCaja.Name = "LblNroCaja";
-            this.LblNroCaja.Size = new System.Drawing.Size(54, 13);
-            this.LblNroCaja.TabIndex = 110;
-            this.LblNroCaja.Text = "Nro. Caja:";
-            // 
-            // TxtCajero
-            // 
-            this.TxtCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCajero.Location = new System.Drawing.Point(914, 123);
-            this.TxtCajero.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtCajero.Name = "TxtCajero";
-            this.TxtCajero.Size = new System.Drawing.Size(139, 21);
-            this.TxtCajero.TabIndex = 109;
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.Location = new System.Drawing.Point(869, 128);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(40, 13);
-            this.LblUsuario.TabIndex = 108;
-            this.LblUsuario.Text = "Cajero:";
             // 
             // FrmNotasCreditoEmitidas
             // 
