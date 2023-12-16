@@ -95,6 +95,8 @@ namespace CapaPresentacion
                 ComboBanco.Enabled = false;
                 TxtNroDocumento.ReadOnly = true;
                 TxtNroCuenta.ReadOnly = true;
+                TxtNroCuenta.Clear();
+                TxtNroDocumento.Clear();
             }
             else
             {
@@ -150,12 +152,20 @@ namespace CapaPresentacion
                         {
                             sumaImporte += Convert.ToDecimal(row.Cells["Importe"].Value);
 
-                            saldo = _monto - sumaImporte;
-                            
-                            TxtSaldo.Text = saldo.ToString("0");
-
-                            if(sumaImporte >= _monto)
+                            if(sumaImporte < _monto)
                             {
+                                saldo = _monto - sumaImporte;
+
+                                TxtSaldo.Text = saldo.ToString("0");
+                            }
+
+                            //tiene vuelto
+                            else if(sumaImporte >= _monto)
+                            {
+                                valorVuelto = sumaImporte - _monto;
+                                TxtVuelto.Text = valorVuelto.ToString("0");
+                                TxtSaldo.Clear();
+                                
                                 BtnGuardar.Enabled = true;
                             }
                         }

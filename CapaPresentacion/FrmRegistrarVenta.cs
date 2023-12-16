@@ -690,5 +690,24 @@ namespace CapaPresentacion
             textBoxTotalPagar.Clear();
             dgvData.Rows.Clear();
         }
+
+        private void ComboTipoDoc_SelectedValueChanged(object sender, EventArgs e)
+        {
+            List<TipoDocumento> tiposDocumentos = new CN_TiposDocumentos().ObtenerTiposDocumentos();
+
+            var idDocumento = tiposDocumentos.Where(x => x.Descripcion == ComboTipoDoc.Text)
+                                             .Select(x => x.Id)
+                                             .FirstOrDefault();
+
+            if(idDocumento == 2)
+            {
+                BtnCobro.Enabled = false;
+            }
+            else
+            {
+                BtnCobro.Enabled = true;
+            }
+
+        }
     }
 }

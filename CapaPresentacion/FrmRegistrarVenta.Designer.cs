@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.LblPedidos = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBoxInfoPedido = new System.Windows.Forms.GroupBox();
             this.TxtDoc = new System.Windows.Forms.TextBox();
             this.TxtPuntoEmision = new System.Windows.Forms.TextBox();
@@ -49,6 +57,7 @@
             this.TxtCajero = new System.Windows.Forms.TextBox();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.groupBoxInfoProductos = new System.Windows.Forms.GroupBox();
+            this.TxtUnidadMedida = new System.Windows.Forms.TextBox();
             this.TxtIdProducto = new System.Windows.Forms.TextBox();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.LblPrecio = new System.Windows.Forms.Label();
@@ -82,15 +91,6 @@
             this.textBoxTotalPagar = new System.Windows.Forms.TextBox();
             this.BtnCobro = new FontAwesome.Sharp.IconButton();
             this.BtnImprimirFactura = new FontAwesome.Sharp.IconButton();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.TxtUnidadMedida = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProductos.SuspendLayout();
@@ -134,6 +134,71 @@
             this.dgvData.TabIndex = 80;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.MinimumWidth = 8;
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Visible = false;
+            this.idProducto.Width = 180;
+            // 
+            // CodProducto
+            // 
+            this.CodProducto.HeaderText = "Cod. Producto";
+            this.CodProducto.MinimumWidth = 8;
+            this.CodProducto.Name = "CodProducto";
+            this.CodProducto.ReadOnly = true;
+            this.CodProducto.Width = 150;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción Producto";
+            this.Descripcion.MinimumWidth = 8;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 300;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 8;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 150;
+            // 
+            // Unidad
+            // 
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.MinimumWidth = 9;
+            this.Unidad.Name = "Unidad";
+            this.Unidad.ReadOnly = true;
+            this.Unidad.Width = 175;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 8;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 150;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.MinimumWidth = 8;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            this.SubTotal.Width = 150;
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.HeaderText = "";
+            this.BtnEliminar.MinimumWidth = 8;
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.ReadOnly = true;
+            this.BtnEliminar.Width = 30;
             // 
             // groupBoxInfoPedido
             // 
@@ -358,6 +423,17 @@
             this.groupBoxInfoProductos.TabStop = false;
             this.groupBoxInfoProductos.Text = "Informacion Venta";
             // 
+            // TxtUnidadMedida
+            // 
+            this.TxtUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUnidadMedida.Location = new System.Drawing.Point(428, 131);
+            this.TxtUnidadMedida.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtUnidadMedida.Name = "TxtUnidadMedida";
+            this.TxtUnidadMedida.ReadOnly = true;
+            this.TxtUnidadMedida.Size = new System.Drawing.Size(92, 31);
+            this.TxtUnidadMedida.TabIndex = 75;
+            this.TxtUnidadMedida.Visible = false;
+            // 
             // TxtIdProducto
             // 
             this.TxtIdProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -556,6 +632,7 @@
             this.ComboTipoDoc.Size = new System.Drawing.Size(223, 33);
             this.ComboTipoDoc.TabIndex = 29;
             this.ComboTipoDoc.SelectedIndexChanged += new System.EventHandler(this.ComboTipoDoc_SelectedIndexChanged);
+            this.ComboTipoDoc.SelectedValueChanged += new System.EventHandler(this.ComboTipoDoc_SelectedValueChanged);
             // 
             // FechaVenta
             // 
@@ -614,6 +691,7 @@
             // BtnAddCliente
             // 
             this.BtnAddCliente.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnAddCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnAddCliente.ForeColor = System.Drawing.Color.White;
             this.BtnAddCliente.IconChar = FontAwesome.Sharp.IconChar.Person;
             this.BtnAddCliente.IconColor = System.Drawing.Color.Black;
@@ -753,6 +831,7 @@
             // BtnCobro
             // 
             this.BtnCobro.BackColor = System.Drawing.Color.Olive;
+            this.BtnCobro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCobro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCobro.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
             this.BtnCobro.IconColor = System.Drawing.Color.Black;
@@ -770,6 +849,7 @@
             // BtnImprimirFactura
             // 
             this.BtnImprimirFactura.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnImprimirFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnImprimirFactura.IconChar = FontAwesome.Sharp.IconChar.Print;
             this.BtnImprimirFactura.IconColor = System.Drawing.Color.Black;
             this.BtnImprimirFactura.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -777,86 +857,10 @@
             this.BtnImprimirFactura.Name = "BtnImprimirFactura";
             this.BtnImprimirFactura.Size = new System.Drawing.Size(288, 75);
             this.BtnImprimirFactura.TabIndex = 95;
-            this.BtnImprimirFactura.Text = "Imprimir Factura";
+            this.BtnImprimirFactura.Text = "Generar Factura";
             this.BtnImprimirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnImprimirFactura.UseVisualStyleBackColor = false;
             this.BtnImprimirFactura.Click += new System.EventHandler(this.BtnImprimirFactura_Click);
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.MinimumWidth = 8;
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Visible = false;
-            this.idProducto.Width = 180;
-            // 
-            // CodProducto
-            // 
-            this.CodProducto.HeaderText = "Cod. Producto";
-            this.CodProducto.MinimumWidth = 8;
-            this.CodProducto.Name = "CodProducto";
-            this.CodProducto.ReadOnly = true;
-            this.CodProducto.Width = 150;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción Producto";
-            this.Descripcion.MinimumWidth = 8;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 300;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 8;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 150;
-            // 
-            // Unidad
-            // 
-            this.Unidad.HeaderText = "Unidad";
-            this.Unidad.MinimumWidth = 9;
-            this.Unidad.Name = "Unidad";
-            this.Unidad.ReadOnly = true;
-            this.Unidad.Width = 175;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 8;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 150;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.MinimumWidth = 8;
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            this.SubTotal.Width = 150;
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.HeaderText = "";
-            this.BtnEliminar.MinimumWidth = 8;
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.ReadOnly = true;
-            this.BtnEliminar.Width = 30;
-            // 
-            // TxtUnidadMedida
-            // 
-            this.TxtUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUnidadMedida.Location = new System.Drawing.Point(428, 131);
-            this.TxtUnidadMedida.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtUnidadMedida.Name = "TxtUnidadMedida";
-            this.TxtUnidadMedida.ReadOnly = true;
-            this.TxtUnidadMedida.Size = new System.Drawing.Size(92, 31);
-            this.TxtUnidadMedida.TabIndex = 75;
-            this.TxtUnidadMedida.Visible = false;
             // 
             // FrmRegistrarVenta
             // 
