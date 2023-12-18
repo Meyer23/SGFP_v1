@@ -74,7 +74,7 @@ namespace CapaPresentacion
                         TxtRUC.Text = objPedido.Documento;
                         TxtRazonSocial.Text = objPedido.RazonSocial;
                         TxtObs.Text = objPedido.Observacion;
-                        TxtTotalCompra.Text = objPedido.Total.ToString();
+                        TxtTotalCompra.Text = objPedido.Total.ToString("0");
 
                         dgvData.Rows.Clear();
 

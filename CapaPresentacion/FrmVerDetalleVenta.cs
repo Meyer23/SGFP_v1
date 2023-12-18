@@ -123,8 +123,8 @@ namespace CapaPresentacion
                         //}
                         if (checkBoxAnulado.Checked == false)
                         {
-                            PbNoConfirmado.Visible = true;
-                            LblAnulado.Visible = true;
+                            PbNoConfirmado.Visible = false;
+                            LblAnulado.Visible = false;
                             if (anula)
                             {
                                 BtnAnularVenta.Visible = true;
@@ -136,8 +136,8 @@ namespace CapaPresentacion
                         }
                         else
                         {
-                            PbNoConfirmado.Visible = false;
-                            LblAnulado.Visible = false;
+                            PbNoConfirmado.Visible = true;
+                            LblAnulado.Visible = true;
                             BtnAnularVenta.Visible = false;
                             BtnImprimirVenta.Visible = false;
                         }                           
@@ -252,8 +252,8 @@ namespace CapaPresentacion
                     //}
                     if (checkBoxAnulado.Checked == false)
                     {
-                        PbNoConfirmado.Visible = true;
-                        LblAnulado.Visible = true;
+                        PbNoConfirmado.Visible = false;
+                        LblAnulado.Visible = false;
                         if (anula)
                         {
                             BtnAnularVenta.Visible = true;
@@ -265,8 +265,8 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        PbNoConfirmado.Visible = false;
-                        LblAnulado.Visible = false;
+                        PbNoConfirmado.Visible = true;
+                        LblAnulado.Visible = true;
                         BtnAnularVenta.Visible = false;
                         BtnImprimirVenta.Visible = false;
                     }
