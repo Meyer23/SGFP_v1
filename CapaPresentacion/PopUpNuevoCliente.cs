@@ -17,6 +17,8 @@ namespace CapaPresentacion
         public PopUpNuevoCliente()
         {
             InitializeComponent();
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
+            this.TxtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtApellidos_KeyPress);
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -69,6 +71,24 @@ namespace CapaPresentacion
                         MessageBox.Show("Ha ocurrido un error inesperado.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
+            }
+        }
+
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solo letras y teclas de control (como Backspace)
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ignora el carácter si no es una letra o una tecla de control
+            }
+        }
+
+        private void TxtApellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solo letras y teclas de control (como Backspace)
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ignora el carácter si no es una letra o una tecla de control
             }
         }
     }
