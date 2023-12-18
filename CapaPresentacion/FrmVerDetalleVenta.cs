@@ -75,7 +75,7 @@ namespace CapaPresentacion
                         dtpFinVigencia.Value = objVenta.FinVigencia;
                         TxtRUC.Text = objVenta.Documento;
                         TxtRazonSocial.Text = objVenta.Nombre;
-                        TxtTotalVenta.Text = objVenta.Total.ToString();
+                        TxtTotalVenta.Text = objVenta.Total.ToString("0");
                         checkBoxAnulado.Checked = objVenta.Anulado;
 
                         //if (checkBoxConfirmado.Checked == true && checkBoxAnulado.Checked == false)

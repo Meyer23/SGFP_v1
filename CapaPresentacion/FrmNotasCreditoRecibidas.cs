@@ -53,7 +53,7 @@ namespace CapaPresentacion
                         TxtIdProveedor.Text = objCompra.IdProveedor.ToString();
                         TxtRUC.Text = objCompra.Documento;
                         TxtRazonSocial.Text = objCompra.RazonSocial;
-                        TxtTotalNota.Text = objCompra.Total.ToString();
+                        TxtTotalNota.Text = objCompra.Total.ToString("0");
 
                         dgvData.Rows.Clear();
 
@@ -196,9 +196,9 @@ namespace CapaPresentacion
                     TxtIdProducto.Text,
                     TxtCodProducto.Text,
                     TxtDescProducto.Text,
-                    precio.ToString("0.00"),
+                    precio.ToString(),
                     TxtCantidad.Text,
-                    (Convert.ToInt32(TxtCantidad.Text) * precio).ToString("0.00")
+                    (Convert.ToInt32(TxtCantidad.Text) * precio).ToString("0")
                 });
 
                 calcularTotal();
@@ -235,7 +235,7 @@ namespace CapaPresentacion
                     total += Convert.ToDecimal(row.Cells["Total"].Value.ToString());
                 }
             }
-            TxtTotalNota.Text = total.ToString("0.00");
+            TxtTotalNota.Text = total.ToString("0");
         }
 
         private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

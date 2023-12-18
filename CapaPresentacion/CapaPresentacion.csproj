@@ -372,6 +372,18 @@
     <Compile Include="PopUpNuevaCaja.Designer.cs">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUpNuevaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpNuevaCategoria.Designer.cs">
+      <DependentUpon>PopUpNuevaCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpNuevaUMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpNuevaUMedida.Designer.cs">
+      <DependentUpon>PopUpNuevaUMedida.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUpNuevoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -688,6 +700,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpNuevaCaja.resx">
       <DependentUpon>PopUpNuevaCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpNuevaCategoria.resx">
+      <DependentUpon>PopUpNuevaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpNuevaUMedida.resx">
+      <DependentUpon>PopUpNuevaUMedida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpNuevoCliente.resx">
       <DependentUpon>PopUpNuevoCliente.cs</DependentUpon>

@@ -79,7 +79,7 @@ namespace CapaPresentacion
                         TxtRUC.Text = objCompra.Documento;
                         TxtRazonSocial.Text = objCompra.RazonSocial;
                         TxtObs.Text = objCompra.Observacion;
-                        TxtTotalCompra.Text = objCompra.Total.ToString();
+                        TxtTotalCompra.Text = objCompra.Total.ToString("0");
                         checkBoxConfirmado.Checked = objCompra.Confirmado;
                         checkBoxAnulado.Checked = objCompra.Anulado;
 

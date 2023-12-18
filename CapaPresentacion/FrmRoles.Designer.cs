@@ -428,6 +428,7 @@
             this.iconButton1.TabIndex = 90;
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // BtnBuscar
             // 
@@ -448,6 +449,7 @@
             this.BtnBuscar.TabIndex = 89;
             this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TxtBusqueda
             // 

@@ -344,5 +344,17 @@ namespace CapaPresentacion
                 var result = popup.ShowDialog();
             }
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            PopUpNuevaCategoria nuevo = new PopUpNuevaCategoria();
+            nuevo.ShowDialog();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            PopUpNuevaUMedida nuevo = new PopUpNuevaUMedida();
+            nuevo.ShowDialog();
+        }
     }
 }

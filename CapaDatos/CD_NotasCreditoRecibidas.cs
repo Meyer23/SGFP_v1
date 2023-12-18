@@ -218,7 +218,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "SELECT P.id, ND.idProducto, P.Codigo, P.Descripcion, ND.Precio, ND.Cantidad, ND.Total " +
+                    string query = "SELECT P.id, ND.idProducto, P.Codigo, P.Descripcion, CONVERT(INT,ND.Precio) AS Precio, CONVERT(INT,ND.Cantidad) AS Cantidad, CONVERT(INT,ND.Total) AS Total " +
                         "FROM NotasCreditoRecibidasDetalles ND " +
                         "INNER JOIN Productos P ON ND.idProducto = P.id " +
                         "WHERE ND.idNCRecibida = " + idNCRecibida;
