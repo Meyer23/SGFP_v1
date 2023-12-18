@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ComboSucursal = new System.Windows.Forms.ComboBox();
@@ -47,13 +47,6 @@
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.BtnCancelar = new FontAwesome.Sharp.IconButton();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idNumeracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PuntoEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodEstablecimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UltimoNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Timbrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LbLCabecera = new System.Windows.Forms.Label();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
@@ -63,7 +56,19 @@
             this.TxtIndex = new System.Windows.Forms.TextBox();
             this.TxtIdNumeracion = new System.Windows.Forms.TextBox();
             this.LblDetalleNumDoc = new System.Windows.Forms.Label();
+            this.groupTipoDoc = new System.Windows.Forms.GroupBox();
+            this.radioButtonNC = new System.Windows.Forms.RadioButton();
+            this.radioButtonFactura = new System.Windows.Forms.RadioButton();
+            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idNumeracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PuntoEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodEstablecimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UltimoNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Timbrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.groupTipoDoc.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -90,6 +95,7 @@
             // 
             // ComboSucursal
             // 
+            this.ComboSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboSucursal.Enabled = false;
             this.ComboSucursal.FormattingEnabled = true;
             this.ComboSucursal.Location = new System.Drawing.Point(11, 80);
@@ -112,6 +118,7 @@
             // 
             // ComboCajas
             // 
+            this.ComboCajas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboCajas.FormattingEnabled = true;
             this.ComboCajas.Location = new System.Drawing.Point(11, 129);
             this.ComboCajas.Margin = new System.Windows.Forms.Padding(2);
@@ -197,6 +204,7 @@
             // 
             // ComboNroTimbrado
             // 
+            this.ComboNroTimbrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboNroTimbrado.FormattingEnabled = true;
             this.ComboNroTimbrado.Location = new System.Drawing.Point(11, 330);
             this.ComboNroTimbrado.Margin = new System.Windows.Forms.Padding(2);
@@ -254,15 +262,15 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BtnSeleccionar,
@@ -271,86 +279,30 @@
             this.PuntoEmision,
             this.CodEstablecimiento,
             this.UltimoNro,
-            this.Timbrado});
+            this.Timbrado,
+            this.TipoDocumento});
             this.dgvData.Location = new System.Drawing.Point(321, 77);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvData.RowHeadersWidth = 62;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(1038, 466);
             this.dgvData.TabIndex = 140;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
-            // 
-            // BtnSeleccionar
-            // 
-            this.BtnSeleccionar.HeaderText = "";
-            this.BtnSeleccionar.MinimumWidth = 8;
-            this.BtnSeleccionar.Name = "BtnSeleccionar";
-            this.BtnSeleccionar.ReadOnly = true;
-            this.BtnSeleccionar.Width = 30;
-            // 
-            // idNumeracion
-            // 
-            this.idNumeracion.HeaderText = "idNumeracion";
-            this.idNumeracion.MinimumWidth = 8;
-            this.idNumeracion.Name = "idNumeracion";
-            this.idNumeracion.ReadOnly = true;
-            this.idNumeracion.Visible = false;
-            this.idNumeracion.Width = 150;
-            // 
-            // Caja
-            // 
-            this.Caja.HeaderText = "Caja";
-            this.Caja.MinimumWidth = 8;
-            this.Caja.Name = "Caja";
-            this.Caja.ReadOnly = true;
-            this.Caja.Width = 150;
-            // 
-            // PuntoEmision
-            // 
-            this.PuntoEmision.HeaderText = "Punto Emision";
-            this.PuntoEmision.MinimumWidth = 8;
-            this.PuntoEmision.Name = "PuntoEmision";
-            this.PuntoEmision.ReadOnly = true;
-            this.PuntoEmision.Width = 150;
-            // 
-            // CodEstablecimiento
-            // 
-            this.CodEstablecimiento.HeaderText = "Cod. Establecimiento";
-            this.CodEstablecimiento.MinimumWidth = 8;
-            this.CodEstablecimiento.Name = "CodEstablecimiento";
-            this.CodEstablecimiento.ReadOnly = true;
-            this.CodEstablecimiento.Width = 150;
-            // 
-            // UltimoNro
-            // 
-            this.UltimoNro.HeaderText = "Ultimo. Nro.";
-            this.UltimoNro.MinimumWidth = 8;
-            this.UltimoNro.Name = "UltimoNro";
-            this.UltimoNro.ReadOnly = true;
-            this.UltimoNro.Width = 150;
-            // 
-            // Timbrado
-            // 
-            this.Timbrado.HeaderText = "Timbrado";
-            this.Timbrado.MinimumWidth = 8;
-            this.Timbrado.Name = "Timbrado";
-            this.Timbrado.ReadOnly = true;
-            this.Timbrado.Width = 150;
             // 
             // LbLCabecera
             // 
@@ -462,12 +414,111 @@
             this.LblDetalleNumDoc.TabIndex = 149;
             this.LblDetalleNumDoc.Text = "Detalle Numeración Documento";
             // 
+            // groupTipoDoc
+            // 
+            this.groupTipoDoc.BackColor = System.Drawing.Color.White;
+            this.groupTipoDoc.Controls.Add(this.radioButtonNC);
+            this.groupTipoDoc.Controls.Add(this.radioButtonFactura);
+            this.groupTipoDoc.Location = new System.Drawing.Point(15, 366);
+            this.groupTipoDoc.Name = "groupTipoDoc";
+            this.groupTipoDoc.Size = new System.Drawing.Size(174, 73);
+            this.groupTipoDoc.TabIndex = 150;
+            this.groupTipoDoc.TabStop = false;
+            this.groupTipoDoc.Text = "Tipo Documento";
+            // 
+            // radioButtonNC
+            // 
+            this.radioButtonNC.AutoSize = true;
+            this.radioButtonNC.Location = new System.Drawing.Point(3, 39);
+            this.radioButtonNC.Name = "radioButtonNC";
+            this.radioButtonNC.Size = new System.Drawing.Size(99, 17);
+            this.radioButtonNC.TabIndex = 1;
+            this.radioButtonNC.Text = "Nota de Crédito";
+            this.radioButtonNC.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFactura
+            // 
+            this.radioButtonFactura.AutoSize = true;
+            this.radioButtonFactura.Checked = true;
+            this.radioButtonFactura.Location = new System.Drawing.Point(3, 16);
+            this.radioButtonFactura.Name = "radioButtonFactura";
+            this.radioButtonFactura.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonFactura.TabIndex = 0;
+            this.radioButtonFactura.TabStop = true;
+            this.radioButtonFactura.Text = "Factura";
+            this.radioButtonFactura.UseVisualStyleBackColor = true;
+            // 
+            // BtnSeleccionar
+            // 
+            this.BtnSeleccionar.HeaderText = "";
+            this.BtnSeleccionar.MinimumWidth = 8;
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.ReadOnly = true;
+            this.BtnSeleccionar.Width = 30;
+            // 
+            // idNumeracion
+            // 
+            this.idNumeracion.HeaderText = "idNumeracion";
+            this.idNumeracion.MinimumWidth = 8;
+            this.idNumeracion.Name = "idNumeracion";
+            this.idNumeracion.ReadOnly = true;
+            this.idNumeracion.Visible = false;
+            this.idNumeracion.Width = 150;
+            // 
+            // Caja
+            // 
+            this.Caja.HeaderText = "Caja";
+            this.Caja.MinimumWidth = 8;
+            this.Caja.Name = "Caja";
+            this.Caja.ReadOnly = true;
+            this.Caja.Width = 150;
+            // 
+            // PuntoEmision
+            // 
+            this.PuntoEmision.HeaderText = "Punto Emision";
+            this.PuntoEmision.MinimumWidth = 8;
+            this.PuntoEmision.Name = "PuntoEmision";
+            this.PuntoEmision.ReadOnly = true;
+            this.PuntoEmision.Width = 150;
+            // 
+            // CodEstablecimiento
+            // 
+            this.CodEstablecimiento.HeaderText = "Cod. Establecimiento";
+            this.CodEstablecimiento.MinimumWidth = 8;
+            this.CodEstablecimiento.Name = "CodEstablecimiento";
+            this.CodEstablecimiento.ReadOnly = true;
+            this.CodEstablecimiento.Width = 150;
+            // 
+            // UltimoNro
+            // 
+            this.UltimoNro.HeaderText = "Ultimo. Nro.";
+            this.UltimoNro.MinimumWidth = 8;
+            this.UltimoNro.Name = "UltimoNro";
+            this.UltimoNro.ReadOnly = true;
+            this.UltimoNro.Width = 150;
+            // 
+            // Timbrado
+            // 
+            this.Timbrado.HeaderText = "Timbrado";
+            this.Timbrado.MinimumWidth = 8;
+            this.Timbrado.Name = "Timbrado";
+            this.Timbrado.ReadOnly = true;
+            this.Timbrado.Width = 150;
+            // 
+            // TipoDocumento
+            // 
+            this.TipoDocumento.HeaderText = "TipoDocumento";
+            this.TipoDocumento.Name = "TipoDocumento";
+            this.TipoDocumento.ReadOnly = true;
+            this.TipoDocumento.Visible = false;
+            // 
             // FrmNumeracionDocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1370, 556);
+            this.Controls.Add(this.groupTipoDoc);
             this.Controls.Add(this.LblDetalleNumDoc);
             this.Controls.Add(this.TxtIndex);
             this.Controls.Add(this.TxtIdNumeracion);
@@ -498,6 +549,8 @@
             this.Text = "Numeracion de Documentos";
             this.Load += new System.EventHandler(this.FrmNumeracionDocumento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.groupTipoDoc.ResumeLayout(false);
+            this.groupTipoDoc.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,6 +579,12 @@
         private System.Windows.Forms.TextBox TxtBusqueda;
         private System.Windows.Forms.ComboBox ComboBusqueda;
         private System.Windows.Forms.Label LblBuscarPor;
+        private System.Windows.Forms.TextBox TxtIndex;
+        private System.Windows.Forms.TextBox TxtIdNumeracion;
+        private System.Windows.Forms.Label LblDetalleNumDoc;
+        private System.Windows.Forms.GroupBox groupTipoDoc;
+        private System.Windows.Forms.RadioButton radioButtonNC;
+        private System.Windows.Forms.RadioButton radioButtonFactura;
         private System.Windows.Forms.DataGridViewButtonColumn BtnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idNumeracion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Caja;
@@ -533,8 +592,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CodEstablecimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn UltimoNro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Timbrado;
-        private System.Windows.Forms.TextBox TxtIndex;
-        private System.Windows.Forms.TextBox TxtIdNumeracion;
-        private System.Windows.Forms.Label LblDetalleNumDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
     }
 }

@@ -31,6 +31,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@UltimoNro", obj.UltimoNumero);
                     cmd.Parameters.AddWithValue("@NroTimbrado", obj.NroTimbrado);
                     cmd.Parameters.AddWithValue("@DescripcionCaja", obj.DescripcionCaja);
+                    cmd.Parameters.AddWithValue("@TipoDocumento", obj.TipoDoc);
                     cmd.Parameters.Add("@idNumeracionDocumento", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -56,7 +57,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select n.id, n.CodigoEstablecimiento, t.NroTimbrado NroTimbrado, t.Id, n.PuntoEmision, n.UltimoNro, n.idTimbrado, c.NroCaja from dbo.NumeracionDocumento n " +
+                    string query = "select n.id, n.CodigoEstablecimiento, t.NroTimbrado NroTimbrado, t.Id, n.PuntoEmision, n.UltimoNro, n.idTimbrado, c.NroCaja, n.TipoDocumento from dbo.NumeracionDocumento n " +
                         " inner join dbo.Timbrados t" +
                         " on t.id = n.idTimbrado" +
                         " inner join dbo.Cajas c" +
@@ -78,7 +79,8 @@ namespace CapaDatos
                                 CodigoEstablecimiento = reader["CodigoEstablecimiento"].ToString(),
                                 UltimoNumero = Convert.ToInt32(reader["UltimoNro"].ToString()),
                                 IdTimbrado = Convert.ToInt32(reader["Id"]),
-                                NroTimbrado = Convert.ToInt32(reader["NroTimbrado"].ToString())
+                                NroTimbrado = Convert.ToInt32(reader["NroTimbrado"].ToString()),
+                                TipoDoc = Convert.ToBoolean(reader["TipoDocumento"])
                             });
                         }
                     }

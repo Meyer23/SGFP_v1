@@ -16,6 +16,7 @@ namespace CapaPresentacion
     public partial class FrmNumeracionDocumento : Form
     {
         public int idNumeracionDoc { get; set; }
+        bool tipoDocumento;
         public FrmNumeracionDocumento()
         {
             InitializeComponent();
@@ -76,13 +77,23 @@ namespace CapaPresentacion
 
             try
             {
+                bool tipo;
+                if (radioButtonFactura.Checked)
+                {
+                    tipo = false;
+                }
+                else
+                {
+                    tipo = true;
+                }
                 NumeracionDocumento obj = new NumeracionDocumento()
                 {
                     CodigoEstablecimiento = TxtCodEstablecimiento.Text,
                     PuntoEmision = Convert.ToInt32(TxtPuntoEmision.Text),
                     UltimoNumero = Convert.ToInt32(TxTUltimoNro.Text),
                     NroTimbrado = Convert.ToInt32(ComboNroTimbrado.Text),
-                    DescripcionCaja = ComboCajas.Text
+                    DescripcionCaja = ComboCajas.Text,
+                    TipoDoc = (bool)(tipo)
 
                 };
 
@@ -90,7 +101,7 @@ namespace CapaPresentacion
 
                 if (idNumeracionDocumento > 0)
                 {
-                    MessageBox.Show(Mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvData.Rows.Add(new object[] { "", idNumeracion, ComboCajas.Text, TxtPuntoEmision.Text, TxtCodEstablecimiento.Text, TxTUltimoNro.Text, ComboNroTimbrado.Text, tipo });
                     Limpiar();
                     return;
                 }
@@ -155,7 +166,7 @@ namespace CapaPresentacion
             List<NumeracionDocumento> numeracionDocumentos = new CN_NumeracionDocumento().Listar();
             foreach (NumeracionDocumento numeracion in numeracionDocumentos)
             {
-                dgvData.Rows.Add("", numeracion.Id, numeracion.DescripcionCaja, numeracion.PuntoEmision, numeracion.CodigoEstablecimiento, numeracion.UltimoNumero, numeracion.NroTimbrado);
+                dgvData.Rows.Add("", numeracion.Id, numeracion.DescripcionCaja, numeracion.PuntoEmision, numeracion.CodigoEstablecimiento, numeracion.UltimoNumero, numeracion.NroTimbrado, numeracion.TipoDoc);
             }
             TxtBusqueda.Select();
         }
@@ -175,6 +186,15 @@ namespace CapaPresentacion
                     TxTUltimoNro.Text = dgvData.Rows[index].Cells["UltimoNro"].Value.ToString();
                     ComboCajas.Text = dgvData.Rows[index].Cells["Caja"].Value.ToString();
                     ComboNroTimbrado.Text = dgvData.Rows[index].Cells["Timbrado"].Value.ToString();
+                    tipoDocumento = (bool)dgvData.Rows[index].Cells["TipoDocumento"].Value;
+                    if (tipoDocumento == true)
+                    {
+                        radioButtonNC.Checked = true;
+                    }
+                    else
+                    {
+                        radioButtonFactura.Checked = true;
+                    }
                 }
             }
         }

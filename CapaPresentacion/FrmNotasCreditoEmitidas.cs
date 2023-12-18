@@ -35,7 +35,7 @@ namespace CapaPresentacion
             {
                 List<NumeracionDocumento> listNumeracion = new CN_NumeracionDocumento().Listar();
 
-                var ultimoNumero = listNumeracion.Where(e => e.DescripcionCaja == TxtNroCaja.Text)
+                var ultimoNumero = listNumeracion.Where(e => e.DescripcionCaja == TxtNroCaja.Text && e.TipoDoc == true)
                                                  .Select(e => e.UltimoNumero).Max();
 
                 if (ultimoNumero >= 0)
@@ -679,7 +679,7 @@ namespace CapaPresentacion
                                      .Select(e => e.NroTimbrado)
                                      .ToList();
 
-            var timbradoId = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString())
+            var timbradoId = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString() && e.TipoDoc == true)
                                       .Select(e => e.IdTimbrado)
                                       .SingleOrDefault();
 
@@ -695,11 +695,11 @@ namespace CapaPresentacion
                                                 .Select(e => e.FinVigencia)
                                                 .SingleOrDefault();
 
-            var codEstablecimiento = numeracion.Where(e => e.DescripcionCaja.ToString() == idCaja.ToString())
+            var codEstablecimiento = numeracion.Where(e => e.DescripcionCaja.ToString() == idCaja.ToString() && e.TipoDoc == true)
                                                .Select(e => e.CodigoEstablecimiento)
                                                .SingleOrDefault();
 
-            var puntoEmision = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString())
+            var puntoEmision = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString() && e.TipoDoc == true)
                                          .Select(e => e.PuntoEmision)
                                          .SingleOrDefault();
 
