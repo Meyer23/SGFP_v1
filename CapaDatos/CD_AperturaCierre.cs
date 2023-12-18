@@ -1,4 +1,5 @@
-﻿using CapaEntidad.Models;
+﻿using CapaEntidad;
+using CapaEntidad.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -81,6 +82,40 @@ namespace CapaDatos
             }
 
             return resultado;
+        }
+
+        public List<AperturaCierreCajas> ObtenerAperturasDeCajas()
+        {
+            List<AperturaCierreCajas> aperturas = new List<AperturaCierreCajas>();
+
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                    string query = "SELECT x.id FROM DBO.AperturaCierreCaja X WHERE X.Estado = 1";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            aperturas.Add(new AperturaCierreCajas
+                            {
+                                Id = Convert.ToInt32(reader["Id"].ToString())
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    aperturas = new List<AperturaCierreCajas>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return aperturas;
         }
     }
 }

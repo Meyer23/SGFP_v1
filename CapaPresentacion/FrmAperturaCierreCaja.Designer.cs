@@ -83,7 +83,7 @@
             this.DateTimePickerApertura.Enabled = false;
             this.DateTimePickerApertura.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTimePickerApertura.Location = new System.Drawing.Point(287, 42);
-            this.DateTimePickerApertura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DateTimePickerApertura.Margin = new System.Windows.Forms.Padding(4);
             this.DateTimePickerApertura.Name = "DateTimePickerApertura";
             this.DateTimePickerApertura.ShowUpDown = true;
             this.DateTimePickerApertura.Size = new System.Drawing.Size(244, 29);
@@ -104,7 +104,7 @@
             this.ComboSucursal.Enabled = false;
             this.ComboSucursal.FormattingEnabled = true;
             this.ComboSucursal.Location = new System.Drawing.Point(287, 111);
-            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.ComboSucursal.Name = "ComboSucursal";
             this.ComboSucursal.Size = new System.Drawing.Size(244, 32);
             this.ComboSucursal.TabIndex = 9;
@@ -113,7 +113,7 @@
             // 
             this.ComboCajas.FormattingEnabled = true;
             this.ComboCajas.Location = new System.Drawing.Point(287, 187);
-            this.ComboCajas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboCajas.Margin = new System.Windows.Forms.Padding(4);
             this.ComboCajas.Name = "ComboCajas";
             this.ComboCajas.Size = new System.Drawing.Size(244, 32);
             this.ComboCajas.TabIndex = 10;
@@ -131,7 +131,7 @@
             // ImporteUpDown
             // 
             this.ImporteUpDown.Location = new System.Drawing.Point(287, 263);
-            this.ImporteUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ImporteUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.ImporteUpDown.Maximum = new decimal(new int[] {
             500000,
             0,
@@ -157,7 +157,7 @@
             this.ComboEstado.Items.AddRange(new object[] {
             "Abierto"});
             this.ComboEstado.Location = new System.Drawing.Point(804, 92);
-            this.ComboEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboEstado.Margin = new System.Windows.Forms.Padding(4);
             this.ComboEstado.Name = "ComboEstado";
             this.ComboEstado.Size = new System.Drawing.Size(305, 32);
             this.ComboEstado.TabIndex = 14;
@@ -187,19 +187,21 @@
             // 
             this.ComboCajero.FormattingEnabled = true;
             this.ComboCajero.Location = new System.Drawing.Point(807, 187);
-            this.ComboCajero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboCajero.Margin = new System.Windows.Forms.Padding(4);
             this.ComboCajero.Name = "ComboCajero";
             this.ComboCajero.Size = new System.Drawing.Size(305, 32);
             this.ComboCajero.TabIndex = 16;
             // 
             // DateTimePickerCierre
             // 
-            this.DateTimePickerCierre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerCierre.Location = new System.Drawing.Point(224, 57);
-            this.DateTimePickerCierre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DateTimePickerCierre.Enabled = false;
+            this.DateTimePickerCierre.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTimePickerCierre.Location = new System.Drawing.Point(287, 53);
+            this.DateTimePickerCierre.Margin = new System.Windows.Forms.Padding(4);
             this.DateTimePickerCierre.Name = "DateTimePickerCierre";
-            this.DateTimePickerCierre.Size = new System.Drawing.Size(244, 29);
+            this.DateTimePickerCierre.Size = new System.Drawing.Size(328, 29);
             this.DateTimePickerCierre.TabIndex = 20;
+            this.DateTimePickerCierre.Value = new System.DateTime(2023, 12, 17, 18, 58, 22, 0);
             // 
             // LbLFechaCierre
             // 
@@ -224,7 +226,7 @@
             // UpDownMontoCierre
             // 
             this.UpDownMontoCierre.Location = new System.Drawing.Point(224, 133);
-            this.UpDownMontoCierre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpDownMontoCierre.Margin = new System.Windows.Forms.Padding(4);
             this.UpDownMontoCierre.Maximum = new decimal(new int[] {
             5000000,
             0,
@@ -247,7 +249,7 @@
             this.BtnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnSalir.IconSize = 18;
             this.BtnSalir.Location = new System.Drawing.Point(966, 788);
-            this.BtnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(249, 48);
             this.BtnSalir.TabIndex = 55;
@@ -274,9 +276,9 @@
             this.groupBox1.Controls.Add(this.ImporteUpDown);
             this.groupBox1.Controls.Add(this.LblCaja);
             this.groupBox1.Location = new System.Drawing.Point(15, 100);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1226, 330);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
@@ -295,7 +297,7 @@
             this.BtnApertura.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnApertura.IconSize = 16;
             this.BtnApertura.Location = new System.Drawing.Point(951, 263);
-            this.BtnApertura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnApertura.Margin = new System.Windows.Forms.Padding(4);
             this.BtnApertura.Name = "BtnApertura";
             this.BtnApertura.Size = new System.Drawing.Size(249, 50);
             this.BtnApertura.TabIndex = 55;
@@ -314,9 +316,9 @@
             this.groupBox2.Controls.Add(this.UpDownMontoCierre);
             this.groupBox2.Controls.Add(this.LbLimporteCierre);
             this.groupBox2.Location = new System.Drawing.Point(15, 463);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1226, 247);
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
@@ -335,7 +337,7 @@
             this.BtnCerrarCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCerrarCaja.IconSize = 16;
             this.BtnCerrarCaja.Location = new System.Drawing.Point(952, 181);
-            this.BtnCerrarCaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCerrarCaja.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCerrarCaja.Name = "BtnCerrarCaja";
             this.BtnCerrarCaja.Size = new System.Drawing.Size(249, 50);
             this.BtnCerrarCaja.TabIndex = 55;
@@ -367,7 +369,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.LblUsuariosAgregar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAperturaCierreCaja";
             this.Text = "Apertura / Cierre ";
             this.Load += new System.EventHandler(this.FrmAperturaCierreCaja_Load);

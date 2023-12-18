@@ -110,6 +110,8 @@ namespace CapaPresentacion
         {
             decimal valorVuelto = 0;
             decimal importe = Convert.ToDecimal(TxtImporte.Text);
+            DateTime fechavencim = Convert.ToDateTime(tmpFechaVencimiento.Value);
+            string fechaFormateada = fechavencim.ToString("yyyy-MM-dd HH:mm:ss");
             decimal saldo = 0;
 
             //Para calcular VUELTO
@@ -137,7 +139,7 @@ namespace CapaPresentacion
                     Convert.ToString(TxtNroDocumento.Text),
                     Convert.ToDecimal(TxtImporte.Text),
                     valorVuelto,
-                    Convert.ToDateTime(tmpFechaVencimiento.Value),
+                    fechaFormateada,
                     Convert.ToString(ComboTipoValor.Text),
                     Convert.ToString(ComboBanco.Text)
                 });

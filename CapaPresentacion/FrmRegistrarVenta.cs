@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -22,6 +24,7 @@ namespace CapaPresentacion
         {
             _Usuario = oUsuario;
             InitializeComponent();
+            ValidarAperturasDeCaja();
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(BtnCargarCobro_KeyDown);
             CargarTiposDocumentos();
@@ -511,6 +514,11 @@ namespace CapaPresentacion
         {
             try
             {
+                if(groupBoxInfoCliente.Enabled == false)
+                {
+                    MessageBox.Show("Debe abrir una caja.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 decimal cobrarMonto = Convert.ToDecimal(textBoxTotalPagar.Text);
 
                 using (var formDetalleCobro = new PopUpDetalleCobro(cobrarMonto))
@@ -521,6 +529,8 @@ namespace CapaPresentacion
                     int[] columnIndexesToCopy = { 0, 1, 2, 3, 4, 5, 6 };
 
                     DataTable datosDetallesCobro = new DataTable();
+
+                    string formatoDeFecha = string.Empty;
 
                     // Agregar las columnas deseadas al nuevo DataTable
                     foreach (int columnIndex in columnIndexesToCopy)
@@ -542,9 +552,9 @@ namespace CapaPresentacion
                                
                                 newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToDecimal(row[columnIndex]);
                             }
-                            else if(columnIndex == 6 && row[columnIndex] != DBNull.Value)
+                            else if (columnIndex == 6 && row[columnIndex] != DBNull.Value)
                             {
-                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToDateTime(row[columnIndex]);
+                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToString(row[columnIndex]);
                             }
                             else if((columnIndex == 0 && row[columnIndex] != DBNull.Value) || (columnIndex == 1 && row[columnIndex] != DBNull.Value))
                             {
@@ -658,6 +668,17 @@ namespace CapaPresentacion
 
             string Mensaje = string.Empty;
 
+
+
+
+            var tipDocumento = ComboTipoDoc.Text;
+
+            if (tipDocumento == "Factura Contado" && detalle_cobro == null)
+            {
+                MessageBox.Show("Debe cargar los detalles del cobro", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             bool Respuesta = new CN_Ventas().Registrar(objVenta, detalle_venta, detalle_cobro, out Mensaje);
 
             if (Respuesta)
@@ -708,6 +729,22 @@ namespace CapaPresentacion
                 BtnCobro.Enabled = true;
             }
 
+        }
+
+        private void ValidarAperturasDeCaja()
+        {
+            List<AperturaCierreCajas> listAper = new CN_AperturaCierre().ObtenerAperturasDeCajas();
+
+            if (listAper.Count == 0)
+            {
+                MessageBox.Show("Para operar debe abrir una caja.", "Alerta.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupBoxInfoCliente.Enabled = false;
+                groupBoxInfoPedido.Enabled = false;
+                groupBoxInfoProductos.Enabled = false;
+                BtnImprimirFactura.Enabled = false;
+                BtnCobro.Enabled = false;
+                return;
+            }
         }
     }
 }

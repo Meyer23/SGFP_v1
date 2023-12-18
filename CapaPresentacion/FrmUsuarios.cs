@@ -72,17 +72,17 @@ namespace CapaPresentacion
         {
             string Mensaje = string.Empty;
 
-            if(TxtNombres.Text.Trim().Length == 0 || TxtApellidos.Text.Length == 0 || TxtLogin.Text.Length == 0 || TxtDocumento.Text.Length == 0)
-            {
-                MessageBox.Show("Debe seleccionar un empleado.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if(TxtNombres.Text.Trim().Length == 0 || TxtApellidos.Text.Length == 0 || TxtLogin.Text.Length == 0 || TxtDocumento.Text.Length == 0)
+            //{
+            //    MessageBox.Show("Debe seleccionar un empleado.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
-            if(TxtPassword.Text.Length == 0)
-            {
-                MessageBox.Show("Contraseña no puede ser nula.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if(TxtPassword.Text.Length == 0)
+            //{
+            //    MessageBox.Show("Contraseña no puede ser nula.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             if(ValidarPassword() == 1)
             {

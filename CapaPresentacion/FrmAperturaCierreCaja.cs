@@ -22,6 +22,8 @@ namespace CapaPresentacion
             CargarComboSucursal();
             CargarComboUsuarios();
             CargarComboCajas();
+            DateTimePickerCierre.Value = DateTime.Now;
+            DateTimePickerApertura.Value = DateTime.Now;
         }
 
         private void FrmAperturaCierreCaja_Load(object sender, EventArgs e)

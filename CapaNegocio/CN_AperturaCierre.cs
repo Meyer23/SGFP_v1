@@ -1,5 +1,7 @@
 ﻿using CapaDatos;
+using CapaEntidad;
 using CapaEntidad.Models;
+using System.Collections.Generic;
 
 namespace CapaNegocio
 {
@@ -17,6 +19,11 @@ namespace CapaNegocio
         public int CierreCaja(CierreRequest obj, out string Mensaje)
         {
             return cd_aperturacierre.CierreCaja(obj, out Mensaje);
+        }
+
+        public List<AperturaCierreCajas> ObtenerAperturasDeCajas()
+        {
+            return cd_aperturacierre.ObtenerAperturasDeCajas();
         }
     }
 }
