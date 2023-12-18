@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -115,6 +116,58 @@ namespace CapaDatos
                 }
             }
 
+            return aperturas;
+        }
+
+        public List<ListadoEstadoCajas> ObtenerListadoDeAperturas()
+        {
+            List<ListadoEstadoCajas> aperturas = new List<ListadoEstadoCajas>();
+
+
+            using (SqlConnection con = new SqlConnection(Conexion.Cadena))
+            {
+                try
+                {
+                   string query = @"
+                                    SELECT 
+                                        a.id,
+                                        a.MontoInicial,
+                                        ISNULL(CAST(a.MontoCierre AS VARCHAR(50)), 'PENDIENTE') AS MontoCierre,
+                                        ISNULL(CAST(a.MontoActual AS VARCHAR(50)), 'PENDIENTE') AS MontoActual,
+                                        ISNULL(CONVERT(VARCHAR(50), a.FechaApertura, 120), 'PENDIENTE') AS FechaApertura,
+                                        ISNULL(CONVERT(VARCHAR(50), a.FechaCierre, 120), 'SIN DATO') AS FechaCierre,
+                                        c.NroCaja,
+                                        a.Estado
+                                    FROM dbo.AperturaCierreCaja a
+                                    INNER JOIN dbo.Cajas c ON a.idCaja = c.id";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            aperturas.Add(new ListadoEstadoCajas
+                            {
+                                Id = Convert.ToInt32(reader["Id"].ToString()),
+                                MontoInicial = Convert.ToString(reader["MontoInicial"].ToString()),
+                                MontoCierre = Convert.ToString(reader["MontoCierre"].ToString()),
+                                MontoActual = Convert.ToString(reader["MontoActual"].ToString()),
+                                FechaApertura = Convert.ToString(reader["FechaApertura"].ToString()),
+                                FechaCierre = Convert.ToString(reader["FechaCierre"].ToString()),
+                                NroCaja = Convert.ToInt32(reader["NroCaja"].ToString()),
+                                Estado = Convert.ToBoolean(reader["Estado"].ToString())
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    aperturas = new List<ListadoEstadoCajas>();
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             return aperturas;
         }
     }

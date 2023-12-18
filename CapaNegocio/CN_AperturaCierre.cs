@@ -25,5 +25,10 @@ namespace CapaNegocio
         {
             return cd_aperturacierre.ObtenerAperturasDeCajas();
         }
+
+        public List<ListadoEstadoCajas> ObtenerListadoAperturas()
+        {
+            return cd_aperturacierre.ObtenerListadoDeAperturas();
+        }
     }
 }

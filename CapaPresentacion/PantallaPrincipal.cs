@@ -361,5 +361,10 @@ namespace CapaPresentacion
             Reportes.FrmRptListadoVentasSaldos oRptListadoVentasSaldos = new Reportes.FrmRptListadoVentasSaldos();
             oRptListadoVentasSaldos.ShowDialog();
         }
+
+        private void SubMenuEstadoCajas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenedorMenu, new FrmEstadoCajas());
+        }
     }
 }

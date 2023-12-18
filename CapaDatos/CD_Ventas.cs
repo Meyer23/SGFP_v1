@@ -29,7 +29,7 @@ namespace CapaDatos
                         "INNER JOIN Usuarios U ON F.idUsuario = U.id " +
                         "INNER JOIN Empleados E ON U.idEmpleado = E.id " +
                         "INNER JOIN Clientes C ON F.idCliente = C.id " +
-                        "INNER JOIN Timbrados TI ON F.idTimbrado = T.id " +
+                        "INNER JOIN Timbrados TI ON F.idTimbrado = TI.id " +
                         "WHERE F.id = " + IdVenta;
 
                     SqlCommand cmd = new SqlCommand(query, con);

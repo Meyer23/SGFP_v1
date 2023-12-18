@@ -10,15 +10,19 @@ namespace CapaEntidad.Models
     {
         public int Id { get; set; }
 
-        public double MontoInicial { get; set; }
+        public double? MontoInicial { get; set; }
 
-        public double MontoCierre { get; set; }
+        public double? MontoCierre { get; set; }
 
-        public DateTime FechaApertura { get; set; }
+        public double? MontoActual { get; set; }
 
-        public DateTime FechaCierre { get; set; }
+        public DateTime? FechaApertura { get; set; }
+
+        public DateTime? FechaCierre { get; set; }
 
         public int IdCaja { get; set; }
+
+        public int NroCaja { get; set; }
 
         public bool Estado { get; set; }
     }
