@@ -19,22 +19,50 @@ namespace CapaPresentacion
 
         private DataTable datosDetallesCobro;
 
+        string validacionesApertura = string.Empty;
+
         private DataTable datosDetalles;
         public FrmRegistrarVenta(UsuarioLogin oUsuario = null)
         {
             _Usuario = oUsuario;
             InitializeComponent();
-            ValidarAperturasDeCaja();
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(BtnCargarCobro_KeyDown);
             CargarTiposDocumentos();
-            MostrarCajero();
             TxtCajero.Enabled = false;
             TxtNroCaja.Enabled = false;
             FechaVenta.Value = DateTime.Now;
             ComboTipoDoc.SelectedIndexChanged += ComboTipoDoc_SelectedIndexChanged;
-            ObtenerUltimoDocFactura();
             dtpFechaVenc.Value = DateTime.Now;
+
+            validacionesApertura = ValidarAperturasDeCaja();
+
+            if(_Usuario.Login == "admin")
+            {
+                MessageBox.Show("Debe contar con rol de Cajero para operar.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupBoxInfoCliente.Enabled = false;
+                groupBoxInfoPedido.Enabled = false;
+                groupBoxInfoProductos.Enabled = false;
+                BtnImprimirFactura.Enabled = false;
+                BtnCobro.Enabled = false;
+                return;
+            }
+
+            if(validacionesApertura == "OK")
+            {
+                MostrarCajero();
+                ObtenerUltimoDocFactura();
+            }
+            else
+            {
+                MessageBox.Show("Debe abrir una caja para operar.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupBoxInfoCliente.Enabled = false;
+                groupBoxInfoPedido.Enabled = false;
+                groupBoxInfoProductos.Enabled = false;
+                BtnImprimirFactura.Enabled = false;
+                BtnCobro.Enabled = false;
+                return;
+            }
         }
 
         public int IdUsuario { get; set; }
@@ -599,6 +627,7 @@ namespace CapaPresentacion
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
@@ -731,19 +760,24 @@ namespace CapaPresentacion
 
         }
 
-        private void ValidarAperturasDeCaja()
+        private string ValidarAperturasDeCaja()
         {
             List<AperturaCierreCajas> listAper = new CN_AperturaCierre().ObtenerAperturasDeCajas();
-
+            string result = string.Empty;
             if (listAper.Count == 0)
             {
-                MessageBox.Show("Para operar debe abrir una caja.", "Alerta.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                groupBoxInfoCliente.Enabled = false;
-                groupBoxInfoPedido.Enabled = false;
-                groupBoxInfoProductos.Enabled = false;
-                BtnImprimirFactura.Enabled = false;
-                BtnCobro.Enabled = false;
-                return;
+                result = "NO OK";
+                //groupBoxInfoCliente.Enabled = false;
+                //groupBoxInfoPedido.Enabled = false;
+                //groupBoxInfoProductos.Enabled = false;
+                //BtnImprimirFactura.Enabled = false;
+                //BtnCobro.Enabled = false;
+                return result;
+            }
+            else
+            {
+                result = "OK";
+                return result;
             }
         }
     }
