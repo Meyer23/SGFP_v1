@@ -42,16 +42,6 @@
             this.TxtVuelto = new System.Windows.Forms.TextBox();
             this.LblVuelto = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.idValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImporteVuelto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.LblDetalleCobro = new System.Windows.Forms.Label();
             this.BtnCancelar = new FontAwesome.Sharp.IconButton();
             this.LbLMontoTotal = new System.Windows.Forms.Label();
@@ -64,18 +54,29 @@
             this.TxtIdBanco = new System.Windows.Forms.TextBox();
             this.tmpFechaVencimiento = new System.Windows.Forms.DateTimePicker();
             this.LblVencimiento = new System.Windows.Forms.Label();
+            this.idValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImporteVuelto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // LblCompras
             // 
             this.LblCompras.BackColor = System.Drawing.Color.White;
+            this.LblCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCompras.Location = new System.Drawing.Point(15, 9);
-            this.LblCompras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblCompras.Location = new System.Drawing.Point(8, 5);
+            this.LblCompras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCompras.Name = "LblCompras";
-            this.LblCompras.Padding = new System.Windows.Forms.Padding(4);
-            this.LblCompras.Size = new System.Drawing.Size(1642, 873);
+            this.LblCompras.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LblCompras.Size = new System.Drawing.Size(999, 473);
             this.LblCompras.TabIndex = 53;
             this.LblCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -83,11 +84,11 @@
             // 
             this.LblTipoValor.AutoSize = true;
             this.LblTipoValor.BackColor = System.Drawing.Color.White;
-            this.LblTipoValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTipoValor.Location = new System.Drawing.Point(39, 61);
-            this.LblTipoValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblTipoValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTipoValor.Location = new System.Drawing.Point(21, 64);
+            this.LblTipoValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblTipoValor.Name = "LblTipoValor";
-            this.LblTipoValor.Size = new System.Drawing.Size(131, 29);
+            this.LblTipoValor.Size = new System.Drawing.Size(58, 13);
             this.LblTipoValor.TabIndex = 54;
             this.LblTipoValor.Text = "Tipo Valor:";
             // 
@@ -95,11 +96,11 @@
             // 
             this.LblNroCuenta.AutoSize = true;
             this.LblNroCuenta.BackColor = System.Drawing.Color.White;
-            this.LblNroCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNroCuenta.Location = new System.Drawing.Point(667, 61);
-            this.LblNroCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblNroCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNroCuenta.Location = new System.Drawing.Point(364, 64);
+            this.LblNroCuenta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblNroCuenta.Name = "LblNroCuenta";
-            this.LblNroCuenta.Size = new System.Drawing.Size(147, 29);
+            this.LblNroCuenta.Size = new System.Drawing.Size(67, 13);
             this.LblNroCuenta.TabIndex = 55;
             this.LblNroCuenta.Text = "Nro. Cuenta:";
             // 
@@ -107,11 +108,11 @@
             // 
             this.LblImporte.AutoSize = true;
             this.LblImporte.BackColor = System.Drawing.Color.White;
-            this.LblImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblImporte.Location = new System.Drawing.Point(341, 167);
-            this.LblImporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblImporte.Location = new System.Drawing.Point(734, 64);
+            this.LblImporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblImporte.Name = "LblImporte";
-            this.LblImporte.Size = new System.Drawing.Size(101, 29);
+            this.LblImporte.Size = new System.Drawing.Size(45, 13);
             this.LblImporte.TabIndex = 56;
             this.LblImporte.Text = "Importe:";
             // 
@@ -119,11 +120,11 @@
             // 
             this.LblBanco.AutoSize = true;
             this.LblBanco.BackColor = System.Drawing.Color.White;
-            this.LblBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBanco.Location = new System.Drawing.Point(341, 61);
-            this.LblBanco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBanco.Location = new System.Drawing.Point(193, 64);
+            this.LblBanco.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblBanco.Name = "LblBanco";
-            this.LblBanco.Size = new System.Drawing.Size(87, 29);
+            this.LblBanco.Size = new System.Drawing.Size(41, 13);
             this.LblBanco.TabIndex = 57;
             this.LblBanco.Text = "Banco:";
             // 
@@ -131,11 +132,11 @@
             // 
             this.LblNroDocumento.AutoSize = true;
             this.LblNroDocumento.BackColor = System.Drawing.Color.White;
-            this.LblNroDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNroDocumento.Location = new System.Drawing.Point(39, 167);
-            this.LblNroDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblNroDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNroDocumento.Location = new System.Drawing.Point(611, 64);
+            this.LblNroDocumento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblNroDocumento.Name = "LblNroDocumento";
-            this.LblNroDocumento.Size = new System.Drawing.Size(194, 29);
+            this.LblNroDocumento.Size = new System.Drawing.Size(88, 13);
             this.LblNroDocumento.TabIndex = 58;
             this.LblNroDocumento.Text = "Nro. Documento:";
             // 
@@ -143,10 +144,10 @@
             // 
             this.ComboTipoValor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboTipoValor.FormattingEnabled = true;
-            this.ComboTipoValor.Location = new System.Drawing.Point(45, 106);
-            this.ComboTipoValor.Margin = new System.Windows.Forms.Padding(4);
+            this.ComboTipoValor.Location = new System.Drawing.Point(24, 79);
+            this.ComboTipoValor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboTipoValor.Name = "ComboTipoValor";
-            this.ComboTipoValor.Size = new System.Drawing.Size(197, 32);
+            this.ComboTipoValor.Size = new System.Drawing.Size(156, 21);
             this.ComboTipoValor.TabIndex = 59;
             this.ComboTipoValor.SelectedIndexChanged += new System.EventHandler(this.ComboTipoValor_SelectedIndexChanged);
             this.ComboTipoValor.SelectedValueChanged += new System.EventHandler(this.ComboTipoValor_SelectedValueChanged);
@@ -155,37 +156,37 @@
             // 
             this.ComboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBanco.FormattingEnabled = true;
-            this.ComboBanco.Location = new System.Drawing.Point(347, 106);
-            this.ComboBanco.Margin = new System.Windows.Forms.Padding(4);
+            this.ComboBanco.Location = new System.Drawing.Point(196, 79);
+            this.ComboBanco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboBanco.Name = "ComboBanco";
-            this.ComboBanco.Size = new System.Drawing.Size(197, 32);
+            this.ComboBanco.Size = new System.Drawing.Size(146, 21);
             this.ComboBanco.TabIndex = 60;
             this.ComboBanco.SelectedIndexChanged += new System.EventHandler(this.ComboBanco_SelectedIndexChanged);
             // 
             // TxtNroCuenta
             // 
-            this.TxtNroCuenta.Location = new System.Drawing.Point(673, 106);
-            this.TxtNroCuenta.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtNroCuenta.Location = new System.Drawing.Point(367, 79);
+            this.TxtNroCuenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtNroCuenta.Name = "TxtNroCuenta";
-            this.TxtNroCuenta.Size = new System.Drawing.Size(187, 29);
+            this.TxtNroCuenta.Size = new System.Drawing.Size(104, 20);
             this.TxtNroCuenta.TabIndex = 61;
             this.TxtNroCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNroCuenta_KeyPress);
             // 
             // TxtNroDocumento
             // 
-            this.TxtNroDocumento.Location = new System.Drawing.Point(48, 212);
-            this.TxtNroDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtNroDocumento.Location = new System.Drawing.Point(614, 79);
+            this.TxtNroDocumento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtNroDocumento.Name = "TxtNroDocumento";
-            this.TxtNroDocumento.Size = new System.Drawing.Size(195, 29);
+            this.TxtNroDocumento.Size = new System.Drawing.Size(108, 20);
             this.TxtNroDocumento.TabIndex = 62;
             this.TxtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNroDocumento_KeyPress);
             // 
             // TxtImporte
             // 
-            this.TxtImporte.Location = new System.Drawing.Point(346, 212);
-            this.TxtImporte.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtImporte.Location = new System.Drawing.Point(737, 79);
+            this.TxtImporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtImporte.Name = "TxtImporte";
-            this.TxtImporte.Size = new System.Drawing.Size(255, 29);
+            this.TxtImporte.Size = new System.Drawing.Size(141, 20);
             this.TxtImporte.TabIndex = 63;
             this.TxtImporte.TextChanged += new System.EventHandler(this.TxtImporte_TextChanged);
             this.TxtImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtImporte_KeyPress);
@@ -194,11 +195,11 @@
             // 
             this.TxtVuelto.Enabled = false;
             this.TxtVuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtVuelto.Location = new System.Drawing.Point(1254, 544);
-            this.TxtVuelto.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtVuelto.Location = new System.Drawing.Point(196, 394);
+            this.TxtVuelto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtVuelto.Name = "TxtVuelto";
             this.TxtVuelto.ReadOnly = true;
-            this.TxtVuelto.Size = new System.Drawing.Size(255, 47);
+            this.TxtVuelto.Size = new System.Drawing.Size(141, 30);
             this.TxtVuelto.TabIndex = 65;
             this.TxtVuelto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtVuelto_KeyPress);
             // 
@@ -207,10 +208,10 @@
             this.LblVuelto.AutoSize = true;
             this.LblVuelto.BackColor = System.Drawing.Color.White;
             this.LblVuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVuelto.Location = new System.Drawing.Point(1249, 477);
-            this.LblVuelto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblVuelto.Location = new System.Drawing.Point(193, 375);
+            this.LblVuelto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblVuelto.Name = "LblVuelto";
-            this.LblVuelto.Size = new System.Drawing.Size(87, 29);
+            this.LblVuelto.Size = new System.Drawing.Size(52, 17);
             this.LblVuelto.TabIndex = 64;
             this.LblVuelto.Text = "Vuelto:";
             // 
@@ -229,16 +230,177 @@
             this.TipoValor,
             this.Banco,
             this.BtnEliminar});
-            this.dgvData.Location = new System.Drawing.Point(45, 387);
-            this.dgvData.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.dgvData.Location = new System.Drawing.Point(24, 145);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersWidth = 62;
-            this.dgvData.Size = new System.Drawing.Size(1174, 375);
+            this.dgvData.Size = new System.Drawing.Size(972, 203);
             this.dgvData.TabIndex = 66;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellEndEdit);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
+            // 
+            // LblDetalleCobro
+            // 
+            this.LblDetalleCobro.AutoSize = true;
+            this.LblDetalleCobro.BackColor = System.Drawing.Color.White;
+            this.LblDetalleCobro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDetalleCobro.Location = new System.Drawing.Point(20, 26);
+            this.LblDetalleCobro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblDetalleCobro.Name = "LblDetalleCobro";
+            this.LblDetalleCobro.Size = new System.Drawing.Size(128, 20);
+            this.LblDetalleCobro.TabIndex = 67;
+            this.LblDetalleCobro.Text = "Detalle de Cobro";
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.BackColor = System.Drawing.Color.Red;
+            this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            this.BtnCancelar.IconColor = System.Drawing.Color.White;
+            this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnCancelar.IconSize = 16;
+            this.BtnCancelar.Location = new System.Drawing.Point(823, 375);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(173, 27);
+            this.BtnCancelar.TabIndex = 68;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // LbLMontoTotal
+            // 
+            this.LbLMontoTotal.AutoSize = true;
+            this.LbLMontoTotal.BackColor = System.Drawing.Color.White;
+            this.LbLMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbLMontoTotal.Location = new System.Drawing.Point(364, 375);
+            this.LbLMontoTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbLMontoTotal.Name = "LbLMontoTotal";
+            this.LbLMontoTotal.Size = new System.Drawing.Size(146, 17);
+            this.LbLMontoTotal.TabIndex = 69;
+            this.LbLMontoTotal.Text = "Monto Total a Cobrar:";
+            // 
+            // TxtMontoTotal
+            // 
+            this.TxtMontoTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMontoTotal.Location = new System.Drawing.Point(367, 395);
+            this.TxtMontoTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtMontoTotal.Name = "TxtMontoTotal";
+            this.TxtMontoTotal.ReadOnly = true;
+            this.TxtMontoTotal.Size = new System.Drawing.Size(140, 30);
+            this.TxtMontoTotal.TabIndex = 70;
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.BtnAgregar.IconColor = System.Drawing.Color.Black;
+            this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnAgregar.Location = new System.Drawing.Point(892, 55);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(82, 72);
+            this.BtnAgregar.TabIndex = 71;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.BtnGuardar.IconColor = System.Drawing.Color.White;
+            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnGuardar.IconSize = 16;
+            this.BtnGuardar.Location = new System.Drawing.Point(637, 375);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
+            this.BtnGuardar.TabIndex = 72;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // LblSaldo
+            // 
+            this.LblSaldo.AutoSize = true;
+            this.LblSaldo.BackColor = System.Drawing.Color.White;
+            this.LblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSaldo.Location = new System.Drawing.Point(22, 375);
+            this.LblSaldo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblSaldo.Name = "LblSaldo";
+            this.LblSaldo.Size = new System.Drawing.Size(48, 17);
+            this.LblSaldo.TabIndex = 73;
+            this.LblSaldo.Text = "Saldo:";
+            // 
+            // TxtSaldo
+            // 
+            this.TxtSaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSaldo.Location = new System.Drawing.Point(25, 394);
+            this.TxtSaldo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtSaldo.Name = "TxtSaldo";
+            this.TxtSaldo.ReadOnly = true;
+            this.TxtSaldo.Size = new System.Drawing.Size(140, 30);
+            this.TxtSaldo.TabIndex = 74;
+            this.TxtSaldo.TextChanged += new System.EventHandler(this.TxtSaldo_TextChanged);
+            // 
+            // TxtTipoValor
+            // 
+            this.TxtTipoValor.Location = new System.Drawing.Point(145, 49);
+            this.TxtTipoValor.Name = "TxtTipoValor";
+            this.TxtTipoValor.Size = new System.Drawing.Size(20, 20);
+            this.TxtTipoValor.TabIndex = 75;
+            this.TxtTipoValor.Text = "0";
+            this.TxtTipoValor.Visible = false;
+            // 
+            // TxtIdBanco
+            // 
+            this.TxtIdBanco.Location = new System.Drawing.Point(289, 49);
+            this.TxtIdBanco.Name = "TxtIdBanco";
+            this.TxtIdBanco.Size = new System.Drawing.Size(20, 20);
+            this.TxtIdBanco.TabIndex = 76;
+            this.TxtIdBanco.Text = "0";
+            this.TxtIdBanco.Visible = false;
+            // 
+            // tmpFechaVencimiento
+            // 
+            this.tmpFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.tmpFechaVencimiento.Location = new System.Drawing.Point(490, 79);
+            this.tmpFechaVencimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tmpFechaVencimiento.MinDate = new System.DateTime(2023, 12, 4, 0, 0, 0, 0);
+            this.tmpFechaVencimiento.Name = "tmpFechaVencimiento";
+            this.tmpFechaVencimiento.Size = new System.Drawing.Size(111, 20);
+            this.tmpFechaVencimiento.TabIndex = 77;
+            // 
+            // LblVencimiento
+            // 
+            this.LblVencimiento.AutoSize = true;
+            this.LblVencimiento.BackColor = System.Drawing.Color.White;
+            this.LblVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblVencimiento.Location = new System.Drawing.Point(487, 64);
+            this.LblVencimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblVencimiento.Name = "LblVencimiento";
+            this.LblVencimiento.Size = new System.Drawing.Size(101, 13);
+            this.LblVencimiento.TabIndex = 78;
+            this.LblVencimiento.Text = "Fecha Vencimiento:";
             // 
             // idValor
             // 
@@ -247,7 +409,7 @@
             this.idValor.Name = "idValor";
             this.idValor.ReadOnly = true;
             this.idValor.Visible = false;
-            this.idValor.Width = 175;
+            this.idValor.Width = 50;
             // 
             // idBanco
             // 
@@ -256,7 +418,7 @@
             this.idBanco.Name = "idBanco";
             this.idBanco.ReadOnly = true;
             this.idBanco.Visible = false;
-            this.idBanco.Width = 175;
+            this.idBanco.Width = 50;
             // 
             // NroCuenta
             // 
@@ -313,7 +475,7 @@
             this.Banco.MinimumWidth = 8;
             this.Banco.Name = "Banco";
             this.Banco.ReadOnly = true;
-            this.Banco.Width = 300;
+            this.Banco.Width = 150;
             // 
             // BtnEliminar
             // 
@@ -324,156 +486,11 @@
             this.BtnEliminar.Visible = false;
             this.BtnEliminar.Width = 175;
             // 
-            // LblDetalleCobro
-            // 
-            this.LblDetalleCobro.AutoSize = true;
-            this.LblDetalleCobro.BackColor = System.Drawing.Color.White;
-            this.LblDetalleCobro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleCobro.Location = new System.Drawing.Point(40, 283);
-            this.LblDetalleCobro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblDetalleCobro.Name = "LblDetalleCobro";
-            this.LblDetalleCobro.Size = new System.Drawing.Size(275, 39);
-            this.LblDetalleCobro.TabIndex = 67;
-            this.LblDetalleCobro.Text = "Detalle de Cobro";
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.Red;
-            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            this.BtnCancelar.IconColor = System.Drawing.Color.Black;
-            this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnCancelar.Location = new System.Drawing.Point(1323, 764);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(309, 95);
-            this.BtnCancelar.TabIndex = 68;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
-            // LbLMontoTotal
-            // 
-            this.LbLMontoTotal.AutoSize = true;
-            this.LbLMontoTotal.BackColor = System.Drawing.Color.White;
-            this.LbLMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbLMontoTotal.Location = new System.Drawing.Point(1249, 611);
-            this.LbLMontoTotal.Name = "LbLMontoTotal";
-            this.LbLMontoTotal.Size = new System.Drawing.Size(246, 29);
-            this.LbLMontoTotal.TabIndex = 69;
-            this.LbLMontoTotal.Text = "Monto Total a Cobrar:";
-            // 
-            // TxtMontoTotal
-            // 
-            this.TxtMontoTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMontoTotal.Location = new System.Drawing.Point(1254, 674);
-            this.TxtMontoTotal.Name = "TxtMontoTotal";
-            this.TxtMontoTotal.ReadOnly = true;
-            this.TxtMontoTotal.Size = new System.Drawing.Size(255, 47);
-            this.TxtMontoTotal.TabIndex = 70;
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.Green;
-            this.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnAgregar.IconColor = System.Drawing.Color.White;
-            this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAgregar.Location = new System.Drawing.Point(324, 271);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(169, 104);
-            this.BtnAgregar.TabIndex = 71;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BtnGuardar.IconColor = System.Drawing.Color.Black;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnGuardar.Location = new System.Drawing.Point(1023, 771);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(254, 88);
-            this.BtnGuardar.TabIndex = 72;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.UseVisualStyleBackColor = true;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // LblSaldo
-            // 
-            this.LblSaldo.AutoSize = true;
-            this.LblSaldo.BackColor = System.Drawing.Color.White;
-            this.LblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSaldo.Location = new System.Drawing.Point(1254, 329);
-            this.LblSaldo.Name = "LblSaldo";
-            this.LblSaldo.Size = new System.Drawing.Size(82, 29);
-            this.LblSaldo.TabIndex = 73;
-            this.LblSaldo.Text = "Saldo:";
-            // 
-            // TxtSaldo
-            // 
-            this.TxtSaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSaldo.Location = new System.Drawing.Point(1254, 387);
-            this.TxtSaldo.Name = "TxtSaldo";
-            this.TxtSaldo.ReadOnly = true;
-            this.TxtSaldo.Size = new System.Drawing.Size(255, 47);
-            this.TxtSaldo.TabIndex = 74;
-            this.TxtSaldo.TextChanged += new System.EventHandler(this.TxtSaldo_TextChanged);
-            // 
-            // TxtTipoValor
-            // 
-            this.TxtTipoValor.Location = new System.Drawing.Point(179, 32);
-            this.TxtTipoValor.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.TxtTipoValor.Name = "TxtTipoValor";
-            this.TxtTipoValor.Size = new System.Drawing.Size(33, 29);
-            this.TxtTipoValor.TabIndex = 75;
-            this.TxtTipoValor.Text = "0";
-            this.TxtTipoValor.Visible = false;
-            // 
-            // TxtIdBanco
-            // 
-            this.TxtIdBanco.Location = new System.Drawing.Point(511, 32);
-            this.TxtIdBanco.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.TxtIdBanco.Name = "TxtIdBanco";
-            this.TxtIdBanco.Size = new System.Drawing.Size(33, 29);
-            this.TxtIdBanco.TabIndex = 76;
-            this.TxtIdBanco.Text = "0";
-            this.TxtIdBanco.Visible = false;
-            // 
-            // tmpFechaVencimiento
-            // 
-            this.tmpFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.tmpFechaVencimiento.Location = new System.Drawing.Point(922, 106);
-            this.tmpFechaVencimiento.MinDate = new System.DateTime(2023, 12, 4, 0, 0, 0, 0);
-            this.tmpFechaVencimiento.Name = "tmpFechaVencimiento";
-            this.tmpFechaVencimiento.Size = new System.Drawing.Size(200, 29);
-            this.tmpFechaVencimiento.TabIndex = 77;
-            // 
-            // LblVencimiento
-            // 
-            this.LblVencimiento.AutoSize = true;
-            this.LblVencimiento.BackColor = System.Drawing.Color.White;
-            this.LblVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVencimiento.Location = new System.Drawing.Point(917, 61);
-            this.LblVencimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblVencimiento.Name = "LblVencimiento";
-            this.LblVencimiento.Size = new System.Drawing.Size(225, 29);
-            this.LblVencimiento.TabIndex = 78;
-            this.LblVencimiento.Text = "Fecha Vencimiento:";
-            // 
             // PopUpDetalleCobro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1670, 905);
+            this.ClientSize = new System.Drawing.Size(1009, 479);
             this.Controls.Add(this.LblVencimiento);
             this.Controls.Add(this.tmpFechaVencimiento);
             this.Controls.Add(this.TxtIdBanco);
@@ -500,7 +517,7 @@
             this.Controls.Add(this.LblNroCuenta);
             this.Controls.Add(this.LblTipoValor);
             this.Controls.Add(this.LblCompras);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PopUpDetalleCobro";
             this.Text = "Detalle Cobro";
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();

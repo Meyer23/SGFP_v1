@@ -57,19 +57,19 @@
             // 
             this.LblClientes.BackColor = System.Drawing.Color.White;
             this.LblClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblClientes.Location = new System.Drawing.Point(12, 9);
+            this.LblClientes.Location = new System.Drawing.Point(8, 6);
+            this.LblClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblClientes.Name = "LblClientes";
-            this.LblClientes.Padding = new System.Windows.Forms.Padding(3);
-            this.LblClientes.Size = new System.Drawing.Size(776, 753);
+            this.LblClientes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LblClientes.Size = new System.Drawing.Size(333, 519);
             this.LblClientes.TabIndex = 27;
             this.LblClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TxtApellidos
             // 
-            this.TxtApellidos.Location = new System.Drawing.Point(27, 302);
-            this.TxtApellidos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtApellidos.Location = new System.Drawing.Point(21, 135);
             this.TxtApellidos.Name = "TxtApellidos";
-            this.TxtApellidos.Size = new System.Drawing.Size(267, 26);
+            this.TxtApellidos.Size = new System.Drawing.Size(281, 20);
             this.TxtApellidos.TabIndex = 105;
             this.TxtApellidos.TabStop = false;
             // 
@@ -77,10 +77,9 @@
             // 
             this.LblApellidos.AutoSize = true;
             this.LblApellidos.BackColor = System.Drawing.Color.White;
-            this.LblApellidos.Location = new System.Drawing.Point(32, 270);
-            this.LblApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblApellidos.Location = new System.Drawing.Point(20, 121);
             this.LblApellidos.Name = "LblApellidos";
-            this.LblApellidos.Size = new System.Drawing.Size(77, 20);
+            this.LblApellidos.Size = new System.Drawing.Size(52, 13);
             this.LblApellidos.TabIndex = 104;
             this.LblApellidos.Text = "Apellidos:";
             // 
@@ -89,11 +88,9 @@
             this.groupTipoPersona.BackColor = System.Drawing.Color.White;
             this.groupTipoPersona.Controls.Add(this.radioButtonJuridica);
             this.groupTipoPersona.Controls.Add(this.radioButtonFisica);
-            this.groupTipoPersona.Location = new System.Drawing.Point(27, 461);
-            this.groupTipoPersona.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupTipoPersona.Location = new System.Drawing.Point(21, 317);
             this.groupTipoPersona.Name = "groupTipoPersona";
-            this.groupTipoPersona.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupTipoPersona.Size = new System.Drawing.Size(261, 112);
+            this.groupTipoPersona.Size = new System.Drawing.Size(174, 73);
             this.groupTipoPersona.TabIndex = 103;
             this.groupTipoPersona.TabStop = false;
             this.groupTipoPersona.Text = "Tipo Persona";
@@ -101,10 +98,9 @@
             // radioButtonJuridica
             // 
             this.radioButtonJuridica.AutoSize = true;
-            this.radioButtonJuridica.Location = new System.Drawing.Point(4, 60);
-            this.radioButtonJuridica.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonJuridica.Location = new System.Drawing.Point(3, 39);
             this.radioButtonJuridica.Name = "radioButtonJuridica";
-            this.radioButtonJuridica.Size = new System.Drawing.Size(88, 24);
+            this.radioButtonJuridica.Size = new System.Drawing.Size(63, 17);
             this.radioButtonJuridica.TabIndex = 1;
             this.radioButtonJuridica.Text = "Jurídica";
             this.radioButtonJuridica.UseVisualStyleBackColor = true;
@@ -113,10 +109,9 @@
             // 
             this.radioButtonFisica.AutoSize = true;
             this.radioButtonFisica.Checked = true;
-            this.radioButtonFisica.Location = new System.Drawing.Point(8, 29);
-            this.radioButtonFisica.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonFisica.Location = new System.Drawing.Point(5, 19);
             this.radioButtonFisica.Name = "radioButtonFisica";
-            this.radioButtonFisica.Size = new System.Drawing.Size(75, 24);
+            this.radioButtonFisica.Size = new System.Drawing.Size(54, 17);
             this.radioButtonFisica.TabIndex = 0;
             this.radioButtonFisica.TabStop = true;
             this.radioButtonFisica.Text = "Física";
@@ -134,9 +129,10 @@
             this.BtnCancelar.IconColor = System.Drawing.Color.White;
             this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCancelar.IconSize = 18;
-            this.BtnCancelar.Location = new System.Drawing.Point(28, 719);
+            this.BtnCancelar.Location = new System.Drawing.Point(80, 479);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(260, 40);
+            this.BtnCancelar.Size = new System.Drawing.Size(173, 26);
             this.BtnCancelar.TabIndex = 102;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -156,9 +152,10 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(28, 650);
+            this.BtnGuardar.Location = new System.Drawing.Point(80, 439);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(260, 42);
+            this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
             this.BtnGuardar.TabIndex = 101;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,9 +168,10 @@
             this.LblDetalleCliente.AutoSize = true;
             this.LblDetalleCliente.BackColor = System.Drawing.Color.White;
             this.LblDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleCliente.Location = new System.Drawing.Point(31, 20);
+            this.LblDetalleCliente.Location = new System.Drawing.Point(21, 13);
+            this.LblDetalleCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblDetalleCliente.Name = "LblDetalleCliente";
-            this.LblDetalleCliente.Size = new System.Drawing.Size(171, 29);
+            this.LblDetalleCliente.Size = new System.Drawing.Size(112, 20);
             this.LblDetalleCliente.TabIndex = 100;
             this.LblDetalleCliente.Text = "Detalle Cliente";
             // 
@@ -183,61 +181,54 @@
             this.ChkActivo.BackColor = System.Drawing.Color.White;
             this.ChkActivo.Checked = true;
             this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkActivo.Location = new System.Drawing.Point(27, 594);
-            this.ChkActivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ChkActivo.Location = new System.Drawing.Point(22, 396);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ChkActivo.Size = new System.Drawing.Size(78, 24);
+            this.ChkActivo.Size = new System.Drawing.Size(56, 17);
             this.ChkActivo.TabIndex = 99;
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = false;
             // 
             // TxtCorreo
             // 
-            this.TxtCorreo.Location = new System.Drawing.Point(27, 403);
-            this.TxtCorreo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtCorreo.Location = new System.Drawing.Point(21, 291);
             this.TxtCorreo.Name = "TxtCorreo";
-            this.TxtCorreo.Size = new System.Drawing.Size(267, 26);
+            this.TxtCorreo.Size = new System.Drawing.Size(281, 20);
             this.TxtCorreo.TabIndex = 98;
             // 
             // TxtTelefono2
             // 
-            this.TxtTelefono2.Location = new System.Drawing.Point(428, 302);
-            this.TxtTelefono2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtTelefono2.Location = new System.Drawing.Point(21, 252);
             this.TxtTelefono2.Name = "TxtTelefono2";
-            this.TxtTelefono2.Size = new System.Drawing.Size(258, 26);
+            this.TxtTelefono2.Size = new System.Drawing.Size(281, 20);
             this.TxtTelefono2.TabIndex = 97;
             // 
             // TxtTelefono1
             // 
-            this.TxtTelefono1.Location = new System.Drawing.Point(428, 207);
-            this.TxtTelefono1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtTelefono1.Location = new System.Drawing.Point(21, 213);
             this.TxtTelefono1.Name = "TxtTelefono1";
-            this.TxtTelefono1.Size = new System.Drawing.Size(258, 26);
+            this.TxtTelefono1.Size = new System.Drawing.Size(281, 20);
             this.TxtTelefono1.TabIndex = 96;
             // 
             // TxtDireccion
             // 
-            this.TxtDireccion.Location = new System.Drawing.Point(428, 110);
-            this.TxtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtDireccion.Location = new System.Drawing.Point(21, 174);
             this.TxtDireccion.Name = "TxtDireccion";
-            this.TxtDireccion.Size = new System.Drawing.Size(258, 26);
+            this.TxtDireccion.Size = new System.Drawing.Size(281, 20);
             this.TxtDireccion.TabIndex = 95;
             // 
             // TxtDocumento
             // 
-            this.TxtDocumento.Location = new System.Drawing.Point(36, 110);
-            this.TxtDocumento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtDocumento.Location = new System.Drawing.Point(21, 59);
             this.TxtDocumento.Name = "TxtDocumento";
-            this.TxtDocumento.Size = new System.Drawing.Size(258, 26);
+            this.TxtDocumento.Size = new System.Drawing.Size(281, 20);
             this.TxtDocumento.TabIndex = 94;
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(36, 207);
-            this.TxtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtNombre.Location = new System.Drawing.Point(22, 98);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(258, 26);
+            this.TxtNombre.Size = new System.Drawing.Size(280, 20);
             this.TxtNombre.TabIndex = 93;
             this.TxtNombre.TabStop = false;
             // 
@@ -245,10 +236,9 @@
             // 
             this.LblCorreo.AutoSize = true;
             this.LblCorreo.BackColor = System.Drawing.Color.White;
-            this.LblCorreo.Location = new System.Drawing.Point(23, 361);
-            this.LblCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblCorreo.Location = new System.Drawing.Point(22, 275);
             this.LblCorreo.Name = "LblCorreo";
-            this.LblCorreo.Size = new System.Drawing.Size(61, 20);
+            this.LblCorreo.Size = new System.Drawing.Size(41, 13);
             this.LblCorreo.TabIndex = 92;
             this.LblCorreo.Text = "Correo:";
             // 
@@ -256,10 +246,9 @@
             // 
             this.LblTelefono2.AutoSize = true;
             this.LblTelefono2.BackColor = System.Drawing.Color.White;
-            this.LblTelefono2.Location = new System.Drawing.Point(424, 260);
-            this.LblTelefono2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblTelefono2.Location = new System.Drawing.Point(20, 236);
             this.LblTelefono2.Name = "LblTelefono2";
-            this.LblTelefono2.Size = new System.Drawing.Size(88, 20);
+            this.LblTelefono2.Size = new System.Drawing.Size(61, 13);
             this.LblTelefono2.TabIndex = 91;
             this.LblTelefono2.Text = "Teléfono 2:";
             // 
@@ -267,10 +256,9 @@
             // 
             this.LblTelefono1.AutoSize = true;
             this.LblTelefono1.BackColor = System.Drawing.Color.White;
-            this.LblTelefono1.Location = new System.Drawing.Point(424, 164);
-            this.LblTelefono1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblTelefono1.Location = new System.Drawing.Point(20, 197);
             this.LblTelefono1.Name = "LblTelefono1";
-            this.LblTelefono1.Size = new System.Drawing.Size(88, 20);
+            this.LblTelefono1.Size = new System.Drawing.Size(61, 13);
             this.LblTelefono1.TabIndex = 90;
             this.LblTelefono1.Text = "Teléfono 1:";
             // 
@@ -278,10 +266,9 @@
             // 
             this.LblDireccion.AutoSize = true;
             this.LblDireccion.BackColor = System.Drawing.Color.White;
-            this.LblDireccion.Location = new System.Drawing.Point(424, 80);
-            this.LblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblDireccion.Location = new System.Drawing.Point(20, 158);
             this.LblDireccion.Name = "LblDireccion";
-            this.LblDireccion.Size = new System.Drawing.Size(79, 20);
+            this.LblDireccion.Size = new System.Drawing.Size(55, 13);
             this.LblDireccion.TabIndex = 89;
             this.LblDireccion.Text = "Dirección:";
             // 
@@ -289,10 +276,9 @@
             // 
             this.LblDocumento.AutoSize = true;
             this.LblDocumento.BackColor = System.Drawing.Color.White;
-            this.LblDocumento.Location = new System.Drawing.Point(32, 80);
-            this.LblDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblDocumento.Location = new System.Drawing.Point(19, 43);
             this.LblDocumento.Name = "LblDocumento";
-            this.LblDocumento.Size = new System.Drawing.Size(96, 20);
+            this.LblDocumento.Size = new System.Drawing.Size(65, 13);
             this.LblDocumento.TabIndex = 88;
             this.LblDocumento.Text = "Documento:";
             // 
@@ -300,18 +286,17 @@
             // 
             this.LblNombre.AutoSize = true;
             this.LblNombre.BackColor = System.Drawing.Color.White;
-            this.LblNombre.Location = new System.Drawing.Point(32, 164);
-            this.LblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblNombre.Location = new System.Drawing.Point(20, 82);
             this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(77, 20);
+            this.LblNombre.Size = new System.Drawing.Size(52, 13);
             this.LblNombre.TabIndex = 87;
             this.LblNombre.Text = "Nombres:";
             // 
             // PopUpNuevoCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 771);
+            this.ClientSize = new System.Drawing.Size(344, 525);
             this.Controls.Add(this.TxtApellidos);
             this.Controls.Add(this.LblApellidos);
             this.Controls.Add(this.groupTipoPersona);
@@ -332,6 +317,7 @@
             this.Controls.Add(this.LblDocumento);
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.LblClientes);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PopUpNuevoCliente";
             this.Text = "Agregar Cliente";
             this.groupTipoPersona.ResumeLayout(false);

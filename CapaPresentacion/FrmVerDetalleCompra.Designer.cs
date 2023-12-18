@@ -110,10 +110,10 @@
             // 
             this.LblTotalCompra.AutoSize = true;
             this.LblTotalCompra.BackColor = System.Drawing.Color.White;
-            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalCompra.Location = new System.Drawing.Point(884, 500);
+            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalCompra.Location = new System.Drawing.Point(883, 487);
             this.LblTotalCompra.Name = "LblTotalCompra";
-            this.LblTotalCompra.Size = new System.Drawing.Size(89, 16);
+            this.LblTotalCompra.Size = new System.Drawing.Size(104, 20);
             this.LblTotalCompra.TabIndex = 64;
             this.LblTotalCompra.Text = "Total Compra";
             // 
@@ -245,10 +245,11 @@
             // 
             // TxtTotalCompra
             // 
-            this.TxtTotalCompra.Location = new System.Drawing.Point(887, 520);
+            this.TxtTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalCompra.Location = new System.Drawing.Point(887, 510);
             this.TxtTotalCompra.Name = "TxtTotalCompra";
             this.TxtTotalCompra.ReadOnly = true;
-            this.TxtTotalCompra.Size = new System.Drawing.Size(125, 20);
+            this.TxtTotalCompra.Size = new System.Drawing.Size(190, 26);
             this.TxtTotalCompra.TabIndex = 65;
             this.TxtTotalCompra.Text = "0";
             // 

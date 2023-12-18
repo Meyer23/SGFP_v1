@@ -291,3 +291,4 @@ C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Report
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptListadoVentas.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptListadoNCEmitidas.resources
 C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptListadoVentasSaldos.resources
+C:\Users\HP\Documents\SGFP_v1\CapaPresentacion\obj\Debug\CapaPresentacion.Reportes.FrmRptVentas.resources

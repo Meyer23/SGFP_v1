@@ -46,15 +46,6 @@
             this.LblDetalleUsuario = new System.Windows.Forms.Label();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtIdUsuario = new System.Windows.Forms.TextBox();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
@@ -69,6 +60,15 @@
             this.TxtNombres = new System.Windows.Forms.TextBox();
             this.TxtApellidos = new System.Windows.Forms.TextBox();
             this.LblApellidos = new System.Windows.Forms.Label();
+            this.BtnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,19 +78,19 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(536, 1004);
+            this.label1.Size = new System.Drawing.Size(293, 540);
             this.label1.TabIndex = 0;
             // 
             // LblLogin
             // 
             this.LblLogin.AutoSize = true;
             this.LblLogin.BackColor = System.Drawing.Color.White;
-            this.LblLogin.Location = new System.Drawing.Point(15, 305);
-            this.LblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblLogin.Location = new System.Drawing.Point(8, 165);
+            this.LblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblLogin.Name = "LblLogin";
-            this.LblLogin.Size = new System.Drawing.Size(66, 25);
+            this.LblLogin.Size = new System.Drawing.Size(36, 13);
             this.LblLogin.TabIndex = 2;
             this.LblLogin.Text = "Login:";
             // 
@@ -98,10 +98,10 @@
             // 
             this.LblPassword.AutoSize = true;
             this.LblPassword.BackColor = System.Drawing.Color.White;
-            this.LblPassword.Location = new System.Drawing.Point(15, 384);
-            this.LblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblPassword.Location = new System.Drawing.Point(8, 208);
+            this.LblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPassword.Name = "LblPassword";
-            this.LblPassword.Size = new System.Drawing.Size(120, 25);
+            this.LblPassword.Size = new System.Drawing.Size(64, 13);
             this.LblPassword.TabIndex = 3;
             this.LblPassword.Text = "Contraseña:";
             // 
@@ -110,10 +110,10 @@
             this.LblRePassword.AutoSize = true;
             this.LblRePassword.BackColor = System.Drawing.Color.White;
             this.LblRePassword.ForeColor = System.Drawing.Color.Black;
-            this.LblRePassword.Location = new System.Drawing.Point(15, 471);
-            this.LblRePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblRePassword.Location = new System.Drawing.Point(8, 255);
+            this.LblRePassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblRePassword.Name = "LblRePassword";
-            this.LblRePassword.Size = new System.Drawing.Size(210, 25);
+            this.LblRePassword.Size = new System.Drawing.Size(111, 13);
             this.LblRePassword.TabIndex = 4;
             this.LblRePassword.Text = "Confirmar Contraseña:";
             // 
@@ -121,45 +121,45 @@
             // 
             this.LblDocumento.AutoSize = true;
             this.LblDocumento.BackColor = System.Drawing.Color.White;
-            this.LblDocumento.Location = new System.Drawing.Point(15, 65);
-            this.LblDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblDocumento.Location = new System.Drawing.Point(8, 35);
+            this.LblDocumento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblDocumento.Name = "LblDocumento";
-            this.LblDocumento.Size = new System.Drawing.Size(118, 25);
+            this.LblDocumento.Size = new System.Drawing.Size(65, 13);
             this.LblDocumento.TabIndex = 5;
             this.LblDocumento.Text = "Documento:";
             // 
             // TxtDocumento
             // 
-            this.TxtDocumento.Location = new System.Drawing.Point(15, 92);
-            this.TxtDocumento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtDocumento.Location = new System.Drawing.Point(8, 50);
+            this.TxtDocumento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtDocumento.Name = "TxtDocumento";
-            this.TxtDocumento.Size = new System.Drawing.Size(486, 29);
+            this.TxtDocumento.Size = new System.Drawing.Size(267, 20);
             this.TxtDocumento.TabIndex = 7;
             // 
             // TxtLogin
             // 
-            this.TxtLogin.Location = new System.Drawing.Point(15, 332);
-            this.TxtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtLogin.Location = new System.Drawing.Point(8, 180);
+            this.TxtLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtLogin.Name = "TxtLogin";
-            this.TxtLogin.Size = new System.Drawing.Size(486, 29);
+            this.TxtLogin.Size = new System.Drawing.Size(267, 20);
             this.TxtLogin.TabIndex = 8;
             // 
             // TxtPassword
             // 
-            this.TxtPassword.Location = new System.Drawing.Point(15, 412);
-            this.TxtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtPassword.Location = new System.Drawing.Point(8, 223);
+            this.TxtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
-            this.TxtPassword.Size = new System.Drawing.Size(486, 29);
+            this.TxtPassword.Size = new System.Drawing.Size(267, 20);
             this.TxtPassword.TabIndex = 9;
             this.TxtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.TxtPassword_Validating);
             // 
             // TxtRePassword
             // 
-            this.TxtRePassword.Location = new System.Drawing.Point(15, 498);
-            this.TxtRePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtRePassword.Location = new System.Drawing.Point(8, 270);
+            this.TxtRePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtRePassword.Name = "TxtRePassword";
-            this.TxtRePassword.Size = new System.Drawing.Size(486, 29);
+            this.TxtRePassword.Size = new System.Drawing.Size(267, 20);
             this.TxtRePassword.TabIndex = 10;
             // 
             // LblRol
@@ -167,10 +167,10 @@
             this.LblRol.AutoSize = true;
             this.LblRol.BackColor = System.Drawing.Color.White;
             this.LblRol.ForeColor = System.Drawing.Color.Black;
-            this.LblRol.Location = new System.Drawing.Point(15, 641);
-            this.LblRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblRol.Location = new System.Drawing.Point(8, 347);
+            this.LblRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblRol.Name = "LblRol";
-            this.LblRol.Size = new System.Drawing.Size(46, 25);
+            this.LblRol.Size = new System.Drawing.Size(26, 13);
             this.LblRol.TabIndex = 11;
             this.LblRol.Text = "Rol:";
             // 
@@ -178,10 +178,10 @@
             // 
             this.ComboRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboRol.FormattingEnabled = true;
-            this.ComboRol.Location = new System.Drawing.Point(15, 668);
-            this.ComboRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboRol.Location = new System.Drawing.Point(8, 362);
+            this.ComboRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboRol.Name = "ComboRol";
-            this.ComboRol.Size = new System.Drawing.Size(486, 32);
+            this.ComboRol.Size = new System.Drawing.Size(267, 21);
             this.ComboRol.TabIndex = 12;
             // 
             // BtnGuardar
@@ -196,10 +196,10 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(92, 860);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnGuardar.Location = new System.Drawing.Point(50, 466);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(317, 50);
+            this.BtnGuardar.Size = new System.Drawing.Size(173, 27);
             this.BtnGuardar.TabIndex = 14;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -219,10 +219,10 @@
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 16;
-            this.BtnEditar.Location = new System.Drawing.Point(92, 930);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnEditar.Location = new System.Drawing.Point(50, 504);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(317, 48);
+            this.BtnEditar.Size = new System.Drawing.Size(173, 26);
             this.BtnEditar.TabIndex = 15;
             this.BtnEditar.Text = "Limpiar";
             this.BtnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -235,10 +235,10 @@
             this.LblDetalleUsuario.AutoSize = true;
             this.LblDetalleUsuario.BackColor = System.Drawing.Color.White;
             this.LblDetalleUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleUsuario.Location = new System.Drawing.Point(9, 11);
-            this.LblDetalleUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblDetalleUsuario.Location = new System.Drawing.Point(5, 6);
+            this.LblDetalleUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblDetalleUsuario.Name = "LblDetalleUsuario";
-            this.LblDetalleUsuario.Size = new System.Drawing.Size(209, 32);
+            this.LblDetalleUsuario.Size = new System.Drawing.Size(118, 20);
             this.LblDetalleUsuario.TabIndex = 16;
             this.LblDetalleUsuario.Text = "Detalle Usuario";
             // 
@@ -248,10 +248,10 @@
             this.ChkActivo.BackColor = System.Drawing.Color.White;
             this.ChkActivo.Checked = true;
             this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkActivo.Location = new System.Drawing.Point(20, 738);
-            this.ChkActivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChkActivo.Location = new System.Drawing.Point(11, 400);
+            this.ChkActivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ChkActivo.Name = "ChkActivo";
-            this.ChkActivo.Size = new System.Drawing.Size(92, 29);
+            this.ChkActivo.Size = new System.Drawing.Size(56, 17);
             this.ChkActivo.TabIndex = 17;
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = false;
@@ -280,8 +280,8 @@
             this.Rol,
             this.Sucursal,
             this.Activo});
-            this.dgvData.Location = new System.Drawing.Point(568, 124);
-            this.dgvData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvData.Location = new System.Drawing.Point(310, 67);
+            this.dgvData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
@@ -291,10 +291,169 @@
             this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(1901, 855);
+            this.dgvData.Size = new System.Drawing.Size(1037, 463);
             this.dgvData.TabIndex = 18;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(310, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1037, 40);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Lista de Usuarios";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TxtIdUsuario
+            // 
+            this.TxtIdUsuario.Location = new System.Drawing.Point(163, 6);
+            this.TxtIdUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtIdUsuario.Name = "TxtIdUsuario";
+            this.TxtIdUsuario.Size = new System.Drawing.Size(33, 20);
+            this.TxtIdUsuario.TabIndex = 20;
+            this.TxtIdUsuario.Visible = false;
+            // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.White;
+            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
+            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnLimpiar.IconSize = 18;
+            this.BtnLimpiar.Location = new System.Drawing.Point(1247, 19);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(43, 26);
+            this.BtnLimpiar.TabIndex = 35;
+            this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.BackColor = System.Drawing.Color.White;
+            this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.ForeColor = System.Drawing.Color.White;
+            this.BtnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.BtnBuscar.IconColor = System.Drawing.Color.Black;
+            this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnBuscar.IconSize = 16;
+            this.BtnBuscar.Location = new System.Drawing.Point(1200, 19);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(43, 26);
+            this.BtnBuscar.TabIndex = 34;
+            this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // TxtBusqueda
+            // 
+            this.TxtBusqueda.Location = new System.Drawing.Point(1040, 23);
+            this.TxtBusqueda.Name = "TxtBusqueda";
+            this.TxtBusqueda.Size = new System.Drawing.Size(155, 20);
+            this.TxtBusqueda.TabIndex = 31;
+            // 
+            // ComboBusqueda
+            // 
+            this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBusqueda.FormattingEnabled = true;
+            this.ComboBusqueda.Location = new System.Drawing.Point(908, 22);
+            this.ComboBusqueda.Name = "ComboBusqueda";
+            this.ComboBusqueda.Size = new System.Drawing.Size(121, 21);
+            this.ComboBusqueda.TabIndex = 33;
+            // 
+            // LblBuscarPor
+            // 
+            this.LblBuscarPor.AutoSize = true;
+            this.LblBuscarPor.BackColor = System.Drawing.Color.White;
+            this.LblBuscarPor.Location = new System.Drawing.Point(841, 26);
+            this.LblBuscarPor.Name = "LblBuscarPor";
+            this.LblBuscarPor.Size = new System.Drawing.Size(61, 13);
+            this.LblBuscarPor.TabIndex = 32;
+            this.LblBuscarPor.Text = "Buscar por:";
+            // 
+            // TxtIndex
+            // 
+            this.TxtIndex.Location = new System.Drawing.Point(134, 8);
+            this.TxtIndex.Name = "TxtIndex";
+            this.TxtIndex.Size = new System.Drawing.Size(26, 20);
+            this.TxtIndex.TabIndex = 36;
+            this.TxtIndex.Text = "-1";
+            this.TxtIndex.Visible = false;
+            // 
+            // LblSucursal
+            // 
+            this.LblSucursal.AutoSize = true;
+            this.LblSucursal.BackColor = System.Drawing.Color.White;
+            this.LblSucursal.ForeColor = System.Drawing.Color.Black;
+            this.LblSucursal.Location = new System.Drawing.Point(8, 300);
+            this.LblSucursal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblSucursal.Name = "LblSucursal";
+            this.LblSucursal.Size = new System.Drawing.Size(51, 13);
+            this.LblSucursal.TabIndex = 37;
+            this.LblSucursal.Text = "Sucursal:";
+            // 
+            // ComboSucursal
+            // 
+            this.ComboSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboSucursal.Enabled = false;
+            this.ComboSucursal.FormattingEnabled = true;
+            this.ComboSucursal.Location = new System.Drawing.Point(8, 315);
+            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ComboSucursal.Name = "ComboSucursal";
+            this.ComboSucursal.Size = new System.Drawing.Size(267, 21);
+            this.ComboSucursal.TabIndex = 38;
+            // 
+            // LblNombres
+            // 
+            this.LblNombres.AutoSize = true;
+            this.LblNombres.BackColor = System.Drawing.Color.White;
+            this.LblNombres.Location = new System.Drawing.Point(8, 76);
+            this.LblNombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblNombres.Name = "LblNombres";
+            this.LblNombres.Size = new System.Drawing.Size(52, 13);
+            this.LblNombres.TabIndex = 41;
+            this.LblNombres.Text = "Nombres:";
+            // 
+            // TxtNombres
+            // 
+            this.TxtNombres.Location = new System.Drawing.Point(8, 91);
+            this.TxtNombres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtNombres.Name = "TxtNombres";
+            this.TxtNombres.Size = new System.Drawing.Size(267, 20);
+            this.TxtNombres.TabIndex = 42;
+            // 
+            // TxtApellidos
+            // 
+            this.TxtApellidos.Location = new System.Drawing.Point(9, 136);
+            this.TxtApellidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtApellidos.Name = "TxtApellidos";
+            this.TxtApellidos.Size = new System.Drawing.Size(266, 20);
+            this.TxtApellidos.TabIndex = 44;
+            // 
+            // LblApellidos
+            // 
+            this.LblApellidos.AutoSize = true;
+            this.LblApellidos.BackColor = System.Drawing.Color.White;
+            this.LblApellidos.Location = new System.Drawing.Point(8, 121);
+            this.LblApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblApellidos.Name = "LblApellidos";
+            this.LblApellidos.Size = new System.Drawing.Size(52, 13);
+            this.LblApellidos.TabIndex = 43;
+            this.LblApellidos.Text = "Apellidos:";
             // 
             // BtnSeleccionar
             // 
@@ -321,7 +480,7 @@
             this.Documento.MinimumWidth = 8;
             this.Documento.Name = "Documento";
             this.Documento.ReadOnly = true;
-            this.Documento.Width = 175;
+            this.Documento.Width = 120;
             // 
             // Login
             // 
@@ -373,175 +532,12 @@
             this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Activo.Width = 175;
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(568, 17);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1901, 74);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Lista de Usuarios";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // TxtIdUsuario
-            // 
-            this.TxtIdUsuario.Location = new System.Drawing.Point(299, 11);
-            this.TxtIdUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TxtIdUsuario.Name = "TxtIdUsuario";
-            this.TxtIdUsuario.Size = new System.Drawing.Size(57, 29);
-            this.TxtIdUsuario.TabIndex = 20;
-            this.TxtIdUsuario.Visible = false;
-            // 
-            // BtnLimpiar
-            // 
-            this.BtnLimpiar.BackColor = System.Drawing.Color.White;
-            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.BtnLimpiar.IconColor = System.Drawing.Color.Black;
-            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnLimpiar.IconSize = 18;
-            this.BtnLimpiar.Location = new System.Drawing.Point(2286, 35);
-            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(79, 48);
-            this.BtnLimpiar.TabIndex = 35;
-            this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpiar.UseVisualStyleBackColor = false;
-            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
-            // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.BackColor = System.Drawing.Color.White;
-            this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.ForeColor = System.Drawing.Color.White;
-            this.BtnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.BtnBuscar.IconColor = System.Drawing.Color.Black;
-            this.BtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnBuscar.IconSize = 16;
-            this.BtnBuscar.Location = new System.Drawing.Point(2200, 35);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(79, 48);
-            this.BtnBuscar.TabIndex = 34;
-            this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBuscar.UseVisualStyleBackColor = false;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
-            // 
-            // TxtBusqueda
-            // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(1907, 42);
-            this.TxtBusqueda.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.TxtBusqueda.Name = "TxtBusqueda";
-            this.TxtBusqueda.Size = new System.Drawing.Size(281, 29);
-            this.TxtBusqueda.TabIndex = 31;
-            // 
-            // ComboBusqueda
-            // 
-            this.ComboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBusqueda.FormattingEnabled = true;
-            this.ComboBusqueda.Location = new System.Drawing.Point(1665, 41);
-            this.ComboBusqueda.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ComboBusqueda.Name = "ComboBusqueda";
-            this.ComboBusqueda.Size = new System.Drawing.Size(218, 32);
-            this.ComboBusqueda.TabIndex = 33;
-            // 
-            // LblBuscarPor
-            // 
-            this.LblBuscarPor.AutoSize = true;
-            this.LblBuscarPor.BackColor = System.Drawing.Color.White;
-            this.LblBuscarPor.Location = new System.Drawing.Point(1542, 48);
-            this.LblBuscarPor.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.LblBuscarPor.Name = "LblBuscarPor";
-            this.LblBuscarPor.Size = new System.Drawing.Size(112, 25);
-            this.LblBuscarPor.TabIndex = 32;
-            this.LblBuscarPor.Text = "Buscar por:";
-            // 
-            // TxtIndex
-            // 
-            this.TxtIndex.Location = new System.Drawing.Point(246, 15);
-            this.TxtIndex.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.TxtIndex.Name = "TxtIndex";
-            this.TxtIndex.Size = new System.Drawing.Size(44, 29);
-            this.TxtIndex.TabIndex = 36;
-            this.TxtIndex.Text = "-1";
-            this.TxtIndex.Visible = false;
-            // 
-            // LblSucursal
-            // 
-            this.LblSucursal.AutoSize = true;
-            this.LblSucursal.BackColor = System.Drawing.Color.White;
-            this.LblSucursal.ForeColor = System.Drawing.Color.Black;
-            this.LblSucursal.Location = new System.Drawing.Point(15, 554);
-            this.LblSucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblSucursal.Name = "LblSucursal";
-            this.LblSucursal.Size = new System.Drawing.Size(95, 25);
-            this.LblSucursal.TabIndex = 37;
-            this.LblSucursal.Text = "Sucursal:";
-            // 
-            // ComboSucursal
-            // 
-            this.ComboSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboSucursal.Enabled = false;
-            this.ComboSucursal.FormattingEnabled = true;
-            this.ComboSucursal.Location = new System.Drawing.Point(15, 582);
-            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ComboSucursal.Name = "ComboSucursal";
-            this.ComboSucursal.Size = new System.Drawing.Size(486, 32);
-            this.ComboSucursal.TabIndex = 38;
-            // 
-            // LblNombres
-            // 
-            this.LblNombres.AutoSize = true;
-            this.LblNombres.BackColor = System.Drawing.Color.White;
-            this.LblNombres.Location = new System.Drawing.Point(15, 140);
-            this.LblNombres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblNombres.Name = "LblNombres";
-            this.LblNombres.Size = new System.Drawing.Size(97, 25);
-            this.LblNombres.TabIndex = 41;
-            this.LblNombres.Text = "Nombres:";
-            // 
-            // TxtNombres
-            // 
-            this.TxtNombres.Location = new System.Drawing.Point(15, 168);
-            this.TxtNombres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TxtNombres.Name = "TxtNombres";
-            this.TxtNombres.Size = new System.Drawing.Size(486, 29);
-            this.TxtNombres.TabIndex = 42;
-            // 
-            // TxtApellidos
-            // 
-            this.TxtApellidos.Location = new System.Drawing.Point(16, 251);
-            this.TxtApellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TxtApellidos.Name = "TxtApellidos";
-            this.TxtApellidos.Size = new System.Drawing.Size(484, 29);
-            this.TxtApellidos.TabIndex = 44;
-            // 
-            // LblApellidos
-            // 
-            this.LblApellidos.AutoSize = true;
-            this.LblApellidos.BackColor = System.Drawing.Color.White;
-            this.LblApellidos.Location = new System.Drawing.Point(15, 223);
-            this.LblApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblApellidos.Name = "LblApellidos";
-            this.LblApellidos.Size = new System.Drawing.Size(98, 25);
-            this.LblApellidos.TabIndex = 43;
-            this.LblApellidos.Text = "Apellidos:";
-            // 
             // FrmUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(2490, 1004);
+            this.ClientSize = new System.Drawing.Size(1370, 540);
             this.Controls.Add(this.TxtApellidos);
             this.Controls.Add(this.LblApellidos);
             this.Controls.Add(this.TxtNombres);
@@ -572,7 +568,7 @@
             this.Controls.Add(this.LblPassword);
             this.Controls.Add(this.LblLogin);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmUsuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);

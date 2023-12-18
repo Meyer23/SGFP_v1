@@ -74,21 +74,22 @@
             // 
             this.LblTotalCompra.AutoSize = true;
             this.LblTotalCompra.BackColor = System.Drawing.Color.White;
-            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalCompra.Location = new System.Drawing.Point(811, 460);
+            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalCompra.Location = new System.Drawing.Point(810, 434);
             this.LblTotalCompra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblTotalCompra.Name = "LblTotalCompra";
-            this.LblTotalCompra.Size = new System.Drawing.Size(95, 16);
+            this.LblTotalCompra.Size = new System.Drawing.Size(112, 20);
             this.LblTotalCompra.TabIndex = 60;
             this.LblTotalCompra.Text = "Total Cantidad";
             // 
             // TxtTotalCantidad
             // 
-            this.TxtTotalCantidad.Location = new System.Drawing.Point(813, 478);
+            this.TxtTotalCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalCantidad.Location = new System.Drawing.Point(814, 456);
             this.TxtTotalCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.TxtTotalCantidad.Name = "TxtTotalCantidad";
             this.TxtTotalCantidad.ReadOnly = true;
-            this.TxtTotalCantidad.Size = new System.Drawing.Size(122, 20);
+            this.TxtTotalCantidad.Size = new System.Drawing.Size(177, 26);
             this.TxtTotalCantidad.TabIndex = 61;
             this.TxtTotalCantidad.Text = "0";
             // 
@@ -279,7 +280,7 @@
             this.LblPedidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPedidos.Name = "LblPedidos";
             this.LblPedidos.Padding = new System.Windows.Forms.Padding(2);
-            this.LblPedidos.Size = new System.Drawing.Size(962, 519);
+            this.LblPedidos.Size = new System.Drawing.Size(1002, 519);
             this.LblPedidos.TabIndex = 55;
             this.LblPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -436,7 +437,7 @@
             this.BtnImprimir.IconColor = System.Drawing.Color.White;
             this.BtnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnImprimir.IconSize = 16;
-            this.BtnImprimir.Location = new System.Drawing.Point(813, 413);
+            this.BtnImprimir.Location = new System.Drawing.Point(813, 384);
             this.BtnImprimir.Margin = new System.Windows.Forms.Padding(2);
             this.BtnImprimir.Name = "BtnImprimir";
             this.BtnImprimir.Size = new System.Drawing.Size(142, 27);
@@ -470,7 +471,7 @@
             this.BtnConfirmarMovStock.IconColor = System.Drawing.Color.White;
             this.BtnConfirmarMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnConfirmarMovStock.IconSize = 16;
-            this.BtnConfirmarMovStock.Location = new System.Drawing.Point(814, 328);
+            this.BtnConfirmarMovStock.Location = new System.Drawing.Point(814, 299);
             this.BtnConfirmarMovStock.Margin = new System.Windows.Forms.Padding(2);
             this.BtnConfirmarMovStock.Name = "BtnConfirmarMovStock";
             this.BtnConfirmarMovStock.Size = new System.Drawing.Size(138, 27);
@@ -493,7 +494,7 @@
             this.BtnAnularMovStock.IconColor = System.Drawing.Color.White;
             this.BtnAnularMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnAnularMovStock.IconSize = 16;
-            this.BtnAnularMovStock.Location = new System.Drawing.Point(814, 369);
+            this.BtnAnularMovStock.Location = new System.Drawing.Point(814, 340);
             this.BtnAnularMovStock.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAnularMovStock.Name = "BtnAnularMovStock";
             this.BtnAnularMovStock.Size = new System.Drawing.Size(138, 27);
@@ -508,7 +509,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 534);
+            this.ClientSize = new System.Drawing.Size(1002, 534);
             this.Controls.Add(this.BtnAnularMovStock);
             this.Controls.Add(this.BtnConfirmarMovStock);
             this.Controls.Add(this.PbNoConfirmado);

@@ -9447,7 +9447,11 @@ namespace CapaPresentacion.Reportes {
             
             private global::System.Data.DataColumn columnCantidad;
             
-            private global::System.Data.DataColumn columnTotal;
+            private global::System.Data.DataColumn columnExentas;
+            
+            private global::System.Data.DataColumn columnGravada5;
+            
+            private global::System.Data.DataColumn columnGravada10;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -9532,9 +9536,25 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TotalColumn {
+            public global::System.Data.DataColumn ExentasColumn {
                 get {
-                    return this.columnTotal;
+                    return this.columnExentas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Gravada5Column {
+                get {
+                    return this.columnGravada5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Gravada10Column {
+                get {
+                    return this.columnGravada10;
                 }
             }
             
@@ -9575,7 +9595,7 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public NotasCreditoEmitidasDetalleRow AddNotasCreditoEmitidasDetalleRow(int idProducto, string Codigo, string Descripcion, decimal Precio, decimal Cantidad, decimal Total) {
+            public NotasCreditoEmitidasDetalleRow AddNotasCreditoEmitidasDetalleRow(int idProducto, string Codigo, string Descripcion, decimal Precio, decimal Cantidad, decimal Exentas, decimal Gravada5, decimal Gravada10) {
                 NotasCreditoEmitidasDetalleRow rowNotasCreditoEmitidasDetalleRow = ((NotasCreditoEmitidasDetalleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -9584,7 +9604,9 @@ namespace CapaPresentacion.Reportes {
                         Descripcion,
                         Precio,
                         Cantidad,
-                        Total};
+                        Exentas,
+                        Gravada5,
+                        Gravada10};
                 rowNotasCreditoEmitidasDetalleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNotasCreditoEmitidasDetalleRow);
                 return rowNotasCreditoEmitidasDetalleRow;
@@ -9620,7 +9642,9 @@ namespace CapaPresentacion.Reportes {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnPrecio = base.Columns["Precio"];
                 this.columnCantidad = base.Columns["Cantidad"];
-                this.columnTotal = base.Columns["Total"];
+                this.columnExentas = base.Columns["Exentas"];
+                this.columnGravada5 = base.Columns["Gravada5"];
+                this.columnGravada10 = base.Columns["Gravada10"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9638,8 +9662,12 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnPrecio);
                 this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidad);
-                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal);
+                this.columnExentas = new global::System.Data.DataColumn("Exentas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExentas);
+                this.columnGravada5 = new global::System.Data.DataColumn("Gravada5", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGravada5);
+                this.columnGravada10 = new global::System.Data.DataColumn("Gravada10", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGravada10);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -9655,7 +9683,9 @@ namespace CapaPresentacion.Reportes {
                 this.columnDescripcion.MaxLength = 100;
                 this.columnPrecio.AllowDBNull = false;
                 this.columnCantidad.AllowDBNull = false;
-                this.columnTotal.AllowDBNull = false;
+                this.columnExentas.ReadOnly = true;
+                this.columnGravada5.ReadOnly = true;
+                this.columnGravada10.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10319,7 +10349,11 @@ namespace CapaPresentacion.Reportes {
             
             private global::System.Data.DataColumn columnCantidad;
             
-            private global::System.Data.DataColumn columnTotal;
+            private global::System.Data.DataColumn columnExentas;
+            
+            private global::System.Data.DataColumn columnGravada5;
+            
+            private global::System.Data.DataColumn columnGravada10;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -10404,9 +10438,25 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TotalColumn {
+            public global::System.Data.DataColumn ExentasColumn {
                 get {
-                    return this.columnTotal;
+                    return this.columnExentas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Gravada5Column {
+                get {
+                    return this.columnGravada5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Gravada10Column {
+                get {
+                    return this.columnGravada10;
                 }
             }
             
@@ -10447,7 +10497,7 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VentasDetalleRow AddVentasDetalleRow(int idProducto, string Codigo, string Descripcion, double PrecioUnitario, int Cantidad, double Total) {
+            public VentasDetalleRow AddVentasDetalleRow(int idProducto, string Codigo, string Descripcion, double PrecioUnitario, int Cantidad, double Exentas, double Gravada5, double Gravada10) {
                 VentasDetalleRow rowVentasDetalleRow = ((VentasDetalleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -10456,7 +10506,9 @@ namespace CapaPresentacion.Reportes {
                         Descripcion,
                         PrecioUnitario,
                         Cantidad,
-                        Total};
+                        Exentas,
+                        Gravada5,
+                        Gravada10};
                 rowVentasDetalleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVentasDetalleRow);
                 return rowVentasDetalleRow;
@@ -10492,7 +10544,9 @@ namespace CapaPresentacion.Reportes {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnPrecioUnitario = base.Columns["PrecioUnitario"];
                 this.columnCantidad = base.Columns["Cantidad"];
-                this.columnTotal = base.Columns["Total"];
+                this.columnExentas = base.Columns["Exentas"];
+                this.columnGravada5 = base.Columns["Gravada5"];
+                this.columnGravada10 = base.Columns["Gravada10"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10510,8 +10564,12 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnPrecioUnitario);
                 this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidad);
-                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal);
+                this.columnExentas = new global::System.Data.DataColumn("Exentas", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExentas);
+                this.columnGravada5 = new global::System.Data.DataColumn("Gravada5", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGravada5);
+                this.columnGravada10 = new global::System.Data.DataColumn("Gravada10", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGravada10);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -10527,7 +10585,9 @@ namespace CapaPresentacion.Reportes {
                 this.columnDescripcion.MaxLength = 100;
                 this.columnPrecioUnitario.AllowDBNull = false;
                 this.columnCantidad.AllowDBNull = false;
-                this.columnTotal.AllowDBNull = false;
+                this.columnExentas.ReadOnly = true;
+                this.columnGravada5.ReadOnly = true;
+                this.columnGravada10.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15644,13 +15704,89 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Total {
+            public decimal Exentas {
                 get {
-                    return ((decimal)(this[this.tableNotasCreditoEmitidasDetalle.TotalColumn]));
+                    try {
+                        return ((decimal)(this[this.tableNotasCreditoEmitidasDetalle.ExentasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Exentas\' de la tabla \'NotasCreditoEmitidasDetalle\' es DBN" +
+                                "ull.", e);
+                    }
                 }
                 set {
-                    this[this.tableNotasCreditoEmitidasDetalle.TotalColumn] = value;
+                    this[this.tableNotasCreditoEmitidasDetalle.ExentasColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Gravada5 {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNotasCreditoEmitidasDetalle.Gravada5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Gravada5\' de la tabla \'NotasCreditoEmitidasDetalle\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotasCreditoEmitidasDetalle.Gravada5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Gravada10 {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNotasCreditoEmitidasDetalle.Gravada10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Gravada10\' de la tabla \'NotasCreditoEmitidasDetalle\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotasCreditoEmitidasDetalle.Gravada10Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsExentasNull() {
+                return this.IsNull(this.tableNotasCreditoEmitidasDetalle.ExentasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetExentasNull() {
+                this[this.tableNotasCreditoEmitidasDetalle.ExentasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGravada5Null() {
+                return this.IsNull(this.tableNotasCreditoEmitidasDetalle.Gravada5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGravada5Null() {
+                this[this.tableNotasCreditoEmitidasDetalle.Gravada5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGravada10Null() {
+                return this.IsNull(this.tableNotasCreditoEmitidasDetalle.Gravada10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGravada10Null() {
+                this[this.tableNotasCreditoEmitidasDetalle.Gravada10Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -16057,13 +16193,86 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double Total {
+            public double Exentas {
                 get {
-                    return ((double)(this[this.tableVentasDetalle.TotalColumn]));
+                    try {
+                        return ((double)(this[this.tableVentasDetalle.ExentasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Exentas\' de la tabla \'VentasDetalle\' es DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableVentasDetalle.TotalColumn] = value;
+                    this[this.tableVentasDetalle.ExentasColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double Gravada5 {
+                get {
+                    try {
+                        return ((double)(this[this.tableVentasDetalle.Gravada5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Gravada5\' de la tabla \'VentasDetalle\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentasDetalle.Gravada5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double Gravada10 {
+                get {
+                    try {
+                        return ((double)(this[this.tableVentasDetalle.Gravada10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Gravada10\' de la tabla \'VentasDetalle\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentasDetalle.Gravada10Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsExentasNull() {
+                return this.IsNull(this.tableVentasDetalle.ExentasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetExentasNull() {
+                this[this.tableVentasDetalle.ExentasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGravada5Null() {
+                return this.IsNull(this.tableVentasDetalle.Gravada5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGravada5Null() {
+                this[this.tableVentasDetalle.Gravada5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGravada10Null() {
+                return this.IsNull(this.tableVentasDetalle.Gravada10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGravada10Null() {
+                this[this.tableVentasDetalle.Gravada10Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -22268,7 +22477,9 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Precio", "Precio");
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
-            tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("Exentas", "Exentas");
+            tableMapping.ColumnMappings.Add("Gravada5", "Gravada5");
+            tableMapping.ColumnMappings.Add("Gravada10", "Gravada10");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -22285,9 +22496,12 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT P.id, ND.idProducto, P.Codigo, P.Descripcion, ND.Precio, ND.Cantidad, ND.Total 
+            this._commandCollection[0].CommandText = @"SELECT P.id, ND.idProducto, P.Codigo, P.Descripcion, ND.Precio, ND.Cantidad, CASE WHEN CONVERT(int,I.PorcIVA) = 0 THEN ND.Total ELSE 0 END AS Exentas,
+CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN ND.Total ELSE 0 END AS Gravada5, CASE WHEN CONVERT(int,I.PorcIVA) = 10 THEN ND.Total ELSE 0 END AS Gravada10  
                         FROM NotasCreditoEmitidasDetalles ND 
                         INNER JOIN Productos P ON ND.idProducto = P.id 
+						INNER JOIN Categorias C ON P.idCategoria = C.id
+						INNER JOIN Impuestos I ON C.idImpuesto = I.id
                         WHERE ND.idNCEmitida = @idNCEmitida";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idNCEmitida", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idNCEmitida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22643,7 +22857,9 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("PrecioUnitario", "PrecioUnitario");
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
-            tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("Exentas", "Exentas");
+            tableMapping.ColumnMappings.Add("Gravada5", "Gravada5");
+            tableMapping.ColumnMappings.Add("Gravada10", "Gravada10");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -22660,9 +22876,12 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT P.id, CD.idProducto, P.Codigo, P.Descripcion, CD.PrecioUnitario, CD.Cantidad, CD.Total 
+            this._commandCollection[0].CommandText = @"SELECT P.id, CD.idProducto, P.Codigo, P.Descripcion, CD.PrecioUnitario, CD.Cantidad, CASE WHEN CONVERT(int,I.PorcIVA) = 0 THEN CD.Total ELSE 0 END AS Exentas,
+CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE WHEN CONVERT(int,I.PorcIVA) = 10 THEN CD.Total ELSE 0 END AS Gravada10  
                         FROM FacturasDetalles CD 
                         INNER JOIN Productos P ON CD.idProducto = P.id 
+						INNER JOIN Categorias C ON P.idCategoria = C.id
+						INNER JOIN Impuestos I ON C.idImpuesto = I.id
                         WHERE CD.idFactura = @idVenta";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenta", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idFactura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

@@ -63,18 +63,18 @@
             this.LblUsuariosAgregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LblUsuariosAgregar.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblUsuariosAgregar.Location = new System.Drawing.Point(0, 0);
-            this.LblUsuariosAgregar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblUsuariosAgregar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblUsuariosAgregar.Name = "LblUsuariosAgregar";
-            this.LblUsuariosAgregar.Size = new System.Drawing.Size(1265, 857);
+            this.LblUsuariosAgregar.Size = new System.Drawing.Size(691, 406);
             this.LblUsuariosAgregar.TabIndex = 3;
             // 
             // LblFecha
             // 
             this.LblFecha.AutoSize = true;
-            this.LblFecha.Location = new System.Drawing.Point(31, 54);
-            this.LblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblFecha.Location = new System.Drawing.Point(17, 29);
+            this.LblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblFecha.Name = "LblFecha";
-            this.LblFecha.Size = new System.Drawing.Size(153, 25);
+            this.LblFecha.Size = new System.Drawing.Size(83, 13);
             this.LblFecha.TabIndex = 6;
             this.LblFecha.Text = "Fecha Apertura:";
             // 
@@ -82,20 +82,20 @@
             // 
             this.DateTimePickerApertura.Enabled = false;
             this.DateTimePickerApertura.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTimePickerApertura.Location = new System.Drawing.Point(287, 42);
-            this.DateTimePickerApertura.Margin = new System.Windows.Forms.Padding(4);
+            this.DateTimePickerApertura.Location = new System.Drawing.Point(157, 23);
+            this.DateTimePickerApertura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DateTimePickerApertura.Name = "DateTimePickerApertura";
             this.DateTimePickerApertura.ShowUpDown = true;
-            this.DateTimePickerApertura.Size = new System.Drawing.Size(244, 29);
+            this.DateTimePickerApertura.Size = new System.Drawing.Size(135, 20);
             this.DateTimePickerApertura.TabIndex = 7;
             // 
             // LblSucursal
             // 
             this.LblSucursal.AutoSize = true;
-            this.LblSucursal.Location = new System.Drawing.Point(31, 118);
-            this.LblSucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblSucursal.Location = new System.Drawing.Point(17, 64);
+            this.LblSucursal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblSucursal.Name = "LblSucursal";
-            this.LblSucursal.Size = new System.Drawing.Size(95, 25);
+            this.LblSucursal.Size = new System.Drawing.Size(51, 13);
             this.LblSucursal.TabIndex = 8;
             this.LblSucursal.Text = "Sucursal:";
             // 
@@ -103,51 +103,51 @@
             // 
             this.ComboSucursal.Enabled = false;
             this.ComboSucursal.FormattingEnabled = true;
-            this.ComboSucursal.Location = new System.Drawing.Point(287, 111);
-            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.ComboSucursal.Location = new System.Drawing.Point(157, 60);
+            this.ComboSucursal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboSucursal.Name = "ComboSucursal";
-            this.ComboSucursal.Size = new System.Drawing.Size(244, 32);
+            this.ComboSucursal.Size = new System.Drawing.Size(135, 21);
             this.ComboSucursal.TabIndex = 9;
             // 
             // ComboCajas
             // 
             this.ComboCajas.FormattingEnabled = true;
-            this.ComboCajas.Location = new System.Drawing.Point(287, 187);
-            this.ComboCajas.Margin = new System.Windows.Forms.Padding(4);
+            this.ComboCajas.Location = new System.Drawing.Point(157, 101);
+            this.ComboCajas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboCajas.Name = "ComboCajas";
-            this.ComboCajas.Size = new System.Drawing.Size(244, 32);
+            this.ComboCajas.Size = new System.Drawing.Size(135, 21);
             this.ComboCajas.TabIndex = 10;
             // 
             // LblCaja
             // 
             this.LblCaja.AutoSize = true;
-            this.LblCaja.Location = new System.Drawing.Point(31, 194);
-            this.LblCaja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblCaja.Location = new System.Drawing.Point(17, 105);
+            this.LblCaja.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblCaja.Name = "LblCaja";
-            this.LblCaja.Size = new System.Drawing.Size(59, 25);
+            this.LblCaja.Size = new System.Drawing.Size(31, 13);
             this.LblCaja.TabIndex = 11;
             this.LblCaja.Text = "Caja:";
             // 
             // ImporteUpDown
             // 
-            this.ImporteUpDown.Location = new System.Drawing.Point(287, 263);
-            this.ImporteUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.ImporteUpDown.Location = new System.Drawing.Point(157, 142);
+            this.ImporteUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ImporteUpDown.Maximum = new decimal(new int[] {
             500000,
             0,
             0,
             0});
             this.ImporteUpDown.Name = "ImporteUpDown";
-            this.ImporteUpDown.Size = new System.Drawing.Size(248, 29);
+            this.ImporteUpDown.Size = new System.Drawing.Size(135, 20);
             this.ImporteUpDown.TabIndex = 12;
             // 
             // LbLimporte
             // 
             this.LbLimporte.AutoSize = true;
-            this.LbLimporte.Location = new System.Drawing.Point(31, 267);
-            this.LbLimporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LbLimporte.Location = new System.Drawing.Point(17, 145);
+            this.LbLimporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLimporte.Name = "LbLimporte";
-            this.LbLimporte.Size = new System.Drawing.Size(83, 25);
+            this.LbLimporte.Size = new System.Drawing.Size(45, 13);
             this.LbLimporte.TabIndex = 13;
             this.LbLimporte.Text = "Importe:";
             // 
@@ -156,19 +156,19 @@
             this.ComboEstado.FormattingEnabled = true;
             this.ComboEstado.Items.AddRange(new object[] {
             "Abierto"});
-            this.ComboEstado.Location = new System.Drawing.Point(804, 92);
-            this.ComboEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.ComboEstado.Location = new System.Drawing.Point(439, 50);
+            this.ComboEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboEstado.Name = "ComboEstado";
-            this.ComboEstado.Size = new System.Drawing.Size(305, 32);
+            this.ComboEstado.Size = new System.Drawing.Size(168, 21);
             this.ComboEstado.TabIndex = 14;
             // 
             // LbLEstado
             // 
             this.LbLEstado.AutoSize = true;
-            this.LbLEstado.Location = new System.Drawing.Point(799, 42);
-            this.LbLEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LbLEstado.Location = new System.Drawing.Point(436, 23);
+            this.LbLEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLEstado.Name = "LbLEstado";
-            this.LbLEstado.Size = new System.Drawing.Size(79, 25);
+            this.LbLEstado.Size = new System.Drawing.Size(43, 13);
             this.LbLEstado.TabIndex = 15;
             this.LbLEstado.Text = "Estado:";
             // 
@@ -176,64 +176,64 @@
             // 
             this.LbLCajero.AutoSize = true;
             this.LbLCajero.ForeColor = System.Drawing.Color.Black;
-            this.LbLCajero.Location = new System.Drawing.Point(802, 141);
-            this.LbLCajero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LbLCajero.Location = new System.Drawing.Point(437, 76);
+            this.LbLCajero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLCajero.Name = "LbLCajero";
-            this.LbLCajero.Size = new System.Drawing.Size(76, 25);
+            this.LbLCajero.Size = new System.Drawing.Size(40, 13);
             this.LbLCajero.TabIndex = 17;
             this.LbLCajero.Text = "Cajero:";
             // 
             // ComboCajero
             // 
             this.ComboCajero.FormattingEnabled = true;
-            this.ComboCajero.Location = new System.Drawing.Point(807, 187);
-            this.ComboCajero.Margin = new System.Windows.Forms.Padding(4);
+            this.ComboCajero.Location = new System.Drawing.Point(440, 101);
+            this.ComboCajero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComboCajero.Name = "ComboCajero";
-            this.ComboCajero.Size = new System.Drawing.Size(305, 32);
+            this.ComboCajero.Size = new System.Drawing.Size(168, 21);
             this.ComboCajero.TabIndex = 16;
             // 
             // DateTimePickerCierre
             // 
             this.DateTimePickerCierre.Enabled = false;
             this.DateTimePickerCierre.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTimePickerCierre.Location = new System.Drawing.Point(287, 53);
-            this.DateTimePickerCierre.Margin = new System.Windows.Forms.Padding(4);
+            this.DateTimePickerCierre.Location = new System.Drawing.Point(157, 29);
+            this.DateTimePickerCierre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DateTimePickerCierre.Name = "DateTimePickerCierre";
-            this.DateTimePickerCierre.Size = new System.Drawing.Size(328, 29);
+            this.DateTimePickerCierre.Size = new System.Drawing.Size(135, 20);
             this.DateTimePickerCierre.TabIndex = 20;
             this.DateTimePickerCierre.Value = new System.DateTime(2023, 12, 17, 18, 58, 22, 0);
             // 
             // LbLFechaCierre
             // 
             this.LbLFechaCierre.AutoSize = true;
-            this.LbLFechaCierre.Location = new System.Drawing.Point(31, 57);
-            this.LbLFechaCierre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LbLFechaCierre.Location = new System.Drawing.Point(17, 31);
+            this.LbLFechaCierre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLFechaCierre.Name = "LbLFechaCierre";
-            this.LbLFechaCierre.Size = new System.Drawing.Size(131, 25);
+            this.LbLFechaCierre.Size = new System.Drawing.Size(70, 13);
             this.LbLFechaCierre.TabIndex = 19;
             this.LbLFechaCierre.Text = "Fecha Cierre:";
             // 
             // LbLimporteCierre
             // 
             this.LbLimporteCierre.AutoSize = true;
-            this.LbLimporteCierre.Location = new System.Drawing.Point(31, 133);
-            this.LbLimporteCierre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LbLimporteCierre.Location = new System.Drawing.Point(17, 72);
+            this.LbLimporteCierre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbLimporteCierre.Name = "LbLimporteCierre";
-            this.LbLimporteCierre.Size = new System.Drawing.Size(83, 25);
+            this.LbLimporteCierre.Size = new System.Drawing.Size(45, 13);
             this.LbLimporteCierre.TabIndex = 22;
             this.LbLimporteCierre.Text = "Importe:";
             // 
             // UpDownMontoCierre
             // 
-            this.UpDownMontoCierre.Location = new System.Drawing.Point(224, 133);
-            this.UpDownMontoCierre.Margin = new System.Windows.Forms.Padding(4);
+            this.UpDownMontoCierre.Location = new System.Drawing.Point(157, 65);
+            this.UpDownMontoCierre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UpDownMontoCierre.Maximum = new decimal(new int[] {
             5000000,
             0,
             0,
             0});
             this.UpDownMontoCierre.Name = "UpDownMontoCierre";
-            this.UpDownMontoCierre.Size = new System.Drawing.Size(248, 29);
+            this.UpDownMontoCierre.Size = new System.Drawing.Size(135, 20);
             this.UpDownMontoCierre.TabIndex = 21;
             // 
             // BtnSalir
@@ -248,10 +248,10 @@
             this.BtnSalir.IconColor = System.Drawing.Color.White;
             this.BtnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnSalir.IconSize = 18;
-            this.BtnSalir.Location = new System.Drawing.Point(966, 788);
-            this.BtnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnSalir.Location = new System.Drawing.Point(527, 427);
+            this.BtnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(249, 48);
+            this.BtnSalir.Size = new System.Drawing.Size(136, 26);
             this.BtnSalir.TabIndex = 55;
             this.BtnSalir.Text = "Cancelar";
             this.BtnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -275,11 +275,11 @@
             this.groupBox1.Controls.Add(this.ComboCajas);
             this.groupBox1.Controls.Add(this.ImporteUpDown);
             this.groupBox1.Controls.Add(this.LblCaja);
-            this.groupBox1.Location = new System.Drawing.Point(15, 100);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(8, 54);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1226, 330);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(669, 179);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Apertura Caja";
@@ -296,10 +296,10 @@
             this.BtnApertura.IconColor = System.Drawing.Color.White;
             this.BtnApertura.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnApertura.IconSize = 16;
-            this.BtnApertura.Location = new System.Drawing.Point(951, 263);
-            this.BtnApertura.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnApertura.Location = new System.Drawing.Point(519, 142);
+            this.BtnApertura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnApertura.Name = "BtnApertura";
-            this.BtnApertura.Size = new System.Drawing.Size(249, 50);
+            this.BtnApertura.Size = new System.Drawing.Size(136, 27);
             this.BtnApertura.TabIndex = 55;
             this.BtnApertura.Text = "Aperturar Caja";
             this.BtnApertura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -315,11 +315,11 @@
             this.groupBox2.Controls.Add(this.DateTimePickerCierre);
             this.groupBox2.Controls.Add(this.UpDownMontoCierre);
             this.groupBox2.Controls.Add(this.LbLimporteCierre);
-            this.groupBox2.Location = new System.Drawing.Point(15, 463);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(8, 251);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1226, 247);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(669, 134);
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cierre Caja";
@@ -336,10 +336,10 @@
             this.BtnCerrarCaja.IconColor = System.Drawing.Color.White;
             this.BtnCerrarCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCerrarCaja.IconSize = 16;
-            this.BtnCerrarCaja.Location = new System.Drawing.Point(952, 181);
-            this.BtnCerrarCaja.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnCerrarCaja.Location = new System.Drawing.Point(519, 98);
+            this.BtnCerrarCaja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnCerrarCaja.Name = "BtnCerrarCaja";
-            this.BtnCerrarCaja.Size = new System.Drawing.Size(249, 50);
+            this.BtnCerrarCaja.Size = new System.Drawing.Size(136, 27);
             this.BtnCerrarCaja.TabIndex = 55;
             this.BtnCerrarCaja.Text = "Cerrar Caja";
             this.BtnCerrarCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -352,24 +352,24 @@
             this.LblDetalleAperturaCierre.AutoSize = true;
             this.LblDetalleAperturaCierre.BackColor = System.Drawing.Color.White;
             this.LblDetalleAperturaCierre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDetalleAperturaCierre.Location = new System.Drawing.Point(7, 17);
-            this.LblDetalleAperturaCierre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblDetalleAperturaCierre.Location = new System.Drawing.Point(4, 9);
+            this.LblDetalleAperturaCierre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblDetalleAperturaCierre.Name = "LblDetalleAperturaCierre";
-            this.LblDetalleAperturaCierre.Size = new System.Drawing.Size(327, 32);
+            this.LblDetalleAperturaCierre.Size = new System.Drawing.Size(183, 20);
             this.LblDetalleAperturaCierre.TabIndex = 75;
             this.LblDetalleAperturaCierre.Text = "Apertura / Cierre de Caja";
             // 
             // FrmAperturaCierreCaja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1265, 857);
+            this.ClientSize = new System.Drawing.Size(690, 406);
             this.Controls.Add(this.LblDetalleAperturaCierre);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.LblUsuariosAgregar);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAperturaCierreCaja";
             this.Text = "Apertura / Cierre ";
             this.Load += new System.EventHandler(this.FrmAperturaCierreCaja_Load);

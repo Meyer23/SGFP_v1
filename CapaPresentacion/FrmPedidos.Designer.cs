@@ -63,10 +63,6 @@
             this.TxtCodProducto = new System.Windows.Forms.TextBox();
             this.LblCodProducto = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.LblTotalCompra = new System.Windows.Forms.Label();
-            this.TxtTotalPedido = new System.Windows.Forms.TextBox();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.BtnInsertarProductos = new FontAwesome.Sharp.IconButton();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +70,10 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.LblTotalCompra = new System.Windows.Forms.Label();
+            this.TxtTotalPedido = new System.Windows.Forms.TextBox();
+            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
+            this.BtnInsertarProductos = new FontAwesome.Sharp.IconButton();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProveedor.SuspendLayout();
             this.groupBoxInfoProducto.SuspendLayout();
@@ -88,7 +88,7 @@
             this.LblPedidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPedidos.Name = "LblPedidos";
             this.LblPedidos.Padding = new System.Windows.Forms.Padding(2);
-            this.LblPedidos.Size = new System.Drawing.Size(970, 519);
+            this.LblPedidos.Size = new System.Drawing.Size(991, 519);
             this.LblPedidos.TabIndex = 24;
             this.LblPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -331,7 +331,6 @@
             this.groupBoxInfoProducto.Controls.Add(this.LblCantidad);
             this.groupBoxInfoProducto.Controls.Add(this.TxtPrecioCompra);
             this.groupBoxInfoProducto.Controls.Add(this.LblPrecio);
-            this.groupBoxInfoProducto.Controls.Add(this.BtnAgregar);
             this.groupBoxInfoProducto.Controls.Add(this.TxtDescProducto);
             this.groupBoxInfoProducto.Controls.Add(this.LblDescProducto);
             this.groupBoxInfoProducto.Controls.Add(this.BntBuscarProd);
@@ -341,7 +340,7 @@
             this.groupBoxInfoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxInfoProducto.Location = new System.Drawing.Point(16, 196);
             this.groupBoxInfoProducto.Name = "groupBoxInfoProducto";
-            this.groupBoxInfoProducto.Size = new System.Drawing.Size(954, 72);
+            this.groupBoxInfoProducto.Size = new System.Drawing.Size(807, 72);
             this.groupBoxInfoProducto.TabIndex = 28;
             this.groupBoxInfoProducto.TabStop = false;
             this.groupBoxInfoProducto.Text = "Información del Producto";
@@ -391,10 +390,9 @@
             this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.BtnAgregar.IconColor = System.Drawing.Color.Black;
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAgregar.IconSize = 30;
-            this.BtnAgregar.Location = new System.Drawing.Point(826, 12);
+            this.BtnAgregar.Location = new System.Drawing.Point(832, 196);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(69, 55);
+            this.BtnAgregar.Size = new System.Drawing.Size(82, 72);
             this.BtnAgregar.TabIndex = 30;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -489,73 +487,6 @@
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
-            // LblTotalCompra
-            // 
-            this.LblTotalCompra.AutoSize = true;
-            this.LblTotalCompra.BackColor = System.Drawing.Color.White;
-            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalCompra.Location = new System.Drawing.Point(846, 467);
-            this.LblTotalCompra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblTotalCompra.Name = "LblTotalCompra";
-            this.LblTotalCompra.Size = new System.Drawing.Size(85, 16);
-            this.LblTotalCompra.TabIndex = 31;
-            this.LblTotalCompra.Text = "Total Pedido";
-            // 
-            // TxtTotalPedido
-            // 
-            this.TxtTotalPedido.Location = new System.Drawing.Point(848, 485);
-            this.TxtTotalPedido.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtTotalPedido.Name = "TxtTotalPedido";
-            this.TxtTotalPedido.ReadOnly = true;
-            this.TxtTotalPedido.Size = new System.Drawing.Size(122, 20);
-            this.TxtTotalPedido.TabIndex = 32;
-            this.TxtTotalPedido.Text = "0";
-            // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.ForestGreen;
-            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(846, 430);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(125, 27);
-            this.BtnGuardar.TabIndex = 51;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // BtnInsertarProductos
-            // 
-            this.BtnInsertarProductos.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.BtnInsertarProductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnInsertarProductos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnInsertarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInsertarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInsertarProductos.ForeColor = System.Drawing.Color.White;
-            this.BtnInsertarProductos.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BtnInsertarProductos.IconColor = System.Drawing.Color.White;
-            this.BtnInsertarProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnInsertarProductos.IconSize = 16;
-            this.BtnInsertarProductos.Location = new System.Drawing.Point(846, 334);
-            this.BtnInsertarProductos.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnInsertarProductos.Name = "BtnInsertarProductos";
-            this.BtnInsertarProductos.Size = new System.Drawing.Size(125, 52);
-            this.BtnInsertarProductos.TabIndex = 53;
-            this.BtnInsertarProductos.Text = "Insertar Productos";
-            this.BtnInsertarProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnInsertarProductos.UseVisualStyleBackColor = false;
-            this.BtnInsertarProductos.Click += new System.EventHandler(this.BtnInsertarProductos_Click);
-            // 
             // idProducto
             // 
             this.idProducto.HeaderText = "idProducto";
@@ -608,15 +539,84 @@
             this.BtnEliminar.ReadOnly = true;
             this.BtnEliminar.Width = 30;
             // 
+            // LblTotalCompra
+            // 
+            this.LblTotalCompra.AutoSize = true;
+            this.LblTotalCompra.BackColor = System.Drawing.Color.White;
+            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalCompra.Location = new System.Drawing.Point(828, 463);
+            this.LblTotalCompra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblTotalCompra.Name = "LblTotalCompra";
+            this.LblTotalCompra.Size = new System.Drawing.Size(97, 20);
+            this.LblTotalCompra.TabIndex = 31;
+            this.LblTotalCompra.Text = "Total Pedido";
+            // 
+            // TxtTotalPedido
+            // 
+            this.TxtTotalPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalPedido.Location = new System.Drawing.Point(832, 484);
+            this.TxtTotalPedido.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtTotalPedido.Name = "TxtTotalPedido";
+            this.TxtTotalPedido.ReadOnly = true;
+            this.TxtTotalPedido.Size = new System.Drawing.Size(160, 26);
+            this.TxtTotalPedido.TabIndex = 32;
+            this.TxtTotalPedido.Text = "0";
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.BtnGuardar.IconColor = System.Drawing.Color.White;
+            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnGuardar.IconSize = 16;
+            this.BtnGuardar.Location = new System.Drawing.Point(832, 421);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(125, 27);
+            this.BtnGuardar.TabIndex = 51;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // BtnInsertarProductos
+            // 
+            this.BtnInsertarProductos.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.BtnInsertarProductos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInsertarProductos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnInsertarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInsertarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInsertarProductos.ForeColor = System.Drawing.Color.White;
+            this.BtnInsertarProductos.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.BtnInsertarProductos.IconColor = System.Drawing.Color.White;
+            this.BtnInsertarProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnInsertarProductos.IconSize = 16;
+            this.BtnInsertarProductos.Location = new System.Drawing.Point(846, 334);
+            this.BtnInsertarProductos.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnInsertarProductos.Name = "BtnInsertarProductos";
+            this.BtnInsertarProductos.Size = new System.Drawing.Size(125, 52);
+            this.BtnInsertarProductos.TabIndex = 53;
+            this.BtnInsertarProductos.Text = "Insertar Productos";
+            this.BtnInsertarProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnInsertarProductos.UseVisualStyleBackColor = false;
+            this.BtnInsertarProductos.Click += new System.EventHandler(this.BtnInsertarProductos_Click);
+            // 
             // FrmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 535);
+            this.ClientSize = new System.Drawing.Size(1013, 535);
             this.Controls.Add(this.BtnInsertarProductos);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtTotalPedido);
             this.Controls.Add(this.LblTotalCompra);
+            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.groupBoxInfoProducto);
             this.Controls.Add(this.groupBoxInfoPedido);

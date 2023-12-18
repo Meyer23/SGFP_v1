@@ -16,7 +16,7 @@ namespace CapaPresentacion
 {
     public partial class FrmVerDetalleVenta : Form, IFormularioConIdUsuario
     {
-        bool anula;
+        bool anula, imprime;
         private UsuarioLogin _Usuario;
         public FrmVerDetalleVenta(UsuarioLogin oUsuario = null)
         {
@@ -39,11 +39,13 @@ namespace CapaPresentacion
             dtpFinVigencia.Value = DateTime.Now;
             //BtnConfirmarCompra.Visible = false;
             BtnAnularVenta.Visible = false;
+            BtnImprimirVenta.Visible = false;
 
             List<Proceso> procesos = new CN_Procesos().ObtenerProcesos(_Usuario.Id);
             foreach (Proceso proceso in procesos)
             {
                 anula = procesos.Any(m => m.Boton == BtnAnularVenta.Name && m.Procesa == true);
+                imprime = procesos.Any(m => m.Boton == BtnImprimirVenta.Name && m.Procesa == true);
             }
         }
 
@@ -123,7 +125,22 @@ namespace CapaPresentacion
                         {
                             PbNoConfirmado.Visible = true;
                             LblAnulado.Visible = true;
-                        }                            
+                            if (anula)
+                            {
+                                BtnAnularVenta.Visible = true;
+                            }
+                            if (imprime)
+                            {
+                                BtnImprimirVenta.Visible = true;
+                            }
+                        }
+                        else
+                        {
+                            PbNoConfirmado.Visible = false;
+                            LblAnulado.Visible = false;
+                            BtnAnularVenta.Visible = false;
+                            BtnImprimirVenta.Visible = false;
+                        }                           
 
                         dgvData.Rows.Clear();
 
@@ -161,6 +178,8 @@ namespace CapaPresentacion
             //LblNoConfirmado.Visible = false;
             PbNoConfirmado.Visible = false;
             LblAnulado.Visible = false;
+            BtnImprimirVenta.Visible = false;
+            BtnAnularVenta.Visible = false;
         }
 
         private void TxtBusqueda_KeyDown(object sender, KeyEventArgs e)
@@ -235,6 +254,21 @@ namespace CapaPresentacion
                     {
                         PbNoConfirmado.Visible = true;
                         LblAnulado.Visible = true;
+                        if (anula)
+                        {
+                            BtnAnularVenta.Visible = true;
+                        }
+                        if (imprime)
+                        {
+                            BtnImprimirVenta.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        PbNoConfirmado.Visible = false;
+                        LblAnulado.Visible = false;
+                        BtnAnularVenta.Visible = false;
+                        BtnImprimirVenta.Visible = false;
                     }
 
                     dgvData.Rows.Clear();
@@ -266,6 +300,7 @@ namespace CapaPresentacion
                     LblAnulado.Visible = true;
                     PbNoConfirmado.Visible = true;
                     BtnAnularVenta.Visible = false;
+                    BtnImprimirVenta .Visible = false;
                     //BtnConfirmarCompra.Visible = false;
                 }
                 else
@@ -273,6 +308,14 @@ namespace CapaPresentacion
                     TxtBusqueda.Select();
                 }
             }
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptVentas oRptVentas = new Reportes.FrmRptVentas();
+            oRptVentas.TxtParamId.Text = TxtIdVenta.Text;
+            oRptVentas.ShowDialog();
+            BtnAnularVenta .Visible = false;
         }
     }
 }

@@ -229,13 +229,13 @@
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.BtnCancelar.BackColor = System.Drawing.Color.Red;
             this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
             this.BtnCancelar.IconColor = System.Drawing.Color.White;
             this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCancelar.IconSize = 16;

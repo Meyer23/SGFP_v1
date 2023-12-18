@@ -89,7 +89,7 @@
             this.LblPedidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPedidos.Name = "LblPedidos";
             this.LblPedidos.Padding = new System.Windows.Forms.Padding(2);
-            this.LblPedidos.Size = new System.Drawing.Size(980, 519);
+            this.LblPedidos.Size = new System.Drawing.Size(1004, 519);
             this.LblPedidos.TabIndex = 25;
             this.LblPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -439,10 +439,11 @@
             // 
             // TxtTotalPedido
             // 
-            this.TxtTotalPedido.Location = new System.Drawing.Point(841, 471);
+            this.TxtTotalPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalPedido.Location = new System.Drawing.Point(837, 468);
             this.TxtTotalPedido.Name = "TxtTotalPedido";
             this.TxtTotalPedido.ReadOnly = true;
-            this.TxtTotalPedido.Size = new System.Drawing.Size(142, 20);
+            this.TxtTotalPedido.Size = new System.Drawing.Size(177, 26);
             this.TxtTotalPedido.TabIndex = 93;
             this.TxtTotalPedido.Text = "0";
             // 
@@ -450,10 +451,10 @@
             // 
             this.LblTotalCompra.AutoSize = true;
             this.LblTotalCompra.BackColor = System.Drawing.Color.White;
-            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalCompra.Location = new System.Drawing.Point(838, 452);
+            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalCompra.Location = new System.Drawing.Point(836, 448);
             this.LblTotalCompra.Name = "LblTotalCompra";
-            this.LblTotalCompra.Size = new System.Drawing.Size(85, 16);
+            this.LblTotalCompra.Size = new System.Drawing.Size(97, 20);
             this.LblTotalCompra.TabIndex = 92;
             this.LblTotalCompra.Text = "Total Pedido";
             // 
@@ -608,7 +609,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 545);
+            this.ClientSize = new System.Drawing.Size(1026, 545);
             this.Controls.Add(this.checkBoxAnulado);
             this.Controls.Add(this.LblAnulado);
             this.Controls.Add(this.BtnAnularPedido);

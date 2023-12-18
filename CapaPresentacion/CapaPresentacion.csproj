@@ -532,6 +532,12 @@
     <Compile Include="Reportes\FrmRptUltimasCompras.Designer.cs">
       <DependentUpon>FrmRptUltimasCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptVentas.Designer.cs">
+      <DependentUpon>FrmRptVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FrmAnularCompra.resx">
       <DependentUpon>FrmAnularCompra.cs</DependentUpon>
@@ -768,6 +774,9 @@
     <EmbeddedResource Include="Reportes\FrmRptUltimasCompras.resx">
       <DependentUpon>FrmRptUltimasCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptVentas.resx">
+      <DependentUpon>FrmRptVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RPT_Clientes.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Compras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoComprasSaldos.rdlc" />
@@ -785,6 +794,7 @@
     <EmbeddedResource Include="Reportes\RPT_Proveedores.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoCompras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_UltimasCompras.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_Ventas.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

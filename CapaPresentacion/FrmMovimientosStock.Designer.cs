@@ -49,14 +49,14 @@
             this.TxtCodProducto = new System.Windows.Forms.TextBox();
             this.LblCodProducto = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.TxtTotalCantidad = new System.Windows.Forms.TextBox();
-            this.LblTotalCompra = new System.Windows.Forms.Label();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
+            this.TxtTotalCantidad = new System.Windows.Forms.TextBox();
+            this.LblTotalCompra = new System.Windows.Forms.Label();
             this.groupBoxInfoPedido.SuspendLayout();
             this.groupBoxInfoProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
@@ -70,7 +70,7 @@
             this.LblPedidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblPedidos.Name = "LblPedidos";
             this.LblPedidos.Padding = new System.Windows.Forms.Padding(2);
-            this.LblPedidos.Size = new System.Drawing.Size(945, 519);
+            this.LblPedidos.Size = new System.Drawing.Size(991, 519);
             this.LblPedidos.TabIndex = 25;
             this.LblPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -309,51 +309,6 @@
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.ForestGreen;
-            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(819, 425);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(125, 27);
-            this.BtnGuardar.TabIndex = 54;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // TxtTotalCantidad
-            // 
-            this.TxtTotalCantidad.Location = new System.Drawing.Point(821, 480);
-            this.TxtTotalCantidad.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtTotalCantidad.Name = "TxtTotalCantidad";
-            this.TxtTotalCantidad.ReadOnly = true;
-            this.TxtTotalCantidad.Size = new System.Drawing.Size(122, 20);
-            this.TxtTotalCantidad.TabIndex = 53;
-            this.TxtTotalCantidad.Text = "0";
-            // 
-            // LblTotalCompra
-            // 
-            this.LblTotalCompra.AutoSize = true;
-            this.LblTotalCompra.BackColor = System.Drawing.Color.White;
-            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalCompra.Location = new System.Drawing.Point(819, 462);
-            this.LblTotalCompra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblTotalCompra.Name = "LblTotalCompra";
-            this.LblTotalCompra.Size = new System.Drawing.Size(95, 16);
-            this.LblTotalCompra.TabIndex = 52;
-            this.LblTotalCompra.Text = "Total Cantidad";
-            // 
             // idProducto
             // 
             this.idProducto.HeaderText = "idProducto";
@@ -392,11 +347,57 @@
             this.BtnEliminar.ReadOnly = true;
             this.BtnEliminar.Width = 30;
             // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.BtnGuardar.IconColor = System.Drawing.Color.White;
+            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnGuardar.IconSize = 16;
+            this.BtnGuardar.Location = new System.Drawing.Point(819, 425);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(125, 27);
+            this.BtnGuardar.TabIndex = 54;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // TxtTotalCantidad
+            // 
+            this.TxtTotalCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalCantidad.Location = new System.Drawing.Point(821, 480);
+            this.TxtTotalCantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtTotalCantidad.Name = "TxtTotalCantidad";
+            this.TxtTotalCantidad.ReadOnly = true;
+            this.TxtTotalCantidad.Size = new System.Drawing.Size(162, 26);
+            this.TxtTotalCantidad.TabIndex = 53;
+            this.TxtTotalCantidad.Text = "0";
+            // 
+            // LblTotalCompra
+            // 
+            this.LblTotalCompra.AutoSize = true;
+            this.LblTotalCompra.BackColor = System.Drawing.Color.White;
+            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalCompra.Location = new System.Drawing.Point(819, 462);
+            this.LblTotalCompra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblTotalCompra.Name = "LblTotalCompra";
+            this.LblTotalCompra.Size = new System.Drawing.Size(112, 20);
+            this.LblTotalCompra.TabIndex = 52;
+            this.LblTotalCompra.Text = "Total Cantidad";
+            // 
             // FrmMovimientosStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 540);
+            this.ClientSize = new System.Drawing.Size(994, 540);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtTotalCantidad);
             this.Controls.Add(this.LblTotalCompra);

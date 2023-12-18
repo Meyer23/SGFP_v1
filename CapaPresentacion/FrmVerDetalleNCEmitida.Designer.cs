@@ -167,10 +167,10 @@
             // 
             this.LblTotalNota.AutoSize = true;
             this.LblTotalNota.BackColor = System.Drawing.Color.White;
-            this.LblTotalNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalNota.Location = new System.Drawing.Point(893, 498);
+            this.LblTotalNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalNota.Location = new System.Drawing.Point(892, 495);
             this.LblTotalNota.Name = "LblTotalNota";
-            this.LblTotalNota.Size = new System.Drawing.Size(70, 16);
+            this.LblTotalNota.Size = new System.Drawing.Size(82, 20);
             this.LblTotalNota.TabIndex = 150;
             this.LblTotalNota.Text = "Total Nota";
             // 
@@ -241,10 +241,11 @@
             // 
             // TxtTotalNota
             // 
-            this.TxtTotalNota.Location = new System.Drawing.Point(896, 518);
+            this.TxtTotalNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalNota.Location = new System.Drawing.Point(894, 516);
             this.TxtTotalNota.Name = "TxtTotalNota";
             this.TxtTotalNota.ReadOnly = true;
-            this.TxtTotalNota.Size = new System.Drawing.Size(125, 20);
+            this.TxtTotalNota.Size = new System.Drawing.Size(192, 26);
             this.TxtTotalNota.TabIndex = 151;
             this.TxtTotalNota.Text = "0";
             // 

@@ -94,10 +94,11 @@
             // 
             // TxtTotalNota
             // 
-            this.TxtTotalNota.Location = new System.Drawing.Point(917, 532);
+            this.TxtTotalNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalNota.Location = new System.Drawing.Point(897, 530);
             this.TxtTotalNota.Name = "TxtTotalNota";
             this.TxtTotalNota.ReadOnly = true;
-            this.TxtTotalNota.Size = new System.Drawing.Size(125, 20);
+            this.TxtTotalNota.Size = new System.Drawing.Size(182, 26);
             this.TxtTotalNota.TabIndex = 70;
             this.TxtTotalNota.Text = "0";
             // 
@@ -105,10 +106,10 @@
             // 
             this.LblTotalNota.AutoSize = true;
             this.LblTotalNota.BackColor = System.Drawing.Color.White;
-            this.LblTotalNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalNota.Location = new System.Drawing.Point(914, 512);
+            this.LblTotalNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalNota.Location = new System.Drawing.Point(893, 509);
             this.LblTotalNota.Name = "LblTotalNota";
-            this.LblTotalNota.Size = new System.Drawing.Size(135, 16);
+            this.LblTotalNota.Size = new System.Drawing.Size(159, 20);
             this.LblTotalNota.TabIndex = 69;
             this.LblTotalNota.Text = "Total Nota de Crédito";
             // 
@@ -185,7 +186,6 @@
             this.groupBoxInfoProducto.Controls.Add(this.TxtCantidad);
             this.groupBoxInfoProducto.Controls.Add(this.LblCantidad);
             this.groupBoxInfoProducto.Controls.Add(this.TxtPrecioVenta);
-            this.groupBoxInfoProducto.Controls.Add(this.BtnAgregar);
             this.groupBoxInfoProducto.Controls.Add(this.LblPrecio);
             this.groupBoxInfoProducto.Controls.Add(this.TxtDescProducto);
             this.groupBoxInfoProducto.Controls.Add(this.LblDescProducto);
@@ -196,7 +196,7 @@
             this.groupBoxInfoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxInfoProducto.Location = new System.Drawing.Point(25, 242);
             this.groupBoxInfoProducto.Name = "groupBoxInfoProducto";
-            this.groupBoxInfoProducto.Size = new System.Drawing.Size(1075, 72);
+            this.groupBoxInfoProducto.Size = new System.Drawing.Size(844, 72);
             this.groupBoxInfoProducto.TabIndex = 67;
             this.groupBoxInfoProducto.TabStop = false;
             this.groupBoxInfoProducto.Text = "Información del Producto";
@@ -237,10 +237,9 @@
             this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.BtnAgregar.IconColor = System.Drawing.Color.Black;
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAgregar.IconSize = 30;
-            this.BtnAgregar.Location = new System.Drawing.Point(872, 12);
+            this.BtnAgregar.Location = new System.Drawing.Point(882, 242);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(59, 54);
+            this.BtnAgregar.Size = new System.Drawing.Size(82, 72);
             this.BtnAgregar.TabIndex = 56;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -742,7 +741,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(917, 472);
+            this.BtnGuardar.Location = new System.Drawing.Point(897, 467);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(125, 27);
@@ -761,6 +760,7 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtTotalNota);
             this.Controls.Add(this.LblTotalNota);
+            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.groupBoxInfoProducto);
             this.Controls.Add(this.groupBoxInfoNC);

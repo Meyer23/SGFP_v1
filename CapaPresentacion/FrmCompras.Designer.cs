@@ -105,7 +105,7 @@
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 16;
-            this.BtnGuardar.Location = new System.Drawing.Point(917, 472);
+            this.BtnGuardar.Location = new System.Drawing.Point(894, 457);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(125, 27);
@@ -118,10 +118,11 @@
             // 
             // TxtTotalCompra
             // 
-            this.TxtTotalCompra.Location = new System.Drawing.Point(917, 532);
+            this.TxtTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalCompra.Location = new System.Drawing.Point(894, 526);
             this.TxtTotalCompra.Name = "TxtTotalCompra";
             this.TxtTotalCompra.ReadOnly = true;
-            this.TxtTotalCompra.Size = new System.Drawing.Size(125, 20);
+            this.TxtTotalCompra.Size = new System.Drawing.Size(194, 26);
             this.TxtTotalCompra.TabIndex = 58;
             this.TxtTotalCompra.Text = "0";
             // 
@@ -129,10 +130,10 @@
             // 
             this.LblTotalCompra.AutoSize = true;
             this.LblTotalCompra.BackColor = System.Drawing.Color.White;
-            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalCompra.Location = new System.Drawing.Point(914, 512);
+            this.LblTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalCompra.Location = new System.Drawing.Point(890, 503);
             this.LblTotalCompra.Name = "LblTotalCompra";
-            this.LblTotalCompra.Size = new System.Drawing.Size(89, 16);
+            this.LblTotalCompra.Size = new System.Drawing.Size(104, 20);
             this.LblTotalCompra.TabIndex = 57;
             this.LblTotalCompra.Text = "Total Compra";
             // 
@@ -143,10 +144,9 @@
             this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.BtnAgregar.IconColor = System.Drawing.Color.Black;
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAgregar.IconSize = 30;
-            this.BtnAgregar.Location = new System.Drawing.Point(872, 12);
+            this.BtnAgregar.Location = new System.Drawing.Point(875, 242);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(59, 54);
+            this.BtnAgregar.Size = new System.Drawing.Size(82, 72);
             this.BtnAgregar.TabIndex = 56;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -226,7 +226,6 @@
             this.groupBoxInfoProducto.Controls.Add(this.TxtCantidad);
             this.groupBoxInfoProducto.Controls.Add(this.LblCantidad);
             this.groupBoxInfoProducto.Controls.Add(this.TxtPrecioCompra);
-            this.groupBoxInfoProducto.Controls.Add(this.BtnAgregar);
             this.groupBoxInfoProducto.Controls.Add(this.LblPrecio);
             this.groupBoxInfoProducto.Controls.Add(this.TxtDescProducto);
             this.groupBoxInfoProducto.Controls.Add(this.LblDescProducto);
@@ -237,7 +236,7 @@
             this.groupBoxInfoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxInfoProducto.Location = new System.Drawing.Point(25, 242);
             this.groupBoxInfoProducto.Name = "groupBoxInfoProducto";
-            this.groupBoxInfoProducto.Size = new System.Drawing.Size(1075, 72);
+            this.groupBoxInfoProducto.Size = new System.Drawing.Size(844, 72);
             this.groupBoxInfoProducto.TabIndex = 54;
             this.groupBoxInfoProducto.TabStop = false;
             this.groupBoxInfoProducto.Text = "Información del Producto";
@@ -344,7 +343,7 @@
             this.LblCodProducto.Name = "LblCodProducto";
             this.LblCodProducto.Size = new System.Drawing.Size(89, 13);
             this.LblCodProducto.TabIndex = 0;
-            this.LblCodProducto.Text = "Codigo Producto:";
+            this.LblCodProducto.Text = "Código Producto:";
             // 
             // groupBoxInfoPedido
             // 
@@ -767,6 +766,7 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.TxtTotalCompra);
             this.Controls.Add(this.LblTotalCompra);
+            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.groupBoxInfoProducto);
             this.Controls.Add(this.groupBoxInfoPedido);

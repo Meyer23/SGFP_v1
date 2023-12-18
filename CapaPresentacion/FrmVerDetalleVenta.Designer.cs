@@ -31,6 +31,8 @@
             this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.LblFactura = new System.Windows.Forms.Label();
             this.groupBoxInfoVenta = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LblNroCaja = new System.Windows.Forms.Label();
             this.TxtIdVenta = new System.Windows.Forms.TextBox();
             this.dtpFinVigencia = new System.Windows.Forms.DateTimePicker();
             this.LblFinVigencia = new System.Windows.Forms.Label();
@@ -69,14 +71,13 @@
             this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.LblTotalVenta = new System.Windows.Forms.Label();
             this.TxtTotalVenta = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.LblNroCaja = new System.Windows.Forms.Label();
             this.LblAnulado = new System.Windows.Forms.Label();
             this.checkBoxAnulado = new System.Windows.Forms.CheckBox();
             this.PbNoConfirmado = new System.Windows.Forms.PictureBox();
             this.BtnAnularVenta = new FontAwesome.Sharp.IconButton();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.BtnImprimirVenta = new FontAwesome.Sharp.IconButton();
             this.groupBoxInfoVenta.SuspendLayout();
             this.groupBoxInfoCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
@@ -136,13 +137,30 @@
             this.groupBoxInfoVenta.TabStop = false;
             this.groupBoxInfoVenta.Text = "Información de la Venta";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(506, 44);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(129, 22);
+            this.textBox1.TabIndex = 111;
+            // 
+            // LblNroCaja
+            // 
+            this.LblNroCaja.AutoSize = true;
+            this.LblNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNroCaja.Location = new System.Drawing.Point(503, 28);
+            this.LblNroCaja.Name = "LblNroCaja";
+            this.LblNroCaja.Size = new System.Drawing.Size(71, 13);
+            this.LblNroCaja.TabIndex = 110;
+            this.LblNroCaja.Text = "Número Caja:";
+            // 
             // TxtIdVenta
             // 
             this.TxtIdVenta.Location = new System.Drawing.Point(260, 17);
             this.TxtIdVenta.Name = "TxtIdVenta";
             this.TxtIdVenta.Size = new System.Drawing.Size(48, 22);
             this.TxtIdVenta.TabIndex = 107;
-            this.TxtIdVenta.Visible = false;
             // 
             // dtpFinVigencia
             // 
@@ -476,39 +494,22 @@
             // 
             this.LblTotalVenta.AutoSize = true;
             this.LblTotalVenta.BackColor = System.Drawing.Color.White;
-            this.LblTotalVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalVenta.Location = new System.Drawing.Point(873, 494);
+            this.LblTotalVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalVenta.Location = new System.Drawing.Point(870, 487);
             this.LblTotalVenta.Name = "LblTotalVenta";
-            this.LblTotalVenta.Size = new System.Drawing.Size(76, 16);
+            this.LblTotalVenta.Size = new System.Drawing.Size(91, 20);
             this.LblTotalVenta.TabIndex = 128;
             this.LblTotalVenta.Text = "Total Venta";
             // 
             // TxtTotalVenta
             // 
-            this.TxtTotalVenta.Location = new System.Drawing.Point(876, 514);
+            this.TxtTotalVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalVenta.Location = new System.Drawing.Point(874, 510);
             this.TxtTotalVenta.Name = "TxtTotalVenta";
             this.TxtTotalVenta.ReadOnly = true;
-            this.TxtTotalVenta.Size = new System.Drawing.Size(125, 20);
+            this.TxtTotalVenta.Size = new System.Drawing.Size(161, 26);
             this.TxtTotalVenta.TabIndex = 129;
             this.TxtTotalVenta.Text = "0";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(506, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(129, 22);
-            this.textBox1.TabIndex = 111;
-            // 
-            // LblNroCaja
-            // 
-            this.LblNroCaja.AutoSize = true;
-            this.LblNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNroCaja.Location = new System.Drawing.Point(503, 28);
-            this.LblNroCaja.Name = "LblNroCaja";
-            this.LblNroCaja.Size = new System.Drawing.Size(71, 13);
-            this.LblNroCaja.TabIndex = 110;
-            this.LblNroCaja.Text = "Número Caja:";
             // 
             // LblAnulado
             // 
@@ -608,11 +609,35 @@
             this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
+            // BtnImprimirVenta
+            // 
+            this.BtnImprimirVenta.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnImprimirVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnImprimirVenta.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnImprimirVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnImprimirVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnImprimirVenta.ForeColor = System.Drawing.Color.White;
+            this.BtnImprimirVenta.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.BtnImprimirVenta.IconColor = System.Drawing.Color.White;
+            this.BtnImprimirVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnImprimirVenta.IconSize = 16;
+            this.BtnImprimirVenta.Location = new System.Drawing.Point(874, 356);
+            this.BtnImprimirVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnImprimirVenta.Name = "BtnImprimirVenta";
+            this.BtnImprimirVenta.Size = new System.Drawing.Size(142, 27);
+            this.BtnImprimirVenta.TabIndex = 135;
+            this.BtnImprimirVenta.Text = "Imprimir";
+            this.BtnImprimirVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnImprimirVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnImprimirVenta.UseVisualStyleBackColor = false;
+            this.BtnImprimirVenta.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
             // FrmVerDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1237, 569);
+            this.Controls.Add(this.BtnImprimirVenta);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.LblAnulado);
             this.Controls.Add(this.checkBoxAnulado);
@@ -692,5 +717,6 @@
         private System.Windows.Forms.CheckBox checkBoxAnulado;
         private System.Windows.Forms.PictureBox PbNoConfirmado;
         private FontAwesome.Sharp.IconButton BtnLimpiar;
+        private FontAwesome.Sharp.IconButton BtnImprimirVenta;
     }
 }
