@@ -34,6 +34,16 @@ namespace CapaPresentacion
             dgvProcesosData.Visible = false;
             LblModulos.Visible = false;
             LblProcesos.Visible = false;
+
+            foreach (DataGridViewColumn columna in dgvRolesData.Columns)
+            {
+                if (columna.Visible && columna.Name != "BtnSeleccionar")
+                {
+                    ComboBusqueda.Items.Add(columna.Name);
+                }
+            }
+
+            ComboBusqueda.SelectedIndex = 0;
             //Listar Roles
             List<Rol> listaRoles = new CN_Roles().Listar();
             foreach (Rol roles in listaRoles)
@@ -229,6 +239,35 @@ namespace CapaPresentacion
                 Procesa = (bool)dgvProcesosData.Rows[e.RowIndex].Cells["Procesar"].Value;
 
                 bool insert = new CN_Procesos().Editar(Convert.ToInt32(TxtIdRol.Text), Convert.ToInt32(dgvProcesosData.Rows[e.RowIndex].Cells["IdProceso"].Value), Procesa);
+            }
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ComboBusqueda.SelectedItem.ToString();
+
+            if (dgvRolesData.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvRolesData.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(TxtBusqueda.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            TxtBusqueda.Clear();
+            foreach (DataGridViewRow row in dgvRolesData.Rows)
+            {
+                row.Visible = true;
             }
         }
     }

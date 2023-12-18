@@ -47,7 +47,7 @@ namespace CapaPresentacion
                         TxtRUC.Text = objPedido.Documento;
                         TxtRazonSocial.Text = objPedido.RazonSocial;
                         TxtObs.Text = objPedido.Observacion;
-                        TxtTotalPedido.Text = objPedido.Total.ToString();
+                        TxtTotalPedido.Text = objPedido.Total.ToString("0");
                         checkBoxConfirmado.Checked = objPedido.Confirmado;
                         checkBoxAnulado.Checked = objPedido.Anulado;
 

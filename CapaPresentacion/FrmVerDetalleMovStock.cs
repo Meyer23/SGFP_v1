@@ -61,7 +61,7 @@ namespace CapaPresentacion
                         dtpFecha.Value = objMovStock.Fecha;
                         TxtUsuario.Text = objMovStock.NombreUsuario;
                         TxtObs.Text = objMovStock.Observacion;
-                        TxtTotalCantidad.Text = objMovStock.Total.ToString();
+                        TxtTotalCantidad.Text = objMovStock.Total.ToString("0");
                         checkBoxConfirmado.Checked = objMovStock.Confirmado;
                         checkBoxAnulado.Checked = objMovStock.Anulado;
 

@@ -142,7 +142,7 @@ namespace CapaPresentacion
                     total += Convert.ToDecimal(row.Cells["Cantidad"].Value.ToString());
                 }
             }
-            TxtTotalCantidad.Text = total.ToString("0.00");
+            TxtTotalCantidad.Text = total.ToString("0");
         }
 
         private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
