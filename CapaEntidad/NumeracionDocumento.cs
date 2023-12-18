@@ -21,5 +21,7 @@ namespace CapaEntidad
         public int PuntoEmision { get; set; }
 
         public int UltimoNumero { get; set; }
+
+        public bool TipoDoc { get; set; }
     }
 }
