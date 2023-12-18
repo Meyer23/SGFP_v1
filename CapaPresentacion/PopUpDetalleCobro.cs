@@ -97,12 +97,17 @@ namespace CapaPresentacion
                 TxtNroCuenta.ReadOnly = true;
                 TxtNroCuenta.Clear();
                 TxtNroDocumento.Clear();
+                ComboBanco.Items.Clear();
+                ComboBanco.Text = "";
+                tmpFechaVencimiento.Enabled = false;
             }
             else
             {
                 ComboBanco.Enabled = true;
                 TxtNroDocumento.ReadOnly = false;
                 TxtNroCuenta.ReadOnly = false;
+                MostrarBancos();
+                tmpFechaVencimiento.Enabled = true;
             }
         }
 
@@ -166,12 +171,15 @@ namespace CapaPresentacion
                             {
                                 valorVuelto = sumaImporte - _monto;
                                 TxtVuelto.Text = valorVuelto.ToString("0");
-                                TxtSaldo.Clear();
+                                TxtSaldo.Text = "0";
                                 
                                 BtnGuardar.Enabled = true;
                             }
                         }
                     }
+
+                    LimpiarCampos();
+
                 }
             }
             catch(Exception ex)
@@ -349,6 +357,13 @@ namespace CapaPresentacion
             {
                 BtnGuardar.Enabled = false;
             }
+        }
+
+        private void LimpiarCampos()
+        {
+            TxtNroCuenta.Clear();
+            TxtNroDocumento.Clear();
+            TxtImporte.Clear();
         }
     }
 }
