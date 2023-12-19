@@ -582,7 +582,7 @@ namespace CapaPresentacion
                             }
                             else if (columnIndex == 6 && row[columnIndex] != DBNull.Value)
                             {
-                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToString(row[columnIndex]);
+                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToDateTime(row[columnIndex]);
                             }
                             else if((columnIndex == 0 && row[columnIndex] != DBNull.Value) || (columnIndex == 1 && row[columnIndex] != DBNull.Value))
                             {
@@ -708,13 +708,16 @@ namespace CapaPresentacion
                 return;
             }
 
-            bool Respuesta = new CN_Ventas().Registrar(objVenta, detalle_venta, detalle_cobro, out Mensaje);
+            int Respuesta = new CN_Ventas().Registrar(objVenta, detalle_venta, detalle_cobro, out Mensaje);
 
-            if (Respuesta)
+            if (Respuesta > 0)
             {
                 var result = MessageBox.Show("Factura de Venta Registrada con Éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
+                    Reportes.FrmRptVentas oRptVentas = new Reportes.FrmRptVentas();
+                    oRptVentas.TxtParamId.Text = Respuesta.ToString();
+                    oRptVentas.ShowDialog();
                     LimpiarForm();
                 }
             }

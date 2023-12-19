@@ -190,9 +190,9 @@ namespace CapaDatos
             return Respuesta;
         }
 
-        public bool Registrar(Venta objVenta, DataTable detalle_venta, DataTable datosDetallesCobro, out string Mensaje)
+        public int Registrar(Venta objVenta, DataTable detalle_venta, DataTable datosDetallesCobro, out string Mensaje)
         {
-            bool Respuesta = false;
+            int Respuesta = 0;
             Mensaje = string.Empty;
 
             try
@@ -216,18 +216,18 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@idUsuario", objVenta.IdCajero);
                     cmd.Parameters.AddWithValue("@VentaDetalle", detalle_venta);
                     cmd.Parameters.AddWithValue("@CobroDetalle", datosDetallesCobro);
-                    cmd.Parameters.Add("@Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@idFactura", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.ExecuteNonQuery();
 
-                    Respuesta = Convert.ToBoolean(cmd.Parameters["@Respuesta"].Value);
+                    Respuesta = Convert.ToInt32(cmd.Parameters["@idFactura"].Value);
                     Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
-                Respuesta = false;
+                Respuesta = 0;
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return Respuesta;

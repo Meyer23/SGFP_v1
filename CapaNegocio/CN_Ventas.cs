@@ -35,7 +35,7 @@ namespace CapaNegocio
             return cd_venta.AnularVenta(IdVenta, MotivoAnulacion, out Mensaje);
         }
 
-        public bool Registrar(Venta objVenta, DataTable detalle_venta, DataTable datosDetallesCobro, out string mensaje)
+        public int Registrar(Venta objVenta, DataTable detalle_venta, DataTable datosDetallesCobro, out string mensaje)
         {
             return cd_venta.Registrar(objVenta, detalle_venta, datosDetallesCobro, out mensaje);
         }
