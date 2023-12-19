@@ -35,7 +35,7 @@
     <Shape ID="DesignTable:AperturaCaja" ZOrder="4" X="951" Y="1151" Height="210" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:Cierre Caja" ZOrder="3" X="4" Y="1168" Height="229" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:RendicionCaja" ZOrder="2" X="262" Y="1188" Height="248" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
-    <Shape ID="DesignTable:sp_Ranking_Ventas_Producto" ZOrder="1" X="516" Y="1197" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
+    <Shape ID="DesignTable:sp_Ranking_Ventas_Producto" ZOrder="1" X="516" Y="1197" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

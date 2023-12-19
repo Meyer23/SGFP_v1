@@ -595,7 +595,7 @@ namespace CapaPresentacion
                             }
                             else if (columnIndex == 6 && row[columnIndex] != DBNull.Value)
                             {
-                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToString(row[columnIndex]);
+                                newRow[columnIndex - columnIndexesToCopy.Min()] = Convert.ToDateTime(row[columnIndex]);
                             }
                             else if((columnIndex == 0 && row[columnIndex] != DBNull.Value) || (columnIndex == 1 && row[columnIndex] != DBNull.Value))
                             {

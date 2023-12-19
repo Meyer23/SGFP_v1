@@ -1205,8 +1205,6 @@ SELECT N.id, N.NumeroNota, T.Descripcion AS TipoDoc, T.TipoCodigo, E.Nombres,
               <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
               <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
-              <Mapping SourceColumn="Total Venta" DataSetColumn="Total Venta" />
-              <Mapping SourceColumn="Precio Promedio" DataSetColumn="Precio Promedio" />
               <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
               <Mapping SourceColumn="TotalVenta" DataSetColumn="TotalVenta" />
               <Mapping SourceColumn="PrecioPromedio" DataSetColumn="PrecioPromedio" />
@@ -2556,8 +2554,6 @@ SELECT N.id, N.NumeroNota, T.Descripcion AS TipoDoc, T.TipoCodigo, E.Nombres,
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" minOccurs="0" />
-              <xs:element name="Total_x0020_Venta" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Total_VentaColumn" msprop:Generator_ColumnPropNameInRow="Total_Venta" msprop:Generator_UserColumnName="Total Venta" msprop:Generator_ColumnVarNameInTable="columnTotal_Venta" type="xs:double" minOccurs="0" />
-              <xs:element name="Precio_x0020_Promedio" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Precio_PromedioColumn" msprop:Generator_ColumnPropNameInRow="Precio_Promedio" msprop:Generator_UserColumnName="Precio Promedio" msprop:Generator_ColumnVarNameInTable="columnPrecio_Promedio" type="xs:double" minOccurs="0" />
               <xs:element name="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_UserColumnName="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2565,8 +2561,8 @@ SELECT N.id, N.NumeroNota, T.Descripcion AS TipoDoc, T.TipoCodigo, E.Nombres,
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TotalVenta" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TotalVenta" msprop:Generator_ColumnPropNameInTable="TotalVentaColumn" msprop:Generator_ColumnPropNameInRow="TotalVenta" msprop:Generator_ColumnVarNameInTable="columnTotalVenta" type="xs:double" minOccurs="0" />
-              <xs:element name="PrecioPromedio" msdata:ReadOnly="true" msprop:Generator_UserColumnName="PrecioPromedio" msprop:Generator_ColumnPropNameInTable="PrecioPromedioColumn" msprop:Generator_ColumnPropNameInRow="PrecioPromedio" msprop:Generator_ColumnVarNameInTable="columnPrecioPromedio" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalVenta" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="TotalVentaColumn" msprop:Generator_ColumnPropNameInRow="TotalVenta" msprop:Generator_UserColumnName="TotalVenta" msprop:Generator_ColumnVarNameInTable="columnTotalVenta" type="xs:double" minOccurs="0" />
+              <xs:element name="PrecioPromedio" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="PrecioPromedioColumn" msprop:Generator_ColumnPropNameInRow="PrecioPromedio" msprop:Generator_UserColumnName="PrecioPromedio" msprop:Generator_ColumnVarNameInTable="columnPrecioPromedio" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

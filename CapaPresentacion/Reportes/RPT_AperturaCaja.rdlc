@@ -422,39 +422,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox14">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Estado:</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>4.82052cm</Top>
-          <Left>11.24981cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.23674cm</Width>
-          <ZIndex>13</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="Cajero">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -476,7 +443,7 @@
           <Left>3.73155cm</Left>
           <Height>0.6cm</Height>
           <Width>7.34188cm</Width>
-          <ZIndex>14</ZIndex>
+          <ZIndex>13</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -508,7 +475,7 @@
           <Left>3.76683cm</Left>
           <Height>0.6cm</Height>
           <Width>7.3066cm</Width>
-          <ZIndex>15</ZIndex>
+          <ZIndex>14</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -543,7 +510,7 @@
           <Left>3.76683cm</Left>
           <Height>0.6cm</Height>
           <Width>7.3066cm</Width>
-          <ZIndex>16</ZIndex>
+          <ZIndex>15</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -577,7 +544,7 @@
           <Left>14.493cm</Left>
           <Height>0.6cm</Height>
           <Width>1.89146cm</Width>
-          <ZIndex>17</ZIndex>
+          <ZIndex>16</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -609,7 +576,7 @@
           <Left>16.41974cm</Left>
           <Height>0.6cm</Height>
           <Width>0.46271cm</Width>
-          <ZIndex>18</ZIndex>
+          <ZIndex>17</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -643,7 +610,7 @@
           <Left>16.82071cm</Left>
           <Height>0.6cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>19</ZIndex>
+          <ZIndex>18</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -678,39 +645,7 @@
           <Left>14.52183cm</Left>
           <Height>0.6cm</Height>
           <Width>5.40742cm</Width>
-          <ZIndex>20</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Estado">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Iif(First(Fields!Estado.Value, "DS_Apertura")=1,"Abierta", "Cerrada")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Estado</rd:DefaultName>
-          <Top>4.82052cm</Top>
-          <Left>14.493cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.43625cm</Width>
-          <ZIndex>21</ZIndex>
+          <ZIndex>19</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -745,7 +680,7 @@
           <Left>4.07141cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>22</ZIndex>
+          <ZIndex>20</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -780,7 +715,7 @@
           <Left>12.69423cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>23</ZIndex>
+          <ZIndex>21</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -810,7 +745,7 @@
           <Left>3.18537cm</Left>
           <Height>0.6cm</Height>
           <Width>4.53729cm</Width>
-          <ZIndex>24</ZIndex>
+          <ZIndex>22</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -840,7 +775,7 @@
           <Left>11.49038cm</Left>
           <Height>0.6cm</Height>
           <Width>4.53729cm</Width>
-          <ZIndex>25</ZIndex>
+          <ZIndex>23</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

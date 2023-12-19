@@ -768,39 +768,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox15">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Estado:</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>5.32385cm</Top>
-          <Left>11.24981cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.23674cm</Width>
-          <ZIndex>24</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="MontoActual">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -822,7 +789,7 @@
           <Left>14.52183cm</Left>
           <Height>0.6cm</Height>
           <Width>3.84055cm</Width>
-          <ZIndex>25</ZIndex>
+          <ZIndex>24</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -854,39 +821,7 @@
           <Left>14.55711cm</Left>
           <Height>0.6cm</Height>
           <Width>3.84055cm</Width>
-          <ZIndex>26</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Estado">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Iif(First(Fields!Estado.Value, "DS_Apertura")=1,"Abierta", "Cerrada")</Value>
-                  <Style>
-                    <FontFamily>Trebuchet MS</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Estado</rd:DefaultName>
-          <Top>5.32385cm</Top>
-          <Left>14.51472cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.43625cm</Width>
-          <ZIndex>27</ZIndex>
+          <ZIndex>25</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

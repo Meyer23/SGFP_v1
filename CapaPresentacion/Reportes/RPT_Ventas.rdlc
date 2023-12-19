@@ -1333,7 +1333,7 @@
           <Width>3.13501cm</Width>
           <ZIndex>16</ZIndex>
           <Visibility>
-            <Hidden>=(Fields!TipoCodigo.Value, "DS_Ventas") = 1</Hidden>
+            <Hidden>=Sum(Fields!TipoCodigo.Value, "DS_Ventas")=0</Hidden>
           </Visibility>
           <Style>
             <Border>
@@ -1369,7 +1369,7 @@
           <Width>2.5cm</Width>
           <ZIndex>17</ZIndex>
           <Visibility>
-            <Hidden>=(Fields!TipoCodigo.Value, "DS_Ventas") = 1</Hidden>
+            <Hidden>=Sum(Fields!TipoCodigo.Value, "DS_Ventas")=0</Hidden>
           </Visibility>
           <Style>
             <Border>

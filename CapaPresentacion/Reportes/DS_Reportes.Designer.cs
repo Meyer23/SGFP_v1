@@ -13394,10 +13394,6 @@ namespace CapaPresentacion.Reportes {
             
             private global::System.Data.DataColumn columnCantidad;
             
-            private global::System.Data.DataColumn columnTotal_Venta;
-            
-            private global::System.Data.DataColumn columnPrecio_Promedio;
-            
             private global::System.Data.DataColumn columnCategoria;
             
             private global::System.Data.DataColumn columnTotalVenta;
@@ -13471,22 +13467,6 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Total_VentaColumn {
-                get {
-                    return this.columnTotal_Venta;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Precio_PromedioColumn {
-                get {
-                    return this.columnPrecio_Promedio;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn CategoriaColumn {
                 get {
                     return this.columnCategoria;
@@ -13546,15 +13526,13 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_Ranking_Ventas_ProductoRow Addsp_Ranking_Ventas_ProductoRow(string Codigo, string Descripcion, int Cantidad, double Total_Venta, double Precio_Promedio, string Categoria, double TotalVenta, double PrecioPromedio) {
+            public sp_Ranking_Ventas_ProductoRow Addsp_Ranking_Ventas_ProductoRow(string Codigo, string Descripcion, int Cantidad, string Categoria, double TotalVenta, double PrecioPromedio) {
                 sp_Ranking_Ventas_ProductoRow rowsp_Ranking_Ventas_ProductoRow = ((sp_Ranking_Ventas_ProductoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Codigo,
                         Descripcion,
                         Cantidad,
-                        Total_Venta,
-                        Precio_Promedio,
                         Categoria,
                         TotalVenta,
                         PrecioPromedio};
@@ -13591,8 +13569,6 @@ namespace CapaPresentacion.Reportes {
                 this.columnCodigo = base.Columns["Codigo"];
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnCantidad = base.Columns["Cantidad"];
-                this.columnTotal_Venta = base.Columns["Total Venta"];
-                this.columnPrecio_Promedio = base.Columns["Precio Promedio"];
                 this.columnCategoria = base.Columns["Categoria"];
                 this.columnTotalVenta = base.Columns["TotalVenta"];
                 this.columnPrecioPromedio = base.Columns["PrecioPromedio"];
@@ -13609,10 +13585,6 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnDescripcion);
                 this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidad);
-                this.columnTotal_Venta = new global::System.Data.DataColumn("Total Venta", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Venta);
-                this.columnPrecio_Promedio = new global::System.Data.DataColumn("Precio Promedio", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrecio_Promedio);
                 this.columnCategoria = new global::System.Data.DataColumn("Categoria", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCategoria);
                 this.columnTotalVenta = new global::System.Data.DataColumn("TotalVenta", typeof(double), null, global::System.Data.MappingType.Element);
@@ -13632,8 +13604,6 @@ namespace CapaPresentacion.Reportes {
                 this.columnDescripcion.AllowDBNull = false;
                 this.columnDescripcion.MaxLength = 100;
                 this.columnCantidad.ReadOnly = true;
-                this.columnTotal_Venta.ReadOnly = true;
-                this.columnPrecio_Promedio.ReadOnly = true;
                 this.columnCategoria.MaxLength = 60;
                 this.columnTotalVenta.ReadOnly = true;
                 this.columnPrecioPromedio.ReadOnly = true;
@@ -19482,40 +19452,6 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double Total_Venta {
-                get {
-                    try {
-                        return ((double)(this[this.tablesp_Ranking_Ventas_Producto.Total_VentaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Total Venta\' de la tabla \'sp_Ranking_Ventas_Producto\' es " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_Ranking_Ventas_Producto.Total_VentaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double Precio_Promedio {
-                get {
-                    try {
-                        return ((double)(this[this.tablesp_Ranking_Ventas_Producto.Precio_PromedioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Precio Promedio\' de la tabla \'sp_Ranking_Ventas_Producto\'" +
-                                " es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_Ranking_Ventas_Producto.Precio_PromedioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Categoria {
                 get {
                     try {
@@ -19575,30 +19511,6 @@ namespace CapaPresentacion.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCantidadNull() {
                 this[this.tablesp_Ranking_Ventas_Producto.CantidadColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTotal_VentaNull() {
-                return this.IsNull(this.tablesp_Ranking_Ventas_Producto.Total_VentaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTotal_VentaNull() {
-                this[this.tablesp_Ranking_Ventas_Producto.Total_VentaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPrecio_PromedioNull() {
-                return this.IsNull(this.tablesp_Ranking_Ventas_Producto.Precio_PromedioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPrecio_PromedioNull() {
-                this[this.tablesp_Ranking_Ventas_Producto.Precio_PromedioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26977,8 +26889,6 @@ SELECT N.id, N.NumeroNota, T.Descripcion AS TipoDoc, T.TipoCodigo, E.Nombres,
             tableMapping.ColumnMappings.Add("Codigo", "Codigo");
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
-            tableMapping.ColumnMappings.Add("Total Venta", "Total Venta");
-            tableMapping.ColumnMappings.Add("Precio Promedio", "Precio Promedio");
             tableMapping.ColumnMappings.Add("Categoria", "Categoria");
             tableMapping.ColumnMappings.Add("TotalVenta", "TotalVenta");
             tableMapping.ColumnMappings.Add("PrecioPromedio", "PrecioPromedio");
