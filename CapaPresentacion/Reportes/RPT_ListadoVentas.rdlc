@@ -1032,6 +1032,7 @@
                               <Style>
                                 <FontFamily>Trebuchet MS</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <Format>dd/MM/yyyy</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
