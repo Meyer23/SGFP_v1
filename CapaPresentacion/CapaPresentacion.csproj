@@ -454,6 +454,12 @@
     <Compile Include="Reportes\FrmRptAperturaCaja.Designer.cs">
       <DependentUpon>FrmRptAperturaCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptCierreCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptCierreCaja.Designer.cs">
+      <DependentUpon>FrmRptCierreCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -765,6 +771,9 @@
     <EmbeddedResource Include="Reportes\FrmRptAperturaCaja.resx">
       <DependentUpon>FrmRptAperturaCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptCierreCaja.resx">
+      <DependentUpon>FrmRptCierreCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptClientes.resx">
       <DependentUpon>FrmRptClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -823,6 +832,7 @@
       <DependentUpon>FrmRptVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RPT_AperturaCaja.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_CierreCaja.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Clientes.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Compras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoComprasSaldos.rdlc" />

@@ -148,7 +148,9 @@ namespace CapaPresentacion
                 if(idCierreCaja > 0)
                 {
                     MessageBox.Show(Mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    Reportes.FrmRptCierreCaja oRptCierre = new Reportes.FrmRptCierreCaja();
+                    oRptCierre.TxtParamId.Text = idCierreCaja.ToString();
+                    oRptCierre.ShowDialog();
                 }
                 else
                 {

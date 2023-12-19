@@ -1332,6 +1332,9 @@
           <Height>0.6cm</Height>
           <Width>3.13501cm</Width>
           <ZIndex>16</ZIndex>
+          <Visibility>
+            <Hidden>=(Fields!TipoCodigo.Value, "DS_Ventas") = 1</Hidden>
+          </Visibility>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1365,6 +1368,9 @@
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>17</ZIndex>
+          <Visibility>
+            <Hidden>=(Fields!TipoCodigo.Value, "DS_Ventas") = 1</Hidden>
+          </Visibility>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2007,6 +2013,10 @@
         </Field>
         <Field Name="TotalIVA10">
           <DataField>TotalIVA10</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TipoCodigo">
+          <DataField>TipoCodigo</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
