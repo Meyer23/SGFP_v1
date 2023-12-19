@@ -556,6 +556,12 @@
     <Compile Include="Reportes\FrmRptProveedores.Designer.cs">
       <DependentUpon>FrmRptProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptRanking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptRanking.Designer.cs">
+      <DependentUpon>FrmRptRanking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptRendicionCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -828,6 +834,9 @@
     <EmbeddedResource Include="Reportes\FrmRptProveedores.resx">
       <DependentUpon>FrmRptProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptRanking.resx">
+      <DependentUpon>FrmRptRanking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptRendicionCaja.resx">
       <DependentUpon>FrmRptRendicionCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -858,6 +867,7 @@
     <EmbeddedResource Include="Reportes\RPT_Productos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Proveedores.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoCompras.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_RankingProductos.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_RendicionCaja.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_UltimasCompras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Ventas.rdlc" />

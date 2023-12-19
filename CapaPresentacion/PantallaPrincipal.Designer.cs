@@ -92,6 +92,7 @@
             this.Contenedor = new System.Windows.Forms.Panel();
             this.ULabel = new System.Windows.Forms.Label();
             this.LBLUsuario = new System.Windows.Forms.Label();
+            this.SubMenuRanking = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -698,7 +699,7 @@
             this.SubMenuMovStock.IconColor = System.Drawing.Color.Black;
             this.SubMenuMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuMovStock.Name = "SubMenuMovStock";
-            this.SubMenuMovStock.Size = new System.Drawing.Size(250, 30);
+            this.SubMenuMovStock.Size = new System.Drawing.Size(242, 22);
             this.SubMenuMovStock.Text = "Movimientos Stock";
             this.SubMenuMovStock.Click += new System.EventHandler(this.SubMenuMovStock_Click);
             // 
@@ -708,7 +709,7 @@
             this.SubMenuVerDetalleMovStock.IconColor = System.Drawing.Color.Black;
             this.SubMenuVerDetalleMovStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuVerDetalleMovStock.Name = "SubMenuVerDetalleMovStock";
-            this.SubMenuVerDetalleMovStock.Size = new System.Drawing.Size(250, 30);
+            this.SubMenuVerDetalleMovStock.Size = new System.Drawing.Size(242, 22);
             this.SubMenuVerDetalleMovStock.Text = "Consulta de Movimientos Stock";
             this.SubMenuVerDetalleMovStock.Click += new System.EventHandler(this.SubMenuVerDetalleMovStock_Click);
             // 
@@ -721,7 +722,7 @@
             this.SubMenuListados.IconColor = System.Drawing.Color.Black;
             this.SubMenuListados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuListados.Name = "SubMenuListados";
-            this.SubMenuListados.Size = new System.Drawing.Size(250, 30);
+            this.SubMenuListados.Size = new System.Drawing.Size(242, 22);
             this.SubMenuListados.Text = "Listados";
             // 
             // SubMenuListadoExistencia
@@ -747,7 +748,8 @@
             // MenuReportes
             // 
             this.MenuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SubMenuResumenVentas});
+            this.SubMenuResumenVentas,
+            this.SubMenuRanking});
             this.MenuReportes.IconChar = FontAwesome.Sharp.IconChar.Book;
             this.MenuReportes.IconColor = System.Drawing.Color.Black;
             this.MenuReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -764,7 +766,7 @@
             this.SubMenuResumenVentas.IconColor = System.Drawing.Color.Black;
             this.SubMenuResumenVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuResumenVentas.Name = "SubMenuResumenVentas";
-            this.SubMenuResumenVentas.Size = new System.Drawing.Size(188, 30);
+            this.SubMenuResumenVentas.Size = new System.Drawing.Size(251, 30);
             this.SubMenuResumenVentas.Text = "Resumen de Ventas";
             this.SubMenuResumenVentas.Click += new System.EventHandler(this.SubMenuResumenVentas_Click);
             // 
@@ -828,6 +830,16 @@
             this.LBLUsuario.Size = new System.Drawing.Size(93, 20);
             this.LBLUsuario.TabIndex = 5;
             this.LBLUsuario.Text = "LBLUsuario";
+            // 
+            // SubMenuRanking
+            // 
+            this.SubMenuRanking.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuRanking.IconColor = System.Drawing.Color.Black;
+            this.SubMenuRanking.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuRanking.Name = "SubMenuRanking";
+            this.SubMenuRanking.Size = new System.Drawing.Size(251, 30);
+            this.SubMenuRanking.Text = "Ranking de Ventas de Productos";
+            this.SubMenuRanking.Click += new System.EventHandler(this.SubMenuRanking_Click);
             // 
             // PantallaPrincipal
             // 
@@ -921,6 +933,7 @@
         private FontAwesome.Sharp.IconMenuItem SubMenuEstadoCajas;
         private FontAwesome.Sharp.IconMenuItem MenuReportes;
         private FontAwesome.Sharp.IconMenuItem SubMenuResumenVentas;
+        private FontAwesome.Sharp.IconMenuItem SubMenuRanking;
     }
 }
 
