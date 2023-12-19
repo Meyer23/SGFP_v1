@@ -76,6 +76,8 @@ namespace CapaPresentacion.Reportes {
         
         private VentasSaldosDataTable tableVentasSaldos;
         
+        private AperturaCajaDataTable tableAperturaCaja;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -181,6 +183,9 @@ namespace CapaPresentacion.Reportes {
                 }
                 if ((ds.Tables["VentasSaldos"] != null)) {
                     base.Tables.Add(new VentasSaldosDataTable(ds.Tables["VentasSaldos"]));
+                }
+                if ((ds.Tables["AperturaCaja"] != null)) {
+                    base.Tables.Add(new AperturaCajaDataTable(ds.Tables["AperturaCaja"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -462,6 +467,16 @@ namespace CapaPresentacion.Reportes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AperturaCajaDataTable AperturaCaja {
+            get {
+                return this.tableAperturaCaja;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -604,6 +619,9 @@ namespace CapaPresentacion.Reportes {
                 }
                 if ((ds.Tables["VentasSaldos"] != null)) {
                     base.Tables.Add(new VentasSaldosDataTable(ds.Tables["VentasSaldos"]));
+                }
+                if ((ds.Tables["AperturaCaja"] != null)) {
+                    base.Tables.Add(new AperturaCajaDataTable(ds.Tables["AperturaCaja"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -794,6 +812,12 @@ namespace CapaPresentacion.Reportes {
                     this.tableVentasSaldos.InitVars();
                 }
             }
+            this.tableAperturaCaja = ((AperturaCajaDataTable)(base.Tables["AperturaCaja"]));
+            if ((initTable == true)) {
+                if ((this.tableAperturaCaja != null)) {
+                    this.tableAperturaCaja.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -856,6 +880,8 @@ namespace CapaPresentacion.Reportes {
             base.Tables.Add(this.tableVentasListado);
             this.tableVentasSaldos = new VentasSaldosDataTable();
             base.Tables.Add(this.tableVentasSaldos);
+            this.tableAperturaCaja = new AperturaCajaDataTable();
+            base.Tables.Add(this.tableAperturaCaja);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1016,6 +1042,12 @@ namespace CapaPresentacion.Reportes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeAperturaCaja() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1146,6 +1178,9 @@ namespace CapaPresentacion.Reportes {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void VentasSaldosRowChangeEventHandler(object sender, VentasSaldosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void AperturaCajaRowChangeEventHandler(object sender, AperturaCajaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -8918,6 +8953,10 @@ namespace CapaPresentacion.Reportes {
             
             private global::System.Data.DataColumn columnAnulado;
             
+            private global::System.Data.DataColumn columnTotalIVA5;
+            
+            private global::System.Data.DataColumn columnTotalIVA10;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public NotasCreditoEmitidasDataTable() {
@@ -9105,6 +9144,22 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalIVA5Column {
+                get {
+                    return this.columnTotalIVA5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalIVA10Column {
+                get {
+                    return this.columnTotalIVA10;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9158,7 +9213,9 @@ namespace CapaPresentacion.Reportes {
                         string Observacion, 
                         decimal TotalNota, 
                         bool Confirmado, 
-                        bool Anulado) {
+                        bool Anulado, 
+                        int TotalIVA5, 
+                        int TotalIVA10) {
                 NotasCreditoEmitidasRow rowNotasCreditoEmitidasRow = ((NotasCreditoEmitidasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -9179,7 +9236,9 @@ namespace CapaPresentacion.Reportes {
                         Observacion,
                         TotalNota,
                         Confirmado,
-                        Anulado};
+                        Anulado,
+                        TotalIVA5,
+                        TotalIVA10};
                 rowNotasCreditoEmitidasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNotasCreditoEmitidasRow);
                 return rowNotasCreditoEmitidasRow;
@@ -9228,6 +9287,8 @@ namespace CapaPresentacion.Reportes {
                 this.columnTotalNota = base.Columns["TotalNota"];
                 this.columnConfirmado = base.Columns["Confirmado"];
                 this.columnAnulado = base.Columns["Anulado"];
+                this.columnTotalIVA5 = base.Columns["TotalIVA5"];
+                this.columnTotalIVA10 = base.Columns["TotalIVA10"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9271,6 +9332,10 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnConfirmado);
                 this.columnAnulado = new global::System.Data.DataColumn("Anulado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAnulado);
+                this.columnTotalIVA5 = new global::System.Data.DataColumn("TotalIVA5", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalIVA5);
+                this.columnTotalIVA10 = new global::System.Data.DataColumn("TotalIVA10", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalIVA10);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -9302,6 +9367,8 @@ namespace CapaPresentacion.Reportes {
                 this.columnObservacion.AllowDBNull = false;
                 this.columnObservacion.MaxLength = 100;
                 this.columnConfirmado.AllowDBNull = false;
+                this.columnTotalIVA5.ReadOnly = true;
+                this.columnTotalIVA10.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9853,6 +9920,10 @@ namespace CapaPresentacion.Reportes {
             
             private global::System.Data.DataColumn columnAnulado;
             
+            private global::System.Data.DataColumn columnTotalIVA5;
+            
+            private global::System.Data.DataColumn columnTotalIVA10;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public VentasDataTable() {
@@ -10024,6 +10095,22 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalIVA5Column {
+                get {
+                    return this.columnTotalIVA5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalIVA10Column {
+                get {
+                    return this.columnTotalIVA10;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10075,7 +10162,9 @@ namespace CapaPresentacion.Reportes {
                         string Documento, 
                         string RazonSocial, 
                         decimal TotalFactura, 
-                        bool Anulado) {
+                        bool Anulado, 
+                        int TotalIVA5, 
+                        int TotalIVA10) {
                 VentasRow rowVentasRow = ((VentasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -10094,7 +10183,9 @@ namespace CapaPresentacion.Reportes {
                         Documento,
                         RazonSocial,
                         TotalFactura,
-                        Anulado};
+                        Anulado,
+                        TotalIVA5,
+                        TotalIVA10};
                 rowVentasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVentasRow);
                 return rowVentasRow;
@@ -10141,6 +10232,8 @@ namespace CapaPresentacion.Reportes {
                 this.columnRazonSocial = base.Columns["RazonSocial"];
                 this.columnTotalFactura = base.Columns["TotalFactura"];
                 this.columnAnulado = base.Columns["Anulado"];
+                this.columnTotalIVA5 = base.Columns["TotalIVA5"];
+                this.columnTotalIVA10 = base.Columns["TotalIVA10"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10180,6 +10273,10 @@ namespace CapaPresentacion.Reportes {
                 base.Columns.Add(this.columnTotalFactura);
                 this.columnAnulado = new global::System.Data.DataColumn("Anulado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAnulado);
+                this.columnTotalIVA5 = new global::System.Data.DataColumn("TotalIVA5", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalIVA5);
+                this.columnTotalIVA10 = new global::System.Data.DataColumn("TotalIVA10", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalIVA10);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -10204,6 +10301,8 @@ namespace CapaPresentacion.Reportes {
                 this.columnDocumento.MaxLength = 16;
                 this.columnRazonSocial.ReadOnly = true;
                 this.columnRazonSocial.MaxLength = 123;
+                this.columnTotalIVA5.ReadOnly = true;
+                this.columnTotalIVA10.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12057,6 +12156,344 @@ namespace CapaPresentacion.Reportes {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "VentasSaldosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AperturaCajaDataTable : global::System.Data.TypedTableBase<AperturaCajaRow> {
+            
+            private global::System.Data.DataColumn columnMontoInicial;
+            
+            private global::System.Data.DataColumn columnFechaApertura;
+            
+            private global::System.Data.DataColumn columnEstado;
+            
+            private global::System.Data.DataColumn columnNroCaja;
+            
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnLogin;
+            
+            private global::System.Data.DataColumn columnCajero;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AperturaCajaDataTable() {
+                this.TableName = "AperturaCaja";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AperturaCajaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected AperturaCajaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MontoInicialColumn {
+                get {
+                    return this.columnMontoInicial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FechaAperturaColumn {
+                get {
+                    return this.columnFechaApertura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NroCajaColumn {
+                get {
+                    return this.columnNroCaja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DescripcionColumn {
+                get {
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn LoginColumn {
+                get {
+                    return this.columnLogin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CajeroColumn {
+                get {
+                    return this.columnCajero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AperturaCajaRow this[int index] {
+                get {
+                    return ((AperturaCajaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AperturaCajaRowChangeEventHandler AperturaCajaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AperturaCajaRowChangeEventHandler AperturaCajaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AperturaCajaRowChangeEventHandler AperturaCajaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AperturaCajaRowChangeEventHandler AperturaCajaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddAperturaCajaRow(AperturaCajaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AperturaCajaRow AddAperturaCajaRow(decimal MontoInicial, System.DateTime FechaApertura, bool Estado, int NroCaja, string Descripcion, string Login, string Cajero) {
+                AperturaCajaRow rowAperturaCajaRow = ((AperturaCajaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        MontoInicial,
+                        FechaApertura,
+                        Estado,
+                        NroCaja,
+                        Descripcion,
+                        Login,
+                        Cajero};
+                rowAperturaCajaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAperturaCajaRow);
+                return rowAperturaCajaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AperturaCajaDataTable cln = ((AperturaCajaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AperturaCajaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnMontoInicial = base.Columns["MontoInicial"];
+                this.columnFechaApertura = base.Columns["FechaApertura"];
+                this.columnEstado = base.Columns["Estado"];
+                this.columnNroCaja = base.Columns["NroCaja"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnLogin = base.Columns["Login"];
+                this.columnCajero = base.Columns["Cajero"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnMontoInicial = new global::System.Data.DataColumn("MontoInicial", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMontoInicial);
+                this.columnFechaApertura = new global::System.Data.DataColumn("FechaApertura", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaApertura);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
+                this.columnNroCaja = new global::System.Data.DataColumn("NroCaja", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNroCaja);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnLogin = new global::System.Data.DataColumn("Login", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLogin);
+                this.columnCajero = new global::System.Data.DataColumn("Cajero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCajero);
+                this.columnNroCaja.AllowDBNull = false;
+                this.columnDescripcion.AllowDBNull = false;
+                this.columnDescripcion.MaxLength = 60;
+                this.columnLogin.AllowDBNull = false;
+                this.columnLogin.MaxLength = 50;
+                this.columnCajero.ReadOnly = true;
+                this.columnCajero.MaxLength = 122;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AperturaCajaRow NewAperturaCajaRow() {
+                return ((AperturaCajaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AperturaCajaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AperturaCajaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AperturaCajaRowChanged != null)) {
+                    this.AperturaCajaRowChanged(this, new AperturaCajaRowChangeEvent(((AperturaCajaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AperturaCajaRowChanging != null)) {
+                    this.AperturaCajaRowChanging(this, new AperturaCajaRowChangeEvent(((AperturaCajaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AperturaCajaRowDeleted != null)) {
+                    this.AperturaCajaRowDeleted(this, new AperturaCajaRowChangeEvent(((AperturaCajaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AperturaCajaRowDeleting != null)) {
+                    this.AperturaCajaRowDeleting(this, new AperturaCajaRowChangeEvent(((AperturaCajaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveAperturaCajaRow(AperturaCajaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS_Reportes ds = new DS_Reportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AperturaCajaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -15563,6 +16000,39 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TotalIVA5 {
+                get {
+                    try {
+                        return ((int)(this[this.tableNotasCreditoEmitidas.TotalIVA5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalIVA5\' de la tabla \'NotasCreditoEmitidas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotasCreditoEmitidas.TotalIVA5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TotalIVA10 {
+                get {
+                    try {
+                        return ((int)(this[this.tableNotasCreditoEmitidas.TotalIVA10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalIVA10\' de la tabla \'NotasCreditoEmitidas\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableNotasCreditoEmitidas.TotalIVA10Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNumeroFacturaNull() {
                 return this.IsNull(this.tableNotasCreditoEmitidas.NumeroFacturaColumn);
             }
@@ -15619,6 +16089,30 @@ namespace CapaPresentacion.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAnuladoNull() {
                 this[this.tableNotasCreditoEmitidas.AnuladoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalIVA5Null() {
+                return this.IsNull(this.tableNotasCreditoEmitidas.TotalIVA5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalIVA5Null() {
+                this[this.tableNotasCreditoEmitidas.TotalIVA5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalIVA10Null() {
+                return this.IsNull(this.tableNotasCreditoEmitidas.TotalIVA10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalIVA10Null() {
+                this[this.tableNotasCreditoEmitidas.TotalIVA10Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -16028,6 +16522,38 @@ namespace CapaPresentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TotalIVA5 {
+                get {
+                    try {
+                        return ((int)(this[this.tableVentas.TotalIVA5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalIVA5\' de la tabla \'Ventas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentas.TotalIVA5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TotalIVA10 {
+                get {
+                    try {
+                        return ((int)(this[this.tableVentas.TotalIVA10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalIVA10\' de la tabla \'Ventas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentas.TotalIVA10Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCodigoEsteblecimientoNull() {
                 return this.IsNull(this.tableVentas.CodigoEsteblecimientoColumn);
             }
@@ -16108,6 +16634,30 @@ namespace CapaPresentacion.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAnuladoNull() {
                 this[this.tableVentas.AnuladoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalIVA5Null() {
+                return this.IsNull(this.tableVentas.TotalIVA5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalIVA5Null() {
+                this[this.tableVentas.TotalIVA5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalIVA10Null() {
+                return this.IsNull(this.tableVentas.TotalIVA10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalIVA10Null() {
+                this[this.tableVentas.TotalIVA10Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -17012,6 +17562,166 @@ namespace CapaPresentacion.Reportes {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AperturaCajaRow : global::System.Data.DataRow {
+            
+            private AperturaCajaDataTable tableAperturaCaja;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AperturaCajaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAperturaCaja = ((AperturaCajaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal MontoInicial {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableAperturaCaja.MontoInicialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MontoInicial\' de la tabla \'AperturaCaja\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAperturaCaja.MontoInicialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime FechaApertura {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableAperturaCaja.FechaAperturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaApertura\' de la tabla \'AperturaCaja\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAperturaCaja.FechaAperturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Estado {
+                get {
+                    try {
+                        return ((bool)(this[this.tableAperturaCaja.EstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estado\' de la tabla \'AperturaCaja\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAperturaCaja.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int NroCaja {
+                get {
+                    return ((int)(this[this.tableAperturaCaja.NroCajaColumn]));
+                }
+                set {
+                    this[this.tableAperturaCaja.NroCajaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Descripcion {
+                get {
+                    return ((string)(this[this.tableAperturaCaja.DescripcionColumn]));
+                }
+                set {
+                    this[this.tableAperturaCaja.DescripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Login {
+                get {
+                    return ((string)(this[this.tableAperturaCaja.LoginColumn]));
+                }
+                set {
+                    this[this.tableAperturaCaja.LoginColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Cajero {
+                get {
+                    try {
+                        return ((string)(this[this.tableAperturaCaja.CajeroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cajero\' de la tabla \'AperturaCaja\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAperturaCaja.CajeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMontoInicialNull() {
+                return this.IsNull(this.tableAperturaCaja.MontoInicialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMontoInicialNull() {
+                this[this.tableAperturaCaja.MontoInicialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFechaAperturaNull() {
+                return this.IsNull(this.tableAperturaCaja.FechaAperturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFechaAperturaNull() {
+                this[this.tableAperturaCaja.FechaAperturaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEstadoNull() {
+                return this.IsNull(this.tableAperturaCaja.EstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEstadoNull() {
+                this[this.tableAperturaCaja.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCajeroNull() {
+                return this.IsNull(this.tableAperturaCaja.CajeroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCajeroNull() {
+                this[this.tableAperturaCaja.CajeroColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -17881,6 +18591,40 @@ namespace CapaPresentacion.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public VentasSaldosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class AperturaCajaRowChangeEvent : global::System.EventArgs {
+            
+            private AperturaCajaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AperturaCajaRowChangeEvent(AperturaCajaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AperturaCajaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -22292,6 +23036,8 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
             tableMapping.ColumnMappings.Add("TotalNota", "TotalNota");
             tableMapping.ColumnMappings.Add("Confirmado", "Confirmado");
             tableMapping.ColumnMappings.Add("Anulado", "Anulado");
+            tableMapping.ColumnMappings.Add("TotalIVA5", "TotalIVA5");
+            tableMapping.ColumnMappings.Add("TotalIVA10", "TotalIVA10");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -22308,17 +23054,27 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT N.id, N.NumeroNota, ISNULL(P.NumeroFactura,'') AS NumeroFactura, N.idVenta, T.Descripcion AS TipoDoc, E.Nombres, 
-                        N.CodigoEstablecimiento, N.PuntoEmision, N.Doc, N.Fecha, TI.NroTimbrado AS Timbrado, TI.InicioVigencia, TI.FinVigencia, 
-                        PR.Documento, PR.Nombre + ' - ' + PR.Apellidos, N.Observacion, N.TotalNota, N.Confirmado, N.Anulado 
-                        FROM NotasCreditoEmitidas N 
-                        LEFT JOIN Facturas P ON N.idVenta = P.id 
-                        INNER JOIN TiposDocumentosCompra T ON N.idTipoDocumento = T.id 
-                        INNER JOIN Usuarios U ON N.idUsuario = U.id 
-                        INNER JOIN Empleados E ON U.idEmpleado = E.id 
-                        INNER JOIN Clientes PR ON N.idCliente = PR.id 
-						INNER JOIN Timbrados TI ON N.idTimbrado = TI.id
-                        WHERE N.id = @IdNCEmitida;";
+            this._commandCollection[0].CommandText = "SELECT N.id, N.NumeroNota, ISNULL(P.NumeroFactura,\'\') AS NumeroFactura, N.idVenta" +
+                ", T.Descripcion AS TipoDoc, E.Nombres, \r\n                        N.CodigoEstable" +
+                "cimiento, N.PuntoEmision, N.Doc, N.Fecha, TI.NroTimbrado AS Timbrado, TI.InicioV" +
+                "igencia, TI.FinVigencia, \r\n                        PR.Documento, PR.Nombre + \' -" +
+                " \' + PR.Apellidos, N.Observacion, N.TotalNota, N.Confirmado, N.Anulado,\r\n\t\t\t\t\t\tI" +
+                "SNULL((SELECT CONVERT(INT,ROUND(SUM(FD.Total/I.FactorIVA),0)) FROM NotasCreditoE" +
+                "mitidasDetalles FD\r\n\t\t\t\t\t\t\tINNER JOIN Productos P ON FD.idProducto = P.id\r\n\t\t\t\t\t" +
+                "\t\tINNER JOIN Categorias C ON P.idCategoria = C.id\r\n\t\t\t\t\t\t\tINNER JOIN Impuestos I" +
+                " ON C.idImpuesto = I.id\r\n\t\t\t\t\t\t\tWHERE CONVERT(INT,I.PorcIVA) = 5\r\n\t\t\t\t\t\t\tAND FD." +
+                "idNCEmitida = N.id),0) AS TotalIVA5,\r\n\t\t\t\t\t\tISNULL((SELECT CONVERT(INT,ROUND(SUM" +
+                "(FD.Total/I.FactorIVA),0)) FROM NotasCreditoEmitidasDetalles FD\r\n\t\t\t\t\t\t\tINNER JO" +
+                "IN Productos P ON FD.idProducto = P.id\r\n\t\t\t\t\t\t\tINNER JOIN Categorias C ON P.idCa" +
+                "tegoria = C.id\r\n\t\t\t\t\t\t\tINNER JOIN Impuestos I ON C.idImpuesto = I.id\r\n\t\t\t\t\t\t\tWHE" +
+                "RE CONVERT(INT,I.PorcIVA) = 10\r\n\t\t\t\t\t\t\tAND FD.idNCEmitida = N.id),0) AS TotalIVA" +
+                "10\r\n                        FROM NotasCreditoEmitidas N \r\n                      " +
+                "  LEFT JOIN Facturas P ON N.idVenta = P.id \r\n                        INNER JOIN " +
+                "TiposDocumentosCompra T ON N.idTipoDocumento = T.id \r\n                        IN" +
+                "NER JOIN Usuarios U ON N.idUsuario = U.id \r\n                        INNER JOIN E" +
+                "mpleados E ON U.idEmpleado = E.id \r\n                        INNER JOIN Clientes " +
+                "PR ON N.idCliente = PR.id \r\n\t\t\t\t\t\tINNER JOIN Timbrados TI ON N.idTimbrado = TI.i" +
+                "d\r\n                        WHERE N.id = @IdNCEmitida;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdNCEmitida", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -22672,6 +23428,8 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN ND.Total ELSE 0 END AS Gravada5, CASE 
             tableMapping.ColumnMappings.Add("RazonSocial", "RazonSocial");
             tableMapping.ColumnMappings.Add("TotalFactura", "TotalFactura");
             tableMapping.ColumnMappings.Add("Anulado", "Anulado");
+            tableMapping.ColumnMappings.Add("TotalIVA5", "TotalIVA5");
+            tableMapping.ColumnMappings.Add("TotalIVA10", "TotalIVA10");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -22688,17 +23446,27 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN ND.Total ELSE 0 END AS Gravada5, CASE 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT F.id, F.NumeroFactura, T.Descripcion AS TipoDoc, FP.Descripcion AS FormaPago, E.Nombres, 
-                        F.CodigoEsteblecimiento, F.PuntoEmision, F.Doc, F.Fecha, F.FechaVencimiento, TI.NroTimbrado AS Timbrado, TI.InicioVigencia, TI.FinVigencia, 
-                        CL.Documento, CL.Nombre + ' - ' + CL.Apellidos AS RazonSocial, F.TotalFactura, F.Anulado 
-                        FROM Facturas F 
-                        INNER JOIN TiposDocumentosCompra T ON F.idTipo = T.id 
-                        INNER JOIN FormasPagos FP ON F.idFormaPago = FP.id 
-                        INNER JOIN Usuarios U ON F.idUsuario = U.id 
-                        INNER JOIN Empleados E ON U.idEmpleado = E.id 
-                        INNER JOIN Clientes CL ON F.idCliente = CL.id 
-						INNER JOIN Timbrados TI ON F.idTimbrado = TI.id
-                        WHERE F.id = @idVenta";
+            this._commandCollection[0].CommandText = "SELECT F.id, F.NumeroFactura, T.Descripcion AS TipoDoc, FP.Descripcion AS FormaPa" +
+                "go, E.Nombres, \r\n                        F.CodigoEsteblecimiento, F.PuntoEmision" +
+                ", F.Doc, F.Fecha, F.FechaVencimiento, TI.NroTimbrado AS Timbrado, TI.InicioVigen" +
+                "cia, TI.FinVigencia, \r\n                        CL.Documento, CL.Nombre + \' - \' +" +
+                " CL.Apellidos AS RazonSocial, F.TotalFactura, ISNULL(F.Anulado,0) AS Anulado,\r\n\t" +
+                "\t\t\t\t\tISNULL((SELECT CONVERT(INT,ROUND(SUM(FD.Total/I.FactorIVA),0)) FROM Factura" +
+                "sDetalles FD\r\n\t\t\t\t\t\t\tINNER JOIN Productos P ON FD.idProducto = P.id\r\n\t\t\t\t\t\t\tINNE" +
+                "R JOIN Categorias C ON P.idCategoria = C.id\r\n\t\t\t\t\t\t\tINNER JOIN Impuestos I ON C." +
+                "idImpuesto = I.id\r\n\t\t\t\t\t\t\tWHERE CONVERT(INT,I.PorcIVA) = 5\r\n\t\t\t\t\t\t\tAND FD.idFact" +
+                "ura = F.id),0) AS TotalIVA5,\r\n\t\t\t\t\t\tISNULL((SELECT CONVERT(INT,ROUND(SUM(FD.Tota" +
+                "l/I.FactorIVA),0)) FROM FacturasDetalles FD\r\n\t\t\t\t\t\t\tINNER JOIN Productos P ON FD" +
+                ".idProducto = P.id\r\n\t\t\t\t\t\t\tINNER JOIN Categorias C ON P.idCategoria = C.id\r\n\t\t\t\t" +
+                "\t\t\tINNER JOIN Impuestos I ON C.idImpuesto = I.id\r\n\t\t\t\t\t\t\tWHERE CONVERT(INT,I.Por" +
+                "cIVA) = 10\r\n\t\t\t\t\t\t\tAND FD.idFactura = F.id),0) AS TotalIVA10\r\n                  " +
+                "      FROM Facturas F \r\n                        INNER JOIN TiposDocumentosCompra" +
+                " T ON F.idTipo = T.id \r\n                        INNER JOIN FormasPagos FP ON F.i" +
+                "dFormaPago = FP.id \r\n                        INNER JOIN Usuarios U ON F.idUsuari" +
+                "o = U.id \r\n                        INNER JOIN Empleados E ON U.idEmpleado = E.id" +
+                " \r\n                        INNER JOIN Clientes CL ON F.idCliente = CL.id \r\n\t\t\t\t\t" +
+                "\tINNER JOIN Timbrados TI ON F.idTimbrado = TI.id\r\n                        WHERE " +
+                "F.id = @idVenta";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenta", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -23494,6 +24262,187 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AperturaCajaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public AperturaCajaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AperturaCaja";
+            tableMapping.ColumnMappings.Add("MontoInicial", "MontoInicial");
+            tableMapping.ColumnMappings.Add("FechaApertura", "FechaApertura");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("NroCaja", "NroCaja");
+            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
+            tableMapping.ColumnMappings.Add("Login", "Login");
+            tableMapping.ColumnMappings.Add("Cajero", "Cajero");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::CapaPresentacion.Properties.Settings.Default.cn;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"select a.MontoInicial, a.FechaApertura, a.Estado, c.NroCaja, c.Descripcion, u.Login, e.Nombres + ', ' + e.Apellidos as 'Cajero'
+from AperturaCierreCaja a
+inner join Cajas c on a.idCaja = c.id
+inner join Usuarios u on c.idUsuario = u.id
+inner join Empleados e on u.idEmpleado = e.id
+where a.id = @idApertura";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idApertura", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DS_Reportes.AperturaCajaDataTable dataTable, int idApertura) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idApertura));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DS_Reportes.AperturaCajaDataTable GetData(int idApertura) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idApertura));
+            DS_Reportes.AperturaCajaDataTable dataTable = new DS_Reportes.AperturaCajaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23655,15 +24604,6 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(DS_Reportes dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._proveedoresTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Proveedores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._proveedoresTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._clientesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Clientes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -23691,6 +24631,15 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._proveedoresTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Proveedores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._proveedoresTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -23701,14 +24650,6 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(DS_Reportes dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._proveedoresTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Proveedores.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._proveedoresTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._clientesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Clientes.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -23733,6 +24674,14 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._proveedoresTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Proveedores.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._proveedoresTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -23743,6 +24692,14 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(DS_Reportes dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._proveedoresTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Proveedores.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._proveedoresTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._empresaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Empresa.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -23764,14 +24721,6 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._clientesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._proveedoresTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Proveedores.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._proveedoresTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

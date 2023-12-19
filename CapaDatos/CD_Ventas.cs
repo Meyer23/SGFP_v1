@@ -22,7 +22,7 @@ namespace CapaDatos
                 {
                     string query = "SELECT F.id, F.NumeroFactura, T.Descripcion AS TipoDoc, FP.Descripcion AS FormaPago, E.Nombres, C.id AS idCliente, " +
                         "F.CodigoEsteblecimiento, F.PuntoEmision, F.Doc, F.Fecha, F.FechaVencimiento, TI.id as Timbrado, TI.InicioVigencia, TI.FinVigencia, " +
-                        "C.Documento, C.Nombre, F.TotalFactura, F.Anulado " +
+                        "C.Documento, C.Nombre, F.TotalFactura, ISNULL(F.Anulado,0) AS Anulado " +
                         "FROM Facturas F " +
                         "INNER JOIN TiposDocumentosCompra T ON F.IdTipo = T.id " +
                         "INNER JOIN FormasPagos FP ON F.idFormaPago = FP.id " +
@@ -126,7 +126,7 @@ namespace CapaDatos
                 try
                 {
                     
-                    string query = "SELECT F.id, F.NumeroFactura, F.Fecha, C.Documento, C.Nombre, F.TotalFactura, F.Anulado FROM Facturas F " +
+                    string query = "SELECT F.id, F.NumeroFactura, F.Fecha, C.Documento, C.Nombre, F.TotalFactura, ISNULL(F.Anulado,0) AS Anulado FROM Facturas F " +
                         "INNER JOIN Clientes C ON F.idCliente = C.id";
 
                     SqlCommand cmd = new SqlCommand(query, con);

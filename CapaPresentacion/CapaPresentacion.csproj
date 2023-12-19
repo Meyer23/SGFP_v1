@@ -448,6 +448,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Reportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmRptAperturaCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptAperturaCaja.Designer.cs">
+      <DependentUpon>FrmRptAperturaCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmRptClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -543,6 +549,12 @@
     </Compile>
     <Compile Include="Reportes\FrmRptProveedores.Designer.cs">
       <DependentUpon>FrmRptProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmRptResumenVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptResumenVentas.Designer.cs">
+      <DependentUpon>FrmRptResumenVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FrmRptUltimasCompras.cs">
       <SubType>Form</SubType>
@@ -750,6 +762,9 @@
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptAperturaCaja.resx">
+      <DependentUpon>FrmRptAperturaCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptClientes.resx">
       <DependentUpon>FrmRptClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -798,12 +813,16 @@
     <EmbeddedResource Include="Reportes\FrmRptProveedores.resx">
       <DependentUpon>FrmRptProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptResumenVentas.resx">
+      <DependentUpon>FrmRptResumenVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptUltimasCompras.resx">
       <DependentUpon>FrmRptUltimasCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptVentas.resx">
       <DependentUpon>FrmRptVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RPT_AperturaCaja.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Clientes.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Compras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_ListadoComprasSaldos.rdlc" />
@@ -822,6 +841,7 @@
     <EmbeddedResource Include="Reportes\RPT_ListadoCompras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_UltimasCompras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Ventas.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_VentasMensual.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

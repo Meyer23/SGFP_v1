@@ -108,7 +108,9 @@ namespace CapaPresentacion
                 if (idAperturaCaja > 0)
                 {
                     MessageBox.Show(Mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    Reportes.FrmRptAperturaCaja oRptApertura = new Reportes.FrmRptAperturaCaja();
+                    oRptApertura.TxtParamId.Text = idAperturaCaja.ToString();
+                    oRptApertura.ShowDialog();
                 }
                 else
                 {

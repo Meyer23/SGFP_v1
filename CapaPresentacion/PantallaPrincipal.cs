@@ -366,5 +366,11 @@ namespace CapaPresentacion
         {
             AbrirFormulario(MantenedorMenu, new FrmEstadoCajas());
         }
+
+        private void SubMenuResumenVentas_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptResumenVentas oRptListadoVentas = new Reportes.FrmRptResumenVentas();
+            oRptListadoVentas.ShowDialog();
+        }
     }
 }

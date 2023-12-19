@@ -779,12 +779,24 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NotasCreditoEmitidasTableAdapter" GeneratorDataComponentClassName="NotasCreditoEmitidasTableAdapter" Name="NotasCreditoEmitidas" UserDataComponentName="NotasCreditoEmitidasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="cn (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="cn (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT N.id, N.NumeroNota, ISNULL(P.NumeroFactura,'') AS NumeroFactura, N.idVenta, T.Descripcion AS TipoDoc, E.Nombres, 
                         N.CodigoEstablecimiento, N.PuntoEmision, N.Doc, N.Fecha, TI.NroTimbrado AS Timbrado, TI.InicioVigencia, TI.FinVigencia, 
-                        PR.Documento, PR.Nombre + ' - ' + PR.Apellidos, N.Observacion, N.TotalNota, N.Confirmado, N.Anulado 
+                        PR.Documento, PR.Nombre + ' - ' + PR.Apellidos, N.Observacion, N.TotalNota, N.Confirmado, N.Anulado,
+						ISNULL((SELECT CONVERT(INT,ROUND(SUM(FD.Total/I.FactorIVA),0)) FROM NotasCreditoEmitidasDetalles FD
+							INNER JOIN Productos P ON FD.idProducto = P.id
+							INNER JOIN Categorias C ON P.idCategoria = C.id
+							INNER JOIN Impuestos I ON C.idImpuesto = I.id
+							WHERE CONVERT(INT,I.PorcIVA) = 5
+							AND FD.idNCEmitida = N.id),0) AS TotalIVA5,
+						ISNULL((SELECT CONVERT(INT,ROUND(SUM(FD.Total/I.FactorIVA),0)) FROM NotasCreditoEmitidasDetalles FD
+							INNER JOIN Productos P ON FD.idProducto = P.id
+							INNER JOIN Categorias C ON P.idCategoria = C.id
+							INNER JOIN Impuestos I ON C.idImpuesto = I.id
+							WHERE CONVERT(INT,I.PorcIVA) = 10
+							AND FD.idNCEmitida = N.id),0) AS TotalIVA10
                         FROM NotasCreditoEmitidas N 
                         LEFT JOIN Facturas P ON N.idVenta = P.id 
                         INNER JOIN TiposDocumentosCompra T ON N.idTipoDocumento = T.id 
@@ -820,6 +832,8 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
               <Mapping SourceColumn="TotalNota" DataSetColumn="TotalNota" />
               <Mapping SourceColumn="Confirmado" DataSetColumn="Confirmado" />
               <Mapping SourceColumn="Anulado" DataSetColumn="Anulado" />
+              <Mapping SourceColumn="TotalIVA5" DataSetColumn="TotalIVA5" />
+              <Mapping SourceColumn="TotalIVA10" DataSetColumn="TotalIVA10" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -857,12 +871,24 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN ND.Total ELSE 0 END AS Gravada5, CASE 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VentasTableAdapter" GeneratorDataComponentClassName="VentasTableAdapter" Name="Ventas" UserDataComponentName="VentasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="cn (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="cn (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT F.id, F.NumeroFactura, T.Descripcion AS TipoDoc, FP.Descripcion AS FormaPago, E.Nombres, 
                         F.CodigoEsteblecimiento, F.PuntoEmision, F.Doc, F.Fecha, F.FechaVencimiento, TI.NroTimbrado AS Timbrado, TI.InicioVigencia, TI.FinVigencia, 
-                        CL.Documento, CL.Nombre + ' - ' + CL.Apellidos AS RazonSocial, F.TotalFactura, F.Anulado 
+                        CL.Documento, CL.Nombre + ' - ' + CL.Apellidos AS RazonSocial, F.TotalFactura, ISNULL(F.Anulado,0) AS Anulado,
+						ISNULL((SELECT CONVERT(INT,ROUND(SUM(FD.Total/I.FactorIVA),0)) FROM FacturasDetalles FD
+							INNER JOIN Productos P ON FD.idProducto = P.id
+							INNER JOIN Categorias C ON P.idCategoria = C.id
+							INNER JOIN Impuestos I ON C.idImpuesto = I.id
+							WHERE CONVERT(INT,I.PorcIVA) = 5
+							AND FD.idFactura = F.id),0) AS TotalIVA5,
+						ISNULL((SELECT CONVERT(INT,ROUND(SUM(FD.Total/I.FactorIVA),0)) FROM FacturasDetalles FD
+							INNER JOIN Productos P ON FD.idProducto = P.id
+							INNER JOIN Categorias C ON P.idCategoria = C.id
+							INNER JOIN Impuestos I ON C.idImpuesto = I.id
+							WHERE CONVERT(INT,I.PorcIVA) = 10
+							AND FD.idFactura = F.id),0) AS TotalIVA10
                         FROM Facturas F 
                         INNER JOIN TiposDocumentosCompra T ON F.idTipo = T.id 
                         INNER JOIN FormasPagos FP ON F.idFormaPago = FP.id 
@@ -896,6 +922,8 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN ND.Total ELSE 0 END AS Gravada5, CASE 
               <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
               <Mapping SourceColumn="TotalFactura" DataSetColumn="TotalFactura" />
               <Mapping SourceColumn="Anulado" DataSetColumn="Anulado" />
+              <Mapping SourceColumn="TotalIVA5" DataSetColumn="TotalIVA5" />
+              <Mapping SourceColumn="TotalIVA10" DataSetColumn="TotalIVA10" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1048,6 +1076,35 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
               <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
               <Mapping SourceColumn="TotalFactura" DataSetColumn="TotalFactura" />
               <Mapping SourceColumn="SaldoFactura" DataSetColumn="SaldoFactura" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AperturaCajaTableAdapter" GeneratorDataComponentClassName="AperturaCajaTableAdapter" Name="AperturaCaja" UserDataComponentName="AperturaCajaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cn (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select a.MontoInicial, a.FechaApertura, a.Estado, c.NroCaja, c.Descripcion, u.Login, e.Nombres + ', ' + e.Apellidos as 'Cajero'
+from AperturaCierreCaja a
+inner join Cajas c on a.idCaja = c.id
+inner join Usuarios u on c.idUsuario = u.id
+inner join Empleados e on u.idEmpleado = e.id
+where a.id = @idApertura</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idApertura" ColumnName="id" DataSourceName="PROYECTO.dbo.AperturaCierreCaja" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idApertura" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MontoInicial" DataSetColumn="MontoInicial" />
+              <Mapping SourceColumn="FechaApertura" DataSetColumn="FechaApertura" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="NroCaja" DataSetColumn="NroCaja" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Login" DataSetColumn="Login" />
+              <Mapping SourceColumn="Cajero" DataSetColumn="Cajero" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1979,6 +2036,8 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
               <xs:element name="TotalNota" msprop:Generator_ColumnPropNameInTable="TotalNotaColumn" msprop:Generator_ColumnPropNameInRow="TotalNota" msprop:Generator_UserColumnName="TotalNota" msprop:Generator_ColumnVarNameInTable="columnTotalNota" type="xs:decimal" minOccurs="0" />
               <xs:element name="Confirmado" msprop:Generator_ColumnPropNameInTable="ConfirmadoColumn" msprop:Generator_ColumnPropNameInRow="Confirmado" msprop:Generator_UserColumnName="Confirmado" msprop:Generator_ColumnVarNameInTable="columnConfirmado" type="xs:boolean" />
               <xs:element name="Anulado" msprop:Generator_ColumnPropNameInTable="AnuladoColumn" msprop:Generator_ColumnPropNameInRow="Anulado" msprop:Generator_UserColumnName="Anulado" msprop:Generator_ColumnVarNameInTable="columnAnulado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TotalIVA5" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="TotalIVA5Column" msprop:Generator_ColumnPropNameInRow="TotalIVA5" msprop:Generator_UserColumnName="TotalIVA5" msprop:Generator_ColumnVarNameInTable="columnTotalIVA5" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalIVA10" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="TotalIVA10Column" msprop:Generator_ColumnPropNameInRow="TotalIVA10" msprop:Generator_UserColumnName="TotalIVA10" msprop:Generator_ColumnVarNameInTable="columnTotalIVA10" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2003,9 +2062,9 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
               </xs:element>
               <xs:element name="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_UserColumnName="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" type="xs:decimal" />
               <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:decimal" />
-              <xs:element name="Exentas" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Exentas" msprop:Generator_ColumnPropNameInTable="ExentasColumn" msprop:Generator_ColumnVarNameInTable="columnExentas" msprop:Generator_UserColumnName="Exentas" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Gravada5" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Gravada5" msprop:Generator_ColumnPropNameInTable="Gravada5Column" msprop:Generator_ColumnVarNameInTable="columnGravada5" msprop:Generator_UserColumnName="Gravada5" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Gravada10" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Gravada10" msprop:Generator_ColumnPropNameInTable="Gravada10Column" msprop:Generator_ColumnVarNameInTable="columnGravada10" msprop:Generator_UserColumnName="Gravada10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Exentas" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="ExentasColumn" msprop:Generator_ColumnPropNameInRow="Exentas" msprop:Generator_UserColumnName="Exentas" msprop:Generator_ColumnVarNameInTable="columnExentas" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Gravada5" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Gravada5Column" msprop:Generator_ColumnPropNameInRow="Gravada5" msprop:Generator_UserColumnName="Gravada5" msprop:Generator_ColumnVarNameInTable="columnGravada5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Gravada10" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Gravada10Column" msprop:Generator_ColumnPropNameInRow="Gravada10" msprop:Generator_UserColumnName="Gravada10" msprop:Generator_ColumnVarNameInTable="columnGravada10" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2065,6 +2124,8 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
               </xs:element>
               <xs:element name="TotalFactura" msprop:Generator_ColumnPropNameInTable="TotalFacturaColumn" msprop:Generator_ColumnPropNameInRow="TotalFactura" msprop:Generator_UserColumnName="TotalFactura" msprop:Generator_ColumnVarNameInTable="columnTotalFactura" type="xs:decimal" minOccurs="0" />
               <xs:element name="Anulado" msprop:Generator_ColumnPropNameInTable="AnuladoColumn" msprop:Generator_ColumnPropNameInRow="Anulado" msprop:Generator_UserColumnName="Anulado" msprop:Generator_ColumnVarNameInTable="columnAnulado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TotalIVA5" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="TotalIVA5Column" msprop:Generator_ColumnPropNameInRow="TotalIVA5" msprop:Generator_UserColumnName="TotalIVA5" msprop:Generator_ColumnVarNameInTable="columnTotalIVA5" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalIVA10" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="TotalIVA10Column" msprop:Generator_ColumnPropNameInRow="TotalIVA10" msprop:Generator_UserColumnName="TotalIVA10" msprop:Generator_ColumnVarNameInTable="columnTotalIVA10" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2089,9 +2150,9 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
               </xs:element>
               <xs:element name="PrecioUnitario" msprop:Generator_ColumnPropNameInTable="PrecioUnitarioColumn" msprop:Generator_ColumnPropNameInRow="PrecioUnitario" msprop:Generator_UserColumnName="PrecioUnitario" msprop:Generator_ColumnVarNameInTable="columnPrecioUnitario" type="xs:double" />
               <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" />
-              <xs:element name="Exentas" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Exentas" msprop:Generator_ColumnPropNameInTable="ExentasColumn" msprop:Generator_ColumnPropNameInRow="Exentas" msprop:Generator_ColumnVarNameInTable="columnExentas" type="xs:double" minOccurs="0" />
-              <xs:element name="Gravada5" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Gravada5" msprop:Generator_ColumnPropNameInTable="Gravada5Column" msprop:Generator_ColumnPropNameInRow="Gravada5" msprop:Generator_ColumnVarNameInTable="columnGravada5" type="xs:double" minOccurs="0" />
-              <xs:element name="Gravada10" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Gravada10" msprop:Generator_ColumnPropNameInTable="Gravada10Column" msprop:Generator_ColumnPropNameInRow="Gravada10" msprop:Generator_ColumnVarNameInTable="columnGravada10" type="xs:double" minOccurs="0" />
+              <xs:element name="Exentas" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="ExentasColumn" msprop:Generator_ColumnPropNameInRow="Exentas" msprop:Generator_UserColumnName="Exentas" msprop:Generator_ColumnVarNameInTable="columnExentas" type="xs:double" minOccurs="0" />
+              <xs:element name="Gravada5" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Gravada5Column" msprop:Generator_ColumnPropNameInRow="Gravada5" msprop:Generator_UserColumnName="Gravada5" msprop:Generator_ColumnVarNameInTable="columnGravada5" type="xs:double" minOccurs="0" />
+              <xs:element name="Gravada10" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Gravada10Column" msprop:Generator_ColumnPropNameInRow="Gravada10" msprop:Generator_UserColumnName="Gravada10" msprop:Generator_ColumnVarNameInTable="columnGravada10" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2265,6 +2326,37 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
               </xs:element>
               <xs:element name="TotalFactura" msprop:Generator_ColumnPropNameInTable="TotalFacturaColumn" msprop:Generator_ColumnPropNameInRow="TotalFactura" msprop:Generator_UserColumnName="TotalFactura" msprop:Generator_ColumnVarNameInTable="columnTotalFactura" type="xs:decimal" minOccurs="0" />
               <xs:element name="SaldoFactura" msprop:Generator_ColumnPropNameInTable="SaldoFacturaColumn" msprop:Generator_ColumnPropNameInRow="SaldoFactura" msprop:Generator_UserColumnName="SaldoFactura" msprop:Generator_ColumnVarNameInTable="columnSaldoFactura" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AperturaCaja" msprop:Generator_RowEvHandlerName="AperturaCajaRowChangeEventHandler" msprop:Generator_RowDeletedName="AperturaCajaRowDeleted" msprop:Generator_RowDeletingName="AperturaCajaRowDeleting" msprop:Generator_RowEvArgName="AperturaCajaRowChangeEvent" msprop:Generator_TablePropName="AperturaCaja" msprop:Generator_RowChangedName="AperturaCajaRowChanged" msprop:Generator_RowChangingName="AperturaCajaRowChanging" msprop:Generator_TableClassName="AperturaCajaDataTable" msprop:Generator_RowClassName="AperturaCajaRow" msprop:Generator_TableVarName="tableAperturaCaja" msprop:Generator_UserTableName="AperturaCaja">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MontoInicial" msprop:Generator_ColumnPropNameInRow="MontoInicial" msprop:Generator_ColumnPropNameInTable="MontoInicialColumn" msprop:Generator_ColumnVarNameInTable="columnMontoInicial" msprop:Generator_UserColumnName="MontoInicial" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FechaApertura" msprop:Generator_ColumnPropNameInRow="FechaApertura" msprop:Generator_ColumnPropNameInTable="FechaAperturaColumn" msprop:Generator_ColumnVarNameInTable="columnFechaApertura" msprop:Generator_UserColumnName="FechaApertura" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_UserColumnName="Estado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="NroCaja" msprop:Generator_ColumnPropNameInRow="NroCaja" msprop:Generator_ColumnPropNameInTable="NroCajaColumn" msprop:Generator_ColumnVarNameInTable="columnNroCaja" msprop:Generator_UserColumnName="NroCaja" type="xs:int" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Login" msprop:Generator_ColumnPropNameInRow="Login" msprop:Generator_ColumnPropNameInTable="LoginColumn" msprop:Generator_ColumnVarNameInTable="columnLogin" msprop:Generator_UserColumnName="Login">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cajero" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Cajero" msprop:Generator_ColumnPropNameInTable="CajeroColumn" msprop:Generator_ColumnVarNameInTable="columnCajero" msprop:Generator_UserColumnName="Cajero" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="122" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
