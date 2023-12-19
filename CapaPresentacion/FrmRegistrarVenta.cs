@@ -472,16 +472,19 @@ namespace CapaPresentacion
                         .SingleOrDefault();
 
             TxtCajero.Text = _Usuario.Login.ToString();
-            TxtNroCaja.Text = numeroCaja.ToString();
+            
 
            if(idCaja == 0)
-            {
+           {
                 string nombreUsuario = _Usuario.Login.ToString();
                 MessageBox.Show(string.Format("Usuario '{0}' sin caja asignada, verifique", nombreUsuario), "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-            }
-            MostrarTimbrado(numeroCaja);
-
+           }
+           else
+           {
+                MostrarTimbrado(numeroCaja);
+                TxtNroCaja.Text = numeroCaja.ToString();
+           }
         }
 
         private void MostrarTimbrado(int numeroCaja)
@@ -776,8 +779,12 @@ namespace CapaPresentacion
         private string ValidarAperturasDeCaja()
         {
             List<AperturaCierreCajas> listAper = new CN_AperturaCierre().ObtenerAperturasDeCajas();
+            List<Cajas> listCajas = new CN_Cajas().ObtenerCajas();
+
+            var buscarUsuarioCaja = listCajas.Where(x => x.LoginUsuario == _Usuario.Login)
+                                             .Count();
             string result = string.Empty;
-            if (listAper.Count == 0)
+            if (listAper.Count == 0 || buscarUsuarioCaja == 0)
             {
                 result = "NO OK";
                 //groupBoxInfoCliente.Enabled = false;

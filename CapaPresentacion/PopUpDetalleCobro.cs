@@ -15,7 +15,7 @@ namespace CapaPresentacion
 {
     public partial class PopUpDetalleCobro : Form
     {
-        private decimal  _monto;
+        private decimal _monto;
         public DataTable dataTableCobro { get; private set; }
         public PopUpDetalleCobro(decimal montoTotal = 0)
         {
@@ -58,7 +58,7 @@ namespace CapaPresentacion
 
             var listBancos = bancos.Where(x => x.Activo == true);
 
-            foreach(var banco in listBancos)
+            foreach (var banco in listBancos)
             {
                 ComboBanco.Items.Add(banco.Nombre);
             }
@@ -90,7 +90,7 @@ namespace CapaPresentacion
 
             TxtTipoValor.Text = idValor.ToString();
 
-            if(idValor == 1)
+            if (idValor == 1)
             {
                 ComboBanco.Enabled = false;
                 TxtNroDocumento.ReadOnly = true;
@@ -108,6 +108,18 @@ namespace CapaPresentacion
                 TxtNroCuenta.ReadOnly = false;
                 MostrarBancos();
                 tmpFechaVencimiento.Enabled = true;
+            }
+
+            if (ComboTipoValor.Text == "Tarjeta de Débito" || ComboTipoValor.Text == "Tarjeta de Crédito")
+            {
+                ComboBanco.Enabled = false;
+                TxtNroDocumento.ReadOnly = false;
+                TxtNroCuenta.ReadOnly = true;
+                TxtNroCuenta.Clear();
+                TxtNroDocumento.Clear();
+                ComboBanco.Items.Clear();
+                ComboBanco.Text = "";
+                tmpFechaVencimiento.Enabled = false;
             }
         }
 
