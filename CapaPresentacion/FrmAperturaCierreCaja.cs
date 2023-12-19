@@ -169,7 +169,7 @@ namespace CapaPresentacion
         {
             Reportes.FrmRptRendicionCaja oRptRendicion = new Reportes.FrmRptRendicionCaja();
             oRptRendicion.TxtParamLogin.Text = ComboCajero.Text;
-            oRptRendicion.TxtParamFecha.Text = DateTimePickerApertura.Value.ToString();
+            oRptRendicion.TxtParamFecha.Text = DateTimePickerApertura.Value.Date.ToString();
             oRptRendicion.ShowDialog();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion.Reportes
 {
-    partial class FrmRptRanking
+    partial class FrmRptRankingVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,113 +29,88 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_Reportes = new CapaPresentacion.Reportes.DS_Reportes();
-            this.spRankingVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spRankingVentasProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.sp_Ranking_Ventas_ProductoTableAdapter = new CapaPresentacion.Reportes.DS_ReportesTableAdapters.sp_Ranking_Ventas_ProductoTableAdapter();
+            this.dS_Reportes = new CapaPresentacion.Reportes.DS_Reportes();
+            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresaTableAdapter = new CapaPresentacion.Reportes.DS_ReportesTableAdapters.EmpresaTableAdapter();
-            this.LblCategoria = new System.Windows.Forms.Label();
-            this.comboCategorias = new System.Windows.Forms.ComboBox();
+            this.spRankingVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_Ranking_VentasTableAdapter = new CapaPresentacion.Reportes.DS_ReportesTableAdapters.sp_Ranking_VentasTableAdapter();
             this.dtpFechaH = new System.Windows.Forms.DateTimePicker();
             this.LblFechaH = new System.Windows.Forms.Label();
             this.dtpFechaD = new System.Windows.Forms.DateTimePicker();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.LblFechaD = new System.Windows.Forms.Label();
-            this.sp_Ranking_VentasTableAdapter = new CapaPresentacion.Reportes.DS_ReportesTableAdapters.sp_Ranking_VentasTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
+            this.LblCategoria = new System.Windows.Forms.Label();
+            this.comboCategorias = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRankingVentasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spRankingVentasProductoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // empresaBindingSource
+            // reportViewer1
             // 
-            this.empresaBindingSource.DataMember = "Empresa";
-            this.empresaBindingSource.DataSource = this.dS_Reportes;
+            reportDataSource7.Name = "DS_Empresa";
+            reportDataSource7.Value = this.empresaBindingSource;
+            reportDataSource8.Name = "DS_Ranking_Ventas";
+            reportDataSource8.Value = this.spRankingVentasBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource8);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.RPT_RankingVentas.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(2, 43);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1128, 493);
+            this.reportViewer1.TabIndex = 0;
             // 
             // dS_Reportes
             // 
             this.dS_Reportes.DataSetName = "DS_Reportes";
             this.dS_Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // spRankingVentasBindingSource
+            // empresaBindingSource
             // 
-            this.spRankingVentasBindingSource.DataMember = "sp_Ranking_Ventas";
-            this.spRankingVentasBindingSource.DataSource = this.dS_Reportes;
-            // 
-            // spRankingVentasProductoBindingSource
-            // 
-            this.spRankingVentasProductoBindingSource.DataMember = "sp_Ranking_Ventas_Producto";
-            this.spRankingVentasProductoBindingSource.DataSource = this.dS_Reportes;
-            // 
-            // reportViewer1
-            // 
-            reportDataSource1.Name = "DS_Empresa";
-            reportDataSource1.Value = this.empresaBindingSource;
-            reportDataSource2.Name = "Ds_Ranking";
-            reportDataSource2.Value = this.spRankingVentasBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.RPT_RankingProductos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 44);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1133, 551);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // sp_Ranking_Ventas_ProductoTableAdapter
-            // 
-            this.sp_Ranking_Ventas_ProductoTableAdapter.ClearBeforeFill = true;
+            this.empresaBindingSource.DataMember = "Empresa";
+            this.empresaBindingSource.DataSource = this.dS_Reportes;
             // 
             // empresaTableAdapter
             // 
             this.empresaTableAdapter.ClearBeforeFill = true;
             // 
-            // LblCategoria
+            // spRankingVentasBindingSource
             // 
-            this.LblCategoria.AutoSize = true;
-            this.LblCategoria.Location = new System.Drawing.Point(10, 15);
-            this.LblCategoria.Name = "LblCategoria";
-            this.LblCategoria.Size = new System.Drawing.Size(57, 13);
-            this.LblCategoria.TabIndex = 95;
-            this.LblCategoria.Text = "Categoría:";
+            this.spRankingVentasBindingSource.DataMember = "sp_Ranking_Ventas";
+            this.spRankingVentasBindingSource.DataSource = this.dS_Reportes;
             // 
-            // comboCategorias
+            // sp_Ranking_VentasTableAdapter
             // 
-            this.comboCategorias.FormattingEnabled = true;
-            this.comboCategorias.Location = new System.Drawing.Point(73, 12);
-            this.comboCategorias.Name = "comboCategorias";
-            this.comboCategorias.Size = new System.Drawing.Size(220, 21);
-            this.comboCategorias.TabIndex = 94;
+            this.sp_Ranking_VentasTableAdapter.ClearBeforeFill = true;
             // 
             // dtpFechaH
             // 
             this.dtpFechaH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaH.Location = new System.Drawing.Point(580, 14);
+            this.dtpFechaH.Location = new System.Drawing.Point(585, 14);
             this.dtpFechaH.Name = "dtpFechaH";
             this.dtpFechaH.Size = new System.Drawing.Size(95, 20);
-            this.dtpFechaH.TabIndex = 108;
+            this.dtpFechaH.TabIndex = 115;
             // 
             // LblFechaH
             // 
             this.LblFechaH.AutoSize = true;
-            this.LblFechaH.Location = new System.Drawing.Point(500, 15);
+            this.LblFechaH.Location = new System.Drawing.Point(505, 15);
             this.LblFechaH.Name = "LblFechaH";
             this.LblFechaH.Size = new System.Drawing.Size(71, 13);
-            this.LblFechaH.TabIndex = 107;
+            this.LblFechaH.TabIndex = 114;
             this.LblFechaH.Text = "Fecha Hasta:";
             // 
             // dtpFechaD
             // 
             this.dtpFechaD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaD.Location = new System.Drawing.Point(383, 15);
+            this.dtpFechaD.Location = new System.Drawing.Point(388, 15);
             this.dtpFechaD.Name = "dtpFechaD";
             this.dtpFechaD.Size = new System.Drawing.Size(95, 20);
-            this.dtpFechaD.TabIndex = 106;
+            this.dtpFechaD.TabIndex = 113;
             // 
             // iconButton1
             // 
@@ -149,11 +124,11 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 18;
-            this.iconButton1.Location = new System.Drawing.Point(696, 9);
+            this.iconButton1.Location = new System.Drawing.Point(701, 9);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(93, 26);
-            this.iconButton1.TabIndex = 105;
+            this.iconButton1.TabIndex = 112;
             this.iconButton1.Text = "Ver";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -163,21 +138,34 @@
             // LblFechaD
             // 
             this.LblFechaD.AutoSize = true;
-            this.LblFechaD.Location = new System.Drawing.Point(303, 16);
+            this.LblFechaD.Location = new System.Drawing.Point(308, 16);
             this.LblFechaD.Name = "LblFechaD";
             this.LblFechaD.Size = new System.Drawing.Size(74, 13);
-            this.LblFechaD.TabIndex = 104;
+            this.LblFechaD.TabIndex = 111;
             this.LblFechaD.Text = "Fecha Desde:";
             // 
-            // sp_Ranking_VentasTableAdapter
+            // LblCategoria
             // 
-            this.sp_Ranking_VentasTableAdapter.ClearBeforeFill = true;
+            this.LblCategoria.AutoSize = true;
+            this.LblCategoria.Location = new System.Drawing.Point(15, 15);
+            this.LblCategoria.Name = "LblCategoria";
+            this.LblCategoria.Size = new System.Drawing.Size(57, 13);
+            this.LblCategoria.TabIndex = 110;
+            this.LblCategoria.Text = "Categoría:";
             // 
-            // FrmRptRanking
+            // comboCategorias
+            // 
+            this.comboCategorias.FormattingEnabled = true;
+            this.comboCategorias.Location = new System.Drawing.Point(78, 12);
+            this.comboCategorias.Name = "comboCategorias";
+            this.comboCategorias.Size = new System.Drawing.Size(220, 21);
+            this.comboCategorias.TabIndex = 109;
+            // 
+            // FrmRptRankingVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1136, 597);
+            this.ClientSize = new System.Drawing.Size(1133, 538);
             this.Controls.Add(this.dtpFechaH);
             this.Controls.Add(this.LblFechaH);
             this.Controls.Add(this.dtpFechaD);
@@ -186,13 +174,12 @@
             this.Controls.Add(this.LblCategoria);
             this.Controls.Add(this.comboCategorias);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FrmRptRanking";
+            this.Name = "FrmRptRankingVentas";
             this.Text = "Ranking de Ventas de Productos";
-            this.Load += new System.EventHandler(this.FrmRptRanking_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.FrmRptRankingVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRankingVentasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spRankingVentasProductoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,18 +189,16 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private DS_Reportes dS_Reportes;
-        private System.Windows.Forms.BindingSource spRankingVentasProductoBindingSource;
-        private DS_ReportesTableAdapters.sp_Ranking_Ventas_ProductoTableAdapter sp_Ranking_Ventas_ProductoTableAdapter;
         private System.Windows.Forms.BindingSource empresaBindingSource;
         private DS_ReportesTableAdapters.EmpresaTableAdapter empresaTableAdapter;
-        private System.Windows.Forms.Label LblCategoria;
-        private System.Windows.Forms.ComboBox comboCategorias;
+        private System.Windows.Forms.BindingSource spRankingVentasBindingSource;
+        private DS_ReportesTableAdapters.sp_Ranking_VentasTableAdapter sp_Ranking_VentasTableAdapter;
         private System.Windows.Forms.DateTimePicker dtpFechaH;
         private System.Windows.Forms.Label LblFechaH;
         private System.Windows.Forms.DateTimePicker dtpFechaD;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label LblFechaD;
-        private System.Windows.Forms.BindingSource spRankingVentasBindingSource;
-        private DS_ReportesTableAdapters.sp_Ranking_VentasTableAdapter sp_Ranking_VentasTableAdapter;
+        private System.Windows.Forms.Label LblCategoria;
+        private System.Windows.Forms.ComboBox comboCategorias;
     }
 }

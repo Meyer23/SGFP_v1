@@ -21,7 +21,7 @@ namespace CapaPresentacion.Reportes
         {
             // TODO: esta línea de código carga datos en la tabla 'dS_Reportes.Empresa' Puede moverla o quitarla según sea necesario.
             this.empresaTableAdapter.Fill(this.dS_Reportes.Empresa);
-            this.rendicionCajaTableAdapter.Fill(this.dS_Reportes.RendicionCaja, TxtParamLogin.Text, Convert.ToDateTime(TxtParamFecha.Text));
+            this.rendicionCajaTableAdapter.Fill(this.dS_Reportes.RendicionCaja, TxtParamLogin.Text, TxtParamFecha.Text);
             this.reportViewer1.RefreshReport();
         }
     }

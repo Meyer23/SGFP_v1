@@ -12,19 +12,21 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Reportes
 {
-    public partial class FrmRptRanking : Form
+    public partial class FrmRptRankingVentas : Form
     {
-        public FrmRptRanking()
+        public FrmRptRankingVentas()
         {
             InitializeComponent();
         }
 
-        private void FrmRptRanking_Load(object sender, EventArgs e)
+        private void FrmRptRankingVentas_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dS_Reportes.Empresa' Puede moverla o quitarla según sea necesario.
+
             dtpFechaD.Value = DateTime.Now;
             dtpFechaH.Value = DateTime.Now;
             CargarCategorias();
+            comboCategorias.SelectedIndex = 18;
         }
 
         private void CargarCategorias()

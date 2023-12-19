@@ -375,7 +375,10 @@ namespace CapaPresentacion
 
         private void SubMenuRanking_Click(object sender, EventArgs e)
         {
-            Reportes.FrmRptRanking oRptRanking = new Reportes.FrmRptRanking();
+            //Reportes.FrmRptRanking oRptRanking = new Reportes.FrmRptRanking();
+            //oRptRanking.ShowDialog();
+
+            Reportes.FrmRptRankingVentas oRptRanking = new Reportes.FrmRptRankingVentas();
             oRptRanking.ShowDialog();
         }
     }
