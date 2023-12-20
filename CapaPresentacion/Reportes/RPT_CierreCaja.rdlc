@@ -622,7 +622,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=First(Fields!Cajero.Value, "DS_Cierre")</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -632,7 +634,7 @@
           <Top>3.52385cm</Top>
           <Left>3.76683cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.10375cm</Width>
+          <Width>6.68042cm</Width>
           <ZIndex>19</ZIndex>
           <Style>
             <Border>
@@ -652,17 +654,19 @@
               <TextRuns>
                 <TextRun>
                   <Value>=First(Fields!Login.Value, "DS_Cierre")</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Login</rd:DefaultName>
-          <Top>4.12385cm</Top>
+          <Top>4.15913cm</Top>
           <Left>3.76683cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.10375cm</Width>
+          <Width>6.68042cm</Width>
           <ZIndex>20</ZIndex>
           <Style>
             <Border>
@@ -683,6 +687,7 @@
                 <TextRun>
                   <Value>=First(Fields!FechaCierre.Value, "DS_Cierre")</Value>
                   <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
                     <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
@@ -694,9 +699,9 @@
           </Paragraphs>
           <rd:DefaultName>FechaCierre</rd:DefaultName>
           <Top>4.72385cm</Top>
-          <Left>3.76683cm</Left>
+          <Left>3.73155cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.10375cm</Width>
+          <Width>6.71569cm</Width>
           <ZIndex>21</ZIndex>
           <Style>
             <Border>
@@ -716,7 +721,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Sum(Fields!NroCaja.Value, "DS_Cierre")</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -726,7 +733,7 @@
           <Top>3.52385cm</Top>
           <Left>14.52183cm</Left>
           <Height>0.6cm</Height>
-          <Width>1.79208cm</Width>
+          <Width>1.86263cm</Width>
           <ZIndex>22</ZIndex>
           <Style>
             <Border>
@@ -746,7 +753,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=First(Fields!Descripcion.Value, "DS_Cierre")</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -754,9 +763,9 @@
           </Paragraphs>
           <rd:DefaultName>Descripcion</rd:DefaultName>
           <Top>3.52385cm</Top>
-          <Left>16.95301cm</Left>
+          <Left>16.91773cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.99796cm</Width>
+          <Width>2.97625cm</Width>
           <ZIndex>23</ZIndex>
           <Style>
             <Border>
@@ -777,6 +786,7 @@
                 <TextRun>
                   <Value>=Sum(Fields!MontoActual.Value, "DS_Cierre")</Value>
                   <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
                     <Format>#,0;(#,0)</Format>
                   </Style>
                 </TextRun>
@@ -788,7 +798,7 @@
           <Top>4.12385cm</Top>
           <Left>14.52183cm</Left>
           <Height>0.6cm</Height>
-          <Width>3.84055cm</Width>
+          <Width>5.37215cm</Width>
           <ZIndex>24</ZIndex>
           <Style>
             <Border>
@@ -809,18 +819,21 @@
                 <TextRun>
                   <Value>=Sum(Fields!MontoCierre.Value, "DS_Cierre")</Value>
                   <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
                     <Format>#,0;(#,0)</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>MontoCierre</rd:DefaultName>
           <Top>4.72385cm</Top>
-          <Left>14.55711cm</Left>
+          <Left>14.52183cm</Left>
           <Height>0.6cm</Height>
-          <Width>3.84055cm</Width>
+          <Width>5.37215cm</Width>
           <ZIndex>25</ZIndex>
           <Style>
             <Border>

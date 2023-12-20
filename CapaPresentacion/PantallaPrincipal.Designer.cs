@@ -87,12 +87,13 @@
             this.SubMenuListadoMovstock = new FontAwesome.Sharp.IconMenuItem();
             this.MenuReportes = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuResumenVentas = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuRanking = new FontAwesome.Sharp.IconMenuItem();
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.LabelTituloSistema = new System.Windows.Forms.Label();
             this.Contenedor = new System.Windows.Forms.Panel();
             this.ULabel = new System.Windows.Forms.Label();
             this.LBLUsuario = new System.Windows.Forms.Label();
-            this.SubMenuRanking = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuRankingCompras = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -749,7 +750,8 @@
             // 
             this.MenuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubMenuResumenVentas,
-            this.SubMenuRanking});
+            this.SubMenuRanking,
+            this.SubMenuRankingCompras});
             this.MenuReportes.IconChar = FontAwesome.Sharp.IconChar.Book;
             this.MenuReportes.IconColor = System.Drawing.Color.Black;
             this.MenuReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -766,9 +768,20 @@
             this.SubMenuResumenVentas.IconColor = System.Drawing.Color.Black;
             this.SubMenuResumenVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuResumenVentas.Name = "SubMenuResumenVentas";
-            this.SubMenuResumenVentas.Size = new System.Drawing.Size(251, 30);
+            this.SubMenuResumenVentas.Size = new System.Drawing.Size(265, 30);
             this.SubMenuResumenVentas.Text = "Resumen de Ventas";
+            this.SubMenuResumenVentas.Visible = false;
             this.SubMenuResumenVentas.Click += new System.EventHandler(this.SubMenuResumenVentas_Click);
+            // 
+            // SubMenuRanking
+            // 
+            this.SubMenuRanking.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuRanking.IconColor = System.Drawing.Color.Black;
+            this.SubMenuRanking.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuRanking.Name = "SubMenuRanking";
+            this.SubMenuRanking.Size = new System.Drawing.Size(265, 30);
+            this.SubMenuRanking.Text = "Ranking de Ventas de Productos";
+            this.SubMenuRanking.Click += new System.EventHandler(this.SubMenuRanking_Click);
             // 
             // menutitulo
             // 
@@ -831,15 +844,15 @@
             this.LBLUsuario.TabIndex = 5;
             this.LBLUsuario.Text = "LBLUsuario";
             // 
-            // SubMenuRanking
+            // SubMenuRankingCompras
             // 
-            this.SubMenuRanking.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.SubMenuRanking.IconColor = System.Drawing.Color.Black;
-            this.SubMenuRanking.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubMenuRanking.Name = "SubMenuRanking";
-            this.SubMenuRanking.Size = new System.Drawing.Size(251, 30);
-            this.SubMenuRanking.Text = "Ranking de Ventas de Productos";
-            this.SubMenuRanking.Click += new System.EventHandler(this.SubMenuRanking_Click);
+            this.SubMenuRankingCompras.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SubMenuRankingCompras.IconColor = System.Drawing.Color.Black;
+            this.SubMenuRankingCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubMenuRankingCompras.Name = "SubMenuRankingCompras";
+            this.SubMenuRankingCompras.Size = new System.Drawing.Size(265, 30);
+            this.SubMenuRankingCompras.Text = "Ranking de Compras de Productos";
+            this.SubMenuRankingCompras.Click += new System.EventHandler(this.SubMenuRankingCompras_Click);
             // 
             // PantallaPrincipal
             // 
@@ -934,6 +947,7 @@
         private FontAwesome.Sharp.IconMenuItem MenuReportes;
         private FontAwesome.Sharp.IconMenuItem SubMenuResumenVentas;
         private FontAwesome.Sharp.IconMenuItem SubMenuRanking;
+        private FontAwesome.Sharp.IconMenuItem SubMenuRankingCompras;
     }
 }
 
