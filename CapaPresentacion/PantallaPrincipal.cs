@@ -369,7 +369,7 @@ namespace CapaPresentacion
 
         private void SubMenuResumenVentas_Click(object sender, EventArgs e)
         {
-            Reportes.FrmRptResumenVentas oRptListadoVentas = new Reportes.FrmRptResumenVentas();
+            Reportes.FrmRptResumenVentasMensual oRptListadoVentas = new Reportes.FrmRptResumenVentasMensual();
             oRptListadoVentas.ShowDialog();
         }
 
@@ -386,6 +386,12 @@ namespace CapaPresentacion
         {
             Reportes.FrmRptRankingCompras oRptRanking = new Reportes.FrmRptRankingCompras();
             oRptRanking.ShowDialog();
+        }
+
+        private void SubMenuResumenCompras_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmRptResumenCompras oRptListadoCompras = new Reportes.FrmRptResumenCompras();
+            oRptListadoCompras.ShowDialog();
         }
     }
 }

@@ -580,11 +580,17 @@
     <Compile Include="Reportes\FrmRptRendicionCaja.Designer.cs">
       <DependentUpon>FrmRptRendicionCaja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\FrmRptResumenVentas.cs">
+    <Compile Include="Reportes\FrmRptResumenCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\FrmRptResumenVentas.Designer.cs">
-      <DependentUpon>FrmRptResumenVentas.cs</DependentUpon>
+    <Compile Include="Reportes\FrmRptResumenCompras.Designer.cs">
+      <DependentUpon>FrmRptResumenCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmRptResumenVentasMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRptResumenVentasMensual.Designer.cs">
+      <DependentUpon>FrmRptResumenVentasMensual.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FrmRptUltimasCompras.cs">
       <SubType>Form</SubType>
@@ -858,8 +864,11 @@
     <EmbeddedResource Include="Reportes\FrmRptRendicionCaja.resx">
       <DependentUpon>FrmRptRendicionCaja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\FrmRptResumenVentas.resx">
-      <DependentUpon>FrmRptResumenVentas.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\FrmRptResumenCompras.resx">
+      <DependentUpon>FrmRptResumenCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRptResumenVentasMensual.resx">
+      <DependentUpon>FrmRptResumenVentasMensual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmRptUltimasCompras.resx">
       <DependentUpon>FrmRptUltimasCompras.cs</DependentUpon>
@@ -889,9 +898,10 @@
     <EmbeddedResource Include="Reportes\RPT_RankingVentas.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_RannkingCompras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_RendicionCaja.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_ResumenCompras.rdlc" />
+    <EmbeddedResource Include="Reportes\RPT_ResumenVentasMensual.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_UltimasCompras.rdlc" />
     <EmbeddedResource Include="Reportes\RPT_Ventas.rdlc" />
-    <EmbeddedResource Include="Reportes\RPT_VentasMensual.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

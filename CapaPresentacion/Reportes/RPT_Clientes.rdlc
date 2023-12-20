@@ -605,7 +605,7 @@
         <Top>0.34078cm</Top>
         <Left>0.47259cm</Left>
         <Height>1.2cm</Height>
-        <Width>36.07361cm</Width>
+        <Width>36.0736cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -635,7 +635,7 @@
                     <FontStyle>Italic</FontStyle>
                     <FontFamily>Trebuchet MS</FontFamily>
                     <FontSize>8pt</FontSize>
-                    <Format>g</Format>
+                    <Format>dd/MM/yyyy H:mm</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
