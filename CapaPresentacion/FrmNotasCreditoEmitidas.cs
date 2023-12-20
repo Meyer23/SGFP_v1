@@ -22,11 +22,40 @@ namespace CapaPresentacion
             _Usuario = oUsuario;
             InitializeComponent();
             CargarTiposDocumentos();
-            MostrarCajero();
-            ObtenerUltimoDocFactura();
             TxtCajero.Enabled = false;
             TxtNroCaja.Enabled = false;
             dtpFecha.Value = DateTime.Now;
+            string validacionesApertura = string.Empty;
+
+            validacionesApertura = ValidarAperturasDeCaja();
+
+            if (_Usuario.Login == "admin")
+            {
+                MessageBox.Show("Debe contar con rol de Cajero para operar.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupBoxInfoCliente.Enabled = false;
+                groupBoxInfoNC.Enabled = false;
+                groupBoxInfoProducto.Enabled = false;
+                BtnAgregar.Enabled = false;
+                BtnGuardar.Enabled = false;
+                return;
+            }
+
+            if (validacionesApertura == "OK")
+            {
+                MostrarCajero();
+                ObtenerUltimoDocFactura();
+            }
+            else
+            {
+                MessageBox.Show("Debe abrir una caja para operar.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupBoxInfoCliente.Enabled = false;
+                groupBoxInfoCliente.Enabled = false;
+                groupBoxInfoNC.Enabled = false;
+                groupBoxInfoProducto.Enabled = false;
+                BtnAgregar.Enabled = false;
+                BtnGuardar.Enabled = false;
+                return;
+            }
         }
 
         private void ObtenerUltimoDocFactura()
@@ -665,10 +694,10 @@ namespace CapaPresentacion
                 MessageBox.Show(string.Format("Usuario '{0}' sin caja asignada, verifique", nombreUsuario), "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            MostrarTimbrado(idCaja);
+            MostrarTimbrado(numeroCaja);
         }
 
-        private void MostrarTimbrado(int idCaja)
+        private void MostrarTimbrado(int numeroCaja)
         {
 
             List<Timbrado> timbrados = new CN_Timbrados().Listar();
@@ -679,7 +708,7 @@ namespace CapaPresentacion
                                      .Select(e => e.NroTimbrado)
                                      .ToList();
 
-            var timbradoId = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString() && e.TipoDoc == true)
+            var timbradoId = numeracion.Where(e => e.DescripcionCaja == numeroCaja.ToString() && e.TipoDoc == true)
                                       .Select(e => e.IdTimbrado)
                                       .SingleOrDefault();
 
@@ -695,11 +724,11 @@ namespace CapaPresentacion
                                                 .Select(e => e.FinVigencia)
                                                 .SingleOrDefault();
 
-            var codEstablecimiento = numeracion.Where(e => e.DescripcionCaja.ToString() == idCaja.ToString() && e.TipoDoc == true)
+            var codEstablecimiento = numeracion.Where(e => e.DescripcionCaja.ToString() == numeroCaja.ToString() && e.TipoDoc == true)
                                                .Select(e => e.CodigoEstablecimiento)
                                                .SingleOrDefault();
 
-            var puntoEmision = numeracion.Where(e => e.DescripcionCaja == idCaja.ToString() && e.TipoDoc == true)
+            var puntoEmision = numeracion.Where(e => e.DescripcionCaja == numeroCaja.ToString() && e.TipoDoc == true)
                                          .Select(e => e.PuntoEmision)
                                          .SingleOrDefault();
 
@@ -714,6 +743,31 @@ namespace CapaPresentacion
             TxtCodEstablecimiento.Enabled = false;
             TxtPuntoEmision.Enabled = false;
 
+        }
+
+        private string ValidarAperturasDeCaja()
+        {
+            List<AperturaCierreCajas> listAper = new CN_AperturaCierre().ObtenerAperturasDeCajas();
+            List<Cajas> listCajas = new CN_Cajas().ObtenerCajas();
+
+            var buscarUsuarioCaja = listCajas.Where(x => x.LoginUsuario == _Usuario.Login)
+                                             .Count();
+            string result = string.Empty;
+            if (listAper.Count == 0 || buscarUsuarioCaja == 0)
+            {
+                result = "NO OK";
+                //groupBoxInfoCliente.Enabled = false;
+                //groupBoxInfoPedido.Enabled = false;
+                //groupBoxInfoProductos.Enabled = false;
+                //BtnImprimirFactura.Enabled = false;
+                //BtnCobro.Enabled = false;
+                return result;
+            }
+            else
+            {
+                result = "OK";
+                return result;
+            }
         }
     }
 }
