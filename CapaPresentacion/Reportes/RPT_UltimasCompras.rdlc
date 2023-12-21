@@ -481,7 +481,7 @@
   <Width>7.95888in</Width>
   <Page>
     <PageHeader>
-      <Height>3.94229cm</Height>
+      <Height>5.23875cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -716,7 +716,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.99406cm</Top>
+          <Top>4.18468cm</Top>
           <Left>2.78559cm</Left>
           <Height>0.6cm</Height>
           <Width>3.58479cm</Width>
@@ -748,7 +748,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Codigo</rd:DefaultName>
-          <Top>2.99406cm</Top>
+          <Top>4.18468cm</Top>
           <Left>6.37328cm</Left>
           <Height>0.6cm</Height>
           <Width>1.99729cm</Width>
@@ -780,7 +780,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Descripcion</rd:DefaultName>
-          <Top>2.99406cm</Top>
+          <Top>4.18468cm</Top>
           <Left>9.40182cm</Left>
           <Height>0.6cm</Height>
           <Width>9.32625cm</Width>
@@ -796,7 +796,7 @@
           </Style>
         </Textbox>
         <Line Name="Line1">
-          <Top>3.33058cm</Top>
+          <Top>4.52121cm</Top>
           <Left>8.72807cm</Left>
           <Height>0cm</Height>
           <Width>0.40916cm</Width>
@@ -807,6 +807,41 @@
             </Border>
           </Style>
         </Line>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Listado de Últimas Compras</Value>
+                  <Style>
+                    <FontFamily>trebuchet MS</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>2.84854cm</Top>
+          <Left>6.86017cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.69082cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>

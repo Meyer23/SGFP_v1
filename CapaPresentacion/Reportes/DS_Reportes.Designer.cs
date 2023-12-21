@@ -25903,20 +25903,30 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
                         INNER JOIN Usuarios U ON C.idUsuario = U.id 
                         INNER JOIN Empleados E ON U.idEmpleado = E.id 
                         INNER JOIN Proveedores PR ON C.idProveedor = PR.id 
-                        WHERE C.Fecha BETWEEN @FechaD AND @FechaH";
+                        WHERE CONVERT(DATE,C.Fecha) BETWEEN @FechaD AND @FechaH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Reportes.ComprasListadoDataTable dataTable, System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual int Fill(DS_Reportes.ComprasListadoDataTable dataTable, string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -25928,10 +25938,20 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Reportes.ComprasListadoDataTable GetData(System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual DS_Reportes.ComprasListadoDataTable GetData(string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             DS_Reportes.ComprasListadoDataTable dataTable = new DS_Reportes.ComprasListadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -26098,20 +26118,30 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
                          INNER JOIN Proveedores PR ON P.idProveedor = PR.id
                          INNER JOIN TiposDocumentosCompra T ON P.idTipoDocumento = T.id
                          INNER JOIN FormasPagos F ON P.idFormaPago = F.id
-                         WHERE P.Fecha BETWEEN @FechaD AND @FechaH";
+                         WHERE CONVERT(DATE,P.Fecha) BETWEEN @FechaD AND @FechaH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Reportes.PedidosListadoDataTable dataTable, System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual int Fill(DS_Reportes.PedidosListadoDataTable dataTable, string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -26123,10 +26153,20 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Reportes.PedidosListadoDataTable GetData(System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual DS_Reportes.PedidosListadoDataTable GetData(string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             DS_Reportes.PedidosListadoDataTable dataTable = new DS_Reportes.PedidosListadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -26283,20 +26323,30 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
                          FROM MovimientosStock M
                          INNER JOIN Usuarios U ON M.idUsuario = U.id
                          INNER JOIN Empleados E ON U.idEmpleado = E.id
-                         WHERE M.Fecha BETWEEN @FechaD AND @FechaH";
+                         WHERE CONVERT(DATE,M.Fecha) BETWEEN @FechaD AND @FechaH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Reportes.MovimientosStockListadoDataTable dataTable, System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual int Fill(DS_Reportes.MovimientosStockListadoDataTable dataTable, string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -26308,10 +26358,20 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Reportes.MovimientosStockListadoDataTable GetData(System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual DS_Reportes.MovimientosStockListadoDataTable GetData(string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             DS_Reportes.MovimientosStockListadoDataTable dataTable = new DS_Reportes.MovimientosStockListadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -26483,20 +26543,30 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
                         INNER JOIN Usuarios U ON N.idUsuario = U.id 
                         INNER JOIN Empleados E ON U.idEmpleado = E.id 
                         INNER JOIN Proveedores PR ON N.idProveedor = PR.id 
-                         WHERE N.Fecha BETWEEN @FechaD AND @FechaH";
+                         WHERE CONVERT(DATE,N.Fecha) BETWEEN @FechaD AND @FechaH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Reportes.NCRecibidasListadoDataTable dataTable, System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual int Fill(DS_Reportes.NCRecibidasListadoDataTable dataTable, string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -26508,10 +26578,20 @@ SELECT id, RazonSocial, Documento, Contacto, Contacto2, Direccion, Telefono1, Te
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Reportes.NCRecibidasListadoDataTable GetData(System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual DS_Reportes.NCRecibidasListadoDataTable GetData(string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             DS_Reportes.NCRecibidasListadoDataTable dataTable = new DS_Reportes.NCRecibidasListadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -27840,20 +27920,30 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
                         INNER JOIN Empleados E ON U.idEmpleado = E.id 
                         INNER JOIN Clientes PR ON N.idCliente = PR.id 
 						INNER JOIN Timbrados TI ON P.idTimbrado = TI.id
-                         WHERE N.Fecha BETWEEN @FechaD AND @FechaH";
+                         WHERE CONVERT(DATE,N.Fecha) BETWEEN @FechaD AND @FechaH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Reportes.NCEmitidasListadoDataTable dataTable, System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual int Fill(DS_Reportes.NCEmitidasListadoDataTable dataTable, string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -27865,10 +27955,20 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Reportes.NCEmitidasListadoDataTable GetData(System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual DS_Reportes.NCEmitidasListadoDataTable GetData(string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             DS_Reportes.NCEmitidasListadoDataTable dataTable = new DS_Reportes.NCEmitidasListadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -28033,20 +28133,30 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
                         INNER JOIN Usuarios U ON C.idUsuario = U.id 
                         INNER JOIN Empleados E ON U.idEmpleado = E.id 
                         INNER JOIN Clientes PR ON C.idCliente = PR.id 
-                        WHERE C.Fecha BETWEEN @FechaD AND @FechaH";
+                        WHERE CONVERT(DATE,C.Fecha) BETWEEN @FechaD AND @FechaH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Reportes.VentasListadoDataTable dataTable, System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual int Fill(DS_Reportes.VentasListadoDataTable dataTable, string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -28058,10 +28168,20 @@ CASE WHEN CONVERT(int,I.PorcIVA) = 5 THEN CD.Total ELSE 0 END AS Gravada5, CASE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Reportes.VentasListadoDataTable GetData(System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual DS_Reportes.VentasListadoDataTable GetData(string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             DS_Reportes.VentasListadoDataTable dataTable = new DS_Reportes.VentasListadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -29673,21 +29793,31 @@ FROM Facturas F
 INNER JOIN FacturasDetalles FD ON FD.idFactura = F.id
 INNER JOIN Productos P ON FD.idProducto = P.id
 INNER JOIN Categorias C ON P.idCategoria = C.id
-WHERE F.Fecha BETWEEN @FechaD AND @FechaH
+WHERE CONVERT(DATE,F.Fecha) BETWEEN @FechaD AND @FechaH
 GROUP BY C.Descripcion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Reportes.ResumenVentasDataTable dataTable, System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual int Fill(DS_Reportes.ResumenVentasDataTable dataTable, string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -29699,10 +29829,20 @@ GROUP BY C.Descripcion";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Reportes.ResumenVentasDataTable GetData(System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual DS_Reportes.ResumenVentasDataTable GetData(string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             DS_Reportes.ResumenVentasDataTable dataTable = new DS_Reportes.ResumenVentasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -29854,21 +29994,31 @@ FROM Compras F
 INNER JOIN ComprasDetalles FD ON FD.idCompra = F.id
 INNER JOIN Productos P ON FD.idProducto = P.id
 INNER JOIN Categorias C ON P.idCategoria = C.id
-WHERE F.Fecha BETWEEN @FechaD AND @FechaH
+WHERE CONVERT(DATE,F.Fecha) BETWEEN @FechaD AND @FechaH
 GROUP BY C.Descripcion   ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaD", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaH", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Reportes.ResumenComprasDataTable dataTable, System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual int Fill(DS_Reportes.ResumenComprasDataTable dataTable, string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -29880,10 +30030,20 @@ GROUP BY C.Descripcion   ";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Reportes.ResumenComprasDataTable GetData(System.DateTime FechaD, System.DateTime FechaH) {
+        public virtual DS_Reportes.ResumenComprasDataTable GetData(string FechaD, string FechaH) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaD));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaH));
+            if ((FechaD == null)) {
+                throw new global::System.ArgumentNullException("FechaD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FechaD));
+            }
+            if ((FechaH == null)) {
+                throw new global::System.ArgumentNullException("FechaH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FechaH));
+            }
             DS_Reportes.ResumenComprasDataTable dataTable = new DS_Reportes.ResumenComprasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

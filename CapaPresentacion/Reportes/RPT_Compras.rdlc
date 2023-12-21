@@ -469,7 +469,7 @@
   <Width>8.44133in</Width>
   <Page>
     <PageHeader>
-      <Height>8.21683cm</Height>
+      <Height>9.88371cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -493,7 +493,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.52306cm</Top>
+          <Top>4.42806cm</Top>
           <Left>0.54363cm</Left>
           <Height>0.6cm</Height>
           <Width>3.58479cm</Width>
@@ -734,7 +734,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>NumeroFactura</rd:DefaultName>
-          <Top>2.52306cm</Top>
+          <Top>4.42806cm</Top>
           <Left>4.19898cm</Left>
           <Height>0.6cm</Height>
           <Width>3.69062cm</Width>
@@ -767,7 +767,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>3.9881cm</Top>
+          <Top>5.8931cm</Top>
           <Left>0.53718cm</Left>
           <Height>0.6cm</Height>
           <Width>3.50542cm</Width>
@@ -800,7 +800,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>4.5881cm</Top>
+          <Top>6.4931cm</Top>
           <Left>0.53718cm</Left>
           <Height>0.6cm</Height>
           <Width>3.50542cm</Width>
@@ -833,7 +833,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>5.1881cm</Top>
+          <Top>7.0931cm</Top>
           <Left>0.53718cm</Left>
           <Height>0.6cm</Height>
           <Width>3.50542cm</Width>
@@ -866,7 +866,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>5.7881cm</Top>
+          <Top>7.6931cm</Top>
           <Left>0.53718cm</Left>
           <Height>0.6cm</Height>
           <Width>3.50542cm</Width>
@@ -899,7 +899,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>6.9881cm</Top>
+          <Top>8.8931cm</Top>
           <Left>0.53718cm</Left>
           <Height>0.6cm</Height>
           <Width>3.50542cm</Width>
@@ -932,7 +932,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>3.99803cm</Top>
+          <Top>5.90303cm</Top>
           <Left>12.14465cm</Left>
           <Height>0.6cm</Height>
           <Width>3.23674cm</Width>
@@ -965,7 +965,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>4.59803cm</Top>
+          <Top>6.50303cm</Top>
           <Left>12.14465cm</Left>
           <Height>0.6cm</Height>
           <Width>3.24319cm</Width>
@@ -998,7 +998,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>5.19803cm</Top>
+          <Top>7.10303cm</Top>
           <Left>12.14465cm</Left>
           <Height>0.6cm</Height>
           <Width>3.23674cm</Width>
@@ -1032,7 +1032,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>RazonSocial1</rd:DefaultName>
-          <Top>3.9881cm</Top>
+          <Top>5.8931cm</Top>
           <Left>4.0426cm</Left>
           <Height>0.6cm</Height>
           <Width>6.86153cm</Width>
@@ -1066,7 +1066,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Documento</rd:DefaultName>
-          <Top>4.5881cm</Top>
+          <Top>6.4931cm</Top>
           <Left>4.0426cm</Left>
           <Height>0.6cm</Height>
           <Width>6.86153cm</Width>
@@ -1100,7 +1100,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TipoDoc</rd:DefaultName>
-          <Top>5.1881cm</Top>
+          <Top>7.0931cm</Top>
           <Left>4.0426cm</Left>
           <Height>0.6cm</Height>
           <Width>6.86153cm</Width>
@@ -1134,7 +1134,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>FormaPago</rd:DefaultName>
-          <Top>5.7881cm</Top>
+          <Top>7.6931cm</Top>
           <Left>4.0426cm</Left>
           <Height>0.6cm</Height>
           <Width>6.86153cm</Width>
@@ -1168,7 +1168,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Observacion</rd:DefaultName>
-          <Top>6.9881cm</Top>
+          <Top>8.8931cm</Top>
           <Left>4.0426cm</Left>
           <Height>0.6cm</Height>
           <Width>6.86153cm</Width>
@@ -1203,7 +1203,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Fecha</rd:DefaultName>
-          <Top>3.99803cm</Top>
+          <Top>5.90303cm</Top>
           <Left>15.38784cm</Left>
           <Height>0.6cm</Height>
           <Width>4.11396cm</Width>
@@ -1237,7 +1237,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Nombres</rd:DefaultName>
-          <Top>5.19803cm</Top>
+          <Top>7.10303cm</Top>
           <Left>15.38139cm</Left>
           <Height>0.6cm</Height>
           <Width>4.12041cm</Width>
@@ -1272,7 +1272,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>FechaRecepcion</rd:DefaultName>
-          <Top>4.59803cm</Top>
+          <Top>6.50303cm</Top>
           <Left>15.38139cm</Left>
           <Height>0.6cm</Height>
           <Width>4.12041cm</Width>
@@ -1307,7 +1307,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.52306cm</Top>
+          <Top>4.42806cm</Top>
           <Left>8.80854cm</Left>
           <Height>0.6cm</Height>
           <Width>3.22384cm</Width>
@@ -1340,7 +1340,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>6.3881cm</Top>
+          <Top>8.2931cm</Top>
           <Left>0.53718cm</Left>
           <Height>0.6cm</Height>
           <Width>3.50542cm</Width>
@@ -1373,7 +1373,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>5.7881cm</Top>
+          <Top>7.6931cm</Top>
           <Left>12.14465cm</Left>
           <Height>0.6cm</Height>
           <Width>3.23674cm</Width>
@@ -1406,7 +1406,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>6.3881cm</Top>
+          <Top>8.2931cm</Top>
           <Left>12.14465cm</Left>
           <Height>0.6cm</Height>
           <Width>3.23674cm</Width>
@@ -1439,7 +1439,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>6.9881cm</Top>
+          <Top>8.8931cm</Top>
           <Left>12.14465cm</Left>
           <Height>0.6cm</Height>
           <Width>3.23674cm</Width>
@@ -1474,7 +1474,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>FechaVencimiento</rd:DefaultName>
-          <Top>6.3881cm</Top>
+          <Top>8.2931cm</Top>
           <Left>4.0426cm</Left>
           <Height>0.6cm</Height>
           <Width>6.86153cm</Width>
@@ -1508,7 +1508,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Timbrado</rd:DefaultName>
-          <Top>5.79803cm</Top>
+          <Top>7.70303cm</Top>
           <Left>15.38784cm</Left>
           <Height>0.59007cm</Height>
           <Width>4.11396cm</Width>
@@ -1543,7 +1543,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>InicioVigencia</rd:DefaultName>
-          <Top>6.3881cm</Top>
+          <Top>8.2931cm</Top>
           <Left>15.38139cm</Left>
           <Height>0.6cm</Height>
           <Width>4.12041cm</Width>
@@ -1578,7 +1578,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>FinVigencia</rd:DefaultName>
-          <Top>6.9881cm</Top>
+          <Top>8.8931cm</Top>
           <Left>15.38784cm</Left>
           <Height>0.6cm</Height>
           <Width>4.11396cm</Width>
@@ -1612,7 +1612,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>NumeroPedido</rd:DefaultName>
-          <Top>2.52306cm</Top>
+          <Top>4.42806cm</Top>
           <Left>12.06766cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
@@ -1645,7 +1645,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Confirmado</rd:DefaultName>
-          <Top>2.52306cm</Top>
+          <Top>4.42806cm</Top>
           <Left>15.38139cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
@@ -1678,11 +1678,46 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Anulado</rd:DefaultName>
-          <Top>2.52306cm</Top>
+          <Top>4.42806cm</Top>
           <Left>18.27953cm</Left>
           <Height>0.6cm</Height>
           <Width>2.65875cm</Width>
           <ZIndex>36</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>RECEPCIÓN DE COMPRA</Value>
+                  <Style>
+                    <FontFamily>trebuchet MS</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>2.81623cm</Top>
+          <Left>6.99664cm</Left>
+          <Height>0.6cm</Height>
+          <Width>6.70687cm</Width>
+          <ZIndex>37</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1791,6 +1826,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalFactura</rd:DefaultName>
+          <Top>0cm</Top>
           <Left>17.48567cm</Left>
           <Height>0.63528cm</Height>
           <Width>3.02387cm</Width>

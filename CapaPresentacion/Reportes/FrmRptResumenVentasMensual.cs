@@ -27,7 +27,7 @@ namespace CapaPresentacion.Reportes
         private void BtnVer_Click(object sender, EventArgs e)
         {
             this.empresaTableAdapter.Fill(this.dS_Reportes.Empresa);
-            this.resumenVentasTableAdapter.Fill(this.dS_Reportes.ResumenVentas, dtpFechaD.Value, dtpFechaH.Value);
+            this.resumenVentasTableAdapter.Fill(this.dS_Reportes.ResumenVentas, dtpFechaD.Value.ToString(), dtpFechaH.Value.ToString());
             this.reportViewer1.RefreshReport();
         }
     }

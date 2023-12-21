@@ -837,7 +837,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Rendición de Caja</Value>
+                  <Value>Rendición de Caja al</Value>
                   <Style>
                     <FontFamily>trebuchet MS</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -922,6 +922,42 @@
           <Height>0.6cm</Height>
           <Width>4.82771cm</Width>
           <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox13">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals.ExecutionTime</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <Format>dd/MM/yyyy H:mm</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>2.54902cm</Top>
+          <Left>13.38345cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.82771cm</Width>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

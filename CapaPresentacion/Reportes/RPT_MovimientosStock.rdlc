@@ -261,7 +261,7 @@
   <Width>7.95888in</Width>
   <Page>
     <PageHeader>
-      <Height>6.58812cm</Height>
+      <Height>7.72583cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -496,7 +496,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.78921cm</Top>
+          <Top>4.69421cm</Top>
           <Left>2.62502cm</Left>
           <Height>0.6cm</Height>
           <Width>3.58479cm</Width>
@@ -529,7 +529,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>3.85925cm</Top>
+          <Top>5.76425cm</Top>
           <Left>0.50835cm</Left>
           <Height>0.6cm</Height>
           <Width>3.18792cm</Width>
@@ -562,7 +562,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>5.12981cm</Top>
+          <Top>7.03481cm</Top>
           <Left>0.54363cm</Left>
           <Height>0.6cm</Height>
           <Width>3.18792cm</Width>
@@ -595,7 +595,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>4.45926cm</Top>
+          <Top>6.36426cm</Top>
           <Left>0.50835cm</Left>
           <Height>0.6cm</Height>
           <Width>3.18792cm</Width>
@@ -629,7 +629,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Documento</rd:DefaultName>
-          <Top>2.78921cm</Top>
+          <Top>4.69421cm</Top>
           <Left>6.58494cm</Left>
           <Height>0.6cm</Height>
           <Width>5.09292cm</Width>
@@ -663,7 +663,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Observacion</rd:DefaultName>
-          <Top>5.12981cm</Top>
+          <Top>7.03481cm</Top>
           <Left>3.73155cm</Left>
           <Height>0.6cm</Height>
           <Width>15.7909cm</Width>
@@ -698,7 +698,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Fecha</rd:DefaultName>
-          <Top>4.45926cm</Top>
+          <Top>6.36426cm</Top>
           <Left>3.69627cm</Left>
           <Height>0.6cm</Height>
           <Width>3.86356cm</Width>
@@ -730,7 +730,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TipoMovimiento</rd:DefaultName>
-          <Top>3.85925cm</Top>
+          <Top>5.76425cm</Top>
           <Left>3.73155cm</Left>
           <Height>0.6cm</Height>
           <Width>6.78625cm</Width>
@@ -763,7 +763,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>3.85925cm</Top>
+          <Top>5.76425cm</Top>
           <Left>12.55571cm</Left>
           <Height>0.6cm</Height>
           <Width>3.18792cm</Width>
@@ -797,7 +797,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Nombres</rd:DefaultName>
-          <Top>3.85925cm</Top>
+          <Top>5.76425cm</Top>
           <Left>15.74363cm</Left>
           <Height>0.6cm</Height>
           <Width>3.74354cm</Width>
@@ -830,7 +830,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Confirmado</rd:DefaultName>
-          <Top>2.78921cm</Top>
+          <Top>4.69421cm</Top>
           <Left>12.55571cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
@@ -863,11 +863,46 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Anulado</rd:DefaultName>
-          <Top>2.78921cm</Top>
+          <Top>4.69421cm</Top>
           <Left>16.28297cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>18</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>MOVIMIENTO DE STOCK</Value>
+                  <Style>
+                    <FontFamily>trebuchet MS</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>3.11312cm</Top>
+          <Left>7.35224cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.19875cm</Width>
+          <ZIndex>19</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
